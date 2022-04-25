@@ -1,8 +1,10 @@
 import React from 'react'
 
-function DanielFlores() {
+const DanielFlores = () => {
   return (
-    <div>DanielFlores</div>
+    <>
+        
+    </>
   )
 }
 
