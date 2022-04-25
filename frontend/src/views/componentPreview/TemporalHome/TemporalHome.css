@@ -1,0 +1,18 @@
+h1, h2 {
+    margin: 2rem;
+}
+
+.link_tmp {
+    color: blue;
+    margin: 0.5rem;
+    padding: 5px;
+    border-width: 2px;
+    border-color: blue;
+    border-style: groove;
+    border-radius: 10px;
+}
+
+.link_tmp:hover {
+    background-color: blue;
+    color: white;
+}
