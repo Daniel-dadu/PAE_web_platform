@@ -10,3 +10,5 @@ export {default as DanielMaldonado } from './views/componentPreview/DanielMaldon
 export {default as DanielMunive } from './views/componentPreview/DanielMunive/DanielMunive'
 export {default as Ezequiel } from './views/componentPreview/Ezequiel/Ezequiel'
 export {default as Fernando } from './views/componentPreview/Fernando/Fernando'
+
+export {default as BarraLateral } from './components/reusable/BarraLateral/BarraLateral'
