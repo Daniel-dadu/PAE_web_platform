@@ -13,9 +13,10 @@ import btnInfo from './btnInfo'
 function BarraLateral() {
 
     // IMPORTANTE: Usar estos strings no es muy eficiente para el componente final, evaluar si se cambia por números 
-    let user = "asesor"
+    let user = "asesorado"
     let tema = "claro"
     let idioma = "espanol"
+    const barIconSize = 80
 
   return (
     <div className='barra_lateral-container'>
@@ -28,14 +29,14 @@ function BarraLateral() {
         <div className='barra-container' style={{backgroundColor: btnInfo[user].backgroundColor }}>
             {
             btnInfo[user].buttons.map((btn) => 
-                <div className='barra_button'>
+                <div className='barra_button' style={{height: (user == "asesor") ? '33%' : '25%'}}>
                 <a href="">
                 {
                 (typeof btn.image === "string") ? <img src={btn.image} alt="" />
-                : (btn.image === 1) ? <BiCalendar className='icon' size={100}/>
-                : (btn.image === 2) ? <MdNotificationsNone className='icon' size={100}/>
-                : (btn.image === 3) ? <BsPeople className='icon' size={100}/> 
-                : <BiEdit className='icon' size={100}/>
+                : (btn.image === 1) ? <BiCalendar className='icon' size={barIconSize}/>
+                : (btn.image === 2) ? <MdNotificationsNone className='icon' size={barIconSize}/>
+                : (btn.image === 3) ? <BsPeople className='icon' size={barIconSize}/> 
+                : <BiEdit className='icon' size={barIconSize}/>
                 }
                 <p>{btn.text}</p>
                 </a>
