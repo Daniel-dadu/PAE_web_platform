@@ -1,17 +1,24 @@
+:root {
+    --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .barra_lateral-container {
-    /* background-color: green; */
     width: 15rem;
     height: 100vh;
+    display: flex;
+    flex-direction: column; 
 }
+
+/* Logo PAE */
 
 .pae_logo-container {
     width: 70%;
-    margin: auto;
+    margin: 0 auto;
     margin-top: 20px;
     background-color: white;
     height: 15%;
     border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: var(--box-shadow);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -24,16 +31,62 @@
     height: 100%;
 }
 
+/* Barra */
+
 .barra-container {
+    width: 70%;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.barra_button {
     width: 100%;
+    padding: 15px 0px;
 }
 
-.icon {
+.barra_button .icon, .barra_button p {
     color: #000;
-    size: 50px;
 }
 
+.barra_button img {
+    width: 50%;
+    border-radius: 100%;
+    border: 3px solid #000;
+}
+
+.barra_button:hover {
+    background-color: #1B5821;
+}
+
+.barra_button:hover img {
+    border-color: #FFF;
+}
+
+.barra_button:hover .icon, .barra_button:hover p {
+    color: #FFF;
+}
+
+/* Footer */
 
 .footer-container {
-    width: 100%;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    justify-content: center;
+}
+
+.footer-container .theme-icon {
+    color: #fff;
+    background-color: #565656;
+    border-radius: 10px;
+    margin: 0.5rem;
+}
+
+.footer-container img {
+    width: 50px;
+    margin: 0.5rem;
 }

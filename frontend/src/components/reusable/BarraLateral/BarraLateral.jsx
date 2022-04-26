@@ -25,7 +25,7 @@ function BarraLateral() {
             </a>
         </div>
 
-        <div className='barra-container'>
+        <div className='barra-container' style={{backgroundColor: btnInfo[user].backgroundColor }}>
             {
             btnInfo[user].buttons.map((btn) => 
                 <div className='barra_button'>
@@ -46,7 +46,7 @@ function BarraLateral() {
 
         <div className='footer-container'>
             <a href="">
-                {(tema == "claro") ? <MdNightlight /> : <MdLightMode />}
+                {(tema == "claro") ? <MdNightlight className='theme-icon' size={50} /> : <MdLightMode className='theme-icon' size={50} />}
             </a>
             <a href="">
                 {(idioma == "espanol") ? <img src={usa_flag_icon} alt="" /> : <img src={mexico_flag_icon} alt="" />}
