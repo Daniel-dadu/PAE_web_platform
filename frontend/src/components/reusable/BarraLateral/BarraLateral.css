@@ -1,0 +1,39 @@
+.barra_lateral-container {
+    /* background-color: green; */
+    width: 15rem;
+    height: 100vh;
+}
+
+.pae_logo-container {
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    background-color: white;
+    height: 15%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pae_logo-container img {
+    margin: auto;
+    width: 65%;
+    height: 100%;
+}
+
+.barra-container {
+    width: 100%;
+}
+
+.icon {
+    color: #000;
+    size: 50px;
+}
+
+
+.footer-container {
+    width: 100%;
+}

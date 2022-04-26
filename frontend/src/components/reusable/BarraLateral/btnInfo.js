@@ -1,18 +1,23 @@
-import calendar from './calendar.png'
-
+/*
+En las imágenes de la barra (react-icons), usaré los siguientes códigos que hacen referencia a cada ícono:
+1 - BiCalendar (calendario)
+2 - MdNotificationsNone (notificaciones)
+3 - BsPeople (agendar asesoría)
+4 - BiEdit (Administrar)
+*/
 export default {
     "asesor": {
         "buttons": [
             {
-                "image": calendar,
+                "image": "https://media-exp1.licdn.com/dms/image/C5603AQFb_aX2VC9F5Q/profile-displayphoto-shrink_800_800/0/1617766363440?e=1656547200&v=beta&t=pK-c49YYMja959AdCdGnbBjKSHXeY4zNnCODDR6CW4U",
                 "text": "Perfil"
             },
             {
-                "image": calendar,
+                "image": 1,
                 "text": "Calendario"
             },
             {
-                "image": calendar,
+                "image": 2,
                 "text": "Notificaciones"
             }
         ],
@@ -22,19 +27,19 @@ export default {
     "asesorado": {
         "buttons": [
             {
-                "image": "img",
+                "image": "https://media-exp1.licdn.com/dms/image/C5603AQFb_aX2VC9F5Q/profile-displayphoto-shrink_800_800/0/1617766363440?e=1656547200&v=beta&t=pK-c49YYMja959AdCdGnbBjKSHXeY4zNnCODDR6CW4U",
                 "text": "Perfil"
             },
             {
-                "image": "img",
+                "image": 1,
                 "text": "Calendario"
             },
             {
-                "image": "img",
+                "image": 3,
                 "text": "Agendar asesoría"
             },
             {
-                "image": "img",
+                "image": 2,
                 "text": "Notificaciones"
             }
         ],
@@ -44,19 +49,19 @@ export default {
     "directivo": {
         "buttons": [
             {
-                "image": "img",
+                "image": "https://media-exp1.licdn.com/dms/image/C5603AQFb_aX2VC9F5Q/profile-displayphoto-shrink_800_800/0/1617766363440?e=1656547200&v=beta&t=pK-c49YYMja959AdCdGnbBjKSHXeY4zNnCODDR6CW4U",
                 "text": "Perfil"
             },
             {
-                "image": "img",
+                "image": 1,
                 "text": "Calendario"
             },
             {
-                "image": "img",
+                "image": 2,
                 "text": "Notificaciones"
             },
             {
-                "image": "img",
+                "image": 4,
                 "text": "Administrar"
             }
         ],
