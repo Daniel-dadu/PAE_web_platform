@@ -1,0 +1,62 @@
+{
+    "uno": {
+        "currentStep": 0,
+        "steps": [
+            {
+                "name" : "uno",
+                "state": null,
+                "next": "enable"
+            }, 
+            {
+                "name" : "dos",
+                "state": null,
+                "next": "enable"
+            }
+        ]
+    },
+    "dos": {
+        "currentStep": 1,
+        "steps": [
+            {
+                "name" : "uno",
+                "state": true,
+                "next": "enable"
+            }, 
+            {
+                "name" : "dos",
+                "state": null,
+                "next": "enable"
+            }
+        ]
+    },
+    "tres": {
+        "currentStep": 0,
+        "steps": [
+            {
+                "name" : "uno",
+                "state": null,
+                "next": "refuse"
+            }, 
+            {
+                "name" : "dos",
+                "state": null,
+                "next": "enable"
+            }
+        ]
+    },
+    "cuatro": {
+        "currentStep": 0,
+        "steps": [
+            {
+                "name" : "uno",
+                "state": null,
+                "next": "restricted"
+            }, 
+            {
+                "name" : "dos",
+                "state": null,
+                "next": "enable"
+            }
+        ]
+    }
+}
