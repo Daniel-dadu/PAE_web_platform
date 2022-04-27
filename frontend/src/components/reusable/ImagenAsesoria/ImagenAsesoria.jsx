@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../../index.css'
 import './ImagenAsesoria.css'
-import { AiOutlineCloseCircle } from 'react-icons/ai';
+import { GrClose } from 'react-icons/gr';
 
 // import axios from 'axios'
 // import fileDownload from 'js-file-download'
@@ -37,39 +37,28 @@ const ImagenAsesoria = ({
         ? size
         : SIZES[0];
 
-    if(parseInt(allowClosed)){
-
-        return(
-            <>
+    return(
+        <>
+        <div className = {`divImg ${ImageSize}Size`}>
             <a href = {require(`./${source}`)} download = {nameDownloadImage}>
-            <img
-                className = {`img ${ImageSize}`}
-                src = {require(`./${source}`)}
-                alt = {alt}
-            />
+                <img
+                    className = 'img'
+                    src = {require(`./${source}`)}
+                    alt = {alt}
+                />
             </a>
-            <AiOutlineCloseCircle size = "3em" className = ''/>
-            </>
-        )
-
-    }
-    else{
-
-        return(
-            <>
-            <a href = {require(`./${source}`)} download = {nameDownloadImage}>
-            <img
-                className = {`img ${ImageSize}`}
-                src = {require(`./${source}`)}
-                alt = {alt}
-            />
-            </a>
-            
-            </>
-        )
-
-    }
-
+            {
+                parseInt(allowClosed)
+                    ? <GrClose
+                        onClick = {onClickX}
+                        color = 'black'
+                        className = 'closeCircle'/>
+                    : <GrClose
+                        style = {{display: 'none'}}/>
+            }
+        </div>
+        </>
+    )
 
 };
 

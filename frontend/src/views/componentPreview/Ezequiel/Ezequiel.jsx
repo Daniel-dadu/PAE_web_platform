@@ -44,20 +44,20 @@ function Ezequiel() {
         // Acción que debe quitar la imagen y descartar de subir la ruta de la misma en la asesoría a agendar
         // Nota, solo se debe ocupar este atributo si el allowClosed es '1',
         // de lo contrario se debe dejar como '{}'
-      size = 'normal'
+      size = 'reducida'
         // normal
         // larga
         // ancha
         // grande
         // reducida
-      source = 'imgPrueba/goku.jpg'
+      source = 'imgPrueba/DebianLogo.png'
         // Se debe poner la ruta LOCAL de la imagen
         // NOTA: ESTÁ PENDIENTE ELEGIR BIEN LA RUTA DONDE ESTAS SE GUARDARÁN,
         // POR LO QUE, POR AHORA SE ASUME QUE SE PARTE DE LA CARPETA DE ESTE COMPONENTE (ImagenAsesoria)
-        // Ejemplo: hay una imagen llamada goku.jpg en la ruta 'components/reusable/ImagenAsesoria/imgPrueba/goku.jpg',
-        // por lo cual, se le da el valor de source como 'imgPrueba/goku.jpg'
-      alt = 'Goku' // Nombre alterno de la imagen
-      nameDownloadImage = 'El meme de Goku' // Nombre de la imagen al ser descargada
+        // Ejemplo: hay una imagen llamada DebianLogo.png en la ruta 'components/reusable/ImagenAsesoria/imgPrueba/DebianLogo.png',
+        // por lo cual, se le da el valor de source como 'imgPrueba/DebianLogo.png'
+      alt = 'Debian' // Nombre alterno de la imagen
+      nameDownloadImage = 'La imagen de Debian' // Nombre de la imagen al ser descargada
     >
     </ImagenAsesoria>
   )
