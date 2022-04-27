@@ -6,7 +6,7 @@ function Ezequiel() {
     <BotonSencillo
       onClick = {() => {alert('Me diste click :)')}}
       backgroundColor = 'verde'
-      size = 'normal'
+      size = 'reducido'
     >
       Aceptar
     </BotonSencillo>
