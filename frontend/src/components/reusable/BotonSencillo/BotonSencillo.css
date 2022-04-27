@@ -1,21 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
 
-:root{
-    --blanco: #FFFFFF;
-    --negro: #000000;
-    --azulCielo: #50C7F1;
-    --rojo: #FF0000;
-    --gris: #949494;
-    --turquesa: #1B4858;
-    --verde: #269D24;
-}
-
 .btn{
     font-family: Dosis;
-    border-radius: 4vw;
+    border-radius: 20px;
     cursor: pointer;
-    font-weight: bold;
     color: var(--blanco);
+}
+
+/* Sizes */
+
+.normal{
+    padding: 15px 30px;
+    font-size: 23px;
+}
+
+.largo{
+    padding: 15px 50px;
+    font-size: 23px;
+}
+
+.grande{
+    padding: 18px 33px;
+    font-size: 27px;
+}
+
+.reducido{
+    padding: 10px 20px;
+    font-size: 23px;
 }
 
 /* Styles */
@@ -44,19 +55,34 @@
     background-color: var(--verde);
 }
 
-/* Sizes */
+/* RESPONSIVE 480 px */
 
-.normal{
-    padding: 20px 40px;
-    font-size: 18px;
-}
+@media screen and (max-width: 480px){
 
-.small{
-    padding: 15px 25px;
-    font-size: 16px;
-}
+    .btn{
+        border-radius: 15px;
+    }
+    
+    /* Sizes */
+    
+    .normal{
+        padding: 10px 25px;
+        font-size: 18px;
+    }
+    
+    .largo{
+        padding: 10px 45px;
+        font-size: 18px;
+    }
+    
+    .grande{
+        padding: 13px 28px;
+        font-size: 22px;
+    }
+    
+    .reducido{
+        padding: 5px 15px;
+        font-size: 18px;
+    }
 
-.large{
-    padding: 30px 50px;
-    font-size: 22px;
 }

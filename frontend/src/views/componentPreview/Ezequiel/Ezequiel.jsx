@@ -5,11 +5,10 @@ function Ezequiel() {
   return (
     <BotonSencillo
       onClick = {() => {alert('Me diste click :)')}}
-      type = 'button'
-      buttonStyle = 'gris'
-      buttonSize = 'normal'
+      backgroundColor = 'verde'
+      size = 'normal'
     >
-      Botón de prueba
+      Aceptar
     </BotonSencillo>
   )
 }

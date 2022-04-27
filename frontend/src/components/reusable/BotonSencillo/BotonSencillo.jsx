@@ -2,7 +2,7 @@ import React from 'react'
 import '../../../index.css'
 import './BotonSencillo.css'
 
-const STYLES = [
+const COLORS = [
     'negro',
     'azulCielo',
     'rojo',
@@ -13,31 +13,30 @@ const STYLES = [
 
 const SIZES = [
     'normal',
-    'small',
-    'large',
+    'largo',
+    'grande',
+    'reducido'
 ]
 
 const BotonSencillo = ({
     onClick,
-    type,
-    buttonStyle,
-    buttonSize,
+    backgroundColor,
+    size,
     children // Contenido del botón
 }) => {
 
-    const checkButtonStyle = STYLES.includes(buttonStyle)
-        ? buttonStyle
-        : STYLES[0];
+    const ButtonBackground = COLORS.includes(backgroundColor)
+        ? backgroundColor
+        : COLORS[0];
 
-    const checkButtonSize = SIZES.includes(buttonSize)
-        ? buttonSize
+    const ButtonSize = SIZES.includes(size)
+        ? size
         : SIZES[0];
 
     return(
         <button
-            className = {`btn ${checkButtonStyle} ${checkButtonSize}`}
+            className = {`btn ${ButtonBackground} ${ButtonSize}`}
             onClick = {onClick}
-            type = {type}
         >
             {children}
         </button>
