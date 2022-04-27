@@ -12,3 +12,4 @@ export {default as Ezequiel } from './views/componentPreview/Ezequiel/Ezequiel.j
 export {default as Fernando } from './views/componentPreview/Fernando/Fernando.jsx'
 
 export {default as BarraLateral } from './components/reusable/BarraLateral/BarraLateral.jsx'
+export { default as BotonSencillo } from './components/reusable/BotonSencillo/BotonSencillo.jsx'
