@@ -13,3 +13,4 @@ export {default as Fernando } from './views/componentPreview/Fernando/Fernando.j
 
 export {default as BarraLateral } from './components/reusable/BarraLateral/BarraLateral.jsx'
 export { default as BotonSencillo } from './components/reusable/BotonSencillo/BotonSencillo.jsx'
+export { default as TarjetaMaestra } from './components/reusable/TarjetaMaestra/TarjetaMaestra.jsx'

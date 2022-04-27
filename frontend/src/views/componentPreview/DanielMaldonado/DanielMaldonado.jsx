@@ -1,10 +1,12 @@
 import React from 'react'
-import { BarraLateral } from '../../../routeIndex'
+import { BarraLateral, TarjetaMaestra } from '../../../routeIndex'
+import './DanielMaldonado.css'
 
 function DanielMaldonado() {
   return (
-    <div>
+    <div className="container">
       <BarraLateral userProp="asesor" temaProp="claro" idiomaProp="espanol" viewProp="calendario"/>
+      <TarjetaMaestra />
     </div>
   )
 }
