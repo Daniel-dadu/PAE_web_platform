@@ -10,6 +10,8 @@ export {default as DanielMaldonado } from './views/componentPreview/DanielMaldon
 export {default as DanielMunive } from './views/componentPreview/DanielMunive/DanielMunive.jsx'
 export {default as Ezequiel } from './views/componentPreview/Ezequiel/Ezequiel.jsx'
 export {default as Fernando } from './views/componentPreview/Fernando/Fernando.jsx'
+
+export {default as ImagenAsesoria } from './components/reusable/ImagenAsesoria/ImagenAsesoria.jsx'
 export {default as Template } from './views/Template/Template.jsx'
 
 export {default as BarraLateral } from './components/reusable/BarraLateral/BarraLateral.jsx'
