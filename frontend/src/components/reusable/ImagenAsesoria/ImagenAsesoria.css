@@ -1,0 +1,31 @@
+.img{
+    cursor: pointer;
+}
+
+/* Sizes */
+
+.normal{
+
+}
+
+.larga{
+
+}
+
+.ancha{
+
+}
+
+.grande{
+
+}
+
+.reducida{
+
+}
+
+/* RESPONSIVE 480 px */
+
+@media screen and (max-width: 480px){
+    
+}
