@@ -10,7 +10,7 @@
             {
                 "name" : "dos",
                 "state": null,
-                "next": "enable"
+                "next": "block"
             }
         ]
     },
@@ -40,7 +40,7 @@
             {
                 "name" : "dos",
                 "state": null,
-                "next": "enable"
+                "next": "refuse"
             }
         ]
     },
@@ -55,7 +55,17 @@
             {
                 "name" : "dos",
                 "state": null,
-                "next": "enable"
+                "next": "restricted"
+            },
+            {
+                "name" : "tres",
+                "state": null,
+                "next": "restricted"
+            },
+            {
+                "name" : "cuatro",
+                "state": null,
+                "next": "restricted"
             }
         ]
     }

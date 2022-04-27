@@ -6,6 +6,9 @@ function Fernando() {
   return (
     <div>
       <BarraProgreso progress={info.uno}/>
+      <BarraProgreso progress={info.dos}/>
+      <BarraProgreso progress={info.tres}/>
+      <BarraProgreso progress={info.cuatro}/>
     </div>
   )
 }
