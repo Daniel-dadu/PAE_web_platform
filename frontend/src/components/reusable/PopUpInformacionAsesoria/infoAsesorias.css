@@ -2,13 +2,14 @@
 
 .container{
     display: flex;
+    align-items: stretch;
     gap: 3px;
     flex-direction: column;
     width: 30%;
     max-width: 30%;
     min-width: 20%;
-    height: 60%;
-    max-height: 60%;
+    height: 80%;
+    max-height: 80%;
     background: #fff;
     border: 3px solid #000000;
     border-radius: 20px;
@@ -22,8 +23,8 @@
 }
 
 .one{
-    
-    border: 3px solid #ff0000;
+
+    /* border: 3px solid #ff0000; */
     overflow-y: hidden;
     overflow-x: hidden;
     max-height: 20%;
@@ -32,7 +33,7 @@
 
 .two{
     
-    border: 3px solid #2bff00;
+    /* border: 3px solid #2bff00; */
     overflow-y: auto;
     overflow-x: hidden;
 
@@ -40,22 +41,41 @@
 
 .three{
 
-    border: 3px solid #001aff;
+    /* border: 3px solid #001aff;*/
+    display: flex;
+    gap: 10px;
+    flex-grow:2;
+    flex-direction: row;
+    justify-content: center;
     overflow-y: hidden;
     overflow-x: hidden;
+    align-items: center;
+
 }
 
 .four{
-    
-    border: 3px solid #ff00bf;
+
+    /* border: 3px solid #ff00bf; */
+    display: flex;
+    gap: 3px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
     overflow-y: hidden;
     overflow-x: hidden;
+    height: 8%;
+
+}
+
+.fourBox{
+    justify-content: flex-start;
 }
 
 
 /* Asesoría Titulo*/
 
 .titulo{
+    top: 10%;
     left: 10%;
     bottom: 20%;
     max-width: 70%;
@@ -67,6 +87,7 @@
     line-height: 30px;
     text-overflow: ellipsis;
     color: #000000;
+    height: 100%;
 }
 
 /* Subtitulo */
@@ -115,8 +136,13 @@
     
 }
 
+.imagenLozano {
+    height: 100%;
+}
 
-
+.botonLozano {
+    height: 100%;
+}
 
 
 @media screen and (max-width: 480px){
@@ -152,4 +178,22 @@
         
     }
 
+    .three{
+
+        /*border: 3px solid #001aff; */ 
+
+        overflow-x: auto;
+    
+    }
+
+    
+    
 }
+
+    @media screen and (max-width: 1280px){
+        .titulo{
+            font-size: 25px;
+            top: -15%;
+        }
+    }
+
