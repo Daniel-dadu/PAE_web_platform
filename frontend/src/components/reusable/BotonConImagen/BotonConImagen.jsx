@@ -1,4 +1,5 @@
 import React from 'react'
+import './BotonConImagen.css'
 
 const COLORS = [
     'negro',
@@ -16,19 +17,19 @@ const SIZES = [
     'reducido'
 ]
 
-function BotonConImagen({ onClick, backgroundColor, size, children }) {
+// La imagen que se recibe solo puede ser un ícono de React
+// El children es el texto
+// Las opciones para backgroundColor y size están en los arrays de arriba
 
-    const ButtonBackground = COLORS.includes(backgroundColor)
-        ? backgroundColor
-        : COLORS[0];
+function BotonConImagen({ onClick, backgroundColor, size, Image, children }) {
 
-    const ButtonSize = SIZES.includes(size)
-        ? size
-        : SIZES[0];
+    const ButtonBackground = COLORS.includes(backgroundColor) ? backgroundColor : COLORS[0];
+
+    const ButtonSize = SIZES.includes(size) ? size : SIZES[0];
 
     return (
         <button className = {`btn ${ButtonBackground} ${ButtonSize}`} onClick = {onClick}>
-            {children}
+            <p>{children}</p> <div><Image/></div>
         </button>
     )
 }
