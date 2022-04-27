@@ -10,13 +10,10 @@ import usa_flag_icon from '../../../assets/usa_flag_icon.png'
 
 import btnInfo from './btnInfo'
 
-function BarraLateral() {
+function BarraLateral({userProp, temaProp, idiomaProp, viewProp}) {
 
     // IMPORTANTE: Usar estos strings no es muy eficiente para el componente final, evaluar si se cambia por números 
-    let userProp = "asesorado"
-    let temaProp = "claro"
-    let idiomaProp = "espanol"
-    let viewProp = "perfil" // Vista actual en la que se muestra la barra
+
     /*
     Tipos de viewProp:
     "perfil"

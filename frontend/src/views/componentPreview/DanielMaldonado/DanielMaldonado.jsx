@@ -4,7 +4,7 @@ import { BarraLateral } from '../../../routeIndex'
 function DanielMaldonado() {
   return (
     <div>
-      <BarraLateral />
+      <BarraLateral userProp="asesor" temaProp="claro" idiomaProp="espanol" viewProp="calendario"/>
     </div>
   )
 }
