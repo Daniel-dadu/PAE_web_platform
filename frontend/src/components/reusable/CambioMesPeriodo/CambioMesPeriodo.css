@@ -1,0 +1,51 @@
+/* Cambio Mes Periodo component */
+
+.containerCambioMP{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 310px;
+    height: 65px;
+    background: #898989;
+    border-radius: 10px;
+
+  }
+
+.arrowBackMP{
+    justify-content: center;
+    overflow-wrap: normal;
+}
+
+.arrowForwardMP{
+    justify-content: center;
+    
+}
+
+.textMP{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+    
+}
+
+.textSup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    flex-basis: 61%;
+      
+}
+
+.textInf{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 208px;
+    height: 25px;
+    background: #1B4858;
+    border-radius: 10px 10px 0px 0px;
+}

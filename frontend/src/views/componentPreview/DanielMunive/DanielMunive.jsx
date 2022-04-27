@@ -1,8 +1,12 @@
 import React from 'react'
+import { PopUpInformacionAsesoria } from '../../../routeIndex'
+import { CambioMesPeriodo }  from '../../../routeIndex'
 
 function DanielMunive() {
   return (
-    <div>DanielMunive</div>
+    <>
+    <CambioMesPeriodo> </CambioMesPeriodo>
+    </>
   )
 }
 
