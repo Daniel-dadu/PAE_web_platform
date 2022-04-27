@@ -5,7 +5,7 @@ En las imágenes de la barra (react-icons), usaré los siguientes códigos que h
 3 - BsPeople (agendar asesoría)
 4 - BiEdit (Administrar)
 */
-export default {
+let btnInfo = {
     "asesor": {
         "buttons": [
             {
@@ -69,3 +69,5 @@ export default {
         "selectedButtonColor": "#1B5558"
     }
 }
+
+export default btnInfo

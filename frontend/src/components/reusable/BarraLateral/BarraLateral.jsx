@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import React from 'react'
 import './BarraLateral.css'
 
 import { BiCalendar, BiEdit } from 'react-icons/bi'
@@ -64,7 +64,7 @@ function BarraLateral({userProp, temaProp, idiomaProp, viewProp}) {
                         </a>
                         </div>
                 } else if(btn.image === 3){
-                    let agendarSelected = viewProp == "agendarAsesoria"
+                    let agendarSelected = viewProp === "agendarAsesoria"
                     return <div className={'barra_button' + (agendarSelected ? ' barra_button-selected' : '')} style={{height: heightBtn}}>
                         <a href="/agendarAsesoria">
                         <BsPeople className={'icon_bar' + (agendarSelected ? ' selected_icon' : '')} size={barIconSize}/> 
@@ -72,7 +72,7 @@ function BarraLateral({userProp, temaProp, idiomaProp, viewProp}) {
                         </a>
                         </div>
                 } else {
-                    let administrarSelected = viewProp == "administrar"
+                    let administrarSelected = viewProp === "administrar"
                     return <div className={'barra_button' + (administrarSelected ? ' barra_button-selected' : '')} style={{height: heightBtn}}>
                         <a href="/administrar">
                         <BiEdit className={'icon_bar' + (administrarSelected ? ' selected_icon' : '')} size={barIconSize}/>
@@ -86,10 +86,10 @@ function BarraLateral({userProp, temaProp, idiomaProp, viewProp}) {
         </div>
 
         <div className='footer-container'>
-            <a href="">
+            <a href={"/" + viewProp}>
                 {(temaProp === "claro") ? <MdNightlight className='theme-icon' size={50} /> : <MdLightMode className='theme-icon' size={50} />}
             </a>
-            <a href="">
+            <a href={"/" + viewProp}>
                 {(idiomaProp === "espanol") ? <img src={usa_flag_icon} alt="" /> : <img src={mexico_flag_icon} alt="" />}
             </a>
         </div>
