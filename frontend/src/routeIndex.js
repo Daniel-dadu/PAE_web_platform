@@ -11,4 +11,3 @@ export {default as DanielMunive } from './views/componentPreview/DanielMunive/Da
 export {default as Ezequiel } from './views/componentPreview/Ezequiel/Ezequiel'
 export {default as Fernando } from './views/componentPreview/Fernando/Fernando'
 export {default as CambioMesPeriodo } from './components/reusable/CambioMesPeriodo/CambioMesPeriodo.jsx'
-export {default as PopUpInformacionAsesoria } from './components/reusable/PopUpInformacionAsesoria/PopUpInformacionAsesoria.jsx'
