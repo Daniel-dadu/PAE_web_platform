@@ -1,11 +1,17 @@
 import React from 'react'
-import { Template } from '../../../routeIndex'
+import { Template, BotonConImagen } from '../../../routeIndex'
+
 import './DanielMaldonado.css'
+import { IoMdCopy } from 'react-icons/io'
 
 function DanielMaldonado() {
   return (
     <div>
       <Template user="asesorado" tema="claro" idioma="espanol" view="calendario">
+        <BotonConImagen onClick = {() => {alert('Me diste click :)')}} backgroundColor = 'verde' size = 'reducido' Image={IoMdCopy}>
+          Cerrar sesion
+        </BotonConImagen>
+
         <h1>sdjahfsd</h1>
         <a href="/asdf">link</a>
         <ul>
