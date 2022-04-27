@@ -10,10 +10,16 @@ import usa_flag_icon from '../../../assets/usa_flag_icon.png'
 
 import btnInfo from './btnInfo'
 
+const routeBtn = (image, user) => {
+    return typeof image === "string" ? 
+    (user === "asesor" ? "/perfilAsesor" : user === "asesorado" ? "/perfilAsesorado" : "/perfilDirectivo") 
+    : image === 1 ? "/calendario" : image === 3 ? "/agendarAsesoria" : "/"
+}
+
 function BarraLateral() {
 
     // IMPORTANTE: Usar estos strings no es muy eficiente para el componente final, evaluar si se cambia por números 
-    let user = "asesorado"
+    let user = "directivo"
     let tema = "claro"
     let idioma = "espanol"
     const barIconSize = 80
@@ -21,7 +27,7 @@ function BarraLateral() {
   return (
     <div className='barra_lateral-container'>
         <div className='pae_logo-container'>
-            <a href="">
+            <a href="/">
                 <img src={pae_logo} alt="Logo PAE" />
             </a>
         </div>
@@ -29,8 +35,8 @@ function BarraLateral() {
         <div className='barra-container' style={{backgroundColor: btnInfo[user].backgroundColor }}>
             {
             btnInfo[user].buttons.map((btn) => 
-                <div className='barra_button' style={{height: (user == "asesor") ? '33%' : '25%'}}>
-                <a href="">
+                <div className='barra_button' style={{height: (user === "asesor") ? '33%' : '25%'}}>
+                <a href={ routeBtn(btn.image, user) }>
                 {
                 (typeof btn.image === "string") ? <img src={btn.image} alt="" />
                 : (btn.image === 1) ? <BiCalendar className='icon' size={barIconSize}/>
@@ -47,10 +53,10 @@ function BarraLateral() {
 
         <div className='footer-container'>
             <a href="">
-                {(tema == "claro") ? <MdNightlight className='theme-icon' size={50} /> : <MdLightMode className='theme-icon' size={50} />}
+                {(tema === "claro") ? <MdNightlight className='theme-icon' size={50} /> : <MdLightMode className='theme-icon' size={50} />}
             </a>
             <a href="">
-                {(idioma == "espanol") ? <img src={usa_flag_icon} alt="" /> : <img src={mexico_flag_icon} alt="" />}
+                {(idioma === "espanol") ? <img src={usa_flag_icon} alt="" /> : <img src={mexico_flag_icon} alt="" />}
             </a>
         </div>
 
