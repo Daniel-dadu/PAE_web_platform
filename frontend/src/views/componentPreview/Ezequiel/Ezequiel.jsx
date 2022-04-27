@@ -6,8 +6,8 @@ function Ezequiel() {
     <BotonSencillo
       onClick = {() => {alert('Me diste click :)')}}
       type = 'button'
-      buttonStyle = 'btn--style--normal'
-      buttonSize = 'btn--size--large'
+      buttonStyle = 'gris'
+      buttonSize = 'normal'
     >
       Botón de prueba
     </BotonSencillo>

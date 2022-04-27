@@ -3,15 +3,18 @@ import '../../../index.css'
 import './BotonSencillo.css'
 
 const STYLES = [
-    'btn--style--normal',
-    'btn--style--dark',
-    'btn--style--light'
+    'negro',
+    'azulCielo',
+    'rojo',
+    'gris',
+    'turquesa',
+    'verde'
 ]
 
 const SIZES = [
-    'btn--size--normal',
-    'btn--size--small',
-    'btn--size--large',
+    'normal',
+    'small',
+    'large',
 ]
 
 const BotonSencillo = ({

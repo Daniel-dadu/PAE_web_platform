@@ -1,45 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
 
 :root{
-    --normal: #4628FF;
-    --dark: #C3C3C3;
-    --light: #FFD028;
-    --white: #FFFFFF;
+    --blanco: #FFFFFF;
+    --negro: #000000;
+    --azulCielo: #50C7F1;
+    --rojo: #FF0000;
+    --gris: #949494;
+    --turquesa: #1B4858;
+    --verde: #269D24;
 }
 
 .btn{
     font-family: Dosis;
+    border-radius: 4vw;
     cursor: pointer;
+    font-weight: bold;
+    color: var(--blanco);
 }
 
 /* Styles */
 
-.btn--style--normal{
-    background-color: var(--normal);
-    color: var(--white);
+.negro{
+    background-color: var(--negro);
 }
 
-.btn--style--dark{
-    background-color: var(--dark);
+.azulCielo{
+    background-color: var(--azulCielo);
 }
 
-.btn--style--light{
-    background-color: var(--light);
+.rojo{
+    background-color: var(--rojo);
+}
+
+.gris{
+    background-color: var(--gris);
+}
+
+.turquesa{
+    background-color: var(--turquesa);
+}
+
+.verde{
+    background-color: var(--verde);
 }
 
 /* Sizes */
 
-.btn--size--normal{
-    padding: 10px 20px;
-    font-size: 12px;
-}
-
-.btn--size--small{
-    padding: 5px 10px;
-    font-size: 8px;
-}
-
-.btn--size--large{
+.normal{
     padding: 20px 40px;
     font-size: 18px;
+}
+
+.small{
+    padding: 15px 25px;
+    font-size: 16px;
+}
+
+.large{
+    padding: 30px 50px;
+    font-size: 22px;
 }
