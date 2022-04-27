@@ -48,15 +48,25 @@
     padding: 10px 0px;
 }
 
-.barra_button .icon, .barra_button p {
+.barra_button-selected {
+    background-color: #1f3741;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.icon_bar, .btn-text {
     color: #000;
     vertical-align: top;
 }
 
-.barra_button img {
+.profile-img {
     width: 50%;
     border-radius: 100%;
     border: 3px solid #000;
+}
+
+.selected_icon {
+    border-color: #FFF;
+    color: #FFF;
 }
 
 .barra_button:hover {
@@ -68,7 +78,7 @@
     border-color: #FFF;
 }
 
-.barra_button:hover .icon, .barra_button:hover p {
+.barra_button:hover .icon_bar, .barra_button:hover .btn-text {
     color: #FFF;
 }
 
