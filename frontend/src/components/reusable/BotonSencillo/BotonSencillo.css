@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap');
+
+:root{
+    --normal: #4628FF;
+    --dark: #C3C3C3;
+    --light: #FFD028;
+    --white: #FFFFFF;
+}
+
+.btn{
+    font-family: Dosis;
+    cursor: pointer;
+}
+
+/* Styles */
+
+.btn--style--normal{
+    background-color: var(--normal);
+    color: var(--white);
+}
+
+.btn--style--dark{
+    background-color: var(--dark);
+}
+
+.btn--style--light{
+    background-color: var(--light);
+}
+
+/* Sizes */
+
+.btn--size--normal{
+    padding: 10px 20px;
+    font-size: 12px;
+}
+
+.btn--size--small{
+    padding: 5px 10px;
+    font-size: 8px;
+}
+
+.btn--size--large{
+    padding: 20px 40px;
+    font-size: 18px;
+}

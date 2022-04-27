@@ -1,8 +1,16 @@
 import React from 'react'
+import { BotonSencillo } from '../../../routeIndex'
 
 function Ezequiel() {
   return (
-    <div>Ezequiel</div>
+    <BotonSencillo
+      onClick = {() => {alert('Me diste click :)')}}
+      type = 'button'
+      buttonStyle = 'btn--style--normal'
+      buttonSize = 'btn--size--large'
+    >
+      Botón de prueba
+    </BotonSencillo>
   )
 }
 
