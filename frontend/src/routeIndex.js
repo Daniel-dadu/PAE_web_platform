@@ -20,3 +20,5 @@ export { default as TarjetaMaestra } from './components/reusable/TarjetaMaestra/
 export { default as BotonConImagen } from './components/reusable/BotonConImagen/BotonConImagen.jsx'
 
 export {default as BarraProgreso } from './components/reusable/BarraProgreso/BarraProgreso.jsx'
+
+export {default as CampoSeleccionarEnListaDesplegable } from './components/reusable/CampoSeleccionarEnListaDesplegable/CampoSeleccionarEnListaDesplegable.jsx'

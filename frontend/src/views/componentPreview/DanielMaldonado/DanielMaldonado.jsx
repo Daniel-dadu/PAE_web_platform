@@ -1,5 +1,5 @@
 import React from 'react'
-import { Template, BotonConImagen } from '../../../routeIndex'
+import { Template, BotonConImagen, CampoSeleccionarEnListaDesplegable } from '../../../routeIndex'
 
 import './DanielMaldonado.css'
 import { IoMdCopy } from 'react-icons/io'
@@ -11,6 +11,8 @@ function DanielMaldonado() {
         <BotonConImagen onClick = {() => {alert('Me diste click :)')}} backgroundColor = 'verde' size = 'reducido' Image={IoMdCopy}>
           Cerrar sesion
         </BotonConImagen>
+
+        <CampoSeleccionarEnListaDesplegable />
 
         <h1>sdjahfsd</h1>
         <a href="/asdf">link</a>
