@@ -18,6 +18,7 @@ export {default as BarraLateral } from './components/reusable/BarraLateral/Barra
 export { default as BotonSencillo } from './components/reusable/BotonSencillo/BotonSencillo.jsx'
 export { default as TarjetaMaestra } from './components/reusable/TarjetaMaestra/TarjetaMaestra.jsx'
 export { default as BotonConImagen } from './components/reusable/BotonConImagen/BotonConImagen.jsx'
+export {default as DiaCalendario } from './components/reusable/DiaCalendario/DiaCalendario.jsx'
 
 export {default as BarraProgreso } from './components/reusable/BarraProgreso/BarraProgreso.jsx'
 
