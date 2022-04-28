@@ -29,3 +29,4 @@ export {default as CampoTextoGrande } from './components/reusable/CampoTextoGran
 export {default as TarjetaMaestraMini } from './components/reusable/TarjetaMaestraMini/TarjetaMaestraMini.jsx'
 
 export {default as SeleccionarHorarioAsesoria } from './components/reusable/SeleccionarHorarioAsesoria/SeleccionarHorarioAsesoria.jsx'
+export {default as CalendarioMini } from './components/reusable/CalendarioMini/CalendarioMini.jsx'
