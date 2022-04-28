@@ -19,3 +19,11 @@ export { default as BotonSencillo } from './components/reusable/BotonSencillo/Bo
 export { default as TarjetaMaestra } from './components/reusable/TarjetaMaestra/TarjetaMaestra.jsx'
 export { default as BotonConImagen } from './components/reusable/BotonConImagen/BotonConImagen.jsx'
 export {default as DiaCalendario } from './components/reusable/DiaCalendario/DiaCalendario.jsx'
+
+export {default as BarraProgreso } from './components/reusable/BarraProgreso/BarraProgreso.jsx'
+
+export {default as CampoSeleccionarEnListaDesplegable } from './components/reusable/CampoSeleccionarEnListaDesplegable/CampoSeleccionarEnListaDesplegable.jsx'
+
+export {default as CampoTextoPequeno } from './components/reusable/CampoTextoPequeno/CampoTextoPequeno.jsx'
+export {default as CampoTextoGrande } from './components/reusable/CampoTextoGrande/CampoTextoGrande.jsx'
+export {default as TarjetaMaestraMini } from './components/reusable/TarjetaMaestraMini/TarjetaMaestraMini.jsx'
