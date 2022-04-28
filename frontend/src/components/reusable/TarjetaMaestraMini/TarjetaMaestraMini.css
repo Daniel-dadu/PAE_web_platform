@@ -1,0 +1,10 @@
+:root {
+    --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.tarjeta_maestra_mini {
+    box-shadow: var(--box-shadow);
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    margin: auto;
+}
