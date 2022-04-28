@@ -1,5 +1,5 @@
 import React from 'react'
-import { Template, BotonConImagen, CampoSeleccionarEnListaDesplegable, CampoTextoPequeno } from '../../../routeIndex'
+import { Template, BotonConImagen, CampoSeleccionarEnListaDesplegable, CampoTextoPequeno, CampoTextoGrande } from '../../../routeIndex'
 
 import './DanielMaldonado.css'
 import { IoMdCopy } from 'react-icons/io'
@@ -25,6 +25,11 @@ function DanielMaldonado() {
         <br />
         
         <CampoTextoPequeno size="last"/>
+        
+        <br />
+        <br />
+        
+        <CampoTextoGrande size="last"/>
 
         <h1>sdjahfsd</h1>
         <a href="/asdf">link</a>
