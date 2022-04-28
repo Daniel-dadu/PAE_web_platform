@@ -36,7 +36,14 @@ function DanielMaldonado() {
         <br />
         <br />
 
-        <TarjetaMaestraMini size="normal"/>
+        <TarjetaMaestraMini size="normal">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit tenetur ipsum excepturi accusamus eius facilis tempora unde quae ad inventore quia consequuntur animi illum hic, aliquam ducimus corrupti ullam perferendis?</p>
+          <br />
+          <BotonConImagen onClick = {() => {alert('Me diste click :)')}} backgroundColor = 'verde' size = 'reducido' Image={IoMdCopy} >
+          Cerrar sesion
+          </BotonConImagen>
+
+        </TarjetaMaestraMini>
 
       </Template>
     </div>
