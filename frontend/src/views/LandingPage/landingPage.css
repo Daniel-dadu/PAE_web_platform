@@ -122,7 +122,10 @@ a {
 .funcionamiento {
     height: 80vh;
     width: 70%;
-    background: #fff;
+    background-image: url(../../assets/blob-haikei.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -145,7 +148,7 @@ a {
     font-size: 3rem;
     font-weight: 800;
     margin: 0;
-    color: #fff;
+    color: #455A64;
     margin-bottom: 20px;
     z-index: 9;
 
@@ -155,18 +158,8 @@ a {
     font-family: 'Dosis', sans-serif;
     font-size: 2rem;
     font-weight: 400;
-    color: #fff;
+    color: #455A64;
     z-index: 9;
-}
-
-.funcionamiento .blob-funcionamiento {
-    height: 110%;
-    width: 110%;
-    position: absolute;
-    /* left: -40%; */
-    z-index: 8;
-    /* top:  calc( calc( 100vh - 68px) - 100px); */
-    
 }
 
 .funcionamiento .der {
@@ -187,30 +180,231 @@ a {
 
 
 
-
+/* sección de pasos de inscripcion en la plataforma */
 .pasos-inscripcion {
     height: 100vh;
     width: 70%;
-    background: green;
+    background: #fff;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.pasos-inscripcion .arriba {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.pasos-inscripcion .arriba .contenedor-pasos {
+    width: 30%;
+    height: 80%;
+    background: #50C7F1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 30px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    -webkit-box-shadow: 6px 9px 34px -11px #000000; 
+    box-shadow: 6px 9px 34px -11px #000000;
+}
+
+.pasos-inscripcion .arriba .contenedor-pasos .circulo {
+    width: 80px;
+    height: 80px;
+    background: #1B4858;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    font-size: 2.5rem;
+
+}
+
+.pasos-inscripcion .arriba .contenedor-pasos .descripcion-paso {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+
+.pasos-inscripcion .abajo {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.pasos-inscripcion .abajo .contenedor-pasos {
+    width: 30%;
+    height: 80%;
+    background: #50C7F1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 30px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    -webkit-box-shadow: 6px 9px 34px -11px #000000; 
+    box-shadow: 6px 9px 34px -11px #000000;
+}
+
+.pasos-inscripcion .abajo .contenedor-pasos .descripcion-paso {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.pasos-inscripcion .abajo .contenedor-pasos .circulo {
+    width: 80px;
+    height: 80px;
+    background: #1B4858;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    font-size: 2.5rem;
+}
+
+.pasos-inscripcion .btn-final-pasos {
+    width: 15%;
+    height: 50px;
+    background: #455A64;
+    border-radius: 50px;
+    font-size: 2rem;
+    color: #ffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 6px 9px 34px -11px #000000; 
+    box-shadow: 6px 9px 34px -11px #000000;
+    transition: all 0.2s ease-in-out;
+
+}
+
+.pasos-inscripcion button:hover {
+    background: #3796B8;
 }
 
 .objetivos {
     height: 100vh;
     width: 70%;
-    background: green;
+    background-image: url(../../assets/wave-haikei.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
 }
 
-.equipo-trabajo {
-    height: 100vh;
-    width: 70%;
-    background: green;
+.objetivos .izq {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    padding: 1.5rem;
+    font-family: 'Dosis', sans-serif;
+    color: #000;
 }
+
+.objetivos .izq h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.objetivos .izq p {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.objetivos .der {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+}
+
+/* seccion de equipo de trabajo */
+
+.equipo-trabajo {
+    height: auto;
+    width: 70%;
+    background: #0066FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.equipo-trabajo .titulo-equipo-trabajo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    background: #0066FF;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.5rem;
+}
+.equipo-trabajo .contenedor-cartas {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    /* height: 80%; */
+    height: auto;
+    background: #0066FF;
+    flex-wrap: wrap;
+}
+
+.equipo-trabajo .contenedor-cartas .carta {
+    height: 70%;
+    width: 30%;
+    background: #ffff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    flex-direction: column;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.3rem;
+    padding: 1.2rem;
+    text-align: center;
+    -webkit-box-shadow: 6px 9px 34px -11px #000000; 
+    box-shadow: 6px 9px 34px -11px #000000;
+    border-radius: 15px;
+    min-width: 300px;
+    min-height: 350px;
+    margin-bottom: 50px;
+ }

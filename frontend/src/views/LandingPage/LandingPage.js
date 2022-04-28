@@ -1,6 +1,7 @@
 import React from 'react'
 import { Nav, NavLink, Bars, NavMenu } from './NavbarElements';
 import './landingPage.css';
+import { FaPen, FaBookmark, FaAddressBook, FaHandsHelping, FaChevronDown } from 'react-icons/fa';
 
 export const LandingPage = () => {
   return (
@@ -79,9 +80,6 @@ export const LandingPage = () => {
 
 
             <div className='izq'>
-                <svg className='blob-funcionamiento' viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <path className='blob-funcionamiento' fill="#455A64" d="M57.1,-57.2C70,-44.1,73.9,-22.1,72.8,-1.1C71.7,19.8,65.6,39.6,52.6,54.9C39.6,70.2,19.8,81,-1.5,82.5C-22.9,84.1,-45.8,76.4,-56.3,61.1C-66.8,45.8,-64.8,22.9,-64.1,0.8C-63.3,-21.4,-63.7,-42.7,-53.2,-55.9C-42.7,-69,-21.4,-73.9,0.3,-74.2C22.1,-74.6,44.1,-70.4,57.1,-57.2Z" transform="translate(100 100)" />
-                </svg>
                <h1> Funcionamiento del Programa </h1>
                <p>
                El programa de asesor estudiante funciona de manera sencilla y rápida, trayendo como beneficios, entre otros, la oportunidad de conocer nuevas personas y mejoar calificaciones. 
@@ -96,16 +94,98 @@ export const LandingPage = () => {
 
        <section className='pasos-inscripcion'>
                
+               <div className='arriba'>
+                    <div className='contenedor-pasos'>
+                        <div className='circulo'>
+                            <FaPen />
+                        </div>
+                        <div className='descripcion-paso'>
+                            <b>Paso 1</b>
+                            <p>Registratrarse en la plataforma del PAE</p>
+                        </div>
+                    </div>
+                    <div className='contenedor-pasos'>
+                        <div className='circulo'>
+                            <FaBookmark />
+                        </div>
+                        <div className='descripcion-paso'>
+                            <b>Paso 2</b>
+                            <p>Solicita una asesoria y manda tu duda especifica.</p>
+                        </div>
+                    </div>
+               </div>
 
 
+               <div className='abajo'>
+                     <div className='contenedor-pasos'>
+                        <div className='circulo'>
+                            <FaAddressBook />
+                        </div>
+                        <div className='descripcion-paso'>
+                            <b>Paso 3</b>
+                            <p>Espera la asignacion de un asesor</p>
+                        </div>
+                    </div>
+                    <div className='contenedor-pasos'>
+                        <div className='circulo'>
+                            <FaHandsHelping />
+                        </div>
+                        <div className='descripcion-paso'>
+                            <b>Paso 4</b>
+                            <p>Asiste a la asesoria en lugar y momento indicado.</p>
+                        </div>
+                    </div>
+               </div>
+               <button className='btn-final-pasos'>
+                <FaChevronDown />
+               </button>
        </section>
 
        <section className='objetivos' id='objetivos'>
-            objetivos
-       </section>
+            
+            <div className='izq'>
+               <h1>Objetivos</h1>
+               <p>
+                    El Programa Asesor Estudiante, mejor conocido como
+                    el PAE, busca apoyar a nuestros alumnos a través de
+                    asesorías impartidas por sus mismos compañeros de
+                    carrera, mediante dichas asesorías, nuestros
+                    estudiantes podrán compartir dudas y experiencias
+                    con chavos de su misma edad, quienes les explicarán,
+                    de una manera mucho más sencilla, los contenidos de
+                    sus materias.
+               </p>
+            </div>
+
+            <div className='der'>
+               <img  src={ require('../../assets/estudiando3-img.png') } alt='PAE' />
+            </div>    
+        </section>
 
        <section className='equipo-trabajo' id='equipo-trabajo'>
-            Equipo de trabajo
+            
+               <div className='titulo-equipo-trabajo'>
+                    <h1>Equipo de trabajo</h1>
+               </div>
+               <div className='contenedor-cartas'>
+                    <div className='carta'>
+                        <img  src={ require('../../assets/perfil-equipo-trabajo-img.png') } alt='PAE' />
+                        <b>CYNTHIA MARLENE VEGA GÓMEZ</b>
+                        <p>Directora de Bienestar Estudiantil</p>
+                    </div>
+                    <div className='carta'>
+                        <img  src={ require('../../assets/perfil-equipo-trabajo-img.png') } alt='PAE' />
+                        <b>EVANGELINA FINNEY CABAÑAS</b>
+                        <p>Líder de Mejoramiento Académico</p>
+                    </div>
+                    <div className='carta'>
+                        <img  src={ require('../../assets/perfil-equipo-trabajo-img.png') } alt='PAE' />
+                        <b>DANIELA VILLEGAS MONCAYO</b>
+                        <p>Coordinadora de PAE</p>
+                    </div>
+               </div>
+
+
        </section>
     </>
   )
