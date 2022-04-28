@@ -67,34 +67,61 @@
 
 // 3. Uso del componente del día del calendario
 
+// import React from 'react'
+// import { DiaCalendario } from '../../../routeIndex'
+// import AsesoriasJSON from '../../../components/reusable/DiaCalendario/PruebaAsesorias.json'
+
+// function Ezequiel() {
+//   return (
+//     <DiaCalendario
+//       isActive = '1' // Determina si hay o no asesorías en ese día
+//         // 0 significa que no hay asesorías agendadas
+//         // 1 significa que hay asesorías agendadas
+//       userType = 'alumno' // Se usa si hay al menos una asesoría agendada en ese día
+//         // alumno
+//         // directivo
+//       onClickDirectivo = {() => {alert('Debo abrir la pantalla de asesorías existentes :)')}}
+//         // Se usa solo si el tipo de usuario es un directivo
+//         // El evento de click se aplica al botón de 'Múltiples asesorías'
+//       asesorias = {AsesoriasJSON} // Se usa solo si hay al menos una asesoría agendada y el tipo de usuario es 'alumno'
+//         // JSON con las asesorías del día
+//         // NOTA: en el archivo JSON debe existir un campo "status", "hora" y "openPanel",
+//         // este último debe almacenar la función para abrir el panel de cada asesoría en específico.
+//         // Para comprender mejor esto se debe ver el archivo 'PruebaAsesorias.json' encontrado en la carpeta de este componente
+//       numeroDia = '23' // Número del día del componente
+//       size = 'normal' // Tamaño del componente
+//         // normal
+//         // grande
+//         // reducido
+//     >
+//     </DiaCalendario>
+//   )
+// }
+
+// export default Ezequiel
+
+// 4. Uso del componente del calendario
+
 import React from 'react'
-import { DiaCalendario } from '../../../routeIndex'
-import AsesoriasJSON from '../../../components/reusable/DiaCalendario/PruebaAsesorias.json'
+import { ComponenteCalendario } from '../../../routeIndex'
+import CalendarioJSON from '../../../components/reusable/Calendario/PruebaCalendario.json'
 
 function Ezequiel() {
   return (
-    <DiaCalendario
-      isActive = '1' // Determina si hay o no asesorías en ese día
-        // 0 significa que no hay asesorías agendadas
-        // 1 significa que hay asesorías agendadas
-      userType = 'alumno' // Se usa si hay al menos una asesoría agendada en ese día
+    <ComponenteCalendario
+      userTypeCalendario = 'alumno' // Se usa para definir el tipo de usuario que ve el calendario
         // alumno
         // directivo
-      onClickDirectivo = {() => {alert('Debo abrir la pantalla de asesorías existentes :)')}}
-        // Se usa solo si el tipo de usuario es un directivo
-        // El evento de click se aplica al botón de 'Múltiples asesorías'
-      asesorias = {AsesoriasJSON} // Se usa solo si hay al menos una asesoría agendada y el tipo de usuario es 'alumno'
-        // JSON con las asesorías del día
-        // NOTA: en el archivo JSON debe existir un campo "status", "hora" y "openPanel",
-        // este último debe almacenar la función para abrir el panel de cada asesoría en específico.
-        // Para comprender mejor esto se debe ver el archivo 'PruebaAsesorias.json' encontrado en la carpeta de este componente
-      numeroDia = '23' // Número del día del componente
-      size = 'normal' // Tamaño del componente
+      diasCalendario = {CalendarioJSON} // JSON con los días (y cada día con sus asesorías) de la semana
+        // NOTA: en el archivo JSON debe existir un campo "numeroDia", "isActive", "asesorias" y "onClickDirectivo",
+        // este último debe almacenar la función para abrir el menú de todas las asesorías para un día en específico (SOLO APLICA CUANDO EL USUARIO ES DIRECTIVO, NO ALUMNO)
+        // Para comprender mejor esto se debe ver el archivo 'PruebaCalendario.json' encontrado en la carpeta de este componente
+      sizeCalendario = 'reducido' // Tamaño del componente
         // normal
         // grande
         // reducido
     >
-    </DiaCalendario>
+    </ComponenteCalendario>
   )
 }
 

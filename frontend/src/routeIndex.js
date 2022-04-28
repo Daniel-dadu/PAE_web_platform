@@ -27,3 +27,4 @@ export {default as CampoSeleccionarEnListaDesplegable } from './components/reusa
 export {default as CampoTextoPequeno } from './components/reusable/CampoTextoPequeno/CampoTextoPequeno.jsx'
 export {default as CampoTextoGrande } from './components/reusable/CampoTextoGrande/CampoTextoGrande.jsx'
 export {default as TarjetaMaestraMini } from './components/reusable/TarjetaMaestraMini/TarjetaMaestraMini.jsx'
+export {default as ComponenteCalendario } from './components/reusable/Calendario/Calendario.jsx'
