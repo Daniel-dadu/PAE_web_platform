@@ -1,9 +1,16 @@
 import React from 'react'
 import './CampoTextoPequeno.css'
 
-function CampoTextoPequeno() {
+// Descripción de las propedades
+/*
+size: se recibe un string que puede ser "small", "medium" o "big"
+*/
+
+function CampoTextoPequeno({ size }) {
   return (
-    <div>CampoTextoPequeno</div>
+    <div className="container_ctp">
+        <input type="text" style={{width: size === "small" ? "150px" : size === "medium" ? "350px" : "80%"}}/>
+    </div>
   )
 }
 

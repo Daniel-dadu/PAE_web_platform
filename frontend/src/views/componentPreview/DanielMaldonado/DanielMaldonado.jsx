@@ -21,7 +21,10 @@ function DanielMaldonado() {
 
         <CampoSeleccionarEnListaDesplegable options={list} size="big"/>
 
-        <CampoTextoPequeno />
+        <br />
+        <br />
+        
+        <CampoTextoPequeno size="last"/>
 
         <h1>sdjahfsd</h1>
         <a href="/asdf">link</a>
