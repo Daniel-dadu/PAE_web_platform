@@ -22,3 +22,5 @@ export { default as BotonConImagen } from './components/reusable/BotonConImagen/
 export {default as BarraProgreso } from './components/reusable/BarraProgreso/BarraProgreso.jsx'
 
 export {default as CampoSeleccionarEnListaDesplegable } from './components/reusable/CampoSeleccionarEnListaDesplegable/CampoSeleccionarEnListaDesplegable.jsx'
+
+export {default as CampoTextoPequeno } from './components/reusable/CampoTextoPequeno/CampoTextoPequeno.jsx'
