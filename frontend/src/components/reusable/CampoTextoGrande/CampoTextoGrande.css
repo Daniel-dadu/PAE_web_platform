@@ -1,0 +1,13 @@
+.container_ctg {
+    display: inline;
+}
+
+.container_ctg textarea {
+    font-size: 1rem;
+    padding: 10px;
+    margin: 0;
+    border: none;
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    resize: none;
+}
