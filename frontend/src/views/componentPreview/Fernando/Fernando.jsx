@@ -5,7 +5,7 @@ import info from  './calendario.json'
 function Fernando() {
   return (
     <div>
-      <CalendarioMini calendar={info} year="2022" monthIndex="0"/>
+      <CalendarioMini calendar={info} year="2022" monthIndex="2"/>
     </div>
   )
 }

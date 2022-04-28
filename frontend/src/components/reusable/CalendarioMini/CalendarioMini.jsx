@@ -19,20 +19,20 @@ function CalendarioMini(props){
     return(
         <div className='calendario_mini_container'>
             <div className='calendario_mini_top'>
-                <button type="button"><i className="arrow left"></i></button>
+                <button type="button" className='buttonArrow'><i className="arrow left"></i></button>
                 <span>{Object.keys(props.calendar.months[props.monthIndex])} - {props.year}</span>
-                <button type="button"><i className="arrow right"></i></button>
+                <button type="button" className='buttonArrow'><i className="arrow right"></i></button>
             </div>
             <table className='calendario_mini_month'>
                 <tbody>
                     <tr>
-                        <th>Domingo</th>
-                        <th>Lunes</th>
-                        <th>Martes</th>
-                        <th>Mercoles</th>
-                        <th>Jueves</th>
-                        <th>Viernes</th>
-                        <th>Sabado</th>
+                        <th className='calendario_mini_week_day'>Domingo</th>
+                        <th className='calendario_mini_week_day'>Lunes</th>
+                        <th className='calendario_mini_week_day'>Martes</th>
+                        <th className='calendario_mini_week_day'>Mercoles</th>
+                        <th className='calendario_mini_week_day'>Jueves</th>
+                        <th className='calendario_mini_week_day'>Viernes</th>
+                        <th className='calendario_mini_week_day'>Sabado</th>
                     </tr>
                     {Object.values(props.calendar.months[props.monthIndex]).map((weeks) => {
                         return (
@@ -41,7 +41,7 @@ function CalendarioMini(props){
                                     <tr>
                                     {week.map((day) => {
                                         return (
-                                            <td style={{color: Object.values(day).toString() == "true" ? "green" : Object.values(day).toString() == "false" ? "black" : "grey"}}>{Object.keys(day)}</td>
+                                            <td className='calendario_mini_day' style={{color: Object.values(day).toString() == "true" ? "green" : Object.values(day).toString() == "false" ? "black" : "grey"}}><a href='#'>{Object.keys(day)}</a></td>
                                         )
                                     })}
                                     </tr>
