@@ -1,5 +1,5 @@
 import React from 'react'
-import { Template, BotonConImagen, CampoSeleccionarEnListaDesplegable, CampoTextoPequeno, CampoTextoGrande } from '../../../routeIndex'
+import { Template, BotonConImagen, CampoSeleccionarEnListaDesplegable, CampoTextoPequeno, CampoTextoGrande, TarjetaMaestraMini } from '../../../routeIndex'
 
 import './DanielMaldonado.css'
 import { IoMdCopy } from 'react-icons/io'
@@ -19,6 +19,8 @@ function DanielMaldonado() {
           Cerrar sesion
         </BotonConImagen>
 
+        <br />
+
         <CampoSeleccionarEnListaDesplegable options={list} size="big"/>
 
         <br />
@@ -30,6 +32,18 @@ function DanielMaldonado() {
         <br />
         
         <CampoTextoGrande size="medium"/>
+
+        <br />
+        <br />
+
+        <TarjetaMaestraMini size="normal">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit tenetur ipsum excepturi accusamus eius facilis tempora unde quae ad inventore quia consequuntur animi illum hic, aliquam ducimus corrupti ullam perferendis?</p>
+          <br />
+          <BotonConImagen onClick = {() => {alert('Me diste click :)')}} backgroundColor = 'verde' size = 'reducido' Image={IoMdCopy} >
+          Cerrar sesion
+          </BotonConImagen>
+
+        </TarjetaMaestraMini>
 
       </Template>
     </div>
