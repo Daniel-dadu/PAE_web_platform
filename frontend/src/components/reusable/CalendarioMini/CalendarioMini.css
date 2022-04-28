@@ -1,0 +1,41 @@
+.calendario_mini_container{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendario_mini_top{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    margin-inline: 10px;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+.right {
+transform: rotate(-45deg);
+-webkit-transform: rotate(-45deg);
+}
+
+.left {
+transform: rotate(135deg);
+-webkit-transform: rotate(135deg);
+}
+
+.calendario_mini_month{
+    
+}

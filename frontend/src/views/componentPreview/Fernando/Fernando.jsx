@@ -1,14 +1,11 @@
 import React from 'react'
-import { BarraProgreso } from '../../../routeIndex'
-import info from  './progreso.json'
+import { CalendarioMini } from '../../../routeIndex'
+import info from  './calendario.json'
 
 function Fernando() {
   return (
     <div>
-      <BarraProgreso progress={info.uno}/>
-      <BarraProgreso progress={info.dos}/>
-      <BarraProgreso progress={info.tres}/>
-      <BarraProgreso progress={info.cuatro}/>
+      <CalendarioMini calendar={info} year="2022" monthIndex="0"/>
     </div>
   )
 }
