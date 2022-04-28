@@ -1,0 +1,57 @@
+.seleccionar_horario_asesoria_container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.seleccionar_horario_asesoria_day{
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.seleccionar_horario_asesoria_info{
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    text-align: center;
+}
+
+.seleccionar_horario_asesoria_hours{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.seleccionar_horario_asesoria_hour_container{
+    width: 30%;
+    padding-top: 30%;
+    position: relative;
+    background-color: none;
+}
+
+.seleccionar_horario_asesoria_hour_button_container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: none;
+}
+
+.seleccionar_horario_asesoria_hour_button{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
