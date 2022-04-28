@@ -24,3 +24,4 @@ export {default as BarraProgreso } from './components/reusable/BarraProgreso/Bar
 export {default as CampoSeleccionarEnListaDesplegable } from './components/reusable/CampoSeleccionarEnListaDesplegable/CampoSeleccionarEnListaDesplegable.jsx'
 
 export {default as CampoTextoPequeno } from './components/reusable/CampoTextoPequeno/CampoTextoPequeno.jsx'
+export {default as CampoTextoGrande } from './components/reusable/CampoTextoGrande/CampoTextoGrande.jsx'
