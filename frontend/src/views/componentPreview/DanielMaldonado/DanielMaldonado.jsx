@@ -5,6 +5,13 @@ import './DanielMaldonado.css'
 import { IoMdCopy } from 'react-icons/io'
 
 function DanielMaldonado() {
+  let list = [
+    'ITC (Ingenieria en Tecnologías Computacionales)',
+    'IBT (Ingenieria en Biotecnología)',
+    'IFI (Ingenieria Física Industrial)',
+    'IMT (Ingenieria Mecatrónica)',
+  ];
+
   return (
     <div>
       <Template user="asesorado" tema="claro" idioma="espanol" view="calendario">
@@ -12,7 +19,7 @@ function DanielMaldonado() {
           Cerrar sesion
         </BotonConImagen>
 
-        <CampoSeleccionarEnListaDesplegable />
+        <CampoSeleccionarEnListaDesplegable options={list} size="big"/>
 
         <h1>sdjahfsd</h1>
         <a href="/asdf">link</a>
