@@ -1,6 +1,6 @@
 /* eslint no-eval: 0 */
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../../../index.css'
 import './DiaCalendario.css'
 import { BotonSencillo } from '../../../routeIndex'
@@ -10,8 +10,6 @@ const SIZES = [
     'grande',
     'reducido'
 ]
-
-var asesoriasJSON;
 
 const DiaCalendario = ({
     isActive,
@@ -30,11 +28,13 @@ const DiaCalendario = ({
         // reducido
 }) => {
 
-    asesoriasJSON = asesorias
-
     const ComponentSize = SIZES.includes(size)
         ? size
         : SIZES[0];
+
+    useEffect(() => {
+        isActiveOnAlumno()
+    });
 
     return(
         <div
@@ -98,31 +98,35 @@ const DiaCalendario = ({
 
 };
 
-function isActiveOnAlumno(){
+const isActiveOnAlumno = () => {
+    
+    let dias = document.getElementsByClassName('dia');
 
-    let asesoriasAlumno = document.getElementsByClassName('btnAsesoria');
+    for(let i = 0; i < dias.length; i++){
 
-    if(asesoriasAlumno.length > 0){
+        let asesoriasAlumno = dias[i].getElementsByClassName('btnAsesoria');
 
-        let numeroAsesorias = Object.keys(asesoriasJSON['asesorias']).length;
-        let sizeComponent = document.getElementsByClassName('dia')[0].clientHeight;
-        
-        let customPatron = (2 * (numeroAsesorias - 1));
-        let transformPercent = (10 * numeroAsesorias - 1);
-        let customHeight = sizeComponent / (numeroAsesorias + 4);
+        if(asesoriasAlumno.length > 0){
 
-        for(let i = 0; i < asesoriasAlumno.length; i++){
-            asesoriasAlumno[i].style.marginBottom = String(11 - customPatron) + 'px';
-            asesoriasAlumno[i].style.transform = `translateY(${((180 - (15 * i)) - transformPercent) - (numeroAsesorias - 1)}%)`;
-            asesoriasAlumno[i].style.msTransform = `translateY(${((180 - (15 * i)) - transformPercent) - (numeroAsesorias - 1)}%)`;
-            asesoriasAlumno[i].firstChild.style.height = String(customHeight) + 'px';
-            asesoriasAlumno[i].firstChild.style.fontSize = String(22 - customPatron) + 'px';
+            let numeroAsesorias = asesoriasAlumno.length;
+            let sizeComponent = document.getElementsByClassName('dia')[0].clientHeight;
+            
+            let customPatron = (2 * (numeroAsesorias - 1));
+            let transformPercent = (10 * numeroAsesorias - 1);
+            let customHeight = sizeComponent / (numeroAsesorias + 4);
+    
+            for(let i = 0; i < asesoriasAlumno.length; i++){
+                asesoriasAlumno[i].style.marginBottom = String(11 - customPatron) + 'px';
+                asesoriasAlumno[i].style.transform = `translateY(${((180 - (15 * i)) - transformPercent) - (numeroAsesorias - 1)}%)`;
+                asesoriasAlumno[i].style.msTransform = `translateY(${((180 - (15 * i)) - transformPercent) - (numeroAsesorias - 1)}%)`;
+                asesoriasAlumno[i].firstChild.style.height = String(customHeight) + 'px';
+                asesoriasAlumno[i].firstChild.style.fontSize = String(22 - customPatron) + 'px';
+            }
+            
         }
-        
+
     }
 
 }
-
-setTimeout(() => { isActiveOnAlumno(); }, 100);
 
 export default DiaCalendario
