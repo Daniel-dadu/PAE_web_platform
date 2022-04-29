@@ -1,5 +1,6 @@
 import React from 'react'
 import "./BarraProgreso.css"
+import { BsCheckCircle } from "react-icons/bs";
 
 /*
 BarraProgresp recibe un json con los datos de los pasos del proceso, con su 
@@ -38,9 +39,9 @@ function BarraProgreso(props){
                     <div className='barra_progreso_container_step_path'>
                         <div className='barra_progreso_step'> 
                             <div className='barra_progreso_step_circle'> 
-                                <div className='barra_progreso_step_outer_circle' style={{backgroundColor: props.progress.currentStep == index || step.state ? "green" : step.next == "refuse" ? "red": step.next == "restricted" ? "orange": "grey"}}></div>
+                                <div className='barra_progreso_step_outer_circle' style={{backgroundColor: props.progress.currentStep === index || step.state ? "green" : step.next === "refuse" ? "red": step.next === "restricted" ? "orange": "grey"}}></div>
                                 <div className='barra_progreso_step_inter_circle'> 
-                                    {index < props.progress.currentStep ? <span className='barra_progreso_step_inter_circle_check_mark'>&#10003;</span> : null}
+                                    {index < props.progress.currentStep ? <BsCheckCircle className='barra_progreso_step_inter_circle_check_mark'/>: null}
                                 </div>
                             </div>
                             <div className='barra_progreso_step_name'> 
@@ -48,15 +49,15 @@ function BarraProgreso(props){
                             </div>
                         </div>
                         <div className='barra_progreso_path'>
-                            <hr className='barra_progreso_path_status' style={{backgroundColor: step.next == "enable" && props.progress.currentStep > index ? "green" : step.next == "refuse" ? "red": step.next == "restricted" ? "orange": "grey"}}></hr>
+                            <hr className='barra_progreso_path_status' style={{backgroundColor: step.next === "enable" && props.progress.currentStep > index ? "green" : step.next === "refuse" ? "red": step.next === "restricted" ? "orange": "grey"}}></hr>
                         </div>
                     </div>
                     :<div className='barra_progreso_container_step_path end'>
                         <div className='barra_progreso_step'> 
                             <div className='barra_progreso_step_circle'> 
-                                <div className='barra_progreso_step_outer_circle' style={{backgroundColor: props.progress.currentStep == index || step.state ? "green" : step.next == "refuse" ? "red": step.next == "restricted" ? "orange": "grey"}}></div>
-                                <div className='barra_progreso_step_inter_circle'> 
-                                    {index < props.progress.currentStep ? <span className='barra_progreso_step_inter_circle_check_mark'>&#10003;</span> : null}
+                                <div className='barra_progreso_step_outer_circle' style={{backgroundColor: props.progress.currentStep === index || step.state ? "green" : step.next === "refuse" ? "red": step.next === "restricted" ? "orange": "grey"}}></div>
+                                <div className='barra_progreso_step_inter_circle'>
+                                {index < props.progress.currentStep ? <BsCheckCircle className='barra_progreso_step_inter_circle_check_mark'/>: null}
                                 </div>
                             </div>
                             <div className='barra_progreso_step_name'> 
