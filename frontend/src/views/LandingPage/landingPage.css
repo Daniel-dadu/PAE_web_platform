@@ -14,8 +14,6 @@ html {
 }
 
 /* Inicializamos estilos para secciones de landing page */
-
-
 a {
     color: #000;
     display: flex;
@@ -27,6 +25,63 @@ a {
     font-size: 1.2rem;
     font-weight: 400;
     font-family: 'Dosis', sans-serif;
+    transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #0066FF;
+}
+
+
+/* seccion de navbar resposive */
+
+.active2 {
+    transform: translateX(100%);
+    display: block;
+    top: 68px;
+    position: sticky;
+}
+
+.navbar-responsive {
+    width: 100% ;
+    height: calc(100vh - 68px);
+    justify-content:space-evenly;
+    align-items: center;
+    z-index: 100;
+    display: block;
+    flex-direction: column;
+    top: 68px;
+    background: #0066FF;
+    left: -100%;
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+
+}
+
+.navbar-responsive a {
+    width: 100%;
+    height: calc(100vh / 5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-family: 'Dosis', sans-serif;
+    color: #fff;
+    font-weight: 400;
+
+}
+
+.navbar-responsive-active a {
+    width: 100%;
+    height: calc(100vh / 5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-family: 'Dosis', sans-serif;
+    color: #fff;
+    font-weight: 400;
+
 }
 
 @media only screen and (max-width: 992px) {
@@ -37,6 +92,9 @@ a {
     
 }
 
+@media screen and (max-width: 425px) {
+    
+}
 /* seccion de quienes somos */
 .quienes-somos {
     align-items: center;
@@ -75,13 +133,13 @@ a {
     align-items: flex-start;
     font-family: 'Dosis', sans-serif;
     font-size: 1.5rem;
- }
+}
 
- .quienes-somos .izq .btn-contenedor {
+.quienes-somos .izq .btn-contenedor {
     width: 100%;
- }
+}
 
- .quienes-somos .izq .btn-contenedor button {
+.quienes-somos .izq .btn-contenedor button {
      width: 157px;
      height: 52px;
      background-color: #50C7F1;
@@ -95,12 +153,12 @@ a {
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     z-index: 15;
- }
+}
 
- .quienes-somos .izq .btn-contenedor button:hover {
+.quienes-somos .izq .btn-contenedor button:hover {
     background-color: #3796B8;
     
-  }
+}
 
 
 
@@ -115,6 +173,97 @@ a {
 .quienes-somos .der img {
     height: 70%;
     
+}
+
+@media screen and (max-width: 768px) {
+
+    .quienes-somos {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .quienes-somos .izq {
+        width: 100%;
+        height: 50%;
+        
+    }
+    .quienes-somos .der {
+        width: 100%;
+        height: 50%;
+        
+    }
+    
+    .quienes-somos .izq h1 {
+        
+        font-size: 3.5rem;
+        text-align: center;
+    
+    }
+    .quienes-somos .izq .texto-derecha { 
+        font-size: 2rem;
+    }
+    .quienes-somos .izq .btn-contenedor {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .quienes-somos .izq .btn-contenedor button {
+        width: 250px;
+        height: 80px;
+        font-size: 2rem;
+        margin-top: 35px;
+        
+    }
+    .quienes-somos .der img {
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 430px) {
+
+    .quienes-somos {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .quienes-somos .izq {
+        width: 100%;
+        height: 50%;
+        
+    }
+    .quienes-somos .der {
+        width: 100%;
+        height: 50%;
+    }
+        
+    .quienes-somos .izq h1 {
+        
+        font-size: 1.5rem;
+        text-align: center;
+    
+    }
+    
+    .quienes-somos .izq .texto-derecha { 
+        font-size: 1rem;
+    }
+    .quienes-somos .izq .btn-contenedor {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .quienes-somos .izq .btn-contenedor button {
+        width: 150px;
+        height: 50px;
+        font-size: 1rem;
+        margin-top: 20px;
+    }
+
+    .quienes-somos .der img {
+        height: 100%;
+    }
+
 }
 
 
@@ -176,6 +325,72 @@ a {
 .funcionamiento .der img {
     height: 70%;
     margin-top: 40%;
+}
+
+@media screen and (max-width: 768px) {
+
+    .funcionamiento {
+        height: 100vh;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+    }
+    .funcionamiento .izq {
+        width: 100%;
+        padding: 6rem;
+        height: 50%;
+        background-color: #0066FF;
+    
+    }
+    
+    .funcionamiento .izq h1 {
+        color: #fff;
+    }
+    .funcionamiento .izq p {
+        color: #ffff;
+    }
+
+    .funcionamiento .der {
+        height: 50%;
+    }
+    
+    
+    
+    .funcionamiento .der img {
+        height: 80%;
+        margin-top: 0;
+        
+    }
+
+}
+
+@media screen and (max-width: 430px) {
+
+    .funcionamiento {
+        height: 100vh;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+    }
+    
+    .funcionamiento .izq {
+        width: 100%;
+        padding: 2rem;
+        height: 50%;
+        background-color: #0066FF;
+    
+    }
+    
+    .funcionamiento .izq h1 {
+        font-size: 2rem;
+        color: #fff;
+    }
+    .funcionamiento .izq p {
+        font-size: 1.2rem;
+        color: #ffff;
+    }
+
+
 }
 
 
@@ -310,6 +525,132 @@ a {
     background: #3796B8;
 }
 
+@media screen and (max-width: 768px) { 
+    .pasos-inscripcion {
+        width: 100%;
+    }
+
+
+}
+
+@media screen and (max-width: 430px) {
+
+    .pasos-inscripcion .arriba {
+        height: auto;
+        flex-wrap: wrap;
+        flex-direction: column;
+    
+    }
+    
+    .pasos-inscripcion .arriba .contenedor-pasos {
+        width: 40%;
+        height: 60%;
+        background: #50C7F1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 20px;
+        font-family: 'Dosis', sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    
+    .pasos-inscripcion .arriba .contenedor-pasos .circulo {
+        width: 30px;
+        height: 30px;
+        background: #1B4858;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        font-size: 1rem;
+    
+    }
+    
+    .pasos-inscripcion .arriba .contenedor-pasos .descripcion-paso {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    
+    }
+    
+    
+    .pasos-inscripcion .abajo {
+        height: auto;
+        flex-wrap: wrap;
+        flex-direction: column;
+    
+    }
+    
+    .pasos-inscripcion .abajo .contenedor-pasos {
+        width: 40%;
+        height: 60%;
+        background: #50C7F1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 20px;
+        font-family: 'Dosis', sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    
+    .pasos-inscripcion .abajo .contenedor-pasos .descripcion-paso {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .pasos-inscripcion .abajo .contenedor-pasos .circulo {
+        width: 30px;
+        height: 30px;
+        background: #1B4858;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        font-size: 1rem;
+    }
+    
+    .pasos-inscripcion .btn-final-pasos {
+        width: 30%;
+        height: 50px;
+        background: #455A64;
+        border-radius: 50px;
+        font-size: 2rem;
+        color: #ffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-box-shadow: 6px 9px 34px -11px #000000; 
+        box-shadow: 6px 9px 34px -11px #000000;
+        transition: all 0.2s ease-in-out;
+        margin-bottom: 100px;
+    
+    }
+    
+    .pasos-inscripcion button:hover {
+        background: #3796B8;
+    }
+
+}
+
+
+
+/* inicia seccion de objetivos */
+
 .objetivos {
     height: 100vh;
     width: 70%;
@@ -354,6 +695,68 @@ a {
     flex-direction: column;
     height: 100%;
     width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .objetivos {
+        width: 100%;
+        flex-direction: column;
+    }
+    .objetivos .izq {
+        width: 100%;
+        padding: 4rem;
+    }
+    
+    .objetivos .izq h1 {
+        font-size: 4rem;
+        margin-bottom: 20px;
+    }
+    
+    .objetivos .izq p {
+        font-size: 1.9rem;
+        text-align: center;
+    }
+    
+    .objetivos .der {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .objetivos .der .img-objetivos {
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 430px) {
+
+    .objetivos {
+        width: 100%;
+        flex-direction: column;
+    }
+    .objetivos .izq {
+        width: 100%;
+        padding: 3rem;
+        height: 50%;
+    }
+    
+    .objetivos .izq h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .objetivos .izq p {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .objetivos .der {
+        width: 100%;
+        height: 50%;
+        justify-content: flex-start;
+    }
+    .objetivos .der .img-objetivos {
+        height: 100%;
+    }
+
 }
 
 /* seccion de equipo de trabajo */
@@ -408,3 +811,26 @@ a {
     min-height: 350px;
     margin-bottom: 50px;
  }
+
+
+ @media screen and (max-width: 768px) { 
+
+        
+    .equipo-trabajo {
+        width: 100%;
+    }
+
+    .equipo-trabajo .titulo-equipo-trabajo {
+        font-size: 2rem;
+    }
+    .equipo-trabajo .contenedor-cartas {
+        flex-wrap: wrap;
+    }
+
+    .equipo-trabajo .contenedor-cartas .carta {
+        font-size: 1.4rem;
+        padding: 1rem;
+    }
+
+
+}

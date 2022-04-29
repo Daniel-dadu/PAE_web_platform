@@ -1,16 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Nav, NavLink, Bars, NavMenu } from './NavbarElements';
 import './landingPage.css';
 import { FaPen, FaBookmark, FaAddressBook, FaHandsHelping, FaChevronDown } from 'react-icons/fa';
 
+
+
 export const LandingPage = () => {
+
+    const [ clicked, setClicked ] = useState(false);
+    
+    const handleClick = () => {
+        setClicked(!clicked);
+    }
   return (
     <>
+       
        <Nav>
            <NavLink to="/">
                 <img className='logo-pae' src={ require('../../assets/PAE-logo.png') } alt='PAE'  />
            </NavLink>
-           <Bars/>
+           <Bars onClick={ handleClick } />
+
            <NavMenu>
 
                 <a href='#quienesSomos'>
@@ -26,22 +36,23 @@ export const LandingPage = () => {
                     Equipo de trabajo
                 </a>
                 
-{/* 
-               <NavLink to="#quienesSomos" activeStyle>
-                   ¿Quiénes Somos?
-               </NavLink>
-               <NavLink to="#funcionamiento" activeStyle>
-                   Funcionamiento
-               </NavLink>
-               <NavLink to="#objetivos" activeStyle>
-                   Objetivos
-               </NavLink>
-               <NavLink to="#equipo-trabajo" activeStyle>
-                   Equipo de trabajo
-               </NavLink> */}
-           </NavMenu>
-           
+           </NavMenu> 
+           <div className={`navbar-responsive${clicked? ' active2':''} `} id='navbar-responsive'>
+                <a href='#quienesSomos' onClick={ handleClick }>
+                    ¿Quiénes Somos?
+                </a>
+                <a href='#funcionamiento' onClick={ handleClick }>
+                    Funcionamiento
+                </a>
+                <a href='#objetivos' onClick={ handleClick }>
+                    Objetivos
+                </a>
+                <a href='#equipo-trabajo' onClick={ handleClick }>
+                    Equipo de trabajo
+                </a>
+            </div>
        </Nav>
+      
 
        <section className='quienes-somos' id='quienesSomos'>
 
@@ -62,7 +73,7 @@ export const LandingPage = () => {
                     </p>
                </div>
                <div className='btn-contenedor'>
-                    <button> Saber más </button>
+                    <button href="#funcionamiento"> Saber más </button>
                </div>
             </div>
 
@@ -76,9 +87,6 @@ export const LandingPage = () => {
 
        <section className='funcionamiento' id='funcionamiento'>
         
-            
-
-
             <div className='izq'>
                <h1> Funcionamiento del Programa </h1>
                <p>
@@ -91,6 +99,7 @@ export const LandingPage = () => {
                 <img className='img-quienes-somos' src={ require('../../assets/estudiando2-img.png') } />
             </div>
        </section>
+
 
        <section className='pasos-inscripcion'>
                
@@ -158,7 +167,7 @@ export const LandingPage = () => {
             </div>
 
             <div className='der'>
-               <img  src={ require('../../assets/estudiando3-img.png') } alt='PAE' />
+               <img  className='img-objetivos' src={ require('../../assets/estudiando3-img.png') } alt='PAE' />
             </div>    
         </section>
 
