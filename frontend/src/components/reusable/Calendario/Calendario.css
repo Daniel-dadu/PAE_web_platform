@@ -1,5 +1,13 @@
 .calendario{
-    /* -- */
+    width: 70%;
+}
+
+.calendario tr{
+    width: 100px;
+}
+
+.calendario tr td{
+    width: 15%;
 }
 
 .nombreDiaCalendario{
@@ -8,4 +16,16 @@
 
 .bloqueCalendario{
     padding: 5px;
+}
+
+/* RESPONSIVE 480 px */
+
+@media screen and (max-width: 480px){
+
+    .calendario{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
