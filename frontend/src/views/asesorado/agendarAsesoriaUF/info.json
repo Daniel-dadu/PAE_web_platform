@@ -1,0 +1,10 @@
+{
+    "carrera": [
+        "ITC (Ingeniería en Tecnologías Computacionales)",
+        "IBT (Ingeniería en Biotecnología)",
+        "IRS (Ingeniería en Robótica)",
+        "IMT (Ingeniería en Mecratrónica)",
+        "IMD (Ingeniería en Biomédica)"
+    ],
+    "semestre": [1,2,3,4,5,6,7,8,9]
+}
