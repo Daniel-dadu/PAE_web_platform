@@ -1,51 +1,33 @@
 import React from 'react'
-import { Template, BotonConImagen, CampoSeleccionarEnListaDesplegable, CampoTextoPequeno, CampoTextoGrande, TarjetaMaestraMini } from '../../../routeIndex'
-
 import './DanielMaldonado.css'
-import { IoMdCopy } from 'react-icons/io'
+
+import { AgendarAsesoria } from '../../../routeIndex'
 
 function DanielMaldonado() {
-  let list = [
-    'ITC (Ingenieria en Tecnologías Computacionales)',
-    'IBT (Ingenieria en Biotecnología)',
-    'IFI (Ingenieria Física Industrial)',
-    'IMT (Ingenieria Mecatrónica)',
-  ];
 
   return (
     <div>
-      <Template user="asesorado" tema="claro" idioma="espanol" view="calendario">
-        <BotonConImagen onClick = {() => {alert('Me diste click :)')}} backgroundColor = 'verde' size = 'reducido' Image={IoMdCopy}>
-          Cerrar sesion
-        </BotonConImagen>
+      <AgendarAsesoria showAtrasBtn={false} showTarjetaMaestraMini={true} sizeTarjetaMaestraMini="normal">
+      <h2>Hey</h2>
+        <div>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>3</li>
+            <li>3</li>
+            <li>3</li>
+            <li>3</li>
+            <li>3</li>
+            <li>3</li>
+            <li>3</li>
+            <li>3</li>
+            <li>3</li>
+            <li>3</li>
 
-        <br />
-
-        <CampoSeleccionarEnListaDesplegable options={list} size="big"/>
-
-        <br />
-        <br />
-        
-        <CampoTextoPequeno size="last"/>
-        
-        <br />
-        <br />
-        
-        <CampoTextoGrande size="medium"/>
-
-        <br />
-        <br />
-
-        <TarjetaMaestraMini size="normal">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit tenetur ipsum excepturi accusamus eius facilis tempora unde quae ad inventore quia consequuntur animi illum hic, aliquam ducimus corrupti ullam perferendis?</p>
-          <br />
-          <BotonConImagen onClick = {() => {alert('Me diste click :)')}} backgroundColor = 'verde' size = 'reducido' Image={IoMdCopy} >
-          Cerrar sesion
-          </BotonConImagen>
-
-        </TarjetaMaestraMini>
-
-      </Template>
+          </ul>
+        </div>
+      </AgendarAsesoria>
     </div>
   )
 }

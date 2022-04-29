@@ -31,3 +31,5 @@ export {default as TarjetaMaestraMini } from './components/reusable/TarjetaMaest
 export {default as ComponenteCalendario } from './components/reusable/Calendario/Calendario.jsx'
 export {default as SeleccionarHorarioAsesoria } from './components/reusable/SeleccionarHorarioAsesoria/SeleccionarHorarioAsesoria.jsx'
 export {default as CalendarioMini } from './components/reusable/CalendarioMini/CalendarioMini.jsx'
+
+export {default as AgendarAsesoria } from './views/commons/agendarAsesoria/AgendarAsesoria.jsx'
