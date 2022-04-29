@@ -1,6 +1,18 @@
 .barra_progreso_container {
+    width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+
+.barra_progreso_container_step_path{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.end{
+    width: min-content;
 }
 
 .barra_progreso_step {
@@ -41,10 +53,11 @@
 
 .barra_progreso_step_name {
     text-align: center;
+    font-weight: bold;
 }
 
 .barra_progreso_path {
-    width: 50px;
+    width: 100%;
     height: 50px;
     display: flex;
     flex-direction: column;
