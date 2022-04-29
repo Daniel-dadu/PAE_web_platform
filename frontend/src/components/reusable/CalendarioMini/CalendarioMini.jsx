@@ -2,7 +2,7 @@ import React from 'react'
 import "./CalendarioMini.css"
 
 function CalendarioMini(props){
-    {/*
+    /*
     console.log(Object.keys(props.calendar.months[props.monthIndex]))
     console.log(Object.values(props.calendar.months[props.monthIndex]))
     {Object.values(props.calendar.months[props.monthIndex]).map((weeks) => {
@@ -14,7 +14,7 @@ function CalendarioMini(props){
             })
         )
     })};
-    */}
+    */
 
     return(
         <div className='calendario_mini_container'>
@@ -41,7 +41,7 @@ function CalendarioMini(props){
                                     <tr>
                                     {week.map((day) => {
                                         return (
-                                            <td className='calendario_mini_day' style={{color: Object.values(day).toString() == "true" ? "green" : Object.values(day).toString() == "false" ? "black" : "grey"}}><a href='#'>{Object.keys(day)}</a></td>
+                                            <td className='calendario_mini_day' style={{color: Object.values(day).toString() === "true" ? "green" : Object.values(day).toString() === "false" ? "black" : "grey"}}><a href='.'>{Object.keys(day)}</a></td>
                                         )
                                     })}
                                     </tr>
