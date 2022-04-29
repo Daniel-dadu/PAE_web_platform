@@ -1,81 +1,9 @@
-/* Cambio Mes Periodo component */
-
-.containerCambioMP{
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 310px;
-    height: 65px;
-    background: #898989;
-    border-radius: 10px;
-
-  }
-
-
-.textMP{
-    display: none;
-    flex-direction: column;
-    flex-wrap: wrap;
-    
-    
-}
-
-.textSup{
-    justify-content: center;
-    position: relative;
-    flex-basis: 61%;
-      
-}
-
-.textInf{
-    justify-content: center;
-    position: relative;
-    width: 208px;
-    height: 25px;
-    background: #1B4858;
-    border-radius: 10px 10px 0px 0px;
-}
-
-
-
-  /* Slides */
-.mySlides {
-    display: none;
-    padding: 80px;
-    text-align: center;
-  }
-
-
-  /* Slideshow container */
+/* Slideshow container */
 .slideshow-container {
-    position: relative;
-    background: #f1f1f1f1;
-  }
-  
-  /* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -30px;
-  padding: 16px;
-  color: #888;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+  position: relative;
+  background: #898989;
+  border-radius: 10px;
+  width: 310px;
+  height: 65px;
 }
 
-/* Position the "next button" to the right */
-.next {
-  position: absolute;
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-  color: white;
-}

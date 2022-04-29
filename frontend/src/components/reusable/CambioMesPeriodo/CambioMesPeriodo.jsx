@@ -1,34 +1,45 @@
-import React, { useState } from 'react'
-import { ReactDOM } from 'react';
+import React from 'react'
 import './CambioMesPeriodo.css';
-import './Slides.js'
+import { useState } from "react";
+import { MdArrowBackIos } from 'react-icons/md';
+import { MdArrowForwardIos } from 'react-icons/md';
+
+export default function CambioMesPeriodo(Array) {
+ const slidesArray = Array /* [
+  {id: 1,
+  Sup: 'Texto Superior 1',
+  Inf: 'Texto Inferior 1'},
+
+  {id: 2,
+  Sup: 'Texto Superior 2',
+  Inf: 'Texto Inferior 2'},
+
+  {id: 3,
+  Sup: 'Texto Superior 3',
+  Inf: 'Texto Inferior 3'} ] */
+
+  const [id, setId] = useState(1);
+
+  const values = slidesArray.length;
+
+  let validSlide = slidesArray.filter(slides => slides.id === (id))
 
 
-export default function CambioMesPeriodo() {
   return (
+    
+    <div className="slideshow-container">  
+        <div>
+        <p> {validSlide[0].Sup} </p>
+        <p> {validSlide[0].Inf} </p>
+        </div>
+        
+        
+        <button onClick={() => setId(id !== 1 ? id-1 : id)} > <MdArrowBackIos> </MdArrowBackIos> </button>
 
-    <div className='slideshow-container'> 
-    
-    <div className='mySlides'>
-      <p className='.textSup'>TextoSuperior 1</p>
-      <p className='textInf'>TextoInferior 1</p>
-    </div>
-    
-    <div className='mySlides'>
-      <p className='.textSup'>TextoSuperior 2</p>
-      <p className='textInf'>TextoInferior 2</p>
-    </div>
+        <button onClick={() => setId(id < values ? id+1 : id)} > <MdArrowForwardIos> </MdArrowForwardIos> </button>
 
-    <div className='mySlides'>
-      <p className='.textSup'>TextoSuperior 3</p>
-      <p className='textInf'>TextoInferior 3</p>
-    </div>
+   </div>
 
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
-    
-    </div>
-    
 
   )
 

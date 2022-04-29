@@ -4,7 +4,7 @@ import { CambioMesPeriodo }  from '../../../routeIndex'
 function DanielMunive() {
   return (
     <>
-    <CambioMesPeriodo> </CambioMesPeriodo>
+    <CambioMesPeriodo > </CambioMesPeriodo>
     </>
   )
 }
