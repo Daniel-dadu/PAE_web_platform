@@ -1,0 +1,124 @@
+.dia{
+    padding-top: 7px;
+    padding-left: 12px;
+    padding-right: 14px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.numeroDia{
+    position: absolute;
+    font-size: 25px;
+    z-index: 100;
+}
+
+.btnDirectivo{
+    position: relative;
+    width: 85%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btnDirectivo > center > button{
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.botonesAsesorias{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.btnAsesoria{
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.btnAsesoria > button{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 0px;
+    width: 100%;
+    height: 30px;
+    font-size: 15px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.active{
+    background-color: #B1FF96;
+}
+
+.disable{
+    background-color: #C4C4C4;
+}
+
+.normalDiaSize{
+    height: 120px;
+}
+
+.grandeDiaSize{
+    height: 140px;
+}
+
+.reducidoDiaSize{
+    height: 100px;
+}
+
+/* RESPONSIVE 650 px */
+
+@media screen and (max-width: 650px){
+
+    .btnAsesoria > button{
+        font-size: 2.2vw;
+    }
+
+}
+
+/* RESPONSIVE 560 px */
+
+@media screen and (max-width: 560px){
+
+    .btnAsesoria{
+        width: 100%;
+    }
+
+    .btnAsesoria > button{
+        font-size: 2.3vw;
+    }
+
+}
+
+/* RESPONSIVE 480 px */
+
+@media screen and (max-width: 480px){
+
+    .btnAsesoria > button{
+        font-size: 3.7vw;
+    }
+
+}
+
+/* RESPONSIVE 380 px */
+
+@media screen and (max-width: 380px){
+
+    .dia{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .btnAsesoria > button{
+        font-size: 3.7vw;
+    }
+
+}
