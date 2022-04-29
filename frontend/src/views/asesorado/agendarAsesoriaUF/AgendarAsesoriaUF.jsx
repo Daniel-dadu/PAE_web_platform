@@ -11,27 +11,32 @@ let progressBar = {
       {
           "name" : "Selección",
           "state": null,
-          "next": "done"
-      }, 
-      {
+          "next": "done",
+          "path" : "./AgendarAsesoriaUF"
+        }, 
+        {
           "name" : "Información",
           "state": null,
-          "next": "enable"
-      },
-      {
+          "next": "enable",
+          "path" : "./AgendarAsesoriaUF"
+        },
+        {
           "name" : "Fecha",
           "state": null,
-          "next": "enable"
-      },
-      {
+          "next": "enable",
+          "path" : "./AgendarAsesoriaUF"
+        },
+        {
           "name" : "Hora",
           "state": null,
-          "next": "enable"
-      },
-      {
+          "next": "enable",
+          "path" : "./AgendarAsesoriaUF"
+        },
+        {
           "name" : "Confirmación",
           "state": null,
-          "next": "enable"
+          "next": "enable",
+          "path" : "./AgendarAsesoriaUF"
       }
   ]
 }
