@@ -4,8 +4,9 @@ import { useState } from "react";
 import { MdArrowBackIos } from 'react-icons/md';
 import { MdArrowForwardIos } from 'react-icons/md';
 
-export default function CambioMesPeriodo(Array) {
- const slidesArray = Array /* [
+/* This is how you call de component
+
+    <CambioMesPeriodo dataSupInf={  [ 
   {id: 1,
   Sup: 'Texto Superior 1',
   Inf: 'Texto Inferior 1'},
@@ -16,7 +17,13 @@ export default function CambioMesPeriodo(Array) {
 
   {id: 3,
   Sup: 'Texto Superior 3',
-  Inf: 'Texto Inferior 3'} ] */
+  Inf: 'Texto Inferior 3'}   ]  } > </CambioMesPeriodo>
+
+*/
+
+export default function CambioMesPeriodo({dataSupInf}) {
+
+const slidesArray =  dataSupInf 
 
   const [id, setId] = useState(1);
 
@@ -26,17 +33,30 @@ export default function CambioMesPeriodo(Array) {
 
 
   return (
+
+   
     
     <div className="slideshow-container">  
-        <div>
-        <p> {validSlide[0].Sup} </p>
-        <p> {validSlide[0].Inf} </p>
+
+
+
+        <div> 
+        <button className='back' onClick={() => setId(id !== 1 ? id-1 : id) } > <MdArrowBackIos size={35} > </MdArrowBackIos> </button>
+        </div>
+
+        
+
+        <div className='Bloque de Texto'>
+        <div className='textSup'> {validSlide[0].Sup} </div>
+        <div className='textInf'> {validSlide[0].Inf} </div>
         </div>
         
+        <div>
+        <button className='next' onClick={() => setId(id < values ? id+1 : id)} > <MdArrowForwardIos size={35} > </MdArrowForwardIos> </button>
+        </div>
         
-        <button onClick={() => setId(id !== 1 ? id-1 : id)} > <MdArrowBackIos> </MdArrowBackIos> </button>
 
-        <button onClick={() => setId(id < values ? id+1 : id)} > <MdArrowForwardIos> </MdArrowForwardIos> </button>
+        
 
    </div>
 
