@@ -5,10 +5,46 @@ import info from './info.json'
 
 import { AgendarAsesoria, CampoSeleccionarEnListaDesplegable } from '../../../routeIndex'
 
+let progressBar = {
+  "currentStep": 0,
+  "steps": [
+      {
+          "name" : "Selección",
+          "state": null,
+          "next": "done",
+          "path" : "./AgendarAsesoriaUF"
+        }, 
+        {
+          "name" : "Información",
+          "state": null,
+          "next": "enable",
+          "path" : "./AgendarAsesoriaUF"
+        },
+        {
+          "name" : "Fecha",
+          "state": null,
+          "next": "enable",
+          "path" : "./AgendarAsesoriaUF"
+        },
+        {
+          "name" : "Hora",
+          "state": null,
+          "next": "enable",
+          "path" : "./AgendarAsesoriaUF"
+        },
+        {
+          "name" : "Confirmación",
+          "state": null,
+          "next": "enable",
+          "path" : "./AgendarAsesoriaUF"
+      }
+  ]
+}
+
 function AgendarAsesoriaUF() {
 
   return (
-    <AgendarAsesoria showAtrasBtn={false} showTarjetaMaestraMini={true} sizeTarjetaMaestraMini="normal">
+    <AgendarAsesoria showAtrasBtn={false} showTarjetaMaestraMini={true} sizeTarjetaMaestraMini="normal" progressBarJSON={progressBar}>
       <div className='container_out_aauf'>
         <div className='container_in_aauf'>
           <h3>Carrera</h3>
