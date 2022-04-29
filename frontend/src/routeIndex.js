@@ -33,3 +33,4 @@ export {default as SeleccionarHorarioAsesoria } from './components/reusable/Sele
 export {default as CalendarioMini } from './components/reusable/CalendarioMini/CalendarioMini.jsx'
 
 export {default as AgendarAsesoria } from './views/commons/agendarAsesoria/AgendarAsesoria.jsx'
+export {default as AgendarAsesoriaUF } from './views/asesorado/agendarAsesoriaUF/AgendarAsesoriaUF.jsx'
