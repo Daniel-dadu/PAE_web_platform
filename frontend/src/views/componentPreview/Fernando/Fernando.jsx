@@ -1,12 +1,15 @@
 import React from 'react'
-import { SeleccionarHorarioAsesoria } from '../../../routeIndex'
-import info from  './horario.json'
+import { BarraProgreso } from '../../../routeIndex'
+import info from  './progreso.json'
 import './Fernando.css'
 
 function Fernando() {
   return (
-    <div className='divW500'>
-      <SeleccionarHorarioAsesoria date={info}/>
+    <div className='divWN'>
+      <BarraProgreso progress={info.uno}/>
+      <BarraProgreso progress={info.dos}/>
+      <BarraProgreso progress={info.tres}/>
+      <BarraProgreso progress={info.cuatro}/>
     </div>
   )
 }

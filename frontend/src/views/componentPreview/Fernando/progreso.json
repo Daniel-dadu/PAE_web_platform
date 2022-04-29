@@ -3,12 +3,12 @@
         "currentStep": 0,
         "steps": [
             {
-                "name" : "uno",
+                "name" : "Uno",
                 "state": null,
                 "next": "enable"
             }, 
             {
-                "name" : "dos",
+                "name" : "Dos",
                 "state": null,
                 "next": "block"
             }
@@ -18,12 +18,12 @@
         "currentStep": 1,
         "steps": [
             {
-                "name" : "uno",
+                "name" : "Uno",
                 "state": true,
                 "next": "enable"
             }, 
             {
-                "name" : "dos",
+                "name" : "Dos",
                 "state": null,
                 "next": "enable"
             }
@@ -33,12 +33,12 @@
         "currentStep": 0,
         "steps": [
             {
-                "name" : "uno",
+                "name" : "Uno",
                 "state": null,
                 "next": "refuse"
             }, 
             {
-                "name" : "dos",
+                "name" : "Dos",
                 "state": null,
                 "next": "refuse"
             }
@@ -48,22 +48,22 @@
         "currentStep": 0,
         "steps": [
             {
-                "name" : "uno",
+                "name" : "Uno",
                 "state": null,
                 "next": "restricted"
             }, 
             {
-                "name" : "dos",
+                "name" : "Dos",
                 "state": null,
                 "next": "restricted"
             },
             {
-                "name" : "tres",
+                "name" : "Tres",
                 "state": null,
                 "next": "restricted"
             },
             {
-                "name" : "cuatro",
+                "name" : "Cuatro",
                 "state": null,
                 "next": "restricted"
             }
