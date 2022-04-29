@@ -1,9 +1,13 @@
 import React from 'react'
 import './AgendarAsesoriaUF.css'
 
+import { AgendarAsesoria } from '../../../routeIndex'
+
 function AgendarAsesoriaUF() {
   return (
-    <div>AgendarAsesoriaUF</div>
+    <AgendarAsesoria showAtrasBtn={false} showTarjetaMaestraMini={true} sizeTarjetaMaestraMini="normal">
+        Hola
+    </AgendarAsesoria>
   )
 }
 
