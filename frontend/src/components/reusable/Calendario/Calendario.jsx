@@ -1,3 +1,5 @@
+/* eslint no-eval: 0 */
+
 import React from 'react'
 import '../../../index.css'
 import './Calendario.css'
@@ -18,8 +20,6 @@ const Calendario = ({
     const CalendarioSize = SIZES.includes(sizeCalendario)
         ? sizeCalendario
         : SIZES[0];
-    
-    var BreakException = {};
 
     return(
 
@@ -106,7 +106,7 @@ const Calendario = ({
                 Object.keys(diasCalendario['diasCalendario']).slice(15).map((index) => {
                     return(
                         <>
-                            <td>
+                            <td className = 'bloqueCalendario'>
                                 <DiaCalendario
                                     isActive = {diasCalendario['diasCalendario'][index]['isActive']}
                                     userType = {userTypeCalendario}

@@ -112,15 +112,15 @@ const isActiveOnAlumno = () => {
             let sizeComponent = document.getElementsByClassName('dia')[0].clientHeight;
             
             let customPatron = (2 * (numeroAsesorias - 1));
-            let transformPercent = (10 * numeroAsesorias - 1);
-            let customHeight = sizeComponent / (numeroAsesorias + 4);
+            let transformPercent = (28 * numeroAsesorias - 1);
+            let customHeight = sizeComponent / (numeroAsesorias + 3);
     
             for(let i = 0; i < asesoriasAlumno.length; i++){
                 asesoriasAlumno[i].style.marginBottom = String(11 - customPatron) + 'px';
                 asesoriasAlumno[i].style.transform = `translateY(${((180 - (15 * i)) - transformPercent) - (numeroAsesorias - 1)}%)`;
                 asesoriasAlumno[i].style.msTransform = `translateY(${((180 - (15 * i)) - transformPercent) - (numeroAsesorias - 1)}%)`;
                 asesoriasAlumno[i].firstChild.style.height = String(customHeight) + 'px';
-                asesoriasAlumno[i].firstChild.style.fontSize = String(22 - customPatron) + 'px';
+                // asesoriasAlumno[i].firstChild.style.fontSize = String(20 - customPatron - (sizeComponent*.01)) + 'px';
             }
             
         }

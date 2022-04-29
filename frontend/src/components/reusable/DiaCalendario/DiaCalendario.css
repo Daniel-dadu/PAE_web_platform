@@ -38,7 +38,7 @@
 .btnAsesoria{
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 90%;
     border-radius: 20px;
     margin-bottom: 5px;
 }
@@ -63,63 +63,62 @@
 }
 
 .normalDiaSize{
-    width: 200px;
-    height: 150px;
+    height: 120px;
 }
 
 .grandeDiaSize{
-    width: 220px;
-    height: 150px;
+    height: 140px;
 }
 
 .reducidoDiaSize{
-    width: 180px;
-    height: 150px;
+    height: 100px;
+}
+
+/* RESPONSIVE 650 px */
+
+@media screen and (max-width: 650px){
+
+    .btnAsesoria > button{
+        font-size: 2.2vw;
+    }
+
+}
+
+/* RESPONSIVE 560 px */
+
+@media screen and (max-width: 560px){
+
+    .btnAsesoria{
+        width: 100%;
+    }
+
+    .btnAsesoria > button{
+        font-size: 2.3vw;
+    }
+
 }
 
 /* RESPONSIVE 480 px */
 
 @media screen and (max-width: 480px){
 
+    .btnAsesoria > button{
+        font-size: 3.7vw;
+    }
+
+}
+
+/* RESPONSIVE 380 px */
+
+@media screen and (max-width: 380px){
+
     .dia{
-        padding-top: 5px;
-        padding-left: 7px;
-        padding-right: 9px;
-        padding-bottom: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
     }
 
-    .numeroDia{
-        width: 80%;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .btnDirectivo{
-        width: 80%;
-        position: absolute;
-    }
-
-    .btnDirectivo > center > button{
-        font-size: 13px;
-    }
-
-    .btnAsesoria{
-        width: 100%;
-    }
-
-    .normalDiaSize{
-        width: 100px;
-        height: 150px;
-    }
-    
-    .grandeDiaSize{
-        width: 120px;
-        height: 150px;
-    }
-    
-    .reducidoDiaSize{
-        width: 90px;
-        height: 150px;
+    .btnAsesoria > button{
+        font-size: 3.7vw;
     }
 
 }
