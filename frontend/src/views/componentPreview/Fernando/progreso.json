@@ -5,12 +5,14 @@
             {
                 "name" : "Uno",
                 "state": null,
-                "next": "enable"
+                "next": "enable",
+                "path" : "./fernando"
             }, 
             {
                 "name" : "Dos",
                 "state": null,
-                "next": "block"
+                "next": "block",
+                "path" : "./fernando"
             }
         ]
     },
@@ -20,12 +22,14 @@
             {
                 "name" : "Uno",
                 "state": true,
-                "next": "enable"
+                "next": "enable",
+                "path" : "./fernando"
             }, 
             {
                 "name" : "Dos",
                 "state": null,
-                "next": "enable"
+                "next": "enable",
+                "path" : "./fernando"
             }
         ]
     },
@@ -35,12 +39,14 @@
             {
                 "name" : "Uno",
                 "state": null,
-                "next": "refuse"
+                "next": "refuse",
+                "path" : "./fernando"
             }, 
             {
                 "name" : "Dos",
                 "state": null,
-                "next": "refuse"
+                "next": "refuse",
+                "path" : "./fernando"
             }
         ]
     },
@@ -48,24 +54,34 @@
         "currentStep": 0,
         "steps": [
             {
-                "name" : "Uno",
+                "name" : "Seleccón",
                 "state": null,
-                "next": "restricted"
+                "next": "restricted",
+                "path" : "./fernando"
             }, 
             {
-                "name" : "Dos",
+                "name" : "Información",
                 "state": null,
-                "next": "restricted"
+                "next": "restricted",
+                "path" : "./fernando"
             },
             {
-                "name" : "Tres",
+                "name" : "Fecha",
                 "state": null,
-                "next": "restricted"
+                "next": "restricted",
+                "path" : "./fernando"
             },
             {
-                "name" : "Cuatro",
+                "name" : "Hora",
                 "state": null,
-                "next": "restricted"
+                "next": "restricted",
+                "path" : "./fernando"
+            },
+            {
+                "name" : "Comfirmación",
+                "state": null,
+                "next": "restricted",
+                "path" : "./fernando"
             }
         ]
     }

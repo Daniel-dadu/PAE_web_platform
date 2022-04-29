@@ -6,7 +6,6 @@ import { BsCheckCircle } from "react-icons/bs";
 BarraProgresp recibe un json con los datos de los pasos del proceso, con su 
 correspondiente estado y paso actual.
 
--El json es generado por la api.
 -La estructura del json es:
     -CurrentStep: Indice del paso actual (el indice comienza por 0)".
     -steps: Lista de pasos que conforma el proceso.
@@ -37,33 +36,39 @@ function BarraProgreso(props){
             {props.progress.steps.map((step, index) => {
                 return index < props.progress.steps.length-1 ?
                     <div className='barra_progreso_container_step_path'>
-                        <div className='barra_progreso_step'> 
-                            <div className='barra_progreso_step_circle'> 
-                                <div className='barra_progreso_step_outer_circle' style={{backgroundColor: props.progress.currentStep === index || step.state ? "green" : step.next === "refuse" ? "red": step.next === "restricted" ? "orange": "grey"}}></div>
-                                <div className='barra_progreso_step_inter_circle'> 
-                                    {index < props.progress.currentStep ? <BsCheckCircle className='barra_progreso_step_inter_circle_check_mark'/>: null}
+                        <a href={step.path}>
+                            <div className='barra_progreso_step'> 
+                                <div className='barra_progreso_step_circle'> 
+                                    <div className='barra_progreso_step_outer_circle' style={{backgroundColor: props.progress.currentStep === index || step.state ? "green" : step.next === "refuse" ? "red": step.next === "restricted" ? "orange": "grey"}}></div>
+                                    <div className='barra_progreso_step_inter_circle'> 
+                                        {index < props.progress.currentStep ? <BsCheckCircle className='barra_progreso_step_inter_circle_check_mark'/>: null}
+                                    </div>
+                                </div>
+                                <div className='barra_progreso_step_name_container'> 
+                                    <div className='barra_progreso_step_name'> 
+                                        {step.name}
+                                    </div>
                                 </div>
                             </div>
-                            <div className='barra_progreso_step_name'> 
-                                {step.name}
-                            </div>
-                        </div>
+                        </a>
                         <div className='barra_progreso_path'>
                             <hr className='barra_progreso_path_status' style={{backgroundColor: step.next === "enable" && props.progress.currentStep > index ? "green" : step.next === "refuse" ? "red": step.next === "restricted" ? "orange": "grey"}}></hr>
                         </div>
                     </div>
                     :<div className='barra_progreso_container_step_path end'>
-                        <div className='barra_progreso_step'> 
-                            <div className='barra_progreso_step_circle'> 
-                                <div className='barra_progreso_step_outer_circle' style={{backgroundColor: props.progress.currentStep === index || step.state ? "green" : step.next === "refuse" ? "red": step.next === "restricted" ? "orange": "grey"}}></div>
-                                <div className='barra_progreso_step_inter_circle'>
-                                {index < props.progress.currentStep ? <BsCheckCircle className='barra_progreso_step_inter_circle_check_mark'/>: null}
+                        <a href={step.path}>
+                            <div className='barra_progreso_step'> 
+                                <div className='barra_progreso_step_circle'> 
+                                    <div className='barra_progreso_step_outer_circle' style={{backgroundColor: props.progress.currentStep === index || step.state ? "green" : step.next === "refuse" ? "red": step.next === "restricted" ? "orange": "grey"}}></div>
+                                    <div className='barra_progreso_step_inter_circle'>
+                                    {index < props.progress.currentStep ? <BsCheckCircle className='barra_progreso_step_inter_circle_check_mark'/>: null}
+                                    </div>
+                                </div>
+                                <div className='barra_progreso_step_name'> 
+                                    {step.name}
                                 </div>
                             </div>
-                            <div className='barra_progreso_step_name'> 
-                                {step.name}
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 
             })}
