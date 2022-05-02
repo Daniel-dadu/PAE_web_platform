@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,4 +8,15 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
+  font-family: Dosis;
+}
+
+:root{
+  --blanco: #FFFFFF;
+  --negro: #000000;
+  --azulCielo: #50C7F1;
+  --rojo: #FF0000;
+  --gris: #949494;
+  --turquesa: #1B4858;
+  --verde: #269D24;
 }

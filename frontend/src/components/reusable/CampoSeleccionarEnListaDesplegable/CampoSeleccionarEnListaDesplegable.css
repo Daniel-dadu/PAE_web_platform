@@ -1,0 +1,25 @@
+.container_cseld {
+    display: inline;
+    position: relative;
+}
+
+.container_cseld input {
+    font-size: 1rem;
+    padding: 10px;
+    margin: 0;
+    border: none;
+    background-color: #e6e6e6;
+    border-radius: 10px;
+}
+
+.container_cseld input::-webkit-calendar-picker-indicator {
+    opacity: 0%;
+}
+
+.arrow_down {
+    color: #7e7e7e;
+    position: absolute;
+    right: 3%;
+    bottom: -25%;
+    pointer-events: none;
+}
