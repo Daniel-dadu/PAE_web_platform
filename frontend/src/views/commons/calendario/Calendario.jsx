@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Template, CambioMesPeriodo, ComponenteCalendario } from '../../../routeIndex'
 
-import CalendarioJSON from '../../../components/reusable/Calendario/PruebaCalendario.json'
+import CalendarioJSON from './PruebaCommonCalendario.json'
 import './CalendarioStyle.css'
 
 // Importante: es necesario revisar cómo se va a manejar el tema e idioma de la BARRA LATERAL. Aquí está hardcodeado
