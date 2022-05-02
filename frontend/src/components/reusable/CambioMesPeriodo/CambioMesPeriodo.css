@@ -80,7 +80,7 @@ color: #FFFFFF;}
 
 .bloqueTexto{
   display: flex;
-  flex-direction: cl;
+  flex-direction: column;
 }
 
 @media (max-width: 480px){

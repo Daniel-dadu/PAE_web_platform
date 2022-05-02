@@ -46,7 +46,7 @@ const slidesArray =  dataSupInf
 
         
 
-        <div className='Bloque de Texto'>
+        <div className='bloqueTexto'>
         <div className='textSup'> {validSlide[0].Sup} </div>
         <div className='textInf'> {validSlide[0].Inf} </div>
         </div>
