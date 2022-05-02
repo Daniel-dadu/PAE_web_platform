@@ -128,3 +128,94 @@
 .contenedor-inputs .contenedor-boton a:hover {
     color: #2ec4b6;
 }
+
+.contenedor-login .lateral-responsive {
+    display: none;
+}
+.contenedor-login .lateral-fuera-responsive{
+    display: none;
+}
+
+
+@media screen and (max-width: 768px) { 
+
+    .contenedor-login {
+        width: 100%;
+        z-index: 100;
+        height: 100vh;
+        background: #455A64;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        right: 0;
+        top: 0;
+        transition: all 1s ease-in-out;
+    }
+
+    .active-login {
+        right: -100%;
+    }
+
+    @keyframes animacion-btn {
+       0%{transform: translateX(0);}
+       25%{ transform: translateX(5px);}
+       50%{transform: translateX(5px);}
+       100%{transform: translateX(0);}
+    }
+
+    .contenedor-login .lateral-responsive {
+        display: flex;
+        position: absolute;
+        z-index: 10;
+        top: 24px;
+        left: 0;
+        width: 15%;
+        height: 7%;
+        background: #50C7F1;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 50px 50px 0;
+        
+        
+    }
+
+    .contenedor-login .lateral-responsive .icono1{
+        font-size: 4vw;
+        animation-name: animacion-btn;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+
+    .contenedor-login .lateral-fuera-responsive {
+        display: flex;
+        position: absolute;
+        z-index: 50;
+        top: calc(100vh/4);
+        left: -15%;
+        width: 15%;
+        height: 7%;
+        background: #50C7F1;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px 0 0 50px;
+        box-shadow: -16px 13px 54px -10px rgba(0,0,0,0.75);
+        -webkit-box-shadow: -16px 13px 54px -10px rgba(0,0,0,0.75);
+        -moz-box-shadow: -16px 13px 54px -10px rgba(0,0,0,0.75);
+    }
+
+    .contenedor-login .lateral-fuera-responsive .icono2 {
+        font-size: 4vw;
+        animation-name: animacion-btn;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+
+    .contenedor-inputs .contenedor-boton button {
+        width: 30%;
+        height: 60%;
+    }
+
+
+
+ }
