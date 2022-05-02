@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './login.css';
-
+import { FaAngleDoubleRight, FaSignInAlt, FaInfoCircle } from 'react-icons/fa';
 
 
 const Login = () => {
+
+    const [clicked, setclicked] = useState(false);
+
+    const handleClickLogin = () => {
+        setclicked(!clicked);
+    }
+
   return (
     <>
-        <section className='contenedor-login'>
+        <section className={`contenedor-login${ clicked ? ' active-login':''}`}>
+
+            <div className='lateral-responsive'>
+                <FaInfoCircle className='icono1' onClick={ handleClickLogin }/>
+
+            </div>
+
+            <div className='lateral-fuera-responsive'>
+                <FaSignInAlt className='icono2' onClick={ handleClickLogin }/>
+            </div>
+
             <div className='contenedor-principal'>
                 <h1>Inicio de Sesión</h1>
 
