@@ -10,15 +10,15 @@
 
 .calendarioStyle {
     position: relative;
-    top: 40%;
-    left: 60%;
+    top: 35%;
+    left: 65%;
     transform: translate(-50%, -50%);
 
 }
 
 .mesAno_style {
     position: relative;
-    top: 0%;
+    top: -5%;
     left: 80%;
 
 }
