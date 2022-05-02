@@ -5,7 +5,7 @@ import asesoriaEjemplo from "./asesoriaEjemplo.json"
 import { BotonSencillo }  from '../../../routeIndex'
 import {ImagenAsesoria} from '../../../routeIndex'
 
-export default function PopUpInformacionAsesoria({images}) {
+export default function PopUpInformacionAsesoria({images, userTypePopUpAsesoria}) {
     return (
       <div>
         <div class= "container">
@@ -45,14 +45,24 @@ export default function PopUpInformacionAsesoria({images}) {
           
 
           </div>
-  
+
+          {(userTypePopUpAsesoria === 'alumno') ?
+
           <div className='four'>
 
-           <div className='fourBox'> <BotonSencillo className="botonLozano" backgroundColor="rojo" size='reducido' children="No llegó el asesor"></BotonSencillo> </div>  
+           <div className='fourBox'> <BotonSencillo backgroundColor="rojo" size='reducido' children="No llegó el asesor"></BotonSencillo> </div>  
            
-           <div className='fourBox'> <BotonSencillo className="botonLozano" backgroundColor="gris" size='reducido' children="Cancelar asesoría"></BotonSencillo> </div>
+           <div className='fourBox'> <BotonSencillo  backgroundColor="gris" size='reducido' children="Cancelar asesoría"></BotonSencillo> </div>
 
           </div>
+
+          : <div className='four'> 
+
+            <div className='fourBox'> <BotonSencillo  backgroundColor="gris" size='reducido' children="Cancelar asesoría"></BotonSencillo> </div>
+
+            </div> }
+
+
 
           <div>
           </div>

@@ -5,8 +5,8 @@
     align-items: stretch;
     gap: 3px;
     flex-direction: column;
-    width: 30%;
-    max-width: 30%;
+    width: 35%;
+    max-width: 35%;
     min-width: 20%;
     height: 80%;
     max-height: 80%;
@@ -53,6 +53,10 @@
 
 }
 
+.three .divImg{
+    /* */
+}
+
 .four{
 
     /* border: 3px solid #ff00bf; */
@@ -64,6 +68,7 @@
     overflow-y: hidden;
     overflow-x: hidden;
     height: 8%;
+    padding-bottom: 80px;
 
 }
 
@@ -136,16 +141,54 @@
     
 }
 
-.imagenLozano {
-    height: 100%;
+.four .fourBox .btn{
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    font-size: 20px;
 }
 
-.botonLozano {
-    height: 100%;
+@media screen and (max-width: 1430px){
+    .container{
+        width: 50%;
+        max-width: 50%;
+    }
 }
 
+@media screen and (max-width: 1000px){
+    .container{
+        width: 65%;
+        max-width: 65%;
+    }
+}
+
+@media screen and (max-width: 765px){
+    .container{
+        width: 90%;
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .container{
+        width: 99%;
+        max-width: 99%;
+    }
+}
 
 @media screen and (max-width: 480px){
+
+    .four .fourBox .btn{
+        margin-left: auto;
+        margin-right: auto;
+        width: 98%;
+        font-size: 1.1em;
+    }
+
+    .four{
+        padding-bottom: 10px;
+    }
+
     .container{
         width: 70%;
         max-width: 70%;
@@ -189,6 +232,9 @@
     
     
 }
+
+
+
 
     @media screen and (max-width: 1280px){
         .titulo{
