@@ -1,22 +1,11 @@
 import React from 'react'
-import { CambioMesPeriodo }  from '../../../routeIndex'
+import { Calendario }  from '../../../routeIndex'
 
 function DanielMunive() {
   return (
-    <>
-    <CambioMesPeriodo dataSupInf={  [ 
-  {id: 1,
-  Sup: 'Texto Superior 1',
-  Inf: 'Texto Inferior 1'},
 
-  {id: 2,
-  Sup: 'Texto Superior 2',
-  Inf: 'Texto Inferior 2'},
+    <Calendario></Calendario>
 
-  {id: 3,
-  Sup: 'Texto Superior 3',
-  Inf: 'Texto Inferior 3'}   ]  } > </CambioMesPeriodo>
-    </>
   )
 }
 

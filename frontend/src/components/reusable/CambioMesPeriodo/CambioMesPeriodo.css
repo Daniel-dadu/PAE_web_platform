@@ -75,6 +75,11 @@ color: #FFFFFF;}
   white-space: nowrap;
   
   background: #1B4858;
+  width: 200%;
+  height: 50%;
+  position: relative;
+  top: 0;
+  right: 40%;
   border-radius: 10px 10px 0px 0px;
 }
 
