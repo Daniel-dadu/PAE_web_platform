@@ -1,3 +1,4 @@
+
 export {default as TemporalHome} from './views/componentPreview/TemporalHome/TemporalHome.jsx';
 export {default as LandingPage } from './views/LandingPage/LandingPage.js';
 export {default as Calendario } from './views/commons/calendario/Calendario.jsx';
@@ -37,3 +38,5 @@ export {default as AgendarAsesoriaUF } from './views/asesorado/agendarAsesoriaUF
 export {default as AgendarAsesoriaDuda } from './views/asesorado/agendarAsesoriaDuda/AgendarAsesoriaDuda.jsx'
 
 export {default as CambioMesPeriodo } from './components/reusable/CambioMesPeriodo/CambioMesPeriodo.jsx'
+
+export {default as PopUpInformacionAsesoria } from './components/reusable/PopUpInformacionAsesoria/PopUpInformacionAsesoria.jsx'
