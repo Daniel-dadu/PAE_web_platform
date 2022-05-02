@@ -5,6 +5,7 @@ import { FaPen, FaBookmark, FaAddressBook, FaHandsHelping, FaChevronDown } from 
 
 
 
+
 export const LandingPage = () => {
 
     const [ clicked, setClicked ] = useState(false);
@@ -52,7 +53,7 @@ export const LandingPage = () => {
                 </a>
             </div>
        </Nav>
-      
+        
 
        <section className='quienes-somos' id='quienesSomos'>
 

@@ -1,5 +1,5 @@
 export {default as TemporalHome} from './views/componentPreview/TemporalHome/TemporalHome.jsx';
-export {default as LandingPage } from './views/LandingPage/LandingPage.jsx';
+export {default as LandingPage } from './views/LandingPage/LandingPage.js';
 export {default as Calendario } from './views/commons/calendario/Calendario.jsx';
 export {default as  PerfilAsesor  } from './views/asesor/perfil/PerfilAsesor.jsx';
 export {default as  PerfilAsesorado  } from './views/asesorado/perfil/PerfilAsesorado.jsx';
