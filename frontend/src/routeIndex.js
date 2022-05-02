@@ -34,3 +34,5 @@ export {default as CalendarioMini } from './components/reusable/CalendarioMini/C
 
 export {default as AgendarAsesoria } from './views/commons/agendarAsesoria/AgendarAsesoria.jsx'
 export {default as AgendarAsesoriaUF } from './views/asesorado/agendarAsesoriaUF/AgendarAsesoriaUF.jsx'
+
+export {default as CambioMesPeriodo } from './components/reusable/CambioMesPeriodo/CambioMesPeriodo.jsx'
