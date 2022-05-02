@@ -1,5 +1,4 @@
 import React from 'react'
-import './DanielMaldonado.css'
 
 import { AgendarAsesoria } from '../../../routeIndex'
 
