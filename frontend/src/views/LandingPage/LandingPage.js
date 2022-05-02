@@ -52,10 +52,9 @@ export const LandingPage = () => {
                     Equipo de trabajo
                 </a>
             </div>
-            
-            
-            
        </Nav>
+        
+
        <section className='quienes-somos' id='quienesSomos'>
 
             <div className='izq'>

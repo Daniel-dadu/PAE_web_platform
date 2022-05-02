@@ -40,10 +40,10 @@ const ImagenAsesoria = ({
     return(
         <>
         <div className = {`divImg ${ImageSize}Size`}>
-            <a href = {require(`./${source}`)} download = {nameDownloadImage}>
+            <a href = {source} download = {nameDownloadImage}>
                 <img
                     className = 'img'
-                    src = {require(`./${source}`)}
+                    src = {source}
                     alt = {alt}
                 />
             </a>
