@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Nav, NavLink, Bars, NavMenu } from './NavbarElements';
 import './landingPage.css';
 import { FaPen, FaBookmark, FaAddressBook, FaHandsHelping, FaChevronDown } from 'react-icons/fa';
+import Login from './Login';
+
 
 
 
@@ -12,6 +14,7 @@ export const LandingPage = () => {
     const handleClick = () => {
         setClicked(!clicked);
     }
+
   return (
     <>
        
@@ -23,16 +26,16 @@ export const LandingPage = () => {
 
            <NavMenu>
 
-                <a href='#quienesSomos'>
+                <a id='etiqueta-navbar' href='#quienesSomos'>
                     ¿Quiénes Somos?
                 </a>
-                <a href='#funcionamiento'>
+                <a id='etiqueta-navbar' href='#funcionamiento'>
                     Funcionamiento
                 </a>
-                <a href='#objetivos'>
+                <a id='etiqueta-navbar' href='#objetivos'>
                     Objetivos
                 </a>
-                <a href='#equipo-trabajo'>
+                <a id='etiqueta-navbar' href='#equipo-trabajo'>
                     Equipo de trabajo
                 </a>
                 
@@ -52,7 +55,8 @@ export const LandingPage = () => {
                 </a>
             </div>
        </Nav>
-      
+
+        <Login/>
 
        <section className='quienes-somos' id='quienesSomos'>
 

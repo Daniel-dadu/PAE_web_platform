@@ -14,7 +14,7 @@ html {
 }
 
 /* Inicializamos estilos para secciones de landing page */
-a {
+#etiqueta-navbar {
     color: #000;
     display: flex;
     align-items: center;
@@ -28,7 +28,7 @@ a {
     transition: all 0.2s ease-in-out;
 }
 
-a:hover {
+#etiqueta-navbar:hover {
     color: #0066FF;
 }
 
@@ -40,6 +40,7 @@ a:hover {
     display: block;
     top: 68px;
     position: sticky;
+    z-index: 110;
 }
 
 .navbar-responsive {
@@ -47,7 +48,7 @@ a:hover {
     height: calc(100vh - 68px);
     justify-content:space-evenly;
     align-items: center;
-    z-index: 100;
+    z-index: 110;
     display: block;
     flex-direction: column;
     top: 68px;

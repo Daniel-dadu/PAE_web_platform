@@ -9,6 +9,7 @@ function TemporalHome() {
       <Link to='/landingPage' className='link_tmp'>Landing Page</Link>
       <Link to='/calendario' className='link_tmp'>Calendario</Link>
       <Link to='/agendarAsesoriaUF' className='link_tmp'>AgendarAsesoriaUF</Link>
+      <Link to='/agendarAsesoriaDuda' className='link_tmp'>AgendarAsesoriaDuda</Link>
 
       <h2>Próximamente</h2>
       <Link to='/perfilAsesor' className='link_tmp'>Perfil Asesor</Link>

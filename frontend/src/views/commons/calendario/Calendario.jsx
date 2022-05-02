@@ -11,7 +11,7 @@ import './CalendarioStyle.css'
 //Importante es Necesario revisar como se va a manejar el componente de PeriodoMesAño para manejar el calendario con este, y que se actualize el mes y el año el el componente y en el calendario
 function Calendario() {
   return (
-    <Template user="asesorado" tema="claro" idioma="espanol" view="agendarAsesoria">
+    <Template view="calendario">
         <div className='.container_titleCalendar '>
             <h1 className='title_calendario'>Próximas asesorías</h1>
         </div>

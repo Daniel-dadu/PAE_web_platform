@@ -29,7 +29,7 @@ function BotonConImagen({ onClick, backgroundColor, size, Image, children }) {
 
     return (
         <button className = {`btn ${ButtonBackground} ${ButtonSize}`} onClick = {onClick}>
-            <p>{children}</p> <div><Image/></div>
+            <p>{children}</p> <div><Image size={35} /></div>
         </button>
     )
 }

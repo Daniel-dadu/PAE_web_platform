@@ -22,7 +22,7 @@ EJEMPLO DE USO:
 
 function AgendarAsesoria({showAtrasBtn, showTarjetaMaestraMini, sizeTarjetaMaestraMini, progressBarJSON, children}) {
   return (
-    <Template user="asesorado" tema="claro" idioma="espanol" view="agendarAsesoria">
+    <Template view="agendarAsesoria">
         <div className='container_titleProgress'>
             <h1 className='title_agendarAsesoria'>Agendar asesorías</h1>
             <BarraProgreso progress={progressBarJSON}/>
