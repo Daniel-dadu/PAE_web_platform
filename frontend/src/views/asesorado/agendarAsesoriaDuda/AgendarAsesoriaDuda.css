@@ -1,0 +1,9 @@
+.container-aad {
+    width: 80%;
+    margin: auto;
+}
+
+.container_imagenes {
+    display: flex;
+    gap: 20px;
+}
