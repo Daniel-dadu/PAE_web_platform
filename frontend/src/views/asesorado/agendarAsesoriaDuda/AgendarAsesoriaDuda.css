@@ -1,0 +1,40 @@
+.container-aad {
+    width: 80%;
+    margin: auto;
+    height: 100%;
+}
+
+.container-aad .top {
+    height: 40%;
+}
+
+.container-aad h3 {
+    padding: 0.5rem 1rem;
+}
+
+.container_ImageUploading {
+    position: relative;
+    height: 60%;
+}
+
+.container_ImageUploading .container_imagenes {
+    display: flex;
+    gap: 3%;
+    height: 75%;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_ImageUploading .container_imagenes p {
+    width: fit-content;
+    margin: auto;
+    font-size: 1.3rem;
+}
+
+.container_ImageUploading .btn_upload {
+    position: absolute;
+    width: fit-content;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
