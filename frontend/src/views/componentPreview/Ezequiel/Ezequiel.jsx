@@ -116,7 +116,7 @@ function Ezequiel() {
         // NOTA: en el archivo JSON debe existir un campo "numeroDia", "isActive", "asesorias" y "onClickDirectivo",
         // este último debe almacenar la función para abrir el menú de todas las asesorías para un día en específico (SOLO APLICA CUANDO EL USUARIO ES DIRECTIVO, NO ALUMNO)
         // Para comprender mejor esto se debe ver el archivo 'PruebaCalendario.json' encontrado en la carpeta de este componente
-      sizeCalendario = 'reducido' // Tamaño del componente
+      sizeCalendario = 'normal' // Tamaño del componente
         // normal
         // grande
         // reducido

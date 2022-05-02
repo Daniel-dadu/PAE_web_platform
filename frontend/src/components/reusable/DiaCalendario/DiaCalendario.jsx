@@ -54,7 +54,7 @@ const DiaCalendario = ({
                                             <BotonSencillo
                                                 onClick = {eval(asesorias['asesorias'][index]['openPanel'])} // Acción que ocurre al dar click en el botón
                                                 backgroundColor = {(asesorias['asesorias'][index]['status'] === 'Activa') ? 'azulCielo' : (asesorias['asesorias'][index]['status'] === 'Finalizada') ? 'turquesa' : 'rojo' }
-                                                size = 'reducido'
+                                                size = 'normal'
                                                     // normal
                                                     // largo
                                                     // reducido
@@ -74,12 +74,12 @@ const DiaCalendario = ({
                             </div>
                         :
                             <>
-                            <div className = 'btnDirectivo'>
+                            <div className = {`btnDirectivo ${ComponentSize}DiaSize`}>
                                 <center>
                                     <BotonSencillo
                                         onClick = {onClickDirectivo} // Acción que ocurre al dar click en el botón
                                         backgroundColor = 'azulCielo'
-                                        size = 'reducido'
+                                        size = 'normal'
                                             // normal
                                             // largo
                                             // reducido
