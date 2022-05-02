@@ -43,18 +43,22 @@ let progressBar = {
 }
 function AgendarAsesoriaDuda() {
 
+    // El array imageList siempre va a tener la lista de las imágenes que se suban
+    // y en imageList[index].data_url tendrá el src del archivo
+
     const [images, setImages] = React.useState([]);
-    const onChange = (imageList, addUpdateIndex) => {
-        // data for submit
-        console.log(imageList, addUpdateIndex);
+    const onChange = (imageList) => {
+        // console.log(imageList);
         setImages(imageList);
     };
 
   return (
     <AgendarAsesoria showAtrasBtn={true} showTarjetaMaestraMini={true} sizeTarjetaMaestraMini="normal" progressBarJSON={progressBar}>
         <div className='container-aad'>
-            <h3>Explica tu duda</h3>
-            <CampoTextoGrande/>
+            <div className='top'>
+                <h3>Explica tu duda:</h3>
+                <CampoTextoGrande/>
+            </div>
                 
             <ImageUploading multiple value={images} onChange={onChange} maxNumber={3} dataURLKey="data_url">
                 {({ imageList, onImageUpload, onImageRemove }) => (
@@ -66,16 +70,22 @@ function AgendarAsesoriaDuda() {
                             <ImagenAsesoria
                                 allowClosed = '1'
                                 onClickX = {() => onImageRemove(index)}
-                                size = 'normal'
+                                size = 'reducida'
                                 source = {image.data_url}
                                 alt = {`ImagenAsesoria${index}`}
                                 nameDownloadImage = {`ImagenAsesoria${index}`}
                             />
                         ))}
                     </div>
-                    <BotonConImagen onClick={onImageUpload} backgroundColor="gris" size="normal" Image={BiImageAdd} >
-                        Subir imagen
-                    </BotonConImagen>
+                    <div className='btn_upload'>
+                        <BotonConImagen 
+                        onClick={imageList.length === 3 ? () => alert('No se permite subir más de 3 imágenes') : onImageUpload} 
+                        backgroundColor="gris" 
+                        size="normal" 
+                        Image={BiImageAdd} >
+                            Subir imagen
+                        </BotonConImagen>
+                    </div>
                 </div>
                 )}
             </ImageUploading>
