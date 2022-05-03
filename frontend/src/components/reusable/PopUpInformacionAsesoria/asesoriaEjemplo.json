@@ -7,6 +7,7 @@
     "asesorado": "Lozanosoft",
     "lugar": "Biblioteca Norte",
     "uF": "Fundamentos químicos",
-    "duda": "Aquí debe ir mucho texto que describa la duda que tiene el alumno y debe estar escrita de la forma más específica posible. Entre más texto escriban debe ser mejor para los asesores. Aquí debe ir mucho texto que describa la duda que tiene el alumno y debe estar escrita de la forma más específica posible. Entre más texto escriban debe ser mejor para los asesores."
-    
+    "duda": "Aquí debe ir mucho texto que describa la duda que tiene el alumno y debe estar escrita de la forma más específica posible. Entre más texto escriban debe ser mejor para los asesores. Aquí debe ir mucho texto que describa la duda que tiene el alumno y debe estar escrita de la forma más específica posible. Entre más texto escriban debe ser mejor para los asesores.",
+    "images" : ["imgPrueba/DebianLogo.png","imgPrueba/DebianLogo.png","imgPrueba/DebianLogo.png"]
+
   }}

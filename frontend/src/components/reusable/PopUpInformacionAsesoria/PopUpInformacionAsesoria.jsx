@@ -1,28 +1,28 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './infoAsesorias.css';
 import { ImCross } from 'react-icons/im';
-import asesoriaEjemplo from "./asesoriaEjemplo.json"
-import { BotonSencillo }  from '../../../routeIndex'
-import {ImagenAsesoria} from '../../../routeIndex'
 
-export default function PopUpInformacionAsesoria({images, userTypePopUpAsesoria}) {
+import { BotonSencillo }  from '../../../routeIndex'
+import { ImagenAsesoria } from '../../../routeIndex'
+
+export default function PopUpInformacionAsesoria({userTypePopUpAsesoria, infoAsesoria}) {
     return (
       <div>
         <div class= "container">
           
           <div className='one'>
             <a href=""><ImCross className='close'> </ImCross></a>      
-            <p className= "titulo">Asesoria del {asesoriaEjemplo.Asesoria.numeroDia} de  {asesoriaEjemplo.Asesoria.mes} </p> 
+            <p className= "titulo">Asesoria del { infoAsesoria.diasCalendario[0].numeroDia} de  {infoAsesoria.diasCalendario[0].mes} </p> 
           </div>
   
           <div className='two'>
   
-              <div className='subtitulo'>Hora: <p className='informacion'>{asesoriaEjemplo.Asesoria.hora}</p> </div>
-              <div className='subtitulo'>Asesor: <p className='informacion'>{asesoriaEjemplo.Asesoria.asesor}</p> </div> 
-              <div className='subtitulo'>Asesorado: <p className='informacion'>{asesoriaEjemplo.Asesoria.asesorado}</p> </div> 
-              <div className='subtitulo'>Lugar: <p className='informacion'>{asesoriaEjemplo.Asesoria.lugar}</p> </div>           
-              <div className='subtitulo'>Unidad de formacion: <p className='informacion'>{asesoriaEjemplo.Asesoria.uF}</p> </div>
-              <div className='subtitulo'>Duda: <p className='informacion'>{asesoriaEjemplo.Asesoria.duda}</p> </div>
+              <div className='subtitulo'>Hora: <p className='informacion'>{infoAsesoria.diasCalendario[0].asesorias[0].hora}</p> </div>
+              <div className='subtitulo'>Asesor: <p className='informacion'>{infoAsesoria.diasCalendario[0].asesorias[0].asesor}</p> </div> 
+              <div className='subtitulo'>Asesorado: <p className='informacion'>{infoAsesoria.diasCalendario[0].asesorias[0].asesorado}</p> </div> 
+              <div className='subtitulo'>Lugar: <p className='informacion'>{infoAsesoria.diasCalendario[0].asesorias[0].lugar}</p> </div>           
+              <div className='subtitulo'>Unidad de formacion: <p className='informacion'>{infoAsesoria.diasCalendario[0].asesorias[0].uF}</p> </div>
+              <div className='subtitulo'>Duda: <p className='informacion'>{infoAsesoria.diasCalendario[0].asesorias[0].duda}</p> </div>
             
                  
           </div>
@@ -33,11 +33,11 @@ export default function PopUpInformacionAsesoria({images, userTypePopUpAsesoria}
   
           <div className='three'>
 
-            {images.map((image) => {
+       {infoAsesoria.diasCalendario[0].asesorias[0].images.map((images, index) => {
               return <div><ImagenAsesoria
               allowClosed = '0'
               size = 'reducida'
-              source = {image}
+              source = {infoAsesoria.diasCalendario[0].asesorias[0].images[index]}
               alt = 'Debian'
               nameDownloadImage = 'La imagen de Debian'
               > </ImagenAsesoria> </div>

@@ -1,10 +1,14 @@
 import React from 'react'
-import { Calendario }  from '../../../routeIndex'
+import { PopUpInformacionAsesoria }  from '../../../routeIndex'
 
+import EjemploJSON from './pruebasGrandes.json'
 function DanielMunive() {
   return (
+    <div> 
 
-    <Calendario></Calendario>
+    <PopUpInformacionAsesoria  userTypePopUpAsesoria = "alumno" infoAsesoria = {EjemploJSON}></PopUpInformacionAsesoria>
+
+    </div>
 
   )
 }
