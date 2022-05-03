@@ -1,6 +1,8 @@
 import React from 'react'
 import './AgendarAsesoria.css'
 
+import { useNavigate } from "react-router-dom";
+
 import { Template, BarraProgreso, TarjetaMaestraMini, BotonSencillo } from '../../../routeIndex'
 
 // Importante: es necesario revisar cómo se va a manejar el tema e idioma de la BARRA LATERAL. Aquí está hardcodeado
@@ -20,7 +22,12 @@ EJEMPLO DE USO:
 
 */
 
-function AgendarAsesoria({showAtrasBtn, showTarjetaMaestraMini, sizeTarjetaMaestraMini, progressBarJSON, children}) {
+function AgendarAsesoria({showAtrasBtn, btnAtrasRoute, btnSiguienteRoute, showTarjetaMaestraMini, sizeTarjetaMaestraMini, progressBarJSON, children}) {
+
+    let navigate = useNavigate()
+    const routeChange = route => navigate(`/${route}`);
+      
+
   return (
     <Template view="agendarAsesoria">
         <div className='container_titleProgress'>
@@ -39,18 +46,18 @@ function AgendarAsesoria({showAtrasBtn, showTarjetaMaestraMini, sizeTarjetaMaest
         <div className='container_navButtons'>
             {showAtrasBtn ? (
             <div>
-                <BotonSencillo onClick = {() => {alert('Me diste click :)')}} backgroundColor='turquesa' size='normal'>
+                <BotonSencillo onClick = {() => routeChange(btnAtrasRoute)} backgroundColor='turquesa' size='normal'>
                     Atras
                 </BotonSencillo>
             </div> 
             ) : null}
             <div className="btn_right">
-                <BotonSencillo onClick = {() => {alert('Me diste click :)')}} backgroundColor='gris' size='normal'>
+                <BotonSencillo onClick = {() => routeChange("./calendario")} backgroundColor='gris' size='normal'>
                     Cancelar
                 </BotonSencillo>
             </div>
             <div>
-                <BotonSencillo onClick = {() => {alert('Me diste click :)')}} backgroundColor='verde' size='normal'>
+                <BotonSencillo onClick={() => routeChange(btnSiguienteRoute)} backgroundColor='verde' size='normal'>
                     Siguiente
                 </BotonSencillo>
             </div>
