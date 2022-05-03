@@ -41,8 +41,14 @@ let progressBar = {
 function AgendarAsesoriaDuda() {
 
   return (
-    <AgendarAsesoria showAtrasBtn={true} showTarjetaMaestraMini={true} sizeTarjetaMaestraMini="normal" progressBarJSON={progressBar}>
-        <div className='container-aad'>
+    <AgendarAsesoria 
+    showAtrasBtn={true} 
+    btnAtrasRoute="./AgendarAsesoriaDuda" 
+    btnSiguienteRoute="./AgendarAsesoriaHora"
+    showTarjetaMaestraMini={true} 
+    sizeTarjetaMaestraMini="normal" 
+    progressBarJSON={progressBar}>
+        <div className='calendario_container'>
           <CalendarioMini calendar={info} year="2022" monthIndex={1}/>
         </div>
     </AgendarAsesoria>
