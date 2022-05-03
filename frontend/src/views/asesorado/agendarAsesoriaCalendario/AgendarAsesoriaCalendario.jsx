@@ -43,7 +43,7 @@ function AgendarAsesoriaDuda() {
   return (
     <AgendarAsesoria showAtrasBtn={true} showTarjetaMaestraMini={true} sizeTarjetaMaestraMini="normal" progressBarJSON={progressBar}>
         <div className='container-aad'>
-          <CalendarioMini calendar={info} year="2022" monthIndex="0"/>
+          <CalendarioMini calendar={info} year="2022" monthIndex={1}/>
         </div>
     </AgendarAsesoria>
   )
