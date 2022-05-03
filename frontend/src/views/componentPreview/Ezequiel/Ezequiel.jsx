@@ -31,39 +31,45 @@
 
 // 2. Uso del componente de la imagen
 
-// import React from 'react'
-// import { ImagenAsesoria } from '../../../routeIndex'
+import React from 'react'
+import { ImagenAsesoria } from '../../../routeIndex'
 
-// function Ezequiel() {
-//   return (
-//     <ImagenAsesoria
-//       allowClosed = '1'
-//         // 0 significa que NO puede cerrarse (NO tiene la equis en la esquina)
-//         // 1 significa que SÍ puede cerrarse (tiene la equis en la esquina)
-//       onClickX = {() => {alert('Debo quitar la imagen :)')}}
-//         // Acción que debe quitar la imagen y descartar de subir la ruta de la misma en la asesoría a agendar
-//         // Nota, solo se debe ocupar este atributo si el allowClosed es '1',
-//         // de lo contrario se debe dejar como '{}'
-//       size = 'reducida'
-//         // normal
-//         // larga
-//         // ancha
-//         // grande
-//         // reducida
-//       source = 'imgPrueba/DebianLogo.png'
-//         // Se debe poner la ruta LOCAL de la imagen
-//         // NOTA: ESTÁ PENDIENTE ELEGIR BIEN LA RUTA DONDE ESTAS SE GUARDARÁN,
-//         // POR LO QUE, POR AHORA SE ASUME QUE SE PARTE DE LA CARPETA DE ESTE COMPONENTE (ImagenAsesoria)
-//         // Ejemplo: hay una imagen llamada DebianLogo.png en la ruta 'components/reusable/ImagenAsesoria/imgPrueba/DebianLogo.png',
-//         // por lo cual, se le da el valor de source como 'imgPrueba/DebianLogo.png'
-//       alt = 'Debian' // Nombre alterno de la imagen
-//       nameDownloadImage = 'La imagen de Debian' // Nombre de la imagen al ser descargada
-//     >
-//     </ImagenAsesoria>
-//   )
-// }
+function Ezequiel() {
+  return (
+    <>
+      <div // Div de prueba para la imagen
+        class = 'containerImg'
+        style = {{
+          width: '100%',
+          height: '150px',
+          marginLeft: 'auto',
+          marginRight: 'auto'
+        }}
+      >
+        <ImagenAsesoria
+          allowClosed = '1'
+            // 0 significa que NO puede cerrarse (NO tiene la equis en la esquina)
+            // 1 significa que SÍ puede cerrarse (tiene la equis en la esquina)
+          onClickX = {() => {alert('Debo quitar la imagen :)')}}
+            // Acción que debe quitar la imagen y descartar de subir la ruta de la misma en la asesoría a agendar
+            // Nota, solo se debe ocupar este atributo si el allowClosed es '1',
+            // de lo contrario se debe dejar como '{}'
+          source = 'imgPrueba/DebianLogo.png'
+            // Se debe poner la ruta LOCAL de la imagen
+            // NOTA: ESTÁ PENDIENTE ELEGIR BIEN LA RUTA DONDE ESTAS SE GUARDARÁN,
+            // POR LO QUE, POR AHORA SE ASUME QUE SE PARTE DE LA CARPETA DE ESTE COMPONENTE (ImagenAsesoria)
+            // Ejemplo: hay una imagen llamada DebianLogo.png en la ruta 'components/reusable/ImagenAsesoria/imgPrueba/DebianLogo.png',
+            // por lo cual, se le da el valor de source como 'imgPrueba/DebianLogo.png'
+          alt = 'Debian' // Nombre alterno de la imagen
+          nameDownloadImage = 'La imagen de Debian' // Nombre de la imagen al ser descargada
+        >
+        </ImagenAsesoria>
+      </div>
+    </>
+  )
+}
 
-// export default Ezequiel
+export default Ezequiel
 
 // 3. Uso del componente del día del calendario
 
@@ -102,27 +108,27 @@
 
 // 4. Uso del componente del calendario
 
-import React from 'react'
-import { ComponenteCalendario } from '../../../routeIndex'
-import CalendarioJSON from '../../../components/reusable/Calendario/PruebaCalendario.json'
+// import React from 'react'
+// import { ComponenteCalendario } from '../../../routeIndex'
+// import CalendarioJSON from '../../../components/reusable/Calendario/PruebaCalendario.json'
 
-function Ezequiel() {
-  return (
-    <ComponenteCalendario
-      userTypeCalendario = 'alumno' // Se usa para definir el tipo de usuario que ve el calendario
-        // alumno
-        // directivo
-      diasCalendario = {CalendarioJSON} // JSON con los días (y cada día con sus asesorías) de la semana
-        // NOTA: en el archivo JSON debe existir un campo "numeroDia", "isActive", "asesorias" y "onClickDirectivo",
-        // este último debe almacenar la función para abrir el menú de todas las asesorías para un día en específico (SOLO APLICA CUANDO EL USUARIO ES DIRECTIVO, NO ALUMNO)
-        // Para comprender mejor esto se debe ver el archivo 'PruebaCalendario.json' encontrado en la carpeta de este componente
-      sizeCalendario = 'normal' // Tamaño del componente
-        // normal
-        // grande
-        // reducido
-    >
-    </ComponenteCalendario>
-  )
-}
+// function Ezequiel() {
+//   return (
+//     <ComponenteCalendario
+//       userTypeCalendario = 'alumno' // Se usa para definir el tipo de usuario que ve el calendario
+//         // alumno
+//         // directivo
+//       diasCalendario = {CalendarioJSON} // JSON con los días (y cada día con sus asesorías) de la semana
+//         // NOTA: en el archivo JSON debe existir un campo "numeroDia", "isActive", "asesorias" y "onClickDirectivo",
+//         // este último debe almacenar la función para abrir el menú de todas las asesorías para un día en específico (SOLO APLICA CUANDO EL USUARIO ES DIRECTIVO, NO ALUMNO)
+//         // Para comprender mejor esto se debe ver el archivo 'PruebaCalendario.json' encontrado en la carpeta de este componente
+//       sizeCalendario = 'normal' // Tamaño del componente
+//         // normal
+//         // grande
+//         // reducido
+//     >
+//     </ComponenteCalendario>
+//   )
+// }
 
-export default Ezequiel
+// export default Ezequiel
