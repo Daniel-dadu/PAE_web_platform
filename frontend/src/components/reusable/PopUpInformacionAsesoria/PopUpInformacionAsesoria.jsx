@@ -5,13 +5,20 @@ import { ImCross } from 'react-icons/im';
 import { BotonSencillo }  from '../../../routeIndex'
 import { ImagenAsesoria } from '../../../routeIndex'
 
+import  Modal from '../../../components/reusable/PopUpInformacionAsesoria/Modal';
+
 export default function PopUpInformacionAsesoria({userTypePopUpAsesoria, infoAsesoria}) {
+
+ 
+
     return (
+
+  
       <div>
         <div class= "container">
           
           <div className='one'>
-            <a href=""><ImCross className='close'> </ImCross></a>      
+            <a href=" "><ImCross className='close'> </ImCross></a>      
             <p className= "titulo">Asesoria del { infoAsesoria.diasCalendario[0].numeroDia} de  {infoAsesoria.diasCalendario[0].mes} </p> 
           </div>
   
