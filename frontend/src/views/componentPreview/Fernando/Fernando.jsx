@@ -1,6 +1,6 @@
 import React from 'react'
 import { TarjetaInformacion} from '../../../routeIndex'
-import info from  './info.json'
+import info from  '../../asesorado/AgendarAsesoriaResumen/info.json'
 //import './Fernando.css'
 
 function Fernando() {

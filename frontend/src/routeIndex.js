@@ -45,3 +45,5 @@ export {default as AgendarAsesoriaCalendario } from './views/asesorado/agendarAs
 export {default as AgendarAsesoriaHora } from './views/asesorado/agendarAsesoriaHora/AgendarAsesoriaHora.jsx'
 
 export {default as TarjetaInformacion } from './components/reusable/TarjetaInformacion/TarjetaInformacion.jsx'
+
+export {default as AgendarAsesoriaResumen } from './views/asesorado/AgendarAsesoriaResumen/AgendarAsesoriaResumen.jsx'
