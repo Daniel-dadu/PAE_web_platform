@@ -1,10 +1,10 @@
 import React from 'react'
-import './AgendarAsesoriaCalendario.css'
+import './AgendarAsesoriaHora.css'
 import info from './info.json'
-import { AgendarAsesoria, CalendarioMini } from '../../../routeIndex'
+import { AgendarAsesoria, SeleccionarHorarioAsesoria } from '../../../routeIndex'
 
 let progressBar = {
-  "currentStep": 2,
+  "currentStep": 3,
   "steps": [
       {
           "name" : "Selección",
@@ -20,7 +20,7 @@ let progressBar = {
         },
         {
           "name" : "Fecha",
-          "state": null,
+          "state": true,
           "next": "enable",
           "path" : "./AgendarAsesoriaDuda"
         },
@@ -43,7 +43,7 @@ function AgendarAsesoriaDuda() {
   return (
     <AgendarAsesoria showAtrasBtn={true} showTarjetaMaestraMini={true} sizeTarjetaMaestraMini="normal" progressBarJSON={progressBar}>
         <div className='container-aad'>
-          <CalendarioMini calendar={info} year="2022" monthIndex="0"/>
+          <SeleccionarHorarioAsesoria date={info}/>
         </div>
     </AgendarAsesoria>
   )
