@@ -1,0 +1,12 @@
+.tarjeta_informacion_container{
+    width: 100%;
+}
+.tarjeta_informacion_titulo{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+.tarjeta_informacion_info{
+    width: 100%;
+    text-align: center;
+}
