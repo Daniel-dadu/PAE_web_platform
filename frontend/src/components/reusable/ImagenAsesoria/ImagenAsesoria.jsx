@@ -31,7 +31,7 @@ const ImagenAsesoria = ({
             <a href = {source} download = {nameDownloadImage}>
                 <img
                     className = 'img'
-                    src = {require(`./${source}`)}
+                    src = {source} // {require(`./${source}`)}
                     alt = {alt}
                 />
             </a>
