@@ -41,8 +41,14 @@ let progressBar = {
 function AgendarAsesoriaDuda() {
 
   return (
-    <AgendarAsesoria showAtrasBtn={true} showTarjetaMaestraMini={true} sizeTarjetaMaestraMini="normal" progressBarJSON={progressBar}>
-        <div className='container-aad'>
+<AgendarAsesoria 
+    showAtrasBtn={true} 
+    btnAtrasRoute="./AgendarAsesoriaCalendario" 
+    btnSiguienteRoute="./AgendarAsesoriaResumen"
+    showTarjetaMaestraMini={true} 
+    sizeTarjetaMaestraMini="normal" 
+    progressBarJSON={progressBar}>
+        <div className='horario_container'>
           <SeleccionarHorarioAsesoria date={info}/>
         </div>
     </AgendarAsesoria>
