@@ -1,0 +1,8 @@
+.calendario_container {
+    width: fit-content;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    
+}
+
