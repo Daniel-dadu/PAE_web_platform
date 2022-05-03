@@ -16,14 +16,6 @@ import { GrClose } from 'react-icons/gr';
 // };
 // onClick = {handleClick("http://localhost:3000/static/media/goku.7ccd1205be59dd2e3e76.jpg", 'goku')}
 
-const SIZES = [
-    'normal',
-    'larga',
-    'ancha',
-    'grande',
-    'reducida'
-]
-
 const ImagenAsesoria = ({
     allowClosed, // Define si se puede o no cerrar la imagen
     onClickX, // Evento que ocurre al presionar la 'x' de la imagen
@@ -33,20 +25,17 @@ const ImagenAsesoria = ({
     nameDownloadImage
 }) => {
 
-    const ImageSize = SIZES.includes(size)
-        ? size
-        : SIZES[0];
-
     return(
         <>
-        <div className = {`divImg ${ImageSize}Size`}>
+        <div className = {`divImg`}>
             <a href = {source} download = {nameDownloadImage}>
                 <img
                     className = 'img'
-                    src = {source}
+                    src = {source} // {require(`./${source}`)}
                     alt = {alt}
                 />
             </a>
+            <div className = 'circle'>
             {
                 parseInt(allowClosed)
                     ? <GrClose
@@ -56,6 +45,7 @@ const ImagenAsesoria = ({
                     : <GrClose
                         style = {{display: 'none'}}/>
             }
+            </div>
         </div>
         </>
     )

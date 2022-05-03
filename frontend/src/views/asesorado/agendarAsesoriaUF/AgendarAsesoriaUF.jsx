@@ -44,7 +44,14 @@ let progressBar = {
 function AgendarAsesoriaUF() {
 
   return (
-    <AgendarAsesoria showAtrasBtn={false} showTarjetaMaestraMini={true} sizeTarjetaMaestraMini="normal" progressBarJSON={progressBar}>
+    <AgendarAsesoria 
+      showAtrasBtn={false} 
+      btnAtrasRoute="" 
+      btnSiguienteRoute="./AgendarAsesoriaDuda" 
+      showTarjetaMaestraMini={true} 
+      sizeTarjetaMaestraMini="normal" 
+      progressBarJSON={progressBar}
+    >
       <div className='container_out_aauf'>
         <div className='container_in_aauf'>
           <h3>Carrera</h3>
