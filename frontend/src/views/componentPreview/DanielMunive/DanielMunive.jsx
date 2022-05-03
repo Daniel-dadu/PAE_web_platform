@@ -1,22 +1,37 @@
-import React from 'react'
-import { CambioMesPeriodo }  from '../../../routeIndex'
+import React, { useState } from 'react'
+import { PopUpInformacionAsesoria }  from '../../../routeIndex'
 
+import  Modal from '../../../components/reusable/PopUpInformacionAsesoria/Modal';
+
+import EjemploJSON from './pruebasGrandes.json'
+
+import './Munive.css'
 function DanielMunive() {
+
+  const [active, setActive] = useState(false);
+
+  const toggle = () => {
+    setActive(!active)
+  }
+
   return (
-    <>
-    <CambioMesPeriodo dataSupInf={  [ 
-  {id: 1,
-  Sup: 'Texto Superior 1',
-  Inf: 'Texto Inferior 1'},
+    <div className='.fullPantalla'> 
 
-  {id: 2,
-  Sup: 'Texto Superior 2',
-  Inf: 'Texto Inferior 2'},
+      <button style={{
+        position: 'absolute',
+        top: '50%',
+        padding: 10,
+      }} onClick={toggle}>Open Modal</button>
 
-  {id: 3,
-  Sup: 'Texto Superior 3',
-  Inf: 'Texto Inferior 3'}   ]  } > </CambioMesPeriodo>
-    </>
+
+      <Modal active={active} toggle={toggle}>
+      <PopUpInformacionAsesoria  userTypePopUpAsesoria = "alumno" infoAsesoria = {EjemploJSON}></PopUpInformacionAsesoria> 
+      </Modal>
+
+    
+
+    </div>
+
   )
 }
 
