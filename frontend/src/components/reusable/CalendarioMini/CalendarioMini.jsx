@@ -3,17 +3,35 @@ import "./CalendarioMini.css"
 
 function CalendarioMini(props){
     /*
-    console.log(Object.keys(props.calendar.months[props.monthIndex]))
-    console.log(Object.values(props.calendar.months[props.monthIndex]))
-    {Object.values(props.calendar.months[props.monthIndex]).map((weeks) => {
-        return (
-            weeks.map((week) => {
-                week.map((day) => {
-                    console.log(Object.keys(day))
-                })
-            })
-        )
-    })};
+    El componente recibe 3 valores.
+        -calendar: Es un json conformado por un array de meses (en donde el 
+        primer mes es el mes actual), que a su vez estan conformados por 
+        arrays de semanas, que a su vez estan conformadas por un array de dias.
+        El mes incluye dias anteriores y posteriores con el fin de mostrarlos 
+        visualmente.
+
+            Ejemplo:
+                {
+                    "months" : [
+                        {"Abril":
+                            [
+                                [
+                                    {"27": null},
+                                    ...
+                                ],
+                                ...
+                            ]
+                        },
+                        ...
+                    ]
+                }
+
+        -year: el año actual.
+        -montIndex: El mes que se desea mostrar, por defecto es 0, y no puede 
+        ser negativo.
+
+    Ejemplo:
+        calendar={info} year="2022" monthIndex="0"
     */
 
     return(
