@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { TemporalHome, LandingPage, Calendario, PerfilAsesor, PerfilAsesorado, PerfilDirectivo, EditarPerfil, AgendarAsesoriaUF, AgendarAsesoriaDuda, AgendarAsesoriaCalendario, DanielFlores, DanielMaldonado, DanielMunive, Ezequiel, Fernando } from './routeIndex'
+import { TemporalHome, LandingPage, Calendario, PerfilAsesor, PerfilAsesorado, PerfilDirectivo, EditarPerfil, AgendarAsesoriaUF, AgendarAsesoriaDuda, AgendarAsesoriaCalendario, AgendarAsesoriaHora, DanielFlores, DanielMaldonado, DanielMunive, Ezequiel, Fernando } from './routeIndex'
 
 const App = () => {
   return (
@@ -18,6 +18,7 @@ const App = () => {
         <Route path='/agendarAsesoriaUF' element={<AgendarAsesoriaUF/>} />
         <Route path='/agendarAsesoriaDuda' element={<AgendarAsesoriaDuda/>} />
         <Route path='/agendarAsesoriaCalendario' element={<AgendarAsesoriaCalendario/>} />
+        <Route path='/agendarAsesoriaHora' element={<AgendarAsesoriaHora/>} />
 
         <Route path='/danielFlores' element={<DanielFlores/>} />
         <Route path='/danielMaldonado' element={<DanielMaldonado/>} />

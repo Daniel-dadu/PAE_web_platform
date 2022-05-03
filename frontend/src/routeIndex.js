@@ -42,3 +42,4 @@ export {default as CambioMesPeriodo } from './components/reusable/CambioMesPerio
 export {default as PopUpInformacionAsesoria } from './components/reusable/PopUpInformacionAsesoria/PopUpInformacionAsesoria.jsx'
 
 export {default as AgendarAsesoriaCalendario } from './views/asesorado/agendarAsesoriaCalendario/AgendarAsesoriaCalendario.jsx'
+export {default as AgendarAsesoriaHora } from './views/asesorado/agendarAsesoriaHora/AgendarAsesoriaHora.jsx'
