@@ -53,7 +53,14 @@ function AgendarAsesoriaDuda() {
     };
 
   return (
-    <AgendarAsesoria showAtrasBtn={true} showTarjetaMaestraMini={true} sizeTarjetaMaestraMini="normal" progressBarJSON={progressBar}>
+    <AgendarAsesoria 
+      showAtrasBtn={true} 
+      btnAtrasRoute="./AgendarAsesoriaUF" 
+      btnSiguienteRoute="./AgendarAsesoriaCalendario"
+      showTarjetaMaestraMini={true} 
+      sizeTarjetaMaestraMini="normal" 
+      progressBarJSON={progressBar}
+    >
         <div className='container-aad'>
             <div className='top'>
                 <h3>Explica tu duda:</h3>
