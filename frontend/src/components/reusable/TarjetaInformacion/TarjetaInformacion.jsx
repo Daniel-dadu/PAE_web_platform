@@ -27,7 +27,7 @@ function TarjetaInformacion(props){
         <div className='tarjeta_informacion_container'>
             {props.info.info.map((data) => {
                     return (
-                        <div>
+                        <div className='tarjeta_informacion_titulo_info_container'>
                             <div className='tarjeta_informacion_titulo'>{data.title}</div>
                             <div className='tarjeta_informacion_info'>{data.info}</div>
                         </div>

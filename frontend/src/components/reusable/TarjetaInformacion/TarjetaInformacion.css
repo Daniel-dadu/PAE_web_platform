@@ -1,6 +1,15 @@
 .tarjeta_informacion_container{
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
+.tarjeta_informacion_titulo_info_container{
+    width: 100%;
+    font-size: 2.5em;
+}
+
 .tarjeta_informacion_titulo{
     width: 100%;
     text-align: center;
