@@ -1,12 +1,12 @@
 import React from 'react'
-import { AgendarAsesoriaCalendario} from '../../../routeIndex'
-//import info from  './progreso.json'
+import { TarjetaInformacion} from '../../../routeIndex'
+import info from  './info.json'
 //import './Fernando.css'
 
 function Fernando() {
   return (
     <div>
-      <AgendarAsesoriaCalendario/>
+      <TarjetaInformacion info={info}/>
     </div>
   )
 }

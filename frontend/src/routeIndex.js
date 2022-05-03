@@ -43,3 +43,5 @@ export {default as PopUpInformacionAsesoria } from './components/reusable/PopUpI
 
 export {default as AgendarAsesoriaCalendario } from './views/asesorado/agendarAsesoriaCalendario/AgendarAsesoriaCalendario.jsx'
 export {default as AgendarAsesoriaHora } from './views/asesorado/agendarAsesoriaHora/AgendarAsesoriaHora.jsx'
+
+export {default as TarjetaInformacion } from './components/reusable/TarjetaInformacion/TarjetaInformacion.jsx'
