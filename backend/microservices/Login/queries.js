@@ -1,6 +1,6 @@
 const Pool = require('pg').Pool
 
-const encrypt = require('./encrypt')
+const encrypt = require('../EncryptionFile/encrypt.js')
 
 // IMPORTANTE: Estas credenciales de Postgres no deben estar aquí, solo es para probar
 const pool = new Pool({
