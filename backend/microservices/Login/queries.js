@@ -12,16 +12,28 @@ const pool = new Pool({
 })
 
 const validateCredentials = (request, response) => {
-    const user = request.params.user
-    const pass = request.params.pass
+    // Parámetros proporcionados en la request HTTP
+    const userID = request.params.user
+    const userPass = request.params.pass
 
-    pool.query('SELECT "password", "salt" FROM "Acceso" WHERE "idUsuario" = $1',[user], (error, res) => {
+    // Se hace la consulta de la contraseña y salt que tiene ese "userID"
+    pool.query('SELECT "password", "salt" FROM "Acceso" WHERE "idUsuario" = $1',[userID], (error, res) => {
         if (error) {
             throw error
+        } else if(!res.rows.length) {
+            // En caso de que no se encuentre ningún usuario con ese userID (matrícula), se manda un mensaje de error
+            response.status(404).json({"login-validateCredentials": "invalid userID"})
+        } else {
+            // Se usa el dato de la contraseña y string salt de ese usuario
+            let password = res.rows[0].password
+            let salt = res.rows[0].salt
+    
+            // Se genera el hash de la contraseña que proporcionó el usuario con su salt
+            let userPassHashed = encrypt.getPassword(userPass, salt).passwordHash
+    
+            // Se evalua que la contraseña corresponda a la del usuario
+            response.status(200).json({"login-validateCredentials": (password === userPassHashed) ? "valid" : "invalid password"} )
         }
-        // let credentials = json(res.rows)
-
-        response.status(200).json(res.rows)
     })
 }
 
