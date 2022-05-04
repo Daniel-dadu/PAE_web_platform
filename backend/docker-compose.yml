@@ -1,0 +1,10 @@
+version: "3.72"
+
+services:
+
+  client:
+    image: client
+    ports: 
+      - 80:80
+    volumes:
+      - ../frontend/build:/usr/share/nginx/html
