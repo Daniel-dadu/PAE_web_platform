@@ -9,7 +9,7 @@
                 {
                     "status": "Activa",
                     "hora": "09:00",
-                    "openPanel": "() => {alert('Debo abrir el panel de esta asesoría específica :)')}",
+                    "openPanel": "() => {console.log('hola'); this.props.toggle}",
                     "asesor": "Danie Maldonado",
                     "asesorado": "Lozanosoft",
                     "lugar": "Biblioteca Norte",
