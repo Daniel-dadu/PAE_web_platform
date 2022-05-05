@@ -8,3 +8,10 @@ services:
       - 80:80
     volumes:
       - ../frontend/build:/usr/share/nginx/html
+
+#  client-builder:
+#    image: client-builder
+#    ports:
+#      - 1024:1024
+#    volumes:
+#      - ../:/builder
