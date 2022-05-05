@@ -16,10 +16,11 @@ const App = () => {
 
         {/* Views de Agendar Asesoría (asesorado) */}
         <Route path='/agendarAsesoriaUF' element={<AgendarAsesoriaUF/>} />
-        <Route path='/agendarAsesoriaDuda' element={<AgendarAsesoriaDuda/>} />
-        <Route path='/agendarAsesoriaCalendario' element={<AgendarAsesoriaCalendario/>} />
-        <Route path='/agendarAsesoriaHora' element={<AgendarAsesoriaHora/>} />
-        <Route path='/agendarAsesoriaResumen' element={<AgendarAsesoriaResumen/>} />
+        {/* Revisar https://v5.reactrouter.com/web/example/auth-workflow para mejorar el paso de :idAsesoria */}
+        <Route path='/agendarAsesoriaDuda/:idAsesoria' element={<AgendarAsesoriaDuda/>} />
+        <Route path='/agendarAsesoriaCalendario/:idAsesoria' element={<AgendarAsesoriaCalendario/>} />
+        <Route path='/agendarAsesoriaHora/:idAsesoria' element={<AgendarAsesoriaHora/>} />
+        <Route path='/agendarAsesoriaResumen/:idAsesoria' element={<AgendarAsesoriaResumen/>} />
 
         <Route path='/danielFlores' element={<DanielFlores/>} />
         <Route path='/danielMaldonado' element={<DanielMaldonado/>} />

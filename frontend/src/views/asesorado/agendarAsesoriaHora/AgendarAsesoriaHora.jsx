@@ -1,4 +1,5 @@
 import React from 'react'
+import { useParams } from "react-router-dom"
 import './AgendarAsesoriaHora.css'
 import info from './info.json'
 import { AgendarAsesoria, SeleccionarHorarioAsesoria } from '../../../routeIndex'
@@ -39,6 +40,9 @@ let progressBar = {
   ]
 }
 function AgendarAsesoriaDuda() {
+
+  // La propiedad de idAsesoria perimite conocer la asesoria que se está agendando en ese momento
+  let { idAsesoria } = useParams();
 
   return (
 <AgendarAsesoria 

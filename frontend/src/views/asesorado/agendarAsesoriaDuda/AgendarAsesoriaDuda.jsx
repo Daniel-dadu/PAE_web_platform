@@ -1,4 +1,5 @@
 import React from 'react'
+import { useParams } from "react-router-dom"
 import ImageUploading from "react-images-uploading";
 import './AgendarAsesoriaDuda.css'
 
@@ -42,6 +43,9 @@ let progressBar = {
   ]
 }
 function AgendarAsesoriaDuda() {
+
+  // La propiedad de idAsesoria perimite conocer la asesoria que se está agendando en ese momento
+  let { idAsesoria } = useParams();
 
     // El array imageList siempre va a tener la lista de las imágenes que se suban
     // y en imageList[index].data_url tendrá el src del archivo
