@@ -45,12 +45,48 @@ const setAsesoria = (request, response) => {
   const asesorado = request.params.asesorado
   const uf = request.params.uf
 
-  pool.query('CALL new_asesoria($1, $2)', [asesorado, uf], (error, results) => {
-    if (error) {
-      throw error
+  const abort = err => {
+    if (err) {
+      console.error('Error in transaction', err.stack)
+      client.query('ROLLBACK', err => {
+        if (err) console.error('Error rolling back client', err.stack)
+      })
     }
-    response.status(200)
+    return !!err
+  }
+
+  // Hacemos la llamada a el procedure new_asesoria para crear la nueva asesoría con los parámetros proporcionados por el usuario
+  pool.query('START TRANSACTION', error => {
+    if(abort(error)) return // Enters if there was an error with starting the transaction
+    
+    // Hacemos la llamada al procedure new_asesoria para crear la nueva asesoría con los parámetros proporcionados por el usuario
+    pool.query('CALL new_asesoria($1, $2)', [asesorado, uf], (error, results) => {
+      if(abort(error)) return
+
+      // Regresamos el idAsesoria en un JSON
+      pool.query('SELECT "idAsesoria" FROM "Asesoria" ORDER BY "idAsesoria" DESC LIMIT 1', (error, result) => {
+        if(abort(error)) return
+
+        // Guardamos los cambios realizados en la base de datos
+        pool.query('COMMIT', err => {
+          if(abort(err)) return
+        })
+
+        response.status(201).json(result.rows[0])
+      })
+    })
+
   })
+
+  // pool.query(consulta, [asesorado, uf], (error, results) => {
+  //   if (error) {
+  //     throw error
+  //   }
+
+  //   console.log(results);
+
+  //   response.status(201).send('New Asesoría correctly created with id')
+  // })
 }
 
 module.exports = {
