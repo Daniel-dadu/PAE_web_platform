@@ -9,9 +9,5 @@ services:
     volumes:
       - ../frontend/build:/usr/share/nginx/html
 
-#  client-builder:
-#    image: client-builder
-#    ports:
-#      - 1024:1024
-#    volumes:
-#      - ../:/builder
+# builder:
+#   estara presente directo en el servidor
