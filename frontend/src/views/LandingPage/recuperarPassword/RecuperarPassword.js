@@ -7,7 +7,7 @@ const RecuperarPassword = () => {
         <div className='contenedorGeneral'>
             <div className='izq'>
                 <form action="" className='form-recuperarPassword'>
-                    <div className='titulo'>
+                    <div className='titulo-recuperarpassword'>
                         <h1>Recuperar Contraseña</h1>
                     </div>
                     
