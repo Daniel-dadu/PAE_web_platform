@@ -56,7 +56,7 @@ const setAsesoria = (request, response) => {
     return !!err
   }
 
-  // Hacemos la llamada a el procedure new_asesoria para crear la nueva asesoría con los parámetros proporcionados por el usuario
+  // Iniciamos la transacción
   pool.query('START TRANSACTION', error => {
     if(abort(error)) return // Enters if there was an error with starting the transaction
     
@@ -78,20 +78,45 @@ const setAsesoria = (request, response) => {
     })
 
   })
+}
 
-  // pool.query(consulta, [asesorado, uf], (error, results) => {
-  //   if (error) {
-  //     throw error
-  //   }
+const setAsesoria_updateDuda = (request, response) => {
+  const idAsesoria = request.body.idAsesoria
+  const duda = request.body.duda
+  const imagenes = request.body.imagenes
 
-  //   console.log(results);
+  const consultas = [
+    'UPDATE "Asesoria" SET "descripcionDuda" = $1 WHERE "idAsesoria" = $2',
+    'INSERT INTO "AsesoriaImagen" VALUES ($1, $2)'
+  ]
 
-  //   response.status(201).send('New Asesoría correctly created with id')
-  // })
+  // Se ejecuta la primera consulta, la cual actualiza la descripción de la duda
+  pool.query(consultas[0], [duda, idAsesoria], error => {
+    if (error) {
+      response.status(400).send('No se pudo insertar la duda en la asesoría con ID:' + idAsesoria)
+      throw error
+    } else {
+      // Se itera por el array de imagenes que se recibe y se insertan todas
+      imagenes.map(imagen => {
+        pool.query(consultas[1], [idAsesoria, imagen], error => {
+          if (error) {
+            response.status(400).send('No se pudo insertar la imagen en la asesoría con ID:' + idAsesoria)
+            throw error
+          }
+        })
+      })
+  
+      response.status(200).send('Duda e imagenes insertadas en la asesoría con ID:' + idAsesoria)
+    }
+    
+  })
+
+
 }
 
 module.exports = {
   getCarreras,
   getUF_carreraSemestre,
-  setAsesoria
+  setAsesoria,
+  setAsesoria_updateDuda
 }

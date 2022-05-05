@@ -25,6 +25,18 @@ app.get('/asesoria/uf/:carrera/:semestre', db.getUF_carreraSemestre)
 // Crear una nueva asesoría recibiendo su unidad de formación
 app.post('/asesoria/nueva/:asesorado/:uf', db.setAsesoria)
 
+app.put('/asesoria/nueva_duda/', db.setAsesoria_updateDuda)
+
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
 })
+
+/**
+
+{
+    "id": 17,
+    "duda": "No entiendo como funciona este sistema de PAE, me lo podrían explicar",
+    "imagenes": ["Mucho texto", "Mucha imagen"]
+}
+
+ */
