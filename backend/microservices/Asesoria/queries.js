@@ -45,10 +45,11 @@ const setAsesoria = (request, response) => {
   const asesorado = request.params.asesorado
   const uf = request.params.uf
 
+  // Función que se ejecuta en caso de que falle alguna consulta
   const abort = err => {
     if (err) {
       console.error('Error in transaction', err.stack)
-      client.query('ROLLBACK', err => {
+      pool.query('ROLLBACK', err => {
         if (err) console.error('Error rolling back client', err.stack)
       })
     }
