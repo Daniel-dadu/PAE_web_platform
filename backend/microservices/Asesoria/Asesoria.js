@@ -13,10 +13,12 @@ app.use(
 )
 
 app.get('/', (request, response) => {
-    response.json({ info: 'Node.js, Express, and Postgres API' })
+    response.json({ info: 'Node.js, Express, and Postgres API for Asesorias' })
 })
 
-app.get('/users', db.getUsuarios)
+app.get('/asesoria/carreras', db.getCarreras)
+
+app.get('/asesoria/uf/:carrera/:semestre', db.getUF_carreraSemestre)
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)

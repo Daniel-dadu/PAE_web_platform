@@ -9,8 +9,17 @@ const pool = new Pool({
   port: 5432,
 })
 
-const getUsuarios = (request, response) => {
-  pool.query('SELECT * FROM "Usuario"', (error, results) => {
+const getCarreras = (_request, response) => {
+  pool.query('SELECT * FROM "Carrera"', (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+
+const getUF_carreraSemestre = (request, response) => {
+  pool.query('SELECT * FROM "Carrera"', (error, results) => {
     if (error) {
       throw error
     }
@@ -19,5 +28,6 @@ const getUsuarios = (request, response) => {
 }
 
 module.exports = {
-  getUsuarios
+  getCarreras,
+  getUF_carreraSemestre
 }
