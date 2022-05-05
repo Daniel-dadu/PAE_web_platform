@@ -8,12 +8,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def build():
-    os.chdir("./builder/frontend")
+    os.chdir(os.path.expanduser("~/PAE_web_platform/frontend"))
     os.system("npm install")
     if os.path.isdir("build"):
-        os.system("rm -r build")
+        os.system("rm -rf build")
     os.system("npm run build")
-    return os.getcwd()#redirect("https://www.google.com/", code=302)
+    os.system("sudo reloadClient")
+    return redirect("http://192.168.1.74/", code=302)
 
 if __name__ == "__main__":
     serve(app, host='0.0.0.0', port=1024)
