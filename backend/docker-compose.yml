@@ -5,7 +5,7 @@ services:
   client:
     image: client
     ports: 
-      - 80:80
+      - 81:80
     volumes:
       - ../frontend/build:/usr/share/nginx/html
 
@@ -15,3 +15,8 @@ services:
 #      - 1024:1024
 #    volumes:
 #      - ../:/builder
+
+  proxy-client:
+    image: proxy-client
+    ports:
+      - 80:80
