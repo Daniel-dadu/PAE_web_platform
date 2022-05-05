@@ -27,9 +27,9 @@ const validateCredentials = (request, response) => {
             // Se usa el dato de la contraseña y string salt de ese usuario
             let password = res.rows[0].password
             let salt = res.rows[0].salt
-    
+            
             // Se genera el hash de la contraseña que proporcionó el usuario con su salt
-            let userPassHashed = encrypt.getPassword(userPass, salt).passwordHash
+            let userPassHashed = encrypt.getPassword(userPass, salt)
     
             // Se evalua que la contraseña corresponda a la del usuario
             response.status(200).json({"login-validateCredentials": (password === userPassHashed) ? "valid" : "invalid password"} )
