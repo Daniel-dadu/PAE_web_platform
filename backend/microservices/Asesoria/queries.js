@@ -1,3 +1,5 @@
+const { response } = require('express')
+
 const Pool = require('pg').Pool
 
 // IMPORTANTE: Estas credenciales de Postgres no deben estar aquí, solo es para probar
@@ -38,7 +40,21 @@ const getUF_carreraSemestre = (request, response) => {
   })
 }
 
+const setAsesoria = (request, response) => {
+
+  const asesorado = request.params.asesorado
+  const uf = request.params.uf
+
+  pool.query('CALL new_asesoria($1, $2)', [asesorado, uf], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200)
+  })
+}
+
 module.exports = {
   getCarreras,
-  getUF_carreraSemestre
+  getUF_carreraSemestre,
+  setAsesoria
 }
