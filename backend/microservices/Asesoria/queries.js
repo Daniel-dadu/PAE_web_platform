@@ -59,6 +59,23 @@ const getDias_uf = (request, response) => {
   })
 }
 
+const getHoras_ufDia = (request, response) => {
+
+  const uf = request.body.uf
+  const dia = request.body.dia
+
+  // Consulta que regresa las horas disponibles para cierta materia y descartando los horarios de disponibilidad pasados
+  const consulta = `SELECT DISTINCT("HorarioDisponible"."fechaHora"::time) FROM "AsesorUnidadFormacion", "HorarioDisponiblePeriodo", "HorarioDisponible" WHERE "AsesorUnidadFormacion"."idUsuario" = "HorarioDisponiblePeriodo"."idAsesor" AND "HorarioDisponiblePeriodo"."idHorarioDisponiblePeriodo" = "HorarioDisponible"."idHorarioDisponiblePeriodo" AND "HorarioDisponible"."fechaHora" > (CURRENT_DATE + INTERVAL '1 day') AND "AsesorUnidadFormacion"."idUF" = $1 AND "HorarioDisponible"."fechaHora"::date = $2`
+
+  pool.query(consulta, [uf, dia], (error, results) => {
+    if(error){
+      throw error
+    } else {
+      response.status(200).json(results.rows)
+    }
+  })
+}
+
 
 const setAsesoria = (request, response) => {
 
@@ -134,6 +151,7 @@ module.exports = {
   getCarreras,
   getUF_carreraSemestre,
   getDias_uf,
+  getHoras_ufDia,
   setAsesoria,
   setAsesoria_updateDuda
 }
