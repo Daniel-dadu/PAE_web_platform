@@ -1,28 +1,10 @@
-import React, { useState } from 'react';
-import './login.css';
-import { FaAngleDoubleRight, FaSignInAlt, FaInfoCircle } from 'react-icons/fa';
+import React from 'react';
+import './loginDirectivo.css';
 
-
-const Login = () => {
-
-    const [clicked, setclicked] = useState(false);
-
-    const handleClickLogin = () => {
-        setclicked(!clicked);
-    }
-
+const LoginDirectivo = () => {
   return (
     <>
-        <section className={`contenedor-login${ clicked ? ' active-login':''}`}>
-
-            <div className='lateral-responsive'>
-                <FaInfoCircle className='icono1' onClick={ handleClickLogin }/>
-
-            </div>
-
-            <div className='lateral-fuera-responsive'>
-                <FaSignInAlt className='icono2' onClick={ handleClickLogin }/>
-            </div>
+        <section className={`contenedor-login`}>
 
             <div className='contenedor-principal'>
                 <h1>Inicio de Sesión</h1>
@@ -43,13 +25,12 @@ const Login = () => {
                         </div>
                     </div>
 
-                
-
-
                     <div className='contenedor-boton'>
                         <button> Ingresar </button>
-                        <a href='#'>¿No tienes cuenta?</a>
+                        
                     </div>
+
+
                 </form>
             </div>
         </section>
@@ -57,4 +38,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default LoginDirectivo
