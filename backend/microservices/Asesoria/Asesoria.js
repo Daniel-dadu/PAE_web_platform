@@ -66,6 +66,16 @@ app.post('/asesoria/nueva/', db.setAsesoria)
 app.put('/asesoria/nueva_duda/', db.setAsesoria_updateDuda)
 
 
+// Editar la asesoría que se recibe poniendo el nuevo horario (idHorarioDisponible) que se recibe.
+/****** Ejemplo del JSON body: ******
+{
+    "idAsesoria": 10,
+    "idHorarioDisponible": 1 
+}
+*/
+app.put('/asesoria/nueva_fechahora/', db.setAsesoria_updateFechaHora)
+
+
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
 })

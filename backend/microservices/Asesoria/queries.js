@@ -147,11 +147,27 @@ const setAsesoria_updateDuda = (request, response) => {
   })
 }
 
+
+const setAsesoria_updateFechaHora = (request, response) => {
+  const idAsesoria = request.body.idAsesoria
+  const idHorarioDisponible = request.body.idHorarioDisponible
+
+  const consulta = 'UPDATE "Asesoria" SET "idHorarioDisponible" = $1 WHERE "idAsesoria" = $2'
+
+  pool.query(consulta, [idHorarioDisponible, idAsesoria], error => {
+    if(error) throw error
+
+    response.status(200).send('Horario disponible insertado en la asesoría con ID:' + idAsesoria)
+  })
+}
+
+
 module.exports = {
   getCarreras,
   getUF_carreraSemestre,
   getDias_uf,
   getHoras_ufDia,
   setAsesoria,
-  setAsesoria_updateDuda
+  setAsesoria_updateDuda,
+  setAsesoria_updateFechaHora
 }
