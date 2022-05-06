@@ -39,7 +39,7 @@ const Login = () => {
                         <p>Contraseña</p>
                         <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"/>
                         <div className='contenedor-olv-contra'>
-                            <a href='../recuperarPassword/RecuperarPassword.js'> ¿Olvidaste tu constraseña? </a>
+                            <a href='#'> ¿Olvidaste tu constraseña? </a>
                         </div>
                     </div>
 
