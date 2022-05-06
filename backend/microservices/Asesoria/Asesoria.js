@@ -19,7 +19,7 @@ app.get('/asesoria/get_carreras', db.getCarreras)
 // Obtener lista de Unidades de Formación apartir de una carrera y semestre
 /****** Ejemplo del JSON body: ******
 {
-    "carrera": 'ITC',
+    "carrera": "ITC",
     "semestre": 2
 }
 */
@@ -29,8 +29,8 @@ app.get('/asesoria/get_uf/', db.getUF_carreraSemestre)
 // Crear una nueva asesoría recibiendo su unidad de formación
 /****** Ejemplo del JSON body: ******
 {
-    "asesorado": 'A01657967',
-    "uf": 'TC1028'
+    "asesorado": "A01657967",
+    "uf": "TC1028"
 }
 */
 app.post('/asesoria/nueva/', db.setAsesoria)
