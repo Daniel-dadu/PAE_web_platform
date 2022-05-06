@@ -77,6 +77,22 @@ const getHoras_ufDia = (request, response) => {
 }
 
 
+const getInfo_ufFechaHora = (request, response) => {
+
+  const idAsesoria = request.body.idAsesoria
+
+  const consulta = `SELECT "UnidadFormacion"."idUF", "UnidadFormacion"."nombreUF", "HorarioDisponible"."fechaHora"::date AS fecha, "HorarioDisponible"."fechaHora"::time AS hora FROM "Asesoria", "UnidadFormacion", "HorarioDisponible" WHERE "Asesoria"."idUF" = "UnidadFormacion"."idUF" AND "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible" AND "Asesoria"."idAsesoria" = $1`
+
+  pool.query(consulta, [idAsesoria], (error, result) => {
+    if(error){
+      throw error
+    } else {
+      response.status(200).json(result.rows[0])
+    }
+  })
+}
+
+
 const setAsesoria = (request, response) => {
 
   const asesorado = request.body.asesorado
@@ -167,6 +183,7 @@ module.exports = {
   getUF_carreraSemestre,
   getDias_uf,
   getHoras_ufDia,
+  getInfo_ufFechaHora,
   setAsesoria,
   setAsesoria_updateDuda,
   setAsesoria_updateFechaHora

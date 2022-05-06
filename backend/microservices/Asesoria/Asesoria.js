@@ -45,6 +45,15 @@ app.get('/asesoria/get_dias/', db.getDias_uf)
 app.get('/asesoria/get_horas/', db.getHoras_ufDia)
 
 
+// Obtener lista de horas disponibles para dar asesoría en la unidad de formación y día proporcionado
+/****** Ejemplo del JSON body: ******
+{
+    "idAsesoria": 10
+}
+*/
+app.get('/asesoria/get_uf_fecha_hora/', db.getInfo_ufFechaHora)
+
+
 // Crear una nueva asesoría recibiendo su unidad de formación
 /****** Ejemplo del JSON body: ******
 {
