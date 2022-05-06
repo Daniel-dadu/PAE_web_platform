@@ -93,7 +93,7 @@ const getInfo_ufFechaHora = (request, response) => {
 }
 
 
-const setAsesoria = (request, response) => {
+const createAsesoria = (request, response) => {
 
   const asesorado = request.body.asesorado
   const uf = request.body.uf
@@ -191,14 +191,27 @@ const setAsesoria_reservarHorario = (request, response) => {
 }
 
 
+const deleteAsesoria = (request, response) => {
+  const idAsesoria = request.body.idAsesoria
+
+  const consulta = 'DELETE FROM "Asesoria" WHERE "idAsesoria" = $1'
+
+  pool.query(consulta, [idAsesoria], error => {
+    if(error) throw error
+
+    response.status(200).send(`Asesoria con id ${idAsesoria} correctamente ELIMINADA`)
+  })
+}
+
 module.exports = {
   getCarreras,
   getUF_carreraSemestre,
   getDias_uf,
   getHoras_ufDia,
   getInfo_ufFechaHora,
-  setAsesoria,
+  createAsesoria,
   setAsesoria_updateDuda,
   setAsesoria_updateFechaHora,
-  setAsesoria_reservarHorario
+  setAsesoria_reservarHorario,
+  deleteAsesoria
 }

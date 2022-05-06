@@ -61,7 +61,7 @@ app.get('/asesoria/get_uf_fecha_hora/', db.getInfo_ufFechaHora)
     "uf": "TC1028"
 }
 */
-app.post('/asesoria/nueva/', db.setAsesoria)
+app.post('/asesoria/nueva/', db.createAsesoria)
 
 
 // Editar la asesoría que se recibe poniendo la nueva duda que también se recibe en el JSON del body.
@@ -93,6 +93,14 @@ app.put('/asesoria/nueva_fechahora/', db.setAsesoria_updateFechaHora)
 */
 app.put('/asesoria/reservar_horario/', db.setAsesoria_reservarHorario)
 
+
+// Elimina una asesoría a partir de su id.
+/****** Ejemplo del JSON body: ******
+{
+    "idAsesoria": 10
+}
+*/
+app.delete('/asesoria/eliminar', db.deleteAsesoria)
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
