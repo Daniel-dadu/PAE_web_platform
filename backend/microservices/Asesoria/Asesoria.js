@@ -25,6 +25,14 @@ app.get('/asesoria/get_carreras', db.getCarreras)
 */
 app.get('/asesoria/get_uf/', db.getUF_carreraSemestre)
 
+// Obtener lista de días con asesores disponibles para dar asesoría en la unidad de formación proporcionada
+/****** Ejemplo del JSON body: ******
+{
+    "uf": "ITC"
+}
+*/
+app.get('/asesoria/get_dias/', db.getDias_uf)
+
 
 // Crear una nueva asesoría recibiendo su unidad de formación
 /****** Ejemplo del JSON body: ******

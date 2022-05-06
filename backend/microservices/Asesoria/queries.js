@@ -1,4 +1,4 @@
-const { response } = require('express')
+const { response, request } = require('express')
 
 const Pool = require('pg').Pool
 
@@ -11,6 +11,7 @@ const pool = new Pool({
   port: 5432,
 })
 
+
 const getCarreras = (_request, response) => {
   pool.query('SELECT * FROM "Carrera"', (error, results) => {
     if (error) {
@@ -19,6 +20,7 @@ const getCarreras = (_request, response) => {
     response.status(200).json(results.rows)
   })
 }
+
 
 const getUF_carreraSemestre = (request, response) => {
   // Parámetros proporcionados en la request HTTP
@@ -39,6 +41,24 @@ const getUF_carreraSemestre = (request, response) => {
     }
   })
 }
+
+
+const getDias_uf = (request, response) => {
+
+  const uf = request.body.uf
+
+  // Consulta que regresa los días de asesoría disponibles para cierta materia descartando duplicados y descartando los horarios de disponibilidad pasados
+  const consulta = `SELECT DISTINCT("HorarioDisponible"."fechaHora"::date) FROM "AsesorUnidadFormacion", "HorarioDisponiblePeriodo", "HorarioDisponible" WHERE "AsesorUnidadFormacion"."idUsuario" = "HorarioDisponiblePeriodo"."idAsesor" AND "HorarioDisponiblePeriodo"."idHorarioDisponiblePeriodo" = "HorarioDisponible"."idHorarioDisponiblePeriodo" AND "HorarioDisponible"."fechaHora" > (CURRENT_DATE + INTERVAL '1 day') AND "AsesorUnidadFormacion"."idUF" = $1`
+
+  pool.query(consulta, [uf], (error, results) => {
+    if(error){
+      throw error
+    } else {
+      response.status(200).json(results.rows)
+    }
+  })
+}
+
 
 const setAsesoria = (request, response) => {
 
@@ -80,6 +100,7 @@ const setAsesoria = (request, response) => {
   })
 }
 
+
 const setAsesoria_updateDuda = (request, response) => {
   const idAsesoria = request.body.idAsesoria
   const duda = request.body.duda
@@ -106,15 +127,13 @@ const setAsesoria_updateDuda = (request, response) => {
   
       response.status(200).send('Duda e imagenes insertadas en la asesoría con ID:' + idAsesoria)
     }
-    
   })
-
-
 }
 
 module.exports = {
   getCarreras,
   getUF_carreraSemestre,
+  getDias_uf,
   setAsesoria,
   setAsesoria_updateDuda
 }
