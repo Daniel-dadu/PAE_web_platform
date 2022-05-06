@@ -178,6 +178,19 @@ const setAsesoria_updateFechaHora = (request, response) => {
 }
 
 
+const setAsesoria_reservarHorario = (request, response) => {
+  const idHorarioDisponible = request.body.idHorarioDisponible
+
+  const consulta = `UPDATE "HorarioDisponible" SET "status" = 'reservada' WHERE "idHorarioDisponible" = $1`
+
+  pool.query(consulta, [idHorarioDisponible], error => {
+    if(error) throw error
+
+    response.status(200).send(`Status cambiado a reservada en horario disponible con id ${idHorarioDisponible}`)
+  })
+}
+
+
 module.exports = {
   getCarreras,
   getUF_carreraSemestre,
@@ -186,5 +199,6 @@ module.exports = {
   getInfo_ufFechaHora,
   setAsesoria,
   setAsesoria_updateDuda,
-  setAsesoria_updateFechaHora
+  setAsesoria_updateFechaHora,
+  setAsesoria_reservarHorario
 }

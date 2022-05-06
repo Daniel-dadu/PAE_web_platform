@@ -85,6 +85,15 @@ app.put('/asesoria/nueva_duda/', db.setAsesoria_updateDuda)
 app.put('/asesoria/nueva_fechahora/', db.setAsesoria_updateFechaHora)
 
 
+// Editar el status de un horario para que esté 'reservada' a partir del idHorarioDisponible que se recibe.
+/****** Ejemplo del JSON body: ******
+{
+    "idHorarioDisponible": 1 
+}
+*/
+app.put('/asesoria/reservar_horario/', db.setAsesoria_reservarHorario)
+
+
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
 })
