@@ -1,11 +1,11 @@
 
 export {default as TemporalHome} from './views/componentPreview/TemporalHome/TemporalHome.jsx';
-export {default as LandingPage } from './views/LandingPage/LandingPage.js';
+export {default as LandingPage } from './views/LandingPage/recuperarPassword/RecuperarPassword.js';
 export {default as Calendario } from './views/commons/calendario/Calendario.jsx';
 export {default as  PerfilAsesor  } from './views/asesor/perfil/PerfilAsesor.jsx';
 export {default as  PerfilAsesorado  } from './views/asesorado/perfil/PerfilAsesorado.jsx';
 export {default as PerfilDirectivo } from './views/directivo/perfil/PerfilDirectivo.jsx'
-export {default as EditarPerfil } from './views/commons/EditarPerfil/EditarPerfil.jsx'
+export {default as EditarPerfil } from './views/commons/editarPerfil/EditarPerfil.jsx'
 export {default as DanielFlores } from './views/componentPreview/DanielFlores/DanielFlores.js'
 export {default as DanielMaldonado } from './views/componentPreview/DanielMaldonado/DanielMaldonado.jsx'
 export {default as DanielMunive } from './views/componentPreview/DanielMunive/DanielMunive.jsx'
@@ -40,3 +40,10 @@ export {default as AgendarAsesoriaDuda } from './views/asesorado/agendarAsesoria
 export {default as CambioMesPeriodo } from './components/reusable/CambioMesPeriodo/CambioMesPeriodo.jsx'
 
 export {default as PopUpInformacionAsesoria } from './components/reusable/PopUpInformacionAsesoria/PopUpInformacionAsesoria.jsx'
+
+export {default as AgendarAsesoriaCalendario } from './views/asesorado/agendarAsesoriaCalendario/AgendarAsesoriaCalendario.jsx'
+export {default as AgendarAsesoriaHora } from './views/asesorado/agendarAsesoriaHora/AgendarAsesoriaHora.jsx'
+
+export {default as TarjetaInformacion } from './components/reusable/TarjetaInformacion/TarjetaInformacion.jsx'
+
+export {default as AgendarAsesoriaResumen } from './views/asesorado/AgendarAsesoriaResumen/AgendarAsesoriaResumen.jsx'

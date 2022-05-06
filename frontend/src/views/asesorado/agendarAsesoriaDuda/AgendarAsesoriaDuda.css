@@ -20,9 +20,10 @@
 .container_ImageUploading .container_imagenes {
     display: flex;
     gap: 3%;
-    height: 75%;
+    height: 60%;
     align-items: center;
     justify-content: center;
+    padding-top: 5%;
 }
 
 .container_ImageUploading .container_imagenes p {

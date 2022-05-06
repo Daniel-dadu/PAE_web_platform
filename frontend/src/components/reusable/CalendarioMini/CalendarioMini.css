@@ -1,5 +1,5 @@
 .calendario_mini_container{
-    width: 500px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     border: 1px solid;
@@ -45,12 +45,12 @@ span{
 
 .calendario_mini_month{
     padding: 2%;
+    height: 100%;
 }
 
 .calendario_mini_week_day{
     text-align: center;
 }
-
 
 a{
     color: inherit;
@@ -58,6 +58,4 @@ a{
 
 .calendario_mini_day{
     text-align: center;
-    padding-top: 8px;
-    padding-bottom: 8px;
 }

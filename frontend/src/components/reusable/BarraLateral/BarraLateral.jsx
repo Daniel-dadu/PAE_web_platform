@@ -136,7 +136,7 @@ function BarraLateral({viewProp}) {
                 } else if(btn.image === 3){
                     let agendarSelected = viewProp === "agendarAsesoria"
                     return <div className={'barra_button' + (agendarSelected ? ' barra_button-selected' : '')} style={{height: heightBtn}}>
-                        <a href="/agendarAsesoria">
+                        <a href="/agendarAsesoriaUF">
                         <BsPeople className={'icon_bar' + (agendarSelected ? ' selected_icon' : '')} size={barIconSize}/> 
                         <p className={'btn-text' + (agendarSelected ? ' selected_icon' : '')}>{btn.text}</p>
                         </a>
