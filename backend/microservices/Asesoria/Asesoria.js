@@ -12,31 +12,41 @@ app.use(
     })
 )
 
-app.get('/', (request, response) => {
-    response.json({ info: 'Node.js, Express, and Postgres API for Asesorias' })
-})
+// Obtener todas las carreras. NO REQUIERE JSON CON BODY.
+app.get('/asesoria/get_carreras', db.getCarreras)
 
-// Obtener todas las carreras
-app.get('/asesoria/carreras', db.getCarreras)
 
-// Obtener lista de Unidades de Formación apartir de una :carrera y :semestre
-app.get('/asesoria/uf/:carrera/:semestre', db.getUF_carreraSemestre)
+// Obtener lista de Unidades de Formación apartir de una carrera y semestre
+/****** Ejemplo del JSON body: ******
+{
+    "carrera": 'ITC',
+    "semestre": 2
+}
+*/
+app.get('/asesoria/get_uf/', db.getUF_carreraSemestre)
+
 
 // Crear una nueva asesoría recibiendo su unidad de formación
-app.post('/asesoria/nueva/:asesorado/:uf', db.setAsesoria)
+/****** Ejemplo del JSON body: ******
+{
+    "asesorado": 'A01657967',
+    "uf": 'TC1028'
+}
+*/
+app.post('/asesoria/nueva/', db.setAsesoria)
 
+
+// Editar la asesoría que se recibe poniendo la nueva duda que también se recibe en el JSON del body.
+/****** Ejemplo del JSON body: ******
+{
+    "idAsesoria": 10,
+    "duda": "No entiendo nada",
+    "imagenes": ["Foto1", "Foto2", "Foto3"]
+}
+*/
 app.put('/asesoria/nueva_duda/', db.setAsesoria_updateDuda)
+
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
 })
-
-/**
-
-{
-    "id": 17,
-    "duda": "No entiendo como funciona este sistema de PAE, me lo podrían explicar",
-    "imagenes": ["Mucho texto", "Mucha imagen"]
-}
-
- */

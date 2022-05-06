@@ -22,8 +22,8 @@ const getCarreras = (_request, response) => {
 
 const getUF_carreraSemestre = (request, response) => {
   // Parámetros proporcionados en la request HTTP
-  const carrera = request.params.carrera
-  const semestre = request.params.semestre
+  const carrera = request.body.carrera
+  const semestre = request.body.semestre
 
   const consulta = 'SELECT "UnidadFormacion"."idUF" AS "claveUF", "nombreUF" FROM "UnidadFormacion", "UnidadFormacionCarrera" WHERE "UnidadFormacionCarrera"."idUF" = "UnidadFormacion"."idUF" AND "UnidadFormacionCarrera"."idCarrera" = $1 AND "UnidadFormacion"."semestre" = $2'
 
@@ -42,8 +42,8 @@ const getUF_carreraSemestre = (request, response) => {
 
 const setAsesoria = (request, response) => {
 
-  const asesorado = request.params.asesorado
-  const uf = request.params.uf
+  const asesorado = request.body.asesorado
+  const uf = request.body.uf
 
   // Función que se ejecuta en caso de que falle alguna consulta
   const abort = err => {
@@ -93,14 +93,12 @@ const setAsesoria_updateDuda = (request, response) => {
   // Se ejecuta la primera consulta, la cual actualiza la descripción de la duda
   pool.query(consultas[0], [duda, idAsesoria], error => {
     if (error) {
-      response.status(400).send('No se pudo insertar la duda en la asesoría con ID:' + idAsesoria)
       throw error
     } else {
       // Se itera por el array de imagenes que se recibe y se insertan todas
       imagenes.map(imagen => {
         pool.query(consultas[1], [idAsesoria, imagen], error => {
           if (error) {
-            response.status(400).send('No se pudo insertar la imagen en la asesoría con ID:' + idAsesoria)
             throw error
           }
         })
