@@ -4,12 +4,12 @@
             "numeroDia": "7",
             "isActive": "1",
             "mes": "Abril",
-            "onClickDirectivo": "() => {alert('Debo abrir la pantalla de asesorías existentes :)')}",
+            "onClickDirectivo": "() => {alert('Debo abrir la pantalla de asesorías existentes :)');}",
             "asesorias": [
                 {
                     "status": "Activa",
                     "hora": "09:00",
-                    "openPanel": "() => {console.log('hola'); this.props.toggle}",
+                    "openPanel": "() => {toggle()}",
                     "asesor": "Danie Maldonado",
                     "asesorado": "Lozanosoft",
                     "lugar": "Biblioteca Norte",

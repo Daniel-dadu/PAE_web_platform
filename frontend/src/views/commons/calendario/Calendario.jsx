@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 
-import { Template, CambioMesPeriodo, ComponenteCalendario, PopUpInformacionAsesoria } from '../../../routeIndex'
+import { Template, CambioMesPeriodo, ComponenteCalendario, PopUpInformacionAsesoria, BotonSencillo } from '../../../routeIndex'
 
 import CalendarioJSON from './PruebaCommonCalendario.json'
 import './CalendarioStyle.css'
@@ -12,24 +12,17 @@ import  Modal from '../../../components/reusable/PopUpInformacionAsesoria/Modal'
 function Calendario() {
 
   const [active, setActive] = useState(false);
-
+  
   const toggle = () => {
     setActive(!active)
   }
-
+  
+  window.toggle = toggle;
 
   return (
 <>
-    <button style={{
-      position: 'absolute',
-      top: '50%',
-      padding: 10,
-    }} onClick={toggle}>Open Modal</button>
 
     <Template view="calendario">
-
-
-
 
         <div className='container_titleCalendar'>
             <h1 className='title_calendario'>Próximas asesorías</h1>
@@ -62,7 +55,8 @@ function Calendario() {
           userTypeCalendario = 'alumno' 
           diasCalendario = {CalendarioJSON} 
           sizeCalendario = 'grande' 
-          />
+        >
+        </ComponenteCalendario>
         </div>
 
 
