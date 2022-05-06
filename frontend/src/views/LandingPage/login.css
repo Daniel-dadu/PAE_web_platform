@@ -102,9 +102,9 @@
 
 }
 
-.contenedor-inputs .contenedor-boton button {
+#btn-login-asesorado {
     width: 10vw;
-    height: 30%;
+    height: 50px;
     border-radius: 11px;
     background: #50C7F1;
     color: #000;

@@ -4,9 +4,9 @@ import './loginDirectivo.css';
 const LoginDirectivo = () => {
   return (
     <>
-        <section className={`contenedor-login`}>
+        <section className={`contenedor-login-directivo`}>
 
-            <div className='contenedor-principal'>
+            <div className='contenedor-principal-directivo'>
                 <h1>Inicio de Sesión</h1>
 
                 <form className='contenedor-inputs'>
