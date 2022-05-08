@@ -53,6 +53,10 @@
     background-color: var(--verde);
 }
 
+.amarillo{
+    background-color: rgb(212, 212, 0);
+}
+
 /* RESPONSIVE 480 px */
 
 @media screen and (max-width: 480px){
