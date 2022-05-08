@@ -25,7 +25,7 @@ function DanielMunive() {
 
 
       <Modal active={active} toggle={toggle}>
-      <PopUpInformacionAsesoria  userTypePopUpAsesoria = "alumno" infoAsesoria = {EjemploJSON}></PopUpInformacionAsesoria> 
+      <PopUpInformacionAsesoria  userTypePopUpAsesoria = "alumno" infoAsesoria = {EjemploJSON} estado={toggle}></PopUpInformacionAsesoria> 
       </Modal>
 
     

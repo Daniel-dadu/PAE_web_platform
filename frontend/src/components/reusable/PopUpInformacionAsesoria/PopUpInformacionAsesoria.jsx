@@ -7,7 +7,7 @@ import { ImagenAsesoria } from '../../../routeIndex'
 
 import  Modal from '../../../components/reusable/PopUpInformacionAsesoria/Modal';
 
-export default function PopUpInformacionAsesoria({userTypePopUpAsesoria, infoAsesoria}) {
+export default function PopUpInformacionAsesoria({userTypePopUpAsesoria, infoAsesoria, estado}) {
 
  
 
@@ -18,7 +18,7 @@ export default function PopUpInformacionAsesoria({userTypePopUpAsesoria, infoAse
         <div class= "container">
           
           <div className='one'>
-            <a href=" "><ImCross className='close'> </ImCross></a>      
+            <ImCross onClick={estado} className='close'> </ImCross>      
             <p className= "titulo">Asesoria del { infoAsesoria.diasCalendario[0].numeroDia} de  {infoAsesoria.diasCalendario[0].mes} </p> 
           </div>
   
