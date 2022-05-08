@@ -11,7 +11,7 @@
             "openPanel": "() => {alert('Debo abrir el panel de esta asesoría específica :)')}"
         },
         {
-            "status": "Activa",
+            "status": "Reservada",
             "hora": "18:00",
             "openPanel": "() => {alert('Debo abrir el panel de esta asesoría específica :)')}"
         },
