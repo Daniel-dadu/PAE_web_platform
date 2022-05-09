@@ -1,5 +1,5 @@
 import React from 'react'
-import { BotonAdministrarInformacion }  from '../../../routeIndex'
+import { PreguntaAbiertaEncuesta }  from '../../../routeIndex'
 
 import Logo from "./imgPrueba/RespuestasEncuestas.png";
 
@@ -20,12 +20,11 @@ function DanielMunive() {
     >
 
 
-      <BotonAdministrarInformacion 
-      onClick={() => {alert('Me diste click :)')}} 
-      Imagen={Logo}
-      children='Respuestas de encuestas a asesorados'>
+      <PreguntaAbiertaEncuesta 
 
-      </BotonAdministrarInformacion>
+      preguntaAbierta={'Deja tu comentario aqui'}>
+
+      </PreguntaAbiertaEncuesta>
 
     </div>
   </>
