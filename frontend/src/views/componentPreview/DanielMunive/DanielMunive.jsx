@@ -19,9 +19,11 @@ function DanielMunive() {
 
         <BotonCambioPerfil></BotonCambioPerfil>
 
+      <PreguntaAbiertaEncuesta 
 
 
-      </div>
+    </div>
+
     </>
   )
 
