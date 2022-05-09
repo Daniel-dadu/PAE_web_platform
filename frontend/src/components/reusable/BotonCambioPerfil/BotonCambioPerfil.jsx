@@ -4,42 +4,37 @@ import './BotonCambioPerfil.css'
 
 function BotonCambioPerfil() {
 
-    const [gender, setGender] = React.useState('Famale');
+  const [ gender , setGender ] = useState("girl")
 
-    const handleCatChange = () => {
-        setGender('Male');
-      };
-    
-      const handleDogChange = () => {
-        setGender('Female');
-      };
+  const changeGender = () => {
+    if(gender === "girl") {
+      setGender("boy")
+    } else setGender("girl")
+  }
+
+  const genderBtn = gender === "girl" ?
+  <h2 onClick={changeGender} style={{
+    backgroundColor: "pink",
+    width: "100px",
+    padding: "2px",
+    borderRadius: "100px",
+    cursor: "pointer",
+  }}>{gender}</h2>
+  :
+  <h2 onClick={changeGender} style={{
+    backgroundColor: "lightblue",
+    width: "100px",
+    padding: "2px",
+    borderRadius: "100px",
+    cursor: "pointer",
+  }}>{gender}</h2>
 
   return (
-    <div className='contenedorBotonCambioPerfil'>
-
-    <RadioButton
-        label="Male"
-        value={gender === 'Male'}
-        onChange={handleCatChange}
-      />
-      <RadioButton
-        label="Female"
-        value={gender === 'Female'}
-        onChange={handleDogChange}
-      />
-        
-        </div>
-  )
+    <div className="App">
+      {genderBtn}
+    </div>
+  );
 }
-
-const RadioButton = ({ label, value, onChange }) => {
-    return (
-      <label>
-        <input type="radio" checked={value} onChange={onChange} />
-        {label}
-      </label>
-    );
-  };
   
   
 
