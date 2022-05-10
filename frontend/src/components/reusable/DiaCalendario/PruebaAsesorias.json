@@ -1,0 +1,24 @@
+{
+    "asesorias": [
+        {
+            "status": "Activa",
+            "hora": "09:00",
+            "openPanel": "() => {alert('Debo abrir el panel de esta asesoría específica :)')}"
+        },
+        {
+            "status": "Cancelada",
+            "hora": "10:00",
+            "openPanel": "() => {alert('Debo abrir el panel de esta asesoría específica :)')}"
+        },
+        {
+            "status": "Reservada",
+            "hora": "18:00",
+            "openPanel": "() => {alert('Debo abrir el panel de esta asesoría específica :)')}"
+        },
+        {
+            "status": "Finalizada",
+            "hora": "15:00",
+            "openPanel": "() => {alert('Debo abrir el panel de esta asesoría específica :)')}"
+        }
+    ]
+}

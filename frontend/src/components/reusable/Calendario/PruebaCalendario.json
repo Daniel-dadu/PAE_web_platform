@@ -1,0 +1,137 @@
+{
+    "diasCalendario": [
+        {
+            "numeroDia": "7",
+            "isActive": "1",
+            "onClickDirectivo": "() => {alert('Debo abrir la pantalla de asesorías existentes :)')}",
+            "asesorias": [
+                {
+                    "status": "Activa",
+                    "hora": "09:00",
+                    "openPanel": "() => {alert('Debo abrir el panel de esta asesoría específica :)')}"
+                },
+                {
+                    "status": "Cancelada",
+                    "hora": "10:00",
+                    "openPanel": "() => {alert('Debo abrir el panel de esta asesoría específica :)')}"
+                },
+                {
+                    "status": "Activa",
+                    "hora": "15:00",
+                    "openPanel": "() => {alert('Debo abrir el panel de esta asesoría específica :)')}"
+                }
+            ]
+        },
+        {
+            "numeroDia": "8",
+            "isActive": "0"
+        },
+        {
+            "numeroDia": "9",
+            "isActive": "0"
+        },
+        {
+            "numeroDia": "10",
+            "isActive": "1",
+            "onClickDirectivo": "() => {alert('Debo abrir la pantalla de asesorías existentes :)')}",
+            "asesorias": [
+                {
+                    "status": "Activa",
+                    "hora": "08:00",
+                    "openPanel": "() => {alert('Debo abrir el panel de esta asesoría específica :)')}"
+                },
+                {
+                    "status": "Reservada",
+                    "hora": "11:00",
+                    "openPanel": "() => {alert('Debo abrir el panel de esta asesoría específica :)')}"
+                },
+                {
+                    "status": "Activa",
+                    "hora": "17:00",
+                    "openPanel": "() => {alert('Debo abrir el panel de esta asesoría específica :)')}"
+                }
+            ]
+        },
+        {
+            "numeroDia": "11",
+            "isActive": "0"
+        },
+        {
+            "numeroDia": "14",
+            "isActive": "0"
+        },
+        {
+            "numeroDia": "15",
+            "isActive": "0"
+        },
+        {
+            "numeroDia": "16",
+            "isActive": "1",
+            "onClickDirectivo": "() => {alert('Debo abrir la pantalla de asesorías existentes :)')}",
+            "asesorias": [
+                {
+                    "status": "Finalizada",
+                    "hora": "08:00",
+                    "openPanel": "() => {alert('Debo abrir el panel de esta asesoría específica :)')}"
+                },
+                {
+                    "status": "Activa",
+                    "hora": "18:00",
+                    "openPanel": "() => {alert('Debo abrir el panel de esta asesoría específica :)')}"
+                }
+            ]
+        },
+        {
+            "numeroDia": "17",
+            "isActive": "0"
+        },
+        {
+            "numeroDia": "18",
+            "isActive": "0"
+        },
+        {
+            "numeroDia": "21",
+            "isActive": "0"
+        },
+        {
+            "numeroDia": "22",
+            "isActive": "1",
+            "onClickDirectivo": "() => {alert('Debo abrir la pantalla de asesorías existentes :)')}",
+            "asesorias": [
+                {
+                    "status": "Activa",
+                    "hora": "13:00",
+                    "openPanel": "() => {alert('Debo abrir el panel de esta asesoría específica :)')}"
+                }
+            ]
+        },
+        {
+            "numeroDia": "23",
+            "isActive": "0"
+        },
+        {
+            "numeroDia": "24",
+            "isActive": "0"
+        },
+        {
+            "numeroDia": "25",
+            "isActive": "0"
+        },
+        {
+            "numeroDia": "28",
+            "isActive": "0"
+        },
+        {
+            "numeroDia": "29",
+            "isActive": "0"
+        },
+        {
+            "numeroDia": "30",
+            "isActive": "0"
+        },
+        {
+            "numeroDia": "31",
+            "isActive": "0"
+        }
+    ]
+}

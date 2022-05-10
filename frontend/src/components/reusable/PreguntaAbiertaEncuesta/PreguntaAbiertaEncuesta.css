@@ -1,0 +1,16 @@
+.contenedorPreguntaAbiertaEncuesta{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start ;
+
+    width: 60%;
+    height: 100%;
+
+    gap: 10px;
+
+
+}
+
+.textoPreguntaAbiertaEncuesta{
+    font-size: 20px;
+}
