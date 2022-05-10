@@ -109,26 +109,76 @@
 
 // 4. Uso del componente del calendario
 
+// import React from 'react'
+// import { ComponenteCalendario } from '../../../routeIndex'
+// import CalendarioJSON from '../../../components/reusable/Calendario/PruebaCalendario.json'
+
+// function Ezequiel() {
+//   return (
+//     <ComponenteCalendario
+//       userTypeCalendario = 'alumno' // Se usa para definir el tipo de usuario que ve el calendario
+//         // alumno
+//         // directivo
+//       diasCalendario = {CalendarioJSON} // JSON con los días (y cada día con sus asesorías) de la semana
+//         // NOTA: en el archivo JSON debe existir un campo "numeroDia", "isActive", "asesorias" y "onClickDirectivo",
+//         // este último debe almacenar la función para abrir el menú de todas las asesorías para un día en específico (SOLO APLICA CUANDO EL USUARIO ES DIRECTIVO, NO ALUMNO)
+//         // Para comprender mejor esto se debe ver el archivo 'PruebaCalendario.json' encontrado en la carpeta de este componente
+//       sizeCalendario = 'normal' // Tamaño del componente
+//         // normal
+//         // grande
+//         // reducido
+//     >
+//     </ComponenteCalendario>
+//   )
+// }
+
+// export default Ezequiel
+
+// 5. Uso del TemplateRegistroUsuario
+
+// import React from 'react'
+// import { TemplateRegistroUsuario } from '../../../routeIndex'
+
+// function Ezequiel() {
+//   return (
+//     <TemplateRegistroUsuario>
+//       <h1> Hola mundo </h1>
+//     </TemplateRegistroUsuario>
+//   )
+// }
+
+// export default Ezequiel
+
+// 6. Uso del TemplateRegistroUsuario
+
 import React from 'react'
-import { ComponenteCalendario } from '../../../routeIndex'
-import CalendarioJSON from '../../../components/reusable/Calendario/PruebaCalendario.json'
+import { Notificacion } from '../../../routeIndex'
 
 function Ezequiel() {
   return (
-    <ComponenteCalendario
-      userTypeCalendario = 'alumno' // Se usa para definir el tipo de usuario que ve el calendario
-        // alumno
-        // directivo
-      diasCalendario = {CalendarioJSON} // JSON con los días (y cada día con sus asesorías) de la semana
-        // NOTA: en el archivo JSON debe existir un campo "numeroDia", "isActive", "asesorias" y "onClickDirectivo",
-        // este último debe almacenar la función para abrir el menú de todas las asesorías para un día en específico (SOLO APLICA CUANDO EL USUARIO ES DIRECTIVO, NO ALUMNO)
-        // Para comprender mejor esto se debe ver el archivo 'PruebaCalendario.json' encontrado en la carpeta de este componente
-      sizeCalendario = 'normal' // Tamaño del componente
-        // normal
-        // grande
-        // reducido
-    >
-    </ComponenteCalendario>
+    <>
+    <div style = {{
+      width: '50%',
+      height: '800px',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      marginTop: '50px'
+    }}>
+      <Notificacion
+        onClick = {() => {alert('Debo abrir el panel para aceptar la asesoria; ESTO APLICA EN LA PANTALLA DE DIRECTIVOS')}}
+          // Este parámetro solo debe usarse para las notificaciones de los directivos,
+          // específicamente en la notificación para ACEPTAR una asesoría.
+        color = 'verde'
+          // verde
+          // rojo
+          // azul
+        titulo = 'Mensaje de PAE:'
+        leyenda = '11:00 PM — 4:00 AM'
+        contenido = 'Tenemos reunión general el día lunes 30 de febrero en casa de Boba a las 9 pm. Vengan con toda la actitud para pasarla bien :)'
+      >
+      </Notificacion>
+    </div>
+    </>
   )
 }
 

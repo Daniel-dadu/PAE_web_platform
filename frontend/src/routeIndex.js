@@ -51,3 +51,7 @@ export {default as AgendarAsesoriaResumen } from './views/asesorado/AgendarAseso
 export {default as BotonCambioPerfil } from './components/reusable/BotonCambioPerfil/BotonCambioPerfil.jsx'
 export {default as PreguntaAbiertaEncuesta } from './components/reusable/PreguntaAbiertaEncuesta/PreguntaAbiertaEncuesta.jsx'
 export {default as BotonAdministrarInformacion } from './components/reusable/BotonAdministrarInformacion/BotonAdministrarInformacion.jsx'
+
+export {default as PreguntaCerradaEncuesta } from './components/reusable/PreguntaCerradaEncuesta/PreguntaCerradaEncuesta.jsx'
+export {default as TemplateRegistroUsuario } from './views/TemplateRegistroUsuario/TemplateRegistroUsuario.jsx'
+export {default as Notificacion } from './components/reusable/Notificacion/Notificacion.jsx'
