@@ -13,7 +13,7 @@ function TemporalHome() {
       <Link to='/agendarAsesoriaCalendario' className='link_tmp'>AgendarAsesoriaCalendario</Link>
       <Link to='/agendarAsesoriaHora' className='link_tmp'>AgendarAsesoriaHora</Link>
       <Link to='/agendarAsesoriaResumen' className='link_tmp'>AgendarAsesoriaResumen</Link>
-
+      <Link to='/notificaciones' className='link_tmp'>Notificaciones</Link>
 
       <h2>Próximamente</h2>
       <Link to='/perfilAsesor' className='link_tmp'>Perfil Asesor</Link>
