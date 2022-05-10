@@ -1,0 +1,48 @@
+.title_administrarUsuarios{
+    margin: 2 0 2rem 2rem;
+    font-size: 2.3rem;
+    display: relative;
+
+}
+
+
+.contenedor_administrarUsuarios{
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 85%;
+    align-items: center;
+
+
+}
+
+.grupoBotones_administrarUsuarios{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 50%;
+    height: 80%;
+    gap: 5%;
+    align-items: center;
+}
+
+.botonesSuperiores_administrarUsuarios{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+    
+}
+
+.botonesInferiores_administrarUsuarios{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+
+}
+
+.botonGeneral_administrarUsuarios{
+    width: 80px;
+}
