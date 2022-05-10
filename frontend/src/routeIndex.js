@@ -61,3 +61,4 @@ export {default as AdministrarUsuarios } from './views/directivo/perfil/administ
 export {default as CalendarioDisponibilidad } from './components/reusable/CalendarioDisponibilidad/CalendarioDisponibilidad.jsx'
 
 export {default as RegistroAsesoradoCondiciones } from './views/asesorado/registroAsesoradoCondiciones/RegistroAsesoradoCondiciones.jsx'
+export {default as PanelNotificaciones } from './views/commons/panelNotificaciones/PanelNotificaciones.jsx';
