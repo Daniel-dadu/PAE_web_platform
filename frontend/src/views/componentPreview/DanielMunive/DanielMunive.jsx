@@ -8,7 +8,7 @@ function DanielMunive() {
   return (
     <>
       <div // Div de prueba para la imagen
-        class = 'containerImg'
+        className = 'containerImg'
         style = {{
           width: '100%',
           height: '150px',
