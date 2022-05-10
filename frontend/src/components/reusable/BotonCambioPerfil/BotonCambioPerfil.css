@@ -39,9 +39,3 @@
     background-color: #50C7F1;
   }
 
-
-
-
-.radio-custom:checked ~ span {
-    color: red;
-  }
