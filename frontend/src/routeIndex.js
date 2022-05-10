@@ -52,3 +52,4 @@ export {default as PreguntaAbiertaEncuesta } from './components/reusable/Pregunt
 export {default as BotonAdministrarInformacion } from './components/reusable/BotonAdministrarInformacion/BotonAdministrarInformacion.jsx'
 
 export {default as PreguntaCerradaEncuesta } from './components/reusable/PreguntaCerradaEncuesta/PreguntaCerradaEncuesta.jsx'
+export {default as TemplateRegistroUsuario } from './views/TemplateRegistroUsuario/TemplateRegistroUsuario.jsx'
