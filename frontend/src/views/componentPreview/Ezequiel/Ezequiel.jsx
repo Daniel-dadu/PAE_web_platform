@@ -152,19 +152,20 @@
 // 6. Uso del TemplateRegistroUsuario
 
 import React from 'react'
-import { Notificacion } from '../../../routeIndex'
+import { CalendarioDisponibilidad } from '../../../routeIndex'
 
 function Ezequiel() {
   return (
     <>
     <div style = {{
-      width: '50%',
-      height: '800px',
+      width: '100%',
+      height: '550px',
       marginLeft: 'auto',
       marginRight: 'auto',
-      marginTop: '50px'
+      marginTop: '40px'
+      // border: 'solid 3px #000000'
     }}>
-      <Notificacion
+      <CalendarioDisponibilidad
         onClick = {() => {alert('Debo abrir el panel para aceptar la asesoria; ESTO APLICA EN LA PANTALLA DE DIRECTIVOS')}}
           // Este parámetro solo debe usarse para las notificaciones de los directivos,
           // específicamente en la notificación para ACEPTAR una asesoría.
@@ -176,7 +177,7 @@ function Ezequiel() {
         leyenda = '11:00 PM — 4:00 AM'
         contenido = 'Tenemos reunión general el día lunes 30 de febrero en casa de Boba a las 9 pm. Vengan con toda la actitud para pasarla bien :)'
       >
-      </Notificacion>
+      </CalendarioDisponibilidad>
     </div>
     </>
   )

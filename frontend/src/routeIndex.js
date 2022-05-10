@@ -55,3 +55,4 @@ export {default as BotonAdministrarInformacion } from './components/reusable/Bot
 export {default as PreguntaCerradaEncuesta } from './components/reusable/PreguntaCerradaEncuesta/PreguntaCerradaEncuesta.jsx'
 export {default as TemplateRegistroUsuario } from './views/TemplateRegistroUsuario/TemplateRegistroUsuario.jsx'
 export {default as Notificacion } from './components/reusable/Notificacion/Notificacion.jsx'
+export {default as CalendarioDisponibilidad } from './components/reusable/CalendarioDisponibilidad/CalendarioDisponibilidad.jsx'
