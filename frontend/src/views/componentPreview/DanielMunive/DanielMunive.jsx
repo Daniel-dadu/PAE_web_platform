@@ -1,36 +1,32 @@
-import React from 'react'
-import { PreguntaCerradaEncuesta }  from '../../../routeIndex'
+import React, { useState } from 'react'
 
-import Logo from "./imgPrueba/RespuestasEncuestas.png";
+ import { BotonCambioPerfil } from '../../../routeIndex'
+ 
 
-import './Munive.css'
 function DanielMunive() {
-
 
   return (
     <>
-    <div // Div de prueba 
-      className = 'containerImg'
-      style = {{
-        width: '100%',
-        height: '150px',
-        marginLeft: 'auto',
-        marginRight: 'auto'
-      }}
-    >
+      <div // Div de prueba para la imagen
+        className = 'containerImg'
+        style = {{
+          width: '100%',
+          height: '150px',
+          marginLeft: 'auto',
+          marginRight: 'auto'
+        }}
+      >
 
+        <BotonCambioPerfil></BotonCambioPerfil>
 
-      <PreguntaCerradaEncuesta
-
-        preguntaCerrada={'Deja tu calificacion aqui'}>
-
-      </PreguntaCerradaEncuesta>
 
     </div>
-  </>
 
-
+    </>
   )
+
+
+  
 }
 
 export default DanielMunive
