@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
- import { BotonCambioPerfil } from '../../../routeIndex'
+ import { TemplateRegistroUsuario } from '../../../routeIndex'
  
 
 function DanielMunive() {
@@ -17,7 +17,7 @@ function DanielMunive() {
         }}
       >
 
-        <BotonCambioPerfil></BotonCambioPerfil>
+        <TemplateRegistroUsuario></TemplateRegistroUsuario>
 
 
     </div>
