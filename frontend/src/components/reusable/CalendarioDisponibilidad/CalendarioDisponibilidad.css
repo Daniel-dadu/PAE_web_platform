@@ -1,0 +1,49 @@
+.calendarioDisponibilidad{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nombreDiaCalendarioDisponibilidad{
+    font-size: 20px;
+}
+
+.bloqueCalendarioDisponibilidad{
+    padding: 5px;
+    width: 100px;
+}
+
+.seleccionCalendario{
+    width: 100%;
+    height: 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #C4C4C4;
+}
+
+.horaCalendarioDisponibilidad{
+    width: 100%;
+    height: 30px;
+    border-radius: 30px;
+    background-color: #b0ff9662;
+    padding-top: 6px;
+    text-align: center;
+}
+
+.txtHoraCalendarioDisponibilidad{
+    font-weight: bold;
+}
+
+/* RESPONSIVE 480 px */
+
+@media screen and (max-width: 400px){
+
+    .nombreDiaCalendarioDisponibilidad{
+        font-size: 18px;
+    }
+
+    .txtHoraCalendarioDisponibilidad{
+        font-size: 15px;
+    }
+
+}
