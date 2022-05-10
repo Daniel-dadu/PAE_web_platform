@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { TemplateRegistroUsuario, BarraProgreso } from '../../../../routeIndex'
+import { TemplateRegistroUsuario } from '../../../../routeIndex'
 
 
 import "./RegistroAsesorCondiciones.css"
 
-function RegistroAsesorCondiciones(progressBarJSON) {
+function RegistroAsesorCondiciones() {
   return (
     <div>
         
@@ -13,7 +13,6 @@ function RegistroAsesorCondiciones(progressBarJSON) {
              
          <div >
             <h1 >Agendar asesorías</h1>
-            <BarraProgreso progress={progressBarJSON}/>
         </div>
         
          </TemplateRegistroUsuario> 
