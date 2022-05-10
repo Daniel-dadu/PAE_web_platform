@@ -47,3 +47,6 @@ export {default as AgendarAsesoriaHora } from './views/asesorado/agendarAsesoria
 export {default as TarjetaInformacion } from './components/reusable/TarjetaInformacion/TarjetaInformacion.jsx'
 
 export {default as AgendarAsesoriaResumen } from './views/asesorado/AgendarAsesoriaResumen/AgendarAsesoriaResumen.jsx'
+
+export {default as PreguntaAbiertaEncuesta } from './components/reusable/PreguntaAbiertaEncuesta/PreguntaAbiertaEncuesta.jsx'
+export {default as BotonAdministrarInformacion } from './components/reusable/BotonAdministrarInformacion/BotonAdministrarInformacion.jsx'
