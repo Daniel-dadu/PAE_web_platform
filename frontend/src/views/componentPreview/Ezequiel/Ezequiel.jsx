@@ -136,51 +136,77 @@
 
 // 5. Uso del TemplateRegistroUsuario
 
-// import React from 'react'
-// import { TemplateRegistroUsuario } from '../../../routeIndex'
-
-// function Ezequiel() {
-//   return (
-//     <TemplateRegistroUsuario>
-//       <h1> Hola mundo </h1>
-//     </TemplateRegistroUsuario>
-//   )
-// }
-
-// export default Ezequiel
-
-// 6. Uso del TemplateRegistroUsuario
-
 import React from 'react'
-import { CalendarioDisponibilidad } from '../../../routeIndex'
+import { TemplateRegistroUsuario } from '../../../routeIndex'
+
+let progressBar = {
+  "currentStep": 0,
+  "steps": [
+      {
+          "name" : "Datos generales",
+          "state": null,
+          "next": "done",
+          "path" : "./rutaDatosGenerales"
+        }, 
+        {
+          "name" : "Consideraciones finales",
+          "state": null,
+          "next": "enable",
+          "path" : "./rutaConsideracionesFinales"
+        },
+        {
+          "name" : "Confirmación",
+          "state": null,
+          "next": "enable",
+          "path" : "./rutaConfirmacion"
+        }
+  ]
+}
 
 function Ezequiel() {
   return (
-    <>
-    <div style = {{
-      width: '100%',
-      height: '550px',
-      marginLeft: 'auto',
-      marginRight: 'auto',
-      marginTop: '40px'
-      // border: 'solid 3px #000000'
-    }}>
-      <CalendarioDisponibilidad
-        onClick = {() => {alert('Debo abrir el panel para aceptar la asesoria; ESTO APLICA EN LA PANTALLA DE DIRECTIVOS')}}
-          // Este parámetro solo debe usarse para las notificaciones de los directivos,
-          // específicamente en la notificación para ACEPTAR una asesoría.
-        color = 'verde'
-          // verde
-          // rojo
-          // azul
-        titulo = 'Mensaje de PAE:'
-        leyenda = '11:00 PM — 4:00 AM'
-        contenido = 'Tenemos reunión general el día lunes 30 de febrero en casa de Boba a las 9 pm. Vengan con toda la actitud para pasarla bien :)'
-      >
-      </CalendarioDisponibilidad>
-    </div>
-    </>
+    <TemplateRegistroUsuario
+      progressBarJSON = {progressBar}
+    >
+      <h1> Hola mundo </h1>
+    </TemplateRegistroUsuario>
   )
 }
 
 export default Ezequiel
+
+// 6. Uso del CalendarioDisponibilidad
+
+// import React from 'react'
+// import { CalendarioDisponibilidad } from '../../../routeIndex'
+
+// function Ezequiel() {
+//   return (
+//     <>
+//     <div style = {{
+//       width: '100%',
+//       height: '550px',
+//       marginLeft: 'auto',
+//       marginRight: 'auto',
+//       marginTop: '40px'
+//       // border: 'solid 3px #000000'
+//     }}>
+//       <CalendarioDisponibilidad
+//         onClick = {() => {alert('Debo abrir el panel para aceptar la asesoria; ESTO APLICA EN LA PANTALLA DE DIRECTIVOS')}}
+//           // Este parámetro solo debe usarse para las notificaciones de los directivos,
+//           // específicamente en la notificación para ACEPTAR una asesoría.
+//         color = 'verde'
+//           // verde
+//           // rojo
+//           // azul
+//         titulo = 'Mensaje de PAE:'
+//         leyenda = '11:00 PM — 4:00 AM'
+//         contenido = 'Tenemos reunión general el día lunes 30 de febrero en casa de Boba a las 9 pm. Vengan con toda la actitud para pasarla bien :)'
+//       >
+//       </CalendarioDisponibilidad>
+//     </div>
+//     </>
+//   )
+// }
+
+// export default Ezequiel
