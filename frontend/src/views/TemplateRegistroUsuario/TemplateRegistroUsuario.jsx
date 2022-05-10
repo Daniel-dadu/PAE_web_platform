@@ -1,9 +1,10 @@
 import React from 'react'
 import '../../index.css'
 import './TemplateRegistroUsuario.css'
-import { TarjetaMaestra } from '../../routeIndex'
+import { TarjetaMaestra, BarraProgreso } from '../../routeIndex'
 
 const TemplateRegistroUsuario = ({
+    progressBarJSON,
     children
 }) => {
 
@@ -16,6 +17,8 @@ const TemplateRegistroUsuario = ({
                 <p className = 'txtHeader'> Registro </p>
             </div>
 
+            <BarraProgreso progress = {progressBarJSON}/>
+            <br />
             <TarjetaMaestra>
                 {children}
             </TarjetaMaestra>
