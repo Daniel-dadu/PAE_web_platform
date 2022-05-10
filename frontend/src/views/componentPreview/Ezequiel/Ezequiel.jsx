@@ -136,14 +136,49 @@
 
 // 5. Uso del TemplateRegistroUsuario
 
+// import React from 'react'
+// import { TemplateRegistroUsuario } from '../../../routeIndex'
+
+// function Ezequiel() {
+//   return (
+//     <TemplateRegistroUsuario>
+//       <h1> Hola mundo </h1>
+//     </TemplateRegistroUsuario>
+//   )
+// }
+
+// export default Ezequiel
+
+// 6. Uso del TemplateRegistroUsuario
+
 import React from 'react'
-import { TemplateRegistroUsuario } from '../../../routeIndex'
+import { Notificacion } from '../../../routeIndex'
 
 function Ezequiel() {
   return (
-    <TemplateRegistroUsuario>
-      <h1> Hola mundo </h1>
-    </TemplateRegistroUsuario>
+    <>
+    <div style = {{
+      width: '50%',
+      height: '800px',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      marginTop: '50px'
+    }}>
+      <Notificacion
+        onClick = {() => {alert('Debo abrir el panel para aceptar la asesoria; ESTO APLICA EN LA PANTALLA DE DIRECTIVOS')}}
+          // Este parámetro solo debe usarse para las notificaciones de los directivos,
+          // específicamente en la notificación para ACEPTAR una asesoría.
+        color = 'verde'
+          // verde
+          // rojo
+          // azul
+        titulo = 'Mensaje de PAE:'
+        leyenda = '11:00 PM — 4:00 AM'
+        contenido = 'Tenemos reunión general el día lunes 30 de febrero en casa de Boba a las 9 pm. Vengan con toda la actitud para pasarla bien :)'
+      >
+      </Notificacion>
+    </div>
+    </>
   )
 }
 

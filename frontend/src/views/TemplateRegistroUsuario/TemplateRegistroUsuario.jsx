@@ -12,7 +12,7 @@ const TemplateRegistroUsuario = ({
         <div className = 'container_templateRegistroUsuario'>
 
             <div className = 'header_templateRegistroUsuario'>
-                <img src = {require(`../../assets/pae_logo.png`)} className = 'imgHeader'/>
+                <img src = {require(`../../assets/pae_logo.png`)} alt = 'Logo pae' className = 'imgHeader'/>
                 <p className = 'txtHeader'> Registro </p>
             </div>
 
