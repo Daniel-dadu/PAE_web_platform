@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { TemplateRegistroUsuario, BotonSencillo } from '../../../../routeIndex'
+import { TemplateRegistroUsuario } from '../../../../routeIndex'
 
 
 import "./RegistroAsesorCondiciones.css"
