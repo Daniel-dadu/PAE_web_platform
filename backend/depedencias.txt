@@ -1,9 +1,0 @@
-docker
-docker-compose
-nodejs
-python3
-shc
-
-pip:
-Flask==2.1.2
-waitress==2.1.1
