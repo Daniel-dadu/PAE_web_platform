@@ -1,5 +1,5 @@
 import React from 'react'
-import { PreguntaAbiertaEncuesta }  from '../../../routeIndex'
+import { PreguntaCerradaEncuesta }  from '../../../routeIndex'
 
 import Logo from "./imgPrueba/RespuestasEncuestas.png";
 
@@ -20,11 +20,11 @@ function DanielMunive() {
     >
 
 
-      <PreguntaAbiertaEncuesta 
+      <PreguntaCerradaEncuesta
 
-      preguntaAbierta={'Deja tu comentario aqui'}>
+        preguntaCerrada={'Deja tu calificacion aqui'}>
 
-      </PreguntaAbiertaEncuesta>
+      </PreguntaCerradaEncuesta>
 
     </div>
   </>
