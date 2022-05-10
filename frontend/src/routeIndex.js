@@ -55,5 +55,10 @@ export {default as BotonAdministrarInformacion } from './components/reusable/Bot
 export {default as PreguntaCerradaEncuesta } from './components/reusable/PreguntaCerradaEncuesta/PreguntaCerradaEncuesta.jsx'
 export {default as TemplateRegistroUsuario } from './views/TemplateRegistroUsuario/TemplateRegistroUsuario.jsx'
 export {default as Notificacion } from './components/reusable/Notificacion/Notificacion.jsx'
+
+export {default as RegistroAsesorCondiciones } from './views/asesor/perfil/registroAsesorCondiciones/RegistroAsesorCondiciones.jsx'
+export {default as AdministrarUsuarios } from './views/directivo/perfil/administrarUsuarios/AdministrarUsuarios.jsx'
 export {default as CalendarioDisponibilidad } from './components/reusable/CalendarioDisponibilidad/CalendarioDisponibilidad.jsx'
+
+export {default as RegistroAsesoradoCondiciones } from './views/asesorado/registroAsesoradoCondiciones/RegistroAsesoradoCondiciones.jsx'
 export {default as PanelNotificaciones } from './views/commons/panelNotificaciones/PanelNotificaciones.jsx';

@@ -40,8 +40,3 @@
   }
 
 
-
-
-.radio-custom:checked ~ span {
-    color: red;
-  }

@@ -5,26 +5,32 @@
     border-radius: 20px;
     border: 2px solid black;
 
-    width: 18%;
-    height: 200%;
+    width: 40%;
+    height: 250px;
     overflow: hidden;
 
     display: flex;
     gap: 10px;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
 /* For Image inside  */
 .botonPruebaEren div * {
-    margin: 0 auto;
-    display: block;
+    display: relative;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .botonAdministrarImagen {
     width: 50%;
     height: 20%;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .botonAdministrarTextoDefinicion {

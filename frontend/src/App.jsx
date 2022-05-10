@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { TemporalHome, LandingPage, Calendario, PerfilAsesor, PerfilAsesorado, PerfilDirectivo, EditarPerfil, AgendarAsesoriaUF, AgendarAsesoriaDuda, AgendarAsesoriaCalendario, AgendarAsesoriaHora, AgendarAsesoriaResumen, PanelNotificaciones, DanielFlores, DanielMaldonado, DanielMunive, Ezequiel, Fernando } from './routeIndex'
+import { PanelNotificaciones, RegistroAsesoradoCondiciones, RegistroAsesorCondiciones, AdministrarUsuarios, TemporalHome, LandingPage, Calendario, PerfilAsesor, PerfilAsesorado, PerfilDirectivo, EditarPerfil, AgendarAsesoriaUF, AgendarAsesoriaDuda, AgendarAsesoriaCalendario, AgendarAsesoriaHora, AgendarAsesoriaResumen, DanielFlores, DanielMaldonado, DanielMunive, Ezequiel, Fernando } from './routeIndex'
 
 const App = () => {
   return (
@@ -27,6 +27,15 @@ const App = () => {
         <Route path='/danielMunive' element={<DanielMunive/>} />
         <Route path='/ezequiel' element={<Ezequiel/>} />
         <Route path='/fernando' element={<Fernando/>} />
+
+        {/* Views de Asesorado */}
+        <Route path='/registroAsesoradoCondiciones' element={<RegistroAsesoradoCondiciones/>} />
+
+        {/* Views de Asesor  */}
+        <Route path='/registroAsesorCondiciones' element={<RegistroAsesorCondiciones/>} />
+
+          {/* Views de Directivos */}
+        <Route path='/administrarUsuarios' element={<AdministrarUsuarios/>} />
 
         {/* Esta última ruta es a donde se redirige al usuario cuando se busca una ruta inexistente */}
         <Route path='*' element={<TemporalHome />} />
