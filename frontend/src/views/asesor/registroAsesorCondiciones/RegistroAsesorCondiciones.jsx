@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { TemplateRegistroUsuario } from '../../../../routeIndex'
+import { TemplateRegistroUsuario } from '../../../routeIndex'
 
 
 import "./RegistroAsesorCondiciones.css"
@@ -14,7 +14,7 @@ let progressBar = {
           "name" : "Datos Generales",
           "state": true,
           "next": "enable",
-          "path" : "Ruta"
+          "path" : "/registroAsesorDatos"
         }, 
         {
           "name" : "Horario",

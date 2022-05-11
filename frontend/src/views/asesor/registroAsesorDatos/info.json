@@ -1,0 +1,22 @@
+{
+    "carrera": [
+        "ITC (Ingeniería en Tecnologías Computacionales)",
+        "IBT (Ingeniería en Biotecnología)",
+        "IRS (Ingeniería en Robótica)",
+        "IMT (Ingeniería en Mecratrónica)",
+        "IFI (Ingeniería Física Industrial)",
+        "IMD (Ingeniería en Biomédica)"
+    ],
+    "semestre": [1,2,3,4,5,6,7,8,9],
+    "unidadFormacion": [
+        "Planeación de software",
+        "Desarrollo de software",
+        "Implementación de software",
+        "Construcción de software",
+        "Requerimientos de software",
+        "Calidad de software",
+        "Eliminación de software",
+        "Problemas de software",
+        "No más software"
+    ]
+}
