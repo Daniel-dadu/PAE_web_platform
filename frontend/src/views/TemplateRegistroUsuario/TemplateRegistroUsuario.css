@@ -35,3 +35,21 @@
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+
+.btn_right_registro{
+    margin-left: 10px;
+}
+
+.container_navButtons_RegistroUsuario{
+    height: 10%;
+    display: flex;
+    gap: 70%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+::-webkit-scrollbar-corner {
+    border-radius: 100%;
+}
