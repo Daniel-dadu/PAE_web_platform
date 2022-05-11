@@ -56,3 +56,4 @@ export {default as PreguntaCerradaEncuesta } from './components/reusable/Pregunt
 export {default as TemplateRegistroUsuario } from './views/TemplateRegistroUsuario/TemplateRegistroUsuario.jsx'
 export {default as Notificacion } from './components/reusable/Notificacion/Notificacion.jsx'
 export {default as CalendarioDisponibilidad } from './components/reusable/CalendarioDisponibilidad/CalendarioDisponibilidad.jsx'
+export { default as RecuperarPassword } from './views/LandingPage/recuperarPassword/RecuperarPassword.js'
