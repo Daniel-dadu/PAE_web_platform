@@ -15,13 +15,13 @@ let progressBar = {
             "name" : "Datos Generales",
             "state": true,
             "next": "enable",
-            "path" : "Ruta"
+            "path" : "/registroAsesoradoDatos"
           }, 
           {
             "name" : "Consideraciones Finales",
             "state": null,
             "next": "enable",
-            "path" : "./registroAsesorCondiciones"
+            "path" : "./registroAsesoradoCondiciones"
           },
           {
             "name" : "Confirmación",
@@ -37,7 +37,7 @@ function RegistroAsesoradoCondiciones() {
 
     <TemplateRegistroUsuario 
     progressBarJSON = {progressBar}
-     btnAtrasRoute="./calendario"
+     btnAtrasRoute="/registroAsesoradoDatos"
      btnSiguienteRoute="./calendario"> 
         
     <div className='bloq_condicionesAsesorado'>

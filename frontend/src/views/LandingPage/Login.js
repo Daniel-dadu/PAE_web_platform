@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './login.css';
-import { FaAngleDoubleRight, FaSignInAlt, FaInfoCircle } from 'react-icons/fa';
+import { FaSignInAlt, FaInfoCircle } from 'react-icons/fa';
 
 
 const Login = () => {
@@ -39,7 +39,7 @@ const Login = () => {
                         <p>Contraseña</p>
                         <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"/>
                         <div className='contenedor-olv-contra'>
-                            <a href='#'> ¿Olvidaste tu constraseña? </a>
+                            <a href='./RecuperarPassword'> ¿Olvidaste tu constraseña? </a>
                         </div>
                     </div>
 
@@ -47,7 +47,7 @@ const Login = () => {
 
 
                     <div className='contenedor-boton'>
-                        <button> Ingresar </button>
+                        <button id='btn-login-asesorado'> <a href='./calendario'> Ingresar </a>  </button>
                         <a href='#'>¿No tienes cuenta?</a>
                     </div>
                 </form>

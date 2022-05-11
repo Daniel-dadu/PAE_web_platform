@@ -56,9 +56,15 @@ export {default as PreguntaCerradaEncuesta } from './components/reusable/Pregunt
 export {default as TemplateRegistroUsuario } from './views/TemplateRegistroUsuario/TemplateRegistroUsuario.jsx'
 export {default as Notificacion } from './components/reusable/Notificacion/Notificacion.jsx'
 
-export {default as RegistroAsesorCondiciones } from './views/asesor/perfil/registroAsesorCondiciones/RegistroAsesorCondiciones.jsx'
+export {default as RegistroAsesorCondiciones } from './views/asesor/registroAsesorCondiciones/RegistroAsesorCondiciones.jsx'
 export {default as AdministrarUsuarios } from './views/directivo/perfil/administrarUsuarios/AdministrarUsuarios.jsx'
 export {default as CalendarioDisponibilidad } from './components/reusable/CalendarioDisponibilidad/CalendarioDisponibilidad.jsx'
 
 export {default as RegistroAsesoradoCondiciones } from './views/asesorado/registroAsesoradoCondiciones/RegistroAsesoradoCondiciones.jsx'
-export {default as PanelNotificaciones } from './views/commons/panelNotificaciones/PanelNotificaciones.jsx';
+export {default as PanelNotificaciones } from './views/commons/panelNotificaciones/PanelNotificaciones.jsx'
+
+export {default as RegistroAsesorDatos } from './views/asesor/registroAsesorDatos/RegistroAsesorDatos.jsx'
+
+export {default as RegistroAsesoradoDatos } from './views/asesorado/registroAsesoradoDatos/RegistroAsesoradoDatos.jsx'
+
+
