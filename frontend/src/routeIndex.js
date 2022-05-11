@@ -67,4 +67,5 @@ export {default as RegistroAsesorDatos } from './views/asesor/registroAsesorDato
 
 export {default as RegistroAsesoradoDatos } from './views/asesorado/registroAsesoradoDatos/RegistroAsesoradoDatos.jsx'
 
+export {default as NotificacionesDirectivos } from './views/directivo/notificacionesDirectivos/NotificacionesDirectivos.jsx'
 
