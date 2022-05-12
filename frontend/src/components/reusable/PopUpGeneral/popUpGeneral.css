@@ -1,17 +1,50 @@
+
+
 .contenedorGeneral-PopUpGeneral {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-PopUpGeneral {
+    height: 30%;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;   
+    border: 2px solid #000;
+    border-radius: 20px;
+}
+
+.contenedorGeneral-PopUpGeneral .parte-arriba-PopUpGeneral {
+    color: #000;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+
+}
+
+.parte-arriba-PopUpGeneral .texto-PopUpGeneral {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    
+}
+
+.contenedorGeneral-PopUpGeneral .parte-abajo-PopUpGeneral {
+    height: 50%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.contenedorGeneral-PopUpGeneral .parte-arriba-PopUpGeneral {
-    color: #000;   
-    font-family: 'Dosis', sans-serif;
-    font-weight: 600;
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
+
+
 
