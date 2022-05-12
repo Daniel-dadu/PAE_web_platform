@@ -1,9 +1,15 @@
 const express = require('express')
+var cors = require('cors')
 const bodyParser = require('body-parser')
 const app = express()
 const port = 3094
 
 const db = require('./queries')
+
+// Documentación sobre esto: https://expressjs.com/en/resources/middleware/cors.html
+var corsOptions = {
+    origin: true // Hardcoded para darle acceso a cualquiera
+}
 
 app.use(bodyParser.json())
 app.use(
@@ -13,7 +19,7 @@ app.use(
 )
 
 // Obtener todas las carreras. NO REQUIERE JSON CON BODY.
-app.get('/asesoria/get_carreras', db.getCarreras)
+app.get('/asesoria/get_carreras', cors(corsOptions), db.getCarreras)
 
 
 // Obtener lista de Unidades de Formación apartir de una carrera y semestre
