@@ -5,9 +5,11 @@ import '../../../index.css'
 import './PanelNotificaciones.css'
 import Modal from '../../../components/reusable/PopUpInformacionAsesoria/Modal.js'
 import notificacionesJSON from './PruebaPanelNotificaciones.json'
-import { Template, Notificacion, PopUpInformacionAsesoria } from '../../../routeIndex'
+import { Template, Notificacion, PopUpInformacionAsesoria, BotonConImagen} from '../../../routeIndex'
 
-const PanelNotificaciones = () => {
+import { FiMail } from 'react-icons/fi'
+
+const PanelNotificaciones = (userTypeNotificaciones) => {
 
     const [active, setActive] = useState(false);
   
@@ -51,8 +53,34 @@ const PanelNotificaciones = () => {
                 >
                 </PopUpInformacionAsesoria>
             </Modal>
+    
 
-            <h1> Notificaciones </h1>
+            
+
+            {(userTypeNotificaciones === 'directivo') ? 
+
+                <div className='btn_NotificacionIrAEnviar'>
+
+                <h1> Notificaciones </h1>
+
+                <div className='botonEnviarNotiHola'>
+                    <BotonConImagen 
+                    onClick={'Hola'} 
+                    backgroundColor='blanco'
+                    size="largo" 
+                    Image={FiMail} >
+                        Enviar notificación
+                    </BotonConImagen>
+                </div>
+
+                </div> 
+                
+                : <h1> Notificaciones </h1>
+
+                
+
+
+            }
             
             {
                 Object.keys(notificacionesJSON['notificaciones']).map((index) => {
