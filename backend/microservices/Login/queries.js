@@ -4,11 +4,11 @@ const encrypt = require('../EncryptionFile/encrypt.js')
 
 // IMPORTANTE: Estas credenciales de Postgres no deben estar aquí, solo es para probar
 const pool = new Pool({
-  user: 'dadu',
-  host: 'localhost',
-  database: 'apitest',
-  password: 'dadu',
-  port: 5432,
+    user: 'pae',
+    host: 'localhost',
+    database: 'pae_db',
+    password: 'devsoft_db_manager',
+    port: 5432,
 })
 
 const validateCredentials = (request, response) => {

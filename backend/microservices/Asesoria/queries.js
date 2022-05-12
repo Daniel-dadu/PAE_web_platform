@@ -4,10 +4,10 @@ const Pool = require('pg').Pool
 
 // IMPORTANTE: Estas credenciales de Postgres no deben estar aquí, solo es para probar
 const pool = new Pool({
-  user: 'dadu',
+  user: 'pae',
   host: 'localhost',
-  database: 'apitest',
-  password: 'dadu',
+  database: 'pae_db',
+  password: 'devsoft_db_manager',
   port: 5432,
 })
 
