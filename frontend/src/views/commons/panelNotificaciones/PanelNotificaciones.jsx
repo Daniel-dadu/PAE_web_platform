@@ -7,7 +7,7 @@ import Modal from '../../../components/reusable/PopUpInformacionAsesoria/Modal.j
 import notificacionesJSON from './PruebaPanelNotificaciones.json'
 import { Template, Notificacion, PopUpInformacionAsesoria, BotonConImagen} from '../../../routeIndex'
 
-import { BiImageAdd } from 'react-icons/bi'
+import { FiMail } from 'react-icons/fi'
 
 const PanelNotificaciones = (userTypeNotificaciones) => {
 
@@ -56,6 +56,7 @@ const PanelNotificaciones = (userTypeNotificaciones) => {
     
 
             
+
             {(userTypeNotificaciones === 'directivo') ? 
 
                 <div className='btn_NotificacionIrAEnviar'>
@@ -67,7 +68,7 @@ const PanelNotificaciones = (userTypeNotificaciones) => {
                     onClick={'Hola'} 
                     backgroundColor='blanco'
                     size="largo" 
-                    Image={BiImageAdd} >
+                    Image={FiMail} >
                         Enviar notificación
                     </BotonConImagen>
                 </div>
@@ -75,6 +76,9 @@ const PanelNotificaciones = (userTypeNotificaciones) => {
                 </div> 
                 
                 : <h1> Notificaciones </h1>
+
+                
+
 
             }
             
