@@ -39,6 +39,11 @@ const App = () => {
           {/* Views de Directivos */}
         <Route path='/administrarUsuarios' element={<AdministrarUsuarios/>} />
 
+
+        
+
+
+
         {/* Esta última ruta es a donde se redirige al usuario cuando se busca una ruta inexistente */}
         <Route path='*' element={<TemporalHome />} />
       </Routes>

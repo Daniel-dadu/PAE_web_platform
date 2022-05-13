@@ -27,6 +27,7 @@ function TemporalHome() {
       <Link to='/administrarUsuarios' className='link_tmp'>AdministrarUsuarios</Link>
 
 
+
       <h2>Próximamente</h2>
       <Link to='/perfilAsesor' className='link_tmp'>Perfil Asesor</Link>
       <Link to='/perfilAsesorado' className='link_tmp'>Perfil Asesorado</Link>
