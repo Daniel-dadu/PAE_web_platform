@@ -12,10 +12,10 @@
 }
 
 .container_in_aauf h3 {
-    margin-bottom: 5%;
+    margin: 12% 0 7% 0;
     font-size: 1.4rem;
 }
 
-.container_in_aauf input {
-    margin-bottom: 12%;
+.container_in_aauf #CarreraTitleInput {
+    margin-top: 0;
 }
