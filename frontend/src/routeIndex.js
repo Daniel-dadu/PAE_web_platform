@@ -66,5 +66,5 @@ export {default as PanelNotificaciones } from './views/commons/panelNotificacion
 export {default as RegistroAsesorDatos } from './views/asesor/registroAsesorDatos/RegistroAsesorDatos.jsx'
 
 export {default as RegistroAsesoradoDatos } from './views/asesorado/registroAsesoradoDatos/RegistroAsesoradoDatos.jsx'
-
-
+export {default as AdministrarUsuariosDirectivos } from './views/commons/administrarUsuariosDirectivos/AdministrarUsuariosDirectivos.jsx'
+export {default as ListaUsuarios } from './components/reusable/ListaUsuarios/ListaUsuarios.js';
