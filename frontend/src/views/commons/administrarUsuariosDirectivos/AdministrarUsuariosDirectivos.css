@@ -1,0 +1,9 @@
+.tarjeta_maestra{
+    position: relative;
+}
+
+.btnAtras{
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+}
