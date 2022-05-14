@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './AgendarAsesoriaUF.css'
-
-import info from './info.json'
+import { FaSearch } from 'react-icons/fa'
 
 import { AgendarAsesoria, CampoSeleccionarEnListaDesplegable } from '../../../routeIndex'
 
@@ -43,6 +42,8 @@ let progressBar = {
 
 function AgendarAsesoriaUF() {
 
+  // ****************** Hooks y código usado para la consulta de las carreras a la API ****************** //
+
   // Hook usado para conocer el estado de la petición a la API para consultar las carreras
   const [carreraApiState, setCarreraApiState] = useState({
     loading: false, // Booleano que indica si está consultando (cargando) la info de la API
@@ -70,12 +71,27 @@ function AgendarAsesoriaUF() {
       )
   }, [setCarreraApiState])
 
+  // ************************************************************************************************ //
+
+
+  // ****************** Hooks y código usado para la consulta de las UFs a la API ****************** //
+
+  // Hook para guardar las opciones de las unidades de formación
+  const [opcionesUF, setOpcionesUF] = useState([])
+  // Opción por defecto que se debe mostrar en caso de que no se haya seleccionado la carrera y/o el semestre
+  const defaultUFoption = ["* Una vez selecciones la carrera y el semestre, presiona el botón de la lupa para buscar la unidad de formación correspondiente"]
+
+  // Hook para guardar la UF seleccionada
+  const [ufSeleccionada, setUfSeleccionada] = useState(null)
+  // Función que recibe la UF seleccionada en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a carreraSeleccionada
+  const handleUF = ufValue => setUfSeleccionada(ufValue.value[0] === '*' ? null : ufValue.value)
 
   // Hook para guardar la carrera seleccionada
   const [carreraSeleccionada, setCarreraSeleccionada] = useState(null)
   // Función que recibe la carrera seleccionada en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a carreraSeleccionada
   const handleCarrera = carreraValue => {
-    console.log(carreraValue.value)
+    setOpcionesUF(defaultUFoption) // En caso de que se haga un cambio en la carrera, se establece la opcion por default en las opcionesUF
+    setUfSeleccionada(null)
     setCarreraSeleccionada(carreraValue.value)
   }
   
@@ -83,54 +99,49 @@ function AgendarAsesoriaUF() {
   const [semestreSeleccionado, setSemestreSeleccionado] = useState(null)
   // Función que recibe el semestre seleccionado en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a semestreSeleccionado
   const handleSemestre = semestreValue => {
-    console.log(semestreValue.value)
+    setOpcionesUF(defaultUFoption) // En caso de que se haga un cambio en la carrera, se establece la opcion por default en las opcionesUF
+    setUfSeleccionada(null)
     setSemestreSeleccionado(semestreValue.value)
   }
 
-
   // Hook usado para conocer el estado de la petición a la API para consultar las UFs
   const [ufApiState, setUfApiState] = useState({
-    loading: false, // Booleano que indica si está consultando (cargando) la info de la API
+    loading: true, // Booleano que indica si está consultando (cargando) la info de la API
     apiData: null // Guarda la información que regresa la API
   })
   // Hook usado para indicar el error de la petición a la API para consultar las UFs, en caso de que ocurra
   const [errorUfApiCall, setErrorUfApiCall] = useState(null)
 
-  ////////////////////////////////////////////////////////////////////////////
-  /////////// TypeError: Failed to execute 'fetch' on 'Window': Request with GET/HEAD method cannot have body.
-
-  const obj = {
-    "carrera": "ITC",
-    "semestre": 2
-  }
-
-  let fetchData = {
-    method: 'GET',
-    body: JSON.stringify(obj),
-  }
-
-  // Hook para hacer la llamada a la API haciendo uso de la función fetch de JS
-  useEffect(() => {
+  // Función que hace la llamada a la api para consultar las UFs (solo se ejecuta cuando se le llama en el botón de la lupa)
+  const ufApiCall = () => {
     setUfApiState({ loading: true })
-    fetch('http://20.225.209.57:3094/asesoria/get_uf/', fetchData)
+    // A la request le agregamos los query params necesarios para esta consulta
+    fetch('http://20.225.209.57:3094/asesoria/get_uf/?' + new URLSearchParams({
+      carrera: carreraSeleccionada.slice(0, carreraSeleccionada.indexOf(" ")), // Cortamos el string para usar únicamente el ID de la carrera
+      semestre: semestreSeleccionado
+    }))
       .then(res => res.json()) // Se indica que la respuesta se regresará en un JSON
       .then(
-        // En caso de que se obtenga la información de la API, se actualiza el ufApiState
         APIdata => {
-          console.log(APIdata[0]);
-          // const ufsApi = APIdata.map(uf => uf.claveUF + " - " + uf.nombreUF)
-          const ufsApi = ["1", "2"]
-          setUfApiState({ loading: false, apiData: ufsApi })
+          // Si se hizo una consulta con una combinación de semestre y carrera inválida, la API regresa un error
+          let optionsList = APIdata.hasOwnProperty("ERROR") ?
+          ["* ERROR: " + APIdata["ERROR"]] : // Se muestra el mensaje de error de la API
+          APIdata.map(uf => uf.claveUF + " - " + uf.nombreUF) // Si no hay error, se junta el id con el nombre de la UF
+
+          // Se actualizan los hooks
+          setUfApiState({ loading: false, apiData: optionsList })
+          setOpcionesUF(optionsList)
         }, 
         // En caso de que haya un error, se actualiza el error
         error => {
           setUfApiState({ loading: false })
-          setErrorUfApiCall(error);
+          setErrorUfApiCall(error)
+          setOpcionesUF(defaultUFoption)
         }
       )
-  }, [setUfApiState])
+  }
 
-  ////////////////////////////////////////////////////////////////////////////
+  // ************************************************************************************************ //
 
   return (
     <AgendarAsesoria 
@@ -172,17 +183,23 @@ function AgendarAsesoriaUF() {
             <h3>Semestre</h3>
             <CampoSeleccionarEnListaDesplegable size="small" options={[1,2,3,4,5,6,7,8,9]} parentCallback={handleSemestre}/>
             
-            <h3>Unidad de formación</h3>
+            <div className='ufTitleLupa_container'>
+              <h3 id="CarreraTitleInput3">Unidad de formación</h3>
+              <button onClick={() => ufApiCall()} className="lupaIcon">
+                <FaSearch size={17}/>
+              </button>
+            </div>
             {
-              (errorUfApiCall || ufApiState.loading) ?
-              <CampoSeleccionarEnListaDesplegable size="medium" options={["Cargando..."]}/>
+              (errorUfApiCall || ufApiState.loading) ? 
+              <CampoSeleccionarEnListaDesplegable size="medium" options={defaultUFoption} parentCallback={handleUF} />
               :
-              <CampoSeleccionarEnListaDesplegable size="medium" options={ufApiState.apiData}/>
+              <CampoSeleccionarEnListaDesplegable size="medium" options={opcionesUF} parentCallback={handleUF} />
             }
 
-            <button onClick={() => console.log(carreraSeleccionada)}>Carrerita</button>
-            <button onClick={() => console.log(semestreSeleccionado)}>Semestree</button>
-            <button onClick={() => console.log(ufApiState)}>UF_Api</button>
+            <button onClick={() => alert("Opciones seleccionadas:\n" + carreraSeleccionada + "\n" + semestreSeleccionado + " \n" + ufSeleccionada)}>
+              data selected
+            </button>
+
           </div>
         </div>
 

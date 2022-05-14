@@ -18,18 +18,15 @@ app.use(
     })
 )
 
-// Obtener todas las carreras. NO REQUIERE JSON CON BODY.
+// Obtener todas las carreras. NO REQUIERE QUERY PARAMS.
 app.get('/asesoria/get_carreras', cors(corsOptions), db.getCarreras)
 
 
 // Obtener lista de Unidades de Formación apartir de una carrera y semestre
-/****** Ejemplo del JSON body: ******
-{
-    "carrera": "ITC",
-    "semestre": 2
-}
+/****** Ejemplo de consulta con query params: ******
+http://20.225.209.57:3094/asesoria/get_uf/?carrera=ITC&semestre=1
 */
-app.get('/asesoria/get_uf/', db.getUF_carreraSemestre)
+app.get('/asesoria/get_uf/', cors(corsOptions), db.getUF_carreraSemestre)
 
 
 // Obtener lista de días con asesores disponibles para dar asesoría en la unidad de formación proporcionada
