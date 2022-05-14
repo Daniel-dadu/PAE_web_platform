@@ -24,7 +24,7 @@ function CampoSeleccionarEnListaDesplegable({ size, parentCallback, options }) {
       <DatalistInput
         style={{width: size === "small" ? "100px" : size === "medium" ? "250px" : "350px"}}
         onSelect={(item) => onTrigger(item)}
-        items={options.map((option) => { return {value: option}})}
+        items={options.map((option) => { return {id: option, value: option}})}
       />
       <FiChevronDown className="arrow_down" size={30} />
     </div>

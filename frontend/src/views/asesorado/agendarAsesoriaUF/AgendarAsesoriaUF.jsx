@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useParams, useNavigate } from "react-router-dom"
 import './AgendarAsesoriaUF.css'
 import { FaSearch } from 'react-icons/fa'
 
@@ -41,6 +42,21 @@ let progressBar = {
 }
 
 function AgendarAsesoriaUF() {
+
+  const navigate = useNavigate();
+
+  const { statusasesoriaurl } = useParams();
+
+  let countErrorMessage = 0
+
+  useEffect(() => {
+    if(statusasesoriaurl === "error" && countErrorMessage === 0) {
+      alert("Error, intente generar la asesoría de nuevo")
+      navigate('/agendarAsesoriaUF/ok')
+      window.location.reload(false)
+      countErrorMessage++
+    } 
+  } )
 
   // ****************** Hooks y código usado para la consulta de las carreras a la API ****************** //
 
@@ -142,12 +158,19 @@ function AgendarAsesoriaUF() {
   }
 
   // ************************************************************************************************ //
+  
+  
+  // ****************** Hooks y código usado para la consulta de las UFs a la API ****************** //
+
+  
+
+  // ************************************************************************************************ //
 
   return (
     <AgendarAsesoria 
       showAtrasBtn={false} 
       btnAtrasRoute="" 
-      btnSiguienteRoute="./AgendarAsesoriaDuda" 
+      btnSiguienteRoute="./AgendarAsesoriaUF/error" 
       showTarjetaMaestraMini={true} 
       sizeTarjetaMaestraMini="normal" 
       progressBarJSON={progressBar}
