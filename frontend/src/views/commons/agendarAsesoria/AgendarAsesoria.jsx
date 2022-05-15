@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 import './AgendarAsesoria.css'
 
 import { useNavigate } from "react-router-dom";
@@ -28,45 +29,147 @@ function AgendarAsesoria({showAtrasBtn, btnAtrasRoute, btnSiguienteRoute, showTa
 
     let navigate = useNavigate()
     const routeChange = route => navigate(`/${route}`);
-      
+    
 
-  return (
-    <Template view="agendarAsesoria">
-        <div className='container_titleProgress'>
-            <h1 className='title_agendarAsesoria'>Agendar asesorías</h1>
-            <BarraProgreso progress={progressBarJSON}/>
-        </div>
+    // ****************** Hooks y código usado para la creación de la asesoría en la API ****************** //
 
-        <div className='container_tarjetaMaestraMini'>
-            {showTarjetaMaestraMini ? (
-            <TarjetaMaestraMini size={sizeTarjetaMaestraMini}>
-                {children}
-            </TarjetaMaestraMini>
-            ) : children}
-        </div>
+    // Hook para guardar la ruta del botón siguente
+    const [bodyNewAsesoriaJSON, setBodyNewAsesoriaJSON] = useState('')
 
-        <div className='container_navButtons'>
-            {showAtrasBtn ? (
-            <div>
-                <BotonSencillo onClick = {typeof btnAtrasRoute === 'string' ? () => routeChange(btnAtrasRoute) : "accionConBackend"} backgroundColor='turquesa' size='normal'>
-                    Atras
-                </BotonSencillo>
-            </div> 
-            ) : null}
-            <div className="btn_right">
-                <BotonSencillo onClick = {() => routeChange("./calendario")} backgroundColor='gris' size='normal'>
-                    Cancelar
-                </BotonSencillo>
+    // // Hook usado para conocer el estado de la petición a la API
+    // const [newAsesoriaApiState, setNewAsesoriaApiState] = useState({
+    //     loading: true, // Booleano que indica si está consultando (cargando) la info de la API
+    //     apiData: null // Guarda la información que regresa la API
+    // })
+    // // Hook usado para indicar el error de la petición a la API, en caso de que ocurra
+    // const [errorNewAsesoriaApiCall, setErrorNewAsesoriaApiCall] = useState(null)
+
+    let newAsesoriaApiState = {
+        loading: true, // Booleano que indica si está consultando (cargando) la info de la API
+        apiData: null // Guarda la información que regresa la API
+    }
+    let errorNewAsesoriaApiCall = null
+
+
+    // Hook para hacer la llamada a la API haciendo uso de la función fetch de JS
+    const createNewAsesoria = async (body) =>  {
+        newAsesoriaApiState = { loading: true }
+
+        let info = JSON.stringify({
+            "asesorado": body.asesorado,
+            "uf": body.uf
+        });
+
+        let config = {
+            method: 'post',
+            url: 'http://20.225.209.57:3094/asesoria/nueva/',
+            headers: { 
+              'Content-Type': 'application/json'
+            },
+            data: info
+        };
+
+
+        try {
+            const response = await axios(config)
+            console.log(response.data)
+            newAsesoriaApiState = { loading: false, apiData: response.data }
+            return { loading: false, apiData: response.data }
+        } catch (error) {
+            newAsesoriaApiState = { loading: false }
+            errorNewAsesoriaApiCall = error;
+            return { loading: false, apiData: error }
+        } 
+
+    }
+    
+    // // Hook para hacer la llamada a la API haciendo uso de la función fetch de JS
+    // const createNewAsesoria = (body) =>  {
+    //     setNewAsesoriaApiState({ loading: true })
+    //     console.log("body:");
+    //     console.log(body)
+
+    //     let info = JSON.stringify( {asesorado: body.asesorado, uf: body.uf} )
+    //     console.log(info);
+
+    //     fetch('http://20.225.209.57:3094/asesoria/nueva/', {
+    //         method: "POST",
+    //         headers: { 'Content-Type': 'application/json' },
+    //         body: info
+    //     })
+    //     //   .then(res => res.json()) // Se indica que la respuesta se regresará en un JSON
+    //       .then(
+    //         // En caso de que se obtenga la información de la API, se actualiza el carreraApiState
+    //         APIdata => {
+    //             console.log("uyuyuy")
+    //             console.log(APIdata)
+    //           setNewAsesoriaApiState({ loading: false, apiData: APIdata })
+    //         }, 
+    //         // En caso de que haya un error, se actualiza el error
+    //         error => {
+    //           setNewAsesoriaApiState({ loading: false })
+    //           setErrorNewAsesoriaApiCall(error);
+    //         }
+    //       )
+    // }
+
+    // ************************************************************************************************ //
+
+    const onSiguienteClick = (data) => {
+        if(data === null || data.uf === null) navigate('/agendarAsesoriaUF/error')
+
+        createNewAsesoria(data).then((data) => {
+            console.log("Despues de crear la asesoria:")
+            console.log(data)
+    
+            if(errorNewAsesoriaApiCall || newAsesoriaApiState.loading){
+                console.log("Api error")
+                navigate('/agendarAsesoriaUF/error')
+            } else {
+                console.log(newAsesoriaApiState.apiData)
+                // navigate('/agendarAsesoriaDuda')
+            }
+        })
+    }    
+
+    return (
+        <Template view="agendarAsesoria">
+            <div className='container_titleProgress'>
+                <h1 className='title_agendarAsesoria'>Agendar asesorías</h1>
+                <BarraProgreso progress={progressBarJSON}/>
             </div>
-            <div>
-                <BotonSencillo onClick={typeof btnSiguienteRoute === 'string' ? () => routeChange(btnSiguienteRoute) : "accionConBackend"} backgroundColor='verde' size='normal'>
-                    Siguiente
-                </BotonSencillo>
-            </div>
-        </div>
 
-    </Template>
-  )
+            <div className='container_tarjetaMaestraMini'>
+                {showTarjetaMaestraMini ? (
+                <TarjetaMaestraMini size={sizeTarjetaMaestraMini}>
+                    {children}
+                </TarjetaMaestraMini>
+                ) : children}
+            </div>
+
+            <div className='container_navButtons'>
+                {showAtrasBtn ? (
+                <div>
+                    <BotonSencillo onClick = {typeof btnAtrasRoute === 'string' ? () => routeChange(btnAtrasRoute) : "accionConBackend"} backgroundColor='turquesa' size='normal'>
+                        Atras
+                    </BotonSencillo>
+                </div> 
+                ) : null}
+                <div className="btn_right">
+                    <BotonSencillo onClick = {() => routeChange("./calendario")} backgroundColor='gris' size='normal'>
+                        Cancelar
+                    </BotonSencillo>
+                </div>
+                <div>
+                    {/* <BotonSencillo onClick={typeof btnSiguienteRoute === 'string' ? () => routeChange(btnSiguienteRoute) : "accionConBackend"} backgroundColor='verde' size='normal'> */}
+                    <BotonSencillo onClick={() => onSiguienteClick(btnSiguienteRoute)} backgroundColor='verde' size='normal'>
+                        Siguiente
+                    </BotonSencillo>
+                </div>
+            </div>
+
+        </Template>
+    )
 }
 
 export default AgendarAsesoria

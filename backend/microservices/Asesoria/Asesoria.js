@@ -7,9 +7,33 @@ const port = 3094
 const db = require('./queries')
 
 // Documentación sobre esto: https://expressjs.com/en/resources/middleware/cors.html
-var corsOptions = {
-    origin: true // Hardcoded para darle acceso a cualquiera
-}
+// var corsOptions = {
+//     origin: true // Hardcoded para darle acceso a cualquiera
+// }
+// var corsOptions2 = {
+//     origin: true, // Hardcoded para darle acceso a cualquiera
+//     allowedHeaders: 'Content-Type'
+// }
+
+// Código copiado de: https://stackoverflow.com/questions/18310394/no-access-control-allow-origin-node-apache-port-issue
+app.use(function (req, res, next) {
+
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', '*');
+
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+    // Pass to next layer of middleware
+    next();
+});
 
 app.use(bodyParser.json())
 app.use(
@@ -19,14 +43,16 @@ app.use(
 )
 
 // Obtener todas las carreras. NO REQUIERE QUERY PARAMS.
-app.get('/asesoria/get_carreras', cors(corsOptions), db.getCarreras)
+// app.get('/asesoria/get_carreras', cors(corsOptions), db.getCarreras)
+app.get('/asesoria/get_carreras', db.getCarreras)
 
 
 // Obtener lista de Unidades de Formación apartir de una carrera y semestre
 /****** Ejemplo de consulta con query params: ******
 http://20.225.209.57:3094/asesoria/get_uf/?carrera=ITC&semestre=1
 */
-app.get('/asesoria/get_uf/', cors(corsOptions), db.getUF_carreraSemestre)
+// app.get('/asesoria/get_uf/', cors(corsOptions), db.getUF_carreraSemestre)
+app.get('/asesoria/get_uf/', db.getUF_carreraSemestre)
 
 
 // Obtener lista de días con asesores disponibles para dar asesoría en la unidad de formación proporcionada

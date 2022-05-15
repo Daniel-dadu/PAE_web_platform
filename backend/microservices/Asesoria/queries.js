@@ -114,6 +114,8 @@ const createAsesoria = (request, response) => {
     return !!err
   }
 
+  // ____ IMPORTANTE _______ Esto se puede mejorar usando una función, REVISAR
+
   // Iniciamos la transacción
   pool.query('START TRANSACTION', error => {
     if(abort(error)) return // Enters if there was an error with starting the transaction

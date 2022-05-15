@@ -43,14 +43,20 @@ let progressBar = {
 }
 function AgendarAsesoriaDuda() {
 
-    // El array imageList siempre va a tener la lista de las imágenes que se suban
-    // y en imageList[index].data_url tendrá el src del archivo
+  /*
+  IMPORTANTE!!!!!!!
+  Es necesario hacer una verificación de que la asesoría que se recibe como parámetro en la ruta corresponda a ese usuario 
+  y que el statusasesoria esté en 'registrando' 
+  */
 
-    const [images, setImages] = React.useState([]);
-    const onChange = (imageList) => {
-         // console.log(imageList);
-        setImages(imageList);
-    };
+  // El array imageList siempre va a tener la lista de las imágenes que se suban
+  // y en imageList[index].data_url tendrá el src del archivo
+
+  const [images, setImages] = React.useState([]);
+  const onChange = (imageList) => {
+        // console.log(imageList);
+      setImages(imageList);
+  };
 
   return (
     <AgendarAsesoria 

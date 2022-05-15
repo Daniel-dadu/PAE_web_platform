@@ -41,22 +41,35 @@ let progressBar = {
   ]
 }
 
+// Función que recibe un string con el id carrera y el nombre de la carrera
+// Ejemplo de entrada: "ITC - Ingeniería en Tecnologías Computacionales"
+// Regresa el string con las siglas o ID de la carrera
+// Ejemplo de return: "ITC"
+const getIDcarrera = carrera => carrera.slice(0, carrera.indexOf(" "))
+
+
 function AgendarAsesoriaUF() {
 
+  // Hook para navegar a otra ruta
   const navigate = useNavigate();
 
+  // Variable para usar el parámetro que se recibe en la ruto
   const { statusasesoriaurl } = useParams();
 
+  // Variable para ir contando las veces que se muestra el mensaje de error (para que no se muestre más de una vez)
   let countErrorMessage = 0
 
+  // Hook para verificar si se recibió un error en la ruta
   useEffect(() => {
     if(statusasesoriaurl === "error" && countErrorMessage === 0) {
       alert("Error, intente generar la asesoría de nuevo")
-      navigate('/agendarAsesoriaUF/ok')
-      window.location.reload(false)
+      navigate('/agendarAsesoriaUF/ok') // Se redirige al usuario a la ruta con el ok
+      window.location.reload(false) // Se recarga la página para limpiar los campos seleccionados
       countErrorMessage++
     } 
   } )
+
+  const [infoBtnSiguiente, setInfoBtnSiguiente] = useState(null)
 
   // ****************** Hooks y código usado para la consulta de las carreras a la API ****************** //
 
@@ -100,7 +113,13 @@ function AgendarAsesoriaUF() {
   // Hook para guardar la UF seleccionada
   const [ufSeleccionada, setUfSeleccionada] = useState(null)
   // Función que recibe la UF seleccionada en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a carreraSeleccionada
-  const handleUF = ufValue => setUfSeleccionada(ufValue.value[0] === '*' ? null : ufValue.value)
+  const handleUF = ufValue => {
+    setUfSeleccionada(ufValue.value[0] === '*' ? null : ufValue.value)
+    setInfoBtnSiguiente({
+      asesorado: "A01657967", // ------- OJOO -------, esto está hardcodeado, pero la información del asesorado se debe conocer por su perfil
+      uf: getIDcarrera(ufValue.value) // Cortamos el string para usar únicamente el ID de la carrera
+    })
+  }
 
   // Hook para guardar la carrera seleccionada
   const [carreraSeleccionada, setCarreraSeleccionada] = useState(null)
@@ -133,7 +152,7 @@ function AgendarAsesoriaUF() {
     setUfApiState({ loading: true })
     // A la request le agregamos los query params necesarios para esta consulta
     fetch('http://20.225.209.57:3094/asesoria/get_uf/?' + new URLSearchParams({
-      carrera: carreraSeleccionada.slice(0, carreraSeleccionada.indexOf(" ")), // Cortamos el string para usar únicamente el ID de la carrera
+      carrera: getIDcarrera(carreraSeleccionada), // Cortamos el string para usar únicamente el ID de la carrera
       semestre: semestreSeleccionado
     }))
       .then(res => res.json()) // Se indica que la respuesta se regresará en un JSON
@@ -158,19 +177,12 @@ function AgendarAsesoriaUF() {
   }
 
   // ************************************************************************************************ //
-  
-  
-  // ****************** Hooks y código usado para la consulta de las UFs a la API ****************** //
-
-  
-
-  // ************************************************************************************************ //
 
   return (
     <AgendarAsesoria 
       showAtrasBtn={false} 
       btnAtrasRoute="" 
-      btnSiguienteRoute="./AgendarAsesoriaUF/error" 
+      btnSiguienteRoute={infoBtnSiguiente}
       showTarjetaMaestraMini={true} 
       sizeTarjetaMaestraMini="normal" 
       progressBarJSON={progressBar}
