@@ -103,41 +103,12 @@ const createAsesoria = (request, response) => {
   const asesorado = request.body.asesorado
   const uf = request.body.uf
 
-  // Función que se ejecuta en caso de que falle alguna consulta
-  const abort = err => {
-    if (err) {
-      console.error('Error in transaction', err.stack)
-      pool.query('ROLLBACK', err => {
-        if (err) console.error('Error rolling back client', err.stack)
-      })
-    }
-    return !!err
-  }
-
-  // ____ IMPORTANTE _______ Esto se puede mejorar usando una función, REVISAR
-
-  // Iniciamos la transacción
-  pool.query('START TRANSACTION', error => {
-    if(abort(error)) return // Enters if there was an error with starting the transaction
-    
-    // Hacemos la llamada al procedure new_asesoria para crear la nueva asesoría con los parámetros proporcionados por el usuario
-    pool.query('CALL new_asesoria($1, $2)', [asesorado, uf], (error, results) => {
-      if(abort(error)) return
-
-      // Regresamos el idAsesoria en un JSON
-      pool.query('SELECT "idAsesoria" FROM "Asesoria" ORDER BY "idAsesoria" DESC LIMIT 1', (error, result) => {
-        if(abort(error)) return
-
-        // Guardamos los cambios realizados en la base de datos
-        pool.query('COMMIT', err => {
-          if(abort(err)) return
-        })
-
-        response.status(201).json(result.rows[0])
-      })
-    })
-
+  // Hacemos la llamada a la funcion new_asesoria para crear la nueva asesoría con los parámetros proporcionados por el usuario
+  pool.query('SELECT new_asesoria($1, $2)', [asesorado, uf], (error, result) => {
+    if (error) throw error
+    response.status(201).json({idAsesoria: result.rows[0].new_asesoria})
   })
+
 }
 
 
