@@ -45,10 +45,13 @@ let progressBar = {
 // Ejemplo de entrada: "ITC - Ingeniería en Tecnologías Computacionales"
 // Regresa el string con las siglas o ID de la carrera
 // Ejemplo de return: "ITC"
-const getIDcarrera = carrera => carrera.slice(0, carrera.indexOf(" "))
+const getIDstring = str => str.slice(0, str.indexOf(" "))
 
 
 function AgendarAsesoriaUF() {
+
+  // ---------------------------- OJOO ----------------------------
+  const currentIdAsesorado = "A01657967" // esto está hardcodeado, pero la información del asesorado se debe conocer por su perfil
 
   // Hook para navegar a otra ruta
   const navigate = useNavigate();
@@ -67,7 +70,7 @@ function AgendarAsesoriaUF() {
       window.location.reload(false) // Se recarga la página para limpiar los campos seleccionados
       countErrorMessage++
     } 
-  } )
+  })
 
   const [infoBtnSiguiente, setInfoBtnSiguiente] = useState(null)
 
@@ -110,14 +113,12 @@ function AgendarAsesoriaUF() {
   // Opción por defecto que se debe mostrar en caso de que no se haya seleccionado la carrera y/o el semestre
   const defaultUFoption = ["* Una vez selecciones la carrera y el semestre, presiona el botón de la lupa para buscar la unidad de formación correspondiente"]
 
-  // Hook para guardar la UF seleccionada
-  const [ufSeleccionada, setUfSeleccionada] = useState(null)
   // Función que recibe la UF seleccionada en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a carreraSeleccionada
   const handleUF = ufValue => {
-    setUfSeleccionada(ufValue.value[0] === '*' ? null : ufValue.value)
+    const isNotUF = ufValue.value[0] === '*'
     setInfoBtnSiguiente({
-      asesorado: "A01657967", // ------- OJOO -------, esto está hardcodeado, pero la información del asesorado se debe conocer por su perfil
-      uf: getIDcarrera(ufValue.value) // Cortamos el string para usar únicamente el ID de la carrera
+      asesorado: currentIdAsesorado,
+      uf: isNotUF ? null : getIDstring(ufValue.value) // Cortamos el string para usar únicamente el ID de la carrera
     })
   }
 
@@ -126,7 +127,7 @@ function AgendarAsesoriaUF() {
   // Función que recibe la carrera seleccionada en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a carreraSeleccionada
   const handleCarrera = carreraValue => {
     setOpcionesUF(defaultUFoption) // En caso de que se haga un cambio en la carrera, se establece la opcion por default en las opcionesUF
-    setUfSeleccionada(null)
+    setInfoBtnSiguiente({ asesorado: currentIdAsesorado, uf: null }) 
     setCarreraSeleccionada(carreraValue.value)
   }
   
@@ -135,7 +136,7 @@ function AgendarAsesoriaUF() {
   // Función que recibe el semestre seleccionado en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a semestreSeleccionado
   const handleSemestre = semestreValue => {
     setOpcionesUF(defaultUFoption) // En caso de que se haga un cambio en la carrera, se establece la opcion por default en las opcionesUF
-    setUfSeleccionada(null)
+    setInfoBtnSiguiente({ asesorado: currentIdAsesorado, uf: null }) 
     setSemestreSeleccionado(semestreValue.value)
   }
 
@@ -152,7 +153,7 @@ function AgendarAsesoriaUF() {
     setUfApiState({ loading: true })
     // A la request le agregamos los query params necesarios para esta consulta
     fetch('http://20.225.209.57:3094/asesoria/get_uf/?' + new URLSearchParams({
-      carrera: getIDcarrera(carreraSeleccionada), // Cortamos el string para usar únicamente el ID de la carrera
+      carrera: getIDstring(carreraSeleccionada), // Cortamos el string para usar únicamente el ID de la carrera
       semestre: semestreSeleccionado
     }))
       .then(res => res.json()) // Se indica que la respuesta se regresará en un JSON
@@ -182,7 +183,8 @@ function AgendarAsesoriaUF() {
     <AgendarAsesoria 
       showAtrasBtn={false} 
       btnAtrasRoute="" 
-      btnSiguienteRoute={infoBtnSiguiente}
+      btnSiguienteProps={{view: 1, props: infoBtnSiguiente}}
+      currentIDasesoria={-1}
       showTarjetaMaestraMini={true} 
       sizeTarjetaMaestraMini="normal" 
       progressBarJSON={progressBar}
@@ -230,10 +232,6 @@ function AgendarAsesoriaUF() {
               :
               <CampoSeleccionarEnListaDesplegable size="medium" options={opcionesUF} parentCallback={handleUF} />
             }
-
-            <button onClick={() => alert("Opciones seleccionadas:\n" + carreraSeleccionada + "\n" + semestreSeleccionado + " \n" + ufSeleccionada)}>
-              data selected
-            </button>
 
           </div>
         </div>

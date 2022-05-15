@@ -1,4 +1,5 @@
 import React from 'react'
+import { useParams } from "react-router-dom"
 import ImageUploading from "react-images-uploading";
 import './AgendarAsesoriaDuda.css'
 
@@ -42,6 +43,8 @@ let progressBar = {
   ]
 }
 function AgendarAsesoriaDuda() {
+
+  const { idasesoria } = useParams();
 
   /*
   IMPORTANTE!!!!!!!
