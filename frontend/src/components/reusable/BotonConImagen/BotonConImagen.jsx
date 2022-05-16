@@ -8,7 +8,8 @@ const COLORS = [
     'gris',
     'turquesa',
     'verde',
-    'blanco'
+    'blanco',
+    'grisClaro'
 ]
 
 const SIZES = [

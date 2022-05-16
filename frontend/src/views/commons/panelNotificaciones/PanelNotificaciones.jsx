@@ -77,8 +77,6 @@ const PanelNotificaciones = (userTypeNotificaciones) => {
                 
                 : <h1> Notificaciones </h1>
 
-                
-
 
             }
             
