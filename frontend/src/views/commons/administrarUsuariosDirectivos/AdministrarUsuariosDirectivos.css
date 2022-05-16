@@ -7,3 +7,24 @@
     left: 30px;
     bottom: 30px;
 }
+
+.btn_AdministrarUsuariosDirectivos{
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.btn_AdministrarUsuariosDirectivos .botonCopiarLinkRegistro .btn{
+
+    color: #3699FF;
+    border-radius: 100px;
+    
+}
+
+.textoDeBoton{
+    color: #3699FF;
+    
+}
+
