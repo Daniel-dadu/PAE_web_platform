@@ -48,12 +48,13 @@ const Login = () => {
             const response = await axios(config)
             usuario = { matricula, rolUsuario: response.data.rolUsuario }
         } catch (error) {
-            apiError = error.response.data
+            apiError = error.response.data || "undefined"
         } 
 
         // Si se ingresaron datos incorrectos, se le indica al usuario
         if(apiError) {
-            alert(apiError.ERROR === 'invalid userID' ? 
+            alert(apiError === "undefined" ? 'Error: Intente más tarde (API error)' : 
+                apiError.ERROR === 'invalid userID' ? 
                 "Error: No existe un usuario con esa matrícula" : 
                 "Error: Contraseña incorrecta"
             )
