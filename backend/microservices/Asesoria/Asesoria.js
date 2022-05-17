@@ -131,6 +131,6 @@ app.put('/asesoria/reservar_horario/', db.setAsesoria_reservarHorario)
 */
 app.delete('/asesoria/eliminar', db.deleteAsesoria)
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`App running on port ${port}.`)
 })
