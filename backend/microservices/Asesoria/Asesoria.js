@@ -1,22 +1,14 @@
 const express = require('express')
-var cors = require('cors')
 const bodyParser = require('body-parser')
 const app = express()
 const port = 3094
 
 const db = require('./queries')
 
-// Documentación sobre esto: https://expressjs.com/en/resources/middleware/cors.html
-// var corsOptions = {
-//     origin: true // Hardcoded para darle acceso a cualquiera
-// }
-// var corsOptions2 = {
-//     origin: true, // Hardcoded para darle acceso a cualquiera
-//     allowedHeaders: 'Content-Type'
-// }
+// Documentación sobre el uso de CORS: https://expressjs.com/en/resources/middleware/cors.html
 
 // Código copiado de: https://stackoverflow.com/questions/18310394/no-access-control-allow-origin-node-apache-port-issue
-app.use(function (req, res, next) {
+app.use(function (_req, res, next) {
 
     // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -42,16 +34,15 @@ app.use(
     })
 )
 
+// --- OBTENER LISTA DE CARRERAS ---
 // Obtener todas las carreras. NO REQUIERE QUERY PARAMS.
-// app.get('/asesoria/get_carreras', cors(corsOptions), db.getCarreras)
 app.get('/asesoria/get_carreras', db.getCarreras)
 
 
+// --- OBTENER LISTA DE UFs A PARTIR DE LA CARRERA Y SEMESTRE ---
 // Obtener lista de Unidades de Formación apartir de una carrera y semestre
-/****** Ejemplo de consulta con query params: ******
-http://20.225.209.57:3094/asesoria/get_uf/?carrera=ITC&semestre=1
-*/
-// app.get('/asesoria/get_uf/', cors(corsOptions), db.getUF_carreraSemestre)
+// Ejemplo de consulta con query params:
+// http://20.225.209.57:3094/asesoria/get_uf/?carrera=ITC&semestre=1
 app.get('/asesoria/get_uf/', db.getUF_carreraSemestre)
 
 

@@ -32,17 +32,18 @@ app.use(
 )
 
 
+// --- VALIDACIÓN DE CREDENCIALES ---
 // Validar las credenciales del usuario, actualizar su campo de ultimaConexion y regresar el rol del usuario 
 /****** Ejemplo del JSON body: ******
 {
     "user": "A01657967",
     "password": "ojito"
 }
- * -- Response:
- * Se regresa un JSON con las siguientes respuestas:
- * {"login-validateCredentials": "valid"}
- * {"login-validateCredentials": "invalid userID"}
- * {"login-validateCredentials": "invalid password"}
+-- Response:
+Se regresa un JSON con las siguientes respuestas:
+ * {"rolUsuario": "asesor"} // STATUS CODE 200
+ * {"ERROR": "invalid userID"} // STATUS CODE 404
+ * {"ERROR": "incorrect password"} // STATUS CODE 404
  */
 app.put('/login/validate/', db.validateCredentials)
 
