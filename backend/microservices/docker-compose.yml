@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+
+  default:
+    image: microservice-default
+    command: python Default.py
+    ports: 
+      - 4000:4000
+
+  no-default:
+    image: microservice-no-default
+    command: python NoDefault.py
+    ports: 
+      - 4001:4000
