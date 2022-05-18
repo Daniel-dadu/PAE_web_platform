@@ -1,3 +1,5 @@
+// Código tomado en gran parte de https://stackoverflow.com/questions/51809241/how-to-compress-a-base64-image-to-custom-size
+
 const resize = async (img, type) => {
 
     const MAX_SIZE = 50000 // 50kb
