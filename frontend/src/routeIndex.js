@@ -67,4 +67,4 @@ export {default as RegistroAsesorDatos } from './views/asesor/registroAsesorDato
 
 export {default as RegistroAsesoradoDatos } from './views/asesorado/registroAsesoradoDatos/RegistroAsesoradoDatos.jsx'
 
-
+export {default as imageCompressor } from './assets/reusableFunctions/imageCompressor.js'
