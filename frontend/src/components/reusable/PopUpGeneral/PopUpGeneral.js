@@ -1,6 +1,5 @@
 import React from 'react';
 import { BotonSencillo } from '../../../routeIndex';
-import { Template, BarraProgreso, TarjetaMaestraMini } from '../../../routeIndex'
 import './popUpGeneral.css';
 
 /*
@@ -13,7 +12,7 @@ Para usar el componente de PopUpGeneral, se toman en cuanta los properties que s
   + state . Property que se encarga de manejar los cambios y apareciones.
   + function. recibe la funcion que hace que funcione el useState de la parte en donde estamos invocando el componente.
 
-  **Nota: cuando se vaya a aplicar este componente, es importe hacer uso de useState, en el componente o View en donde se quiera usar
+  **Nota: cuando se haga uso de este componente, es importe hacer uso de useState, en el componente o View en donde se quiera usar
           de dicha forma:
            
           const [state, setState] = useState(true); 
