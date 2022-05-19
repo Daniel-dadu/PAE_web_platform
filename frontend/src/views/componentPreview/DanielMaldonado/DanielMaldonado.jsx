@@ -4,7 +4,7 @@ import './DanielMaldonado.css'
 import axios from 'axios'
 import ImageUploading from "react-images-uploading";
 
-import { Template, ImagenAsesoria, BotonConImagen } from '../../../routeIndex'
+import { Template, ImagenAsesoria, BotonConImagen, imageCompressor } from '../../../routeIndex'
 
 import { BiImageAdd } from 'react-icons/bi'
 
@@ -20,7 +20,11 @@ function DanielMaldonado() {
 
   const [imagenPerfil, setImagenPerfil] = useState("");
 
-  const updateFoto = () => {    
+  const updateFoto = async () => {    
+    let imageCompressed = await imageCompressor(images[0].data_url, 20000)
+
+    console.log('----- Final result -----:', imageCompressed); // __________ ¡¡¡¡¡¡¡QUITAAAAAR!!!!!!! __________
+
     var config = {
       method: 'put',
       url: 'http://20.225.209.57:3090/registro/prueba_foto',
@@ -29,7 +33,7 @@ function DanielMaldonado() {
       },
       data: JSON.stringify({
         "matricula": matricula,
-        "fotoPerfil": images[0].data_url
+        "fotoPerfil": imageCompressed
       })
     };
     
@@ -43,9 +47,10 @@ function DanielMaldonado() {
   }
 
   const getFoto = () => {
+
     var config = {
       method: 'get',
-      url: 'http://20.225.209.57:3090/registro/prueba_get_foto?matricula=A01657967',
+      url: 'http://20.225.209.57:3090/registro/prueba_get_foto?matricula=' + matricula,
       headers: { },
       data: '' 
     };
@@ -59,6 +64,8 @@ function DanielMaldonado() {
       console.log(error);
     });
   }
+
+  const btnStyle = {fontSize: 20, cursor: 'pointer', padding: 5, borderRadius: 10, backgroundColor: 'grey', color: 'white'}
 
   return (
     <div>
@@ -104,14 +111,23 @@ function DanielMaldonado() {
           </ImageUploading>
         </div>
 
+        <br />
+        
         <div>
-          <button onClick={updateFoto}>Subir imagen</button>
+          <h3>Primero se debe seleccionar una imagen en la parte de arriba y luego darle click al botón de "Subir imagen de {matricula} a API"</h3>
+          <button onClick={updateFoto} style={btnStyle}>Subir imagen de {matricula} a API</button>
         </div>
 
+        <br />
+        <br />
+
         <div>
-          <button onClick={getFoto}>Mostrar imagen</button>
+          <h3>De click al botón de "Mostrar imagen" para mostrar la imagen de {matricula}</h3>
+          <p>El botón solo funciona después de que se subió la imagen a la API</p>
+          <button onClick={getFoto} style={btnStyle}>Mostrar imagen</button>
           <br />
-          <img src={imagenPerfil} alt="" />
+          <br />
+          <img src={imagenPerfil} alt="" style={{width: '100%'}} />
         </div>
       </Template>
     </div>
