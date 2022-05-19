@@ -18,6 +18,13 @@ const Login = () => {
     /* Código de Daniel Maldonado */
 
     // Hooks para guardar en estas variables los datos que ingresa el usuario en los inputs
+    const [logged, setLogged] = useState(localStorage.user)
+
+    const logout = () => {
+        setLogged(null)
+        localStorage.clear()
+    }
+
     const [matricula, setMatricula] = useState("");
     const [contrasena, setContrasena] = useState("");
 
@@ -90,32 +97,39 @@ const Login = () => {
             <div className='contenedor-principal'>
                 <h1>Inicio de Sesión</h1>
 
-                <form className='contenedor-inputs'>
-
                 
-                    <div className='contenedor-textbox'>
-                        <p>Matricula</p>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={({ target }) => setMatricula(target.value)}/>
+                    {
+                    logged ? 
+                    <div>
+                        <p className='logged-paragraph'>Ya iniciaste sesión</p>
+                        <button className='btn-login-ingresar' onClick={() => navigate('/calendario')}>Ingresar</button>
+                        <br />
+                        <button className='btn-login-ingresar btn-login-cerrarsesion' onClick={() => logout()}>Cerrar sesión</button>
                     </div>
+                    :
+                    <form className='contenedor-inputs'>
 
-                    <div className='contenedor-textbox'>
-                        <p>Contraseña</p>
-                        <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" onChange={({ target }) => setContrasena(target.value)}/>
-                        <div className='contenedor-olv-contra'>
-                            <a href='./RecuperarPassword'> ¿Olvidaste tu constraseña? </a>
+                        <div className='contenedor-textbox'>
+                            <p>Matricula</p>
+                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={({ target }) => setMatricula(target.value)}/>
                         </div>
-                    </div>
 
-                
+                        <div className='contenedor-textbox'>
+                            <p>Contraseña</p>
+                            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" onChange={({ target }) => setContrasena(target.value)}/>
+                            <div className='contenedor-olv-contra'>
+                                <a href='./RecuperarPassword'> ¿Olvidaste tu constraseña? </a>
+                            </div>
+                        </div>
 
-
-                    <div className='contenedor-boton'>
-                        {/* <button id='btn-login-asesorado'> <a href='./calendario'> Ingresar </a>  </button> */}
-                        <button id='btn-login-asesorado' onClick={handleSubmit}> Ingresar </button>
-                        <a href='#'>¿No tienes cuenta?</a>
-                    </div>
-
-                </form>
+                        <div className='contenedor-boton'>
+                            <button className='btn-login-ingresar' onClick={handleSubmit}> Ingresar </button>
+                            <a href='#'>¿No tienes cuenta?</a>
+                        </div>
+                        
+                    </form>
+                        
+                    }
 
             </div>
 

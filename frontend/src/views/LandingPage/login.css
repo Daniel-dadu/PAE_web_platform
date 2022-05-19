@@ -103,7 +103,15 @@
 
 }
 
-#btn-login-asesorado {
+.logged-paragraph {
+    width: 100%;
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.btn-login-ingresar {
     width: 10vw;
     height: 50px;
     border-radius: 11px;
@@ -115,6 +123,11 @@
     -webkit-box-shadow: 2px 14px 54px -10px rgba(0,0,0,0.75);
     -moz-box-shadow: 2px 14px 54px -10px rgba(0,0,0,0.75);
     margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.btn-login-cerrarsesion {
+    background: var(--gris);
 }
 
 .contenedor-inputs .contenedor-boton a {
