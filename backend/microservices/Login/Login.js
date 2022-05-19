@@ -41,7 +41,11 @@ app.use(
 }
 -- Response:
 Se regresa un JSON con las siguientes respuestas:
- * {"rolUsuario": "asesor"} // STATUS CODE 200
+ * Petición válida (STATUS CODE 200)
+{
+    "rol_user": "asesorado",
+    "foto_user": "data:image/webp;base64,
+} 
  * {"ERROR": "invalid userID"} // STATUS CODE 404
  * {"ERROR": "incorrect password"} // STATUS CODE 404
  */

@@ -21,7 +21,7 @@ function DanielMaldonado() {
   const [imagenPerfil, setImagenPerfil] = useState("");
 
   const updateFoto = async () => {    
-    let imageCompressed = await imageCompressor(images[0].data_url, 20000)
+    let imageCompressed = await imageCompressor(images[0].data_url, 5000)
 
     console.log('----- Final result -----:', imageCompressed); // __________ ¡¡¡¡¡¡¡QUITAAAAAR!!!!!!! __________
 

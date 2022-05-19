@@ -46,7 +46,12 @@ const Login = () => {
         try {
             // Se pide la consulta a la API exigiendo que se ejecute la promesa en ese momento
             const response = await axios(config)
-            usuario = { matricula, rolUsuario: response.data.rolUsuario }
+            usuario = { 
+                matricula, 
+                rolUsuario: response.data.rol_user, 
+                fotoUsuario: response.data.foto_user 
+            }
+
         } catch (error) {
             apiError = error.response.data || "undefined"
         } 
@@ -60,7 +65,9 @@ const Login = () => {
             )
         } else {
             // Si la petición funcionó adecuadamente, guardamos los datos del usuario en el localStorage
-            localStorage.setItem("userInfo", JSON.stringify(usuario))
+            localStorage.setItem("user", usuario.matricula)
+            localStorage.setItem("rolUsuario", usuario.rolUsuario)
+            localStorage.setItem("fotoUsuario", usuario.fotoUsuario)
             navigate('/calendario') // ... y redirigimos al usuario al calendario
         }
 

@@ -33,10 +33,10 @@ const validateCredentials = (request, response) => {
 
             // Se evalua que la contraseña corresponda a la del usuario
             if(password === userPassHashed) {
-                pool.query('SELECT update_ultima_conexion($1)', [userID], (error, res) => {
+                pool.query('SELECT * FROM update_ultima_conexion($1)', [userID], (error, res) => {
                     if(error) throw error
                     // Se regresa el tipo de rol del usuario que se ingresó
-                    else response.status(200).json({rolUsuario: res.rows[0].update_ultima_conexion})
+                    else response.status(200).json(res.rows[0])
                 })
             } else {
                 response.status(404).json({"ERROR": "incorrect password"}) 
