@@ -8,8 +8,6 @@ import pae_logo from '../../../assets/pae_logo.png'
 import mexico_flag_icon from '../../../assets/mexico_flag_icon.png'
 import usa_flag_icon from '../../../assets/usa_flag_icon.png'
 
-import API from './API.json'
-
 let btnInfo = {
     "asesor": {
         "buttons": [
@@ -103,17 +101,17 @@ function BarraLateral({viewProp}) {
             </a>
         </div>
 
-        <div className='barra-container' style={{backgroundColor: btnInfo[API.rolUser].backgroundColor }}>
+        <div className='barra-container' style={{backgroundColor: btnInfo[localStorage.rolUsuario].backgroundColor }}>
             {
-            btnInfo[API.rolUser].buttons.map((btn) => {
+            btnInfo[localStorage.rolUsuario].buttons.map((btn) => {
                 let isImageString = typeof btn.image === "string"
-                let heightBtn = (API.rolUser === "asesor") ? '33%' : '25%'
+                let heightBtn = (localStorage.rolUsuario === "asesor") ? '33%' : '25%'
 
                 if(isImageString){
                     let perfilSelected = viewProp === "perfil"
                     return <div className={'barra_button' + (perfilSelected ? ' barra_button-selected' : '') } style={{height: heightBtn}}>
-                        <a href={ btn.user === "asesor" ? "/perfilAsesor" : API.rolUser === "asesorado" ? "/perfilAsesorado" : "/perfilDirectivo" }>
-                        <img src={API.imageUser} alt="Perfil" className={'profile-img' + (perfilSelected ? ' selected_icon' : '')} />
+                        <a href={ btn.user === "asesor" ? "/perfilAsesor" : localStorage.rolUsuario === "asesorado" ? "/perfilAsesorado" : "/perfilDirectivo" }>
+                        <img src={localStorage.fotoUsuario} alt="Perfil" className={'profile-img' + (perfilSelected ? ' selected_icon' : '')} />
                         <p className={'btn-text' + (perfilSelected ? ' selected_icon' : '')}>{btn.text}</p>
                         </a>
                         </div>
@@ -157,10 +155,10 @@ function BarraLateral({viewProp}) {
 
         <div className='footer-container'>
             <a href={"/" + viewProp}>
-                {(API.temaUser === "claro") ? <MdNightlight className='theme-icon' size={50} /> : <MdLightMode className='theme-icon' size={50} />}
+                {(localStorage.modo === "claro") ? <MdNightlight className='theme-icon' size={50} /> : <MdLightMode className='theme-icon' size={50} />}
             </a>
             <a href={"/" + viewProp}>
-                {(API.idiomaUser === "espanol") ? <img src={usa_flag_icon} alt="" /> : <img src={mexico_flag_icon} alt="" />}
+                {(localStorage.idioma === "espanol") ? <img src={usa_flag_icon} alt="" /> : <img src={mexico_flag_icon} alt="" />}
             </a>
         </div>
 

@@ -18,7 +18,7 @@ const Login = () => {
     /* Código de Daniel Maldonado */
 
     // Hooks para guardar en estas variables los datos que ingresa el usuario en los inputs
-    const [logged, setLogged] = useState(localStorage.user)
+    const [logged, setLogged] = useState(localStorage.usuario)
 
     const logout = () => {
         setLogged(null)
@@ -55,10 +55,11 @@ const Login = () => {
             const response = await axios(config)
             usuario = { 
                 matricula, 
-                rolUsuario: response.data.rol_user, 
-                fotoUsuario: response.data.foto_user 
+                rol: response.data.rol_user, 
+                foto: response.data.foto_user,
+                modo: response.data.modo_user,
+                idioma: response.data.idioma_user
             }
-
         } catch (error) {
             apiError = error.response.data || "undefined"
         } 
@@ -72,9 +73,11 @@ const Login = () => {
             )
         } else {
             // Si la petición funcionó adecuadamente, guardamos los datos del usuario en el localStorage
-            localStorage.setItem("user", usuario.matricula)
-            localStorage.setItem("rolUsuario", usuario.rolUsuario)
-            localStorage.setItem("fotoUsuario", usuario.fotoUsuario)
+            localStorage.setItem("usuario", usuario.matricula)
+            localStorage.setItem("rolUsuario", usuario.rol)
+            localStorage.setItem("fotoUsuario", usuario.foto)
+            localStorage.setItem("modo", usuario.modo)
+            localStorage.setItem("idioma", usuario.idioma)
             navigate('/calendario') // ... y redirigimos al usuario al calendario
         }
 
@@ -128,7 +131,6 @@ const Login = () => {
                         </div>
                         
                     </form>
-                        
                     }
 
             </div>
