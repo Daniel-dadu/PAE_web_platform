@@ -6,7 +6,7 @@ import './CampoTextoGrande.css'
 size: se recibe un string que puede ser "small", "medium" o "big"
 */
 
-function CampoTextoGrande({ size, parentCallback }) {
+function CampoTextoGrande({ size, parentCallback, defaultText }) {
 
   const onTrigger = (texto) => parentCallback(texto)
 
@@ -16,6 +16,7 @@ function CampoTextoGrande({ size, parentCallback }) {
           type="text" 
           rows="6" 
           style={{width: size === "small" ? "150px" : size === "medium" ? "350px" : "100%"}} 
+          value={defaultText}
           onChange={(input) => onTrigger(input.target.value)}
         />
     </div>

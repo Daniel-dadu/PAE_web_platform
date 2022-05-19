@@ -70,12 +70,13 @@ function AgendarAsesoria({
     // Función que se ejecutará siempre que se de click al botón de siguiente
     // Es asincrona ya que para comprimir las imágenes y crear las asesorías se requiere esperar por el resultado 
     const onSiguienteClick = async (data) => {
-
-        // Eliminamos la UF (por si usa el botón de atrás)
-        localStorage.removeItem('asesoria_uf')
-
+        
         // Se entra en caso de que el botón se ejecute en la view 1 - AgendarAsesoriaUF
         if(data.view === 1) {
+
+            // Eliminamos la UF (por si usa el botón de atrás)
+            localStorage.removeItem('asesoria_uf')
+            
             // Si los datos proporcionados no son válidos, se manda el mensaje de error
             if(data.props === null || data.props.uf === null) {
                 navigate('/agendarAsesoriaUF/error')
