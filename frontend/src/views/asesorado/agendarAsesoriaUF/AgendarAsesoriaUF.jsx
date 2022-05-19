@@ -50,9 +50,6 @@ const getIDstring = str => str.slice(0, str.indexOf(" "))
 
 function AgendarAsesoriaUF() {
 
-  // ---------------------------- OJOO ----------------------------
-  const currentIdAsesorado = "A01657967" // esto está hardcodeado, pero la información del asesorado se debe conocer por su perfil
-
   // Hook para navegar a otra ruta
   const navigate = useNavigate();
 
@@ -117,7 +114,6 @@ function AgendarAsesoriaUF() {
   const handleUF = ufValue => {
     const isNotUF = ufValue.value[0] === '*'
     setInfoBtnSiguiente({
-      asesorado: currentIdAsesorado,
       uf: isNotUF ? null : getIDstring(ufValue.value) // Cortamos el string para usar únicamente el ID de la carrera
     })
   }
@@ -127,7 +123,7 @@ function AgendarAsesoriaUF() {
   // Función que recibe la carrera seleccionada en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a carreraSeleccionada
   const handleCarrera = carreraValue => {
     setOpcionesUF(defaultUFoption) // En caso de que se haga un cambio en la carrera, se establece la opcion por default en las opcionesUF
-    setInfoBtnSiguiente({ asesorado: currentIdAsesorado, uf: null }) 
+    setInfoBtnSiguiente({ uf: null }) 
     setCarreraSeleccionada(carreraValue.value)
   }
   
@@ -136,7 +132,7 @@ function AgendarAsesoriaUF() {
   // Función que recibe el semestre seleccionado en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a semestreSeleccionado
   const handleSemestre = semestreValue => {
     setOpcionesUF(defaultUFoption) // En caso de que se haga un cambio en la carrera, se establece la opcion por default en las opcionesUF
-    setInfoBtnSiguiente({ asesorado: currentIdAsesorado, uf: null }) 
+    setInfoBtnSiguiente({ uf: null }) 
     setSemestreSeleccionado(semestreValue.value)
   }
 

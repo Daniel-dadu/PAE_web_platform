@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useParams } from "react-router-dom"
 import ImageUploading from "react-images-uploading";
 import './AgendarAsesoriaDuda.css'
 
@@ -44,8 +43,6 @@ let progressBar = {
 }
 function AgendarAsesoriaDuda() {
 
-  const { idasesoria } = useParams();
-
   /*
   IMPORTANTE!!!!!!!
   Es necesario hacer una verificación de que la asesoría que se recibe como parámetro en la ruta corresponda a ese usuario 
@@ -61,11 +58,17 @@ function AgendarAsesoriaDuda() {
       setImages(imageList);
   };
 
+  const [dudaUser, setDudaUser] = useState('')
+
+  const handleDuda = duda => {
+    setDudaUser(duda)
+  }
+
   return (
     <AgendarAsesoria 
       showAtrasBtn={true} 
       btnAtrasRoute="./AgendarAsesoriaUF" 
-      btnSiguienteRoute="./AgendarAsesoriaCalendario"
+      btnSiguienteProps={{view: 2, props: {duda: dudaUser, imagenes: images}}}
       showTarjetaMaestraMini={true} 
       sizeTarjetaMaestraMini="normal" 
       progressBarJSON={progressBar}
@@ -73,7 +76,7 @@ function AgendarAsesoriaDuda() {
         <div className='container-aad'>
             <div className='top'>
                 <h3>Explica tu duda:</h3>
-                <CampoTextoGrande/>
+                <CampoTextoGrande parentCallback={handleDuda}/>
             </div>
                 
             <ImageUploading multiple value={images} onChange={onChangeImages} maxNumber={3} dataURLKey="data_url" acceptType={['jpg', 'png']}>

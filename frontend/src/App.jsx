@@ -17,7 +17,7 @@ const App = () => {
 
         {/* Views de Agendar Asesoría (asesorado) */}
         <Route path='/agendarAsesoriaUF/:statusasesoriaurl' element={<AgendarAsesoriaUF/>} />
-        <Route path='/agendarAsesoriaDuda/:idasesoria' element={<AgendarAsesoriaDuda/>} />
+        <Route path='/agendarAsesoriaDuda/' element={<AgendarAsesoriaDuda/>} />
         <Route path='/agendarAsesoriaCalendario' element={<AgendarAsesoriaCalendario/>} />
         <Route path='/agendarAsesoriaHora' element={<AgendarAsesoriaHora/>} />
         <Route path='/agendarAsesoriaResumen' element={<AgendarAsesoriaResumen/>} />

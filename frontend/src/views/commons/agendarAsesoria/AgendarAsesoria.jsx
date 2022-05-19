@@ -1,10 +1,10 @@
 import React from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 import './AgendarAsesoria.css'
 
 import { useNavigate } from "react-router-dom";
 
-import { Template, BarraProgreso, TarjetaMaestraMini, BotonSencillo } from '../../../routeIndex'
+import { Template, BarraProgreso, TarjetaMaestraMini, BotonSencillo, imageCompressor } from '../../../routeIndex'
 
 // Importante: es necesario revisar cómo se va a manejar el tema e idioma de la BARRA LATERAL. Aquí está hardcodeado
 
@@ -62,46 +62,6 @@ function AgendarAsesoria({
             return
         }
     }
-    
-
-    // ********************* Código usado para la creación de la asesoría en la API ********************* //
-    let newAsesoriaApiState = {
-        loading: true, // Booleano que indica si está consultando (cargando) la info de la API
-        apiData: null // Guarda la información que regresa la API
-    }
-    let errorNewAsesoriaApiCall = null
-
-    // Hook para hacer la llamada a la API haciendo uso de la función fetch de JS
-    const createNewAsesoria = async (body) =>  {
-        newAsesoriaApiState = { loading: true }
-
-        // Se estrablecen todos los atributos de la request
-        let config = {
-            method: 'post',
-            url: 'http://20.225.209.57:3094/asesoria/nueva/',
-            headers: { 
-              'Content-Type': 'application/json'
-            },
-            data: JSON.stringify({
-                "asesorado": body.asesorado,
-                "uf": body.uf
-            })
-        }
-
-        // Se realiza la consulta a la api en un try catch para manejar errores
-        try {
-            // Se pide la consulta a la API exigiendo que se ejecute la promesa en ese momento
-            const response = await axios(config)
-            newAsesoriaApiState = { loading: false, apiData: response.data }
-            return { loading: false, apiData: response.data }
-        } catch (error) {
-            newAsesoriaApiState = { loading: false }
-            errorNewAsesoriaApiCall = error;
-            return { loading: false, apiData: error }
-        } 
-    }
-    // ************************************************************************************************ //
-
 
     // Función que se ejecutará siempre que se de click al botón de siguiente
     const onSiguienteClick = (data) => {
@@ -111,17 +71,31 @@ function AgendarAsesoria({
             // Si los datos proporcionados no son válidos, se manda el mensaje de error
             if(data.props === null || data.props.uf === null) {
                 navigate('/agendarAsesoriaUF/error')
-                return
-            } 
-            // Se manda a llamar la función asincronamente y cuando termine, se navega a la pantalla correspondiente
-            createNewAsesoria(data.props).then(() => {
-                navigate(
-                    // Si hay un error en la consulta a la API, se manda el mensaje de error
-                    (errorNewAsesoriaApiCall || newAsesoriaApiState.loading) ? 
-                    '/agendarAsesoriaUF/error' :
-                    '/agendarAsesoriaDuda/' + newAsesoriaApiState.apiData.idAsesoria
-                )
-            })
+            } else {
+                // Se guarda la UF en el localStorage
+                localStorage.setItem('asesoria_uf', data.props.uf)
+                navigate('/agendarAsesoriaDuda')
+            }
+        }
+
+        if(data.view === 2) {
+
+            // Missing use of imageCompressor 
+            let imagesCompressed = data.props.imagenes.map(img => img.data_url)
+
+            if(data.props.duda === ''){
+                if(window.confirm("¿Estás seguro que no quieres escribir una duda?")) {
+                    localStorage.setItem('asesoria_duda', '')
+                    // No se deben guardar las imagenes en una sola variable ya que los arreglos los guarda como string largo, lo cual no sirve
+                    localStorage.setItem('asesoria_imagenes', imagesCompressed)
+                    navigate('/agendarAsesoriaCalendario')
+                }
+            } else {
+                localStorage.setItem('asesoria_duda', data.props.duda)
+                // No se deben guardar las imagenes en una sola variable ya que los arreglos los guarda como string largo, lo cual no sirve
+                localStorage.setItem('asesoria_imagenes', imagesCompressed)
+                navigate('/agendarAsesoriaCalendario')
+            }
         }
     }
 
