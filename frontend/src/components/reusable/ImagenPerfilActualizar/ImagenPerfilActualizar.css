@@ -1,0 +1,35 @@
+.contenedor-img-perfil-InfPerUsuario .imagen-InfPerUsuario {
+    height: 300px;
+    width: 300px;
+    border-radius: 150px;   
+}
+
+.contenedor-img-perfil-InfPerUsuario .display-img-editar {
+    height: 300px;
+    width: 300px;
+    border-radius: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    padding: 30px;
+
+}
+
+.contenedor-img-perfil-InfPerUsuario .display-img-editar .texto-display-img-editar {
+    color: #fff;
+    font-size: 2.4rem;
+    font-weight: 600;
+    font-family: 'Dosis', sans-serif;
+    z-index: 100;
+    text-align: center;
+    display: none;
+}
+
+.contenedor-img-perfil-InfPerUsuario .display-img-editar:hover {
+    background: #000;
+    opacity: .6;
+
+}   

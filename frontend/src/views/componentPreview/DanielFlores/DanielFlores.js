@@ -1,21 +1,17 @@
 import React, { useState } from 'react'
-import PopUpGeneral from '../../../components/reusable/PopUpGeneral/PopUpGeneral'
-import { Template, BarraProgreso, TarjetaMaestraMini } from '../../../routeIndex'
-
+import { Template, BarraProgreso, TarjetaMaestraMini, InformacionPersonalUsuario } from '../../../routeIndex'
+import './danielFlores.css';
 
 const DanielFlores = () => {
-
-  const [state, setState] = useState(true);  
-
-  const handleBtn = () => {
-    setState(!state);
-  }
 
   return (
     <>
         <Template view="perfil">
-            <PopUpGeneral tipoPopUpGeneral= { false } state={ state } funcion={ handleBtn } />
-            <button onClick={ handleBtn }> Prueba </button>
+          <div className='div-prueba-df'>
+              <h1>Prueba de espacio, nada que ver</h1>
+          </div>
+
+          <InformacionPersonalUsuario />
         </Template>
     </>
   )
