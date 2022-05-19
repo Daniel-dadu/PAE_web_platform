@@ -78,7 +78,7 @@ const updateFoto = async () => {
     console.log(imageCompressed)
 }
 */
-const imageCompressor = async (base64imageStr, MAX_SIZE = 50000) => { // por defecto se establecen 50kb
+const imageCompressor = async (base64imageStr, MAX_SIZE = 45000) => { // por defecto se establecen 50kb
 
     let imageObject = new Image()
     imageObject.src = base64imageStr

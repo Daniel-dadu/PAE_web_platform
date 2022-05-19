@@ -64,7 +64,8 @@ function AgendarAsesoria({
     }
 
     // Función que se ejecutará siempre que se de click al botón de siguiente
-    const onSiguienteClick = (data) => {
+    // Es asincrona ya que para comprimir las imágenes y crear las asesorías se requiere esperar por el resultado 
+    const onSiguienteClick = async (data) => {
 
         // Se entra en caso de que el botón se ejecute en la view 1 - AgendarAsesoriaUF
         if(data.view === 1) {
@@ -78,24 +79,34 @@ function AgendarAsesoria({
             }
         }
 
+        // Se entra en caso de que el botón se ejecute en la view 2 - AgendarAsesoriaDuda
         if(data.view === 2) {
 
-            // Missing use of imageCompressor 
-            let imagesCompressed = data.props.imagenes.map(img => img.data_url)
-
+            // Si el usuario no ingresó una duda, se le pregunta si desea continuar
             if(data.props.duda === ''){
                 if(window.confirm("¿Estás seguro que no quieres escribir una duda?")) {
-                    localStorage.setItem('asesoria_duda', '')
-                    // No se deben guardar las imagenes en una sola variable ya que los arreglos los guarda como string largo, lo cual no sirve
-                    localStorage.setItem('asesoria_imagenes', imagesCompressed)
-                    navigate('/agendarAsesoriaCalendario')
+                    data.props.duda = ''
+                } else {
+                    return
                 }
-            } else {
-                localStorage.setItem('asesoria_duda', data.props.duda)
-                // No se deben guardar las imagenes en una sola variable ya que los arreglos los guarda como string largo, lo cual no sirve
-                localStorage.setItem('asesoria_imagenes', imagesCompressed)
-                navigate('/agendarAsesoriaCalendario')
+            } 
+            // Primero navegamos a la siguiente página
+            navigate('/agendarAsesoriaCalendario')
+
+            // OJO: A partir de aquí, todo se está haciendo asincrónicamente (en la vista de 'agendarAsesoriaCalendario')
+
+            // Guardamos la duda ingresada
+            localStorage.setItem('asesoria_duda', data.props.duda)
+
+            // Obtenemos el string en base64 de las imágenes
+            let imagesBase64 = data.props.imagenes.map(img => img.data_url)
+
+            // Iteramos sobre las imagenes y las insertamos en el localStorage en variables diferentes
+            for (let index = 0; index < imagesBase64.length; index++) {
+                let result = await imageCompressor(imagesBase64[index])
+                localStorage.setItem(`asesoria_imagen${index+1}`, result)
             }
+
         }
     }
 
