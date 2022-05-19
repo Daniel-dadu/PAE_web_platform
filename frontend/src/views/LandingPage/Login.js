@@ -119,7 +119,7 @@ const Login = () => {
 
                         <div className='contenedor-textbox'>
                             <p>Contraseña</p>
-                            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" onChange={({ target }) => setContrasena(target.value)}/>
+                            <input type="password" id="inputPassword5" className="form-control" aria-describedby="passwordHelpBlock" onChange={({ target }) => setContrasena(target.value)}/>
                             <div className='contenedor-olv-contra'>
                                 <a href='./RecuperarPassword'> ¿Olvidaste tu constraseña? </a>
                             </div>
@@ -127,7 +127,7 @@ const Login = () => {
 
                         <div className='contenedor-boton'>
                             <button className='btn-login-ingresar' onClick={handleSubmit}> Ingresar </button>
-                            <a href='#'>¿No tienes cuenta?</a>
+                            <a href='/'>¿No tienes cuenta?</a>
                         </div>
                         
                     </form>
