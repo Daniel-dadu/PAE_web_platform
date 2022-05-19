@@ -70,4 +70,6 @@ export {default as AdministrarUsuariosDirectivos } from './views/commons/adminis
 export {default as ListaUsuarios } from './components/reusable/ListaUsuarios/ListaUsuarios.js';
 export {default as InformacionPersonalUsuario } from './components/reusable/InformacionPersonalUsuario/InformacionPersonalUsuario.js';
 export {default as ImagenPerfilActualizar } from './components/reusable/ImagenPerfilActualizar/ImagenPerfilActualizar.js';
+export {default as TarjetaListaDesplegable } from './components/reusable/TarjetaListaDesplegable/TarjetaListaDesplegable.js';
+
 

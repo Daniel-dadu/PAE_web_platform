@@ -1,0 +1,211 @@
+
+/* estilo para contenedor general */
+.contenedor-TarjetaListaDesplegable {
+    height: 40px;
+}
+
+/* estilos para el tipo de tarjeta 1 */
+.tipo1 {
+    width: 80%;
+}
+
+.tipo1 .tabla-tipo-1 {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+
+}
+
+.tipo1 .tabla-tipo-1 .fila-general-TarjetaListaDesplegable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+}
+
+.tipo1 .tabla-tipo-1 .claveUF-tipo-1 {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.tipo1 .tabla-tipo-1 .nombreUF-tipo-1 {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.blanco_tipo_1 {
+    background: #fff;
+}
+
+.gris_tipo_1 {
+    background: #C4C4C4;
+}
+
+/* estilos para el tipo de tarjeta 2 */
+
+.tipo2 {
+    width: 85%;
+}
+
+.tipo2 .tabla-tipo-2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+
+}
+
+.tipo2 .tabla-tipo-2 .fila-general-TarjetaListaDesplegable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+}
+
+.tipo2 .tabla-tipo-2 .semestre-tipo-2 {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+
+
+}
+.tipo2 .tabla-tipo-2 .claveUF-tipo-2 {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+
+}
+
+.tipo2 .tabla-tipo-2 .nombreUF-tipo-2 {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+}
+.tipo2 .tabla-tipo-2 .btn-cerrar-tipo2 {
+    height: 100%;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.azul_tipo_2 {
+    background: #1B4858;
+}
+.amarillo_tipo_2 {
+    background: #4C451E;
+}
+.rojo_tipo_2 {
+    background: #581B1B;
+}
+
+/* estilos para el tipo de tarjeta 3 */
+
+.tipo3 {
+    width: 95%;
+}
+
+.tipo3 .tabla-tipo-3 {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+} 
+
+.tipo3 .tabla-tipo-3 .fila-general-TarjetaListaDesplegable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+}
+
+.tipo3 .tabla-tipo-3 .hora-asesoria-tipo-3 {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.tipo3 .tabla-tipo-3 .contenido-tipo-3 {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+}
+
+
+.tipo3 .tabla-tipo-3 .claveUF-tipo-3 {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+
+}
+
+
+
+.blanco_tipo3 {
+    background: #fff;
+}
+.verde_tipo3 {
+    background: #DFFFD3;
+}
+.rojo_tipo3 {
+    background: #FFCCCC;
+}
+.amarillo_tipo3 {
+    background: #F6F4B8;
+}
