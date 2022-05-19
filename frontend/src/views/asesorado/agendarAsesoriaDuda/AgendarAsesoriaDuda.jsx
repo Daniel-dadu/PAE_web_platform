@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ImageUploading from "react-images-uploading";
 import './AgendarAsesoriaDuda.css'
 
-import { AgendarAsesoria, BotonConImagen, ImagenAsesoria, CampoTextoGrande, imageCompressor } from '../../../routeIndex'
+import { AgendarAsesoria, BotonConImagen, ImagenAsesoria, CampoTextoGrande } from '../../../routeIndex'
 
 import { BiImageAdd } from 'react-icons/bi'
 
@@ -43,18 +43,11 @@ let progressBar = {
 }
 function AgendarAsesoriaDuda() {
 
-  /*
-  IMPORTANTE!!!!!!!
-  Es necesario hacer una verificación de que la asesoría que se recibe como parámetro en la ruta corresponda a ese usuario 
-  y que el statusasesoria esté en 'registrando' 
-  */
-
   // El array imageList siempre va a tener la lista de las imágenes que se suban
   // y en imageList[index].data_url tendrá el src del archivo
 
   const [images, setImages] = useState([]);
   const onChangeImages = (imageList) => {
-      console.log(imageList);
       setImages(imageList);
   };
 
@@ -67,7 +60,7 @@ function AgendarAsesoriaDuda() {
   return (
     <AgendarAsesoria 
       showAtrasBtn={true} 
-      btnAtrasRoute="./AgendarAsesoriaUF" 
+      btnAtrasRoute="./AgendarAsesoriaUF/ok" 
       btnSiguienteProps={{view: 2, props: {duda: dudaUser, imagenes: images}}}
       showTarjetaMaestraMini={true} 
       sizeTarjetaMaestraMini="normal" 
@@ -109,9 +102,6 @@ function AgendarAsesoriaDuda() {
                 )}
             </ImageUploading>
 
-            <div>
-                <button onClick={() => imageCompressor(images[0].data_url)}> imageCompressor </button>
-            </div>
         </div>
     </AgendarAsesoria>
   )

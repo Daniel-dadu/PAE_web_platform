@@ -4,7 +4,7 @@
 // y regresa la imagen con un tamaño muy cercano al max_size establecido
 const resize = async (img, type, MAX_SIZE) => {
 
-    const MIN_SIZE = MAX_SIZE*0.9 // 90% of max_size
+    const MIN_SIZE = MAX_SIZE*0.75 // 75% of max_size
 
     const canvas = document.createElement('canvas')
     const ctx = canvas.getContext('2d')
@@ -43,6 +43,8 @@ const resize = async (img, type, MAX_SIZE) => {
     console.log("1 RESIZING: Blob size", blob.size)
     if (blob.size < MAX_SIZE) return blob
     
+    let blobOptions = []
+
     // Binary search para encontrar el tamaño más cercano a los límites
     while (true) {
         const mid = Math.round( ((start + end) / 2) * 100 ) / 100
@@ -50,11 +52,21 @@ const resize = async (img, type, MAX_SIZE) => {
         last = mid
         blob = await new Promise(rs => canvas.toBlob(rs, 'image/'+type, mid))
         console.log("RESIZING: Blob size", blob.size)
+        blobOptions.push(blob)
         if (blob.size > MAX_SIZE) end = mid 
         if (blob.size < MAX_SIZE) start = mid
     }
 
-    return blob
+    if(blob.size > MAX_SIZE){
+        blobOptions.sort((a, b) => a.size > b.size ? 1 : -1)
+        for (let i = blobOptions.length-1; i >= 0; i--) {
+            console.log(`Blob option ${i}`, blobOptions[i].size)
+            if(blobOptions[i].size < MAX_SIZE) return blobOptions[i]
+        }
+        return "error: imagen muy grande"
+    } else {
+        return blob
+    }
 }
 
 // Función que convierte un archivo blob a base64
@@ -78,14 +90,14 @@ const updateFoto = async () => {
     console.log(imageCompressed)
 }
 */
-const imageCompressor = async (base64imageStr, MAX_SIZE = 45000) => { // por defecto se establecen 50kb
+const imageCompressor = async (base64imageStr, MAX_SIZE = 50000) => { // por defecto se establecen 50kb
 
     let imageObject = new Image()
     imageObject.src = base64imageStr
     
     let blob = await resize(imageObject, 'webp', MAX_SIZE)
 
-    let result = await blobToBase64(blob)
+    let result = typeof blob === 'string' ? blob : await blobToBase64(blob)
 
     return result
 }

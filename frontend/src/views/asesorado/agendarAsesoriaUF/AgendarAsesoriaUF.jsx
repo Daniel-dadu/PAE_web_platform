@@ -62,7 +62,7 @@ function AgendarAsesoriaUF() {
   // Hook para verificar si se recibió un error en la ruta
   useEffect(() => {
     if(statusasesoriaurl === "error" && countErrorMessage === 0) {
-      alert("Error, intente generar la asesoría de nuevo")
+      alert("Error, no se llenaron los campos correctamente")
       navigate('/agendarAsesoriaUF/ok') // Se redirige al usuario a la ruta con el ok
       window.location.reload(false) // Se recarga la página para limpiar los campos seleccionados
       countErrorMessage++
@@ -180,7 +180,6 @@ function AgendarAsesoriaUF() {
       showAtrasBtn={false} 
       btnAtrasRoute="" 
       btnSiguienteProps={{view: 1, props: infoBtnSiguiente}}
-      currentIDasesoria={-1}
       showTarjetaMaestraMini={true} 
       sizeTarjetaMaestraMini="normal" 
       progressBarJSON={progressBar}

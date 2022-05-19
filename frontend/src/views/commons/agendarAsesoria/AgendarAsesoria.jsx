@@ -1,6 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 // import axios from 'axios'
 import './AgendarAsesoria.css'
+
+import LoadingSpin from "react-loading-spin";
 
 import { useNavigate } from "react-router-dom";
 
@@ -20,7 +22,6 @@ btnSiguienteProps: se recibe un objeto que tenga los atributos de view y props. 
         - 4: AgendarAsesoriaHora
         - 5: AgendarAsesoriaResumen
     - props: En el atributo de props se recibe otro objeto con las variables necesarias para cumplir con la acción que debe hacer dicho botón de Siguiente 
-currentIDasesoria: se recibe un entero con el id de la asesoría
 showTarjetaMaestraMini: se recibe un booleano que en caso de ser true, muestra el contenido de children en la TarjetaMaestraMini
 sizeTarjetaMaestraMini: tamaño de tarjeta maestra mini (normal o grande)
 progressBarJSON: recibe un JSON con las características de la barra de progreso, es decir, el estado en el que se debe encontrar (revisar documentación del componente BarraProgreso para saber cómo mandarlo)
@@ -31,7 +32,6 @@ EJEMPLO DE USO:
     showAtrasBtn={false} 
     btnAtrasRoute="" 
     btnSiguienteProps={{view: 1, props: infoBtnSiguiente}}
-    currentIDasesoria={idasesoria}
     showTarjetaMaestraMini={true} 
     sizeTarjetaMaestraMini="normal" 
     progressBarJSON={progressBar}
@@ -45,7 +45,6 @@ function AgendarAsesoria({
     showAtrasBtn, 
     btnAtrasRoute, 
     btnSiguienteProps, 
-    currentIDasesoria, 
     showTarjetaMaestraMini, 
     sizeTarjetaMaestraMini,
     progressBarJSON, 
@@ -55,17 +54,25 @@ function AgendarAsesoria({
     let navigate = useNavigate()
     const routeChange = route => navigate(`/${route}`);
 
+    const [loadingNext, setLoadingNext] = useState(false)
+
     // Función que se ejecutará siempre que se de click al botón de Cancelar
-    const onCancelarClick = currentIDasesoria => {
-        if(currentIDasesoria === -1) {
+    // Elimina todos los campos que se hayan creado en el localStorage
+    const onCancelarClick = () => {
+        if(window.confirm("¿Estás seguro que quieres cancelar tu asesoría?")) {
+            localStorage.removeItem('asesoria_uf')
+            localStorage.removeItem('asesoria_duda')
+            for(let i = 1; i <= 3; i++) localStorage.removeItem(`asesoria_imagen${i}`)
             navigate("/calendario")
-            return
         }
     }
 
     // Función que se ejecutará siempre que se de click al botón de siguiente
     // Es asincrona ya que para comprimir las imágenes y crear las asesorías se requiere esperar por el resultado 
     const onSiguienteClick = async (data) => {
+
+        // Eliminamos la UF (por si usa el botón de atrás)
+        localStorage.removeItem('asesoria_uf')
 
         // Se entra en caso de que el botón se ejecute en la view 1 - AgendarAsesoriaUF
         if(data.view === 1) {
@@ -82,6 +89,10 @@ function AgendarAsesoria({
         // Se entra en caso de que el botón se ejecute en la view 2 - AgendarAsesoriaDuda
         if(data.view === 2) {
 
+            // Eliminamos la duda y las imagenes que puedan estar guardadas (por si usa el botón de atrás)
+            localStorage.removeItem('asesoria_duda')
+            for(let i = 1; i <= 3; i++) localStorage.removeItem(`asesoria_imagen${i}`)
+
             // Si el usuario no ingresó una duda, se le pregunta si desea continuar
             if(data.props.duda === ''){
                 if(window.confirm("¿Estás seguro que no quieres escribir una duda?")) {
@@ -90,8 +101,8 @@ function AgendarAsesoria({
                     return
                 }
             } 
-            // Primero navegamos a la siguiente página
-            navigate('/agendarAsesoriaCalendario')
+
+            setLoadingNext(true)
 
             // OJO: A partir de aquí, todo se está haciendo asincrónicamente (en la vista de 'agendarAsesoriaCalendario')
 
@@ -104,10 +115,21 @@ function AgendarAsesoria({
             // Iteramos sobre las imagenes y las insertamos en el localStorage en variables diferentes
             for (let index = 0; index < imagesBase64.length; index++) {
                 let result = await imageCompressor(imagesBase64[index])
+                // Revisamos si la función de imageCompressor no pudo comprimir la imagen y regresó un error
+                if(result.slice(0, 5) === "error"){
+                    alert(`Tu ${index === 0 ? 'primera' : index === 1 ? 'segunda' : 'tercera'} imagen es muy grande.\nReduce el tamaño y vuelve a intentarlo`)
+                    setLoadingNext(false)
+                    return
+                }
                 localStorage.setItem(`asesoria_imagen${index+1}`, result)
             }
 
+            // Primero navegamos a la siguiente página
+            navigate('/agendarAsesoriaCalendario')
+
         }
+        
+        setLoadingNext(false)
     }
 
     return (
@@ -134,15 +156,22 @@ function AgendarAsesoria({
                 </div> 
                 ) : null}
                 <div className="btn_right">
-                    <BotonSencillo onClick = {() => onCancelarClick(currentIDasesoria)} backgroundColor='gris' size='normal'>
+                    <BotonSencillo onClick = {() => onCancelarClick()} backgroundColor='gris' size='normal'>
                         Cancelar
                     </BotonSencillo>
                 </div>
-                <div>
-                    <BotonSencillo onClick={() => onSiguienteClick(btnSiguienteProps)} backgroundColor='verde' size='normal'>
-                        Siguiente
-                    </BotonSencillo>
-                </div>
+                {
+                    loadingNext ?
+                    <div className='loading_spin'>
+                        <LoadingSpin />
+                    </div>
+                    :
+                    <div>
+                        <BotonSencillo onClick={() => onSiguienteClick(btnSiguienteProps)} backgroundColor='verde' size='normal'>
+                            Siguiente
+                        </BotonSencillo>
+                    </div>
+                }
             </div>
 
         </Template>
