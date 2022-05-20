@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 import './login.css';
+
 import { FaSignInAlt, FaInfoCircle } from 'react-icons/fa';
+import noUserImg from '../../assets/noUserImg.png'
 
 
 const Login = () => {
@@ -105,9 +107,11 @@ const Login = () => {
                     logged ? 
                     <div>
                         <p className='logged-paragraph'>Ya iniciaste sesión</p>
-                        <button className='btn-login-ingresar' onClick={() => navigate('/calendario')}>Ingresar</button>
+                        <img src={localStorage.fotoUsuario.length < 20 ? noUserImg : localStorage.fotoUsuario} alt="Perfil" className={'profile-img-login'} />
+                        <p className='logged-user'>{localStorage.usuario}</p>
+                        <button className='btn-login-ingresar logged-btn-align' onClick={() => navigate('/calendario')}>Ingresar</button>
                         <br />
-                        <button className='btn-login-ingresar btn-login-cerrarsesion' onClick={() => logout()}>Cerrar sesión</button>
+                        <button className='btn-login-ingresar btn-login-cerrarsesion logged-btn-align' onClick={() => logout()}>Cerrar sesión</button>
                     </div>
                     :
                     <form className='contenedor-inputs'>
