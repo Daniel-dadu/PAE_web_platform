@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const TemplateRegistroUsuario = ({
     progressBarJSON,
-    children, showAtrasBtn, btnAtrasRoute, btnSiguienteRoute
+    children, showAtrasBtn, btnAtrasRoute, btnSiguienteRoute, ultimoTexto =""
 }) => {
 
     let navigate = useNavigate()
@@ -34,9 +34,19 @@ const TemplateRegistroUsuario = ({
                 </BotonSencillo>
             </div> 
             <div >
-                <BotonSencillo onClick={typeof btnSiguienteRoute === 'string' ? () => routeChange(btnSiguienteRoute) : "accionConBackend"} backgroundColor='verde' size='largo'>
-                    Siguiente
-                </BotonSencillo>
+                {
+                    ultimoTexto === "" ?
+                    (
+                        <BotonSencillo onClick={typeof btnSiguienteRoute === 'string' ? () => routeChange(btnSiguienteRoute) : "accionConBackend"} backgroundColor='verde' size='largo'>
+                            Siguiente
+                        </BotonSencillo>
+                    ):
+                    (
+                        <BotonSencillo onClick={typeof btnSiguienteRoute === 'string' ? () => routeChange(btnSiguienteRoute) : "accionConBackend"} backgroundColor='verde' size='largo' children={ ultimoTexto }>
+                        </BotonSencillo>
+                    )    
+                }
+                
             </div>
         </div>
             </TarjetaMaestra>
