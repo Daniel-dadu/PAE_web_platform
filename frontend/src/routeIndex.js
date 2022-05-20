@@ -71,5 +71,7 @@ export {default as ListaUsuarios } from './components/reusable/ListaUsuarios/Lis
 export {default as InformacionPersonalUsuario } from './components/reusable/InformacionPersonalUsuario/InformacionPersonalUsuario.js';
 export {default as ImagenPerfilActualizar } from './components/reusable/ImagenPerfilActualizar/ImagenPerfilActualizar.js';
 export {default as TarjetaListaDesplegable } from './components/reusable/TarjetaListaDesplegable/TarjetaListaDesplegable.js';
+export {default as ListaDesplegable } from './components/reusable/ListaDesplegable/ListaDesplegable.js';
+
 
 

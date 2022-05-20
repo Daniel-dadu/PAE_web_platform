@@ -6,7 +6,10 @@
 
 /* estilos para el tipo de tarjeta 1 */
 .tipo1 {
-    width: 80%;
+    width: 90%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .tipo1 .tabla-tipo-1 {
@@ -59,6 +62,9 @@
 
 .tipo2 {
     width: 85%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .tipo2 .tabla-tipo-2 {
@@ -140,6 +146,9 @@
 
 .tipo3 {
     width: 95%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .tipo3 .tabla-tipo-3 {
