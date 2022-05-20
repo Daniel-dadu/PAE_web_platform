@@ -27,7 +27,7 @@ let progressBar = {
             "name" : "Confirmación",
             "state": null,
             "next": "enable",
-            "path" : "Ruta"
+            "path" : "./registroAsesoradoResumen"
           }
     ]
   }
@@ -38,7 +38,7 @@ function RegistroAsesoradoCondiciones() {
     <TemplateRegistroUsuario 
     progressBarJSON = {progressBar}
      btnAtrasRoute="/registroAsesoradoDatos"
-     btnSiguienteRoute="./calendario"> 
+     btnSiguienteRoute="./registroAsesoradoResumen"> 
         
     <div className='bloq_condicionesAsesorado'>
        <h1 className='campo_RegistroAsesoradoCondiciones'> CAMPO 2: Consideraciones Finales </h1>
