@@ -23,7 +23,7 @@ import { MdArrowForwardIos } from 'react-icons/md';
 
 export default function CambioMesPeriodo({dataSupInf}) {
 
-const slidesArray =  dataSupInf 
+  const slidesArray =  dataSupInf 
 
   const [id, setId] = useState(1);
 
@@ -33,33 +33,24 @@ const slidesArray =  dataSupInf
 
 
   return (
+    <div className="slideshow-container">
+      <div> 
+        <button className='back' onClick={() => setId(id !== 1 ? id-1 : id) } >
+          <MdArrowBackIos size={35} /> 
+        </button>
+      </div>
 
-   
-    
-    <div className="slideshow-container">  
-
-
-
-        <div> 
-        <button className='back' onClick={() => setId(id !== 1 ? id-1 : id) } > <MdArrowBackIos size={35} > </MdArrowBackIos> </button>
-        </div>
-
-        
-
-        <div className='bloqueTexto'>
+      <div className='bloqueTexto'>
         <div className='textSup'> {validSlide[0].Sup} </div>
         <div className='textInf'> {validSlide[0].Inf} </div>
-        </div>
-        
-        <div>
-        <button className='next' onClick={() => setId(id < values ? id+1 : id)} > <MdArrowForwardIos size={35} > </MdArrowForwardIos> </button>
-        </div>
-        
-
-        
-
-   </div>
-
+      </div>
+      
+      <div>
+        <button className='next' onClick={() => setId(id < values ? id+1 : id)} > 
+          <MdArrowForwardIos size={35} /> 
+        </button>
+      </div>
+    </div>
 
   )
 

@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 
-import { Template, CambioMesPeriodo, ComponenteCalendario, PopUpInformacionAsesoria, BotonSencillo } from '../../../routeIndex'
+import { Template, CambioMesPeriodo, ComponenteCalendario, PopUpInformacionAsesoria } from '../../../routeIndex'
 
 import CalendarioJSON from './PruebaCommonCalendario.json'
 import './CalendarioStyle.css'
