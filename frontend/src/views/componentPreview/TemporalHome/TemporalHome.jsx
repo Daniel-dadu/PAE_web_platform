@@ -8,11 +8,23 @@ function TemporalHome() {
       <h1>Pestañas disponibles</h1>
       <Link to='/landingPage' className='link_tmp'>Landing Page</Link>
       <Link to='/calendario' className='link_tmp'>Calendario</Link>
-      <Link to='/agendarAsesoriaUF' className='link_tmp'>AgendarAsesoriaUF</Link>
+      <Link to='/agendarAsesoriaUF/ok' className='link_tmp'>AgendarAsesoriaUF</Link>
       <Link to='/agendarAsesoriaDuda' className='link_tmp'>AgendarAsesoriaDuda</Link>
       <Link to='/agendarAsesoriaCalendario' className='link_tmp'>AgendarAsesoriaCalendario</Link>
       <Link to='/agendarAsesoriaHora' className='link_tmp'>AgendarAsesoriaHora</Link>
       <Link to='/agendarAsesoriaResumen' className='link_tmp'>AgendarAsesoriaResumen</Link>
+      <Link to='/notificaciones' className='link_tmp'>Notificaciones</Link>
+
+      <h1> Pestañas Asesorado </h1>
+      <Link to='/registroAsesoradoDatos' className='link_tmp'>RegistroAsesoradoDatos</Link>
+      <Link to='/registroAsesoradoCondiciones' className='link_tmp'>RegistroAsesorCondiciones</Link>
+
+      <h1> Pestañas Asesor </h1> 
+      <Link to='/registroAsesorDatos' className='link_tmp'>RegistroAsesorDatos</Link>
+      <Link to='/registroAsesorCondiciones' className='link_tmp'>RegistroAsesorCondiciones</Link>
+      
+      <h2>Directivos</h2>
+      <Link to='/administrarUsuarios' className='link_tmp'>AdministrarUsuarios</Link>
 
 
       <h2>Próximamente</h2>

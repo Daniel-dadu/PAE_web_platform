@@ -4,10 +4,10 @@ const Pool = require('pg').Pool
 
 // IMPORTANTE: Estas credenciales de Postgres no deben estar aquí, solo es para probar
 const pool = new Pool({
-  user: 'dadu',
+  user: 'pae',
   host: 'localhost',
-  database: 'apitest',
-  password: 'dadu',
+  database: 'pae_db',
+  password: 'devsoft_db_manager',
   port: 5432,
 })
 
@@ -24,8 +24,13 @@ const getCarreras = (_request, response) => {
 
 const getUF_carreraSemestre = (request, response) => {
   // Parámetros proporcionados en la request HTTP
-  const carrera = request.body.carrera
-  const semestre = request.body.semestre
+  const carrera = request.query.carrera
+  const semestre = request.query.semestre
+
+  if(carrera === "null" || semestre === "null") {
+    response.status(400).json([])
+    return
+  }
 
   const consulta = 'SELECT "UnidadFormacion"."idUF" AS "claveUF", "nombreUF" FROM "UnidadFormacion", "UnidadFormacionCarrera" WHERE "UnidadFormacionCarrera"."idUF" = "UnidadFormacion"."idUF" AND "UnidadFormacionCarrera"."idCarrera" = $1 AND "UnidadFormacion"."semestre" = $2'
 
@@ -34,7 +39,7 @@ const getUF_carreraSemestre = (request, response) => {
       throw error
     } else if(!results.rows.length) {
       // En caso de que no se encuentre ninguna UF con ese semestre y carrera
-      response.status(404).json({"asesoria-UF_carreraSemestre": "No se encontraron UFs para esa carrera y semestre"})
+      response.status(404).json({"ERROR": "No se encontraron UFs para esa carrera y semestre"})
     } else {
       // Se regresa la lista de las UFs de esa carrera y semestre
       response.status(200).json(results.rows)
@@ -98,39 +103,12 @@ const createAsesoria = (request, response) => {
   const asesorado = request.body.asesorado
   const uf = request.body.uf
 
-  // Función que se ejecuta en caso de que falle alguna consulta
-  const abort = err => {
-    if (err) {
-      console.error('Error in transaction', err.stack)
-      pool.query('ROLLBACK', err => {
-        if (err) console.error('Error rolling back client', err.stack)
-      })
-    }
-    return !!err
-  }
-
-  // Iniciamos la transacción
-  pool.query('START TRANSACTION', error => {
-    if(abort(error)) return // Enters if there was an error with starting the transaction
-    
-    // Hacemos la llamada al procedure new_asesoria para crear la nueva asesoría con los parámetros proporcionados por el usuario
-    pool.query('CALL new_asesoria($1, $2)', [asesorado, uf], (error, results) => {
-      if(abort(error)) return
-
-      // Regresamos el idAsesoria en un JSON
-      pool.query('SELECT "idAsesoria" FROM "Asesoria" ORDER BY "idAsesoria" DESC LIMIT 1', (error, result) => {
-        if(abort(error)) return
-
-        // Guardamos los cambios realizados en la base de datos
-        pool.query('COMMIT', err => {
-          if(abort(err)) return
-        })
-
-        response.status(201).json(result.rows[0])
-      })
-    })
-
+  // Hacemos la llamada a la funcion new_asesoria para crear la nueva asesoría con los parámetros proporcionados por el usuario
+  pool.query('SELECT new_asesoria($1, $2)', [asesorado, uf], (error, result) => {
+    if (error) throw error
+    response.status(201).json({idAsesoria: result.rows[0].new_asesoria})
   })
+
 }
 
 
