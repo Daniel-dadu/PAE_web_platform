@@ -105,13 +105,13 @@ function BarraLateral({viewProp}) {
 
         <div className='barra-container' style={{backgroundColor: btnInfo[API.rolUser].backgroundColor }}>
             {
-            btnInfo[API.rolUser].buttons.map((btn) => {
+            btnInfo[API.rolUser].buttons.map((btn, index) => {
                 let isImageString = typeof btn.image === "string"
                 let heightBtn = (API.rolUser === "asesor") ? '33%' : '25%'
 
                 if(isImageString){
                     let perfilSelected = viewProp === "perfil"
-                    return <div className={'barra_button' + (perfilSelected ? ' barra_button-selected' : '') } style={{height: heightBtn}}>
+                    return <div className={'barra_button' + (perfilSelected ? ' barra_button-selected' : '') } style={{height: heightBtn}} key={index}>
                         <a href={ btn.user === "asesor" ? "/perfilAsesor" : API.rolUser === "asesorado" ? "/perfilAsesorado" : "/perfilDirectivo" }>
                         <img src={API.imageUser} alt="Perfil" className={'profile-img' + (perfilSelected ? ' selected_icon' : '')} />
                         <p className={'btn-text' + (perfilSelected ? ' selected_icon' : '')}>{btn.text}</p>
@@ -119,7 +119,7 @@ function BarraLateral({viewProp}) {
                         </div>
                 } else if(btn.image === 1) {
                     let calendarioSelected = viewProp === "calendario"
-                    return <div className={'barra_button' + (calendarioSelected ? ' barra_button-selected' : '')} style={{height: heightBtn}}>
+                    return <div className={'barra_button' + (calendarioSelected ? ' barra_button-selected' : '')} style={{height: heightBtn}} key={index}>
                         <a href="/calendario">
                         <BiCalendar className={'icon_bar' + (calendarioSelected ? ' selected_icon' : '')} size={barIconSize}/>
                         <p className={'btn-text' + (calendarioSelected ? ' selected_icon' : '')}>{btn.text}</p>
@@ -127,7 +127,7 @@ function BarraLateral({viewProp}) {
                         </div>
                 } else if(btn.image === 2){
                     let notificacionesSelected = viewProp === "notificaciones"
-                    return <div className={'barra_button' + (notificacionesSelected ? ' barra_button-selected' : '')} style={{height: heightBtn}}>
+                    return <div className={'barra_button' + (notificacionesSelected ? ' barra_button-selected' : '')} style={{height: heightBtn}} key={ index } >
                         <a href="/notificaciones">
                         <MdNotificationsNone className={'icon_bar' + (notificacionesSelected ? ' selected_icon' : '')} size={barIconSize}/>
                         <p className={'btn-text' + (notificacionesSelected ? ' selected_icon' : '')}>{btn.text}</p>
@@ -135,7 +135,7 @@ function BarraLateral({viewProp}) {
                         </div>
                 } else if(btn.image === 3){
                     let agendarSelected = viewProp === "agendarAsesoria"
-                    return <div className={'barra_button' + (agendarSelected ? ' barra_button-selected' : '')} style={{height: heightBtn}}>
+                    return <div className={'barra_button' + (agendarSelected ? ' barra_button-selected' : '')} style={{height: heightBtn}} key={ index }>
                         <a href="/agendarAsesoriaUF">
                         <BsPeople className={'icon_bar' + (agendarSelected ? ' selected_icon' : '')} size={barIconSize}/> 
                         <p className={'btn-text' + (agendarSelected ? ' selected_icon' : '')}>{btn.text}</p>
@@ -143,7 +143,7 @@ function BarraLateral({viewProp}) {
                         </div>
                 } else {
                     let administrarSelected = viewProp === "administrar"
-                    return <div className={'barra_button' + (administrarSelected ? ' barra_button-selected' : '')} style={{height: heightBtn}}>
+                    return <div className={'barra_button' + (administrarSelected ? ' barra_button-selected' : '')} style={{height: heightBtn}} key={ index }>
                         <a href="/administrar">
                         <BiEdit className={'icon_bar' + (administrarSelected ? ' selected_icon' : '')} size={barIconSize}/>
                         <p className={'btn-text' + (administrarSelected ? ' selected_icon' : '')}>{btn.text}</p>

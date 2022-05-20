@@ -83,32 +83,38 @@ const TarjetaListaDesplegable = (
                 tipo === 1 ?
                 (
                     <table className={`tabla-tipo-1 ${ BackgroundColor1 }`}> 
+                    <tbody>
                         <tr className='fila-general-TarjetaListaDesplegable'>
                             <td className='claveUF-tipo-1' > { claveUF } </td>
                             <td className='nombreUF-tipo-1'> { nombreUF } </td>
                         </tr>
+                    </tbody>
                     </table>
                 ):
                 (
                     tipo === 2?
                     (
                         <table className={`tabla-tipo-2 ${ BackgroundColor2 }`}> 
+                        <tbody>
                             <tr className='fila-general-TarjetaListaDesplegable'>
                                 <td className='semestre-tipo-2' >Semestre: { semestre }</td>
                                 <td className='claveUF-tipo-2' > { claveUF } </td>
                                 <td className='nombreUF-tipo-2' > { nombreUF } </td>
                                 <td className='btn-cerrar-tipo2' onClick={ () => { window.alert("debería cerrarme :)") } }> <AiOutlineCloseCircle/> </td>
                             </tr>
+                        </tbody>
                         </table>
                     ):
                     tipo === 3?
                     (
                         <table className={`tabla-tipo-3 ${ BackgroundColor3 }`}> 
+                        <tbody>
                             <tr className='fila-general-TarjetaListaDesplegable'>
                                 <td className='hora-asesoria-tipo-3' > { horaAsesoria } </td>
                                 <td className='contenido-tipo-3' > { contenido } </td>
                                 <td className='claveUF-tipo-3' > {claveUF} </td>
                             </tr>
+                        </tbody>
                         </table>
                     ):
                     (
