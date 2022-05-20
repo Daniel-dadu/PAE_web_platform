@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { TemplateRegistroUsuario, CampoTextoPequeno, ImagenAsesoria, CampoSeleccionarEnListaDesplegable, BotonConImagen } from '../../../routeIndex'
+import { TemplateRegistroUsuario } from '../../../routeIndex'
 
 import data from './data.json';
 

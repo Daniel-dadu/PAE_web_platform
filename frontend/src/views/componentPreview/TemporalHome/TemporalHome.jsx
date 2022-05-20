@@ -8,7 +8,7 @@ function TemporalHome() {
       <h1>Pestañas disponibles</h1>
       <Link to='/landingPage' className='link_tmp'>Landing Page</Link>
       <Link to='/calendario' className='link_tmp'>Calendario</Link>
-      <Link to='/agendarAsesoriaUF' className='link_tmp'>AgendarAsesoriaUF</Link>
+      <Link to='/agendarAsesoriaUF/ok' className='link_tmp'>AgendarAsesoriaUF</Link>
       <Link to='/agendarAsesoriaDuda' className='link_tmp'>AgendarAsesoriaDuda</Link>
       <Link to='/agendarAsesoriaCalendario' className='link_tmp'>AgendarAsesoriaCalendario</Link>
       <Link to='/agendarAsesoriaHora' className='link_tmp'>AgendarAsesoriaHora</Link>

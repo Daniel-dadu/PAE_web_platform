@@ -71,7 +71,7 @@ const TarjetaListaDesplegable = (
 
     //definimos los colores de cada tipo de tarjeta
     const BackgroundColor3 = COLORES_TIPO_3.includes(colorTipo3) ? colorTipo3 :COLORES_TIPO_3[0];
-    const BackgroundColor2 = semestre != 0 ? COLORES_TIPO_2[semestre-1] : COLORES_TIPO_2[0]; 
+    const BackgroundColor2 = semestre !== 0 ? COLORES_TIPO_2[semestre-1] : COLORES_TIPO_2[0]; 
     const BackgroundColor1 = COLORES_TIPO_1.includes( colorTipo1 )? colorTipo1: COLORES_TIPO_1[0];
         
   return (

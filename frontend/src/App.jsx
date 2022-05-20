@@ -16,8 +16,8 @@ const App = () => {
         <Route path='/notificaciones' element={<PanelNotificaciones/>} />
 
         {/* Views de Agendar Asesoría (asesorado) */}
-        <Route path='/agendarAsesoriaUF' element={<AgendarAsesoriaUF/>} />
-        <Route path='/agendarAsesoriaDuda' element={<AgendarAsesoriaDuda/>} />
+        <Route path='/agendarAsesoriaUF/:statusasesoriaurl' element={<AgendarAsesoriaUF/>} />
+        <Route path='/agendarAsesoriaDuda/' element={<AgendarAsesoriaDuda/>} />
         <Route path='/agendarAsesoriaCalendario' element={<AgendarAsesoriaCalendario/>} />
         <Route path='/agendarAsesoriaHora' element={<AgendarAsesoriaHora/>} />
         <Route path='/agendarAsesoriaResumen' element={<AgendarAsesoriaResumen/>} />
