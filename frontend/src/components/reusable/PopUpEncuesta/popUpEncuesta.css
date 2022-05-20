@@ -1,0 +1,93 @@
+.fondo-display-PopUpEncuesta-responder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    /* background: #000; */
+    position: absolute;
+    /* background: #000; */
+    /* opacity: 0.6; */
+
+    z-index: 50;
+}
+
+.fondo-display-PopUpEncuesta-responder .contenedor-encuesta {
+    height: 90%;
+    width: 100%;
+    max-width: 650px;
+    background: #fff;
+    border-radius: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-style: solid;
+    z-index: 100;
+    box-shadow: 3px 7px 47px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 3px 7px 47px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 7px 47px 0px rgba(0,0,0,0.75);
+}   
+
+.contenedor-encuesta .encabezado-contenedor-encuesta {
+    height: 15%;
+    width: 100%;
+    /* background: pink; */
+    border-radius: 25px 25px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.encabezado-contenedor-encuesta .encabezado-izq-encuesta {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* background: green; */
+
+}
+.encabezado-contenedor-encuesta .encabezado-izq-encuesta .encabezado-izq-encuesta-texto {
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+
+}
+
+
+.encabezado-contenedor-encuesta .encabezado-der-encuesta {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.encabezado-der-encuesta .btn-encabezado-encuesta {
+    background: #DA1639;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    font-weight:500;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    max-height: 50px;
+    max-width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    right: -10px;
+
+}
+
+
+.contenedor-encuesta .contenido-contenedor-encuesta {
+    height: 85%;
+    width: 100%;
+    background: purple;
+    border-radius: 0 0 25px 25px;
+
+}
