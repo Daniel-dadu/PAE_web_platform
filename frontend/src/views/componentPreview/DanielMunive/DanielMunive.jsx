@@ -1,6 +1,6 @@
 import React from 'react'
 
- import { Pefil, Perfil } from '../../../routeIndex'
+ import { Perfil } from '../../../routeIndex'
  
 
 function DanielMunive() {
