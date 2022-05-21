@@ -45,7 +45,7 @@ function RegistroAsesoradoDatos() {
   return (
     <TemplateRegistroUsuario 
     progressBarJSON = {progressBar}
-     btnAtrasRoute="/landingPage"
+     btnAtrasRoute="./landingPage"
      btnSiguienteRoute="./registroAsesoradoCondiciones"> 
 
 <div>
