@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 
- import { TemplateRegistroUsuario } from '../../../routeIndex'
+ import { Pefil, Perfil } from '../../../routeIndex'
  
 
 function DanielMunive() {
@@ -17,7 +17,7 @@ function DanielMunive() {
         }}
       >
 
-        <TemplateRegistroUsuario></TemplateRegistroUsuario>
+        <Perfil></Perfil>
 
 
     </div>

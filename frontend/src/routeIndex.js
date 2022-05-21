@@ -76,4 +76,5 @@ export {default as TarjetaListaDesplegable } from './components/reusable/Tarjeta
 export {default as ListaDesplegable } from './components/reusable/ListaDesplegable/ListaDesplegable.js';
 
 
+export {default as Perfil } from './views/commons/Perfil/Perfil.jsx'
 export {default as imageCompressor } from './assets/reusableFunctions/imageCompressor.js'

@@ -1,0 +1,23 @@
+.btn_PerfilCommon{
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.botonCerrarSesion{
+    padding-top: 2%;
+    padding-right: 5%;
+}
+
+.btn_PerfilCommon .botonCerrarSesion .btn{
+    color: var(--negro);
+
+}
+
+.boxPerfilCommon{
+
+padding-top: 5%;
+
+}
