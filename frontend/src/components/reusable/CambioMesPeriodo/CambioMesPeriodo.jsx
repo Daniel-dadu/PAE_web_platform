@@ -1,65 +1,42 @@
 import React from 'react'
 import './CambioMesPeriodo.css';
-import { useState } from "react";
 import { MdArrowBackIos } from 'react-icons/md';
 import { MdArrowForwardIos } from 'react-icons/md';
 
-/* This is how you call de component
+/*
+Para usar este componente, es necesario pasarle como parámetro lo siguiente:
+- dataSupInf: se recibe un objecto de JS que cuente con los atributos de textoSuperior y textoInferior
+  - ejemplo: { textoSuperior: 'Mayo', textoInferior: 2022 }
+  - Nota IMPORTANTE: dicho objeto debe manejarse como una variable useState para que cuando se le de click a las flechas, cambie su contenido
+- onClickArrow: se recibe una función que se ejecuta al darle click a alguna de las flechas
+  - cada flecha manda un parámetro diferente a la función para indicar qué flecha fue la que se presionó
 
-    <CambioMesPeriodo dataSupInf={  [ 
-  {id: 1,
-  Sup: 'Texto Superior 1',
-  Inf: 'Texto Inferior 1'},
+EJEMPLO:
+<CambioMesPeriodo dataSupInf={{textoSuperior: 'Mayo', textoInferior: 2022}} onClickArrow={handleArrowClick} />
 
-  {id: 2,
-  Sup: 'Texto Superior 2',
-  Inf: 'Texto Inferior 2'},
-
-  {id: 3,
-  Sup: 'Texto Superior 3',
-  Inf: 'Texto Inferior 3'}   ]  } > </CambioMesPeriodo>
-
+// Revisar código de /views/commons/calendario/Calendario.jsx para ver un ejemplo del uso del componente
 */
-
-export default function CambioMesPeriodo({dataSupInf}) {
-
-const slidesArray =  dataSupInf 
-
-  const [id, setId] = useState(1);
-
-  const values = slidesArray.length;
-
-  let validSlide = slidesArray.filter(slides => slides.id === (id))
-
+export default function CambioMesPeriodo({dataSupInf, onClickArrow}) {
 
   return (
+    <div className="slideshow-container">
+      <div> 
+        <button className='back' onClick={() => onClickArrow('back')} >
+          <MdArrowBackIos size={35} /> 
+        </button>
+      </div>
 
-   
-    
-    <div className="slideshow-container">  
-
-
-
-        <div> 
-        <button className='back' onClick={() => setId(id !== 1 ? id-1 : id) } > <MdArrowBackIos size={35} > </MdArrowBackIos> </button>
-        </div>
-
-        
-
-        <div className='bloqueTexto'>
-        <div className='textSup'> {validSlide[0].Sup} </div>
-        <div className='textInf'> {validSlide[0].Inf} </div>
-        </div>
-        
-        <div>
-        <button className='next' onClick={() => setId(id < values ? id+1 : id)} > <MdArrowForwardIos size={35} > </MdArrowForwardIos> </button>
-        </div>
-        
-
-        
-
-   </div>
-
+      <div className='bloqueTexto'>
+        <div className='textSup'> { dataSupInf.textoSuperior } </div>
+        <div className='textInf'> { dataSupInf.textoInferior } </div>
+      </div>
+      
+      <div>
+        <button className='next' onClick={() => onClickArrow('next')} > 
+          <MdArrowForwardIos size={35} /> 
+        </button>
+      </div>
+    </div>
 
   )
 
