@@ -1,0 +1,33 @@
+{
+    "informacion": {
+        "camposObligatorios": [
+            {
+                "campo": "Nombre",
+                "info": "Mario Alonso",
+                "nombreClase": "nombre"
+            },
+            {
+                "campo": "Matricula",
+                "info": "A01734184",
+                "nombreClase": "matricula"   
+            }
+        ],
+        "camposVariantes": [
+            {
+                "campo": "Carrera(s)",
+                "info": ["ITC","IRS"],
+                "nombreClase": "carrera" 
+            },
+            {
+                "campo": "Semestre",
+                "info": 1,
+                "nombreClase": "semestre"  
+            },
+            {
+                "campo": "Telefono",
+                "info":   222777888,
+                "nombreClase":"telefono"
+            }
+        ]
+    }
+}

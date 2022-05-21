@@ -28,7 +28,7 @@ let progressBar = {
             "name" : "Confirmación",
             "state": null,
             "next": "enable",
-            "path" : "Ruta"
+            "path" : "./registroAsesoradoResumen"
           }
     ]
   }

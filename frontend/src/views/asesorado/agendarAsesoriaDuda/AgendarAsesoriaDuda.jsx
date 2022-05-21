@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import ImageUploading from "react-images-uploading";
+import { useNavigate } from "react-router-dom"
+
 import './AgendarAsesoriaDuda.css'
 
 import { AgendarAsesoria, BotonConImagen, ImagenAsesoria, CampoTextoGrande } from '../../../routeIndex'
@@ -43,20 +45,51 @@ let progressBar = {
 }
 function AgendarAsesoriaDuda() {
 
-    // El array imageList siempre va a tener la lista de las imágenes que se suban
-    // y en imageList[index].data_url tendrá el src del archivo
+  const navigate = useNavigate();
 
-    const [images, setImages] = React.useState([]);
-    const onChange = (imageList) => {
-         // console.log(imageList);
-        setImages(imageList);
-    };
+  // Si se intenta ingresar a esta vista pero no se cuenta con el localStorage.asesoria_uf, se redirige al /agendarAsesoriaUF/ok
+  useEffect(() => {
+    if(!localStorage.asesoria_uf)
+      navigate('/agendarAsesoriaUF/ok')
+  }, [navigate])
+
+  // En caso de que el usuario cierre la pestaña o se cambie a otra ruta, se eliminan los datos de la asesoría
+  window.addEventListener("unload", () => {
+    localStorage.removeItem('asesoria_uf')
+    localStorage.removeItem('asesoria_duda')
+    for(let i = 1; i <= 3; i++) localStorage.removeItem(`asesoria_imagen${i}`)
+  })
+
+  // Revisando si hay una duda en el localStorage y cargándolas en caso de que sí
+  // Esto es útil para cuando se regresa a esta vista con el botón 'atras'
+  const [dudaUser, setDudaUser] = useState(localStorage.asesoria_duda ? localStorage.asesoria_duda : '')
+
+  // Revisando si hay imágenes en el localStorage y cargándolas en caso de que sí
+  // Esto es útil para cuando se regresa a esta vista con el botón 'atras'
+  const [images, setImages] = useState(() => {
+    if(localStorage.asesoria_imagen1){
+      let previusImages = []
+      previusImages.push({data_url: localStorage.asesoria_imagen1})
+      if(localStorage.asesoria_imagen2) previusImages.push({data_url: localStorage.asesoria_imagen2})
+      if(localStorage.asesoria_imagen3) previusImages.push({data_url: localStorage.asesoria_imagen3})
+      return previusImages
+    } 
+    return []
+  })
+
+  const onChangeImages = imageList => {
+    setImages(imageList);
+  }
+
+  const handleDuda = duda => {
+    setDudaUser(duda)
+  }
 
   return (
     <AgendarAsesoria 
       showAtrasBtn={true} 
-      btnAtrasRoute="./AgendarAsesoriaUF" 
-      btnSiguienteRoute="./AgendarAsesoriaCalendario"
+      btnAtrasRoute="./AgendarAsesoriaUF/ok" 
+      btnSiguienteProps={{view: 2, props: {duda: dudaUser, imagenes: images}}}
       showTarjetaMaestraMini={true} 
       sizeTarjetaMaestraMini="normal" 
       progressBarJSON={progressBar}
@@ -64,10 +97,10 @@ function AgendarAsesoriaDuda() {
         <div className='container-aad'>
             <div className='top'>
                 <h3>Explica tu duda:</h3>
-                <CampoTextoGrande/>
+                <CampoTextoGrande parentCallback={handleDuda} defaultText={dudaUser}/>
             </div>
                 
-            <ImageUploading multiple value={images} onChange={onChange} maxNumber={3} dataURLKey="data_url">
+            <ImageUploading multiple value={images} onChange={onChangeImages} maxNumber={3} dataURLKey="data_url" acceptType={['jpg', 'png']}>
                 {({ imageList, onImageUpload, onImageRemove }) => (
                 <div className="container_ImageUploading">
                     <div className='container_imagenes'>
