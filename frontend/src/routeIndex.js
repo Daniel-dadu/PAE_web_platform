@@ -77,3 +77,5 @@ export {default as ListaDesplegable } from './components/reusable/ListaDesplegab
 
 export {default as Perfil } from './views/commons/perfil/Perfil.jsx'
 export {default as imageCompressor } from './assets/reusableFunctions/imageCompressor.js'
+
+export {default as ImagenPerfilCambiar } from './components/reusable/ImagenPerfilCambiar/ImagenPerfilCambiar.jsx'

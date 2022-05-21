@@ -1,0 +1,28 @@
+.container_ImageUploading_cambiar{
+    position: relative;
+    height: 60%;
+}
+
+.container_imagenes_RegistroAsesorado{
+    display: flex;
+    gap: 3%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 100%;
+    margin: auto;
+    height: 250px;
+    
+}
+
+.container_ImageUploading_cambiar .container_imagenes_RegistroAsesorado p {
+    width: fit-content;
+    margin: auto;
+    font-size: 1.3rem;
+}
+
+.container_ImageUploading_cambiar .btn_upload {
+    width: fit-content;
+    margin: auto;
+}
