@@ -10,7 +10,6 @@ import dateFunctions from '../../../assets/reusableFunctions/dateFunctions.js'
 
 // Importante: es necesario revisar cómo se va a manejar el tema e idioma de la BARRA LATERAL. Aquí está hardcodeado
 
-//Importante es Necesario revisar como se va a manejar el componente de PeriodoMesAño para manejar el calendario con este, y que se actualize el mes y el año el el componente y en el calendario
 function Calendario() {
 
   const [today, setToday] = useState(new Date())
@@ -62,38 +61,31 @@ function Calendario() {
   window.toggle = toggle;
 
   return (
-<>
+    <>
 
     <Template view="calendario">
+      <div className='container_titleCalendar'>
+          <h1 className='title_calendario'>Próximas asesorías</h1>
+          <div className='mesAno_style'>
+            <CambioMesPeriodo dataSupInf={{textoSuperior: mesAnio.mes, textoInferior: mesAnio.anio}} onClickArrow={handleArrowClick} />
+          </div>   
+      </div>
 
-        <div className='container_titleCalendar'>
-            <h1 className='title_calendario'>Próximas asesorías</h1>
-
-            <div className='mesAno_style'>  <CambioMesPeriodo dataSupInf={{textoSuperior: mesAnio.mes, textoInferior: mesAnio.anio}} onClickArrow={handleArrowClick} > </CambioMesPeriodo>
-
-        </div>   
-        </div>
-
-        
-
-        <Modal active={active} toggle={toggle}>
-        <PopUpInformacionAsesoria  userTypePopUpAsesoria = "alumno" infoAsesoria = {CalendarioJSON} estado={toggle}></PopUpInformacionAsesoria> 
+      <Modal active={active} toggle={toggle}>
+        <PopUpInformacionAsesoria  userTypePopUpAsesoria = "alumno" infoAsesoria = {CalendarioJSON} estado={toggle} /> 
       </Modal>
 
 
-        <div className='calendarioStyle'> 
+      <div className='calendarioStyle'> 
         <ComponenteCalendario
           userTypeCalendario = 'alumno' 
           diasCalendario = {CalendarioJSON} 
           sizeCalendario = 'grande' 
-        >
-        </ComponenteCalendario>
-        </div>
+        />
+      </div>
+    </Template>
 
-
-        </Template>
-
-        </>
+  </>
   )
 }
 
