@@ -49,7 +49,7 @@ function RegistroAsesoradoDatos() {
      btnSiguienteRoute="./registroAsesoradoCondiciones"> 
 
 <div>
-            <h1 className='campo_RegistroAsesoradoDatos'> CAMPO 1: Datos generales </h1>
+        <h1 className='campo_RegistroAsesoradoDatos'> CAMPO 1: Datos generales </h1>
 
           
           </div>

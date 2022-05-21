@@ -1,8 +1,6 @@
 import React from 'react'
 
-
 import { TemplateRegistroUsuario } from '../../../routeIndex'
-
 
 import "./RegistroAsesoradoCondiciones.css"
 
@@ -37,7 +35,7 @@ function RegistroAsesoradoCondiciones() {
 
     <TemplateRegistroUsuario 
     progressBarJSON = {progressBar}
-     btnAtrasRoute="/registroAsesoradoDatos"
+     btnAtrasRoute="./registroAsesoradoDatos"
      btnSiguienteRoute="./registroAsesoradoResumen"> 
         
     <div className='bloq_condicionesAsesorado'>

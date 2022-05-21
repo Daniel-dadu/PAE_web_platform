@@ -22,34 +22,39 @@ const TemplateRegistroUsuario = ({
                 <p className = 'txtHeader'> Registro </p>
             </div>
 
-            <BarraProgreso progress = {progressBarJSON}/>
-            <br />
-            <TarjetaMaestra>
-                {children}
-
-                <div className='container_navButtons_RegistroUsuario'>
-            <div className='.btn_right_registro'>
-                <BotonSencillo onClick = {typeof btnAtrasRoute === 'string' ? () => routeChange(btnAtrasRoute) : "accionConBackend"} backgroundColor='azulCielo' size='largo'>
-                    Atras
-                </BotonSencillo>
-            </div> 
-            <div >
-                {
-                    ultimoTexto === "" ?
-                    (
-                        <BotonSencillo onClick={typeof btnSiguienteRoute === 'string' ? () => routeChange(btnSiguienteRoute) : "accionConBackend"} backgroundColor='verde' size='largo'>
-                            Siguiente
-                        </BotonSencillo>
-                    ):
-                    (
-                        <BotonSencillo onClick={typeof btnSiguienteRoute === 'string' ? () => routeChange(btnSiguienteRoute) : "accionConBackend"} backgroundColor='verde' size='largo' children={ ultimoTexto }>
-                        </BotonSencillo>
-                    )    
-                }
-                
+            <div className='registro_barraProgreso'>
+                <BarraProgreso progress = {progressBarJSON}/>
             </div>
-        </div>
-            </TarjetaMaestra>
+
+            <br />
+            <div style={{height: '77%'}}>
+                <TarjetaMaestra viewRegistro={true}>
+                    {children}
+
+                    <div className='container_navButtons_RegistroUsuario'>
+                <div className='.btn_right_registro'>
+                    <BotonSencillo onClick = {typeof btnAtrasRoute === 'string' ? () => routeChange(btnAtrasRoute) : "accionConBackend"} backgroundColor='azulCielo' size='largo'>
+                        Atras
+                    </BotonSencillo>
+                </div> 
+                <div >
+                    {
+                        ultimoTexto === "" ?
+                        (
+                            <BotonSencillo onClick={typeof btnSiguienteRoute === 'string' ? () => routeChange(btnSiguienteRoute) : "accionConBackend"} backgroundColor='verde' size='largo'>
+                                Siguiente
+                            </BotonSencillo>
+                        ):
+                        (
+                            <BotonSencillo onClick={typeof btnSiguienteRoute === 'string' ? () => routeChange(btnSiguienteRoute) : "accionConBackend"} backgroundColor='verde' size='largo' children={ ultimoTexto }>
+                            </BotonSencillo>
+                        )    
+                    }
+                    
+                </div>
+                </div>
+                </TarjetaMaestra>
+            </div>
 
         </div>
 
