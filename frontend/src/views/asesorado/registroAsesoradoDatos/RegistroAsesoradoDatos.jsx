@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { TemplateRegistroUsuario, CampoTextoPequeno, CampoSeleccionarEnListaDesplegable, ImagenPerfilCambiar } from '../../../routeIndex'
 
@@ -32,62 +32,72 @@ let progressBar = {
 
 function RegistroAsesoradoDatos() {
 
+    // Limpiamos el local storage
+    // localStorage.clear()
 
-  return (
-    <TemplateRegistroUsuario 
-    progressBarJSON = {progressBar}
-     btnAtrasRoute="./landingPage"
-     btnSiguienteRoute="./registroAsesoradoCondiciones"> 
+    const [imageUploaded, setImageUploaded] = useState(null)
 
-        <div>
-            <h1 className='campo_RegistroAsesoradoDatos'> CAMPO 1: Datos generales </h1>
-            <h3 className='advertencia_asterisco'> * Los campos con asteríscos son obligatorios </h3>  
-        </div>
+    const onHandleUploadImage = (image) => {
+        setImageUploaded(image)
+    }
 
-        <div className='contener_DatosAsesoradoInputRegistro'> 
+    return (
+        <TemplateRegistroUsuario 
+        progressBarJSON = {progressBar}
+        btnAtrasRoute="./landingPage"
+        btnSiguienteRoute="./registroAsesoradoCondiciones"> 
 
-            <div className='contenedro_deInputsAsesoradoRegistro'> 
-                <div className='texto_contenedor_deInputsAsesoradoRegistro'> Nombre (s) </div>
-                <CampoTextoPequeno size={"big"}></CampoTextoPequeno>
+            <div>
+                <h1 className='campo_RegistroAsesoradoDatos'> CAMPO 1: Datos generales </h1>
+                <h3 className='advertencia_asterisco'> * Los campos con asteríscos son obligatorios </h3>  
             </div>
 
-            <div className='contenedro_deInputsAsesoradoRegistro'> 
-                <div className='texto_contenedor_deInputsAsesoradoRegistro'> Apellido Paterno </div>
-                <CampoTextoPequeno size={"big"}></CampoTextoPequeno>
+            <div className='contener_DatosAsesoradoInputRegistro'> 
+
+                <div className='contenedro_deInputsAsesoradoRegistro'> 
+                    <div className='texto_contenedor_deInputsAsesoradoRegistro'> Nombre(s) * </div>
+                    <CampoTextoPequeno size={"big"}></CampoTextoPequeno>
+                </div>
+
+                <div className='contenedro_deInputsAsesoradoRegistro'> 
+                    <div className='texto_contenedor_deInputsAsesoradoRegistro'> Apellido Paterno * </div>
+                    <CampoTextoPequeno size={"big"}></CampoTextoPequeno>
+                </div>
+
+                <div className='contenedro_deInputsAsesoradoRegistro'> 
+                    <div className='texto_contenedor_deInputsAsesoradoRegistro'> Apellido Materno </div>
+                    <CampoTextoPequeno size={"big"}></CampoTextoPequeno>
+                </div>
+
+                <div className='contenedro_deInputsAsesoradoRegistro'> 
+                    <div className='texto_contenedor_deInputsAsesoradoRegistro'> Matrícula *</div>
+                    <CampoTextoPequeno size={"big"}></CampoTextoPequeno>
+                </div>
+
+                <div className='contenedro_deInputsAsesoradoRegistro'> 
+                    <div className='texto_contenedor_deInputsAsesoradoRegistro'> Carrera * </div>
+                    <CampoSeleccionarEnListaDesplegable size="large" options={info.carrera} idList="semestre"/>
+                </div>
+
+
+                <div className='contenedro_deInputsAsesoradoRegistro'> 
+                    <div className='texto_contenedor_deInputsAsesoradoRegistro'> Número de teléfono </div>
+                    <CampoTextoPequeno size={"big"}></CampoTextoPequeno>
+                </div>
+
+                <div className='contenedor_imagenPerfil'> 
+                    <p className='texto_contenedor_deInputsAsesoradoRegistro title_imagenPerfil'> Imagen de Perfil </p>
+                    <ImagenPerfilCambiar onUploadImage={onHandleUploadImage} />
+                </div>
+
+                <div >
+                    <h2>Comprobando que la imagen se actualice en el componente</h2>
+                    <img src={imageUploaded} alt="" style={{width: '200px', height: '200px', objectFit: 'cover', display:'block', margin: 'auto', borderRadius: '100%'}} />
+                </div>
             </div>
-
-            <div className='contenedro_deInputsAsesoradoRegistro'> 
-                <div className='texto_contenedor_deInputsAsesoradoRegistro'> Apellido Materno </div>
-                <CampoTextoPequeno size={"big"}></CampoTextoPequeno>
-            </div>
-
-            <div className='contenedro_deInputsAsesoradoRegistro'> 
-                <div className='texto_contenedor_deInputsAsesoradoRegistro'> Matrícula</div>
-                <CampoTextoPequeno size={"big"}></CampoTextoPequeno>
-            </div>
-
-            <div className='contenedro_deInputsAsesoradoRegistro'> 
-                <div className='texto_contenedor_deInputsAsesoradoRegistro'> Carrera  </div>
-                <CampoSeleccionarEnListaDesplegable size="medium" options={info.carrera} idList="semestre"/>
-            </div>
-
-
-            <div className='contenedro_deInputsAsesoradoRegistro'> 
-                <div className='texto_contenedor_deInputsAsesoradoRegistro'> Número de teléfono (opcional)  </div>
-                <CampoTextoPequeno size={"big"}></CampoTextoPequeno>
-            </div>
-
-            <div> 
-                <p className='texto_contenedor_deInputsAsesoradoRegistro' style={{width: 'fit-content', margin: 'auto'}}> Imagen de Perfil </p>
-                
-                <ImagenPerfilCambiar />
-    
-            </div>
-
-        </div>
-        
-    </TemplateRegistroUsuario>
-  )
+            
+        </TemplateRegistroUsuario>
+    )
 }
 
 export default RegistroAsesoradoDatos

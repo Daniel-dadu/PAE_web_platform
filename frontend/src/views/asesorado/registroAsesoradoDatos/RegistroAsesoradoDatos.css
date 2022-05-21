@@ -47,4 +47,10 @@
     bottom: 5%;
 }
 
+.contenedor_imagenPerfil {
+    margin-top: 1rem;
+}
 
+.contenedor_imagenPerfil .title_imagenPerfil {
+    text-align: center;
+}

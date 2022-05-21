@@ -51,7 +51,7 @@ function RegistroAsesoradoCondiciones() {
      
      <div> 
        <input type="checkbox" id="condiciones" name="condiciones" value="AceptoCondiciones"/>
-       <label for="condiciones" style={{fontSize: "20px"}} > Acepto los terminos y condiciones</label>
+       <label htmlFor="condiciones" style={{fontSize: "20px"}} > Acepto los terminos y condiciones</label>
      </div>
 
 
