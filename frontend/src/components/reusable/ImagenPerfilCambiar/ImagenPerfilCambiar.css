@@ -1,28 +1,36 @@
 .container_ImageUploading_cambiar{
     position: relative;
-    height: 60%;
+    height: 17rem;
 }
 
-.container_imagenes_RegistroAsesorado{
+.container_image_selected{
     display: flex;
-    gap: 3%;
     align-items: center;
     justify-content: center;
-    padding-top: 10%;
-    padding-bottom: 10%;
     width: 100%;
     margin: auto;
-    height: 250px;
-    
-}
-
-.container_ImageUploading_cambiar .container_imagenes_RegistroAsesorado p {
-    width: fit-content;
-    margin: auto;
-    font-size: 1.3rem;
+    height: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .container_ImageUploading_cambiar .btn_upload {
     width: fit-content;
     margin: auto;
+}
+
+.foto_subida_usuario {
+    height: 12rem;
+    width: 12rem;
+    border: solid;
+    border-radius: 100%;
+    background-color: white;
+    object-fit: cover;
+}
+
+.btn_delete_userImg {
+    position: absolute;
+    right: 0%;
+    background-color: transparent;
+    cursor: pointer;
 }
