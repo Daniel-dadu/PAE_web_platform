@@ -90,7 +90,8 @@ Ejemplo de uso:
 
 function BarraLateral({viewProp}) {
 
-    // IMPORTANTE: Usar estos strings no es muy eficiente para el componente final, evaluar si se cambia por números
+    // IMPORTANTE: 
+    // EL USO DEL LOCALSTORAGE ESTÁ MAL, ya que se pusieron opciones por si no se cuentan con las credenciales del usuario. Cambiar eso al final
 
     const barIconSize = 80
 
@@ -102,9 +103,11 @@ function BarraLateral({viewProp}) {
             </a>
         </div>
 
-        <div className='barra-container' style={{backgroundColor: btnInfo[localStorage.rolUsuario].backgroundColor }}>
+        {/* MODIFICAR CONDICIONAL TERNARIO */}
+        <div className='barra-container' 
+        style={{backgroundColor: btnInfo[localStorage.rolUsuario ? localStorage.rolUsuario : 'asesorado'].backgroundColor}}>
             {
-            btnInfo[localStorage.rolUsuario].buttons.map((btn, index) => {
+            btnInfo[localStorage.rolUsuario ? localStorage.rolUsuario : 'asesorado'].buttons.map((btn, index) => {
                 let isImageString = typeof btn.image === "string"
                 let heightBtn = (localStorage.rolUsuario === "asesor") ? '33%' : '25%'
 
@@ -112,7 +115,7 @@ function BarraLateral({viewProp}) {
                     let perfilSelected = viewProp === "perfil"
                     return <div className={'barra_button' + (perfilSelected ? ' barra_button-selected' : '') } style={{height: heightBtn}} key={index}>
                         <a href={ btn.user === "asesor" ? "/perfilAsesor" : localStorage.rolUsuario === "asesorado" ? "/perfilAsesorado" : "/perfilDirectivo" }>
-                        <img src={localStorage.fotoUsuario.length < 20 ? noUserImg : localStorage.fotoUsuario} alt="Perfil" className={'profile-img' + (perfilSelected ? ' selected_icon' : '')} />
+                        <img src={localStorage.fotoUsuario ? (localStorage.fotoUsuario.length < 20 ? noUserImg : localStorage.fotoUsuario) : noUserImg} alt="Perfil" className={'profile-img' + (perfilSelected ? ' selected_icon' : '')} />
                         <p className={'btn-text' + (perfilSelected ? ' selected_icon' : '')}>{btn.text}</p>
                         </a>
                         </div>
