@@ -58,3 +58,7 @@
 ::-webkit-scrollbar-corner {
     border-radius: 100%;
 }
+
+.container_templateRegistroUsuario .loading_spin {
+    margin: 0 40px;
+}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import { TemplateRegistroUsuario } from '../../../routeIndex'
 
@@ -31,6 +31,8 @@ let progressBar = {
   }
 
 function RegistroAsesoradoCondiciones() {
+
+  const [userChecked, setUserChecked] = useState(false)
   return (
 
     <TemplateRegistroUsuario 
@@ -50,8 +52,10 @@ function RegistroAsesoradoCondiciones() {
    <div className='condiciones_condicionesAsesorado'> <p className='texto_condiciones_condicionesAsesorado'> {Condiciones.Condiciones} </p> </div>
      
      <div> 
-       <input type="checkbox" id="condiciones" name="condiciones" value="AceptoCondiciones"/>
+       <input type="checkbox" id="condiciones" name="condiciones" value="AceptoCondiciones" onChange={() => setUserChecked(!userChecked)} />
        <label htmlFor="condiciones" style={{fontSize: "20px"}} > Acepto los terminos y condiciones</label>
+
+       <p>{userChecked}</p>
      </div>
 
 
