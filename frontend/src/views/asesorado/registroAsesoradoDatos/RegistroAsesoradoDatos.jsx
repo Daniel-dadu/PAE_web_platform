@@ -45,12 +45,10 @@ function RegistroAsesoradoDatos() {
     const [matricula, setMatricula] = useState('')
     const handleTextMatricula = textInserted => setMatricula(textInserted)
 
-    // ****************** Hooks y código usado para la consulta de las carreras a la API ****************** //
-
-    // Hook para guardar la carrera seleccionada
-    const [carrera, setCarrera] = useState(null)
-    // Función que recibe la carrera seleccionada en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a Carrera
+    const [carrera, setCarrera] = useState('')
     const handleCarrera = carreraValue => setCarrera(carreraValue.value)
+    
+    // ****************** Hooks y código usado para la consulta de las carreras a la API ****************** //
 
     // Hook usado para conocer el estado de la petición a la API para consultar las carreras
     const [carreraApiState, setCarreraApiState] = useState({
@@ -85,13 +83,18 @@ function RegistroAsesoradoDatos() {
     const handleTextTelefono = textInserted => setTelefono(textInserted)
 
     const [imageUploaded, setImageUploaded] = useState(null)
-    const onHandleUploadImage = (image) => setImageUploaded(image)
+    const onHandleUploadImage = image => setImageUploaded(image)
 
     return (
         <TemplateRegistroUsuario 
         progressBarJSON = {progressBar}
         btnAtrasRoute="./landingPage"
-        btnSiguienteRoute="./registroAsesoradoCondiciones"> 
+        btnSiguienteProps={ 
+            {
+                view: 1, 
+                props: { nombre, apellidoParterno, apellidoMarterno, matricula, carrera, telefono, imageUploaded }
+            } 
+        } > 
 
             <div>
                 <h1 className='campo_RegistroAsesoradoDatos'> CAMPO 1: Datos generales </h1>
@@ -100,19 +103,15 @@ function RegistroAsesoradoDatos() {
 
         {
         (errorCarreraApiCall) ? // Si ocurre un error en la llamada a la API, se entra en este bloque
-            <div>
-                <h2>
-                    Intente de nuevo más tarde
-                </h2>
-                <h3>
-                    Error: {errorCarreraApiCall.message}
-                </h3>
+            <div style={{color: 'red', width: 'fit-content', margin: 'auto'}}>
+                <h2> Intente de nuevo más tarde </h2>
+                <h3 style={{marginBottom: '5rem', marginLeft:'5rem'}}> Error: {errorCarreraApiCall.message} </h3>
             </div> 
 
         : (carreraApiState.loading) ? // Si todavía no se obtienen los datos de la API, se entra en este bloque
-            <div>
-            Cargando...
-            </div>
+            <p style={{marginBottom: '5rem'}}>
+                Cargando...
+            </p>
 
         : // Si todo sale bien con la llamada a la API, se entra en este bloque
 

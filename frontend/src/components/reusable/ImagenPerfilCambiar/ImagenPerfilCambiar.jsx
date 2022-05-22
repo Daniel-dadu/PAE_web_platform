@@ -14,7 +14,7 @@ function ImagenPerfilCambiar({ onUploadImage }) {
     const [image, setImage] = useState([])
     const onChange = (imageList) => {
         setImage(imageList)
-        onUploadImage(imageList[0].data_url)
+        onUploadImage(imageList[0] ? imageList[0].data_url : null)
     }
 
     return (
@@ -26,7 +26,7 @@ function ImagenPerfilCambiar({ onUploadImage }) {
                         <img src={noUserImg} alt="Foto subida" className='foto_subida_usuario'/>
                         :
                         imageList.map((image, index) => (
-                            <div>
+                            <div key={index}>
                                 <img src={image.data_url} alt="Foto subida" className='foto_subida_usuario'/>
                                 <button onClick={() => { onUploadImage(null); onImageRemove(index);}} className='btn_delete_userImg'>
                                     <TiDelete size={30}/>
