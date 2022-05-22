@@ -90,10 +90,6 @@ function RegistroAsesoradoDatos() {
                     <ImagenPerfilCambiar onUploadImage={onHandleUploadImage} />
                 </div>
 
-                <div >
-                    <h2>Comprobando que la imagen se actualice en el componente</h2>
-                    <img src={imageUploaded} alt="" style={{width: '200px', height: '200px', objectFit: 'cover', display:'block', margin: 'auto', borderRadius: '100%'}} />
-                </div>
             </div>
             
         </TemplateRegistroUsuario>
