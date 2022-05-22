@@ -92,7 +92,7 @@ function RegistroAsesoradoDatos() {
         btnSiguienteProps={ 
             {
                 view: 1, 
-                props: { nombre, apellidoParterno, apellidoMarterno, matricula, carrera, telefono, imageUploaded }
+                props: errorCarreraApiCall ? null : { nombre, apellidoParterno, apellidoMarterno, matricula, carrera, telefono, imageUploaded }
             } 
         } > 
 
@@ -109,7 +109,7 @@ function RegistroAsesoradoDatos() {
             </div> 
 
         : (carreraApiState.loading) ? // Si todavía no se obtienen los datos de la API, se entra en este bloque
-            <p style={{marginBottom: '5rem'}}>
+            <p style={{marginBottom: '5rem', width: 'fit-content', margin: 'auto'}}>
                 Cargando...
             </p>
 
@@ -120,25 +120,21 @@ function RegistroAsesoradoDatos() {
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Nombre(s) * </div>
                     <CampoTextoPequeno size="big" onInsertText={handleTextNombre} />
-                    <p>{nombre}</p>
                 </div>
 
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Apellido Paterno * </div>
                     <CampoTextoPequeno size="big" onInsertText={handleTextApellidoParterno} />
-                    <p>{apellidoParterno}</p>
                 </div>
 
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Apellido Materno </div>
                     <CampoTextoPequeno size="big" onInsertText={handleTextApellidoMarterno} />
-                    <p>{apellidoMarterno}</p>
                 </div>
 
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Matrícula *</div>
                     <CampoTextoPequeno size="big" onInsertText={handleTextMatricula} />
-                    <p> {matricula} </p>
                 </div>
 
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
@@ -149,20 +145,17 @@ function RegistroAsesoradoDatos() {
                         : 
                         <CampoSeleccionarEnListaDesplegable size="large" options={carreraApiState.apiData} parentCallback={handleCarrera}/>
                     }
-                    <p>{carrera}</p>
                 </div>
 
 
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Número de teléfono </div>
                     <CampoTextoPequeno size="big" onInsertText={handleTextTelefono}/>
-                    <p>{telefono}</p>
                 </div>
 
                 <div className='contenedor_imagenPerfil'> 
                     <p className='texto_contenedor_deInputsAsesoradoRegistro title_imagenPerfil'> Imagen de Perfil </p>
                     <ImagenPerfilCambiar onUploadImage={onHandleUploadImage} />
-                    {/* <img src={imageUploaded} alt="" /> */}
                 </div>
 
             </div>
