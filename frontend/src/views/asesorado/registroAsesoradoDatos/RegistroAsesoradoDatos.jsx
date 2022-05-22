@@ -1,8 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { TemplateRegistroUsuario, CampoTextoPequeno, CampoSeleccionarEnListaDesplegable, ImagenPerfilCambiar } from '../../../routeIndex'
-
-import info from './info.json'
 
 import "./RegistroAsesoradoDatos.css"
 
@@ -35,11 +33,59 @@ function RegistroAsesoradoDatos() {
     // Limpiamos el local storage
     // localStorage.clear()
 
-    const [imageUploaded, setImageUploaded] = useState(null)
+    const [nombre, setNombre] = useState('')
+    const handleTextNombre = textInserted => setNombre(textInserted)
 
-    const onHandleUploadImage = (image) => {
-        setImageUploaded(image)
-    }
+    const [apellidoParterno, setApellidoParterno] = useState('')
+    const handleTextApellidoParterno = textInserted => setApellidoParterno(textInserted)
+
+    const [apellidoMarterno, setApellidoMarterno] = useState('')
+    const handleTextApellidoMarterno = textInserted => setApellidoMarterno(textInserted)
+
+    const [matricula, setMatricula] = useState('')
+    const handleTextMatricula = textInserted => setMatricula(textInserted)
+
+    // ****************** Hooks y código usado para la consulta de las carreras a la API ****************** //
+
+    // Hook para guardar la carrera seleccionada
+    const [carrera, setCarrera] = useState(null)
+    // Función que recibe la carrera seleccionada en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a Carrera
+    const handleCarrera = carreraValue => setCarrera(carreraValue.value)
+
+    // Hook usado para conocer el estado de la petición a la API para consultar las carreras
+    const [carreraApiState, setCarreraApiState] = useState({
+        loading: false, // Booleano que indica si está consultando (cargando) la info de la API
+        apiData: null // Guarda la información que regresa la API
+    })
+    // Hook usado para indicar el error de la petición a la API para consultar las carreras, en caso de que ocurra
+    const [errorCarreraApiCall, setErrorCarreraApiCall] = useState(null)
+
+    // Hook para hacer la llamada a la API haciendo uso de la función fetch de JS
+    useEffect(() => {
+        setCarreraApiState({ loading: true })
+        fetch('http://20.225.209.57:3094/asesoria/get_carreras')
+        .then(res => res.json()) // Se indica que la respuesta se regresará en un JSON
+        .then(
+            // En caso de que se obtenga la información de la API, se actualiza el carreraApiState
+            APIdata => {
+            const carrerasApi = APIdata.map(carrera => carrera.idCarrera + " - " + carrera.nombreCarrera)
+            setCarreraApiState({ loading: false, apiData: carrerasApi })
+            }, 
+            // En caso de que haya un error, se actualiza el error
+            error => {
+            setCarreraApiState({ loading: false })
+            setErrorCarreraApiCall(error);
+            }
+        )
+    }, [setCarreraApiState])
+
+    // ************************************************************************************************ //
+
+    const [telefono, setTelefono] = useState('')
+    const handleTextTelefono = textInserted => setTelefono(textInserted)
+
+    const [imageUploaded, setImageUploaded] = useState(null)
+    const onHandleUploadImage = (image) => setImageUploaded(image)
 
     return (
         <TemplateRegistroUsuario 
@@ -52,45 +98,77 @@ function RegistroAsesoradoDatos() {
                 <h3 className='advertencia_asterisco'> * Los campos con asteríscos son obligatorios </h3>  
             </div>
 
+        {
+        (errorCarreraApiCall) ? // Si ocurre un error en la llamada a la API, se entra en este bloque
+            <div>
+                <h2>
+                    Intente de nuevo más tarde
+                </h2>
+                <h3>
+                    Error: {errorCarreraApiCall.message}
+                </h3>
+            </div> 
+
+        : (carreraApiState.loading) ? // Si todavía no se obtienen los datos de la API, se entra en este bloque
+            <div>
+            Cargando...
+            </div>
+
+        : // Si todo sale bien con la llamada a la API, se entra en este bloque
+
             <div className='contener_DatosAsesoradoInputRegistro'> 
 
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Nombre(s) * </div>
-                    <CampoTextoPequeno size={"big"}></CampoTextoPequeno>
+                    <CampoTextoPequeno size="big" onInsertText={handleTextNombre} />
+                    <p>{nombre}</p>
                 </div>
 
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Apellido Paterno * </div>
-                    <CampoTextoPequeno size={"big"}></CampoTextoPequeno>
+                    <CampoTextoPequeno size="big" onInsertText={handleTextApellidoParterno} />
+                    <p>{apellidoParterno}</p>
                 </div>
 
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Apellido Materno </div>
-                    <CampoTextoPequeno size={"big"}></CampoTextoPequeno>
+                    <CampoTextoPequeno size="big" onInsertText={handleTextApellidoMarterno} />
+                    <p>{apellidoMarterno}</p>
                 </div>
 
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Matrícula *</div>
-                    <CampoTextoPequeno size={"big"}></CampoTextoPequeno>
+                    <CampoTextoPequeno size="big" onInsertText={handleTextMatricula} />
+                    <p> {matricula} </p>
                 </div>
 
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Carrera * </div>
-                    <CampoSeleccionarEnListaDesplegable size="large" options={info.carrera} idList="semestre"/>
+                    {
+                        carreraApiState.apiData === null || carreraApiState.apiData === undefined ?
+                        <CampoSeleccionarEnListaDesplegable size="large" options={["Cargando..."]}/>
+                        : 
+                        <CampoSeleccionarEnListaDesplegable size="large" options={carreraApiState.apiData} parentCallback={handleCarrera}/>
+                    }
+                    <p>{carrera}</p>
                 </div>
 
 
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Número de teléfono </div>
-                    <CampoTextoPequeno size={"big"}></CampoTextoPequeno>
+                    <CampoTextoPequeno size="big" onInsertText={handleTextTelefono}/>
+                    <p>{telefono}</p>
                 </div>
 
                 <div className='contenedor_imagenPerfil'> 
                     <p className='texto_contenedor_deInputsAsesoradoRegistro title_imagenPerfil'> Imagen de Perfil </p>
                     <ImagenPerfilCambiar onUploadImage={onHandleUploadImage} />
+                    {/* <img src={imageUploaded} alt="" /> */}
                 </div>
 
             </div>
+        }
+
             
         </TemplateRegistroUsuario>
     )
