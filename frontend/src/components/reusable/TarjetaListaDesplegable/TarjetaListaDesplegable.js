@@ -44,6 +44,7 @@ const TarjetaListaDesplegable = (
                 Tipo 1 => es aquella que solo muestra la clave de la Unidad de Formacion y el Nombre de la Unidad de formacion 
                 Tipo 2 => aquella que muestra el semenstre, clave de UF, nombre de UF y tiene un boton para quitarla de la lista
                 Tipo 3 => aquella que muestra la hora de asesoria, el estatus de la asesoria y la clave de la UF.
+                Tipo 4 => aquella que muestra el semenstre, clave de UF, nombre de UF , pero sin boton de quitar
 
             -> el color de la tarjeta tipo 2, se definirá automaticamente a traves de la propiedad "semestre"
             ->Los colores estan definidos en este archivo en la parte de arriba. Estos deberan de ser pasados de manera exacta 
@@ -64,7 +65,8 @@ const TarjetaListaDesplegable = (
             Tipo1:  <TarjetaListaDesplegable tipo={ 1 } claveUF="TC3005B"  nombreUF="Desarrollo de software" colorTipo3="verde" />
             Tipo2:  <TarjetaListaDesplegable tipo={ 2 } claveUF="TC3005B"  nombreUF="Desarrollo de software"  semestre={1} />
             Tipo3:  <TarjetaListaDesplegable tipo={ 3 } claveUF="TC3005B" colorTipo3="verde_tipo3" horaAsesoria="11 AM" contenido=" Ezequiel Lozano Guerrero le dará asesoria a Daniel Maldonado Espitia " />
-
+            Tipo4:  <TarjetaListaDesplegable tipo={ 4 } claveUF="TC3005B"  nombreUF="Desarrollo de software"  semestre={1} />
+            
 
 
     */
@@ -83,42 +85,56 @@ const TarjetaListaDesplegable = (
                 tipo === 1 ?
                 (
                     <table className={`tabla-tipo-1 ${ BackgroundColor1 }`}> 
-                    <tbody>
+
                         <tr className='fila-general-TarjetaListaDesplegable'>
                             <td className='claveUF-tipo-1' > { claveUF } </td>
                             <td className='nombreUF-tipo-1'> { nombreUF } </td>
                         </tr>
-                    </tbody>
+
                     </table>
                 ):
                 (
                     tipo === 2?
                     (
                         <table className={`tabla-tipo-2 ${ BackgroundColor2 }`}> 
-                        <tbody>
+
                             <tr className='fila-general-TarjetaListaDesplegable'>
                                 <td className='semestre-tipo-2' >Semestre: { semestre }</td>
                                 <td className='claveUF-tipo-2' > { claveUF } </td>
                                 <td className='nombreUF-tipo-2' > { nombreUF } </td>
                                 <td className='btn-cerrar-tipo2' onClick={ () => { window.alert("debería cerrarme :)") } }> <AiOutlineCloseCircle/> </td>
                             </tr>
-                        </tbody>
+
                         </table>
                     ):
                     tipo === 3?
                     (
                         <table className={`tabla-tipo-3 ${ BackgroundColor3 }`}> 
-                        <tbody>
+
                             <tr className='fila-general-TarjetaListaDesplegable'>
                                 <td className='hora-asesoria-tipo-3' > { horaAsesoria } </td>
                                 <td className='contenido-tipo-3' > { contenido } </td>
                                 <td className='claveUF-tipo-3' > {claveUF} </td>
                             </tr>
-                        </tbody>
+
                         </table>
                     ):
                     (
-                        <h1>Hola</h1>
+                        tipo === 4?
+                        (
+                            <table className={`tabla-tipo-4 ${ BackgroundColor2 }`}> 
+
+                                <tr className='fila-general-TarjetaListaDesplegable'>
+                                    <td className='semestre-tipo-4' >Semestre: { semestre }</td>
+                                    <td className='claveUF-tipo-4' > { claveUF } </td>
+                                    <td className='nombreUF-tipo-4' > { nombreUF } </td>
+                                </tr>
+
+                            </table>
+                        ):
+                        (
+                            <h1>LozanoHot</h1>
+                        )
                     )
                 )
             }

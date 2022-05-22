@@ -6,8 +6,8 @@ export {default as  PerfilAsesor  } from './views/asesor/perfil/PerfilAsesor.jsx
 export {default as  PerfilAsesorado  } from './views/asesorado/perfil/PerfilAsesorado.jsx';
 export {default as PerfilDirectivo } from './views/directivo/perfil/PerfilDirectivo.jsx'
 export {default as EditarPerfil } from './views/commons/editarPerfil/EditarPerfil.jsx'
-// export {default as DanielFlores } from './views/componentPreview/DanielFlores/DanielFlores.js';
-export {default as DanielFlores } from './views/asesorado/registroAsesoradoResumen/RegistroAsesoradoResumen.js';
+export {default as DanielFlores } from './views/componentPreview/DanielFlores/DanielFlores.js';
+// export {default as DanielFlores } from './views/asesorado/registroAsesoradoResumen/RegistroAsesoradoResumen.js';
 
 export {default as DanielMaldonado } from './views/componentPreview/DanielMaldonado/DanielMaldonado.jsx'
 export {default as DanielMunive } from './views/componentPreview/DanielMunive/DanielMunive.jsx'
@@ -74,6 +74,6 @@ export {default as InformacionPersonalUsuario } from './components/reusable/Info
 export {default as ImagenPerfilActualizar } from './components/reusable/ImagenPerfilActualizar/ImagenPerfilActualizar.js';
 export {default as TarjetaListaDesplegable } from './components/reusable/TarjetaListaDesplegable/TarjetaListaDesplegable.js';
 export {default as ListaDesplegable } from './components/reusable/ListaDesplegable/ListaDesplegable.js';
-
+export {default as ListaUnidadesDeFormacionAsesor } from './components/reusable/ListaUnidadesDeFormacionAsesor/ListaUnidadesDeFormacionAsesor.js';
 
 

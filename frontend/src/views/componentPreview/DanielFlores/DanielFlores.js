@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Template, BarraProgreso, TarjetaMaestraMini, ListaDesplegable } from '../../../routeIndex'
+import { Template, ListaUnidadesDeFormacionAsesor } from '../../../routeIndex'
 import './danielFlores.css';
 
 const DanielFlores = () => {
@@ -13,8 +13,7 @@ const DanielFlores = () => {
 
           </div>
 
-          {/* <ListaDesplegable tipo={ 1 } semestre={1} /> */}
-          <ListaDesplegable tipo={ 2 } fecha="7 de marzo del 2022" />
+          <ListaUnidadesDeFormacionAsesor />
 
         </Template>
     </>
