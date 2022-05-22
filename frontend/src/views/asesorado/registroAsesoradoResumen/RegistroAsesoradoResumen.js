@@ -65,7 +65,7 @@ const RegistroAsesoradoResumen = () => {
 
                         <div className='contenedor-img-perfil-InfPerUsuario'>
 
-                            <img src={ require( `../../../assets/img-editar-perfil-tmp.JPG` ) } alt="imgProfile" className='imagen-InfPerUsuario'/>
+                            <img src={ require('../../../assets/img-editar-perfil-tmp.JPG')  } alt="imgProfile" className='imagen-InfPerUsuario'/>
                             
 
                         </div>
