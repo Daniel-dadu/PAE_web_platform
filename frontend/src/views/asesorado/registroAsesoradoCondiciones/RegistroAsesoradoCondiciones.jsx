@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
+import { useNavigate } from "react-router-dom"
+
 import { TemplateRegistroUsuario } from '../../../routeIndex'
 
 import "./RegistroAsesoradoCondiciones.css"
@@ -29,6 +31,20 @@ let progressBar = {
   }
 
 function RegistroAsesoradoCondiciones() {
+  
+  let navigate = useNavigate()
+
+  // Verificamos que se cuente con todos campos obligatorios
+  // Si no, se envía al usuario a la landing page
+  useEffect(() => {
+    if(!localStorage.registro1_nombre || 
+    !localStorage.registro1_apellidoPaterno || 
+    !localStorage.registro1_matricula || 
+    !localStorage.registro1_carrera) {
+      localStorage.clear()
+      navigate('/landingPage')
+    }
+  }, [navigate])
 
   const [userChecked, setUserChecked] = useState(false)
 
@@ -57,9 +73,14 @@ function RegistroAsesoradoCondiciones() {
   return (
 
     <TemplateRegistroUsuario 
-    progressBarJSON = {progressBar}
-     btnAtrasRoute="./registroAsesoradoDatos"
-     btnSiguienteRoute="./registroAsesoradoResumen"> 
+      progressBarJSON = {progressBar}
+      btnAtrasRoute="./registroAsesoradoDatos"
+      btnSiguienteProps={ 
+      {
+        view: 2, 
+        props: errorCondicionesApiCall ? null : { userChecked }
+      } 
+    }> 
         
     <div className='bloq_condicionesAsesorado'>
       <h1 className='campo_RegistroAsesoradoCondiciones'> CAMPO 2: Consideraciones Finales </h1>
@@ -77,11 +98,11 @@ function RegistroAsesoradoCondiciones() {
 
       :
         <div className='condicionesAsesorado'>
-          <h2 className='condicionesAsesorado_texto'> {condicionesApiState.apiData.titulo} </h2>
+          <h2 className='condicionesAsesorado_texto'> {condicionesApiState.apiData ? condicionesApiState.apiData.titulo : 'Cargando...' } </h2>
 
           <div className='condiciones_condicionesAsesorado'> 
-            <p className='texto_condiciones_condicionesAsesorado'> 
-              {condicionesApiState.apiData.descripcion} 
+            <p className='texto_condiciones_condicionesAsesorado' align='justify'> 
+              {condicionesApiState.apiData ? condicionesApiState.apiData.descripcion : 'Cargando...'} 
             </p> 
           </div>
           

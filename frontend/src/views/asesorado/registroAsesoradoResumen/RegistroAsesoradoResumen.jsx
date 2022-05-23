@@ -1,22 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { TemplateRegistroUsuario } from '../../../routeIndex'
 
 import data from './data.json';
 
+import { useNavigate } from "react-router-dom";
 
 let progressBar = {
-    "currentStep": 0,
+    "currentStep": 2,
     "steps": [
         {
             "name" : "Datos Generales",
-            "state": null,
+            "state": true,
             "next": "enable",
             "path" : "/registroAsesoradoDatos"
           }, 
           {
             "name" : "Consideraciones Finales",
-            "state": null,
+            "state": true,
             "next": "enable",
             "path" : "./registroAsesoradoCondiciones"
           },
@@ -31,6 +32,21 @@ let progressBar = {
 
 const RegistroAsesoradoResumen = () => {
 
+    let navigate = useNavigate()
+
+    // Verificamos que se cuente con todos campos obligatorios
+    // Si no, se envía al usuario a la landing page
+    useEffect(() => {
+        if(!localStorage.registro1_nombre || 
+        !localStorage.registro1_apellidoPaterno || 
+        !localStorage.registro1_matricula || 
+        !localStorage.registro1_carrera) {
+            localStorage.clear()
+            navigate('/landingPage')
+        }
+    }, [navigate])
+    
+
     //función para armar cadena del campo cadenas, retorna un String armado
     const armarCadenaCarrea = (carreras) => {
         let cadena ="";
@@ -41,13 +57,11 @@ const RegistroAsesoradoResumen = () => {
             cadena += carreras[i] + ', ';
 
         }
-
         return cadena;
     }
 
 
-  return (
-        <>
+    return (
     
         <TemplateRegistroUsuario 
             progressBarJSON={progressBar}
@@ -104,9 +118,7 @@ const RegistroAsesoradoResumen = () => {
                 </div>
             </div>
         </TemplateRegistroUsuario>
-        
-        </>
-  )
+    )
 }
 
 export default RegistroAsesoradoResumen

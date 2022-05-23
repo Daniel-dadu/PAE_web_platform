@@ -17,13 +17,15 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
     // Función que se ejecutará siempre que se de click al botón de siguiente
     // Es asincrona ya que para comprimir las imágenes y crear las asesorías se requiere esperar por el resultado 
     const onSiguienteClick = async (data) => {
-        // Se entra en caso de que el botón se ejecute en la view 1 - AgendarAsesoriaUF
         let usr = data.props
+
+        // Si hubo un error con la API
+        if(usr === null) {
+            navigate('/landingPage')
+        }
+
         if(data.view === 1) {
-            // Si hubo un error con la API
-            if(usr === null) {
-                navigate('/landingPage')
-            } else if (usr.nombre === '' || usr.apellidoParterno === '' || usr.matricula === '' || usr.carrera === '') {
+            if (usr.nombre === '' || usr.apellidoParterno === '' || usr.matricula === '' || usr.carrera === '') {
                 // Si no llena alguno de los campos obligatorios, se le informa
                 alert('No se han llenado todos los campos obligatorios')
                 return
@@ -55,6 +57,18 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
                 // Navegamos a la siguiente pantalla
                 navigate('/registroAsesoradoCondiciones')
             }
+        }
+
+        else if(data.view === 2) {
+            if(usr.userChecked) {
+                navigate('/registroAsesoradoResumen')
+            } else {
+                alert('Es necesario que se acepten los términos y condiciones')
+            }
+        }
+
+        else if (data.view === 3) {
+            
         }
 
         setLoadingNext(false)
