@@ -1,0 +1,151 @@
+{
+    "months" : [
+        {"Abril":
+            [
+                [
+                    {"27": null},
+                    {"28": null},
+                    {"29": null},
+                    {"30": null},
+                    {"31": null},
+                    {"1": true},
+                    {"2": null}
+                ],
+                [
+                    {"3": null},
+                    {"4": null},
+                    {"5": null},
+                    {"6": null},
+                    {"7": null},
+                    {"8": null},
+                    {"9": null}
+                ],
+                [
+                    {"10": null},
+                    {"11": null},
+                    {"12": null},
+                    {"13": null},
+                    {"14": null},
+                    {"15": null},
+                    {"16": null}
+                ],
+                [
+                    {"17": null},
+                    {"18": null},
+                    {"19": null},
+                    {"20": null},
+                    {"21": null},
+                    {"22": null},
+                    {"23": null}
+                ],
+                [
+                    {"24": null},
+                    {"25": null},
+                    {"26": null},
+                    {"27": false},
+                    {"28": true},
+                    {"29": true},
+                    {"30": false}
+                ]
+            ]
+        },
+        {"Mayo":
+            [
+                [
+                    {"27": null},
+                    {"28": null},
+                    {"29": null},
+                    {"30": null},
+                    {"31": null},
+                    {"1": true},
+                    {"2": true}
+                ],
+                [
+                    {"3": true},
+                    {"4": true},
+                    {"5": true},
+                    {"6": true},
+                    {"7": true},
+                    {"8": true},
+                    {"9": true}
+                ],
+                [
+                    {"10": true},
+                    {"11": null},
+                    {"12": false},
+                    {"13": false},
+                    {"14": false},
+                    {"15": true},
+                    {"16": true}
+                ],
+                [
+                    {"17": true},
+                    {"18": true},
+                    {"19": true},
+                    {"20": true},
+                    {"21": true},
+                    {"22": true},
+                    {"23": true}
+                ],
+                [
+                    {"24": true},
+                    {"25": true},
+                    {"26": true},
+                    {"27": false},
+                    {"28": true},
+                    {"29": true},
+                    {"30": false}
+                ]
+            ]
+        },
+        {"Junio":
+            [
+                [
+                    {"27": null},
+                    {"28": null},
+                    {"29": null},
+                    {"30": null},
+                    {"31": null},
+                    {"1": true},
+                    {"2": true}
+                ],
+                [
+                    {"3": true},
+                    {"4": true},
+                    {"5": true},
+                    {"6": true},
+                    {"7": true},
+                    {"8": true},
+                    {"9": true}
+                ],
+                [
+                    {"10": true},
+                    {"11": null},
+                    {"12": false},
+                    {"13": false},
+                    {"14": false},
+                    {"15": true},
+                    {"16": true}
+                ],
+                [
+                    {"17": true},
+                    {"18": true},
+                    {"19": true},
+                    {"20": true},
+                    {"21": true},
+                    {"22": true},
+                    {"23": true}
+                ],
+                [
+                    {"24": true},
+                    {"25": true},
+                    {"26": true},
+                    {"27": false},
+                    {"28": true},
+                    {"29": true},
+                    {"30": false}
+                ]
+            ]
+        }
+    ]
+}
