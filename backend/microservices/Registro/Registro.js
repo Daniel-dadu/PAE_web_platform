@@ -58,6 +58,9 @@ app.get('/registro/prueba_get_foto', db.prueba_getfotoPerfil)
 app.get('/registro/politica_vigente', db.politica_vigente)
 
 
+app.post('/registro/nuevo_asesorado', db.nuevo_asesorado)
+
+
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
 })

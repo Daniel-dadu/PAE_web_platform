@@ -11,7 +11,7 @@ CREATE TABLE "Usuario" (
   "rol" ROLES,
   "nombreUsuario" VARCHAR(50) NOT NULL,
   "apellidoPaterno" VARCHAR(30) NOT NULL,
-  "apellidoMaterno" VARCHAR(30) NOT NULL,
+  "apellidoMaterno" VARCHAR(30),
   "fotoPerfil" TEXT,
   "telefono" VARCHAR(10),
   "ultimaConexion" TIMESTAMP,

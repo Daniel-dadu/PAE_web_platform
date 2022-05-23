@@ -33,13 +33,22 @@ function RegistroAsesoradoDatos() {
     // Limpiamos el local storage
     // localStorage.clear()
 
+    const matriculaUser = localStorage.registro1_matricula
+    const contrasenaUser = localStorage.registro1_contrasena
     const nombreUser = localStorage.registro1_nombre
     const apellidoPatUser = localStorage.registro1_apellidoPaterno
     const apellidoMatUser = localStorage.registro1_apellidoMaterno
-    const matriculaUser = localStorage.registro1_matricula
     const carreraUser = localStorage.registro1_carrera
     const telefonoUser = localStorage.registro1_telefono
     const imagenUser = localStorage.registro1_imagenPerfil
+
+    const [matricula, setMatricula] = useState(matriculaUser ? matriculaUser : '')
+    const handleTextMatricula = textInserted => setMatricula(textInserted)
+    
+    const [contrasena, setContrasena] = useState(contrasenaUser ? contrasenaUser : '')
+    const handleTextContrasena = textInserted => setContrasena(textInserted)
+    const [contrasenaConfirm, setContrasenaConfirm] = useState(contrasenaUser ? contrasenaUser : '')
+    const handleTextContrasenaConfirm = textInserted => setContrasenaConfirm(textInserted)
 
     const [nombre, setNombre] = useState(nombreUser ? nombreUser : '')
     const handleTextNombre = textInserted => setNombre(textInserted)
@@ -49,9 +58,6 @@ function RegistroAsesoradoDatos() {
 
     const [apellidoMarterno, setApellidoMarterno] = useState(apellidoMatUser ? apellidoMatUser : '')
     const handleTextApellidoMarterno = textInserted => setApellidoMarterno(textInserted)
-
-    const [matricula, setMatricula] = useState(matriculaUser ? matriculaUser : '')
-    const handleTextMatricula = textInserted => setMatricula(textInserted)
 
     const [carrera, setCarrera] = useState(carreraUser ? carreraUser : '')
     const handleCarrera = carreraValue => setCarrera(carreraValue.value)
@@ -74,8 +80,8 @@ function RegistroAsesoradoDatos() {
         .then(
             // En caso de que se obtenga la información de la API, se actualiza el carreraApiState
             APIdata => {
-            const carrerasApi = APIdata.map(carrera => carrera.idCarrera + " - " + carrera.nombreCarrera)
-            setCarreraApiState({ loading: false, apiData: carrerasApi })
+                const carrerasApi = APIdata.map(carrera => carrera.idCarrera + " - " + carrera.nombreCarrera)
+                setCarreraApiState({ loading: false, apiData: carrerasApi })
             }, 
             // En caso de que haya un error, se actualiza el error
             error => {
@@ -100,7 +106,8 @@ function RegistroAsesoradoDatos() {
         btnSiguienteProps={ 
             {
                 view: 1, 
-                props: errorCarreraApiCall ? null : { nombre, apellidoParterno, apellidoMarterno, matricula, carrera, telefono, imageUploaded }
+                props: errorCarreraApiCall ? null : 
+                    { nombre, apellidoParterno, apellidoMarterno, matricula, carrera, telefono, imageUploaded, contrasena, contrasenaConfirm }
             } 
         } > 
 
@@ -123,6 +130,32 @@ function RegistroAsesoradoDatos() {
 
             <div className='contener_DatosAsesoradoInputRegistro'> 
 
+                <div className='contenedro_deInputsAsesoradoRegistro_credenciales'>
+                    <p align='center' style={{fontStyle: 'italic'}}>Credenciales para el acceso a la plataforma</p>
+
+                    <div className='contenedro_deInputsAsesoradoRegistro'> 
+                        <div className='texto_contenedor_deInputsAsesoradoRegistro'> 
+                            Matrícula *
+                            { matricula.length < 9 && <span className='input_incorrecto'>La matrícula debe tener 9 caracteres</span> }
+                        </div>
+                        <CampoTextoPequeno maxNumCaracteres="9" size="big" onInsertText={handleTextMatricula} previousText={matriculaUser}/>
+                    </div>
+                    <div className='contenedro_deInputsAsesoradoRegistro'> 
+                        <div className='texto_contenedor_deInputsAsesoradoRegistro'> 
+                            Contraseña *
+                            { contrasena.length < 8 && <span className='input_incorrecto'>La contraseña debe tener al menos 8 caracteres</span> } 
+                        </div>
+                        <CampoTextoPequeno size="big" onInsertText={handleTextContrasena} previousText={contrasenaUser} isPassword={true}/>
+                    </div>
+                    <div className='contenedro_deInputsAsesoradoRegistro'> 
+                        <div className='texto_contenedor_deInputsAsesoradoRegistro'> 
+                            Confirmar contraseña * 
+                            { contrasena !== contrasenaConfirm && <span className='input_incorrecto'>Las contraseñas no coinciden</span> } 
+                        </div>
+                        <CampoTextoPequeno size="big" onInsertText={handleTextContrasenaConfirm} previousText={contrasenaUser} isPassword={true} />
+                    </div>
+                </div>
+
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Nombre(s) * </div>
                     <CampoTextoPequeno size="big" onInsertText={handleTextNombre} previousText={nombreUser} />
@@ -136,11 +169,6 @@ function RegistroAsesoradoDatos() {
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Apellido Materno </div>
                     <CampoTextoPequeno size="big" onInsertText={handleTextApellidoMarterno} previousText={apellidoMatUser}/>
-                </div>
-
-                <div className='contenedro_deInputsAsesoradoRegistro'> 
-                    <div className='texto_contenedor_deInputsAsesoradoRegistro'> Matrícula *</div>
-                    <CampoTextoPequeno maxNumCaracteres="9" size="big" onInsertText={handleTextMatricula} previousText={matriculaUser}/>
                 </div>
 
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
