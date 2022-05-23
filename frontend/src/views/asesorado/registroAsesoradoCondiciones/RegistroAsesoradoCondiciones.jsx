@@ -88,7 +88,6 @@ function RegistroAsesoradoCondiciones() {
           <div> 
             <input type="checkbox" id="condiciones" name="condiciones" value="AceptoCondiciones" onChange={() => setUserChecked(!userChecked)} />
             <label htmlFor="condiciones" style={{fontSize: "20px"}} > Acepto los terminos y condiciones</label>
-            <p>{userChecked ? "si" : "no"}</p>
           </div>
 
         </div>
