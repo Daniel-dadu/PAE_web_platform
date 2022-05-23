@@ -26,7 +26,25 @@ const monthsEnNumero = {
     Diciembre: 11
 }
 
+const getNameDay = index => 
+    index === 0 ? 'Domingo' : 
+    index === 1 ? 'Lunes' : 
+    index === 2 ? 'Martes' : 
+    index === 3 ? 'Miercoles' :
+    index === 4 ? 'Jueves' :
+    index === 5 ? 'Viernes' : 'Sabado';
+
+const getIndexDay = {
+    Lunes: 0,
+    Martes: 1, 
+    Miercoles: 2,
+    Jueves: 3, 
+    Viernes: 4
+}
+
 module.exports = {
     getMonthEspanol,
-    monthsEnNumero
+    monthsEnNumero,
+    getNameDay,
+    getIndexDay
 } 
