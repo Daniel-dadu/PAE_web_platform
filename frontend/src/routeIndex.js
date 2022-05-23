@@ -78,3 +78,5 @@ export {default as ListaUnidadesDeFormacionAsesor } from './components/reusable/
 
 export {default as Perfil } from './views/commons/perfil/Perfil.jsx'
 export {default as imageCompressor } from './assets/reusableFunctions/imageCompressor.js'
+export {default as AdministrarPerfilAsesoradoDirectivos } from './views/directivo/administrarPerfilAsesoradoDirectivos/administrarPerfilAsesoradoDirectivos.jsx'
+export {default as PopUpGeneral } from './components/reusable/PopUpGeneral/PopUpGeneral.js'
