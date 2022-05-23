@@ -11,11 +11,11 @@ CREATE TABLE "Usuario" (
   "rol" ROLES,
   "nombreUsuario" VARCHAR(50) NOT NULL,
   "apellidoPaterno" VARCHAR(30) NOT NULL,
-  "apellidoMaterno" VARCHAR(30),
   "fotoPerfil" TEXT,
-  "telefono" VARCHAR(10),
   "ultimaConexion" TIMESTAMP,
-  "statusAcceso" STATUSACCESS
+  "statusAcceso" STATUSACCESS,
+  "telefono" VARCHAR(10),
+  "apellidoMaterno" VARCHAR(30)
 );
 
 -- 1.1 --
@@ -34,6 +34,7 @@ CREATE TABLE "Acceso" (
 
 CREATE TABLE "Asesor" (
   "idUsuario" VARCHAR(10) NOT NULL,
+  "carrera" SMALLINT NOT NULL,
   "semestre" SMALLINT NOT NULL,
   "cantidadCambioHorario" SMALLINT NOT NULL,
   
@@ -397,6 +398,37 @@ BEGIN
 END
 $func$;
 
+------------ PROCEDURES ---------------
+
+-- Procedimiento para hacer el registro de un asesorado
+-- Se usa en las pantallas de Registro de Asesorados
+
+CREATE OR REPLACE PROCEDURE registro_asesorado(
+  matriculaUsr VARCHAR(10), 
+  passwordUsr TEXT, 
+  saltUsr VARCHAR(16), 
+  nombreUsr VARCHAR(50),
+  apellidoPaternoUsr VARCHAR(30),
+  apellidoMaternoUsr VARCHAR(30),
+  fotoPerfilUsr TEXT,
+  telefonoUsr VARCHAR(10),
+  carreraUsr VARCHAR(3)
+)
+LANGUAGE plpgsql AS
+$$
+BEGIN
+  INSERT INTO "Usuario" 
+    ("idUsuario", "rol", "nombreUsuario", "apellidoPaterno", "fotoPerfil", "ultimaConexion", "statusAcceso", "telefono", "apellidoMaterno")
+  VALUES 
+    (matriculaUsr, 'asesorado', nombreUsr, apellidoPaternoUsr, fotoPerfilUsr, CURRENT_TIMESTAMP, 'activo', telefonoUsr, apellidoMaternoUsr);
+  INSERT INTO "Acceso" ("idUsuario", "password", "salt") VALUES 
+    (matriculaUsr, passwordUsr, saltUsr);
+  INSERT INTO "EstudianteCarrera" ("idCarrera", "idUsuario") VALUES
+    (carreraUsr, matriculaUsr);
+  INSERT INTO "Preferencia" ("idUsuario", "modoInterfaz", "lenguaje", "subscripcionCorreo") VALUES
+    (matriculaUsr, 'claro', 'espanol', TRUE);
+END
+$$;
 
 ------------ VIEWS -----------------
 
