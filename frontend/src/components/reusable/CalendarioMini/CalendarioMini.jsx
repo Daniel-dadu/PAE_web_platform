@@ -1,34 +1,7 @@
 import React , {useState} from 'react'
 import "./CalendarioMini.css"
 
-function CalendarioMini({calendar, year, monthIndex}){
-    /*
-    El componente recibe 3 valores.
-        -calendar: un json con el nombre del mes correspodiante al index como 
-        llave, y una lista de los dias habiles.
-            Ejemplo:
-                {
-                    "Abril":
-                            [
-                                1,
-                                2,
-                                3,
-                                5,
-                                20,
-                                21,
-                                30,
-                                31
-                            ]
-                }
-
-        -year: el año actual.
-        -montIndex: El mes que se desea mostrar, por defecto es 0, y no puede 
-        ser negativo.
-
-    Ejemplo:
-        calendar={info} year="2022" monthIndex="0"
-    */
-
+function makeCalendarioMini(calendar, year, monthIndex){
     //Almacena todas la semanas del mes en forma de arreglos de dias.
     let  weeks = [[]];
     const enabledDays = calendar[Object.keys(calendar)[0]];
@@ -69,11 +42,89 @@ function CalendarioMini({calendar, year, monthIndex}){
     }
 
     return(
+        weeks.map((week) =>{
+            return(
+                <tr>
+                    {week.map((day) => {
+                        return(
+                            <td className='calendario_mini_day' style={{color: day.color}}> {day.day} </td>
+                        )
+                    })}
+                </tr>
+            )
+        })
+    )
+}
+
+function CalendarioMini({enabledDays, year, monthIndex, minMonth, maxMonth}){
+    /*
+    El componente recibe 3 valores.
+        -enabledDays: un json con el nombre del mes correspodiante al index como 
+        llave, y una lista de los dias habiles.
+            Ejemplo:
+                {
+                    "Abril":
+                            [
+                                1,
+                                2,
+                                3,
+                                5,
+                                20,
+                                21,
+                                30,
+                                31
+                            ]
+                }
+
+        -year: el año actual.
+        -montIndex: El mes que se desea mostrar, por defecto es 0, y no puede 
+        ser negativo.
+        -minMonth: El primer mes que debe mostrar el minicalendario
+        -maxMonth: El ultimo mes que debe mostrar el minicalendario
+
+    Ejemplo:
+        enabledDays={info} year="2022" monthIndex={3} minMonth={0} maxMonth={4}
+    */
+
+    const[miniCalendario, setMiniCalendario] = useState(makeCalendarioMini(enabledDays, year, monthIndex));
+    const[monthName, setMonthName] = useState(Object.keys(enabledDays));
+
+    const[month, setMonth] = useState(monthIndex);
+    const goLastMonth = () => {
+        if(month > minMonth){
+            setMonth(month - 1);
+            let test = {
+                "Marzo":
+                        [
+                            1,
+                            3,
+                            5,
+                            20,
+                            21,
+                            22,
+                            23
+                        ]
+            };
+
+            setMiniCalendario(makeCalendarioMini(test, year, month -1));
+            setMonthName(Object.keys(test));
+        }
+    };
+    const goNextMonth = () => {
+        if(month < maxMonth){
+            setMonth(month + 1);
+            //llamada al back para establecer nuevos enables days
+            setMiniCalendario(makeCalendarioMini(enabledDays, year, month +1));
+            setMonthName(Object.keys(enabledDays));
+        }
+    };
+
+    return(
         <div className='calendario_mini_container'>
             <div className='calendario_mini_top'>
-                <button type="button" className='buttonArrow'><i className="arrow left"></i></button>
-                <span>{Object.keys(calendar)} - {new Date().getFullYear()}</span>
-                <button type="button" className='buttonArrow'><i className="arrow right"></i></button>
+                <button type="button" className='buttonArrow' onClick={goLastMonth}><i className="arrow left"></i></button>
+                <span>{monthName} - {new Date().getFullYear()}</span>
+                <button type="button" className='buttonArrow' onClick={goNextMonth}><i className="arrow right"></i></button>
             </div>
             <table className='calendario_mini_month'>
                 <tbody>
@@ -86,17 +137,7 @@ function CalendarioMini({calendar, year, monthIndex}){
                         <th className='calendario_mini_week_day'>Viernes</th>
                         <th className='calendario_mini_week_day'>Sabado</th>
                     </tr>
-                    {weeks.map((week) =>{
-                        return(
-                            <tr>
-                                {week.map((day) => {
-                                    return(
-                                        <td className='calendario_mini_day' style={{color: day.color}}> {day.day} </td>
-                                    )
-                                })}
-                            </tr>
-                        )
-                    })}
+                    {miniCalendario}
                 </tbody>
             </table>
         </div>

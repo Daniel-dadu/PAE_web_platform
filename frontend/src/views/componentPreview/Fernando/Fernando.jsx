@@ -6,7 +6,7 @@ import info from  './calendario.json'
 function Fernando() {
   return (
     <div>
-      <CalendarioMini calendar={info} year="2022" monthIndex={3}/>
+      <CalendarioMini enabledDays={info} year="2022" monthIndex={3} minMonth={0} maxMonth={4}/>
     </div>
   )
 }
