@@ -73,9 +73,14 @@ export {default as InformacionPersonalUsuario } from './components/reusable/Info
 export {default as ImagenPerfilActualizar } from './components/reusable/ImagenPerfilActualizar/ImagenPerfilActualizar.js';
 export {default as TarjetaListaDesplegable } from './components/reusable/TarjetaListaDesplegable/TarjetaListaDesplegable.js';
 export {default as ListaDesplegable } from './components/reusable/ListaDesplegable/ListaDesplegable.js';
+export {default as PopUpEncuesta } from './components/reusable/PopUpEncuesta/PopUpEncuesta.js';
 export {default as ListaUnidadesDeFormacionAsesor } from './components/reusable/ListaUnidadesDeFormacionAsesor/ListaUnidadesDeFormacionAsesor.js';
 
 export {default as Perfil } from './views/commons/perfil/Perfil.jsx'
 export {default as imageCompressor } from './assets/reusableFunctions/imageCompressor.js'
 
 export {default as ImagenPerfilCambiar } from './components/reusable/ImagenPerfilCambiar/ImagenPerfilCambiar.jsx'
+
+export {default as AdministrarPerfilAsesoradoDirectivos } from './views/directivo/administrarPerfilAsesoradoDirectivos/administrarPerfilAsesoradoDirectivos.jsx'
+export {default as PopUpGeneral } from './components/reusable/PopUpGeneral/PopUpGeneral.js'
+export {default as RegistroAsesorResumen } from './views/asesor/registroAsesorResumen/RegistroAsesorResumen.jsx'

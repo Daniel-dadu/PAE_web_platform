@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { AdministrarUsuariosDirectivos, RegistroAsesoradoDatos, RegistroAsesorDatos, PanelNotificaciones, RegistroAsesoradoCondiciones, RegistroAsesoradoResumen, RegistroAsesorCondiciones, AdministrarUsuarios, TemporalHome, LandingPage, Calendario, PerfilAsesor, PerfilAsesorado, PerfilDirectivo, EditarPerfil, AgendarAsesoriaUF, AgendarAsesoriaDuda, AgendarAsesoriaCalendario, AgendarAsesoriaHora, AgendarAsesoriaResumen, DanielFlores, DanielMaldonado, DanielMunive, Ezequiel, Fernando } from './routeIndex'
+
+import { RegistroAsesorResumen, AdministrarPerfilAsesoradoDirectivos, AdministrarUsuariosDirectivos, RegistroAsesoradoDatos, RegistroAsesorDatos, PanelNotificaciones, RegistroAsesoradoCondiciones, RegistroAsesoradoResumen, RegistroAsesorCondiciones, AdministrarUsuarios, TemporalHome, LandingPage, Calendario, PerfilAsesor, PerfilAsesorado, PerfilDirectivo, EditarPerfil, AgendarAsesoriaUF, AgendarAsesoriaDuda, AgendarAsesoriaCalendario, AgendarAsesoriaHora, AgendarAsesoriaResumen, DanielFlores, DanielMaldonado, DanielMunive, Ezequiel, Fernando } from './routeIndex'
 
 const App = () => {
   return (
@@ -36,10 +37,12 @@ const App = () => {
         {/* Views de Asesor  */}
         <Route path='/registroAsesorCondiciones' element={<RegistroAsesorCondiciones/>} />
         <Route path='/registroAsesorDatos' element={<RegistroAsesorDatos/>} />
+        <Route path='/registroAsesorResumen' element={<RegistroAsesorResumen/>} />
 
           {/* Views de Directivos */}
         <Route path='/administrarUsuarios' element={<AdministrarUsuarios/>} />
         <Route path='/informacionUsuarios' element={<AdministrarUsuariosDirectivos/>} />
+        <Route path='/administrarPerfilAsesorados' element={<AdministrarPerfilAsesoradoDirectivos/>} />
 
 
         {/* Esta última ruta es a donde se redirige al usuario cuando se busca una ruta inexistente */}

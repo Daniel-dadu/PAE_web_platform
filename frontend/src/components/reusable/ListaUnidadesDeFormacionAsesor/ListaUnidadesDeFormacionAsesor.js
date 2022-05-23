@@ -1,8 +1,7 @@
 import React, { useRef } from 'react'
 import './listaUnidadesDeFormacionAsesor.css'
 import { TarjetaListaDesplegable } from '../../../routeIndex';
-import { useIsOverflow } from '../../../views/useIsOverflowX';
-
+import { useIsOverflowX } from '../../../hooks/useIsOverflowX';
 
 const dataExample = [
     {
@@ -99,7 +98,7 @@ const ListaUnidadesDeFormacionAsesor = ({ data= dataExample }) => {
 
     // usamos el custom hook, le mandamos la referencia del elemento 
     const ref = useRef();
-    const isOverflow = useIsOverflow(ref);
+    const isOverflow = useIsOverflowX(ref);
 
 
 

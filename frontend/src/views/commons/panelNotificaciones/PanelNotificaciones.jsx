@@ -23,7 +23,7 @@ const PanelNotificaciones = (userTypeNotificaciones) => {
         <>
         <Template view = "notificaciones">
 
-            {/* ESTE POP UP DEBE CAMBIARSE AL GENERAL CUANDO DANOMAN LO HAGA */}
+            {/* ESTE POP UP DEBE CAMBIARSE AL DE SOLICITUD ASESORÍA CUANDO DANOMAN LO HAGA */}
             <Modal active = {active} toggle = {toggle}>
                 <PopUpInformacionAsesoria  userTypePopUpAsesoria = "alumno" estado = {toggle} infoAsesoria = {
                     {

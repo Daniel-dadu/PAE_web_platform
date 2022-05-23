@@ -23,10 +23,12 @@ function TemporalHome() {
       <h1> Pestañas Asesor </h1> 
       <Link to='/registroAsesorDatos' className='link_tmp'>RegistroAsesorDatos</Link>
       <Link to='/registroAsesorCondiciones' className='link_tmp'>RegistroAsesorCondiciones</Link>
+      <Link to='/registroAsesorResumen' className='link_tmp'>RegistroAsesorResumen</Link>
       
       <h2>Directivos</h2>
       <Link to='/administrarUsuarios' className='link_tmp'>AdministrarUsuarios</Link>
       <Link to='/informacionUsuarios' className='link_tmp'>InformacionUsuarios</Link>
+      <Link to='/administrarPerfilAsesorados' className='link_tmp'> AdministrarPerfilAsesorados</Link>
 
 
       <h2>Próximamente</h2>

@@ -22,7 +22,7 @@ Para usar el componente de PopUpGeneral, se toman en cuanta los properties que s
       
 */
 
-const PopUpGeneral = ( {tipoPopUpGeneral = false , nombreEliminar = "Lupita Lozano", state = false, funcion} ) => {
+const PopUpGeneral = ( {tipoPopUpGeneral, nombreEliminar, state, funcion} ) => {
 
   return (
     <>  

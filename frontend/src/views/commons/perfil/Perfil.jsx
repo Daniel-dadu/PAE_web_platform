@@ -14,7 +14,7 @@ function Perfil() {
 
         <div className='btn_PerfilCommon'>
 
-            <h1> Notificaciones </h1>
+            <h1> Perfil </h1>
 
         <div className='botonCerrarSesion' >
              <BotonConImagen 

@@ -82,9 +82,11 @@ function Calendario() {
 
       <div className='calendarioStyle'> 
         <ComponenteCalendario
-          userTypeCalendario = 'alumno' 
-          diasCalendario = {CalendarioJSON} 
-          sizeCalendario = 'grande' 
+          userTypeCalendario = 'alumno'
+          diasCalendario = {CalendarioJSON}
+          sizeCalendario = 'grande'
+          mes = {mesAnio.mes}
+          anio = {mesAnio.anio}
         />
       </div>
     </Template>
