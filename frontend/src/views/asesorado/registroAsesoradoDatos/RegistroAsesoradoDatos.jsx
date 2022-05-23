@@ -109,9 +109,7 @@ function RegistroAsesoradoDatos() {
             </div> 
 
         : (carreraApiState.loading) ? // Si todavía no se obtienen los datos de la API, se entra en este bloque
-            <p style={{marginBottom: '5rem', width: 'fit-content', margin: 'auto'}}>
-                Cargando...
-            </p>
+            <p style={{marginBottom: '5rem', width: 'fit-content', margin: 'auto'}}> Cargando... </p>
 
         : // Si todo sale bien con la llamada a la API, se entra en este bloque
 
