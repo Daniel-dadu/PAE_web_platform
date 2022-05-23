@@ -15,6 +15,17 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
     const routeChange = route => navigate(`/${route}`);
 
     const [loadingNext, setLoadingNext] = useState(false)
+
+    const onAtrasClick = (route) => {
+        if(route === './landingPage') {
+            if(window.confirm("¿Deseas cancelar el registro?")) {
+                localStorage.clear()
+                routeChange(route)
+            }
+        } else {
+            routeChange(route)
+        }
+    }
     
     // Función que se ejecutará siempre que se de click al botón de siguiente
     // Es asincrona ya que para comprimir las imágenes y crear las asesorías se requiere esperar por el resultado 
@@ -69,7 +80,8 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
             localStorage.setItem('registro1_contrasena', usr.contrasena)
             localStorage.setItem('registro1_nombre', usr.nombre)
             localStorage.setItem('registro1_apellidoPaterno', usr.apellidoParterno)
-            localStorage.setItem('registro1_carrera', usr.carrera.slice(0, usr.carrera.indexOf(" ")))
+            // Validamos la longitud de la carrera por si se usan las siglas pre-grabadas en el localSorage
+            localStorage.setItem('registro1_carrera', usr.carrera.length > 3 ? usr.carrera.slice(0, usr.carrera.indexOf(" ")) : usr.carrera)
 
             // Eliminamos los campos no obligatorios en caso de que se hayan eliminado manuelmente al dar usar el btn Atras
             localStorage.removeItem('registro1_apellidoMaterno')
@@ -166,7 +178,7 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
 
                     <div className='container_navButtons_RegistroUsuario'>
                         <div className='.btn_right_registro'>
-                            <BotonSencillo onClick = {typeof btnAtrasRoute === 'string' ? () => routeChange(btnAtrasRoute) : "accionConBackend"} backgroundColor='azulCielo' size='largo'>
+                            <BotonSencillo onClick = {() => onAtrasClick(btnAtrasRoute)} backgroundColor='azulCielo' size='largo'>
                                 Atras
                             </BotonSencillo>
                         </div> 
