@@ -1,0 +1,21 @@
+.containerPerfilAsesoradoResumen{
+    margin-bottom: 40px;
+}
+
+.containerListaUFResumen{
+    margin-bottom: 50px;
+}
+
+.containerCambioMesPeriodoResumen{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.containerCalendarioDisponibilidadResumen{
+    width: 60%;
+    height: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
