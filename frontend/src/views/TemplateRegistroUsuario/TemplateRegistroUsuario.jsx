@@ -116,7 +116,7 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
 
             const config = {
                 method: 'post',
-                url: 'http://20.225.209.57/registro/nuevo_asesorado',
+                url: 'http://20.225.209.57:3090/registro/nuevo_asesorado',
                 headers: { 
                     'Content-Type': 'application/json'
                 },
@@ -130,19 +130,18 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
                     "telefono": telefono_confirmed ? telefono_confirmed : null,
                     "carrera": carrera_confirmed
                 })
-            };
+            }
             
             axios(config)
-                .then(function (response) {
-                    console.log(JSON.stringify(response.data));
+                .then(response => {
+                    alert("Bien, " + response.data)
+                    localStorage.clear()
+                    navigate('/landingPage')
                 })
-                .catch(function (error) {
-                    console.log(error);
+                .catch(error => {
+                    alert("Error: " + error.response.data)
+                    navigate('/registroAsesoradoDatos')
                 });
-
-            // Hacer post a API
-            // ----- IMPORTANTE: -----
-            // Checar cómo guardar el teléfono de los asesorados (modificar tabla Usuario y Asesor)
         }
 
         setLoadingNext(false)
