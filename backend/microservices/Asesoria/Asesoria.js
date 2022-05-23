@@ -5,6 +5,28 @@ const port = 3094
 
 const db = require('./queries')
 
+// Documentación sobre el uso de CORS: https://expressjs.com/en/resources/middleware/cors.html
+
+// Código copiado de: https://stackoverflow.com/questions/18310394/no-access-control-allow-origin-node-apache-port-issue
+app.use(function (_req, res, next) {
+
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', '*');
+
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+    // Pass to next layer of middleware
+    next();
+});
+
 app.use(bodyParser.json())
 app.use(
     bodyParser.urlencoded({
@@ -12,17 +34,15 @@ app.use(
     })
 )
 
-// Obtener todas las carreras. NO REQUIERE JSON CON BODY.
+// --- OBTENER LISTA DE CARRERAS ---
+// Obtener todas las carreras. NO REQUIERE QUERY PARAMS.
 app.get('/asesoria/get_carreras', db.getCarreras)
 
 
+// --- OBTENER LISTA DE UFs A PARTIR DE LA CARRERA Y SEMESTRE ---
 // Obtener lista de Unidades de Formación apartir de una carrera y semestre
-/****** Ejemplo del JSON body: ******
-{
-    "carrera": "ITC",
-    "semestre": 2
-}
-*/
+// Ejemplo de consulta con query params:
+// http://20.225.209.57:3094/asesoria/get_uf/?carrera=ITC&semestre=1
 app.get('/asesoria/get_uf/', db.getUF_carreraSemestre)
 
 
@@ -102,6 +122,6 @@ app.put('/asesoria/reservar_horario/', db.setAsesoria_reservarHorario)
 */
 app.delete('/asesoria/eliminar', db.deleteAsesoria)
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`App running on port ${port}.`)
 })

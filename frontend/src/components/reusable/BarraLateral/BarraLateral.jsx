@@ -5,10 +5,9 @@ import { BiCalendar, BiEdit } from 'react-icons/bi'
 import { MdNotificationsNone, MdLightMode, MdNightlight } from 'react-icons/md'
 import { BsPeople } from 'react-icons/bs'
 import pae_logo from '../../../assets/pae_logo.png'
+import noUserImg from '../../../assets/noUserImg.png'
 import mexico_flag_icon from '../../../assets/mexico_flag_icon.png'
 import usa_flag_icon from '../../../assets/usa_flag_icon.png'
-
-import API from './API.json'
 
 let btnInfo = {
     "asesor": {
@@ -91,7 +90,8 @@ Ejemplo de uso:
 
 function BarraLateral({viewProp}) {
 
-    // IMPORTANTE: Usar estos strings no es muy eficiente para el componente final, evaluar si se cambia por números 
+    // IMPORTANTE: 
+    // EL USO DEL LOCALSTORAGE ESTÁ MAL, ya que se pusieron opciones por si no se cuentan con las credenciales del usuario. Cambiar eso al final
 
     const barIconSize = 80
 
@@ -103,17 +103,19 @@ function BarraLateral({viewProp}) {
             </a>
         </div>
 
-        <div className='barra-container' style={{backgroundColor: btnInfo[API.rolUser].backgroundColor }}>
+        {/* MODIFICAR CONDICIONAL TERNARIO */}
+        <div className='barra-container' 
+        style={{backgroundColor: btnInfo[localStorage.rolUsuario ? localStorage.rolUsuario : 'asesorado'].backgroundColor}}>
             {
-            btnInfo[API.rolUser].buttons.map((btn, index) => {
+            btnInfo[localStorage.rolUsuario ? localStorage.rolUsuario : 'asesorado'].buttons.map((btn, index) => {
                 let isImageString = typeof btn.image === "string"
-                let heightBtn = (API.rolUser === "asesor") ? '33%' : '25%'
+                let heightBtn = (localStorage.rolUsuario === "asesor") ? '33%' : '25%'
 
                 if(isImageString){
                     let perfilSelected = viewProp === "perfil"
                     return <div className={'barra_button' + (perfilSelected ? ' barra_button-selected' : '') } style={{height: heightBtn}} key={index}>
-                        <a href={ btn.user === "asesor" ? "/perfilAsesor" : API.rolUser === "asesorado" ? "/perfilAsesorado" : "/perfilDirectivo" }>
-                        <img src={API.imageUser} alt="Perfil" className={'profile-img' + (perfilSelected ? ' selected_icon' : '')} />
+                        <a href={ btn.user === "asesor" ? "/perfilAsesor" : localStorage.rolUsuario === "asesorado" ? "/perfilAsesorado" : "/perfilDirectivo" }>
+                        <img src={localStorage.fotoUsuario ? (localStorage.fotoUsuario.length < 20 ? noUserImg : localStorage.fotoUsuario) : noUserImg} alt="Perfil" className={'profile-img' + (perfilSelected ? ' selected_icon' : '')} />
                         <p className={'btn-text' + (perfilSelected ? ' selected_icon' : '')}>{btn.text}</p>
                         </a>
                         </div>
@@ -136,7 +138,7 @@ function BarraLateral({viewProp}) {
                 } else if(btn.image === 3){
                     let agendarSelected = viewProp === "agendarAsesoria"
                     return <div className={'barra_button' + (agendarSelected ? ' barra_button-selected' : '')} style={{height: heightBtn}} key={ index }>
-                        <a href="/agendarAsesoriaUF">
+                        <a href="/agendarAsesoriaUF/ok">
                         <BsPeople className={'icon_bar' + (agendarSelected ? ' selected_icon' : '')} size={barIconSize}/> 
                         <p className={'btn-text' + (agendarSelected ? ' selected_icon' : '')}>{btn.text}</p>
                         </a>
@@ -157,10 +159,10 @@ function BarraLateral({viewProp}) {
 
         <div className='footer-container'>
             <a href={"/" + viewProp}>
-                {(API.temaUser === "claro") ? <MdNightlight className='theme-icon' size={50} /> : <MdLightMode className='theme-icon' size={50} />}
+                {(localStorage.modo === "claro") ? <MdNightlight className='theme-icon' size={50} /> : <MdLightMode className='theme-icon' size={50} />}
             </a>
             <a href={"/" + viewProp}>
-                {(API.idiomaUser === "espanol") ? <img src={usa_flag_icon} alt="" /> : <img src={mexico_flag_icon} alt="" />}
+                {(localStorage.idioma === "espanol") ? <img src={usa_flag_icon} alt="" /> : <img src={mexico_flag_icon} alt="" />}
             </a>
         </div>
 

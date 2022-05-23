@@ -1,0 +1,42 @@
+.dadu_matricula_container {
+    margin: 2rem;
+    display: flex;
+    gap: 0.3rem;
+}
+
+.dadu_input {
+    border: 1px solid grey;
+    border-radius: 6px;
+    height: 1.5rem;
+    padding: 0.3rem;
+}
+
+.container_ImageUploading1 {
+    position: relative;
+    height: 500px;
+    background-color: aquamarine;
+}
+
+.container_ImageUploading1 .container_imagenes1 {
+    display: flex;
+    gap: 3%;
+    height: 60%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5%;
+
+}
+
+.container_ImageUploading1 .container_imagenes1 p {
+    width: fit-content;
+    margin: auto;
+    font-size: 1.3rem;
+}
+
+.container_ImageUploading1 .btn_upload {
+    position: absolute;
+    width: fit-content;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%,0%);
+}

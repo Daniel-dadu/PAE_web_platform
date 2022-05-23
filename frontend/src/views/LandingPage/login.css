@@ -103,7 +103,33 @@
 
 }
 
-#btn-login-asesorado {
+.logged-paragraph {
+    width: 100%;
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.logged-user {
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.profile-img-login {
+    position: relative;
+    display: block;
+    width: 25%;
+    border-radius: 100%;
+    border: 3px solid #000;
+    margin: auto;
+    background-color: white;
+}
+
+.btn-login-ingresar {
     width: 10vw;
     height: 50px;
     border-radius: 11px;
@@ -115,6 +141,16 @@
     -webkit-box-shadow: 2px 14px 54px -10px rgba(0,0,0,0.75);
     -moz-box-shadow: 2px 14px 54px -10px rgba(0,0,0,0.75);
     margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.btn-login-cerrarsesion {
+    background: var(--gris);
+}
+
+.logged-btn-align {
+    margin: auto;
+    display: block;
 }
 
 .contenedor-inputs .contenedor-boton a {

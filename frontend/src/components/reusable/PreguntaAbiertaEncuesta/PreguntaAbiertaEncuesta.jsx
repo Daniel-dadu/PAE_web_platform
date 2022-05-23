@@ -12,12 +12,12 @@ preguntaAbierta={'Aqui pon la pregunta que quieras'}>
 
 </PreguntaAbiertaEncuesta> */}
 
-function PreguntaAbiertaEncuesta({preguntaAbierta}) {
+function PreguntaAbiertaEncuesta({preguntaAbierta, indexPregunta=1, respuesta=''}) {
   return (
     <div className='contenedorPreguntaAbiertaEncuesta'>
         <div className='textoPreguntaAbiertaEncuesta'> {preguntaAbierta} </div>
 
-        <div> <CampoTextoGrande></CampoTextoGrande></div>
+        <div> <CampoTextoGrande defaultText={ respuesta} >  </CampoTextoGrande></div>
 
     </div>
   )
