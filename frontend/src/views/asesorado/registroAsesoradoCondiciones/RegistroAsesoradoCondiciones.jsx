@@ -33,6 +33,8 @@ let progressBar = {
 function RegistroAsesoradoCondiciones() {
 
   const [userChecked, setUserChecked] = useState(false)
+
+
   return (
 
     <TemplateRegistroUsuario 
@@ -55,7 +57,7 @@ function RegistroAsesoradoCondiciones() {
        <input type="checkbox" id="condiciones" name="condiciones" value="AceptoCondiciones" onChange={() => setUserChecked(!userChecked)} />
        <label htmlFor="condiciones" style={{fontSize: "20px"}} > Acepto los terminos y condiciones</label>
 
-       <p>{userChecked}</p>
+       <p>{userChecked ? "si" : "no"}</p>
      </div>
 
 

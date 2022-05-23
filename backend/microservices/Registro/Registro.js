@@ -54,6 +54,10 @@ EJEMPLO: http://20.225.209.57:3090/registro/prueba_get_foto?matricula=A01657967
 */
 app.get('/registro/prueba_get_foto', db.prueba_getfotoPerfil)
 
+
+app.get('/registro/politica_vigente', db.politica_vigente)
+
+
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
 })

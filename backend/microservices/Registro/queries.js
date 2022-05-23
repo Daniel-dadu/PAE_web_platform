@@ -36,9 +36,20 @@ const prueba_getfotoPerfil = (request, response) => {
     })
 }
 
+const politica_vigente = (_request, response) => {
+    const consulta = `SELECT "titulo", "descripcion" FROM "Politica" WHERE "status" = 'vigente' AND "fechaUltimoCambio" = (SELECT MAX("fechaUltimoCambio") FROM "Politica");`
+    pool.query(consulta, (error, result) => {
+        if(error) {
+            throw error
+        } else {
+            response.status(200).json(result.rows[0])
+        }
+    })
+}
 
 
 module.exports = {
     prueba_fotoPerfil,
-    prueba_getfotoPerfil
+    prueba_getfotoPerfil,
+    politica_vigente
 }
