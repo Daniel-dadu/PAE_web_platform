@@ -9,9 +9,9 @@ import { BiImageAdd } from 'react-icons/bi'
 import { TiDelete } from 'react-icons/ti'
 import noUserImg from '../../../assets/noUserImg.png'
 
-function ImagenPerfilCambiar({ onUploadImage }) {
+function ImagenPerfilCambiar({ onUploadImage, previousImage=null }) {
 
-    const [image, setImage] = useState([])
+    const [image, setImage] = useState(previousImage ? [{data_url: previousImage}] : [])
     const onChange = (imageList) => {
         setImage(imageList)
         onUploadImage(imageList[0] ? imageList[0].data_url : null)

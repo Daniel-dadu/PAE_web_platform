@@ -33,19 +33,27 @@ function RegistroAsesoradoDatos() {
     // Limpiamos el local storage
     // localStorage.clear()
 
-    const [nombre, setNombre] = useState('')
+    const nombreUser = localStorage.registro1_nombre
+    const apellidoPatUser = localStorage.registro1_apellidoPaterno
+    const apellidoMatUser = localStorage.registro1_apellidoMaterno
+    const matriculaUser = localStorage.registro1_matricula
+    const carreraUser = localStorage.registro1_carrera
+    const telefonoUser = localStorage.registro1_telefono
+    const imagenUser = localStorage.registro1_imagenPerfil
+
+    const [nombre, setNombre] = useState(nombreUser ? nombreUser : '')
     const handleTextNombre = textInserted => setNombre(textInserted)
 
-    const [apellidoParterno, setApellidoParterno] = useState('')
+    const [apellidoParterno, setApellidoParterno] = useState(apellidoPatUser ? apellidoPatUser : '')
     const handleTextApellidoParterno = textInserted => setApellidoParterno(textInserted)
 
-    const [apellidoMarterno, setApellidoMarterno] = useState('')
+    const [apellidoMarterno, setApellidoMarterno] = useState(apellidoMatUser ? apellidoMatUser : '')
     const handleTextApellidoMarterno = textInserted => setApellidoMarterno(textInserted)
 
-    const [matricula, setMatricula] = useState('')
+    const [matricula, setMatricula] = useState(matriculaUser ? matriculaUser : '')
     const handleTextMatricula = textInserted => setMatricula(textInserted)
 
-    const [carrera, setCarrera] = useState('')
+    const [carrera, setCarrera] = useState(carreraUser ? carreraUser : '')
     const handleCarrera = carreraValue => setCarrera(carreraValue.value)
     
     // ****************** Hooks y código usado para la consulta de las carreras a la API ****************** //
@@ -79,10 +87,10 @@ function RegistroAsesoradoDatos() {
 
     // ************************************************************************************************ //
 
-    const [telefono, setTelefono] = useState('')
+    const [telefono, setTelefono] = useState(telefonoUser ? telefonoUser : '')
     const handleTextTelefono = textInserted => setTelefono(textInserted)
 
-    const [imageUploaded, setImageUploaded] = useState(null)
+    const [imageUploaded, setImageUploaded] = useState(imagenUser ? imagenUser : null)
     const onHandleUploadImage = image => setImageUploaded(image)
 
     return (
@@ -117,22 +125,22 @@ function RegistroAsesoradoDatos() {
 
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Nombre(s) * </div>
-                    <CampoTextoPequeno size="big" onInsertText={handleTextNombre} />
+                    <CampoTextoPequeno size="big" onInsertText={handleTextNombre} previousText={nombreUser} />
                 </div>
 
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Apellido Paterno * </div>
-                    <CampoTextoPequeno size="big" onInsertText={handleTextApellidoParterno} />
+                    <CampoTextoPequeno size="big" onInsertText={handleTextApellidoParterno} previousText={apellidoPatUser}/>
                 </div>
 
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Apellido Materno </div>
-                    <CampoTextoPequeno size="big" onInsertText={handleTextApellidoMarterno} />
+                    <CampoTextoPequeno size="big" onInsertText={handleTextApellidoMarterno} previousText={apellidoMatUser}/>
                 </div>
 
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Matrícula *</div>
-                    <CampoTextoPequeno size="big" onInsertText={handleTextMatricula} />
+                    <CampoTextoPequeno maxNumCaracteres="9" size="big" onInsertText={handleTextMatricula} previousText={matriculaUser}/>
                 </div>
 
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
@@ -148,12 +156,12 @@ function RegistroAsesoradoDatos() {
 
                 <div className='contenedro_deInputsAsesoradoRegistro'> 
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Número de teléfono </div>
-                    <CampoTextoPequeno size="big" onInsertText={handleTextTelefono}/>
+                    <CampoTextoPequeno maxNumCaracteres="10" size="big" onInsertText={handleTextTelefono} previousText={telefonoUser}/>
                 </div>
 
                 <div className='contenedor_imagenPerfil'> 
                     <p className='texto_contenedor_deInputsAsesoradoRegistro title_imagenPerfil'> Imagen de Perfil </p>
-                    <ImagenPerfilCambiar onUploadImage={onHandleUploadImage} />
+                    <ImagenPerfilCambiar onUploadImage={onHandleUploadImage} previousImage={ imagenUser }/>
                 </div>
 
             </div>

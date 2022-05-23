@@ -39,9 +39,15 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
                 localStorage.setItem('registro1_matricula', usr.matricula)
                 localStorage.setItem('registro1_carrera', usr.carrera)
 
+                // Eliminamos los campos no obligatorios en caso de que se hayan eliminado manuelmente al dar usar el btn Atras
+                localStorage.removeItem('registro1_apellidoMaterno')
+                localStorage.removeItem('registro1_telefono')
+                localStorage.removeItem('registro1_imagenPerfil')
+
                 // Verificamos los campos no obligatorios que haya ingresado el usuario y los guardamos 
                 if(usr.apellidoMarterno) localStorage.setItem('registro1_apellidoMaterno', usr.apellidoMarterno)
                 if(usr.telefono) localStorage.setItem('registro1_telefono', usr.telefono)
+                
                 if(usr.imageUploaded) {
                     // Comprimimos la imagen de perfil
                     let imageCompressed = await imageCompressor(usr.imageUploaded)
@@ -68,7 +74,9 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
         }
 
         else if (data.view === 3) {
-            
+            // Hacer post a API
+            // ----- IMPORTANTE: -----
+            // Checar cómo guardar el teléfono de los asesorados (modificar tabla Usuario y Asesor)
         }
 
         setLoadingNext(false)
