@@ -13,6 +13,7 @@ CREATE TABLE "Usuario" (
   "apellidoPaterno" VARCHAR(30) NOT NULL,
   "apellidoMaterno" VARCHAR(30) NOT NULL,
   "fotoPerfil" TEXT,
+  "telefono" VARCHAR(10),
   "ultimaConexion" TIMESTAMP,
   "statusAcceso" STATUSACCESS
 );
@@ -33,7 +34,6 @@ CREATE TABLE "Acceso" (
 
 CREATE TABLE "Asesor" (
   "idUsuario" VARCHAR(10) NOT NULL,
-  "telefono" VARCHAR(10),
   "semestre" SMALLINT NOT NULL,
   "cantidadCambioHorario" SMALLINT NOT NULL,
   
@@ -371,3 +371,36 @@ BEGIN
 
 END;
 $id$ LANGUAGE plpgsql;
+
+-- Función para actualizar la hora de últimaConexión del usuario al hacer el Login
+-- regresa el rol del usuario, su imagen de perfil, su modo (claro/oscuro) e idioma (espanol/ingles)
+-- Utilizada en el endpoint 'validateCredentials' de login
+-- Esta se debe ejecutar de la siguiente: SELECT * FROM update_ultima_conexion('A01657967'); 
+
+CREATE OR REPLACE FUNCTION update_ultima_conexion (idUsuario VARCHAR(10))
+RETURNS TABLE (
+  rol_user ROLES,
+  foto_user TEXT,
+  modo_user MODO,
+  idioma_user IDIOMA
+)
+LANGUAGE plpgsql AS 
+$func$
+BEGIN
+  
+  UPDATE "Usuario" SET "ultimaConexion" = CURRENT_TIMESTAMP WHERE "idUsuario" = idUsuario;
+  RETURN QUERY
+    SELECT "rol" AS rol_user, "fotoPerfil" AS foto_user, "modoInterfaz" AS modo_user, "lenguaje" AS idioma_user
+    FROM "Usuario", "Preferencia"
+    WHERE "Usuario"."idUsuario" = "Preferencia"."idUsuario" AND "Usuario"."idUsuario" = idUsuario;
+
+END
+$func$;
+
+
+------------ VIEWS -----------------
+
+-- Para consultar los usuarios sin mostrar su texto largo de fotoPerfil 
+-- Se puede consultar ejecutando la query: SELECT * FROM usuarios; 
+
+CREATE VIEW usuarios AS SELECT "idUsuario", "rol", "nombreUsuario", "apellidoPaterno", "apellidoMaterno", "telefono", "ultimaConexion", "statusAcceso" FROM "Usuario";
