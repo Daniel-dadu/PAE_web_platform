@@ -11,14 +11,27 @@ preguntaCerrada={'Aqui pon la pregunta que quieres que salga'}>
 </PreguntaCerradaEncuesta> */}
 
 
-function PreguntaCerradaEncuesta({ preguntaCerrada }) {
+function PreguntaCerradaEncuesta({ preguntaCerrada, indexPregunta, respuesta = 0 }) {
   return (
-    <div className="contenedorPreguntaCerradaEncuesta">
-      <div className="textoPreguntaCerradaEncuesta"> {preguntaCerrada} </div>
+  <div className="contenedorPreguntaCerradaEncuesta">
+        <div className="textoPreguntaCerradaEncuesta"> 
+          {preguntaCerrada} 
+        </div>
 
       <div>
+
+
         <label for="contactChoice1">
-          <input type="radio" id="cal1" name="Calificacion" value="1" checked />
+          {
+            respuesta === 1 ?
+            (
+
+              <input type="radio" id="cal1" name={ `Calificacion${indexPregunta}`} value="1"  checked={true}/>
+            ):
+            (
+              <input type="radio" id="cal1" name={ `Calificacion${indexPregunta}`} value="1"  />
+            )
+          }
           <span
             style={{
               position: "relative",
@@ -32,7 +45,17 @@ function PreguntaCerradaEncuesta({ preguntaCerrada }) {
         </label>
 
         <label for="contactChoice1">
-          <input type="radio" id="cal2" name="Calificacion" value="2" checked />
+            {
+              respuesta === 2 ?
+              (
+                <input type="radio" id="cal2" name={ `Calificacion${indexPregunta}` } value="2" checked={true} />
+
+              ):
+              (
+                <input type="radio" id="cal2" name={ `Calificacion${indexPregunta}` } value="2"  />
+
+              )
+            }
           <span
             style={{
               position: "relative",
@@ -46,7 +69,17 @@ function PreguntaCerradaEncuesta({ preguntaCerrada }) {
         </label>
 
         <label for="contactChoice1">
-          <input type="radio" id="cal3" name="Calificacion" value="3" checked />
+          {
+            respuesta === 3 ?
+            (
+              <input type="radio" id="cal3" name={ `Calificacion${indexPregunta}` } value="3" checked={true} />
+
+            ):
+            (
+              <input type="radio" id="cal3" name={ `Calificacion${indexPregunta}` } value="3"  />
+
+            )
+          }
 
           <span
             style={{
@@ -61,7 +94,18 @@ function PreguntaCerradaEncuesta({ preguntaCerrada }) {
         </label>
 
         <label for="contactChoice1">
-          <input type="radio" id="cal4" name="Calificacion" value="4" checked />
+
+          {
+            respuesta === 4 ?
+            (
+              <input type="radio" id="cal4" name={ `Calificacion${indexPregunta}` } value="4"  checked={true}/>
+
+            ):
+            (
+              <input type="radio" id="cal4" name={ `Calificacion${indexPregunta}` } value="4"  />
+
+            )
+          }
 
           <span
             style={{
@@ -77,7 +121,17 @@ function PreguntaCerradaEncuesta({ preguntaCerrada }) {
 
 
         <label for="contactChoice1">
-          <input type="radio" id="cal5" name="Calificacion" value="5" checked />
+          {
+            respuesta === 5 ?
+            (
+              <input type="radio" id="cal5" name={ `Calificacion${indexPregunta}` } value="5"  checked={true}/>
+
+            ):
+            (
+              <input type="radio" id="cal5" name={ `Calificacion${indexPregunta}` } value="5"  />
+
+            )
+          }
           <span
             style={{
               position: "relative",
@@ -91,7 +145,17 @@ function PreguntaCerradaEncuesta({ preguntaCerrada }) {
         </label>
 
         <label for="contactChoice1">
-          <input type="radio" id="cal6" name="Calificacion" value="6" checked />
+          {
+            respuesta === 6 ?
+            (
+
+              <input type="radio" id="cal6" name={ `Calificacion${indexPregunta}` } value="6"  checked={true}/>
+            ):
+            (
+              <input type="radio" id="cal6" name={ `Calificacion${indexPregunta}` } value="6" />
+
+            )
+          }
           <span
             style={{
               position: "relative",
@@ -106,7 +170,17 @@ function PreguntaCerradaEncuesta({ preguntaCerrada }) {
 
 
         <label for="contactChoice1">
-          <input type="radio" id="cal7" name="Calificacion" value="7" checked />
+          {
+            respuesta === 7 ?
+            (
+
+              <input type="radio" id="cal7" name={ `Calificacion${indexPregunta}` } value="7" checked={true} />
+            ):
+            (
+              <input type="radio" id="cal7" name={ `Calificacion${indexPregunta}` } value="7"  />
+
+            )
+          }
           <span
             style={{
               position: "relative",
@@ -120,7 +194,17 @@ function PreguntaCerradaEncuesta({ preguntaCerrada }) {
         </label>
 
         <label for="contactChoice1">
-          <input type="radio" id="cal8" name="Calificacion" value="8" checked />
+          {
+            respuesta === 8 ?
+            (
+              <input type="radio" id="cal8" name={ `Calificacion${indexPregunta}` } value="8"  checked={true}/>
+
+            ):
+            (
+              <input type="radio" id="cal8" name={ `Calificacion${indexPregunta}` } value="8"  />
+
+            )
+          }
           <span
             style={{
               position: "relative",
@@ -135,7 +219,17 @@ function PreguntaCerradaEncuesta({ preguntaCerrada }) {
 
 
         <label for="contactChoice1">
-          <input type="radio" id="cal9" name="Calificacion" value="9" checked />
+          {
+            respuesta === 9?
+            (
+              <input type="radio" id="cal9" name={ `Calificacion${indexPregunta}` } value="9" checked={true} />
+
+            ):
+            (
+              <input type="radio" id="cal9" name={ `Calificacion${indexPregunta}` } value="9"  />
+
+            )
+          }
           <span
             style={{
               position: "relative",
@@ -149,7 +243,17 @@ function PreguntaCerradaEncuesta({ preguntaCerrada }) {
         </label>
 
         <label for="contactChoice1">
-          <input type="radio" id="cal10" name="Calificacion" value="10" checked />
+          {
+            respuesta === 10 ?
+            (
+          <input type="radio" id="cal10" name={ `Calificacion${indexPregunta}` } value="10"  checked={true}/>
+
+            ):
+            (
+          <input type="radio" id="cal10" name={ `Calificacion${indexPregunta}` } value="10"  />
+
+            )
+          }
           <span
             style={{
               position: "relative",
@@ -163,7 +267,7 @@ function PreguntaCerradaEncuesta({ preguntaCerrada }) {
         </label>
         
       </div>
-    </div>
+  </div>
   );
 }
 

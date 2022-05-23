@@ -1,0 +1,259 @@
+.fondo-display-PopUpEncuesta-responder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    /* background: #000; */
+    position: absolute;
+    /* background: #000; */
+    /* opacity: 0.6; */
+
+    z-index: 50;
+
+}
+
+
+.ocultarEncuesta {
+    display: none;
+}
+
+.fondo-display-PopUpEncuesta-responder .contenedor-encuesta {
+    height: 90%;
+    width: 100%;
+    max-width: 650px;
+    background: #fff;
+    border-radius: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-style: solid;
+    z-index: 100;
+    box-shadow: 3px 7px 47px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 3px 7px 47px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 7px 47px 0px rgba(0,0,0,0.75);
+}   
+
+.contenedor-encuesta .encabezado-contenedor-encuesta {
+    height: 15%;
+    width: 100%;
+    /* background: pink; */
+    border-radius: 25px 25px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px 0 50px;
+}
+
+.encabezado-contenedor-encuesta .encabezado-izq-encuesta {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* background: green; */
+
+}
+.encabezado-contenedor-encuesta .encabezado-izq-encuesta .encabezado-izq-encuesta-texto {
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+
+}
+
+
+.encabezado-contenedor-encuesta .encabezado-der-encuesta {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.encabezado-der-encuesta .btn-encabezado-encuesta {
+    background: #DA1639;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    font-weight:500;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    max-height: 50px;
+    max-width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    right: -10px;
+
+}
+
+
+.contenedor-encuesta .encabezado-contenedor-encuesta-tipo3 {
+    height: 15%;
+    width: 100%;
+    /* background: pink; */
+    border-radius: 25px 25px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px 0 50px;
+}
+
+.encabezado-contenedor-encuesta-tipo3 .encabezado-izq-encuesta {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* background: green; */
+
+}
+.encabezado-contenedor-encuesta-tipo3 .encabezado-izq-encuesta .encabezado-izq-encuesta-texto {
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+
+}
+
+
+
+
+.contenedor-encuesta .contenido-contenedor-encuesta {
+    height: 75%;
+    width: 100%;
+    /* background: purple; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: scroll;
+
+}
+
+.contenedor-encuesta .contenido-contenedor-encuesta .contenedor-espacio-encuesta-1{
+    height: 400px;
+    width: 100%;
+    margin-bottom: 200px;
+}
+.contenedor-encuesta .contenido-contenedor-encuesta .contenedor-espacio-encuesta-2{
+    height: 400px;
+    width: 100%;
+
+}
+
+.contenedor-encuesta .contenido-contenedor-encuesta .contenedor-pregunta-encuesta-cerrada {
+    min-height: 110px;
+    max-height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 10px 0;
+}
+
+.contenedor-encuesta .contenido-contenedor-encuesta .contenedor-pregunta-encuesta-abierta {
+    min-height: 185px;
+    max-height: 185px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 10px 0;
+}
+
+.contenedor-encuesta .contenido-contenedor-encuesta .contenedor-pregunta-encuesta-imagen {
+    min-height: 200px;
+    max-height: 185px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 500px 0 10px 0;
+    /* background: #1624DA; */
+    width: 100%;
+}
+.contenedor-encuesta .contenido-contenedor-encuesta .contenedor-pregunta-encuesta-imagen-tipo3 {
+    min-height: 200px;
+    max-height: 185px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 500px 0 10px 0;
+    /* background: #1624DA; */
+    width: 100%;
+    flex-direction: column;
+}
+
+.contenedor-encuesta .contenido-contenedor-encuesta .contenedor-pregunta-encuesta-imagen-tipo3 .imagen-encuesta-tipo3 {
+    margin-top: 30px;
+    max-height: 180px;
+}
+
+.contenedor-pregunta-encuesta-imagen .contenedor-subirImg {
+    width: 100%;
+    height: 100%;
+    /* background: #DA1639; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    /* background: #e6e6e6; */
+
+}
+
+.contenedor-pregunta-encuesta-imagen .contenedor-subirImg .texto-evidencia-encuesta {
+    font-size: 2rem;
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background: #CCCCCC;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 500;
+    color: #717171;
+    cursor: pointer;
+}
+
+
+.contenedor-encuesta .footer-contenedor-encuesta {
+    height: 10%;
+    width: 100%;
+    /* background: #DA1639; */
+    border-radius: 0 0 25px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-encuesta .footer-contenedor-encuesta .boton-footer-encuesta {
+    height: 70%;
+    min-height: 30px;
+    width: 25%;
+    min-width: 150px;
+    border-radius: 5px;
+    background: #1624DA;
+    color: #ffff;
+    font-weight: 500;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.contenedor-encuesta .footer-contenedor-encuesta .boton-footer-encuesta-tipo3 {
+    height: 70%;
+    min-height: 30px;
+    width: 25%;
+    min-width: 150px;
+    border-radius: 5px;
+    background: #525252;
+    color: #ffff;
+    font-weight: 500;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+
+
