@@ -94,7 +94,7 @@ const RegistroAsesoradoResumen = () => {
 
                         <p className={ 'etiqueta-carrera-InfPerUsuario' }  >
                             <span style={{fontWeight: '600'}}>Carrera: </span> 
-                            { carreraUser ? carreraUser.slice(0, carreraUser.indexOf(" ")) : null }
+                            { carreraUser ? carreraUser : null }
                         </p>
                         
                         <p className={ 'etiqueta-telefono-InfPerUsuario' }  >

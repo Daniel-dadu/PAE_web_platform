@@ -30,9 +30,6 @@ let progressBar = {
 
 function RegistroAsesoradoDatos() {
 
-    // Limpiamos el local storage
-    // localStorage.clear()
-
     const matriculaUser = localStorage.registro1_matricula
     const contrasenaUser = localStorage.registro1_contrasena
     const nombreUser = localStorage.registro1_nombre

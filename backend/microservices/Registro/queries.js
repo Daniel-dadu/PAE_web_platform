@@ -49,11 +49,14 @@ const politica_vigente = (_request, response) => {
 
 const nuevo_asesorado = (request, response) => {
     const matricula = request.body.matricula
+    const contrasena = request.body.contrasena
+
     const nombre = request.body.nombre
     const apellidoPaterno = request.body.apellidoPaterno
     const apellidoMaterno = request.body.apellidoMaterno
     const fotoPerfil = request.body.fotoPerfil
     const telefono = request.body.telefono
+    
     const carrera = request.body.carrera
     
     const consulta = `INSERT INTO "Usuario" VALUES ($1, 'asesorado', $2, $3, $4, $5, $6, CURRENT_TIMESTAMP, 'activo');`
