@@ -39,10 +39,8 @@ EG1003
 Optativa de ciencias sociales y del comportamiento
 IN1001B
 Diseño y análisis de experimentos para la innovación ingenieril
-                                         (A)
 IN1002B
 Desarrollo de proyectos de análisis de datos
-                                         (B)
 M1011
 Análisis de equilibrio estático
 MA1034
@@ -51,10 +49,8 @@ MA1035
 Modelación en ingeniería mediante sistemas dinámicos
 TE1020
 Análisis de circuitos eléctricos
-                                         (C)
 VA1001B
 Tópico de exploración
-                                         (D)
 
 Cuarto Semestre
 CV2001B
@@ -97,7 +93,6 @@ CV2009B
 Diseño estructural con concreto reforzado y acero
 
 Séptimo Semestre 
- (1)
 OP3091
 Optativa Profesional I
 OP3092

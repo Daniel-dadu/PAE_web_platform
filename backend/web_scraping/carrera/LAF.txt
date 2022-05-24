@@ -97,7 +97,6 @@ FZ2024
 Modelación y programación financiera
 
 Sexto Semestre 
- (1)
 OP3091
 Optativa Profesional I
 OP3092
@@ -112,7 +111,6 @@ OP3096
 Optativa profesional VI
 
 Séptimo Semestre 
- (2)
 VA3111
 Tópicos I
 VA3112
