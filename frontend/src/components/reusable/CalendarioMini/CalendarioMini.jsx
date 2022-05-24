@@ -60,16 +60,10 @@ function makeCalendarioMini(calendar, year, monthIndex){
 
 /*
 El componente recibe 3 valores.
-    -enabledDays: un json con el nombre del mes correspodiante al index como 
-    llave, y una lista de los dias habiles.
-        Ejemplo:
-            {
-                "Abril": [1, 2, 3, 5, 20, 21, 30, 31]
-            }
-
+    -enabledDays: un json con el nombre del mes correspodiante al index como llave, y una lista de los dias habiles.
+    Ejemplo: { "Abril": [1, 2, 3, 5, 20, 21, 30, 31] }
     -year: el año actual.
-    -montIndex: El mes que se desea mostrar, por defecto es 0, y no puede 
-    ser negativo.
+    -montIndex: El mes que se desea mostrar, por defecto es 0, y no puede ser negativo.
     -minMonth: El primer mes que debe mostrar el minicalendario
     -maxMonth: El ultimo mes que debe mostrar el minicalendario
 
@@ -104,18 +98,28 @@ function CalendarioMini(){
     // Variable que guarda el nombre del mes en string, el cual obtiene de enabledDays
     const [monthName, setMonthName] = useState(Object.keys(enabledDays));
 
+    // Es hook se ejecuta por defecto siempre que se modifique alguno de los valores en sus dependencias
+    // En este caso, cuando se cambia el valor del month, se hace la ejecución de la función de adentro
     useEffect(() => {  
+
+        // Se establecen los parámetros de la request a la API
         const config = {
             method: 'get',
             url: `http://20.225.209.57:3094/asesoria/get_dias/?uf=${localStorage.asesoria_uf}&anio=${year}&mes=${month}`,
             headers: { }
         }
         
+        // Se hace la request y, si es exitosa, se actualizan las variables con sus hooks
         axios(config)
         .then(response => {
-            setEnabledDays(response.data);
-            setMonthName(Object.keys(response.data))
-            setMiniCalendario(makeCalendarioMini(response.data, year, month-1));
+            // Se guarda la respuesta de la API, que es un objeto con el nombre del mes y días disponibles de ese mes 
+            const diasDisponibles = response.data // Ejemplo: {'Mayo': [1,4,6,8]}
+            // Se actualizan los días disponibles
+            setEnabledDays(diasDisponibles);
+            // Se obtiene el nombre del mes y se actualiza
+            setMonthName(Object.keys(diasDisponibles))
+            // Se vuelve a generar el mini calendario con la función makeCalendarioMini y los nuevos días disponibles
+            setMiniCalendario(makeCalendarioMini(diasDisponibles, year, month-1));
         })
         .catch(error => {
             alert("Error con API")
