@@ -9,7 +9,7 @@ Para usar el componente de PopUpGeneral, se toman en cuanta los properties que s
   + tipoPopUpGeneral . El valor default es true, con este se establece si aparece el PopUp sencillo o el grande.
                         ( true -> abre PopUp chico. false -> abre el PopUp grande ).
   + nombreEliminar  . El valor se encuentra por default la de Lupita Lozano, pero podemos mandar cualquier nombre que necesitams.
-  + state . Property que se encarga de manejar los cambios y apareciones.
+  + state . Property que se encarga de manejar los cambios y apariciones.
   + function. recibe la funcion que hace que funcione el useState de la parte en donde estamos invocando el componente.
 
   **Nota: cuando se haga uso de este componente, es importe hacer uso de useState, en el componente o View en donde se quiera usar
