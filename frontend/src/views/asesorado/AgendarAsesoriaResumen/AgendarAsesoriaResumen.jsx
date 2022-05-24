@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react'
 import './AgendarAsesoriaResumen.css'
-import info from './info.json'
 import { useNavigate } from "react-router-dom"
 
 import { AgendarAsesoria, TarjetaInformacion, dateFunctions } from '../../../routeIndex'
