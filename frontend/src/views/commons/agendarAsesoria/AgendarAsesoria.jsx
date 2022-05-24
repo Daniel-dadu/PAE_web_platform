@@ -88,7 +88,7 @@ function AgendarAsesoria({
         }
 
         // Se entra en caso de que el botón se ejecute en la view 2 - AgendarAsesoriaDuda
-        if(data.view === 2) {
+        else if(data.view === 2) {
 
             // Eliminamos la duda y las imagenes que puedan estar guardadas (por si usa el botón de atrás)
             localStorage.removeItem('asesoria_duda')

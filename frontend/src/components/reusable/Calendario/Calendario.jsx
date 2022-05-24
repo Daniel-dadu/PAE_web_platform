@@ -32,7 +32,7 @@ const Calendario = ({
 
         let currentDate = new Date(anio, dateFunctions.monthsEnNumero[mes], i);
 
-        if(dateFunctions.getNameDay(currentDate.getDay()) != "Sabado" && dateFunctions.getNameDay(currentDate.getDay()) != "Domingo"){
+        if(dateFunctions.getNameDay(currentDate.getDay()) !== "Sabado" && dateFunctions.getNameDay(currentDate.getDay()) !== "Domingo"){
             calendarDates[i] = dateFunctions.getNameDay(currentDate.getDay());
         }
 

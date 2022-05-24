@@ -38,17 +38,15 @@ export {default as CalendarioMini } from './components/reusable/CalendarioMini/C
 export {default as AgendarAsesoria } from './views/commons/agendarAsesoria/AgendarAsesoria.jsx'
 export {default as AgendarAsesoriaUF } from './views/asesorado/agendarAsesoriaUF/AgendarAsesoriaUF.jsx'
 export {default as AgendarAsesoriaDuda } from './views/asesorado/agendarAsesoriaDuda/AgendarAsesoriaDuda.jsx'
+export {default as AgendarAsesoriaCalendario } from './views/asesorado/agendarAsesoriaCalendario/AgendarAsesoriaCalendario.jsx'
+export {default as AgendarAsesoriaHora } from './views/asesorado/agendarAsesoriaHora/AgendarAsesoriaHora.jsx'
+export {default as AgendarAsesoriaResumen } from './views/asesorado/AgendarAsesoriaResumen/AgendarAsesoriaResumen.jsx'
 
 export {default as CambioMesPeriodo } from './components/reusable/CambioMesPeriodo/CambioMesPeriodo.jsx'
 
 export {default as PopUpInformacionAsesoria } from './components/reusable/PopUpInformacionAsesoria/PopUpInformacionAsesoria.jsx'
 
-export {default as AgendarAsesoriaCalendario } from './views/asesorado/agendarAsesoriaCalendario/AgendarAsesoriaCalendario.jsx'
-export {default as AgendarAsesoriaHora } from './views/asesorado/agendarAsesoriaHora/AgendarAsesoriaHora.jsx'
-
 export {default as TarjetaInformacion } from './components/reusable/TarjetaInformacion/TarjetaInformacion.jsx'
-
-export {default as AgendarAsesoriaResumen } from './views/asesorado/AgendarAsesoriaResumen/AgendarAsesoriaResumen.jsx'
 
 export {default as BotonCambioPerfil } from './components/reusable/BotonCambioPerfil/BotonCambioPerfil.jsx'
 export {default as PreguntaAbiertaEncuesta } from './components/reusable/PreguntaAbiertaEncuesta/PreguntaAbiertaEncuesta.jsx'
@@ -62,14 +60,16 @@ export {default as RegistroAsesorCondiciones } from './views/asesor/registroAses
 export {default as AdministrarUsuarios } from './views/directivo/perfil/administrarUsuarios/AdministrarUsuarios.jsx'
 export {default as CalendarioDisponibilidad } from './components/reusable/CalendarioDisponibilidad/CalendarioDisponibilidad.jsx'
 
+export {default as RegistroAsesoradoDatos } from './views/asesorado/registroAsesoradoDatos/RegistroAsesoradoDatos.jsx'
 export {default as RegistroAsesoradoCondiciones } from './views/asesorado/registroAsesoradoCondiciones/RegistroAsesoradoCondiciones.jsx'
+export {default as RegistroAsesoradoResumen } from './views/asesorado/registroAsesoradoResumen/RegistroAsesoradoResumen.jsx'
+
 export {default as PanelNotificaciones } from './views/commons/panelNotificaciones/PanelNotificaciones.jsx'
 
 export {default as RegistroAsesorDatos } from './views/asesor/registroAsesorDatos/RegistroAsesorDatos.jsx'
 export {default as RegistroAsesorHorario } from './views/asesor/registroAsesorHorario/RegistroAsesorHorario.jsx'
 
 
-export {default as RegistroAsesoradoDatos } from './views/asesorado/registroAsesoradoDatos/RegistroAsesoradoDatos.jsx'
 export {default as AdministrarUsuariosDirectivos } from './views/commons/administrarUsuariosDirectivos/AdministrarUsuariosDirectivos.jsx'
 export {default as ListaUsuarios } from './components/reusable/ListaUsuarios/ListaUsuarios.js';
 export {default as InformacionPersonalUsuario } from './components/reusable/InformacionPersonalUsuario/InformacionPersonalUsuario.js';
@@ -81,6 +81,9 @@ export {default as ListaUnidadesDeFormacionAsesor } from './components/reusable/
 
 export {default as Perfil } from './views/commons/perfil/Perfil.jsx'
 export {default as imageCompressor } from './assets/reusableFunctions/imageCompressor.js'
+
+export {default as ImagenPerfilCambiar } from './components/reusable/ImagenPerfilCambiar/ImagenPerfilCambiar.jsx'
+
 export {default as AdministrarPerfilAsesoradoDirectivos } from './views/directivo/administrarPerfilAsesoradoDirectivos/administrarPerfilAsesoradoDirectivos.jsx'
 export {default as PopUpGeneral } from './components/reusable/PopUpGeneral/PopUpGeneral.js'
 export {default as RegistroAsesorResumen } from './views/asesor/registroAsesorResumen/RegistroAsesorResumen.jsx'

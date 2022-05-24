@@ -28,9 +28,10 @@ const App = () => {
         <Route path='/ezequiel' element={<Ezequiel/>} />
         <Route path='/fernando' element={<Fernando/>} />
 
-        {/* Views de Asesorado */}
+        {/* Views de Registro de Asesorado */}
         <Route path='/registroAsesoradoCondiciones' element={<RegistroAsesoradoCondiciones/>} />
         <Route path='/registroAsesoradoDatos' element={<RegistroAsesoradoDatos/>} />
+        <Route path='/registroAsesoradoResumen' element={<RegistroAsesoradoResumen/>} />
 
         {/* Views de Asesor  */}
         <Route path='/registroAsesorCondiciones' element={<RegistroAsesorCondiciones/>} />
@@ -43,9 +44,6 @@ const App = () => {
         <Route path='/administrarUsuarios' element={<AdministrarUsuarios/>} />
         <Route path='/informacionUsuarios' element={<AdministrarUsuariosDirectivos/>} />
         <Route path='/administrarPerfilAsesorados' element={<AdministrarPerfilAsesoradoDirectivos/>} />
-
-        
-
 
 
         {/* Esta última ruta es a donde se redirige al usuario cuando se busca una ruta inexistente */}
