@@ -17,7 +17,7 @@ driver.set_page_load_timeout(10)
 
 #//////////////////////////////////////////////////////////////////////////////
 
-def scraping(URL):
+def scraping(URL, wait):
     #Obtener la carrera
     #URL = "https://samp.itesm.mx/Programas/VistaPrograma?clave=AMC19&modoVista=Default&idioma=ES&cols=0"
 
@@ -27,7 +27,7 @@ def scraping(URL):
     #Renderizar la web dinamica
 
     driver.get(URL)
-    sleep(10)
+    sleep(wait)
 
     #//////////////////////////////////////////////////////////////////////////////
     #Buscar las UF de la carrera

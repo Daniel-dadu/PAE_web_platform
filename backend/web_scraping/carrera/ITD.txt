@@ -91,6 +91,7 @@ TI3003B
 Aplicación de analítica y gobierno de datos
 
 Séptimo Semestre 
+ (1)
 OP3091
 Optativa Profesional I
 OP3092

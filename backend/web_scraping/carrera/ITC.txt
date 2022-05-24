@@ -75,6 +75,7 @@ TC3001B
 Desarrollo de software
 
 Séptimo Semestre 
+ (1)
 OP3091
 Optativa Profesional I
 OP3092

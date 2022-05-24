@@ -13,6 +13,7 @@ Q1028
 Fundamentación de la estructura y transformación de la materia
 Q1029
 Análisis de la estructura y transformación de la materia
+                                         (A)
 TC1028
 Pensamiento computacional para ingeniería
 
@@ -23,6 +24,7 @@ F1008
 Experimentación física y pensamiento estadístico
 F1018B
 Aplicación de la termodinámica en ciencias
+                                         (B)
 F1019B
 Análisis de sistemas eléctricos en ciencias
 F1020B
@@ -31,10 +33,13 @@ MA1029
 Modelación matemática intermedia
 MA1030
 Modelación matricial
+                                         (C)
 MA1031
 Análisis estadístico
+                                         (D)
 Q1021
 Experimentación química y pensamiento estadístico fundamental
+                                         (E)
 
 Tercer Semestre
 EG1003

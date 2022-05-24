@@ -9,7 +9,6 @@ https://samp.itesm.mx/Programas/VistaPrograma?clave=LEC19&modoVista=Default&idio
 https://samp.itesm.mx/Programas/VistaPrograma?clave=LED19&modoVista=Default&idioma=ES&cols=0
 https://samp.itesm.mx/Programas/VistaPrograma?clave=LRI19&modoVista=Default&idioma=ES&cols=0
 https://samp.itesm.mx/Programas/VistaPrograma?clave=LTP19&modoVista=Default&idioma=ES&cols=0
-https://samp.itesm.mx/Programas/VistaPrograma?clave=ESC19&modoVista=Default&idioma=ES&cols=0
 https://samp.itesm.mx/Programas/VistaPrograma?clave=LC%2019&modoVista=Default&idioma=ES&cols=0
 https://samp.itesm.mx/Programas/VistaPrograma?clave=LEI19&modoVista=Default&idioma=ES&cols=0
 https://samp.itesm.mx/Programas/VistaPrograma?clave=LLE19&modoVista=Default&idioma=ES&cols=0
@@ -29,7 +28,6 @@ https://samp.itesm.mx/Programas/VistaPrograma?clave=ICT19&modoVista=Default&idio
 https://samp.itesm.mx/Programas/VistaPrograma?clave=IRS19&modoVista=Default&idioma=ES&cols=0
 https://samp.itesm.mx/Programas/VistaPrograma?clave=ITC19&modoVista=Default&idioma=ES&cols=0
 https://samp.itesm.mx/Programas/VistaPrograma?clave=ITD19&modoVista=Default&idioma=ES&cols=0
-https://samp.itesm.mx/Programas/VistaPrograma?clave=AMC19&modoVista=Default&idioma=ES&cols=0
 https://samp.itesm.mx/Programas/VistaPrograma?clave=IIT19&modoVista=Default&idioma=ES&cols=0
 https://samp.itesm.mx/Programas/VistaPrograma?clave=BIE22&modoVista=Default&idioma=ES&cols=0
 https://samp.itesm.mx/Programas/VistaPrograma?clave=BME22&modoVista=Default&idioma=ES&cols=0

@@ -63,6 +63,7 @@ SD1018
 Introducción a la clínica
 VA1001B
 Tópico de exploración
+                                         (A)
 
 Cuarto Semestre
 EG1004
@@ -85,10 +86,12 @@ EG1005
 Optativa de ética y ciudadanía
 MB2004B
 Bases de los sistemas nervioso y endócrino
+                                         (B)
 MB2005B
 Farmacoterapia
 MB2006B
 Propedéutica médica
+                                         (C)
 MB2062
 Ecosistema endócrino y neural
 MB2063
@@ -99,8 +102,10 @@ Procesos fisiopatológicos
 Sexto Semestre
 MB2012B
 Trastornos endócrinos y metabólicos
+                                         (D)
 MB2013B
 Desórdenes neurológicos
+                                         (E)
 MB2069
 Fisiopatología de las enfermedades infecciosas
 MB2070
@@ -117,6 +122,7 @@ SD2001B
 Modelo multidisciplinario de atención en salud
 
 Séptimo Semestre 
+ (1)
 OP3091
 Optativa Profesional I
 OP3092

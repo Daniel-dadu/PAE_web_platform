@@ -91,6 +91,7 @@ MA2008B
 Análisis numérico para la optimización no-lineal
 
 Séptimo Semestre 
+ (1)
 OP3091
 Optativa Profesional I
 OP3092
