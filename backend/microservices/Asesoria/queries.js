@@ -78,19 +78,21 @@ const getDiasDisponibles = (request, response) => {
 
 }
 
-const getHoras_ufDia = (request, response) => {
+const getHorasDisponibles = (request, response) => {
 
-  const uf = request.body.uf
-  const dia = request.body.dia
+  const uf = request.query.uf
+  const anio = request.query.anio
+  const mes = request.query.mes
+  const dia = request.query.dia
 
   // Consulta que regresa las horas disponibles para cierta materia y descartando los horarios de disponibilidad pasados
-  const consulta = `SELECT DISTINCT("HorarioDisponible"."fechaHora"::time), "HorarioDisponible"."idHorarioDisponible" FROM "AsesorUnidadFormacion", "HorarioDisponiblePeriodo", "HorarioDisponible" WHERE "AsesorUnidadFormacion"."idUsuario" = "HorarioDisponiblePeriodo"."idAsesor" AND "HorarioDisponiblePeriodo"."idHorarioDisponiblePeriodo" = "HorarioDisponible"."idHorarioDisponiblePeriodo" AND "HorarioDisponible"."status" = 'disponible' AND "AsesorUnidadFormacion"."idUF" = $1 AND "HorarioDisponible"."fechaHora"::date = $2`
+  const consulta = `SELECT * FROM get_horas_disponibles($1, $2, $3, $4);`
 
-  pool.query(consulta, [uf, dia], (error, results) => {
+  pool.query(consulta, [uf, anio, mes, dia], (error, results) => {
     if(error){
       throw error
     } else {
-      response.status(200).json(results.rows)
+      response.status(200).json({horas_disponibles: results.rows.map(object => object.horas_disponibles)})
     }
   })
 }
@@ -199,7 +201,7 @@ module.exports = {
   getCarreras,
   getUF_carreraSemestre,
   getDiasDisponibles,
-  getHoras_ufDia,
+  getHorasDisponibles,
   getInfo_ufFechaHora,
   createAsesoria,
   setAsesoria_updateDuda,

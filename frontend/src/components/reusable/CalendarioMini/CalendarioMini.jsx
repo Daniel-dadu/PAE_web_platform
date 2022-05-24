@@ -84,7 +84,7 @@ function CalendarioMini(){
     const navigate = useNavigate()
 
     useEffect(() => {
-        // Si no se seleccionó una asesoría, se redirecciona al usuario al calendario
+        // Si no se seleccionó una asesoría, se redirecciona al usuario a la primera pantalla
         if(!localStorage.asesoria_uf) {
             navigate('/agendarAsesoriaUF/error')
         }

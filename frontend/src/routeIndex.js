@@ -84,3 +84,5 @@ export {default as ImagenPerfilCambiar } from './components/reusable/ImagenPerfi
 export {default as AdministrarPerfilAsesoradoDirectivos } from './views/directivo/administrarPerfilAsesoradoDirectivos/administrarPerfilAsesoradoDirectivos.jsx'
 export {default as PopUpGeneral } from './components/reusable/PopUpGeneral/PopUpGeneral.js'
 export {default as RegistroAsesorResumen } from './views/asesor/registroAsesorResumen/RegistroAsesorResumen.jsx'
+
+export {default as dateFunctions } from './assets/reusableFunctions/dateFunctions.js'

@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './AgendarAsesoriaHora.css'
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
+import axios from 'axios'
 
-import info from './info.json'
-import { AgendarAsesoria, SeleccionarHorarioAsesoria } from '../../../routeIndex'
+import { AgendarAsesoria, SeleccionarHorarioAsesoria, dateFunctions } from '../../../routeIndex'
 
 let progressBar = {
   "currentStep": 3,
@@ -44,6 +44,42 @@ function AgendarAsesoriaHora() {
 
   const { anio, mes, dia } = useParams();
 
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    // Si no se seleccionó una asesoría, se redirecciona al usuario a la primera pantalla
+    if(!localStorage.asesoria_uf) {
+      navigate('/agendarAsesoriaUF/error')
+    }
+  })
+
+  const [horasDisponibles, setHorasDisponibles] = useState({
+    day : "Cargando...",
+    hours : []
+  })
+
+  useEffect(() => {
+    var config = {
+      method: 'get',
+      url: `http://20.225.209.57:3094/asesoria/get_horas/?uf=${localStorage.asesoria_uf}&anio=${anio}&mes=${mes}&dia=${dia}`,
+      headers: { }
+    };
+    
+    axios(config)
+    .then(response => {
+      setHorasDisponibles({
+        day: dia + " de " + dateFunctions.getMonthEspanol(mes-1),
+        hours: response.data.horas_disponibles.map(hora => hora + ":00")
+      })
+    })
+    .catch(_error => {
+      setHorasDisponibles({
+        day: "Error, intente con otro día",
+        hours: []
+      })
+    })
+
+  }, [setHorasDisponibles, anio, mes, dia])
 
   return (
     <AgendarAsesoria 
@@ -54,10 +90,7 @@ function AgendarAsesoriaHora() {
     sizeTarjetaMaestraMini="normal" 
     progressBarJSON={progressBar}>
         <div className='horario_container'>
-          <SeleccionarHorarioAsesoria date={info}/>
-        </div>
-        <div>
-          {anio} <br /> {mes} <br /> {dia}
+          <SeleccionarHorarioAsesoria date={horasDisponibles}/>
         </div>
     </AgendarAsesoria>
   )
