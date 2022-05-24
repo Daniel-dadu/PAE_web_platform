@@ -43,7 +43,7 @@ function AgendarAsesoriaDuda() {
     <AgendarAsesoria 
     showAtrasBtn={true} 
     btnAtrasRoute="./AgendarAsesoriaDuda" 
-    btnSiguienteRoute="./AgendarAsesoriaHora"
+    btnSiguienteProps={{view: 3, props: null}}
     showTarjetaMaestraMini={true} 
     sizeTarjetaMaestraMini="normal" 
     progressBarJSON={progressBar}>

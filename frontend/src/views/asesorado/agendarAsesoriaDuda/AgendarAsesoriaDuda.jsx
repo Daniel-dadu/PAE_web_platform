@@ -53,13 +53,6 @@ function AgendarAsesoriaDuda() {
       navigate('/agendarAsesoriaUF/ok')
   }, [navigate])
 
-  // // En caso de que el usuario cierre la pestaña o se cambie a otra ruta, se eliminan los datos de la asesoría
-  // window.addEventListener("unload", () => {
-  //   localStorage.removeItem('asesoria_uf')
-  //   localStorage.removeItem('asesoria_duda')
-  //   for(let i = 1; i <= 3; i++) localStorage.removeItem(`asesoria_imagen${i}`)
-  // })
-
   // Revisando si hay una duda en el localStorage y cargándolas en caso de que sí
   // Esto es útil para cuando se regresa a esta vista con el botón 'atras'
   const [dudaUser, setDudaUser] = useState(localStorage.asesoria_duda ? localStorage.asesoria_duda : '')

@@ -62,7 +62,7 @@ function AgendarAsesoriaUF() {
   // Hook para verificar si se recibió un error en la ruta
   useEffect(() => {
     if(statusasesoriaurl === "error" && countErrorMessage === 0) {
-      alert("Error, no se llenaron los campos correctamente")
+      alert("Error, intente hacer la reservación nuevamente")
       navigate('/agendarAsesoriaUF/ok') // Se redirige al usuario a la ruta con el ok
       window.location.reload(false) // Se recarga la página para limpiar los campos seleccionados
       countErrorMessage++

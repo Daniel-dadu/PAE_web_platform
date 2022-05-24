@@ -129,6 +129,11 @@ function AgendarAsesoria({
             navigate('/agendarAsesoriaCalendario')
 
         }
+
+        // Se entra en caso de que el botón se ejecute en la view 2 - AgendarAsesoriaCalendario
+        else if(data.view === 3) {
+            alert("Selecciona uno de los días en color verde para visualizar los horarios disponibles en dicho día.\nSi no hay días en verde, ya no tenemos días disponibles para ofrecer asesorías :(")
+        }
         
         setLoadingNext(false)
     }

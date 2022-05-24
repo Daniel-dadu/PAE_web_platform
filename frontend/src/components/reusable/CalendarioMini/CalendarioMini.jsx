@@ -86,7 +86,7 @@ function CalendarioMini(){
     useEffect(() => {
         // Si no se seleccionó una asesoría, se redirecciona al usuario al calendario
         if(!localStorage.asesoria_uf) {
-            navigate('/calendario')
+            navigate('/agendarAsesoriaUF/error')
         }
     })
     
@@ -123,9 +123,9 @@ function CalendarioMini(){
             setMinMonth(mesesInicioFinSemestre.mes_inicio_semestre)
             setMaxMonth(mesesInicioFinSemestre.mes_fin_semestre)
         })
-        .catch(error => {
-            alert("Error con API: ", error)
-            navigate('/landingPage')
+        .catch(_error => {
+            navigate('/agendarAsesoriaUF/error')
+            return
         })
     }, [setMinMonth, setMaxMonth, navigate])
 
@@ -161,9 +161,9 @@ function CalendarioMini(){
             // Se vuelve a generar el mini calendario con la función makeCalendarioMini y los nuevos días disponibles
             setMiniCalendario(makeCalendarioMini(diasDisponibles, year, month-1));
         })
-        .catch(error => {
-            alert("Error con API:", error)
-            navigate('/landingPage')
+        .catch(_error => {
+            navigate('/agendarAsesoriaUF/error')
+            return
         })
 
     }, [year, month, setEnabledDays, setMonthName, setMiniCalendario, navigate])
@@ -197,10 +197,6 @@ function CalendarioMini(){
                     {miniCalendario}
                 </tbody>
             </table>
-
-            <div>
-                <button onClick={() => console.log(month)}> mes </button>
-            </div>
         </div>
     )   
 }

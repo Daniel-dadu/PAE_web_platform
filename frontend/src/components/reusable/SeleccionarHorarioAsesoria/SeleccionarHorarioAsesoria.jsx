@@ -1,7 +1,7 @@
 import React from 'react'
 import "./SeleccionarHorarioAsesoria.css"
 
-function SeleccionarHorarioAsesoria(props){
+function SeleccionarHorarioAsesoria({ date }){
      /*
     El componente recibe 1 solo valor de tipo json con las horas de 
     disponibilidad para asesoria de un dia, esta conformado por:
@@ -24,15 +24,15 @@ function SeleccionarHorarioAsesoria(props){
     return(
         <div className='seleccionar_horario_asesoria_container'>
             <div className='seleccionar_horario_asesoria_day'>
-                {props.date.day}
+                {date.day}
             </div>
             <div className='seleccionar_horario_asesoria_info'>
                 Selecciona uno de los horarios disponibles:
             </div>
             <div className='seleccionar_horario_asesoria_hours'>
-                {props.date.hours.map((hour) => {
+                {date.hours.map((hour, index) => {
                     return (
-                        <div className='seleccionar_horario_asesoria_hour_container'>
+                        <div className='seleccionar_horario_asesoria_hour_container' key={index}>
                             <div className='seleccionar_horario_asesoria_hour_button_container'>
                                 <button className='seleccionar_horario_asesoria_hour_button'>{hour}</button>
                             </div>
