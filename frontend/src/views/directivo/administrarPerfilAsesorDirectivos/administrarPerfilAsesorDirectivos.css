@@ -1,0 +1,16 @@
+.containerBtnEliminarCuentaAsesor {
+    padding-left: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.cambio {
+    justify-content: flex-start;
+}
+
+.hide {
+    display: none;
+}
