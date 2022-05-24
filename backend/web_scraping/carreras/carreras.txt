@@ -1,0 +1,231 @@
+AMC
+Ambiente Construido/ Exploración
+https://samp.itesm.mx/Programas/VistaPrograma?clave=AMC19&modoVista=Default&idioma=ES&cols=0
+
+ESC
+Estudios Creativos / Exploración
+https://samp.itesm.mx/Programas/VistaPrograma?clave=ESC19&modoVista=Default&idioma=ES&cols=0
+
+ARQ
+Arquitecto    
+https://samp.itesm.mx/Programas/VistaPrograma?clave=ARQ19&modoVista=Default&idioma=ES&cols=0
+
+LAD
+Licenciado en Arte Digital
+https://samp.itesm.mx/Programas/VistaPrograma?clave=LAD19&modoVista=Default&idioma=ES&cols=0
+
+LDI
+Licenciado en Diseño
+https://samp.itesm.mx/Programas/VistaPrograma?clave=LDI19&modoVista=Default&idioma=ES&cols=0
+
+LUB
+Licenciado en Urbanismo
+https://samp.itesm.mx/Programas/VistaPrograma?clave=LUB19&modoVista=Default&idioma=ES&cols=0
+
+CIS
+Derecho, Economía y Relaciones Internacionales / Exploración
+https://samp.itesm.mx/Programas/VistaPrograma?clave=CIS19&modoVista=Default&idioma=ES&cols=0
+
+LEC
+Licenciado en Economía
+https://samp.itesm.mx/Programas/VistaPrograma?clave=LEC19&modoVista=Default&idioma=ES&cols=0
+
+LED
+Licenciado en Derecho
+https://samp.itesm.mx/Programas/VistaPrograma?clave=LED19&modoVista=Default&idioma=ES&cols=0
+
+LRI
+Licenciado en Relaciones Internacionales
+https://samp.itesm.mx/Programas/VistaPrograma?clave=LRI19&modoVista=Default&idioma=ES&cols=0
+
+LTP
+Licenciado en Gobierno y Transformación Pública
+https://samp.itesm.mx/Programas/VistaPrograma?clave=LTP19&modoVista=Default&idioma=ES&cols=0
+
+ESC
+Estudios Creativos / Exploración   
+https://samp.itesm.mx/Programas/VistaPrograma?clave=ESC19&modoVista=Default&idioma=ES&cols=0
+
+LC
+Licenciado en Comunicación    
+https://samp.itesm.mx/Programas/VistaPrograma?clave=LC%2019&modoVista=Default&idioma=ES&cols=0
+
+LEI
+Licenciado en Innovación Educativa
+https://samp.itesm.mx/Programas/VistaPrograma?clave=LEI19&modoVista=Default&idioma=ES&cols=0
+
+LLE
+Licenciado en Letras Hispánicas   
+https://samp.itesm.mx/Programas/VistaPrograma?clave=LLE19&modoVista=Default&idioma=ES&cols=0
+
+LPE
+Licenciado en Periodismo
+https://samp.itesm.mx/Programas/VistaPrograma?clave=LPE19&modoVista=Default&idioma=ES&cols=0
+
+LTM
+Licenciado en Tecnología y Producción Musical
+https://samp.itesm.mx/Programas/VistaPrograma?clave=LTM19&modoVista=Default&idioma=ES&cols=0
+
+IBQ
+Ingeniería - Bioingeniería y Procesos Químicos (avenida) / Exploración
+https://samp.itesm.mx/Programas/VistaPrograma?clave=IBQ19&modoVista=Default&idioma=ES&cols=0
+
+IAG
+Ingeniero en Biosistemas Agroalimentarios
+https://samp.itesm.mx/Programas/VistaPrograma?clave=IAG19&modoVista=Default&idioma=ES&cols=0
+
+IAL
+Ingeniero en Alimentos
+https://samp.itesm.mx/Programas/VistaPrograma?clave=IAL19&modoVista=Default&idioma=ES&cols=0
+
+IBT
+Ingeniero en Biotecnología
+https://samp.itesm.mx/Programas/VistaPrograma?clave=IBT19&modoVista=Default&idioma=ES&cols=0
+
+IDS
+Ingeniero en Desarrollo Sustentable
+https://samp.itesm.mx/Programas/VistaPrograma?clave=IDS19&modoVista=Default&idioma=ES&cols=0
+
+IQ
+Ingeniero Químico
+https://samp.itesm.mx/Programas/VistaPrograma?clave=IQ%2019&modoVista=Default&idioma=ES&cols=0
+
+ICI
+Ingeniería - Ciencias Aplicadas (avenida) / Exploración
+https://samp.itesm.mx/Programas/VistaPrograma?clave=ICI19&modoVista=Default&idioma=ES&cols=0
+
+IDM
+Ingeniero en Ciencia de Datos y Matemáticas
+https://samp.itesm.mx/Programas/VistaPrograma?clave=IDM19&modoVista=Default&idioma=ES&cols=0
+
+IFI
+Ingeniero Físico Industrial
+https://samp.itesm.mx/Programas/VistaPrograma?clave=IFI19&modoVista=Default&idioma=ES&cols=0
+
+INA
+Ingeniero en Nanotecnología
+https://samp.itesm.mx/Programas/VistaPrograma?clave=INA19&modoVista=Default&idioma=ES&cols=0
+
+ICT
+Ingeniería - Computación y Tecnologías de Información (avenida) / Exploración
+https://samp.itesm.mx/Programas/VistaPrograma?clave=ICT19&modoVista=Default&idioma=ES&cols=0
+
+IRS
+Ingeniero en Robótica y Sistemas Digitales
+https://samp.itesm.mx/Programas/VistaPrograma?clave=IRS19&modoVista=Default&idioma=ES&cols=0
+
+ITC
+Ingeniero en Tecnologías Computacionales
+https://samp.itesm.mx/Programas/VistaPrograma?clave=ITC19&modoVista=Default&idioma=ES&cols=0
+
+ITD
+Ingeniero en Transformación Digital de Negocios
+https://samp.itesm.mx/Programas/VistaPrograma?clave=ITD19&modoVista=Default&idioma=ES&cols=0
+
+AMC
+Ambiente Construido/ Exploración
+https://samp.itesm.mx/Programas/VistaPrograma?clave=AMC19&modoVista=Default&idioma=ES&cols=0
+
+IIT
+Ingeniería - Innovación y Transformación (avenida) / Exploración
+https://samp.itesm.mx/Programas/VistaPrograma?clave=IIT19&modoVista=Default&idioma=ES&cols=0
+
+BIE
+Ingeniero Industrial y de Sistemas
+https://samp.itesm.mx/Programas/VistaPrograma?clave=BIE22&modoVista=Default&idioma=ES&cols=0
+
+BME
+Ingeniero en Mecatrónica
+https://samp.itesm.mx/Programas/VistaPrograma?clave=BME22&modoVista=Default&idioma=ES&cols=0
+
+IC
+Ingeniero Civil
+https://samp.itesm.mx/Programas/VistaPrograma?clave=IC%2019&modoVista=Default&idioma=ES&cols=0
+
+IE
+Ingeniero en Electrónica
+https://samp.itesm.mx/Programas/VistaPrograma?clave=IE%2019&modoVista=Default&idioma=ES&cols=0
+
+IID
+Ingeniero en Innovación y Desarrollo
+https://samp.itesm.mx/Programas/VistaPrograma?clave=IID19&modoVista=Default&idioma=ES&cols=0
+
+IIS
+Ingeniero Industrial y de Sistemas
+https://samp.itesm.mx/Programas/VistaPrograma?clave=IIS19&modoVista=Default&idioma=ES&cols=0
+
+IM
+Ingeniero Mecánico
+https://samp.itesm.mx/Programas/VistaPrograma?clave=IM%2019&modoVista=Default&idioma=ES&cols=0
+
+IMD
+Ingeniero Biomédico
+https://samp.itesm.mx/Programas/VistaPrograma?clave=IMD19&modoVista=Default&idioma=ES&cols=0
+
+IMT
+Ingeniero en Mecatrónica
+https://samp.itesm.mx/Programas/VistaPrograma?clave=IMT19&modoVista=Default&idioma=ES&cols=0
+
+SLD
+Salud / Exploración
+https://samp.itesm.mx/Programas/VistaPrograma?clave=SLD19&modoVista=Default&idioma=ES&cols=0
+
+LBC
+Licenciado en Biociencias
+https://samp.itesm.mx/Programas/VistaPrograma?clave=lbc19&modoVista=Default&idioma=ES&cols=0&modoVista=Default&idioma=ES&cols=
+
+LNB
+Licenciado en Nutrición y Bienestar Integral       
+https://samp.itesm.mx/Programas/VistaPrograma?clave=lnb19&modoVista=Default&idioma=ES&cols=0&modoVista=Default&idioma=ES&cols=
+
+LPS
+Licenciado en Psicología Clínica y de la Salud 
+https://samp.itesm.mx/Programas/VistaPrograma?clave=lps19&modoVista=Default&idioma=ES&cols=0&modoVista=Default&idioma=ES&cols=0
+
+MC
+Médico Cirujano    
+https://samp.itesm.mx/Programas/VistaPrograma?clave=mc%2019&modoVista=Default&idioma=ES&cols=0
+
+MO
+Médico Cirujano Odontólogo     
+https://samp.itesm.mx/Programas/VistaPrograma?clave=mo%2019&modoVista=Default&idioma=ES&cols=0
+
+NEG
+Negocios / Exploración
+https://samp.itesm.mx/Programas/VistaPrograma?clave=neg19&modoVista=Default&idioma=ES&cols=0
+
+BGB
+Licenciado en Negocios Internacionales
+https://samp.itesm.mx/Programas/VistaPrograma?clave=bgb19&modoVista=Default&idioma=ES&cols=0
+
+LAE
+Licenciado en Estrategia y Transformación de Negocios
+https://samp.itesm.mx/Programas/VistaPrograma?clave=lae19&modoVista=Default&idioma=ES&cols=0
+
+LAF
+Licenciado en Finanzas 
+https://samp.itesm.mx/Programas/VistaPrograma?clave=laf19&modoVista=Default&idioma=ES&cols=0&modoVista=Default&idioma=ES&cols=0
+
+LCPF
+Licenciado en Contaduría Pública y Finanzas    
+https://samp.itesm.mx/Programas/VistaPrograma?clave=lcpf19&modoVista=Default&idioma=ES&cols=0
+
+LDE
+Licenciado en Emprendimiento    
+https://samp.itesm.mx/Programas/VistaPrograma?clave=lde19&modoVista=Default&idioma=ES&cols=0&modoVista=Default&idioma=ES&cols=0
+
+LDO
+Licenciado en Desarrollo de Talento y Cultura Organizacional
+https://samp.itesm.mx/Programas/VistaPrograma?clave=ldo19&modoVista=Default&idioma=ES&cols=0
+
+LEM
+Licenciado en Mercadotecnia    
+https://samp.itesm.mx/Programas/VistaPrograma?clave=lem19&modoVista=Default&idioma=ES&cols=0
+
+LIN
+Licenciado en Negocios Internacionales 
+https://samp.itesm.mx/Programas/VistaPrograma?clave=LIN19&modoVista=Default&idioma=ES&cols=0&modoVista=Default&idioma=ES&cols=0
+
+LIT
+Licenciado en Inteligencia de Negocios 
+https://samp.itesm.mx/Programas/VistaPrograma?clave=lit19&modoVista=Default&idioma=ES&cols=0
