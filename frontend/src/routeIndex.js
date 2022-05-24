@@ -6,7 +6,8 @@ export {default as  PerfilAsesor  } from './views/asesor/perfil/PerfilAsesor.jsx
 export {default as  PerfilAsesorado  } from './views/asesorado/perfil/PerfilAsesorado.jsx';
 export {default as PerfilDirectivo } from './views/directivo/perfil/PerfilDirectivo.jsx'
 export {default as EditarPerfil } from './views/commons/editarPerfil/EditarPerfil.jsx'
-export {default as DanielFlores } from './views/componentPreview/DanielFlores/DanielFlores.js';
+// export {default as DanielFlores } from './views/componentPreview/DanielFlores/DanielFlores.js';
+export {default as DanielFlores } from './views/asesor/registroAsesorHorario/RegistroAsesorHorario.jsx';
 
 export {default as DanielMaldonado } from './views/componentPreview/DanielMaldonado/DanielMaldonado.jsx'
 export {default as DanielMunive } from './views/componentPreview/DanielMunive/DanielMunive.jsx'
@@ -66,6 +67,8 @@ export {default as RegistroAsesoradoResumen } from './views/asesorado/registroAs
 export {default as PanelNotificaciones } from './views/commons/panelNotificaciones/PanelNotificaciones.jsx'
 
 export {default as RegistroAsesorDatos } from './views/asesor/registroAsesorDatos/RegistroAsesorDatos.jsx'
+export {default as RegistroAsesorHorario } from './views/asesor/registroAsesorHorario/RegistroAsesorHorario.jsx'
+
 
 export {default as AdministrarUsuariosDirectivos } from './views/commons/administrarUsuariosDirectivos/AdministrarUsuariosDirectivos.jsx'
 export {default as ListaUsuarios } from './components/reusable/ListaUsuarios/ListaUsuarios.js';
