@@ -460,6 +460,34 @@ BEGIN
 END;
 $func$;
 
+-- A partir de una UF, un mes, un año y día, se deben buscar las horas disponibles de esas características
+CREATE OR REPLACE FUNCTION get_horas_disponibles (idUF VARCHAR(50), anio INTEGER, mes INTEGER, dia INTEGER)
+RETURNS TABLE (horas_disponibles DOUBLE PRECISION)
+
+LANGUAGE plpgsql AS $func$
+  
+BEGIN
+  
+  RETURN QUERY
+    SELECT DISTINCT EXTRACT(HOUR FROM "fechaHora") AS horas
+    FROM "HorarioDisponible" 
+    WHERE "idHorarioDisponiblePeriodo" IN (
+      SELECT "idHorarioDisponiblePeriodo" 
+      FROM "HorarioDisponiblePeriodo" 
+      WHERE "idAsesor" IN (
+        SELECT "idUsuario" 
+        FROM "AsesorUnidadFormacion"   
+        WHERE "AsesorUnidadFormacion"."idUF" = idUF
+      )
+    ) 
+    AND "status" = 'disponible'
+    AND EXTRACT(YEAR FROM "fechaHora") = anio
+    AND EXTRACT(MONTH FROM "fechaHora") = mes
+    AND EXTRACT(DAY FROM "fechaHora") = dia;
+
+END;
+$func$;
+
 ------------ PROCEDURES ---------------
 
 -- Procedimiento para hacer el registro de un asesorado
