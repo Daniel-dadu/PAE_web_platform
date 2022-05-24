@@ -1,4 +1,6 @@
-import React , {useState} from 'react'
+import React , {useState, useEffect} from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 import "./CalendarioMini.css"
 
 function makeCalendarioMini(calendar, year, monthIndex){
@@ -55,33 +57,14 @@ function makeCalendarioMini(calendar, year, monthIndex){
     )
 }
 
-function CalendarioMini(/* {enabledDays, year, monthIndex, minMonth, maxMonth} */){
 
-    const [today, setToday] = useState(new Date())
-
-
-    const enabledDays = {"Mayo":[1,2,3,5,20,21,30,31]}, 
-            year=today.getFullYear(), 
-            monthIndex=today.getMonth(), 
-            minMonth=0, 
-            maxMonth=4
-    /*
+/*
     El componente recibe 3 valores.
         -enabledDays: un json con el nombre del mes correspodiante al index como 
         llave, y una lista de los dias habiles.
             Ejemplo:
                 {
-                    "Abril":
-                            [
-                                1,
-                                2,
-                                3,
-                                5,
-                                20,
-                                21,
-                                30,
-                                31
-                            ]
+                    "Abril": [1, 2, 3, 5, 20, 21, 30, 31]
                 }
 
         -year: el año actual.
@@ -93,11 +76,62 @@ function CalendarioMini(/* {enabledDays, year, monthIndex, minMonth, maxMonth} *
     Ejemplo:
         enabledDays={info} year="2022" monthIndex={3} minMonth={0} maxMonth={4}
     */
+function CalendarioMini(/* {enabledDays, year, monthIndex, minMonth, maxMonth} */){
 
-    const[miniCalendario, setMiniCalendario] = useState(makeCalendarioMini(enabledDays, year, monthIndex));
-    const[monthName, setMonthName] = useState(Object.keys(enabledDays));
+    const today = new Date()
 
-    const[month, setMonth] = useState(monthIndex);
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        // Si no se seleccionó una asesoría, se redirecciona al usuario al calendario
+        if(!localStorage.asesoria_uf) {
+            navigate('/calendario')
+        }
+    })
+    
+    const year = today.getFullYear() 
+    const [month, setMonth] = useState(today.getMonth());
+
+    const minMonth=0
+    const maxMonth=4
+
+    // const [enabledDays, setEnabledDays] = useState(requestDias(today.getMonth()))
+    const [enabledDays, setEnabledDays] = useState({'Cargando': []})
+
+    const [miniCalendario, setMiniCalendario] = useState(makeCalendarioMini(enabledDays, year, month));
+    const [monthName, setMonthName] = useState(Object.keys(enabledDays));
+
+    const requestDias = (mes) => {  
+        const config = {
+            method: 'get',
+            url: `http://20.225.209.57:3094/asesoria/get_dias/?uf=${localStorage.asesoria_uf}&anio=${year}&mes=${mes}`,
+            headers: { }
+        }
+        
+        axios(config)
+        .then(function (response) {
+            console.log(response.data);
+            setEnabledDays(response.data);
+            setMonthName(Object.keys(response.data))
+        })
+        .catch(function (error) {
+            alert("Error con API")
+            console.log(error);
+        });
+
+        // try {
+        //     const response = await axios(config)
+        //     console.log(response.data);
+        //     setEnabledDays(response.data);
+        // } catch (error) {
+        //     alert("Error con API")
+        //     console.log(error);
+        // }
+
+    }
+
+    
+
     const goLastMonth = () => {
         if(month > minMonth){
             setMonth(month - 1);
@@ -136,6 +170,10 @@ function CalendarioMini(/* {enabledDays, year, monthIndex, minMonth, maxMonth} *
                     {miniCalendario}
                 </tbody>
             </table>
+
+            <div>
+                <button onClick={() => requestDias(4)}> request </button>
+            </div>
         </div>
     )   
 }

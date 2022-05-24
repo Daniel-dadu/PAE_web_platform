@@ -48,20 +48,34 @@ const getUF_carreraSemestre = (request, response) => {
 }
 
 
-const getDias_uf = (request, response) => {
+const getDiasDisponibles = (request, response) => {
 
-  const uf = request.body.uf
+  const uf = request.query.uf
+  const anio = parseInt(request.query.anio)
+  const mes = parseInt(request.query.mes)
 
-  // Consulta que regresa los días de asesoría disponibles para cierta materia descartando duplicados y descartando los horarios de disponibilidad pasados
-  const consulta = `SELECT DISTINCT("HorarioDisponible"."fechaHora"::date) FROM "AsesorUnidadFormacion", "HorarioDisponiblePeriodo", "HorarioDisponible" WHERE "AsesorUnidadFormacion"."idUsuario" = "HorarioDisponiblePeriodo"."idAsesor" AND "HorarioDisponiblePeriodo"."idHorarioDisponiblePeriodo" = "HorarioDisponible"."idHorarioDisponiblePeriodo" AND "HorarioDisponible"."status" = 'disponible' AND "HorarioDisponible"."fechaHora" > (CURRENT_DATE + INTERVAL '1 day') AND "AsesorUnidadFormacion"."idUF" = $1`
+  // Función para obtener el nombre del mes a partir del número
+  const getMonthEspanol = mesEnNumero => 
+    mesEnNumero === 1 ? 'Enero' : 
+    mesEnNumero === 2 ? 'Febrero' : 
+    mesEnNumero === 3 ? 'Marzo' : 
+    mesEnNumero === 4 ? 'Abril' :
+    mesEnNumero === 5 ? 'Mayo' :
+    mesEnNumero === 6 ? 'Junio' :
+    mesEnNumero === 7 ? 'Julio' :
+    mesEnNumero === 8 ? 'Agosto' :
+    mesEnNumero === 9 ? 'Septiembre' :
+    mesEnNumero === 10 ? 'Octubre' :
+    mesEnNumero === 11 ? 'Noviembre' : 'Diciembre'
 
-  pool.query(consulta, [uf], (error, results) => {
+  pool.query(`SELECT * FROM get_dias_disponibles($1, $2, $3)`, [uf, anio, mes], (error, results) => {
     if(error){
       throw error
     } else {
-      response.status(200).json(results.rows)
+      response.status(200).json({ [getMonthEspanol(mes)]: results.rows.map(object => object.dias_disponibles) })
     }
   })
+
 }
 
 const getHoras_ufDia = (request, response) => {
@@ -184,7 +198,7 @@ const deleteAsesoria = (request, response) => {
 module.exports = {
   getCarreras,
   getUF_carreraSemestre,
-  getDias_uf,
+  getDiasDisponibles,
   getHoras_ufDia,
   getInfo_ufFechaHora,
   createAsesoria,
