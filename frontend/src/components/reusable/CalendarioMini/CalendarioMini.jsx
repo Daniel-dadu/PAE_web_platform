@@ -4,7 +4,7 @@ import axios from 'axios'
 import "./CalendarioMini.css"
 
 function makeCalendarioMini(calendar, year, monthIndex){
-    //Almacena todas la semanas del mes en forma de arreglos de dias.
+    //Almacena todas la semanas del mes en forma de arreglos de dias.    
     let  weeks = [[]];
     const enabledDays = calendar[Object.keys(calendar)[0]];
 
@@ -14,7 +14,7 @@ function makeCalendarioMini(calendar, year, monthIndex){
     //comienzo del mes agrega los ultimos dias corrrespondiante a la primera semana.
     if(lastMontLastDay.getDay() < 6){
         for(let i = lastMontLastDay.getDate() - lastMontLastDay.getDay(); i <= lastMontLastDay.getDate(); i++){
-            weeks[0].push({"day": i, "color": "grey"})
+            weeks[0].push({"day": i, "color": "#CFCFCF"})
         }
     }
 
@@ -25,7 +25,7 @@ function makeCalendarioMini(calendar, year, monthIndex){
         let day = {"day": i, "color": "black"};
         for(let j = 0; j < enabledDays.length; j++){
             if(i === enabledDays[j]){
-                day = {"day": i, "color": "green"};
+                day = {"day": i, "color": "#46CF16"};
                 break;
             }
         }
@@ -38,7 +38,7 @@ function makeCalendarioMini(calendar, year, monthIndex){
     //Agrega lo primeros dias del proximo mes que estan presente en la ultima semana
     if(currentMontLastDay.getDay() < 6){
         for(let i = 1; i < 7 - currentMontLastDay.getDay(); i++){
-            weeks[weeks.length-1].push({"day": i ,"color": "grey"})
+            weeks[weeks.length-1].push({"day": i ,"color": "#CFCFCF"})
         }
     }
 
@@ -48,7 +48,16 @@ function makeCalendarioMini(calendar, year, monthIndex){
                 <tr key={i}>
                     {week.map((day, index) => {
                         return(
-                            <td className='calendario_mini_day' style={{color: day.color}} key={index}> {day.day} </td>
+                            <td 
+                            className='calendario_mini_day' 
+                            style={{color: day.color}} 
+                            key={index} > 
+                                {   // Si el color es verde, lo convertimos en un link que redirige al usuario al horario de ese día
+                                    day.color === "#46CF16" ?
+                                    <a href={`./agendarAsesoriaHora/${year}/${monthIndex+1}/${day.day}`} > {day.day} </a> :
+                                    <span> {day.day} </span>
+                                }
+                            </td>
                         )
                     })}
                 </tr>
@@ -88,7 +97,8 @@ function CalendarioMini(){
     const year = today.getFullYear() 
 
     // Usamos un hook para el mes que debe mostrar el calendario, que por defecto es el actual
-    const [month, setMonth] = useState(today.getMonth())
+    // Al mes por defecto se le suma 1 para obtener el valor exacto, respetando el orden de Enero: 1, Febrero: 2 ...
+    const [month, setMonth] = useState(today.getMonth()+1)
 
     // Declaramos el mes mínimo y mes máximo que puede mostrar el calendario
     // Estos corresponden al primer y último mes del semestre actual
@@ -188,9 +198,9 @@ function CalendarioMini(){
                 </tbody>
             </table>
 
-            {/* <div>
-                <button onClick={() => requestDias(4)}> request </button>
-            </div> */}
+            <div>
+                <button onClick={() => console.log(month)}> mes </button>
+            </div>
         </div>
     )   
 }

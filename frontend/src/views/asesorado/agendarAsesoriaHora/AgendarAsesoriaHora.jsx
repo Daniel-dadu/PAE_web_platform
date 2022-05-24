@@ -1,5 +1,7 @@
 import React from 'react'
 import './AgendarAsesoriaHora.css'
+import { useParams } from "react-router-dom"
+
 import info from './info.json'
 import { AgendarAsesoria, SeleccionarHorarioAsesoria } from '../../../routeIndex'
 
@@ -38,10 +40,13 @@ let progressBar = {
       }
   ]
 }
-function AgendarAsesoriaDuda() {
+function AgendarAsesoriaHora() {
+
+  const { anio, mes, dia } = useParams();
+
 
   return (
-<AgendarAsesoria 
+  <AgendarAsesoria 
     showAtrasBtn={true} 
     btnAtrasRoute="./AgendarAsesoriaCalendario" 
     btnSiguienteRoute="./AgendarAsesoriaResumen"
@@ -51,8 +56,11 @@ function AgendarAsesoriaDuda() {
         <div className='horario_container'>
           <SeleccionarHorarioAsesoria date={info}/>
         </div>
+        <div>
+          {anio} <br /> {mes} <br /> {dia}
+        </div>
     </AgendarAsesoria>
   )
 }
 
-export default AgendarAsesoriaDuda
+export default AgendarAsesoriaHora
