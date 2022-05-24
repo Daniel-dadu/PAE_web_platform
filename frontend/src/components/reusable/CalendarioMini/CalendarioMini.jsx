@@ -33,8 +33,7 @@ function makeCalendarioMini(calendar, year, monthIndex){
         }
     }
 
-    //Agrega lo primeros dias del proximo mes que estan presente en la ultima 
-    //semana
+    //Agrega lo primeros dias del proximo mes que estan presente en la ultima semana
     if(currentMontLastDay.getDay() < 6){
         for(let i = 1; i < 7 - currentMontLastDay.getDay(); i++){
             weeks[weeks.length-1].push({"day": i ,"color": "grey"})
@@ -56,7 +55,16 @@ function makeCalendarioMini(calendar, year, monthIndex){
     )
 }
 
-function CalendarioMini({enabledDays, year, monthIndex, minMonth, maxMonth}){
+function CalendarioMini(/* {enabledDays, year, monthIndex, minMonth, maxMonth} */){
+
+    const [today, setToday] = useState(new Date())
+
+
+    const enabledDays = {"Mayo":[1,2,3,5,20,21,30,31]}, 
+            year=today.getFullYear(), 
+            monthIndex=today.getMonth(), 
+            minMonth=0, 
+            maxMonth=4
     /*
     El componente recibe 3 valores.
         -enabledDays: un json con el nombre del mes correspodiante al index como 
@@ -93,19 +101,7 @@ function CalendarioMini({enabledDays, year, monthIndex, minMonth, maxMonth}){
     const goLastMonth = () => {
         if(month > minMonth){
             setMonth(month - 1);
-            let test = {
-                "Marzo":
-                        [
-                            1,
-                            3,
-                            5,
-                            20,
-                            21,
-                            22,
-                            23
-                        ]
-            };
-
+            let test = {"Marzo": [1,3,5,20,21,22,23]};
             setMiniCalendario(makeCalendarioMini(test, year, month -1));
             setMonthName(Object.keys(test));
         }

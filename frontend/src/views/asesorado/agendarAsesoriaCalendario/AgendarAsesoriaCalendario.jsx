@@ -1,6 +1,5 @@
 import React from 'react'
 import './AgendarAsesoriaCalendario.css'
-import info from './info.json'
 import { AgendarAsesoria, CalendarioMini } from '../../../routeIndex'
 
 let progressBar = {
@@ -49,7 +48,7 @@ function AgendarAsesoriaDuda() {
     sizeTarjetaMaestraMini="normal" 
     progressBarJSON={progressBar}>
         <div className='calendario_container'>
-          <CalendarioMini calendar={info} year="2022" monthIndex={1}/>
+          <CalendarioMini />
         </div>
     </AgendarAsesoria>
   )
