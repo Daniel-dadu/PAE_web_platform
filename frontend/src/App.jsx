@@ -44,6 +44,7 @@ const App = () => {
         <Route path='/administrarUsuarios' element={<AdministrarUsuarios/>} />
         <Route path='/informacionUsuarios' element={<AdministrarUsuariosDirectivos/>} />
         <Route path='/administrarPerfilAsesorados' element={<AdministrarPerfilAsesoradoDirectivos/>} />
+        <Route path='/asesoriasExistentesDiaDirectivos' element={<AsesoriasExistentesDiaDirectivos/>} />
 
 
         {/* Esta última ruta es a donde se redirige al usuario cuando se busca una ruta inexistente */}
