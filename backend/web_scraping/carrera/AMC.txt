@@ -1,0 +1,34 @@
+Primer Semestre
+AC1001
+Lógica computacional
+AC1001B
+Modelación de la física: Estática
+AC1002
+Razonamiento matemático
+AC1002B
+Modelación de la física: Dinámica
+AR1002B
+Exploración en el hábitat: de la escala del elemento al territorio
+CV1009
+Análisis químico del ambiente y de los materiales de construcción
+EG1001
+Optativa de matemáticas y ciencias
+
+Segundo Semestre
+AC1003
+Análisis con Probabilidad y Estadística
+AC1003B
+Sistemas constructivos
+AC1004B
+Información espacial
+AC1005B
+Sistemas de información geográfica
+CV1010
+Fundamentos de geología aplicada al ambiente construido
+CV1011
+Evaluación del impacto ambiental de proyectos territoriales
+CV1012
+Aplicación de métodos numéricos al ambiente construido
+EG1002
+Optativa de humanidades y bellas artes
+

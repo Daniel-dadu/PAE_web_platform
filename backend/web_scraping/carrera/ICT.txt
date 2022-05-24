@@ -1,0 +1,54 @@
+Primer Semestre
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1004B
+Modelación computacional del movimiento
+F1005B
+Modelación computacional aplicando leyes de conservación
+MA1028
+Modelación matemática fundamental
+Q1028
+Fundamentación de la estructura y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+TC1033
+Pensamiento computacional orientado a objetos
+
+Segundo Semestre
+BT1013
+Análisis de biología computacional
+EG1002
+Optativa de humanidades y bellas artes
+F1008
+Experimentación física y pensamiento estadístico
+F1013B
+Modelación computacional de sistemas eléctricos
+F1014B
+Modelación computacional de sistemas electromagnéticos
+MA1029
+Modelación matemática intermedia
+MA1031
+Análisis estadístico
+TC1003B
+Modelación de la ingeniería con matemática computacional
+TC1030
+Programación orientada a objetos
+
+Tercer Semestre
+EG1003
+Optativa de ciencias sociales y del comportamiento
+MA1033
+Análisis de ecuaciones diferenciales
+TC1004B
+Implementación de internet de las cosas
+TC1031
+Programación de estructuras de datos y algoritmos fundamentales
+TC1032
+Modelación de sistemas mínimos y arquitecturas computacionales
+TI1015
+Análisis de requerimientos de software
+VA1001B
+Tópico de exploración
+

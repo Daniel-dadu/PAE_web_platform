@@ -1,0 +1,250 @@
+Primer Semestre
+EG1001
+Optativa de matemáticas y ciencias
+SD1001
+Sistema musculoesquelético
+SD1001B
+Bases de la salud
+SD1002
+Sistema digestivo
+SD1002B
+Metabolismo y energía
+SD1003
+Aporte y consumo de oxígeno
+SD1003B
+Mecanismos celulares y moleculares
+SD1004
+Control de la energía
+SD1005
+Genética humana
+SD1006
+Sistema endócrino
+
+Segundo Semestre
+EG1002
+Optativa de humanidades y bellas artes
+SD1004B
+Ciclo de vida: concepción y embarazo
+SD1005B
+Ciclo de vida: infancia y adolescencia
+SD1006B
+Ciclo de vida: edad adulta
+SD1007
+Embriología
+SD1008
+Reproducción humana
+SD1009
+Crecimiento y desarrollo
+SD1010
+Desarrollo emocional y conductual
+SD1011
+Morfofisiología renal
+SD1012
+Sistema nervioso
+
+Tercer Semestre
+EG1003
+Optativa de ciencias sociales y del comportamiento
+SD1007B
+Entornos saludables para el adulto mayor
+SD1008B
+Innovación en salud poblacional
+SD1013
+Administración e innovación en salud
+SD1014
+Metodología de la investigación
+SD1015
+Microbiota humana
+SD1016
+Salud pública y bioestadística
+SD1017
+Sangre y hematopoyesis
+SD1018
+Introducción a la clínica
+VA1001B
+Tópico de exploración
+
+Cuarto Semestre
+EG1004
+Optativa de liderazgo, emprendimiento e innovación
+MB2001B
+Bases histopatológicas
+MB2002B
+Inmunobiología
+MB2003B
+Herencia y desarrollo
+MB2059
+Microestructura normal y patológica
+MB2060
+Microbiota patógena
+MB2061
+Genética médica
+
+Quinto Semestre
+EG1005
+Optativa de ética y ciudadanía
+MB2004B
+Bases de los sistemas nervioso y endócrino
+MB2005B
+Farmacoterapia
+MB2006B
+Propedéutica médica
+MB2062
+Ecosistema endócrino y neural
+MB2063
+Moléculas bioactivas y principios terapéuticos
+MB2064
+Procesos fisiopatológicos
+
+Sexto Semestre
+MB2007B
+Trastornos inmunitarios
+MB2008B
+Trastornos digestivos
+MB2065
+Fisiopatología de los trastornos inmunitarios y hematológicos
+MB2066
+Patología de aparatos y sistemas
+MB2067
+Fisiopatología del sistema digestivo
+MB2068
+Farmacología de aparatos y sistemas
+MB2069
+Fisiopatología de las enfermedades infecciosas
+MB2070
+Farmacología de los agentes antimicrobianos
+SD2001B
+Modelo multidisciplinario de atención en salud
+
+Séptimo Semestre
+MB2009B
+Trastornos cardiovasculares
+MB2010B
+Enfermedades respiratorias
+MB2011B
+Trastornos renales
+MB2071
+Fisiopatología del sistema cardiovascular
+MB2072
+Patología de los procesos vitales
+MB2073
+Fisiopatología del sistema respiratorio
+MB2074
+Farmacología de los procesos vitales
+MB2075
+Fisiopatología del sistema renal
+MB2076
+Medicina legal y prehospitalaria
+
+Octavo Semestre
+MB2012B
+Trastornos endócrinos y metabólicos
+MB2013B
+Desórdenes neurológicos
+MB2014B
+Innovación en atención primaria
+MB2077
+Fisiopatología del sistema endócrino
+MB2078
+Patología de los sistemas biocontroladores y de la reproducción
+MB2079
+Fisiopatología del sistema nervioso
+MB2080
+Farmacología de los sistemas biocontroladores y de la reproducción
+MB2081
+Fisiopatología de la reproducción y el embarazo
+MB2082
+Medicina familiar
+
+Primer Trimestre
+MC3001B
+Clínica de ginecología y obstetricia
+MC3134
+Urología y oncología quirúrgica
+MC3135
+Ginecología y obstetricia
+
+Segundo Trimestre
+MC3002B
+Clínica de pediatría
+MC3136
+Infectología y dermatología
+MC3137
+Pediatría
+
+Tercer Trimestre
+MC3003B
+Clínica de medicina interna
+MC3138
+Cardiología y enfermedades metabólicas
+MC3139
+Medicina interna
+
+Cuarto Trimestre
+MC3004B
+Clínica de cirugía general
+MC3140
+Oftalmología y otorrinolaringología
+MC3141
+Cirugía general
+
+Quinto Trimestre
+MC3005B
+Clínica de traumatología, ortopedia y rehabilitación
+MC3006B
+Clínica de emergencias y radiología
+MC3142
+Traumatología, ortopedia y rehabilitación
+MC3143
+Emergencias y radiología
+MC3147
+Aspectos legales de la medicina
+SD3001
+Bioética
+SD3001B
+Clínica multidisciplinaria
+SD3002
+Calidad y seguridad del paciente
+
+Sexto Trimestre
+MC3007B
+Clínica de neurología y neurocirugía
+MC3008B
+Clínica de geriatría y cuidados paliativos
+MC3009B
+Clínica de psiquiatría
+MC3144
+Neurología y neurocirugía
+MC3145
+Geriatría y cuidados paliativos
+MC3146
+Psiquiatría
+
+Séptimo Trimestre
+OP3002B
+Clínica optativa profesional I
+OP3003B
+Clínica optativa profesional II
+OP3004B
+Clínica optativa profesional III
+OP3057
+Optativa profesional I
+OP3058
+Optativa profesional II
+OP3060
+Optativa profesional III
+
+Octavo Trimestre
+OP3005B
+Clínica optativa de especialidades médicas I
+OP3006B
+Clínica optativa de especialidades médicas II
+OP3007B
+Clínica optativa de especialidades médicas III
+OP3067
+Optativa de especialidades médicas I
+OP3068
+Optativa de especialidades médicas II
+OP3069
+Optativa de especialidades médicas III
+

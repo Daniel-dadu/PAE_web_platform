@@ -1,0 +1,182 @@
+Primer Semestre
+EG1001
+Optativa de matemáticas y ciencias
+SD1001
+Sistema musculoesquelético
+SD1001B
+Bases de la salud
+SD1002
+Sistema digestivo
+SD1002B
+Metabolismo y energía
+SD1003
+Aporte y consumo de oxígeno
+SD1003B
+Mecanismos celulares y moleculares
+SD1004
+Control de la energía
+SD1005
+Genética humana
+SD1006
+Sistema endócrino
+
+Segundo Semestre
+EG1002
+Optativa de humanidades y bellas artes
+SD1004B
+Ciclo de vida: concepción y embarazo
+SD1005B
+Ciclo de vida: infancia y adolescencia
+SD1006B
+Ciclo de vida: edad adulta
+SD1007
+Embriología
+SD1008
+Reproducción humana
+SD1009
+Crecimiento y desarrollo
+SD1010
+Desarrollo emocional y conductual
+SD1011
+Morfofisiología renal
+SD1012
+Sistema nervioso
+
+Tercer Semestre
+EG1003
+Optativa de ciencias sociales y del comportamiento
+SD1007B
+Entornos saludables para el adulto mayor
+SD1008B
+Innovación en salud poblacional
+SD1013
+Administración e innovación en salud
+SD1014
+Metodología de la investigación
+SD1015
+Microbiota humana
+SD1016
+Salud pública y bioestadística
+SD1017
+Sangre y hematopoyesis
+SD1018
+Introducción a la clínica
+VA1001B
+Tópico de exploración
+
+Cuarto Semestre
+CC2001B
+Psicología de la comunidad
+CC2002B
+Intervención psicosocial
+CC2003B
+Evaluación psicosocial
+CC2026
+Psicología general
+CC2027
+Teorías de la personalidad
+CC2028
+Psicología del adolescente, adulto y adulto mayor
+EG1004
+Optativa de liderazgo, emprendimiento e innovación
+
+Quinto Semestre
+CC2004B
+Evaluación clínica psicológica
+CC2005B
+Diagnóstico e intervención psicológica
+CC2006B
+Transformación psicosocial
+CC2029
+Psicodiagnóstico
+CC2030
+Informe psicológico
+CC2031
+Diseño de instrumentos de evaluación psicológica
+EG1005
+Optativa de ética y ciudadanía
+
+Sexto Semestre
+CC2007B
+Psicología de la salud
+CC2008B
+Modelos psicoterapéuticos
+CC2032
+Intervención primaria en psicología de la salud
+CC2033
+Psicofisiología
+CC2034
+Psicología clínica
+CC2035
+Psicofarmacología
+CC2036
+Psicopatología
+CC2037
+Psicología clínica infantil
+SD2001B
+Modelo multidisciplinario de atención en salud
+
+Primer Trimestre
+CC3001B
+Clínica de neuropsicología
+CC3018
+Síndromes de los lóbulos occipital y parietal
+CC3019
+Síndromes de los lóbulos temporal y frontal
+CC3020
+Estimulación y rehabilitación neuropsicológica
+CC3021
+Neurobiología de la conducta
+CC3022
+Trastornos neurológicos
+CC3023
+Trastornos neuropsiquiátricos
+
+Segundo Trimestre
+CC3002B
+Clínica de niños, adolescentes y adultos
+CC3024
+Fundamentos de psicología clínica en niños
+CC3025
+Técnicas de intervención en niños
+CC3026
+Trastornos mentales en la infancia
+CC3027
+Intervención clínica en adolescentes
+CC3028
+Modelos de intervención psicoterapéutica
+CC3029
+Psicoterapia en adultos
+
+Tercer Trimestre
+OP3010B
+Clínica optativa profesional I
+OP3011B
+Clínica optativa profesional II
+OP3012B
+Clínica optativa profesional III
+OP3057
+Optativa profesional I
+OP3058
+Optativa profesional II
+OP3060
+Optativa profesional III
+
+Cuarto Trimestre
+CC3003B
+Clínica hospitalaria
+CC3030
+Biología y psicología del paciente con enfermedad crónica
+CC3031
+Intervención clínica psicológica basada en evidencia
+CC3032
+Duelo en las enfermedades crónicas
+CC3033
+Atención al cuidador formal e informal
+SD3001
+Bioética
+SD3001B
+Clínica multidisciplinaria
+SD3002
+Calidad y seguridad del paciente
+
