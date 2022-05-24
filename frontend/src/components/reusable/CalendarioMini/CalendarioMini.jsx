@@ -86,8 +86,31 @@ function CalendarioMini(){
     const year = today.getFullYear() 
     const [month, setMonth] = useState(today.getMonth())
 
-    const minMonth = 2
-    const maxMonth = 5
+    const [minMonth, setMinMonth] = useState(0)
+    const [maxMonth, setMaxMonth] = useState(0)
+
+    useEffect(() => {
+        // Se establecen los parámetros de la request a la API
+        const config = {
+            method: 'get',
+            url: `http://20.225.209.57:3091/general/meses_inicio_fin_semestre`,
+            headers: { }
+        }
+        
+        // Se hace la request y, si es exitosa, se actualizan las variables con sus hooks
+        axios(config)
+        .then(response => {
+            // Se guarda la respuesta de la API, que es un objeto con los meses 
+            const mesesInicioFinSemestre = response.data // Ejemplo: {"mes_inicio_semestre":2,"mes_fin_semestre":6}
+
+            setMinMonth(mesesInicioFinSemestre.mes_inicio_semestre)
+            setMaxMonth(mesesInicioFinSemestre.mes_fin_semestre)
+        })
+        .catch(error => {
+            alert("Error con API")
+            console.log(error);
+        })
+    }, [setMinMonth, setMaxMonth])
 
     // Variable en la que se guarda la respuesta de la API con el nombre del mes y el array de días disponibles
     const [enabledDays, setEnabledDays] = useState({'Cargando': []})
@@ -129,11 +152,11 @@ function CalendarioMini(){
     }, [year, month, setEnabledDays, setMonthName, setMiniCalendario])
 
     const goLastMonth = () => {
-        if(month >= minMonth) setMonth(month - 1)
+        if(month > minMonth) setMonth(month - 1)
     }
 
     const goNextMonth = () => {
-        if(month <= maxMonth) setMonth(month + 1)
+        if(month < maxMonth) setMonth(month + 1)
     }
 
     return(
