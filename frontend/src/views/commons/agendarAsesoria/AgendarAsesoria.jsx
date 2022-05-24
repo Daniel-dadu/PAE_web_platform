@@ -63,6 +63,10 @@ function AgendarAsesoria({
             localStorage.removeItem('asesoria_uf')
             localStorage.removeItem('asesoria_duda')
             for(let i = 1; i <= 3; i++) localStorage.removeItem(`asesoria_imagen${i}`)
+            localStorage.removeItem('asesoria_anio')
+            localStorage.removeItem('asesoria_mes')
+            localStorage.removeItem('asesoria_dia')
+            localStorage.removeItem('asesoria_hora')
             navigate("/calendario")
         }
     }
@@ -130,9 +134,24 @@ function AgendarAsesoria({
 
         }
 
-        // Se entra en caso de que el botón se ejecute en la view 2 - AgendarAsesoriaCalendario
+        // Se entra en caso de que el botón se ejecute en la view 3 - AgendarAsesoriaCalendario
         else if(data.view === 3) {
             alert("Selecciona uno de los días en color verde para visualizar los horarios disponibles en dicho día.\nSi no hay días en verde, ya no tenemos días disponibles para ofrecer asesorías :(")
+        }
+
+        // Se entra en caso de que el botón se ejecute en la view 2 - AgendarAsesoriaHora
+        else if(data.view === 4) {
+            const usr = data.props
+            if(usr.horaSeleccionada === null) {
+                alert("Es necesario que se seleccione una hora para continuar")
+                return
+            } else {
+                localStorage.setItem("asesoria_anio", usr.anio)
+                localStorage.setItem("asesoria_mes", usr.mes)
+                localStorage.setItem("asesoria_dia", usr.dia)
+                localStorage.setItem("asesoria_hora", usr.horaSeleccionada)
+                navigate('/agendarAsesoriaResumen')
+            }
         }
         
         setLoadingNext(false)

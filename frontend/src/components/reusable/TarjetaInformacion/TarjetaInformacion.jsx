@@ -1,7 +1,7 @@
 import React from 'react'
 import "./TarjetaInformacion.css"
 
-function TarjetaInformacion(props){ 
+function TarjetaInformacion({info}){ 
     /*
     El componente recibe 1 solo valor de tipo json con una lista con los datos 
     categoria-descripcion, esta conformado por:
@@ -25,9 +25,9 @@ function TarjetaInformacion(props){
 
     return(
         <div className='tarjeta_informacion_container'>
-            {props.info.info.map((data) => {
+            {info.map((data, index) => {
                     return (
-                        <div className='tarjeta_informacion_titulo_info_container'>
+                        <div className='tarjeta_informacion_titulo_info_container' key={index}>
                             <div className='tarjeta_informacion_titulo'>{data.title}</div>
                             <div className='tarjeta_informacion_info'>{data.info}</div>
                         </div>

@@ -1,7 +1,9 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './AgendarAsesoriaResumen.css'
 import info from './info.json'
-import { AgendarAsesoria, TarjetaInformacion } from '../../../routeIndex'
+import { useNavigate } from "react-router-dom"
+
+import { AgendarAsesoria, TarjetaInformacion, dateFunctions } from '../../../routeIndex'
 
 let progressBar = {
   "currentStep": 4,
@@ -40,16 +42,37 @@ let progressBar = {
 }
 function AgendarAsesoriaResumen() {
 
+  const navigate = useNavigate()
+
+  const ufSelected = localStorage.asesoria_uf
+  const anioSelected = localStorage.asesoria_anio
+  const mesSelected = localStorage.asesoria_mes
+  const diaSelected = localStorage.asesoria_dia
+  const horaSelected = localStorage.asesoria_hora
+
+  useEffect(() => {
+    // Si no se cuenta con los datos necesarios, se redirecciona al usuario a la primera pantalla
+    if(!ufSelected || !anioSelected || !mesSelected || !diaSelected || !horaSelected) {
+      navigate('/agendarAsesoriaUF/error')
+    }
+  }, [ufSelected, anioSelected, mesSelected, diaSelected, horaSelected, navigate])
+
   return (
-<AgendarAsesoria 
+  <AgendarAsesoria 
     showAtrasBtn={true} 
-    btnAtrasRoute="./AgendarAsesoriaHora" 
+    btnAtrasRoute={`./agendarAsesoriaHora/${anioSelected}/${mesSelected}/${diaSelected}`}
     btnSiguienteRoute="./Calendario"
     showTarjetaMaestraMini={true} 
     sizeTarjetaMaestraMini="normal" 
     progressBarJSON={progressBar}>
         <div className='resumen_container'>
-          <TarjetaInformacion info={info}/>
+          <TarjetaInformacion info={
+            [ 
+              { title: "Unidad de formación", info: ufSelected },
+              { title: "Fecha", info: diaSelected + " de " + dateFunctions.getMonthEspanol(mesSelected-1) + " del " + anioSelected },
+              { title: "Hora", info: horaSelected },
+            ]
+          }/>
         </div>
     </AgendarAsesoria>
   )

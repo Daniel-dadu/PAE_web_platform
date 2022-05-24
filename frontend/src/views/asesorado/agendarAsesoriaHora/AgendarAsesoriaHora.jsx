@@ -81,16 +81,23 @@ function AgendarAsesoriaHora() {
 
   }, [setHorasDisponibles, anio, mes, dia])
 
+
+  const [horaSeleccionada, setHoraSeleccionada] = useState(null)
+
+  const handleHoraSeleccionada = (hora) => {
+    setHoraSeleccionada(hora)
+  }
+
   return (
     <AgendarAsesoria 
     showAtrasBtn={true} 
     btnAtrasRoute="./AgendarAsesoriaCalendario" 
-    btnSiguienteRoute="./AgendarAsesoriaResumen"
+    btnSiguienteProps={{view: 4, props: {horaSeleccionada, dia, mes, anio}}}
     showTarjetaMaestraMini={true} 
     sizeTarjetaMaestraMini="normal" 
     progressBarJSON={progressBar}>
         <div className='horario_container'>
-          <SeleccionarHorarioAsesoria date={horasDisponibles}/>
+          <SeleccionarHorarioAsesoria date={horasDisponibles} parentCallback={handleHoraSeleccionada} />
         </div>
     </AgendarAsesoria>
   )

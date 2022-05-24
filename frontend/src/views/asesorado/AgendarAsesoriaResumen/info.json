@@ -1,16 +1,15 @@
-{
-    "info": [
-        {
-            "title": "Unidad de Formación",
-            "info": "Planeación de software (TC1004B)"
-        },
-        {
-            "title": "Fecha",
-            "info": "Jueves 17 de Marzo de 2022 "
-        },
-        {
-            "title": "Hora",
-            "info": "12:30"
-        }
-    ]
-}
+
+[
+    {
+        "title": "Unidad de Formación",
+        "info": "Planeación de software (TC1004B)"
+    },
+    {
+        "title": "Fecha",
+        "info": "Jueves 17 de Marzo de 2022 "
+    },
+    {
+        "title": "Hora",
+        "info": "12:30"
+    }
+]
