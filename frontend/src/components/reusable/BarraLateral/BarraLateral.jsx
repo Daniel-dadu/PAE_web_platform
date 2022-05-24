@@ -98,7 +98,7 @@ function BarraLateral({viewProp}) {
   return (
     <div className='barra_lateral-container'>
         <div className='pae_logo-container'>
-            <a href="/">
+            <a href="/landingPage">
                 <img src={pae_logo} alt="Logo PAE" />
             </a>
         </div>

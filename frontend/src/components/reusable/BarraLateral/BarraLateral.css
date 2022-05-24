@@ -59,10 +59,12 @@
 }
 
 .profile-img {
-    width: 50%;
+    width: 4.5rem;
+    height: 4.5rem;
     border-radius: 100%;
     border: 3px solid #000;
     background-color: white;
+    object-fit: cover;
 }
 
 .selected_icon {

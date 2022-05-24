@@ -2,7 +2,12 @@
     font-style: normal;
     font-weight: 700;
     color: #1B4858;
-    
+    margin-bottom: 0.3rem;
+}
+
+.advertencia_asterisco {
+    margin-left: 1.5rem;
+    color: rgba(0, 0, 0, 0.35);
 }
 
 .datosAsesorado_texto{
@@ -19,62 +24,45 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
+}
 
+.contenedro_deInputsAsesoradoRegistro_credenciales{
+    margin-top: 1rem;
+    padding-top: 10px;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
 }
 
 .contenedro_deInputsAsesoradoRegistro{
     display: flex;
     flex-direction: column;
     padding: 15px;
-
 }
 
 .texto_contenedor_deInputsAsesoradoRegistro{
-font-style: normal;
-font-weight: 700;
-font-size: 18px;
-line-height: 23px;
-
-color: #000000;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: #000000;
 }
 
 .contenedro_deInputsAsesoradoRegistro .arrow_down {
     bottom: 5%;
 }
 
-.container_ImageUploading_RegistroAsesorado{
-    position: relative;
-    height: 60%;
+.contenedor_imagenPerfil {
+    margin-top: 1rem;
 }
 
-.container_imagenes_RegistroAsesorado{
-    display: flex;
-    gap: 3%;
-    align-items: center;
-    justify-content: center;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    width: 100%;
-    margin: auto;
-    height: 250px;
-    
+.contenedor_imagenPerfil .title_imagenPerfil {
+    text-align: center;
 }
 
-.container_ImageUploading_RegistroAsesorado .container_imagenes_RegistroAsesorado p {
-    width: fit-content;
-    margin: auto;
-    font-size: 1.3rem;
+.input_incorrecto {
+    font-weight: 500;
+    color: rgb(228, 91, 91);
+    padding-left: 1rem;
+    font-size: 1rem;
+    font-style: italic;
 }
-
-.container_ImageUploading_RegistroAsesorado .container_imagenes_RegistroAsesorado .btn_upload {
-    position: absolute;;
-    width: fit-content;
-    bottom: 0%;
-    left: 50%;
-
-    transform: translate(-50%,0%);
-}
-
-
-

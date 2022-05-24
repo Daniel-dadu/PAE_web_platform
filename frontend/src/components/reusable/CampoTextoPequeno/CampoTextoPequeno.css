@@ -11,3 +11,11 @@
     background-color: #e6e6e6;
     border-radius: 10px;
 }
+
+.container_ctp .password_visibility_icon {
+    color: grey;
+    position: absolute;
+    right: 0px;
+    margin: 8px;
+    cursor: pointer;
+}

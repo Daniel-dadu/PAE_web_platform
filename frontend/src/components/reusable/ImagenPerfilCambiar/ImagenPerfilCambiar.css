@@ -1,0 +1,36 @@
+.container_ImageUploading_cambiar{
+    position: relative;
+    height: 17rem;
+}
+
+.container_image_selected{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    height: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.container_ImageUploading_cambiar .btn_upload {
+    width: fit-content;
+    margin: auto;
+}
+
+.foto_subida_usuario {
+    height: 12rem;
+    width: 12rem;
+    border: solid;
+    border-radius: 100%;
+    background-color: white;
+    object-fit: cover;
+}
+
+.btn_delete_userImg {
+    position: absolute;
+    right: 0%;
+    background-color: transparent;
+    cursor: pointer;
+}
