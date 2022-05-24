@@ -43,12 +43,12 @@ function makeCalendarioMini(calendar, year, monthIndex){
     }
 
     return(
-        weeks.map((week) =>{
+        weeks.map((week, i) =>{
             return(
-                <tr>
-                    {week.map((day) => {
+                <tr key={i}>
+                    {week.map((day, index) => {
                         return(
-                            <td className='calendario_mini_day' style={{color: day.color}}> {day.day} </td>
+                            <td className='calendario_mini_day' style={{color: day.color}} key={index}> {day.day} </td>
                         )
                     })}
                 </tr>
@@ -81,11 +81,17 @@ function CalendarioMini(){
         }
     })
     
+    // Obtenemos la fecha hoy
     const today = new Date()
 
+    // Obtenemos el año actual
     const year = today.getFullYear() 
+
+    // Usamos un hook para el mes que debe mostrar el calendario, que por defecto es el actual
     const [month, setMonth] = useState(today.getMonth())
 
+    // Declaramos el mes mínimo y mes máximo que puede mostrar el calendario
+    // Estos corresponden al primer y último mes del semestre actual
     const [minMonth, setMinMonth] = useState(0)
     const [maxMonth, setMaxMonth] = useState(0)
 
@@ -103,14 +109,15 @@ function CalendarioMini(){
             // Se guarda la respuesta de la API, que es un objeto con los meses 
             const mesesInicioFinSemestre = response.data // Ejemplo: {"mes_inicio_semestre":2,"mes_fin_semestre":6}
 
+            // Se redefine el primer y último mes del semestre actual
             setMinMonth(mesesInicioFinSemestre.mes_inicio_semestre)
             setMaxMonth(mesesInicioFinSemestre.mes_fin_semestre)
         })
         .catch(error => {
-            alert("Error con API")
-            console.log(error);
+            alert("Error con API: ", error)
+            navigate('/landingPage')
         })
-    }, [setMinMonth, setMaxMonth])
+    }, [setMinMonth, setMaxMonth, navigate])
 
     // Variable en la que se guarda la respuesta de la API con el nombre del mes y el array de días disponibles
     const [enabledDays, setEnabledDays] = useState({'Cargando': []})
@@ -145,11 +152,11 @@ function CalendarioMini(){
             setMiniCalendario(makeCalendarioMini(diasDisponibles, year, month-1));
         })
         .catch(error => {
-            alert("Error con API")
-            console.log(error);
+            alert("Error con API:", error)
+            navigate('/landingPage')
         })
 
-    }, [year, month, setEnabledDays, setMonthName, setMiniCalendario])
+    }, [year, month, setEnabledDays, setMonthName, setMiniCalendario, navigate])
 
     const goLastMonth = () => {
         if(month > minMonth) setMonth(month - 1)

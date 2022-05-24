@@ -35,7 +35,7 @@ function BarraProgreso(props){
         <div className='barra_progreso_container'>
             {props.progress.steps.map((step, index) => {
                 return index < props.progress.steps.length-1 ?
-                    <div className='barra_progreso_container_step_path'>
+                    <div className='barra_progreso_container_step_path' key={index}>
                         <a href={step.path}>
                             <div className='barra_progreso_step'> 
                                 <div className='barra_progreso_step_circle'> 
@@ -55,7 +55,7 @@ function BarraProgreso(props){
                             <hr className='barra_progreso_path_status' style={{backgroundColor: step.next === "enable" && props.progress.currentStep > index ? "green" : step.next === "refuse" ? "red": step.next === "restricted" ? "orange": "grey"}}></hr>
                         </div>
                     </div>
-                    :<div className='barra_progreso_container_step_path end'>
+                    :<div className='barra_progreso_container_step_path end' key={index}>
                         <a href={step.path}>
                             <div className='barra_progreso_step'> 
                                 <div className='barra_progreso_step_circle'> 
