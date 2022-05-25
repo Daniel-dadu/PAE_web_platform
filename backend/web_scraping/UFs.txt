@@ -1,3 +1,4 @@
+Primer Semestre
 AC1001
 Lógica computacional
 AC1001B
@@ -12,6 +13,7 @@ CV1009
 Análisis químico del ambiente y de los materiales de construcción
 EG1001
 Optativa de matemáticas y ciencias
+Segundo Semestre
 AC1003
 Análisis con Probabilidad y Estadística
 AC1003B
@@ -36,6 +38,7 @@ AR1027
 Métodos de diseño
 AR1028
 Técnicas de representación espacial y de imagen
+Tercer Semestre
 AR2002B
 Diseño y construcción de un hábitat efímero
 AR2035
@@ -46,6 +49,7 @@ EG1003
 Optativa de ciencias sociales y del comportamiento
 VA1001B
 Tópico de exploración
+Cuarto Semestre
 AR2004B
 Arquitectura y contextos
 AR2007B
@@ -54,6 +58,7 @@ AR2039
 Investigación y proyecto arquitectónico
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
+Quinto Semestre
 AR2008B
 Vivienda colectiva
 AR2009B
@@ -62,6 +67,7 @@ AR2040
 Constructibilidad
 EG1005
 Optativa de ética y ciudadanía
+Sexto Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -74,6 +80,7 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
+Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -86,6 +93,7 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
+Octavo Semestre
 OP3001B
 Optativa profesional multidisciplinaria
 AR3007B
@@ -225,6 +233,7 @@ IN2040
 Optimización de procesos organizacionales
 IN2041
 Mejora de procesos con métodos heurísticos y metaheurísticos
+Sexto Semestre
 IN2007B
 Diseño disruptivo de procesos organizacionales
 IN2008B
@@ -956,98 +965,6 @@ FZ3001B
 Administración financiera internacional
 FZ3002B
 Gestión de fondos de inversión
-SD1001B
-Bases de la salud
-SD1002
-Sistema digestivo
-SD1003B
-Mecanismos celulares y moleculares
-SD1004
-Control de la energía
-SD1005
-Genética humana
-SD1006
-Sistema endócrino
-SD1004B
-Ciclo de vida: concepción y embarazo
-SD1005B
-Ciclo de vida: infancia y adolescencia
-SD1006B
-Ciclo de vida: edad adulta
-SD1007
-Embriología
-SD1008
-Reproducción humana
-SD1009
-Crecimiento y desarrollo
-SD1010
-Desarrollo emocional y conductual
-SD1011
-Morfofisiología renal
-SD1007B
-Entornos saludables para el adulto mayor
-SD1008B
-Innovación en salud poblacional
-SD1013
-Administración e innovación en salud
-SD1014
-Metodología de la investigación
-SD1015
-Microbiota humana
-SD1016
-Salud pública y bioestadística
-SD1017
-Sangre y hematopoyesis
-SD1018
-Introducción a la clínica
-MB2001B
-Bases histopatológicas
-MB2002B
-Inmunobiología
-MB2003B
-Herencia y desarrollo
-MB2059
-Microestructura normal y patológica
-MB2060
-Microbiota patógena
-MB2061
-Genética médica
-MB2004B
-Bases de los sistemas nervioso y endócrino
-MB2005B
-Farmacoterapia
-MB2006B
-Propedéutica médica
-MB2062
-Ecosistema endócrino y neural
-MB2063
-Moléculas bioactivas y principios terapéuticos
-MB2064
-Procesos fisiopatológicos
-MB2012B
-Trastornos endócrinos y metabólicos
-MB2013B
-Desórdenes neurológicos
-MB2069
-Fisiopatología de las enfermedades infecciosas
-MB2070
-Farmacología de los agentes antimicrobianos
-MB2077
-Fisiopatología del sistema endócrino
-MB2078
-Patología de los sistemas biocontroladores y de la reproducción
-MB2079
-Fisiopatología del sistema nervioso
-MB2080
-Farmacología de los sistemas biocontroladores y de la reproducción
-SD2001B
-Modelo multidisciplinario de atención en salud
-BI3002B
-Proyecto de investigación traslacional
-BI3003B
-Gestión de proyectos de innovación científica
-BI3004B
-Emprendimiento en biociencias
 CF2001B
 Diagnóstico financiero
 CF2002B
@@ -1072,6 +989,7 @@ FZ2006B
 Análisis fundamental de empresas
 FZ2007B
 Creación de valor corporativo
+Séptimo Semestre
 CF3001B
 Formación de juicio crítico profesional
 CF3024
@@ -1296,6 +1214,8 @@ D3049
 Seminario de derecho internacional público
 D3050
 Títulos y operaciones de crédito
+Octavo Semestre 
+Noveno Semestre
 D3007B
 Investigación jurídica aplicada
 ED2001
@@ -1396,119 +1316,6 @@ H2053
 Desarrollo de modelos y prototipos editoriales
 H3001B
 Proyecto integrador de letras
-NU2001B
-Diagnóstico nutricional
-NU2002B
-Intervención nutricional
-NU2003B
-Proceso del cuidado nutricio
-NU2018
-Evaluación bioquímica y clínica nutricional
-NU2021
-Fisiología del ejercicio
-NU2027
-Metodología y diseño de programas de ejercicio físico
-NU2004B
-Administración de servicios de alimentación
-NU2005B
-Ciencia de los alimentos
-NU2006B
-Tecnología de los alimentos
-NU2028
-Nutrigenética: nutrición personalizada
-NU2029
-Nutrigenómica y epigenética: nutrición personalizada
-NU2030
-Nutracéuticos y alimentos funcionales
-NU2007B
-Diagnóstico poblacional en nutrición
-NU2008B
-Diseño de programas de nutrición
-NU2031
-Terapia nutricional en obesidad del adulto
-NU2032
-Nutrición y rendimiento físico
-NU2033
-Terapia nutricional en síndrome metabólico
-NU2034
-Obesidad y síndrome metabólico en infancia y adolescencia
-NU2035
-Nutrición integrativa
-NU2036
-Cultura y psicología de la alimentación
-Primer Trimestre
-NC3001B
-Clínica nutricional en bienestar integral
-NC3002B
-Clínica nutricional integral en el adolescente y el adulto
-NC3021
-Ejercicio en la enfermedad
-NC3022
-Modelos y técnicas para la modificación conductual
-NC3023
-Suplementación clínica
-NC3024
-Trastornos de la conducta alimentaria
-SD3001
-Bioética
-SD3001B
-Clínica multidisciplinaria
-SD3002
-Calidad y seguridad del paciente
-Segundo Trimestre
-OP3010B
-Clínica optativa profesional I
-OP3011B
-Clínica optativa profesional II
-OP3012B
-Clínica optativa profesional III
-OP3057
-Optativa profesional I
-OP3058
-Optativa profesional II
-OP3060
-Tercer Trimestre
-NC3003B
-Clínica nutricional en medicina interna
-NC3004B
-Clínica nutricional en medicina interna y geriatría
-NC3005B
-Clínica nutricional en cirugía y paciente crítico adulto
-NC3025
-Fisiopatología en medicina interna
-NC3026
-Terapia médico nutricional en medicina interna I
-NC3027
-Fundamentos del soporte nutricio
-NC3028
-Terapia médico nutricional en respuesta al estrés metabólico
-NC3029
-Terapia médico nutricional en medicina interna II
-NC3030
-Fisiopatología en cirugía
-NC3031
-Interacción fármaco-nutrientes
-Cuarto Trimestre
-NC3006B
-Clínica nutricional en pediatría
-NC3007B
-Clínica nutricional en pediatría y paciente crítico pediátrico
-NC3008B
-Clínica nutricional en ginecología
-NC3032
-Fisiopatología en pediatría
-NC3033
-Emprendimiento y gestión en salud
-NC3034
-Terapia médico nutricional en paciente pediátrico I
-NC3035
-Soporte nutricio en pediatría
-NC3036
-Terapia médico nutricional en paciente pediátrico II
-NC3037
-Fisiopatología en ginecología
-NC3038
-Terapia médico nutricional en ginecología
 MI2001B
 Metodologías de la investigación periodística
 SO2001
@@ -1525,84 +1332,6 @@ MI2008
 Fundamentos del periodismo hipermedia y transmedia
 MI3001B
 Proyecto integrador de periodismo
-CC2001B
-Psicología de la comunidad
-CC2002B
-Intervención psicosocial
-CC2003B
-Evaluación psicosocial
-CC2026
-Psicología general
-CC2027
-Teorías de la personalidad
-CC2028
-Psicología del adolescente, adulto y adulto mayor
-CC2004B
-Evaluación clínica psicológica
-CC2005B
-Diagnóstico e intervención psicológica
-CC2006B
-Transformación psicosocial
-CC2029
-Psicodiagnóstico
-CC2030
-Informe psicológico
-CC2031
-Diseño de instrumentos de evaluación psicológica
-CC2007B
-Psicología de la salud
-CC2008B
-Modelos psicoterapéuticos
-CC2032
-Intervención primaria en psicología de la salud
-CC2033
-Psicofisiología
-CC2034
-Psicología clínica
-CC2035
-Psicofarmacología
-CC2036
-Psicopatología
-CC2037
-Psicología clínica infantil
-CC3001B
-Clínica de neuropsicología
-CC3018
-Síndromes de los lóbulos occipital y parietal
-CC3019
-Síndromes de los lóbulos temporal y frontal
-CC3020
-Estimulación y rehabilitación neuropsicológica
-CC3021
-Neurobiología de la conducta
-CC3022
-Trastornos neurológicos
-CC3023
-Trastornos neuropsiquiátricos
-CC3002B
-Clínica de niños, adolescentes y adultos
-CC3024
-Fundamentos de psicología clínica en niños
-CC3025
-Técnicas de intervención en niños
-CC3026
-Trastornos mentales en la infancia
-CC3027
-Intervención clínica en adolescentes
-CC3028
-Modelos de intervención psicoterapéutica
-CC3029
-Psicoterapia en adultos
-CC3003B
-Clínica hospitalaria
-CC3030
-Biología y psicología del paciente con enfermedad crónica
-CC3031
-Intervención clínica psicológica basada en evidencia
-CC3032
-Duelo en las enfermedades crónicas
-CC3033
-Atención al cuidador formal e informal
 RI2002B
 Escenarios regionales en el mundo contemporáneo
 RI2003B
@@ -1723,198 +1452,3 @@ AR3005B
 Ciudades emergentes
 AR3006B
 Complejidad y debate
-MB2007B
-Trastornos inmunitarios
-MB2008B
-Trastornos digestivos
-MB2065
-Fisiopatología de los trastornos inmunitarios y hematológicos
-MB2066
-Patología de aparatos y sistemas
-MB2067
-Fisiopatología del sistema digestivo
-MB2068
-Farmacología de aparatos y sistemas
-MB2009B
-Trastornos cardiovasculares
-MB2010B
-Enfermedades respiratorias
-MB2011B
-Trastornos renales
-MB2071
-Fisiopatología del sistema cardiovascular
-MB2072
-Patología de los procesos vitales
-MB2073
-Fisiopatología del sistema respiratorio
-MB2074
-Farmacología de los procesos vitales
-MB2075
-Fisiopatología del sistema renal
-MB2076
-Medicina legal y prehospitalaria
-MB2014B
-Innovación en atención primaria
-MB2081
-Fisiopatología de la reproducción y el embarazo
-MB2082
-Medicina familiar
-MC3001B
-Clínica de ginecología y obstetricia
-MC3134
-Urología y oncología quirúrgica
-MC3135
-Ginecología y obstetricia
-MC3002B
-Clínica de pediatría
-MC3136
-Infectología y dermatología
-MC3137
-Pediatría
-MC3003B
-Clínica de medicina interna
-MC3138
-Cardiología y enfermedades metabólicas
-MC3139
-Medicina interna
-MC3004B
-Clínica de cirugía general
-MC3140
-Oftalmología y otorrinolaringología
-MC3141
-Cirugía general
-Quinto Trimestre
-MC3005B
-Clínica de traumatología, ortopedia y rehabilitación
-MC3006B
-Clínica de emergencias y radiología
-MC3142
-Traumatología, ortopedia y rehabilitación
-MC3143
-Emergencias y radiología
-MC3147
-Aspectos legales de la medicina
-Sexto Trimestre
-MC3007B
-Clínica de neurología y neurocirugía
-MC3008B
-Clínica de geriatría y cuidados paliativos
-MC3009B
-Clínica de psiquiatría
-MC3144
-Neurología y neurocirugía
-MC3145
-Geriatría y cuidados paliativos
-MC3146
-Psiquiatría
-Séptimo Trimestre
-OP3002B
-OP3003B
-OP3004B
-Octavo Trimestre
-OP3005B
-Clínica optativa de especialidades médicas I
-OP3006B
-Clínica optativa de especialidades médicas II
-OP3007B
-Clínica optativa de especialidades médicas III
-OP3067
-Optativa de especialidades médicas I
-OP3068
-Optativa de especialidades médicas II
-OP3069
-Optativa de especialidades médicas III
-OD2001B
-Fisiología de la masticación
-OD2002B
-Fisiopatología de la caries y estructuras periodontales
-OD2003B
-Propedéutica odontológica
-OD2016
-Morfología odontológica
-OD2017
-Histología y embriología bucodental
-OD2018
-Fundamentos clínicos e histológicos de la patología oral
-OD2004B
-Protocolos de adhesión
-OD2005B
-Procedimientos anestésicos en odontología
-OD2006B
-Fundamentos quirúrgicos en odontología
-OD2019
-Operatoria dental
-OD2020
-Farmacología odontológica
-OD2021
-Diagnóstico en odontología
-OD2007B
-Terapia endodóntica y reconstructiva
-OD2008B
-Terapia clínica para la conservación dental
-OD2022
-Terapia pulpar
-OD2023
-Intervención reconstructiva en odontología
-OD2024
-Patología oral y maxilofacial
-OD2025
-Periodoncia
-OD2026
-Introducción a la exodoncia
-OD2027
-Microbiología odontológica
-OD2009B
-Manejo quirúrgico y protésico en odontología
-OD2010B
-Alternativas protésicas para el paciente odontológico
-OD2011B
-Rehabilitación protésica en el paciente odontológico
-OD2028
-Cirugía oral
-OD2029
-Prótesis parcial fija
-OD2030
-Cirugía maxilofacial
-OD2031
-Prótesis parcial removible
-OD2032
-Medicina en odontología
-OD2033
-Infecciones odontogénicas
-OD2012B
-Procedimientos estéticos en odontología
-OD2013B
-Manejo odontológico en el ciclo de vida
-OD2014B
-Ortodoncia y ortopedia
-OD2034
-Implantología quirúrgica
-OD2035
-Estética dental
-OD2036
-Implantología protésica
-OD2037
-Odontología pediátrica
-OD2038
-Implantología avanzada
-OD2039
-Intervención ortodóntica de la oclusión dental
-OD3001B
-Clínica integral de odontología I
-OD3035
-Procesos legales y administrativos en odontología
-OD3036
-Odontología forense
-OD3002B
-Clínica integral de odontología II
-OD3037
-Odontología basada en evidencia
-OD3038
-Análisis de información odontológica
-OD3003B
-Clínica integral de odontología III
-OD3039
-Seminario de odontología integral
-OD3040
-Protocolos de investigación odontológica

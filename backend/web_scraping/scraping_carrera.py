@@ -51,6 +51,4 @@ def scraping(URL, wait):
                 #nombre
                 scrap += ufData[1].text.strip() + "\n"
             
-            scrap += "\n"
-    
     return scrap
