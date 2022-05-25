@@ -136,44 +136,44 @@
 
 // 5. Uso del TemplateRegistroUsuario
 
-import React from 'react'
-import { TemplateRegistroUsuario } from '../../../routeIndex'
+// import React from 'react'
+// import { TemplateRegistroUsuario } from '../../../routeIndex'
 
-let progressBar = {
-  "currentStep": 0,
-  "steps": [
-      {
-          "name" : "Datos generales",
-          "state": null,
-          "next": "done",
-          "path" : "./rutaDatosGenerales"
-        }, 
-        {
-          "name" : "Consideraciones finales",
-          "state": null,
-          "next": "enable",
-          "path" : "./rutaConsideracionesFinales"
-        },
-        {
-          "name" : "Confirmación",
-          "state": null,
-          "next": "enable",
-          "path" : "./rutaConfirmacion"
-        }
-  ]
-}
+// let progressBar = {
+//   "currentStep": 0,
+//   "steps": [
+//       {
+//           "name" : "Datos generales",
+//           "state": null,
+//           "next": "done",
+//           "path" : "./rutaDatosGenerales"
+//         }, 
+//         {
+//           "name" : "Consideraciones finales",
+//           "state": null,
+//           "next": "enable",
+//           "path" : "./rutaConsideracionesFinales"
+//         },
+//         {
+//           "name" : "Confirmación",
+//           "state": null,
+//           "next": "enable",
+//           "path" : "./rutaConfirmacion"
+//         }
+//   ]
+// }
 
-function Ezequiel() {
-  return (
-    <TemplateRegistroUsuario
-      progressBarJSON = {progressBar}
-    >
-      <h1> Hola mundo </h1>
-    </TemplateRegistroUsuario>
-  )
-}
+// function Ezequiel() {
+//   return (
+//     <TemplateRegistroUsuario
+//       progressBarJSON = {progressBar}
+//     >
+//       <h1> Hola mundo </h1>
+//     </TemplateRegistroUsuario>
+//   )
+// }
 
-export default Ezequiel
+// export default Ezequiel
 
 // 6. Uso del CalendarioDisponibilidad
 
@@ -200,14 +200,58 @@ export default Ezequiel
 
 // export default Ezequiel
 
-// Atributos de una notificación
-// onClick = {() => {alert('Debo abrir el panel para aceptar la asesoria; ESTO APLICA EN LA PANTALLA DE DIRECTIVOS')}}
-//   // Este parámetro solo debe usarse para las notificaciones de los directivos,
-//   // específicamente en la notificación para ACEPTAR una asesoría.
-// color = 'verde'
-//   // verde
-//   // rojo
-//   // azul
-// titulo = 'Mensaje de PAE:'
-// leyenda = '11:00 PM — 4:00 AM'
-// contenido = 'Tenemos reunión general el día lunes 30 de febrero en casa de Boba a las 9 pm. Vengan con toda la actitud para pasarla bien :)'
+// 7. Uso del CampoTextoMenuDesplegable
+
+import React from 'react'
+import { CampoTextoMenuDesplegable } from '../../../routeIndex'
+
+var pruebaUsuariosJSON = {
+  "usuarios": [
+    {
+      "claveUF":"A01734172",
+      "colorTipo3":"gris_tipo_1",
+      "horaAsesoria":"Ezequiel",
+      "contenido":"Lozano"
+    },
+    {
+      "claveUF":"A01734172",
+      "colorTipo3":"gris_tipo_1",
+      "horaAsesoria":"Ezequiel",
+      "contenido":"Lozano"
+    },
+    {
+      "claveUF":"A01734172",
+      "colorTipo3":"gris_tipo_1",
+      "horaAsesoria":"Ezequiel",
+      "contenido":"Lozano"
+    },
+    {
+      "claveUF":"A01734172",
+      "colorTipo3":"gris_tipo_1",
+      "horaAsesoria":"Ezequiel",
+      "contenido":"Lozano"
+    }
+  ]
+}
+
+function Ezequiel() {
+  return (
+    <>
+    <div style = {{
+      width: '500px',
+      // height: '550px',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      marginTop: '40px',
+      // border: 'solid 3px #000000'
+    }}>
+      <CampoTextoMenuDesplegable
+        usuariosJSON = {pruebaUsuariosJSON}
+      >
+      </CampoTextoMenuDesplegable>
+    </div>
+    </>
+  )
+}
+
+export default Ezequiel
