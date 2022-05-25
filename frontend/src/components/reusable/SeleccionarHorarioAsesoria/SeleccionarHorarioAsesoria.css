@@ -5,6 +5,7 @@
     flex-direction: column;
     border: 1px solid;
     border-radius: 10px;
+    height: 80%;
 }
 
 .seleccionar_horario_asesoria_day{

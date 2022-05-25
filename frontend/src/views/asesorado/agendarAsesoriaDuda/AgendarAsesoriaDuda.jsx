@@ -88,15 +88,17 @@ function AgendarAsesoriaDuda() {
       progressBarJSON={progressBar}
     >
         <div className='container-aad'>
+            <h2 className='title_instructions_agendarAsesoria'>Explica tu duda en el cuadro de texto y sube imagenes si lo requieres</h2>
+            
             <div className='top'>
-                <h3>Explica tu duda:</h3>
+                <p>Escribe tu duda a continuación:</p>
                 <CampoTextoGrande parentCallback={handleDuda} defaultText={dudaUser}/>
             </div>
                 
             <ImageUploading multiple value={images} onChange={onChangeImages} maxNumber={3} dataURLKey="data_url" acceptType={['jpg', 'png']}>
                 {({ imageList, onImageUpload, onImageRemove }) => (
                 <div className="container_ImageUploading">
-                    <div className='container_imagenes'>
+                    <div className='container_imagenes' style={{height: imageList.length !== 0 && '8rem'}}>
                         {imageList.length === 0 ? 
                         <p>No se ha subido ninguna imagen</p>
                         : imageList.map((image, index) => (

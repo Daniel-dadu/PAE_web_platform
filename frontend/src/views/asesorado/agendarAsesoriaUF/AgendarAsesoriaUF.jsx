@@ -202,6 +202,10 @@ function AgendarAsesoriaUF() {
 
         : // Si todo sale bien con la llamada a la API, se entra en este bloque
         <div className='container_out_aauf'>
+          
+          <h2 className='title_instructions_agendarAsesoria'>Selecciona la materia o unidad de formación en la que tienes duda</h2>
+          <h4 className='subtitle_instructions_agendarAsesoria'>Primero indica a qué carrera y semestre corresponde dicha Unidad de formación</h4>
+
           <div className='container_in_aauf'>
 
             <h3 id="CarreraTitleInput">Carrera</h3>
