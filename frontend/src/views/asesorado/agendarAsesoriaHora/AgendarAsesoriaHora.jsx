@@ -96,6 +96,13 @@ function AgendarAsesoriaHora() {
     showTarjetaMaestraMini={true} 
     sizeTarjetaMaestraMini="normal" 
     progressBarJSON={progressBar}>
+        <h2 className='title_instructions_agendarAsesoria'>
+          Selecciona el horario que más te resulte conveniente
+        </h2>
+        <h4 className='subtitle_instructions_agendarAsesoria'>
+          Los horarios en color <span style={{color: "red", fontWeight: '400'}}>rojo</span> no están disponibles
+        </h4>
+
         <div className='horario_container'>
           <SeleccionarHorarioAsesoria date={horasDisponibles} parentCallback={handleHoraSeleccionada} />
         </div>

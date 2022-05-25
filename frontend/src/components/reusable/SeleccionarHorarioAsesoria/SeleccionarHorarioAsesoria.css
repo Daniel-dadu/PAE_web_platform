@@ -14,6 +14,7 @@
     margin: 10px;
     text-align: center;
     font-weight: bold;
+    font-size: 1.4rem;
 }
 
 .seleccionar_horario_asesoria_info{
@@ -57,4 +58,9 @@
     height: 100%;
     border-radius: 10px;
     cursor: pointer;
+    font-size: 1rem;
+}
+
+.seleccionar_horario_asesoria_hour_button:hover{
+    border: 2px solid #4ce600;
 }
