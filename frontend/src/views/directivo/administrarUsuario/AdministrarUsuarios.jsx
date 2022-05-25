@@ -6,7 +6,7 @@ import  respuetasEncuestas  from  './imagesAdministra/respuestasEncuestas.png'
 import  administrarAsesores  from  './imagesAdministra/administrarAsesores.png'
 import  administrarAsesorados  from  './imagesAdministra/administrarAsesorados.png'
 
-import { Template, BotonAdministrarInformacion } from '../../../../routeIndex'
+import { Template, BotonAdministrarInformacion } from '../../../routeIndex'
 
 function AdministrarUsuarios() {
   return (

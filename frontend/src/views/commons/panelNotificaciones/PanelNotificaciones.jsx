@@ -9,7 +9,7 @@ import { Template, Notificacion, PopUpInformacionAsesoria, BotonConImagen} from 
 
 import { FiMail } from 'react-icons/fi'
 
-const PanelNotificaciones = (userTypeNotificaciones) => {
+const PanelNotificaciones = ({userTypeNotificaciones}) => { /* En caso de ser directivo se espera un tipo de usuario "directivo", para mostrar el boton de enviar notificacion, cualquier otra palabra para el panel de notificaciones de asesor y asesorado */
 
     const [active, setActive] = useState(false);
   

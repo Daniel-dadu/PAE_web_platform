@@ -7,7 +7,7 @@ import { Template, ListaUsuarios, BotonSencillo, BotonConImagen } from '../../..
 import { FaCopy} from 'react-icons/fa'
 
 
-const AdministrarUsuariosDirectivos = (userTypeUsuariosDirectivos) => {
+const AdministrarUsuariosDirectivos = ({userTypeUsuariosDirectivos}) => { /* En caso de ser asesorados se espera un tipo de usuario "asesorados", para mostrar unicamente el titulo de asesorados, cualquier otra palabra mostrara el titulo asesor y el boton de link para asesores */
 
     let navigate = useNavigate()
     const routeChange = route => navigate(`/${route}`);
@@ -27,7 +27,7 @@ const AdministrarUsuariosDirectivos = (userTypeUsuariosDirectivos) => {
         <Template view = "administrar">
 
 
-        {(userTypeUsuariosDirectivos === 'Asesorados') ? 
+        {(userTypeUsuariosDirectivos === 'asesorados') ? 
 
         <h1> Administrar asesorados </h1>
         
