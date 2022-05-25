@@ -57,7 +57,7 @@ export {default as TemplateRegistroUsuario } from './views/TemplateRegistroUsuar
 export {default as Notificacion } from './components/reusable/Notificacion/Notificacion.jsx'
 
 export {default as RegistroAsesorCondiciones } from './views/asesor/registroAsesorCondiciones/RegistroAsesorCondiciones.jsx'
-export {default as AdministrarUsuarios } from './views/directivo/perfil/administrarUsuarios/AdministrarUsuarios.jsx'
+export {default as AdministrarUsuarios } from './views/directivo/administrarUsuario/AdministrarUsuarios.jsx'
 export {default as CalendarioDisponibilidad } from './components/reusable/CalendarioDisponibilidad/CalendarioDisponibilidad.jsx'
 
 export {default as RegistroAsesoradoDatos } from './views/asesorado/registroAsesoradoDatos/RegistroAsesoradoDatos.jsx'
