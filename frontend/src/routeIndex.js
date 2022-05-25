@@ -88,3 +88,4 @@ export {default as AdministrarPerfilAsesoradoDirectivos } from './views/directiv
 export {default as PopUpGeneral } from './components/reusable/PopUpGeneral/PopUpGeneral.js'
 export {default as RegistroAsesorResumen } from './views/asesor/registroAsesorResumen/RegistroAsesorResumen.jsx'
 export {default as AsesoriasExistentesDiaDirectivos } from './views/directivo/asesoriasExistentesDiaDirectivos/AsesoriasExistentesDiaDirectivos.jsx'
+export {default as RespuestasEncuestas } from './views/commons/respuestasEncuestas/RespuestasEncuestas.jsx'
