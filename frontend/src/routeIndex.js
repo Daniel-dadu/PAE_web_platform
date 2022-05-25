@@ -7,7 +7,7 @@ export {default as  PerfilAsesorado  } from './views/asesorado/perfil/PerfilAses
 export {default as PerfilDirectivo } from './views/directivo/perfil/PerfilDirectivo.jsx'
 export {default as EditarPerfil } from './views/commons/editarPerfil/EditarPerfil.jsx'
 export {default as DanielFlores } from './views/componentPreview/DanielFlores/DanielFlores.js';
-// export {default as DanielFlores } from './views/directivo/administrarPerfilAsesorDirectivos/AdministrarPerfilAsesorDirectivos.jsx';
+// export {default as DanielFlores } from './views/directivo/enviarNotificacionDirectivos/EnviarNotificacionDirectivos.jsx';
 
 export {default as DanielMaldonado } from './views/componentPreview/DanielMaldonado/DanielMaldonado.jsx'
 export {default as DanielMunive } from './views/componentPreview/DanielMunive/DanielMunive.jsx'
