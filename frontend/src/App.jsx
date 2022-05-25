@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { RespuestasEncuestas, AsesoriasExistentesDiaDirectivos, RegistroAsesorResumen, RegistroAsesoradoResumen, RegistroAsesorHorario, AdministrarPerfilAsesoradoDirectivos, AdministrarUsuariosDirectivos, RegistroAsesoradoDatos, RegistroAsesorDatos, PanelNotificaciones, RegistroAsesoradoCondiciones, RegistroAsesoradoResumen, RegistroAsesorCondiciones, AdministrarUsuarios, TemporalHome, LandingPage, Calendario, PerfilAsesor, PerfilAsesorado, PerfilDirectivo, EditarPerfil, AgendarAsesoriaUF, AgendarAsesoriaDuda, AgendarAsesoriaCalendario, AgendarAsesoriaHora, AgendarAsesoriaResumen, DanielFlores, DanielMaldonado, DanielMunive, Ezequiel, Fernando } from './routeIndex'
+import { RespuestasEncuestas, AsesoriasExistentesDiaDirectivos, RegistroAsesorResumen, RegistroAsesorHorario, AdministrarPerfilAsesoradoDirectivos, AdministrarUsuariosDirectivos, RegistroAsesoradoDatos, RegistroAsesorDatos, PanelNotificaciones, RegistroAsesoradoCondiciones, RegistroAsesoradoResumen, RegistroAsesorCondiciones, AdministrarUsuarios, TemporalHome, LandingPage, Calendario, PerfilAsesor, PerfilAsesorado, PerfilDirectivo, EditarPerfil, AgendarAsesoriaUF, AgendarAsesoriaDuda, AgendarAsesoriaCalendario, AgendarAsesoriaHora, AgendarAsesoriaResumen, DanielFlores, DanielMaldonado, DanielMunive, Ezequiel, Fernando } from './routeIndex'
 
 const App = () => {
   return (
