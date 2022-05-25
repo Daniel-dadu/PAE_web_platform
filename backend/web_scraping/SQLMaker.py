@@ -64,10 +64,12 @@ def SQLUF():
     query = "INSERT INTO UnidadFormacion VALUES\n"
 
     n = len(UFs)
-    for i in range(n-1):
+    i = 0
+    while(i < n-1):
         tempString = UFs[i].replace('\n', '').rstrip()
         if (tempString in semestres):
             semestre = semestreValue[tempString]
+            i += 1
         else:
             idUF = tempString
             nombreUF = UFs[i+1].replace('\n', '').rstrip()
@@ -76,7 +78,7 @@ def SQLUF():
                 query += ",\n"
             else:
                 query += ";\n"
-        i += 2
+            i += 2
 
     UFList.close()
     SQL.write(query)
@@ -96,21 +98,27 @@ def SQLUnidadFormacionCarrera():
     n = len(siglas)
     for i in range(n):
         if (siglas[i] not in ignore):
-            carrera = open("./carrera/" + siglas[i].replace('\n', '') + ".txt", "w")
+            carrera = open("./carrera/" + siglas[i].replace('\n', '') + ".txt", "r")
             UFs = carrera.readlines()
-            for j in range(len(UFs)):
-                    tempString = UFs[j].replace('\n', '').rstrip()
-                    if (tempString not in semestres):
-                        idUF = tempString
-                        query += "    ('" + idUF + "', '" + siglas[i].replace('\n', '').rstrip() + "')"
-                        j += 2
+            j = 0
+            while(j < len(UFs)-1):
+                tempString = UFs[j].replace('\n', '').rstrip()
+                if (tempString not in semestres):
+                    idUF = tempString
+                    query += "    ('" + idUF + "', '" + siglas[i].replace('\n', '').rstrip() + "'),\n"
+                    j += 1
+                j += 1
+
             carrera.close()
+    query = query.rstrip(query[-1])
+    query = query.rstrip(query[-1])
+    query += ";\n"
 
     carrerasSiglas.close()
     carrerasIgnore.close()
     SQL.write(query)
     SQL.close()
 
-#SQLCarrera()
-#SQLUF()
+SQLCarrera()
+SQLUF()
 SQLUnidadFormacionCarrera()

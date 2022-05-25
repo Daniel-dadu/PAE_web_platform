@@ -1,0 +1,112 @@
+Primer Semestre
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1006B
+Modelación del movimiento en ingeniería
+F1007B
+Aplicación de las leyes de conservación en sistemas ingenieriles
+MA1028
+Modelación matemática fundamental
+Q1019
+Análisis de la estructura, propiedades y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+Segundo Semestre
+EG1002
+Optativa de humanidades y bellas artes
+F1008
+Experimentación física y pensamiento estadístico
+F1015B
+Aplicación de la termodinámica en sistemas ingenieriles
+F1016B
+Análisis de sistemas eléctricos en sistemas ingenieriles
+F1017B
+Análisis de sistemas electromagnéticos en sistemas ingenieriles
+MA1029
+Modelación matemática intermedia
+MA1030
+Modelación matricial
+MA1031
+Análisis estadístico
+Q1021
+Experimentación química y pensamiento estadístico fundamental
+Tercer Semestre
+EG1003
+Optativa de ciencias sociales y del comportamiento
+IN1001B
+Diseño y análisis de experimentos para la innovación ingenieril
+IN1002B
+Desarrollo de proyectos de análisis de datos
+M1011
+Análisis de equilibrio estático
+MA1034
+Modelación de procesos mediante algebra lineal
+MA1035
+Modelación en ingeniería mediante sistemas dinámicos
+TE1020
+Análisis de circuitos eléctricos
+VA1001B
+Tópico de exploración
+Cuarto Semestre
+EG1004
+Optativa de liderazgo, emprendimiento e innovación
+IN2001B
+Desarrollo de proyectos con visión sistémica
+IN2002B
+Mejora de un proceso organizacional con métodos estadísticos
+IN2003B
+Conceptualización de procesos con enfoque innovador
+IN2032
+Análisis estadístico de datos
+IN2037
+Diseño de sistemas ciberfísicos
+IN2038
+Evaluación económica de proyectos
+Quinto Semestre
+EG1005
+Optativa de ética y ciudadanía
+IN2004B
+Generación de valor con analítica de datos
+IN2005B
+Evaluación de la competitividad organizacional
+IN2006B
+Análisis de la viabilidad de proyectos con perspectiva sistémica
+IN2039
+Visualización de datos para la toma de decisiones
+IN2040
+Optimización de procesos organizacionales
+IN2041
+Mejora de procesos con métodos heurísticos y metaheurísticos
+Sexto Semestre
+IN2007B
+Diseño disruptivo de procesos organizacionales
+IN2008B
+Aseguramiento de la excelencia operacional
+IN2009B
+Mejora de una cadena de valor adaptativa
+IN2042
+Modelación de la cadena de valor
+IN2043
+Simulación discreta, continua y por agentes
+IN2044
+Diseño de un proceso de consultoría y gestión del cambio
+Séptimo Semestre 
+OP3091
+Optativa Profesional I
+OP3092
+Optativa Profesional II
+OP3093
+Optativa profesional III
+OP3094
+Optativa profesional IV
+OP3095
+Optativa profesional V
+OP3096
+Optativa profesional VI
+Octavo Semestre
+IN3001B
+Diseño de un sistema organizacional inteligente
+OP3001B
+Optativa profesional multidisciplinaria

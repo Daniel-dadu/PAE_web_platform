@@ -1,0 +1,374 @@
+VA3111
+Tópicos I
+VA3112
+Tópicos II
+VA3113
+Tópicos III
+VA3114
+Tópicos IV
+VA3115
+Tópicos V
+VA3116
+Tópicos VI
+OP3091
+Optativa Profesional I
+OP3092
+Optativa Profesional II
+OP3093
+Optativa profesional III
+OP3094
+Optativa profesional IV
+OP3095
+Optativa profesional V
+OP3096
+Optativa profesional VI
+IN2007B
+Diseño disruptivo de procesos organizacionales
+IN2008B
+Aseguramiento de la excelencia operacional
+IN2009B
+Mejora de una cadena de valor adaptativa
+IN2042
+Modelación de la cadena de valor
+IN2043
+Simulación discreta, continua y por agentes
+IN2044
+Diseño de un proceso de consultoría y gestión del cambio
+MR2007B
+Automatización de sistemas de manufactura
+MR3001B
+Diseño y desarrollo de robots
+AG3001B
+Bioproducción en ambientes controlados
+TA3001B
+Desarrollo sustentable de alimentos saludables y personalizados
+BT2006B
+Diseño de biorreactores
+BT2007B
+Diseño de estrategias de bioseparación
+BT2008B
+Planeación de procesos biotecnológicos
+BT2024
+Aplicación y análisis de las tecnologías ómicas
+BT2025
+Prospección de bioprocesos
+CV2007B
+Modelación de técnicas de saneamiento del agua
+CV2008B
+Diseño de movilidad eficiente de personas y mercancías
+CV2009B
+Diseño estructural con concreto reforzado y acero
+MA2006B
+Uso de álgebras modernas para seguridad y criptografía
+MA2007B
+Uso de geometría y topología para ciencia de datos
+MA2008B
+Análisis numérico para la optimización no-lineal
+DS2002
+Innovación de modelos de sustentabilidad corporativa
+IQ2005B
+Dimensionamiento avanzado y monitoreo de procesos energéticos
+IQ2006B
+Innovación de los procesos en su cadena de valor
+IQ2014
+Mejora de procesos productivos aplicando principios de economía circular
+TE2010B
+Desarrollo de sistemas de procesamiento digital de señales
+TE2011B
+Diseño de sistemas de comunicaciones
+TE2012B
+Análisis de sistemas energéticos
+F2008B
+Caracterización experimental de sistemas ópticos
+F2009B
+Caracterización experimental de materiales
+TE2001B
+Caracterización experimental mediante instrumentación electrónica
+NN3001B
+Gestión estratégica de la innovación tecnológica
+IN2007B
+Diseño disruptivo de procesos organizacionales
+IN2008B
+Aseguramiento de la excelencia operacional
+IN2009B
+Mejora de una cadena de valor adaptativa
+IN2042
+Modelación de la cadena de valor
+IN2043
+Simulación discreta, continua y por agentes
+IN2044
+Diseño de un proceso de consultoría y gestión del cambio
+BI2007B
+Análisis de sistemas de imagenología
+BI2008B
+Aplicación de la Ingeniería tisular y bioimpresión
+BI2009B
+Procesamiento de imágenes médicas para el diagnóstico
+BI2010B
+Diseño y desarrollo en neuroingeniería
+BI2011B
+Implementación de ingeniería clínica
+BI2012B
+Análisis de la mecánica de biofluidos
+MR2007B
+Automatización de sistemas de manufactura
+MR3001B
+Diseño y desarrollo de robots
+M2006B
+Diseño de máquinas térmicas
+M2007B
+Análisis y prevención de fallas
+M2008B
+Diseño de elementos de máquinas
+NT2001
+Diseño de dispositivos nanotecnológicos
+NT2002
+Generación de prototipos y escalamiento de procesos
+NT2004B
+Aplicación de nanodispositivos en soluciones integrales
+NT2005B
+Aplicación de prototipado y escalamiento en soluciones integrales
+Q2003B
+Aplicación de investigación en soluciones integrales
+Q2027
+Investigación y diseño experimental
+IQ2013B
+Diseño integral de procesos químicos
+IQ2017
+Diseño de procesos químicos
+MR2021
+Automatización y control de procesos químicos
+TE3001B
+Fundamentación de robótica
+TE3002B
+Implementación de robótica inteligente
+TC3001B
+Desarrollo de software
+TI3001B
+Administración estratégica y gobierno de tecnologías de información
+TI3002B
+Innovación y diseño de iniciativas de transformación digital
+TI3003B
+Aplicación de analítica y gobierno de datos
+AT3001B
+Proyecto de arte digital
+OP3091
+Optativa Profesional I
+OP3092
+Optativa Profesional II
+OP3093
+Optativa profesional III
+OP3094
+Optativa profesional IV
+OP3095
+Optativa profesional V
+OP3096
+Optativa profesional VI
+OP3091
+Optativa Profesional I
+OP3092
+Optativa Profesional II
+OP3093
+Optativa profesional III
+OP3094
+Optativa profesional IV
+OP3095
+Optativa profesional V
+OP3096
+Optativa profesional VI
+OP3091
+Optativa Profesional I
+OP3092
+Optativa Profesional II
+OP3093
+Optativa profesional III
+OP3094
+Optativa profesional IV
+OP3095
+Optativa profesional V
+OP3096
+Optativa profesional VI
+OP3091
+Optativa Profesional I
+OP3092
+Optativa Profesional II
+OP3093
+Optativa profesional III
+OP3094
+Optativa profesional IV
+OP3095
+Optativa profesional V
+OP3096
+Optativa profesional VI
+VA3111
+Tópicos I
+VA3112
+Tópicos II
+VA3113
+Tópicos III
+VA3114
+Tópicos IV
+VA3115
+Tópicos V
+VA3116
+Tópicos VI
+DL3001B
+Proyecto de diseño
+OP3091
+Optativa Profesional I
+OP3092
+Optativa Profesional II
+OP3093
+Optativa profesional III
+OP3094
+Optativa profesional IV
+OP3095
+Optativa profesional V
+OP3096
+Optativa profesional VI
+VA3111
+Tópicos I
+VA3112
+Tópicos II
+VA3113
+Tópicos III
+VA3114
+Tópicos IV
+VA3115
+Tópicos V
+VA3116
+Tópicos VI
+D3001B
+Controles constitucionales I
+D3002B
+Derecho administrativo II
+D3003B
+Derecho procesal civil y mercantil
+D3039
+Derecho fiscal
+D3040
+Derecho procesal laboral
+D3041
+Empresa y cumplimiento regulatorio
+D3042
+Juicios orales
+D3043
+Sistema penal acusatorio
+D3044
+Sociedades mercantiles
+OP3091
+Optativa Profesional I
+OP3092
+Optativa Profesional II
+OP3093
+Optativa profesional III
+OP3094
+Optativa profesional IV
+OP3095
+Optativa profesional V
+OP3096
+Optativa profesional VI
+OP3091
+Optativa Profesional I
+OP3092
+Optativa Profesional II
+OP3093
+Optativa profesional III
+OP3094
+Optativa profesional IV
+OP3095
+Optativa profesional V
+OP3096
+Optativa profesional VI
+OP3091
+Optativa Profesional I
+OP3092
+Optativa Profesional II
+OP3093
+Optativa profesional III
+OP3094
+Optativa profesional IV
+OP3095
+Optativa profesional V
+OP3096
+Optativa profesional VI
+OP3091
+Optativa Profesional I
+OP3092
+Optativa Profesional II
+OP3093
+Optativa profesional III
+OP3094
+Optativa profesional IV
+OP3095
+Optativa profesional V
+OP3096
+Optativa profesional VI
+OP3091
+Optativa Profesional I
+OP3092
+Optativa Profesional II
+OP3093
+Optativa profesional III
+OP3094
+Optativa profesional IV
+OP3095
+Optativa profesional V
+OP3096
+Optativa profesional VI
+OP3091
+Optativa Profesional I
+OP3092
+Optativa Profesional II
+OP3093
+Optativa profesional III
+OP3094
+Optativa profesional IV
+OP3095
+Optativa profesional V
+OP3096
+Optativa profesional VI
+VA3111
+Tópicos I
+VA3112
+Tópicos II
+VA3113
+Tópicos III
+VA3114
+Tópicos IV
+VA3115
+Tópicos V
+VA3116
+Tópicos VI
+OP3091
+Optativa Profesional I
+OP3092
+Optativa Profesional II
+OP3093
+Optativa profesional III
+OP3094
+Optativa profesional IV
+OP3095
+Optativa profesional V
+OP3096
+Optativa profesional VI
+EC3001B
+Análisis de decisiones bajo condiciones de incertidumbre
+P2020
+Economía política del cambio tecnológico y el desarrollo
+P3001B
+Gobierno, sector privado, tecnología y nuevos mercados
+TC3065
+Experimentos e inferencia causal para política pública
+VA3111
+Tópicos I
+VA3112
+Tópicos II
+VA3113
+Tópicos III
+VA3114
+Tópicos IV
+VA3115
+Tópicos V
+VA3116
+Tópicos VI
