@@ -1,4 +1,3 @@
-Primer Semestre
 AC1001
 Lógica computacional
 AC1001B
@@ -13,8 +12,6 @@ CV1009
 Análisis químico del ambiente y de los materiales de construcción
 EG1001
 Optativa de matemáticas y ciencias
-
-Segundo Semestre
 AC1003
 Análisis con Probabilidad y Estadística
 AC1003B
@@ -31,24 +28,18 @@ CV1012
 Aplicación de métodos numéricos al ambiente construido
 EG1002
 Optativa de humanidades y bellas artes
-
-Primer Semestre
 AR1025
 Creatividad y diseño
 AR1026
 Metodologías de investigación para proyectos de diseño
 EG1001
 Optativa de matemáticas y ciencias
-
-Segundo Semestre
 AR1027
 Métodos de diseño
 AR1028
 Técnicas de representación espacial y de imagen
 EG1002
 Optativa de humanidades y bellas artes
-
-Tercer Semestre
 AR2002B
 Diseño y construcción de un hábitat efímero
 AR2035
@@ -59,8 +50,6 @@ EG1003
 Optativa de ciencias sociales y del comportamiento
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 AR2004B
 Arquitectura y contextos
 AR2007B
@@ -69,8 +58,6 @@ AR2039
 Investigación y proyecto arquitectónico
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
-
-Quinto Semestre
 AR2008B
 Vivienda colectiva
 AR2009B
@@ -79,8 +66,6 @@ AR2040
 Constructibilidad
 EG1005
 Optativa de ética y ciudadanía
-
-Sexto Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -93,8 +78,6 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -107,16 +90,12 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 OP3001B
 Optativa profesional multidisciplinaria
 AR3007B
 Emprendimiento en el ámbito de la arquitectura
 AR3008B
 Gestión arquitectónica
-
-Primer Semestre
 AD1000B
 El rol de los negocios en la sociedad
 AD1014
@@ -137,8 +116,6 @@ RH1001B
 Estrategia y talento
 TC1027
 Programación para negocios
-
-Segundo Semestre
 AD1016
 Comunicación que inspira
 CD1004
@@ -159,8 +136,6 @@ MT1001B
 Descubrimientos del mercado para el desarrollo de estrategias
 RH1004
 Procesos de gestión de talento
-
-Tercer Semestre
 AD1001B
 Creación de valor compartido
 CF1016
@@ -181,8 +156,6 @@ RH1005
 Dimensión estratégica del capital humano
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 NI2001B
@@ -193,8 +166,6 @@ NI2026
 Negocios globales: tendencias y detección de riesgos
 NI2027
 Operación logística internacional
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 NI2003B
@@ -205,8 +176,6 @@ NI2025
 Negociación Intercultural
 NI2028
 Ventas y contratos internacionales
-
-Sexto Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -219,8 +188,6 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Séptimo Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -233,14 +200,10 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Octavo Semestre
 NI3001B
 Desarrollo de estrategias de internacionalización para el siglo XXI
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -255,8 +218,6 @@ Q1019
 Análisis de la estructura, propiedades y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -275,8 +236,6 @@ MA1031
 Análisis estadístico
 Q1021
 Experimentación química y pensamiento estadístico fundamental
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 IN1001B
@@ -293,8 +252,6 @@ TE1020
 Análisis de circuitos eléctricos
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 IN2001B
@@ -309,8 +266,6 @@ IN2037
 Diseño de sistemas ciberfísicos
 IN2038
 Evaluación económica de proyectos
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 IN2004B
@@ -325,8 +280,6 @@ IN2040
 Optimización de procesos organizacionales
 IN2041
 Mejora de procesos con métodos heurísticos y metaheurísticos
-
-Sexto Semestre
 IN2007B
 Diseño disruptivo de procesos organizacionales
 IN2008B
@@ -339,8 +292,6 @@ IN2043
 Simulación discreta, continua y por agentes
 IN2044
 Diseño de un proceso de consultoría y gestión del cambio
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -353,14 +304,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 IN3001B
 Diseño de un sistema organizacional inteligente
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -375,8 +322,6 @@ Q1019
 Análisis de la estructura, propiedades y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -395,8 +340,6 @@ MA1031
 Análisis estadístico
 Q1021
 Experimentación química y pensamiento estadístico fundamental
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 IN1001B
@@ -413,8 +356,6 @@ TE1020
 Análisis de circuitos eléctricos
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 M2001B
@@ -429,8 +370,6 @@ MR2022
 Análisis de elementos de la mecatrónica
 MR2023
 Modelación y automatización
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 MR2005B
@@ -441,14 +380,10 @@ MR2024
 Diseño mecatrónico
 MR2025
 Diseño de sistemas de control
-
-Sexto Semestre
 MR2007B
 Automatización de sistemas de manufactura
 MR3001B
 Diseño y desarrollo de robots
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -461,14 +396,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 MR3002B
 Diseño e implementación de sistemas mecatrónicos
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EC1001B
 Transformación del México contemporáneo
 EG1001
@@ -483,8 +414,6 @@ RI1001B
 Desafíos globales
 TC1001B
 Principios de programación para las ciencias sociales
-
-Segundo Semestre
 D1001B
 Introducción al derecho
 EC1002B
@@ -501,8 +430,6 @@ MA1024
 Pensamiento matemático II
 TC1002B
 Herramientas tecnológicas para las ciencias sociales
-
-Tercer Semestre
 EC1003B
 Macroeconomía y desarrollo económico
 EC1015
@@ -519,8 +446,6 @@ P1001B
 Participación política y sociología de la identidad
 VA1001B
 Tópico de exploración
-
-Primer Semestre
 A1004
 Cultura visual y sonora
 AV1002B
@@ -533,8 +458,6 @@ EG1001
 Optativa de matemáticas y ciencias
 EH1001B
 Inmersión y experimentación creativa
-
-Segundo Semestre
 AR1001B
 Representación formal del espacio
 AV1001B
@@ -547,8 +470,6 @@ EH1009
 Semiótica y narratologías contemporáneas
 H1001B
 Estructuras simbólicas en la imagen, la literatura y la música
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -563,8 +484,6 @@ Q1019
 Análisis de la estructura, propiedades y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -583,8 +502,6 @@ Q1022
 Análisis de la transformación de la materia en procesos químicos
 Q1023
 Experimentación química y pensamiento estadístico intermedio
-
-Tercer Semestre
 BT1014
 Fundamentación de la biología molecular
 EG1003
@@ -603,8 +520,6 @@ Q1027
 Fundamentación de la estructura y propiedades de biomoléculas
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 AG2001B
 Análisis de biosistemas productivos
 AG2002B
@@ -619,8 +534,6 @@ EG1004
 Optativa de liderazgo, emprendimiento e innovación
 IN2033
 Gestión de biosistemas productivos
-
-Quinto Semestre
 AG2003B
 Integración de tecnologías sustentables en biosistemas
 BT2001B
@@ -635,12 +548,8 @@ IN2036
 Aplicación de metrología en biosistemas productivos
 MR2001B
 Aplicación de automatización y control en biosistemas
-
-Sexto Semestre
 AG3001B
 Bioproducción en ambientes controlados
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -653,16 +562,12 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 AG3002B
 Transformación digital de biosistemas productivos
 AG3003B
 Gestión integral y ecoeficiente
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -677,8 +582,6 @@ Q1019
 Análisis de la estructura, propiedades y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -697,8 +600,6 @@ Q1022
 Análisis de la transformación de la materia en procesos químicos
 Q1023
 Experimentación química y pensamiento estadístico intermedio
-
-Tercer Semestre
 BT1014
 Fundamentación de la biología molecular
 EG1003
@@ -717,8 +618,6 @@ Q1027
 Fundamentación de la estructura y propiedades de biomoléculas
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 TA2001B
@@ -733,8 +632,6 @@ TA2018
 Optimización de procesos y sistemas de inocuidad
 TA2019
 Análisis fisicoquímico en el diseño de alimentos
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 TA2004B
@@ -749,12 +646,8 @@ TA2021
 Aplicación del análisis sensorial en alimentos
 TA2022
 Simulación de procesos de transformación de alimentos
-
-Sexto Semestre
 TA3001B
 Desarrollo sustentable de alimentos saludables y personalizados
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -767,14 +660,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 OP3001B
 Optativa profesional multidisciplinaria
 TA3002B
 Administración de procesos de producción y distribución de alimentos
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -791,8 +680,6 @@ Q1029
 Análisis de la estructura y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -811,8 +698,6 @@ Q1022
 Análisis de la transformación de la materia en procesos químicos
 Q1023
 Experimentación química y pensamiento estadístico intermedio
-
-Tercer Semestre
 BT1014
 Fundamentación de la biología molecular
 EG1003
@@ -831,8 +716,6 @@ Q1027
 Fundamentación de la estructura y propiedades de biomoléculas
 VA1001B
 Tópico de exploración
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -847,8 +730,6 @@ Q1019
 Análisis de la estructura, propiedades y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -867,8 +748,6 @@ Q1022
 Análisis de la transformación de la materia en procesos químicos
 Q1023
 Experimentación química y pensamiento estadístico intermedio
-
-Tercer Semestre
 BT1014
 Fundamentación de la biología molecular
 EG1003
@@ -887,8 +766,6 @@ Q1027
 Fundamentación de la estructura y propiedades de biomoléculas
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 BT2002B
 Elaboración de productos biotecnológicos
 BT2003B
@@ -899,8 +776,6 @@ BT2020
 Aplicación de bases moleculares
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
-
-Quinto Semestre
 BT2004B
 Experimentación in vitro
 BT2005B
@@ -909,8 +784,6 @@ BT2026
 Análisis de fenómenos de transporte
 EG1005
 Optativa de ética y ciudadanía
-
-Sexto Semestre
 BT2006B
 Diseño de biorreactores
 BT2007B
@@ -921,8 +794,6 @@ BT2024
 Aplicación y análisis de las tecnologías ómicas
 BT2025
 Prospección de bioprocesos
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -935,14 +806,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 BT3002B
 Diseño de procesos biotecnológicos y de bioproductos
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -959,8 +826,6 @@ Q1029
 Análisis de la estructura y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -979,8 +844,6 @@ MA1031
 Análisis estadístico
 Q1021
 Experimentación química y pensamiento estadístico fundamental
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 F1009
@@ -995,8 +858,6 @@ MA1036
 Fundamentación del álgebra lineal
 VA1001B
 Tópico de exploración
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -1013,8 +874,6 @@ TC1028
 Pensamiento computacional para ingeniería
 TC1033
 Pensamiento computacional orientado a objetos
-
-Segundo Semestre
 BT1013
 Análisis de biología computacional
 EG1002
@@ -1033,8 +892,6 @@ TC1003B
 Modelación de la ingeniería con matemática computacional
 TC1030
 Programación orientada a objetos
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 MA1033
@@ -1049,8 +906,6 @@ TI1015
 Análisis de requerimientos de software
 VA1001B
 Tópico de exploración
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -1065,8 +920,6 @@ Q1019
 Análisis de la estructura, propiedades y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -1085,8 +938,6 @@ MA1031
 Análisis estadístico
 Q1021
 Experimentación química y pensamiento estadístico fundamental
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 IN1001B
@@ -1103,8 +954,6 @@ TE1020
 Análisis de circuitos eléctricos
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 CV2001B
 Análisis de la interacción del ambiente construido y el entorno
 CV2002B
@@ -1119,8 +968,6 @@ CV2037
 Planeación y control de obra
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
-
-Quinto Semestre
 CV2004B
 Evaluación del comportamiento de sistemas estructurales
 CV2005B
@@ -1135,16 +982,12 @@ CV2040
 Gestión empresarial en la industria de la construcción
 EG1005
 Optativa de ética y ciudadanía
-
-Sexto Semestre
 CV2007B
 Modelación de técnicas de saneamiento del agua
 CV2008B
 Diseño de movilidad eficiente de personas y mercancías
 CV2009B
 Diseño estructural con concreto reforzado y acero
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -1157,14 +1000,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 CV3001B
 Integración de proyectos de ingeniería civil
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -1179,8 +1018,6 @@ Q1020
 Análisis de la estructura y propiedades de la materia
 TC1029
 Pensamiento computacional y programación
-
-Segundo Semestre
 BT1013
 Análisis de biología computacional
 EG1002
@@ -1199,8 +1036,6 @@ TC1003B
 Modelación de la ingeniería con matemática computacional
 TC1030
 Programación orientada a objetos
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 F1009
@@ -1215,8 +1050,6 @@ MA1036
 Fundamentación del álgebra lineal
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 MA2001B
@@ -1231,8 +1064,6 @@ TC2033
 Análisis de sistemas basados en conocimiento
 TC2034
 Modelación del aprendizaje con inteligencia artificial
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 MA2003B
@@ -1247,16 +1078,12 @@ MA2015
 Diseño de algoritmos matemáticos bioinspirados
 TC2035
 Diseño de redes neuronales y aprendizaje profundo
-
-Sexto Semestre
 MA2006B
 Uso de álgebras modernas para seguridad y criptografía
 MA2007B
 Uso de geometría y topología para ciencia de datos
 MA2008B
 Análisis numérico para la optimización no-lineal
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -1269,14 +1096,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 MA3001B
 Desarrollo de proyectos de ingeniería matemática
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -1291,8 +1114,6 @@ Q1019
 Análisis de la estructura, propiedades y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -1311,8 +1132,6 @@ Q1022
 Análisis de la transformación de la materia en procesos químicos
 Q1023
 Experimentación química y pensamiento estadístico intermedio
-
-Tercer Semestre
 DS1008
 Evaluación del capital natural y principios de sustentabilidad
 EG1003
@@ -1329,8 +1148,6 @@ TE1020
 Análisis de circuitos eléctricos
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 DS2002B
 Implementación de programas de manejo de recursos
 EG1004
@@ -1345,8 +1162,6 @@ IQ2010
 Diseño de procesos para el transporte de fluidos
 IQ2011
 Diseño de procesos de transferencia de calor
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 IQ2003B
@@ -1357,8 +1172,6 @@ IQ2012
 Aplicación de los principios de eficiencia energética
 IQ2013
 Análisis de procesos y economía circular
-
-Sexto Semestre
 DS2002
 Innovación de modelos de sustentabilidad corporativa
 IQ2005B
@@ -1367,8 +1180,6 @@ IQ2006B
 Innovación de los procesos en su cadena de valor
 IQ2014
 Mejora de procesos productivos aplicando principios de economía circular
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -1381,16 +1192,12 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 DS3001B
 Diseño de estrategias de sustentabilidad corporativa
 IQ3001B
 Desarrollo de modelos de sustentabilidad energética
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -1405,8 +1212,6 @@ Q1019
 Análisis de la estructura, propiedades y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -1425,8 +1230,6 @@ MA1031
 Análisis estadístico
 Q1021
 Experimentación química y pensamiento estadístico fundamental
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 IN1001B
@@ -1443,8 +1246,6 @@ TE1020
 Análisis de circuitos eléctricos
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 TE2005B
@@ -1459,8 +1260,6 @@ TE2048
 Análisis de sistemas lógicos y circuitos digitales
 TE2049
 Fundamentación de la física de estado sólido y optoelectrónica
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 TC2009B
@@ -1475,16 +1274,12 @@ TE2046
 Análisis de señales y sistemas
 TE2050
 Diseño de circuitos electrónicos
-
-Sexto Semestre
 TE2010B
 Desarrollo de sistemas de procesamiento digital de señales
 TE2011B
 Diseño de sistemas de comunicaciones
 TE2012B
 Análisis de sistemas energéticos
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -1497,14 +1292,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 OP3001B
 Optativa profesional multidisciplinaria
 TE3004B
 Desarrollo de telecomunicaciones y sistemas energéticos
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -1519,8 +1310,6 @@ Q1019
 Análisis de la estructura, propiedades y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -1539,8 +1328,6 @@ MA1031
 Análisis estadístico
 Q1021
 Experimentación química y pensamiento estadístico fundamental
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 F1009
@@ -1555,8 +1342,6 @@ MA1036
 Fundamentación del álgebra lineal
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 F2002B
@@ -1567,8 +1352,6 @@ F2004B
 Aplicación de las fuentes alternas de energía
 F2017
 Fundamentación de la electrodinámica
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 F2005B
@@ -1579,16 +1362,12 @@ F2007B
 Análisis de los sistemas termodinámicos y estadísticos
 F2018
 Análisis de sistemas cuánticos
-
-Sexto Semestre
 F2008B
 Caracterización experimental de sistemas ópticos
 F2009B
 Caracterización experimental de materiales
 TE2001B
 Caracterización experimental mediante instrumentación electrónica
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -1601,14 +1380,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 F3001B
 Integración de ingeniería física
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -1623,8 +1398,6 @@ Q1019
 Análisis de la estructura, propiedades y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -1643,8 +1416,6 @@ OP1007
 Optativa de fundamentos en ingeniería
 Q1021
 Experimentación química y pensamiento estadístico fundamental
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 IN1001B
@@ -1661,8 +1432,6 @@ TE1020
 Análisis de circuitos eléctricos
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 NN2001B
@@ -1673,8 +1442,6 @@ OP2019
 Optativa de acentuación en ingeniería I
 OP2026
 Optativa de acentuación en ingeniería II
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 NN2002B
@@ -1685,12 +1452,8 @@ OP2027
 Optativa de acentuación en ingeniería III
 OP2028
 Optativa de acentuación en ingeniería IV
-
-Sexto Semestre
 NN3001B
 Gestión estratégica de la innovación tecnológica
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -1703,14 +1466,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 NN3002B
 Desarrollo de proyecto integrador de innovación
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -1725,8 +1484,6 @@ Q1019
 Análisis de la estructura, propiedades y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -1745,8 +1502,6 @@ MA1031
 Análisis estadístico
 Q1021
 Experimentación química y pensamiento estadístico fundamental
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 IN1001B
@@ -1763,8 +1518,6 @@ TE1020
 Análisis de circuitos eléctricos
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 IN2001B
@@ -1779,8 +1532,6 @@ IN2037
 Diseño de sistemas ciberfísicos
 IN2038
 Evaluación económica de proyectos
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 IN2004B
@@ -1795,8 +1546,6 @@ IN2040
 Optimización de procesos organizacionales
 IN2041
 Mejora de procesos con métodos heurísticos y metaheurísticos
-
-Sexto Semestre
 IN2007B
 Diseño disruptivo de procesos organizacionales
 IN2008B
@@ -1809,8 +1558,6 @@ IN2043
 Simulación discreta, continua y por agentes
 IN2044
 Diseño de un proceso de consultoría y gestión del cambio
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -1823,14 +1570,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 IN3001B
 Diseño de un sistema organizacional inteligente
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -1847,8 +1590,6 @@ Q1029
 Análisis de la estructura y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -1867,8 +1608,6 @@ MA1031
 Análisis estadístico
 Q1021
 Experimentación química y pensamiento estadístico fundamental
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 IN1001B
@@ -1885,8 +1624,6 @@ TE1020
 Análisis de circuitos eléctricos
 VA1001B
 Tópico de exploración
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -1901,8 +1638,6 @@ Q1019
 Análisis de la estructura, propiedades y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -1921,8 +1656,6 @@ MA1031
 Análisis estadístico
 Q1021
 Experimentación química y pensamiento estadístico fundamental
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 IN1002B
@@ -1941,8 +1674,6 @@ TE1020
 Análisis de circuitos eléctricos
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 BI2001B
 Diseño de sistemas de bioinstrumentación analógica
 BI2002B
@@ -1955,8 +1686,6 @@ BI2011
 Aplicación de tecnologías de la información en salud
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
-
-Quinto Semestre
 BI2004B
 Análisis y diseño en biomecánica
 BI2005B
@@ -1971,8 +1700,6 @@ EG1005
 Optativa de ética y ciudadanía
 SD1012
 Sistema nervioso
-
-Sexto Semestre
 BI2007B
 Análisis de sistemas de imagenología
 BI2008B
@@ -1985,8 +1712,6 @@ BI2011B
 Implementación de ingeniería clínica
 BI2012B
 Análisis de la mecánica de biofluidos
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -1999,14 +1724,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 BI3001B
 Desarrollo de dispositivos médicos
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -2021,8 +1742,6 @@ Q1019
 Análisis de la estructura, propiedades y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -2041,8 +1760,6 @@ MA1031
 Análisis estadístico
 Q1021
 Experimentación química y pensamiento estadístico fundamental
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 IN1001B
@@ -2059,8 +1776,6 @@ TE1020
 Análisis de circuitos eléctricos
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 M2001B
@@ -2075,8 +1790,6 @@ MR2022
 Análisis de elementos de la mecatrónica
 MR2023
 Modelación y automatización
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 MR2005B
@@ -2087,14 +1800,10 @@ MR2024
 Diseño mecatrónico
 MR2025
 Diseño de sistemas de control
-
-Sexto Semestre
 MR2007B
 Automatización de sistemas de manufactura
 MR3001B
 Diseño y desarrollo de robots
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -2107,14 +1816,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 MR3002B
 Diseño e implementación de sistemas mecatrónicos
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -2129,8 +1834,6 @@ Q1019
 Análisis de la estructura, propiedades y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -2149,8 +1852,6 @@ MA1031
 Análisis estadístico
 Q1021
 Experimentación química y pensamiento estadístico fundamental
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 IN1001B
@@ -2167,8 +1868,6 @@ TE1020
 Análisis de circuitos eléctricos
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 M2002B
@@ -2181,8 +1880,6 @@ M2034
 Análisis del movimiento de cuerpos rígidos
 M2035
 Fundamentación de ingeniería de materiales
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 M2004B
@@ -2195,16 +1892,12 @@ M2037
 Análisis de los procesos de transformación energética
 M2038
 Modelación de transferencia de calor
-
-Sexto Semestre
 M2006B
 Diseño de máquinas térmicas
 M2007B
 Análisis y prevención de fallas
 M2008B
 Diseño de elementos de máquinas
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -2217,14 +1910,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 M3001B
 Diseño de máquinas
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -2239,8 +1928,6 @@ Q1019
 Análisis de la estructura, propiedades y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -2259,8 +1946,6 @@ Q1022
 Análisis de la transformación de la materia en procesos químicos
 Q1023
 Experimentación química y pensamiento estadístico intermedio
-
-Tercer Semestre
 BT1014
 Fundamentación de la biología molecular
 EG1003
@@ -2279,8 +1964,6 @@ Q1027
 Fundamentación de la estructura y propiedades de biomoléculas
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 NT2001B
@@ -2293,8 +1976,6 @@ Q2024
 Caracterización de materiales y nanomateriales
 Q2025
 Fundamentación de química médica y nanomedicina
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 F2001B
@@ -2309,8 +1990,6 @@ Q2002B
 Modelación de sistemas moleculares
 Q2026
 Formulación de productos nanotecnológicos
-
-Sexto Semestre
 NT2001
 Diseño de dispositivos nanotecnológicos
 NT2002
@@ -2323,8 +2002,6 @@ Q2003B
 Aplicación de investigación en soluciones integrales
 Q2027
 Investigación y diseño experimental
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -2337,14 +2014,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 OP3001B
 Optativa profesional multidisciplinaria
 Q3001B
 Desarrollo de proyectos de nanotecnología
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -2359,8 +2032,6 @@ Q1019
 Análisis de la estructura, propiedades y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 F1008
@@ -2379,8 +2050,6 @@ Q1022
 Análisis de la transformación de la materia en procesos químicos
 Q1023
 Experimentación química y pensamiento estadístico intermedio
-
-Tercer Semestre
 BT1014
 Fundamentación de la biología molecular
 EG1003
@@ -2399,8 +2068,6 @@ Q1027
 Fundamentación de la estructura y propiedades de biomoléculas
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 IQ2007B
@@ -2411,8 +2078,6 @@ IQ2009B
 Análisis de procesos de transferencia de calor y flujo de fluidos
 IQ2015
 Modelación de fenómenos de transporte
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 IQ2010B
@@ -2423,16 +2088,12 @@ IQ2012B
 Análisis de procesos de separación y reacción
 IQ2016
 Predicción del equilibrio químico y de fases
-
-Sexto Semestre
 IQ2013B
 Diseño integral de procesos químicos
 IQ2017
 Diseño de procesos químicos
 MR2021
 Automatización y control de procesos químicos
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -2445,14 +2106,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 IQ3002B
 Aplicación de la ingeniería de procesos en proyectos industriales
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -2467,8 +2124,6 @@ Q1020
 Análisis de la estructura y propiedades de la materia
 TC1029
 Pensamiento computacional y programación
-
-Segundo Semestre
 BT1013
 Análisis de biología computacional
 EG1002
@@ -2487,8 +2142,6 @@ TC1003B
 Modelación de la ingeniería con matemática computacional
 TC1030
 Programación orientada a objetos
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 MA1033
@@ -2503,8 +2156,6 @@ TE1019
 Fundamentación de ingeniería eléctrica y electrónica
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 MA2016
@@ -2517,8 +2168,6 @@ TE2044
 Fundamentación electrónica
 TE2045
 Diseño de circuitos electrónicos
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 MR2002B
@@ -2529,14 +2178,10 @@ TE2004B
 Diseño de sistemas embebidos avanzados
 TE2046
 Análisis de señales y sistemas
-
-Sexto Semestre
 TE3001B
 Fundamentación de robótica
 TE3002B
 Implementación de robótica inteligente
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -2549,14 +2194,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 OP3001B
 Optativa profesional multidisciplinaria
 TE3003B
 Integración de robótica y sistemas inteligentes
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -2571,8 +2212,6 @@ Q1020
 Análisis de la estructura y propiedades de la materia
 TC1029
 Pensamiento computacional y programación
-
-Segundo Semestre
 BT1013
 Análisis de biología computacional
 EG1002
@@ -2591,8 +2230,6 @@ TC1003B
 Modelación de la ingeniería con matemática computacional
 TC1030
 Programación orientada a objetos
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 MA1033
@@ -2607,8 +2244,6 @@ TI1015
 Análisis de requerimientos de software
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 TC2005B
@@ -2617,8 +2252,6 @@ TC2006B
 Interconexión de dispositivos
 TC2037
 Implementación de métodos computacionales
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 TC2007B
@@ -2627,12 +2260,8 @@ TC2008B
 Modelación de sistemas multiagentes con gráficas computacionales
 TC2038
 Análisis y diseño de algoritmos avanzados
-
-Sexto Semestre
 TC3001B
 Desarrollo de software
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -2645,16 +2274,12 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 OP3001B
 Optativa profesional multidisciplinaria
 TC3002B
 Desarrollo de aplicaciones avanzadas de ciencias computacionales
 TC3003B
 Implementación de redes de área amplia y servicios distribuidos
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 F1001B
@@ -2669,8 +2294,6 @@ Q1020
 Análisis de la estructura y propiedades de la materia
 TC1029
 Pensamiento computacional y programación
-
-Segundo Semestre
 BT1013
 Análisis de biología computacional
 EG1002
@@ -2689,8 +2312,6 @@ TC1003B
 Modelación de la ingeniería con matemática computacional
 TC1030
 Programación orientada a objetos
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 MA1033
@@ -2705,8 +2326,6 @@ TI1015
 Análisis de requerimientos de software
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 AD2029
 Modelación, estructura y operación de los negocios
 EG1004
@@ -2721,8 +2340,6 @@ TI2018
 Diseño de arquitecturas, uso y administración de datos
 TI2019
 Evaluación y administración de proyectos
-
-Quinto Semestre
 AD2008B
 Administración del cambio
 AD2030
@@ -2737,16 +2354,12 @@ TI2006B
 Soporte analítico para la toma de decisiones
 TI2020
 Implementación de tecnología en los procesos
-
-Sexto Semestre
 TI3001B
 Administración estratégica y gobierno de tecnologías de información
 TI3002B
 Innovación y diseño de iniciativas de transformación digital
 TI3003B
 Aplicación de analítica y gobierno de datos
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -2759,14 +2372,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 OP3001B
 Optativa profesional multidisciplinaria
 TI3004B
 Transformación digital de la organización
-
-Primer Semestre
 A1004
 Cultura visual y sonora
 AV1002B
@@ -2779,8 +2388,6 @@ EG1001
 Optativa de matemáticas y ciencias
 EH1001B
 Inmersión y experimentación creativa
-
-Segundo Semestre
 AR1001B
 Representación formal del espacio
 AV1001B
@@ -2793,8 +2400,6 @@ EH1009
 Semiótica y narratologías contemporáneas
 H1001B
 Estructuras simbólicas en la imagen, la literatura y la música
-
-Tercer Semestre
 A2001B
 Pre-producción de cortometraje animado
 A2002B
@@ -2809,8 +2414,6 @@ EG1003
 Optativa de ciencias sociales y del comportamiento
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 A2003B
 Arte conceptual
 A2004B
@@ -2823,8 +2426,6 @@ A2016
 Introducción al 3D
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 OP3070
@@ -2839,12 +2440,8 @@ OP3074
 Optativa de arte digital V
 OP3075
 Optativa de arte digital VI
-
-Sexto Semestre
 AT3001B
 Proyecto de arte digital
-
-Séptimo Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -2857,14 +2454,10 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Octavo Semestre
 AT3002B
 Proyecto integral de arte digital
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 AD1000B
 El rol de los negocios en la sociedad
 AD1014
@@ -2885,8 +2478,6 @@ RH1001B
 Estrategia y talento
 TC1027
 Programación para negocios
-
-Segundo Semestre
 AD1016
 Comunicación que inspira
 CD1004
@@ -2907,8 +2498,6 @@ MT1001B
 Descubrimientos del mercado para el desarrollo de estrategias
 RH1004
 Procesos de gestión de talento
-
-Tercer Semestre
 AD1001B
 Creación de valor compartido
 CF1016
@@ -2929,8 +2518,6 @@ RH1005
 Dimensión estratégica del capital humano
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 AD2001B
 Detección de oportunidades estratégicas
 AD2002B
@@ -2941,8 +2528,6 @@ AD2025
 Pensamiento estratégico
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
-
-Quinto Semestre
 AD2005B
 Aseguramiento de la co-creación de valor
 AD2006B
@@ -2953,8 +2538,6 @@ AD2027
 Innovación y co-creación de valor
 EG1005
 Optativa de ética y ciudadanía
-
-Sexto Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -2967,8 +2550,6 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Séptimo Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -2981,16 +2562,12 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Octavo Semestre
 AD3001B
 Gestión estratégica de PYMES
 AD3002B
 Institucionalización de la empresa familiar
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 AD1000B
 El rol de los negocios en la sociedad
 AD1014
@@ -3011,8 +2588,6 @@ RH1001B
 Estrategia y talento
 TC1027
 Programación para negocios
-
-Segundo Semestre
 AD1016
 Comunicación que inspira
 CD1004
@@ -3033,8 +2608,6 @@ MT1001B
 Descubrimientos del mercado para el desarrollo de estrategias
 RH1004
 Procesos de gestión de talento
-
-Tercer Semestre
 AD1001B
 Creación de valor compartido
 CF1016
@@ -3055,8 +2628,6 @@ RH1005
 Dimensión estratégica del capital humano
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 FZ2001B
@@ -3071,8 +2642,6 @@ FZ2020
 Series de tiempo
 FZ2021
 Teoría de inversiones
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 FZ2005B
@@ -3087,8 +2656,6 @@ FZ2023
 Instrumentos derivados
 FZ2024
 Modelación y programación financiera
-
-Sexto Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -3101,8 +2668,6 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Séptimo Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -3115,16 +2680,12 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Octavo Semestre
 FZ3001B
 Administración financiera internacional
 FZ3002B
 Gestión de fondos de inversión
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 SD1001
@@ -3145,8 +2706,6 @@ SD1005
 Genética humana
 SD1006
 Sistema endócrino
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 SD1004B
@@ -3167,8 +2726,6 @@ SD1011
 Morfofisiología renal
 SD1012
 Sistema nervioso
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 SD1007B
@@ -3189,8 +2746,6 @@ SD1018
 Introducción a la clínica
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 MB2001B
@@ -3205,8 +2760,6 @@ MB2060
 Microbiota patógena
 MB2061
 Genética médica
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 MB2004B
@@ -3221,8 +2774,6 @@ MB2063
 Moléculas bioactivas y principios terapéuticos
 MB2064
 Procesos fisiopatológicos
-
-Sexto Semestre
 MB2012B
 Trastornos endócrinos y metabólicos
 MB2013B
@@ -3241,8 +2792,6 @@ MB2080
 Farmacología de los sistemas biocontroladores y de la reproducción
 SD2001B
 Modelo multidisciplinario de atención en salud
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -3255,16 +2804,12 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 BI3002B
 Proyecto de investigación traslacional
 BI3003B
 Gestión de proyectos de innovación científica
 BI3004B
 Emprendimiento en biociencias
-
-Primer Semestre
 AD1000B
 El rol de los negocios en la sociedad
 AD1014
@@ -3285,8 +2830,6 @@ RH1001B
 Estrategia y talento
 TC1027
 Programación para negocios
-
-Segundo Semestre
 AD1016
 Comunicación que inspira
 CD1004
@@ -3307,8 +2850,6 @@ MT1001B
 Descubrimientos del mercado para el desarrollo de estrategias
 RH1004
 Procesos de gestión de talento
-
-Tercer Semestre
 AD1001B
 Creación de valor compartido
 CF1016
@@ -3329,8 +2870,6 @@ RH1005
 Dimensión estratégica del capital humano
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 CF2001B
 Diagnóstico financiero
 CF2002B
@@ -3345,8 +2884,6 @@ FZ2003B
 Decisiones de negocio estratégicas
 TI2016
 Estructuras de información
-
-Quinto Semestre
 CF2003B
 Desarrollo de arquitectura contable
 CF2024
@@ -3361,8 +2898,6 @@ FZ2006B
 Análisis fundamental de empresas
 FZ2007B
 Creación de valor corporativo
-
-Sexto Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -3375,8 +2910,6 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Séptimo Semestre
 CF3001B
 Formación de juicio crítico profesional
 CF3024
@@ -3385,14 +2918,10 @@ CF3026
 Ciclo tributario y empresas
 CF3027
 Consolidación de información financiera
-
-Octavo Semestre
 CF3002B
 Dirección financiera y contraloría estratégica
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 A1004
 Cultura visual y sonora
 AV1002B
@@ -3405,8 +2934,6 @@ EG1001
 Optativa de matemáticas y ciencias
 EH1001B
 Inmersión y experimentación creativa
-
-Segundo Semestre
 AR1001B
 Representación formal del espacio
 AV1001B
@@ -3419,8 +2946,6 @@ EH1009
 Semiótica y narratologías contemporáneas
 H1001B
 Estructuras simbólicas en la imagen, la literatura y la música
-
-Tercer Semestre
 AV2001B
 Producción de audio, video y diseño digital
 CO2001B
@@ -3433,8 +2958,6 @@ EH2006
 Del humanismo al post-humanismo
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 AV2002B
 Guionismo y producción de narrativas audiovisuales
 AV2016
@@ -3443,8 +2966,6 @@ CR2001B
 Comunicación estratégica aplicada
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
-
-Quinto Semestre
 AV2003B
 Narrativa documental
 CO2002B
@@ -3455,8 +2976,6 @@ EG1005
 Optativa de ética y ciudadanía
 MI2003B
 Producción periodística convergente
-
-Sexto Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -3469,8 +2988,6 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Séptimo Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -3483,14 +3000,10 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Octavo Semestre
 CO3001B
 Proyecto integrador de comunicación
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 AD1000B
 El rol de los negocios en la sociedad
 AD1014
@@ -3511,8 +3024,6 @@ RH1001B
 Estrategia y talento
 TC1027
 Programación para negocios
-
-Segundo Semestre
 AD1016
 Comunicación que inspira
 CD1004
@@ -3533,8 +3044,6 @@ MT1001B
 Descubrimientos del mercado para el desarrollo de estrategias
 RH1004
 Procesos de gestión de talento
-
-Tercer Semestre
 AD1001B
 Creación de valor compartido
 CF1016
@@ -3555,8 +3064,6 @@ RH1005
 Dimensión estratégica del capital humano
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 EM2001B
@@ -3571,8 +3078,6 @@ EM2014
 Liderazgo emprendedor
 EM2015
 Oportunidades de emprendimiento corporativo
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 EM2004B
@@ -3587,8 +3092,6 @@ EM2017
 Metodologías de innovación tecnológica
 EM2018
 Técnicas de prototipaje
-
-Sexto Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -3601,8 +3104,6 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -3615,16 +3116,12 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 EM3001B
 Escalabilidad
 EM3002B
 Persuasión y ventas
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 A1004
 Cultura visual y sonora
 AV1002B
@@ -3637,8 +3134,6 @@ EG1001
 Optativa de matemáticas y ciencias
 EH1001B
 Inmersión y experimentación creativa
-
-Segundo Semestre
 AR1001B
 Representación formal del espacio
 AV1001B
@@ -3651,8 +3146,6 @@ EH1009
 Semiótica y narratologías contemporáneas
 H1001B
 Estructuras simbólicas en la imagen, la literatura y la música
-
-Tercer Semestre
 DL2001B
 Comunicación digital del producto
 DL2002B
@@ -3665,8 +3158,6 @@ EG1003
 Optativa de ciencias sociales y del comportamiento
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 DL2003B
 Pensamiento y proceso creativo
 DL2004B
@@ -3677,8 +3168,6 @@ DL2044
 Administración de proyectos de diseño
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 OP3076
@@ -3693,12 +3182,8 @@ OP3080
 Optativa de diseño V
 OP3081
 Optativa de diseño VI
-
-Sexto Semestre
 DL3001B
 Proyecto de diseño
-
-Séptimo Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -3711,14 +3196,10 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Octavo Semestre
 DL3002B
 Proyecto integral de diseño
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 AD1000B
 El rol de los negocios en la sociedad
 AD1014
@@ -3739,8 +3220,6 @@ RH1001B
 Estrategia y talento
 TC1027
 Programación para negocios
-
-Segundo Semestre
 AD1016
 Comunicación que inspira
 CD1004
@@ -3761,8 +3240,6 @@ MT1001B
 Descubrimientos del mercado para el desarrollo de estrategias
 RH1004
 Procesos de gestión de talento
-
-Tercer Semestre
 AD1001B
 Creación de valor compartido
 CF1016
@@ -3783,8 +3260,6 @@ RH1005
 Dimensión estratégica del capital humano
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 RH2001B
@@ -3799,8 +3274,6 @@ RH2013
 Desempeño y retribución en contextos globales
 TI2015
 Analítica del talento
-
-Quinto Semestre
 AD2028
 Responsabilidad social y talento humano
 EG1005
@@ -3815,8 +3288,6 @@ RH2014
 Organizaciones positivas
 RH2015
 Versatilidad organizacional
-
-Sexto Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -3829,8 +3300,6 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Séptimo Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -3843,16 +3312,12 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Octavo Semestre
 OP3001B
 Optativa profesional multidisciplinaria
 RH3001B
 Liderazgo estratégico del talento
 RH3002B
 Potenciación de la cultura organizacional
-
-Primer Semestre
 EC1001B
 Transformación del México contemporáneo
 EG1001
@@ -3867,8 +3332,6 @@ RI1001B
 Desafíos globales
 TC1001B
 Principios de programación para las ciencias sociales
-
-Segundo Semestre
 D1001B
 Introducción al derecho
 EC1002B
@@ -3885,8 +3348,6 @@ MA1024
 Pensamiento matemático II
 TC1002B
 Herramientas tecnológicas para las ciencias sociales
-
-Tercer Semestre
 EC1003B
 Macroeconomía y desarrollo económico
 EC1015
@@ -3903,8 +3364,6 @@ P1001B
 Participación política y sociología de la identidad
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EC2001B
 Dinero y capitales
 EC2003B
@@ -3919,8 +3378,6 @@ MA2012
 Fundamentos de estadística
 MA2013
 Pensamiento matemático IV
-
-Quinto Semestre
 EC2005B
 Competencia económica
 EC2006B
@@ -3935,8 +3392,6 @@ EC2032
 Multivariante
 EG1005
 Optativa de ética y ciudadanía
-
-Sexto Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -3949,8 +3404,6 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -3963,14 +3416,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 EC3002B
 Solución y evaluación de problemas económicos
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EC1001B
 Transformación del México contemporáneo
 EG1001
@@ -3985,8 +3434,6 @@ RI1001B
 Desafíos globales
 TC1001B
 Principios de programación para las ciencias sociales
-
-Segundo Semestre
 D1001B
 Introducción al derecho
 EC1002B
@@ -4003,8 +3450,6 @@ MA1024
 Pensamiento matemático II
 TC1002B
 Herramientas tecnológicas para las ciencias sociales
-
-Tercer Semestre
 D2001B
 Bienes y derechos reales
 D2002B
@@ -4025,8 +3470,6 @@ EG1003
 Optativa de ciencias sociales y del comportamiento
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 D2003B
 Derecho penal y delitos en especial
 D2004B
@@ -4041,8 +3484,6 @@ D2039
 Seminario de derecho de las obligaciones I
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
-
-Quinto Semestre
 D2006B
 Contratos civiles y mercantiles
 D2007B
@@ -4057,8 +3498,6 @@ D2042
 Seminario de derecho de las obligaciones II
 EG1005
 Optativa de ética y ciudadanía
-
-Sexto Semestre
 D3001B
 Controles constitucionales I
 D3002B
@@ -4077,8 +3516,6 @@ D3043
 Sistema penal acusatorio
 D3044
 Sociedades mercantiles
-
-Séptimo Semestre
 D3004B
 Controles constitucionales II
 D3005B
@@ -4097,8 +3534,6 @@ D3049
 Seminario de derecho internacional público
 D3050
 Títulos y operaciones de crédito
-
-Octavo Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -4111,14 +3546,10 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Noveno Semestre
 D3007B
 Investigación jurídica aplicada
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 A1004
 Cultura visual y sonora
 AV1002B
@@ -4131,8 +3562,6 @@ EG1001
 Optativa de matemáticas y ciencias
 EH1001B
 Inmersión y experimentación creativa
-
-Segundo Semestre
 AR1001B
 Representación formal del espacio
 AV1001B
@@ -4145,8 +3574,6 @@ EH1009
 Semiótica y narratologías contemporáneas
 H1001B
 Estructuras simbólicas en la imagen, la literatura y la música
-
-Tercer Semestre
 ED2001
 Fundamentos de la pedagogía
 ED2001B
@@ -4159,8 +3586,6 @@ EG1003
 Optativa de ciencias sociales y del comportamiento
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 ED2003
 Introducción a la administración educativa
 ED2003B
@@ -4171,8 +3596,6 @@ ED2005B
 Uso de tecnología en la investigación educativa
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
-
-Quinto Semestre
 ED2004
 Educación global y comparada
 ED2006B
@@ -4181,8 +3604,6 @@ ED2007B
 Desarrollo de proyectos en el marco de las políticas educativas vigentes
 EG1005
 Optativa de ética y ciudadanía
-
-Sexto Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -4195,8 +3616,6 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Séptimo Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -4209,14 +3628,10 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Octavo Semestre
 ED3001B
 Proyecto integrador de innovación educativa
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 AD1000B
 El rol de los negocios en la sociedad
 AD1014
@@ -4237,8 +3652,6 @@ RH1001B
 Estrategia y talento
 TC1027
 Programación para negocios
-
-Segundo Semestre
 AD1016
 Comunicación que inspira
 CD1004
@@ -4259,8 +3672,6 @@ MT1001B
 Descubrimientos del mercado para el desarrollo de estrategias
 RH1004
 Procesos de gestión de talento
-
-Tercer Semestre
 AD1001B
 Creación de valor compartido
 CF1016
@@ -4281,8 +3692,6 @@ RH1005
 Dimensión estratégica del capital humano
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 MT2001B
@@ -4297,8 +3706,6 @@ MT2028
 Diseño de métricas de mercadotecnia
 MT2029
 Visión holística del consumidor
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 MT2004B
@@ -4311,8 +3718,6 @@ MT2030
 Diseño de estrategias de mercadotecnia interna
 MT2031
 Optimización de precios y cadenas de valor
-
-Sexto Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -4325,8 +3730,6 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Séptimo Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -4339,16 +3742,12 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Octavo Semestre
 MT3001B
 Liderazgo de mercadotecnia I
 MT3002B
 Liderazgo de mercadotecnia II
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 AD1000B
 El rol de los negocios en la sociedad
 AD1014
@@ -4369,8 +3768,6 @@ RH1001B
 Estrategia y talento
 TC1027
 Programación para negocios
-
-Segundo Semestre
 AD1016
 Comunicación que inspira
 CD1004
@@ -4391,8 +3788,6 @@ MT1001B
 Descubrimientos del mercado para el desarrollo de estrategias
 RH1004
 Procesos de gestión de talento
-
-Tercer Semestre
 AD1001B
 Creación de valor compartido
 CF1016
@@ -4413,8 +3808,6 @@ RH1005
 Dimensión estratégica del capital humano
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 NI2001B
@@ -4425,8 +3818,6 @@ NI2026
 Negocios globales: tendencias y detección de riesgos
 NI2027
 Operación logística internacional
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 NI2003B
@@ -4437,8 +3828,6 @@ NI2025
 Negociación Intercultural
 NI2028
 Ventas y contratos internacionales
-
-Sexto Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -4451,8 +3840,6 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Séptimo Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -4465,14 +3852,10 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Octavo Semestre
 NI3001B
 Desarrollo de estrategias de internacionalización para el siglo XXI
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 AD1000B
 El rol de los negocios en la sociedad
 AD1014
@@ -4493,8 +3876,6 @@ RH1001B
 Estrategia y talento
 TC1027
 Programación para negocios
-
-Segundo Semestre
 AD1016
 Comunicación que inspira
 CD1004
@@ -4515,8 +3896,6 @@ MT1001B
 Descubrimientos del mercado para el desarrollo de estrategias
 RH1004
 Procesos de gestión de talento
-
-Tercer Semestre
 AD1001B
 Creación de valor compartido
 CF1016
@@ -4537,8 +3916,6 @@ RH1005
 Dimensión estratégica del capital humano
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 AD2003B
 Indicadores y riesgos con visión estratégica
 CD2001B
@@ -4551,8 +3928,6 @@ EG1004
 Optativa de liderazgo, emprendimiento e innovación
 TI2017
 Integración de base de datos
-
-Quinto Semestre
 AD2007B
 Líneas de acción estratégicas
 CD2010
@@ -4565,8 +3940,6 @@ TC2003B
 Gestión de proyectos de plataformas tecnológicas
 TI2001B
 Plataformas de analítica de negocios para organizaciones
-
-Sexto Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -4579,8 +3952,6 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Séptimo Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -4593,14 +3964,10 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Octavo Semestre
 AD3003B
 Planeación estratégica basada en analítica prescriptiva
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 A1004
 Cultura visual y sonora
 AV1002B
@@ -4613,8 +3980,6 @@ EG1001
 Optativa de matemáticas y ciencias
 EH1001B
 Inmersión y experimentación creativa
-
-Segundo Semestre
 AR1001B
 Representación formal del espacio
 AV1001B
@@ -4627,8 +3992,6 @@ EH1009
 Semiótica y narratologías contemporáneas
 H1001B
 Estructuras simbólicas en la imagen, la literatura y la música
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 H2001B
@@ -4641,8 +4004,6 @@ H2051
 Estructuras y análisis del español
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 H2003B
@@ -4653,8 +4014,6 @@ H2005B
 Literatura novohispana
 H2052
 Teoría literaria
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 H2006B
@@ -4665,8 +4024,6 @@ H2008B
 Teatro y ensayo iberoamericanos de los siglos XIX y XX
 H2053
 Desarrollo de modelos y prototipos editoriales
-
-Sexto Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -4679,8 +4036,6 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Séptimo Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -4693,14 +4048,10 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Octavo Semestre
 H3001B
 Proyecto integrador de letras
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 SD1001
@@ -4721,8 +4072,6 @@ SD1005
 Genética humana
 SD1006
 Sistema endócrino
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 SD1004B
@@ -4743,8 +4092,6 @@ SD1011
 Morfofisiología renal
 SD1012
 Sistema nervioso
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 SD1007B
@@ -4765,8 +4112,6 @@ SD1018
 Introducción a la clínica
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 NU2001B
@@ -4781,8 +4126,6 @@ NU2021
 Fisiología del ejercicio
 NU2027
 Metodología y diseño de programas de ejercicio físico
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 NU2004B
@@ -4797,8 +4140,6 @@ NU2029
 Nutrigenómica y epigenética: nutrición personalizada
 NU2030
 Nutracéuticos y alimentos funcionales
-
-Sexto Semestre
 NU2007B
 Diagnóstico poblacional en nutrición
 NU2008B
@@ -4817,7 +4158,6 @@ NU2036
 Cultura y psicología de la alimentación
 SD2001B
 Modelo multidisciplinario de atención en salud
-
 Primer Trimestre
 NC3001B
 Clínica nutricional en bienestar integral
@@ -4837,7 +4177,6 @@ SD3001B
 Clínica multidisciplinaria
 SD3002
 Calidad y seguridad del paciente
-
 Segundo Trimestre
 OP3010B
 Clínica optativa profesional I
@@ -4851,7 +4190,6 @@ OP3058
 Optativa profesional II
 OP3060
 Optativa profesional III
-
 Tercer Trimestre
 NC3003B
 Clínica nutricional en medicina interna
@@ -4873,7 +4211,6 @@ NC3030
 Fisiopatología en cirugía
 NC3031
 Interacción fármaco-nutrientes
-
 Cuarto Trimestre
 NC3006B
 Clínica nutricional en pediatría
@@ -4895,8 +4232,6 @@ NC3037
 Fisiopatología en ginecología
 NC3038
 Terapia médico nutricional en ginecología
-
-Primer Semestre
 A1004
 Cultura visual y sonora
 AV1002B
@@ -4909,8 +4244,6 @@ EG1001
 Optativa de matemáticas y ciencias
 EH1001B
 Inmersión y experimentación creativa
-
-Segundo Semestre
 AR1001B
 Representación formal del espacio
 AV1001B
@@ -4923,8 +4256,6 @@ EH1009
 Semiótica y narratologías contemporáneas
 H1001B
 Estructuras simbólicas en la imagen, la literatura y la música
-
-Tercer Semestre
 CO2011
 Teorías de la comunicación
 EG1003
@@ -4935,8 +4266,6 @@ SO2001
 Estudios sociales y políticos
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 MI2002B
@@ -4945,8 +4274,6 @@ MI2007
 Ejercicio periodístico, derecho a la información y opinión pública
 RI2001B
 Análisis histórico del sistema internacional
-
-Quinto Semestre
 AV2004B
 Producción de narrativas convergentes multimodales
 EG1005
@@ -4955,8 +4282,6 @@ MI2003B
 Producción periodística convergente
 MI2008
 Fundamentos del periodismo hipermedia y transmedia
-
-Sexto Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -4969,8 +4294,6 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Séptimo Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -4983,14 +4306,10 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Octavo Semestre
 MI3001B
 Proyecto integrador de periodismo
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 SD1001
@@ -5011,8 +4330,6 @@ SD1005
 Genética humana
 SD1006
 Sistema endócrino
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 SD1004B
@@ -5033,8 +4350,6 @@ SD1011
 Morfofisiología renal
 SD1012
 Sistema nervioso
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 SD1007B
@@ -5055,8 +4370,6 @@ SD1018
 Introducción a la clínica
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 CC2001B
 Psicología de la comunidad
 CC2002B
@@ -5071,8 +4384,6 @@ CC2028
 Psicología del adolescente, adulto y adulto mayor
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
-
-Quinto Semestre
 CC2004B
 Evaluación clínica psicológica
 CC2005B
@@ -5087,8 +4398,6 @@ CC2031
 Diseño de instrumentos de evaluación psicológica
 EG1005
 Optativa de ética y ciudadanía
-
-Sexto Semestre
 CC2007B
 Psicología de la salud
 CC2008B
@@ -5107,7 +4416,6 @@ CC2037
 Psicología clínica infantil
 SD2001B
 Modelo multidisciplinario de atención en salud
-
 Primer Trimestre
 CC3001B
 Clínica de neuropsicología
@@ -5123,7 +4431,6 @@ CC3022
 Trastornos neurológicos
 CC3023
 Trastornos neuropsiquiátricos
-
 Segundo Trimestre
 CC3002B
 Clínica de niños, adolescentes y adultos
@@ -5139,7 +4446,6 @@ CC3028
 Modelos de intervención psicoterapéutica
 CC3029
 Psicoterapia en adultos
-
 Tercer Trimestre
 OP3010B
 Clínica optativa profesional I
@@ -5153,7 +4459,6 @@ OP3058
 Optativa profesional II
 OP3060
 Optativa profesional III
-
 Cuarto Trimestre
 CC3003B
 Clínica hospitalaria
@@ -5171,8 +4476,6 @@ SD3001B
 Clínica multidisciplinaria
 SD3002
 Calidad y seguridad del paciente
-
-Primer Semestre
 EC1001B
 Transformación del México contemporáneo
 EG1001
@@ -5187,8 +4490,6 @@ RI1001B
 Desafíos globales
 TC1001B
 Principios de programación para las ciencias sociales
-
-Segundo Semestre
 D1001B
 Introducción al derecho
 EC1002B
@@ -5205,8 +4506,6 @@ MA1024
 Pensamiento matemático II
 TC1002B
 Herramientas tecnológicas para las ciencias sociales
-
-Tercer Semestre
 EC1003B
 Macroeconomía y desarrollo económico
 EC1015
@@ -5223,8 +4522,6 @@ P1001B
 Participación política y sociología de la identidad
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 RI2001B
@@ -5237,8 +4534,6 @@ RI2039
 Teorías clásicas de relaciones internacionales
 RI2040
 Teorías contemporáneas de relaciones internacionales
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 RI2004B
@@ -5253,8 +4548,6 @@ RI2042
 Organismos internacionales
 RI2043
 Riesgos y amenazas en la agenda global contemporánea
-
-Sexto Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -5267,8 +4560,6 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Séptimo Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -5281,14 +4572,10 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Octavo Semestre
 OP3001B
 Optativa profesional multidisciplinaria
 RI3002B
 Análisis y estrategias de política exterior
-
-Primer Semestre
 A1004
 Cultura visual y sonora
 AV1002B
@@ -5301,8 +4588,6 @@ EG1001
 Optativa de matemáticas y ciencias
 EH1001B
 Inmersión y experimentación creativa
-
-Segundo Semestre
 AR1001B
 Representación formal del espacio
 AV1001B
@@ -5315,8 +4600,6 @@ EH1009
 Semiótica y narratologías contemporáneas
 H1001B
 Estructuras simbólicas en la imagen, la literatura y la música
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 F2010B
@@ -5329,8 +4612,6 @@ TM2002
 Negocios en la industria de la música
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 TM2002B
@@ -5341,8 +4622,6 @@ TM2003B
 Técnicas de grabación sonora
 TM2004B
 Proyecto de producción musical
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 TM2004
@@ -5353,8 +4632,6 @@ TM2006B
 Musicalización de productos audiovisuales
 TM2007B
 Producción y mercadotecnia audiovisual
-
-Sexto Semestre 
 OP3091
 Optativa Profesional I
 OP3092
@@ -5367,8 +4644,6 @@ OP3095
 Optativa profesional V
 OP3096
 Optativa profesional VI
-
-Séptimo Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -5381,14 +4656,10 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Octavo Semestre
 OP3001B
 Optativa profesional multidisciplinaria
 TM3001B
 Proyecto integrador de tecnología y producción musical
-
-Primer Semestre
 EC1001B
 Transformación del México contemporáneo
 EG1001
@@ -5403,8 +4674,6 @@ RI1001B
 Desafíos globales
 TC1001B
 Principios de programación para las ciencias sociales
-
-Segundo Semestre
 D1001B
 Introducción al derecho
 EC1002B
@@ -5421,8 +4690,6 @@ MA1024
 Pensamiento matemático II
 TC1002B
 Herramientas tecnológicas para las ciencias sociales
-
-Tercer Semestre
 EC1003B
 Macroeconomía y desarrollo económico
 EC1015
@@ -5439,8 +4706,6 @@ P1001B
 Participación política y sociología de la identidad
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 P2001B
@@ -5451,8 +4716,6 @@ TC2001B
 Ciencia de datos para la toma de decisiones I
 TC3066
 Métodos econométricos y política pública
-
-Quinto Semestre
 EC2002B
 Economía conductual y neurociencia política
 EG1005
@@ -5463,8 +4726,6 @@ P2013
 Elección pública e instituciones políticas comparadas
 TC2002B
 Ciencia de datos para la toma de decisiones II
-
-Sexto Semestre
 EC3001B
 Análisis de decisiones bajo condiciones de incertidumbre
 P2020
@@ -5473,8 +4734,6 @@ P3001B
 Gobierno, sector privado, tecnología y nuevos mercados
 TC3065
 Experimentos e inferencia causal para política pública
-
-Séptimo Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -5487,14 +4746,10 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Octavo Semestre
 OP3001B
 Optativa profesional multidisciplinaria
 P3002B
 Diseño e implementación de innovaciones públicas
-
-Primer Semestre
 AR1002B
 Exploración en el hábitat: de la escala del elemento al territorio
 AR1003B
@@ -5507,8 +4762,6 @@ CV1009
 Análisis químico del ambiente y de los materiales de construcción
 EG1001
 Optativa de matemáticas y ciencias
-
-Segundo Semestre
 AR1004B
 Modelación y representación gráfica de un edificio
 AR1005B
@@ -5525,8 +4778,6 @@ CV1013
 Análisis de fenómenos naturales y sociales con probabilidad y estadística
 EG1002
 Optativa de humanidades y bellas artes
-
-Tercer Semestre
 AR2001B
 Diagnóstico territorial
 AR2003B
@@ -5541,8 +4792,6 @@ EG1003
 Optativa de ciencias sociales y del comportamiento
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 AR2005B
 Ciudades competitivas: Innovación
 AR2006B
@@ -5553,8 +4802,6 @@ AR2038
 Ciudades del futuro
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
-
-Quinto Semestre
 AR3001B
 Metrópolis sostenible: Mitigación
 AR3002B
@@ -5565,8 +4812,6 @@ EC2033
 Economía urbana
 EG1005
 Optativa de ética y ciudadanía
-
-Sexto Semestre 
 VA3111
 Tópicos I
 VA3112
@@ -5579,20 +4824,14 @@ VA3115
 Tópicos V
 VA3116
 Tópicos VI
-
-Séptimo Semestre
 AR3003B
 Gestión y administración de proyectos territoriales de inversión
-
-Octavo Semestre
 AR3005B
 Ciudades emergentes
 AR3006B
 Complejidad y debate
 OP3001B
 Optativa profesional multidisciplinaria
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 SD1001
@@ -5613,8 +4852,6 @@ SD1005
 Genética humana
 SD1006
 Sistema endócrino
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 SD1004B
@@ -5635,8 +4872,6 @@ SD1011
 Morfofisiología renal
 SD1012
 Sistema nervioso
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 SD1007B
@@ -5657,8 +4892,6 @@ SD1018
 Introducción a la clínica
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 MB2001B
@@ -5673,8 +4906,6 @@ MB2060
 Microbiota patógena
 MB2061
 Genética médica
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 MB2004B
@@ -5689,8 +4920,6 @@ MB2063
 Moléculas bioactivas y principios terapéuticos
 MB2064
 Procesos fisiopatológicos
-
-Sexto Semestre
 MB2007B
 Trastornos inmunitarios
 MB2008B
@@ -5709,8 +4938,6 @@ MB2070
 Farmacología de los agentes antimicrobianos
 SD2001B
 Modelo multidisciplinario de atención en salud
-
-Séptimo Semestre
 MB2009B
 Trastornos cardiovasculares
 MB2010B
@@ -5729,8 +4956,6 @@ MB2075
 Fisiopatología del sistema renal
 MB2076
 Medicina legal y prehospitalaria
-
-Octavo Semestre
 MB2012B
 Trastornos endócrinos y metabólicos
 MB2013B
@@ -5749,7 +4974,6 @@ MB2081
 Fisiopatología de la reproducción y el embarazo
 MB2082
 Medicina familiar
-
 Primer Trimestre
 MC3001B
 Clínica de ginecología y obstetricia
@@ -5757,7 +4981,6 @@ MC3134
 Urología y oncología quirúrgica
 MC3135
 Ginecología y obstetricia
-
 Segundo Trimestre
 MC3002B
 Clínica de pediatría
@@ -5765,7 +4988,6 @@ MC3136
 Infectología y dermatología
 MC3137
 Pediatría
-
 Tercer Trimestre
 MC3003B
 Clínica de medicina interna
@@ -5773,7 +4995,6 @@ MC3138
 Cardiología y enfermedades metabólicas
 MC3139
 Medicina interna
-
 Cuarto Trimestre
 MC3004B
 Clínica de cirugía general
@@ -5781,7 +5002,6 @@ MC3140
 Oftalmología y otorrinolaringología
 MC3141
 Cirugía general
-
 Quinto Trimestre
 MC3005B
 Clínica de traumatología, ortopedia y rehabilitación
@@ -5799,7 +5019,6 @@ SD3001B
 Clínica multidisciplinaria
 SD3002
 Calidad y seguridad del paciente
-
 Sexto Trimestre
 MC3007B
 Clínica de neurología y neurocirugía
@@ -5813,7 +5032,6 @@ MC3145
 Geriatría y cuidados paliativos
 MC3146
 Psiquiatría
-
 Séptimo Trimestre
 OP3002B
 Clínica optativa profesional I
@@ -5827,7 +5045,6 @@ OP3058
 Optativa profesional II
 OP3060
 Optativa profesional III
-
 Octavo Trimestre
 OP3005B
 Clínica optativa de especialidades médicas I
@@ -5841,8 +5058,6 @@ OP3068
 Optativa de especialidades médicas II
 OP3069
 Optativa de especialidades médicas III
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 SD1001
@@ -5863,8 +5078,6 @@ SD1005
 Genética humana
 SD1006
 Sistema endócrino
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 SD1004B
@@ -5885,8 +5098,6 @@ SD1011
 Morfofisiología renal
 SD1012
 Sistema nervioso
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 SD1007B
@@ -5907,8 +5118,6 @@ SD1018
 Introducción a la clínica
 VA1001B
 Tópico de exploración
-
-Cuarto Semestre
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
 OD2001B
@@ -5923,8 +5132,6 @@ OD2017
 Histología y embriología bucodental
 OD2018
 Fundamentos clínicos e histológicos de la patología oral
-
-Quinto Semestre
 EG1005
 Optativa de ética y ciudadanía
 OD2004B
@@ -5939,8 +5146,6 @@ OD2020
 Farmacología odontológica
 OD2021
 Diagnóstico en odontología
-
-Sexto Semestre
 OD2007B
 Terapia endodóntica y reconstructiva
 OD2008B
@@ -5959,8 +5164,6 @@ OD2027
 Microbiología odontológica
 SD2001B
 Modelo multidisciplinario de atención en salud
-
-Séptimo Semestre
 OD2009B
 Manejo quirúrgico y protésico en odontología
 OD2010B
@@ -5979,8 +5182,6 @@ OD2032
 Medicina en odontología
 OD2033
 Infecciones odontogénicas
-
-Octavo Semestre
 OD2012B
 Procedimientos estéticos en odontología
 OD2013B
@@ -5999,7 +5200,6 @@ OD2038
 Implantología avanzada
 OD2039
 Intervención ortodóntica de la oclusión dental
-
 Primer Trimestre
 OD3001B
 Clínica integral de odontología I
@@ -6013,7 +5213,6 @@ SD3001B
 Clínica multidisciplinaria
 SD3002
 Calidad y seguridad del paciente
-
 Segundo Trimestre
 OP3010B
 Clínica optativa profesional I
@@ -6027,7 +5226,6 @@ OP3058
 Optativa profesional II
 OP3060
 Optativa profesional III
-
 Tercer Trimestre
 OD3002B
 Clínica integral de odontología II
@@ -6035,7 +5233,6 @@ OD3037
 Odontología basada en evidencia
 OD3038
 Análisis de información odontológica
-
 Cuarto Trimestre
 OD3003B
 Clínica integral de odontología III
@@ -6043,8 +5240,6 @@ OD3039
 Seminario de odontología integral
 OD3040
 Protocolos de investigación odontológica
-
-Primer Semestre
 AD1000B
 El rol de los negocios en la sociedad
 AD1014
@@ -6065,8 +5260,6 @@ RH1001B
 Estrategia y talento
 TC1027
 Programación para negocios
-
-Segundo Semestre
 AD1016
 Comunicación que inspira
 CD1004
@@ -6087,8 +5280,6 @@ MT1001B
 Descubrimientos del mercado para el desarrollo de estrategias
 RH1004
 Procesos de gestión de talento
-
-Tercer Semestre
 AD1001B
 Creación de valor compartido
 CF1016
@@ -6109,8 +5300,6 @@ RH1005
 Dimensión estratégica del capital humano
 VA1001B
 Tópico de exploración
-
-Primer Semestre
 EG1001
 Optativa de matemáticas y ciencias
 SD1001
@@ -6131,8 +5320,6 @@ SD1005
 Genética humana
 SD1006
 Sistema endócrino
-
-Segundo Semestre
 EG1002
 Optativa de humanidades y bellas artes
 SD1004B
@@ -6153,8 +5340,6 @@ SD1011
 Morfofisiología renal
 SD1012
 Sistema nervioso
-
-Tercer Semestre
 EG1003
 Optativa de ciencias sociales y del comportamiento
 SD1007B
@@ -6175,4 +5360,3 @@ SD1018
 Introducción a la clínica
 VA1001B
 Tópico de exploración
-

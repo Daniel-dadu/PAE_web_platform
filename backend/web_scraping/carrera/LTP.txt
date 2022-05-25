@@ -85,7 +85,6 @@ TC3065
 Experimentos e inferencia causal para política pública
 
 Séptimo Semestre 
- (1)
 VA3111
 Tópicos I
 VA3112
