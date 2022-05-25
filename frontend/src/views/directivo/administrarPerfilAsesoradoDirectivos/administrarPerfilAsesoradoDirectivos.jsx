@@ -1,37 +1,37 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import './administrarPerfilAsesoradoDirectivos.css'
-import { PopUpGeneral, Template, InformacionPersonalUsuario, BotonConImagen, BotonSencillo } from '../../../routeIndex'
-import { BsBoxArrowInRight } from 'react-icons/bs'
+import { PopUpGeneral, Template, InformacionPersonalUsuario, BotonConImagen, BotonSencillo } from '../../../routeIndex';
+import { BsBoxArrowInRight } from 'react-icons/bs';
 
-function AdministrarPerfilAsesoradoDirectivos(){
+function AdministrarPerfilAsesoradoDirectivos() {
 
     const [active, setActive] = useState(true);
-  
+
     const togglePopUpGeneral = () => {
         setActive(!active)
     }
-    
+
     window.togglePopUpGeneral = togglePopUpGeneral;
 
-    return(
+    return (
 
         <div>
-
-            <Template view = 'perfil'>
-
-                <PopUpGeneral tipoPopUpGeneral = {false} nombreEliminar = 'Mario Alonso' state = {active} funcion = {togglePopUpGeneral}>
+            <PopUpGeneral tipoPopUpGeneral={false} nombreEliminar='Mario Alonso' state={active} funcion={togglePopUpGeneral}>
                 </PopUpGeneral>
+            <Template view='perfil'>
 
-                <div className = 'btn_PerfilCommon'>
+                
+
+                <div className='btn_PerfilCommon'>
 
                     <h1> Administrar perfil </h1>
 
-                    <div className = 'botonCerrarSesion'>
-                        <BotonConImagen 
-                            onClick = {'Hola'} 
-                            backgroundColor = 'grisClaro'
-                            size = "grande" 
-                            Image = {BsBoxArrowInRight}
+                    <div className='botonCerrarSesion'>
+                        <BotonConImagen
+                            onClick={'Hola'}
+                            backgroundColor='grisClaro'
+                            size="grande"
+                            Image={BsBoxArrowInRight}
                         >
                             Cerrar Sesión
                         </BotonConImagen>
@@ -39,15 +39,15 @@ function AdministrarPerfilAsesoradoDirectivos(){
 
                 </div>
 
-                <div className = 'boxPerfilCommon'>
+                <div className='boxPerfilCommon'>
                     <InformacionPersonalUsuario> </InformacionPersonalUsuario>
                 </div>
 
-                <div className = 'containerBtnEliminarCuenta'>
+                <div className='containerBtnEliminarCuenta'>
                     <BotonSencillo
-                        onClick = {togglePopUpGeneral}
-                        backgroundColor = 'negro'
-                        size = 'grande'
+                        onClick={togglePopUpGeneral}
+                        backgroundColor='negro'
+                        size='grande'
                     >
                         Eliminar cuenta
                     </BotonSencillo>
@@ -56,7 +56,7 @@ function AdministrarPerfilAsesoradoDirectivos(){
             </Template>
 
         </div>
-        
+
     )
 
 }

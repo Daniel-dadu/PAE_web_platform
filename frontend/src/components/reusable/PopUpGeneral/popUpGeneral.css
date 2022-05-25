@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     position: fixed;
+    z-index: 100;
 }
 
 .notActive {
@@ -19,6 +20,7 @@
     flex-direction: column;   
     border: 2px solid #000;
     border-radius: 20px;
+    background: #fff;
 }
 
 
@@ -34,6 +36,7 @@
     -webkit-box-shadow: 3px 10px 37px -7px rgba(0,0,0,0.75);
     -moz-box-shadow: 3px 10px 37px -7px rgba(0,0,0,0.75);
     padding: 15px;
+    background: #fff;
 }
 
 .contenedorGeneral-PopUpGeneral .parte-arriba-PopUpGeneral {

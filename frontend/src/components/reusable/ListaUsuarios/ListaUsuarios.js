@@ -1,10 +1,65 @@
 import React from 'react'
 import { FaEdit, FaSearch } from "react-icons/fa";
 import './listaUsuarios.css';
-import data from'./pruebaListaUsuarios.json'
 
 
-const ListaUsuarios = () => {
+// const usuarios = [
+//     {
+//         "id": 1,
+//         "nombreCompleto": "Daniel Esteban Maldonado Espitia"
+
+//     },
+//     {
+//         "id": 2,
+//         "nombreCompleto": "Daniel Munive Meneses"
+
+//     },
+//     {
+//         "id": 3,
+//         "nombreCompleto": "Daniel Flores Rodriguez"
+
+//     },
+//     {
+//         "id": 4,
+//         "nombreCompleto": "Ezequiel Lozano Guerrero"
+
+//     },
+//     {
+//         "id": 5,
+//         "nombreCompleto": "Fernando Jimenez"
+
+//     },
+//     {
+//         "id": 6,
+//         "nombreCompleto": "Emiliano Zapata"
+
+//     },
+//     {
+//         "id": 5,
+//         "nombreCompleto": "Leticia Rodríguez Aguilar"
+
+//     }
+// ]
+
+
+const ListaUsuarios = ({ data }) => {
+
+
+    /*
+        DOCUMENTACION DEL COMPONENTE
+
+        Notas importantes:
+            -----
+
+        uso:
+            Properties:
+            -> data. objeto que contendra la lista de usuarios que se desea renderizar en el componente, 
+            el formato de este objeto, se muestra en la parte de arriba (objeto llamado usuarios)
+
+        Ejemplo de uso:
+            <ListaUsuarios data={ usuarios }/>
+
+    */
   return (
     <>
         <div className='contenedorGeneral-ListaUsuarios'>
@@ -22,20 +77,18 @@ const ListaUsuarios = () => {
                     </tr>
 
                     {
-                        Object.keys(data['usuarios']).map((index) => {
-                            return(
-                            <tr className='fila-elemento-ListaUsuarios' key={index}>
-                                <td className='contenedor-nombre'>
-                                    <p>
-                                        {data['usuarios'][index]['nombreCompleto']}
-                                    </p>
-                                </td>
-                                <td className='contenedor-btn-editar'>
-                                    <a href='#' className='btn-editar-ListaUsuarios'> <FaEdit className='icono-btn-editar-ListaUsuarios'/> </a>
-                                </td>
-                            </tr>
-                            )
-                        })
+                        data.map((usuario) => (
+                            <tr className='fila-elemento-ListaUsuarios' key={usuario.id}>
+                            <td className='contenedor-nombre'>
+                                <p>
+                                    {usuario.nombreCompleto}
+                                </p>
+                            </td>
+                            <td className='contenedor-btn-editar'>
+                                <a href='./calendario' className='btn-editar-ListaUsuarios'> <FaEdit className='icono-btn-editar-ListaUsuarios'/> </a>
+                            </td>
+                        </tr>
+                        ))
                     }
                </tbody>
             </table>
