@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import "./CalendarioMini.css"
 
+import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs'
+
 function makeCalendarioMini(calendar, year, monthIndex){
     //Almacena todas la semanas del mes en forma de arreglos de dias.    
     let  weeks = [[]];
@@ -179,9 +181,13 @@ function CalendarioMini(){
     return(
         <div className='calendario_mini_container'>
             <div className='calendario_mini_top'>
-                <button type="button" className='buttonArrow' onClick={goLastMonth}><i className="arrow left"></i></button>
-                <span>{monthName} - {year}</span>
-                <button type="button" className='buttonArrow' onClick={goNextMonth}><i className="arrow right"></i></button>
+                <button type="button" className='buttonArrow' onClick={goLastMonth}>
+                    <BsArrowLeftCircle size={20} className='arrow_calendarioMini' />
+                </button>
+                <span className='title_mes_anio'>{monthName} {year}</span>
+                <button type="button" className='buttonArrow' onClick={goNextMonth}>
+                    <BsArrowRightCircle size={20} className='arrow_calendarioMini' />
+                </button>
             </div>
             <table className='calendario_mini_month'>
                 <tbody>

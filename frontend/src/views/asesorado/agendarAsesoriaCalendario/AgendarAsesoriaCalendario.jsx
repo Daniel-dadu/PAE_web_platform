@@ -47,7 +47,14 @@ function AgendarAsesoriaDuda() {
     showTarjetaMaestraMini={true} 
     sizeTarjetaMaestraMini="normal" 
     progressBarJSON={progressBar}>
-        <div className='calendario_container'>
+        <div className='titles_calendarioMini_container'>
+          <h2 className='title_instructions_agendarAsesoria'>Selecciona el día en el que quieres que se lleve a cabo tu asesoria</h2>
+          <h4 className='subtitle_instructions_agendarAsesoria'>
+            Solo los días en color <span style={{color: "#46CF16", fontWeight: '400'}}>verde</span> están disponibles
+          </h4>
+        </div>
+
+        <div className='calendarioMini_container'>
           <CalendarioMini />
         </div>
     </AgendarAsesoria>
