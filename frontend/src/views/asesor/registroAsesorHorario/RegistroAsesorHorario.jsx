@@ -7,7 +7,7 @@ import "./registroAsesorHorario.css"
 
 
 let progressBar = {
-  "currentStep": 2,
+  "currentStep": 1,
   "steps": [
       {
           "name" : "Datos Generales",
