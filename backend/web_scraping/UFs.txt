@@ -32,14 +32,10 @@ AR1025
 Creatividad y diseño
 AR1026
 Metodologías de investigación para proyectos de diseño
-EG1001
-Optativa de matemáticas y ciencias
 AR1027
 Métodos de diseño
 AR1028
 Técnicas de representación espacial y de imagen
-EG1002
-Optativa de humanidades y bellas artes
 AR2002B
 Diseño y construcción de un hábitat efímero
 AR2035
@@ -104,12 +100,9 @@ CF1015
 Análisis financiero
 EC1017
 Economía empresarial
-EG1001
-Optativa de matemáticas y ciencias
 FZ1011
 Decisiones financieras
 MA1027
-Razonamiento matemático
 NI1001B
 Globalización de los negocios
 RH1001B
@@ -126,8 +119,6 @@ CF1001B
 Dirección financiera
 D1029
 Legalidad y negocios responsables
-EG1002
-Optativa de humanidades y bellas artes
 EM1001B
 Ideación y prototipado
 EM1009
@@ -140,8 +131,6 @@ AD1001B
 Creación de valor compartido
 CF1016
 Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
 EM1010
 Proyecto de innovación empresarial
 FZ1012
@@ -154,10 +143,6 @@ NI1004
 Competitividad internacional  y oportunidades de crecimiento
 RH1005
 Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 NI2001B
 Panorama internacional de los negocios
 NI2002B
@@ -166,8 +151,6 @@ NI2026
 Negocios globales: tendencias y detección de riesgos
 NI2027
 Operación logística internacional
-EG1005
-Optativa de ética y ciudadanía
 NI2003B
 Administración de importaciones y sus regulaciones
 NI2004B
@@ -176,36 +159,8 @@ NI2025
 Negociación Intercultural
 NI2028
 Ventas y contratos internacionales
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
 NI3001B
 Desarrollo de estrategias de internacionalización para el siglo XXI
-OP3001B
-Optativa profesional multidisciplinaria
-EG1001
-Optativa de matemáticas y ciencias
 F1001B
 Modelación de la ingeniería y ciencias
 F1006B
@@ -218,8 +173,6 @@ Q1019
 Análisis de la estructura, propiedades y transformación de la materia
 TC1028
 Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
 F1008
 Experimentación física y pensamiento estadístico
 F1015B
@@ -236,8 +189,6 @@ MA1031
 Análisis estadístico
 Q1021
 Experimentación química y pensamiento estadístico fundamental
-EG1003
-Optativa de ciencias sociales y del comportamiento
 IN1001B
 Diseño y análisis de experimentos para la innovación ingenieril
 IN1002B
@@ -250,10 +201,6 @@ MA1035
 Modelación en ingeniería mediante sistemas dinámicos
 TE1020
 Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 IN2001B
 Desarrollo de proyectos con visión sistémica
 IN2002B
@@ -266,8 +213,6 @@ IN2037
 Diseño de sistemas ciberfísicos
 IN2038
 Evaluación económica de proyectos
-EG1005
-Optativa de ética y ciudadanía
 IN2004B
 Generación de valor con analítica de datos
 IN2005B
@@ -292,72 +237,8 @@ IN2043
 Simulación discreta, continua y por agentes
 IN2044
 Diseño de un proceso de consultoría y gestión del cambio
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
 IN3001B
 Diseño de un sistema organizacional inteligente
-OP3001B
-Optativa profesional multidisciplinaria
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1006B
-Modelación del movimiento en ingeniería
-F1007B
-Aplicación de las leyes de conservación en sistemas ingenieriles
-MA1028
-Modelación matemática fundamental
-Q1019
-Análisis de la estructura, propiedades y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1015B
-Aplicación de la termodinámica en sistemas ingenieriles
-F1016B
-Análisis de sistemas eléctricos en sistemas ingenieriles
-F1017B
-Análisis de sistemas electromagnéticos en sistemas ingenieriles
-MA1029
-Modelación matemática intermedia
-MA1030
-Modelación matricial
-MA1031
-Análisis estadístico
-Q1021
-Experimentación química y pensamiento estadístico fundamental
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IN1001B
-Diseño y análisis de experimentos para la innovación ingenieril
-IN1002B
-Desarrollo de proyectos de análisis de datos
-M1011
-Análisis de equilibrio estático
-MA1034
-Modelación de procesos mediante algebra lineal
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 M2001B
 Análisis de materiales y manufactura
 M2005
@@ -370,8 +251,6 @@ MR2022
 Análisis de elementos de la mecatrónica
 MR2023
 Modelación y automatización
-EG1005
-Optativa de ética y ciudadanía
 MR2005B
 Solución de problemas de procesos
 MR2006B
@@ -384,26 +263,10 @@ MR2007B
 Automatización de sistemas de manufactura
 MR3001B
 Diseño y desarrollo de robots
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
 MR3002B
 Diseño e implementación de sistemas mecatrónicos
-OP3001B
-Optativa profesional multidisciplinaria
 EC1001B
 Transformación del México contemporáneo
-EG1001
-Optativa de matemáticas y ciencias
 MA1022
 Pensamiento matemático I
 P1010
@@ -422,8 +285,6 @@ EC1013
 Macroeconomía
 EC1014
 Microeconomía
-EG1002
-Optativa de humanidades y bellas artes
 MA1023
 Métodos cuantitativos I
 MA1024
@@ -436,16 +297,12 @@ EC1015
 Economía conductual
 EC1016
 Economía para la toma de decisiones
-EG1003
-Optativa de ciencias sociales y del comportamiento
 MA1025
 Métodos cuantitativos II
 MA1026
 Pensamiento matemático III
 P1001B
 Participación política y sociología de la identidad
-VA1001B
-Tópico de exploración
 A1004
 Cultura visual y sonora
 AV1002B
@@ -454,58 +311,34 @@ CO1001B
 Metodologías de investigación de factores humanos
 DL1022
 Metodologías del pensamiento creativo
-EG1001
-Optativa de matemáticas y ciencias
 EH1001B
 Inmersión y experimentación creativa
 AR1001B
 Representación formal del espacio
 AV1001B
 Narrativa audiovisual
-EG1002
-Optativa de humanidades y bellas artes
 EH1008
 Imaginarios culturales de México
 EH1009
 Semiótica y narratologías contemporáneas
 H1001B
 Estructuras simbólicas en la imagen, la literatura y la música
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
 F1002B
 Modelación del movimiento en bioingeniería y procesos químicos
 F1003B
 Aplicación de las leyes de conservación en ingeniería de procesos
-MA1028
-Modelación matemática fundamental
-Q1019
-Análisis de la estructura, propiedades y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
 F1010B
 Aplicación de la termodinámica en ingeniería de procesos
 F1011B
 Análisis de sistemas eléctricos en ingeniería de procesos
 F1012B
 Análisis de sistemas electromagnéticos en ingeniería de procesos
-MA1029
-Modelación matemática intermedia
-Q1021
-Experimentación química y pensamiento estadístico fundamental
 Q1022
 Análisis de la transformación de la materia en procesos químicos
 Q1023
 Experimentación química y pensamiento estadístico intermedio
 BT1014
 Fundamentación de la biología molecular
-EG1003
-Optativa de ciencias sociales y del comportamiento
 IQ1001B
 Aplicación de la conservación de la materia en ingeniería de procesos
 IQ1002B
@@ -518,8 +351,6 @@ Q1026
 Análisis estructural de moléculas orgánicas y sus propiedades
 Q1027
 Fundamentación de la estructura y propiedades de biomoléculas
-VA1001B
-Tópico de exploración
 AG2001B
 Análisis de biosistemas productivos
 AG2002B
@@ -530,16 +361,12 @@ AG2030
 Integración de procesos bioproductivos
 DS2001B
 Conservación de recursos naturales en biosistemas
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 IN2033
 Gestión de biosistemas productivos
 AG2003B
 Integración de tecnologías sustentables en biosistemas
 BT2001B
 Mejora de biosistemas con genética y biotecnología
-EG1005
-Optativa de ética y ciudadanía
 IN2034
 Evaluación de la productividad
 IN2035
@@ -550,76 +377,10 @@ MR2001B
 Aplicación de automatización y control en biosistemas
 AG3001B
 Bioproducción en ambientes controlados
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
 AG3002B
 Transformación digital de biosistemas productivos
 AG3003B
 Gestión integral y ecoeficiente
-OP3001B
-Optativa profesional multidisciplinaria
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1002B
-Modelación del movimiento en bioingeniería y procesos químicos
-F1003B
-Aplicación de las leyes de conservación en ingeniería de procesos
-MA1028
-Modelación matemática fundamental
-Q1019
-Análisis de la estructura, propiedades y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1010B
-Aplicación de la termodinámica en ingeniería de procesos
-F1011B
-Análisis de sistemas eléctricos en ingeniería de procesos
-F1012B
-Análisis de sistemas electromagnéticos en ingeniería de procesos
-MA1029
-Modelación matemática intermedia
-Q1021
-Experimentación química y pensamiento estadístico fundamental
-Q1022
-Análisis de la transformación de la materia en procesos químicos
-Q1023
-Experimentación química y pensamiento estadístico intermedio
-BT1014
-Fundamentación de la biología molecular
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IQ1001B
-Aplicación de la conservación de la materia en ingeniería de procesos
-IQ1002B
-Aplicación de la conservación de la energía en ingeniería de procesos
-Q1024
-Aplicación del análisis químico
-Q1025
-Experimentación en química analítica
-Q1026
-Análisis estructural de moléculas orgánicas y sus propiedades
-Q1027
-Fundamentación de la estructura y propiedades de biomoléculas
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 TA2001B
 Diseño de alimentos saludables
 TA2002B
@@ -632,8 +393,6 @@ TA2018
 Optimización de procesos y sistemas de inocuidad
 TA2019
 Análisis fisicoquímico en el diseño de alimentos
-EG1005
-Optativa de ética y ciudadanía
 TA2004B
 Diseño de procesos sustentables
 TA2005B
@@ -648,124 +407,12 @@ TA2022
 Simulación de procesos de transformación de alimentos
 TA3001B
 Desarrollo sustentable de alimentos saludables y personalizados
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-OP3001B
-Optativa profesional multidisciplinaria
 TA3002B
 Administración de procesos de producción y distribución de alimentos
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1002B
-Modelación del movimiento en bioingeniería y procesos químicos
-F1003B
-Aplicación de las leyes de conservación en ingeniería de procesos
-MA1028
-Modelación matemática fundamental
 Q1028
 Fundamentación de la estructura y transformación de la materia
 Q1029
 Análisis de la estructura y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1010B
-Aplicación de la termodinámica en ingeniería de procesos
-F1011B
-Análisis de sistemas eléctricos en ingeniería de procesos
-F1012B
-Análisis de sistemas electromagnéticos en ingeniería de procesos
-MA1029
-Modelación matemática intermedia
-Q1021
-Experimentación química y pensamiento estadístico fundamental
-Q1022
-Análisis de la transformación de la materia en procesos químicos
-Q1023
-Experimentación química y pensamiento estadístico intermedio
-BT1014
-Fundamentación de la biología molecular
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IQ1001B
-Aplicación de la conservación de la materia en ingeniería de procesos
-IQ1002B
-Aplicación de la conservación de la energía en ingeniería de procesos
-Q1024
-Aplicación del análisis químico
-Q1025
-Experimentación en química analítica
-Q1026
-Análisis estructural de moléculas orgánicas y sus propiedades
-Q1027
-Fundamentación de la estructura y propiedades de biomoléculas
-VA1001B
-Tópico de exploración
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1002B
-Modelación del movimiento en bioingeniería y procesos químicos
-F1003B
-Aplicación de las leyes de conservación en ingeniería de procesos
-MA1028
-Modelación matemática fundamental
-Q1019
-Análisis de la estructura, propiedades y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1010B
-Aplicación de la termodinámica en ingeniería de procesos
-F1011B
-Análisis de sistemas eléctricos en ingeniería de procesos
-F1012B
-Análisis de sistemas electromagnéticos en ingeniería de procesos
-MA1029
-Modelación matemática intermedia
-Q1021
-Experimentación química y pensamiento estadístico fundamental
-Q1022
-Análisis de la transformación de la materia en procesos químicos
-Q1023
-Experimentación química y pensamiento estadístico intermedio
-BT1014
-Fundamentación de la biología molecular
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IQ1001B
-Aplicación de la conservación de la materia en ingeniería de procesos
-IQ1002B
-Aplicación de la conservación de la energía en ingeniería de procesos
-Q1024
-Aplicación del análisis químico
-Q1025
-Experimentación en química analítica
-Q1026
-Análisis estructural de moléculas orgánicas y sus propiedades
-Q1027
-Fundamentación de la estructura y propiedades de biomoléculas
-VA1001B
-Tópico de exploración
 BT2002B
 Elaboración de productos biotecnológicos
 BT2003B
@@ -774,16 +421,12 @@ BT2019
 Análisis y estudio de biosistemas
 BT2020
 Aplicación de bases moleculares
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 BT2004B
 Experimentación in vitro
 BT2005B
 Integración de operaciones de transferencia
 BT2026
 Análisis de fenómenos de transporte
-EG1005
-Optativa de ética y ciudadanía
 BT2006B
 Diseño de biorreactores
 BT2007B
@@ -794,58 +437,18 @@ BT2024
 Aplicación y análisis de las tecnologías ómicas
 BT2025
 Prospección de bioprocesos
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
 BT3002B
 Diseño de procesos biotecnológicos y de bioproductos
-OP3001B
-Optativa profesional multidisciplinaria
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
 F1008B
 Modelación del movimiento en ciencias
 F1009B
 Aplicación de las leyes de conservación en ciencias
-MA1028
-Modelación matemática fundamental
-Q1028
-Fundamentación de la estructura y transformación de la materia
-Q1029
-Análisis de la estructura y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
 F1018B
 Aplicación de la termodinámica en ciencias
 F1019B
 Análisis de sistemas eléctricos en ciencias
 F1020B
 Análisis de sistemas electromagnéticos en ciencias
-MA1029
-Modelación matemática intermedia
-MA1030
-Modelación matricial
-MA1031
-Análisis estadístico
-Q1021
-Experimentación química y pensamiento estadístico fundamental
-EG1003
-Optativa de ciencias sociales y del comportamiento
 F1009
 Análisis de métodos matemáticos para la física
 F1010
@@ -856,44 +459,22 @@ MA1002B
 Modelación de sistemas con ecuaciones diferenciales
 MA1036
 Fundamentación del álgebra lineal
-VA1001B
-Tópico de exploración
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
 F1004B
 Modelación computacional del movimiento
 F1005B
 Modelación computacional aplicando leyes de conservación
-MA1028
-Modelación matemática fundamental
-Q1028
-Fundamentación de la estructura y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
 TC1033
 Pensamiento computacional orientado a objetos
 BT1013
 Análisis de biología computacional
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
 F1013B
 Modelación computacional de sistemas eléctricos
 F1014B
 Modelación computacional de sistemas electromagnéticos
-MA1029
-Modelación matemática intermedia
-MA1031
-Análisis estadístico
 TC1003B
 Modelación de la ingeniería con matemática computacional
 TC1030
 Programación orientada a objetos
-EG1003
-Optativa de ciencias sociales y del comportamiento
 MA1033
 Análisis de ecuaciones diferenciales
 TC1004B
@@ -904,56 +485,6 @@ TC1032
 Modelación de sistemas mínimos y arquitecturas computacionales
 TI1015
 Análisis de requerimientos de software
-VA1001B
-Tópico de exploración
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1006B
-Modelación del movimiento en ingeniería
-F1007B
-Aplicación de las leyes de conservación en sistemas ingenieriles
-MA1028
-Modelación matemática fundamental
-Q1019
-Análisis de la estructura, propiedades y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1015B
-Aplicación de la termodinámica en sistemas ingenieriles
-F1016B
-Análisis de sistemas eléctricos en sistemas ingenieriles
-F1017B
-Análisis de sistemas electromagnéticos en sistemas ingenieriles
-MA1029
-Modelación matemática intermedia
-MA1030
-Modelación matricial
-MA1031
-Análisis estadístico
-Q1021
-Experimentación química y pensamiento estadístico fundamental
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IN1001B
-Diseño y análisis de experimentos para la innovación ingenieril
-IN1002B
-Desarrollo de proyectos de análisis de datos
-M1011
-Análisis de equilibrio estático
-MA1034
-Modelación de procesos mediante algebra lineal
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
 CV2001B
 Análisis de la interacción del ambiente construido y el entorno
 CV2002B
@@ -966,8 +497,6 @@ CV2036
 Gestión de costos
 CV2037
 Planeación y control de obra
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 CV2004B
 Evaluación del comportamiento de sistemas estructurales
 CV2005B
@@ -980,78 +509,18 @@ CV2039
 Gestión de operaciones de construcción
 CV2040
 Gestión empresarial en la industria de la construcción
-EG1005
-Optativa de ética y ciudadanía
 CV2007B
 Modelación de técnicas de saneamiento del agua
 CV2008B
 Diseño de movilidad eficiente de personas y mercancías
 CV2009B
 Diseño estructural con concreto reforzado y acero
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
 CV3001B
 Integración de proyectos de ingeniería civil
-OP3001B
-Optativa profesional multidisciplinaria
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1008B
-Modelación del movimiento en ciencias
-F1009B
-Aplicación de las leyes de conservación en ciencias
-MA1028
-Modelación matemática fundamental
 Q1020
 Análisis de la estructura y propiedades de la materia
 TC1029
 Pensamiento computacional y programación
-BT1013
-Análisis de biología computacional
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1019B
-Análisis de sistemas eléctricos en ciencias
-F1020B
-Análisis de sistemas electromagnéticos en ciencias
-MA1029
-Modelación matemática intermedia
-MA1031
-Análisis estadístico
-TC1003B
-Modelación de la ingeniería con matemática computacional
-TC1030
-Programación orientada a objetos
-EG1003
-Optativa de ciencias sociales y del comportamiento
-F1009
-Análisis de métodos matemáticos para la física
-F1010
-Modelación con ecuaciones diferenciales
-MA1001B
-Modelación estadística para la toma de decisiones
-MA1002B
-Modelación de sistemas con ecuaciones diferenciales
-MA1036
-Fundamentación del álgebra lineal
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 MA2001B
 Optimización determinista
 MA2002B
@@ -1064,8 +533,6 @@ TC2033
 Análisis de sistemas basados en conocimiento
 TC2034
 Modelación del aprendizaje con inteligencia artificial
-EG1005
-Optativa de ética y ciudadanía
 MA2003B
 Aplicación de métodos multivariados en ciencia de datos
 MA2004B
@@ -1084,74 +551,12 @@ MA2007B
 Uso de geometría y topología para ciencia de datos
 MA2008B
 Análisis numérico para la optimización no-lineal
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
 MA3001B
 Desarrollo de proyectos de ingeniería matemática
-OP3001B
-Optativa profesional multidisciplinaria
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1002B
-Modelación del movimiento en bioingeniería y procesos químicos
-F1003B
-Aplicación de las leyes de conservación en ingeniería de procesos
-MA1028
-Modelación matemática fundamental
-Q1019
-Análisis de la estructura, propiedades y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1010B
-Aplicación de la termodinámica en ingeniería de procesos
-F1011B
-Análisis de sistemas eléctricos en ingeniería de procesos
-F1012B
-Análisis de sistemas electromagnéticos en ingeniería de procesos
-MA1029
-Modelación matemática intermedia
-Q1021
-Experimentación química y pensamiento estadístico fundamental
-Q1022
-Análisis de la transformación de la materia en procesos químicos
-Q1023
-Experimentación química y pensamiento estadístico intermedio
 DS1008
 Evaluación del capital natural y principios de sustentabilidad
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IQ1001B
-Aplicación de la conservación de la materia en ingeniería de procesos
-IQ1002B
-Aplicación de la conservación de la energía en ingeniería de procesos
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
-Q1026
-Análisis estructural de moléculas orgánicas y sus propiedades
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
 DS2002B
 Implementación de programas de manejo de recursos
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 IQ2001B
 Integración de procesos energéticos
 IQ2002B
@@ -1162,8 +567,6 @@ IQ2010
 Diseño de procesos para el transporte de fluidos
 IQ2011
 Diseño de procesos de transferencia de calor
-EG1005
-Optativa de ética y ciudadanía
 IQ2003B
 Evaluación de procesos energéticos
 IQ2004B
@@ -1180,74 +583,10 @@ IQ2006B
 Innovación de los procesos en su cadena de valor
 IQ2014
 Mejora de procesos productivos aplicando principios de economía circular
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
 DS3001B
 Diseño de estrategias de sustentabilidad corporativa
 IQ3001B
 Desarrollo de modelos de sustentabilidad energética
-OP3001B
-Optativa profesional multidisciplinaria
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1006B
-Modelación del movimiento en ingeniería
-F1007B
-Aplicación de las leyes de conservación en sistemas ingenieriles
-MA1028
-Modelación matemática fundamental
-Q1019
-Análisis de la estructura, propiedades y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1015B
-Aplicación de la termodinámica en sistemas ingenieriles
-F1016B
-Análisis de sistemas eléctricos en sistemas ingenieriles
-F1017B
-Análisis de sistemas electromagnéticos en sistemas ingenieriles
-MA1029
-Modelación matemática intermedia
-MA1030
-Modelación matricial
-MA1031
-Análisis estadístico
-Q1021
-Experimentación química y pensamiento estadístico fundamental
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IN1001B
-Diseño y análisis de experimentos para la innovación ingenieril
-IN1002B
-Desarrollo de proyectos de análisis de datos
-M1011
-Análisis de equilibrio estático
-MA1034
-Modelación de procesos mediante algebra lineal
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 TE2005B
 Aplicación de la teoría electromagnética
 TE2006B
@@ -1260,8 +599,6 @@ TE2048
 Análisis de sistemas lógicos y circuitos digitales
 TE2049
 Fundamentación de la física de estado sólido y optoelectrónica
-EG1005
-Optativa de ética y ciudadanía
 TC2009B
 Diseño usando microcontroladores y arquitectura computacional
 TC2039
@@ -1280,70 +617,8 @@ TE2011B
 Diseño de sistemas de comunicaciones
 TE2012B
 Análisis de sistemas energéticos
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-OP3001B
-Optativa profesional multidisciplinaria
 TE3004B
 Desarrollo de telecomunicaciones y sistemas energéticos
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1008B
-Modelación del movimiento en ciencias
-F1009B
-Aplicación de las leyes de conservación en ciencias
-MA1028
-Modelación matemática fundamental
-Q1019
-Análisis de la estructura, propiedades y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1018B
-Aplicación de la termodinámica en ciencias
-F1019B
-Análisis de sistemas eléctricos en ciencias
-F1020B
-Análisis de sistemas electromagnéticos en ciencias
-MA1029
-Modelación matemática intermedia
-MA1030
-Modelación matricial
-MA1031
-Análisis estadístico
-Q1021
-Experimentación química y pensamiento estadístico fundamental
-EG1003
-Optativa de ciencias sociales y del comportamiento
-F1009
-Análisis de métodos matemáticos para la física
-F1010
-Modelación con ecuaciones diferenciales
-MA1001B
-Modelación estadística para la toma de decisiones
-MA1002B
-Modelación de sistemas con ecuaciones diferenciales
-MA1036
-Fundamentación del álgebra lineal
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 F2002B
 Solución de problemas de mecánica clásica
 F2003B
@@ -1352,8 +627,6 @@ F2004B
 Aplicación de las fuentes alternas de energía
 F2017
 Fundamentación de la electrodinámica
-EG1005
-Optativa de ética y ciudadanía
 F2005B
 Análisis de fenómenos ópticos
 F2006B
@@ -1368,72 +641,10 @@ F2009B
 Caracterización experimental de materiales
 TE2001B
 Caracterización experimental mediante instrumentación electrónica
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
 F3001B
 Integración de ingeniería física
-OP3001B
-Optativa profesional multidisciplinaria
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1006B
-Modelación del movimiento en ingeniería
-F1007B
-Aplicación de las leyes de conservación en sistemas ingenieriles
-MA1028
-Modelación matemática fundamental
-Q1019
-Análisis de la estructura, propiedades y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1015B
-Aplicación de la termodinámica en sistemas ingenieriles
-F1016B
-Análisis de sistemas eléctricos en sistemas ingenieriles
-F1017B
-Análisis de sistemas electromagnéticos en sistemas ingenieriles
-MA1029
-Modelación matemática intermedia
-MA1031
-Análisis estadístico
 OP1007
 Optativa de fundamentos en ingeniería
-Q1021
-Experimentación química y pensamiento estadístico fundamental
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IN1001B
-Diseño y análisis de experimentos para la innovación ingenieril
-IN1002B
-Desarrollo de proyectos de análisis de datos
-M1011
-Análisis de equilibrio estático
-MA1034
-Modelación de procesos mediante algebra lineal
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 NN2001B
 Diseño y creación de soluciones innovadoras
 NN2007
@@ -1442,8 +653,6 @@ OP2019
 Optativa de acentuación en ingeniería I
 OP2026
 Optativa de acentuación en ingeniería II
-EG1005
-Optativa de ética y ciudadanía
 NN2002B
 Diseño y evaluación de emprendimientos tecnológicos
 NN2008
@@ -1454,226 +663,14 @@ OP2028
 Optativa de acentuación en ingeniería IV
 NN3001B
 Gestión estratégica de la innovación tecnológica
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
 NN3002B
 Desarrollo de proyecto integrador de innovación
-OP3001B
-Optativa profesional multidisciplinaria
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1006B
-Modelación del movimiento en ingeniería
-F1007B
-Aplicación de las leyes de conservación en sistemas ingenieriles
-MA1028
-Modelación matemática fundamental
-Q1019
-Análisis de la estructura, propiedades y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1015B
-Aplicación de la termodinámica en sistemas ingenieriles
-F1016B
-Análisis de sistemas eléctricos en sistemas ingenieriles
-F1017B
-Análisis de sistemas electromagnéticos en sistemas ingenieriles
-MA1029
-Modelación matemática intermedia
-MA1030
-Modelación matricial
-MA1031
-Análisis estadístico
-Q1021
-Experimentación química y pensamiento estadístico fundamental
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IN1001B
-Diseño y análisis de experimentos para la innovación ingenieril
-IN1002B
-Desarrollo de proyectos de análisis de datos
-M1011
-Análisis de equilibrio estático
-MA1034
-Modelación de procesos mediante algebra lineal
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
-IN2001B
-Desarrollo de proyectos con visión sistémica
-IN2002B
-Mejora de un proceso organizacional con métodos estadísticos
-IN2003B
-Conceptualización de procesos con enfoque innovador
-IN2032
-Análisis estadístico de datos
-IN2037
-Diseño de sistemas ciberfísicos
-IN2038
-Evaluación económica de proyectos
-EG1005
-Optativa de ética y ciudadanía
-IN2004B
-Generación de valor con analítica de datos
-IN2005B
-Evaluación de la competitividad organizacional
-IN2006B
-Análisis de la viabilidad de proyectos con perspectiva sistémica
-IN2039
-Visualización de datos para la toma de decisiones
-IN2040
-Optimización de procesos organizacionales
-IN2041
-Mejora de procesos con métodos heurísticos y metaheurísticos
-IN2007B
-Diseño disruptivo de procesos organizacionales
-IN2008B
-Aseguramiento de la excelencia operacional
-IN2009B
-Mejora de una cadena de valor adaptativa
-IN2042
-Modelación de la cadena de valor
-IN2043
-Simulación discreta, continua y por agentes
-IN2044
-Diseño de un proceso de consultoría y gestión del cambio
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-IN3001B
-Diseño de un sistema organizacional inteligente
-OP3001B
-Optativa profesional multidisciplinaria
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1006B
-Modelación del movimiento en ingeniería
-F1007B
-Aplicación de las leyes de conservación en sistemas ingenieriles
-MA1028
-Modelación matemática fundamental
-Q1028
-Fundamentación de la estructura y transformación de la materia
-Q1029
-Análisis de la estructura y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1015B
-Aplicación de la termodinámica en sistemas ingenieriles
-F1016B
-Análisis de sistemas eléctricos en sistemas ingenieriles
-F1017B
-Análisis de sistemas electromagnéticos en sistemas ingenieriles
-MA1029
-Modelación matemática intermedia
-MA1030
-Modelación matricial
-MA1031
-Análisis estadístico
-Q1021
-Experimentación química y pensamiento estadístico fundamental
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IN1001B
-Diseño y análisis de experimentos para la innovación ingenieril
-IN1002B
-Desarrollo de proyectos de análisis de datos
-M1011
-Análisis de equilibrio estático
-MA1034
-Modelación de procesos mediante algebra lineal
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1006B
-Modelación del movimiento en ingeniería
-F1007B
-Aplicación de las leyes de conservación en sistemas ingenieriles
-MA1028
-Modelación matemática fundamental
-Q1019
-Análisis de la estructura, propiedades y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1015B
-Aplicación de la termodinámica en sistemas ingenieriles
-F1016B
-Análisis de sistemas eléctricos en sistemas ingenieriles
-F1017B
-Análisis de sistemas electromagnéticos en sistemas ingenieriles
-MA1029
-Modelación matemática intermedia
-MA1030
-Modelación matricial
-MA1031
-Análisis estadístico
-Q1021
-Experimentación química y pensamiento estadístico fundamental
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IN1002B
-Desarrollo de proyectos de análisis de datos
-MA1034
-Modelación de procesos mediante algebra lineal
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
 SD1001
 Sistema musculoesquelético
 SD1002B
 Metabolismo y energía
 SD1003
 Aporte y consumo de oxígeno
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
 BI2001B
 Diseño de sistemas de bioinstrumentación analógica
 BI2002B
@@ -1684,8 +681,6 @@ BI2010
 Análisis de señales y sistemas biomédicos
 BI2011
 Aplicación de tecnologías de la información en salud
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 BI2004B
 Análisis y diseño en biomecánica
 BI2005B
@@ -1696,8 +691,6 @@ BI2012
 Caracterización de biomateriales
 BI2013
 Modelación y control de sistemas biomédicos
-EG1005
-Optativa de ética y ciudadanía
 SD1012
 Sistema nervioso
 BI2007B
@@ -1712,164 +705,8 @@ BI2011B
 Implementación de ingeniería clínica
 BI2012B
 Análisis de la mecánica de biofluidos
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
 BI3001B
 Desarrollo de dispositivos médicos
-OP3001B
-Optativa profesional multidisciplinaria
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1006B
-Modelación del movimiento en ingeniería
-F1007B
-Aplicación de las leyes de conservación en sistemas ingenieriles
-MA1028
-Modelación matemática fundamental
-Q1019
-Análisis de la estructura, propiedades y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1015B
-Aplicación de la termodinámica en sistemas ingenieriles
-F1016B
-Análisis de sistemas eléctricos en sistemas ingenieriles
-F1017B
-Análisis de sistemas electromagnéticos en sistemas ingenieriles
-MA1029
-Modelación matemática intermedia
-MA1030
-Modelación matricial
-MA1031
-Análisis estadístico
-Q1021
-Experimentación química y pensamiento estadístico fundamental
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IN1001B
-Diseño y análisis de experimentos para la innovación ingenieril
-IN1002B
-Desarrollo de proyectos de análisis de datos
-M1011
-Análisis de equilibrio estático
-MA1034
-Modelación de procesos mediante algebra lineal
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
-M2001B
-Análisis de materiales y manufactura
-M2005
-Análisis  de mecanismos
-MR2003B
-Integración mecatrónica
-MR2004B
-Implementación de sistemas mecatrónicos
-MR2022
-Análisis de elementos de la mecatrónica
-MR2023
-Modelación y automatización
-EG1005
-Optativa de ética y ciudadanía
-MR2005B
-Solución de problemas de procesos
-MR2006B
-Automatización industrial
-MR2024
-Diseño mecatrónico
-MR2025
-Diseño de sistemas de control
-MR2007B
-Automatización de sistemas de manufactura
-MR3001B
-Diseño y desarrollo de robots
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-MR3002B
-Diseño e implementación de sistemas mecatrónicos
-OP3001B
-Optativa profesional multidisciplinaria
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1006B
-Modelación del movimiento en ingeniería
-F1007B
-Aplicación de las leyes de conservación en sistemas ingenieriles
-MA1028
-Modelación matemática fundamental
-Q1019
-Análisis de la estructura, propiedades y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1015B
-Aplicación de la termodinámica en sistemas ingenieriles
-F1016B
-Análisis de sistemas eléctricos en sistemas ingenieriles
-F1017B
-Análisis de sistemas electromagnéticos en sistemas ingenieriles
-MA1029
-Modelación matemática intermedia
-MA1030
-Modelación matricial
-MA1031
-Análisis estadístico
-Q1021
-Experimentación química y pensamiento estadístico fundamental
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IN1001B
-Diseño y análisis de experimentos para la innovación ingenieril
-IN1002B
-Desarrollo de proyectos de análisis de datos
-M1011
-Análisis de equilibrio estático
-MA1034
-Modelación de procesos mediante algebra lineal
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 M2002B
 Diseño de productos sometidos a cargas estáticas
 M2003B
@@ -1880,8 +717,6 @@ M2034
 Análisis del movimiento de cuerpos rígidos
 M2035
 Fundamentación de ingeniería de materiales
-EG1005
-Optativa de ética y ciudadanía
 M2004B
 Diseño de mecanismos
 M2005B
@@ -1898,74 +733,12 @@ M2007B
 Análisis y prevención de fallas
 M2008B
 Diseño de elementos de máquinas
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
 M3001B
 Diseño de máquinas
-OP3001B
-Optativa profesional multidisciplinaria
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1008B
-Modelación del movimiento en ciencias
-F1009B
-Aplicación de las leyes de conservación en ciencias
-MA1028
-Modelación matemática fundamental
-Q1019
-Análisis de la estructura, propiedades y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1018B
-Aplicación de la termodinámica en ciencias
-F1019B
-Análisis de sistemas eléctricos en ciencias
-F1020B
-Análisis de sistemas electromagnéticos en ciencias
-MA1029
-Modelación matemática intermedia
-Q1021
-Experimentación química y pensamiento estadístico fundamental
-Q1022
-Análisis de la transformación de la materia en procesos químicos
-Q1023
-Experimentación química y pensamiento estadístico intermedio
-BT1014
-Fundamentación de la biología molecular
-EG1003
-Optativa de ciencias sociales y del comportamiento
 Q1001B
 Fundamentación de las propiedades de nanomateriales y materiales
 Q1002B
 Obtención de nanomateriales, materiales orgánicos y bioinorgánicos
-Q1024
-Aplicación del análisis químico
-Q1025
-Experimentación en química analítica
-Q1026
-Análisis estructural de moléculas orgánicas y sus propiedades
-Q1027
-Fundamentación de la estructura y propiedades de biomoléculas
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 NT2001B
 Fabricación de nanoestructuras por métodos químicos
 NT2002B
@@ -1976,8 +749,6 @@ Q2024
 Caracterización de materiales y nanomateriales
 Q2025
 Fundamentación de química médica y nanomedicina
-EG1005
-Optativa de ética y ciudadanía
 F2001B
 Desarrollo de nanosistemas fotónicos
 F2015
@@ -2002,74 +773,8 @@ Q2003B
 Aplicación de investigación en soluciones integrales
 Q2027
 Investigación y diseño experimental
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-OP3001B
-Optativa profesional multidisciplinaria
 Q3001B
 Desarrollo de proyectos de nanotecnología
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1002B
-Modelación del movimiento en bioingeniería y procesos químicos
-F1003B
-Aplicación de las leyes de conservación en ingeniería de procesos
-MA1028
-Modelación matemática fundamental
-Q1019
-Análisis de la estructura, propiedades y transformación de la materia
-TC1028
-Pensamiento computacional para ingeniería
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1010B
-Aplicación de la termodinámica en ingeniería de procesos
-F1011B
-Análisis de sistemas eléctricos en ingeniería de procesos
-F1012B
-Análisis de sistemas electromagnéticos en ingeniería de procesos
-MA1029
-Modelación matemática intermedia
-Q1021
-Experimentación química y pensamiento estadístico fundamental
-Q1022
-Análisis de la transformación de la materia en procesos químicos
-Q1023
-Experimentación química y pensamiento estadístico intermedio
-BT1014
-Fundamentación de la biología molecular
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IQ1001B
-Aplicación de la conservación de la materia en ingeniería de procesos
-IQ1002B
-Aplicación de la conservación de la energía en ingeniería de procesos
-Q1024
-Aplicación del análisis químico
-Q1025
-Experimentación en química analítica
-Q1026
-Análisis estructural de moléculas orgánicas y sus propiedades
-Q1027
-Fundamentación de la estructura y propiedades de biomoléculas
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 IQ2007B
 Diseño de sistemas de flujo de fluidos
 IQ2008B
@@ -2078,8 +783,6 @@ IQ2009B
 Análisis de procesos de transferencia de calor y flujo de fluidos
 IQ2015
 Modelación de fenómenos de transporte
-EG1005
-Optativa de ética y ciudadanía
 IQ2010B
 Diseño de procesos de separación
 IQ2011B
@@ -2094,70 +797,10 @@ IQ2017
 Diseño de procesos químicos
 MR2021
 Automatización y control de procesos químicos
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
 IQ3002B
 Aplicación de la ingeniería de procesos en proyectos industriales
-OP3001B
-Optativa profesional multidisciplinaria
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1004B
-Modelación computacional del movimiento
-F1005B
-Modelación computacional aplicando leyes de conservación
-MA1028
-Modelación matemática fundamental
-Q1020
-Análisis de la estructura y propiedades de la materia
-TC1029
-Pensamiento computacional y programación
-BT1013
-Análisis de biología computacional
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1013B
-Modelación computacional de sistemas eléctricos
-F1014B
-Modelación computacional de sistemas electromagnéticos
-MA1029
-Modelación matemática intermedia
-MA1031
-Análisis estadístico
-TC1003B
-Modelación de la ingeniería con matemática computacional
-TC1030
-Programación orientada a objetos
-EG1003
-Optativa de ciencias sociales y del comportamiento
-MA1033
-Análisis de ecuaciones diferenciales
-TC1004B
-Implementación de internet de las cosas
-TC1031
-Programación de estructuras de datos y algoritmos fundamentales
-TC1032
-Modelación de sistemas mínimos y arquitecturas computacionales
 TE1019
 Fundamentación de ingeniería eléctrica y electrónica
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 MA2016
 Modelación matemática avanzada
 TE2002B
@@ -2167,93 +810,24 @@ Diseño de sistemas en chip
 TE2044
 Fundamentación electrónica
 TE2045
-Diseño de circuitos electrónicos
-EG1005
-Optativa de ética y ciudadanía
 MR2002B
 Análisis de sistemas de control
 TC2036
 Implementación de redes seguras
 TE2004B
 Diseño de sistemas embebidos avanzados
-TE2046
-Análisis de señales y sistemas
 TE3001B
 Fundamentación de robótica
 TE3002B
 Implementación de robótica inteligente
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-OP3001B
-Optativa profesional multidisciplinaria
 TE3003B
 Integración de robótica y sistemas inteligentes
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1004B
-Modelación computacional del movimiento
-F1005B
-Modelación computacional aplicando leyes de conservación
-MA1028
-Modelación matemática fundamental
-Q1020
-Análisis de la estructura y propiedades de la materia
-TC1029
-Pensamiento computacional y programación
-BT1013
-Análisis de biología computacional
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1013B
-Modelación computacional de sistemas eléctricos
-F1014B
-Modelación computacional de sistemas electromagnéticos
-MA1029
-Modelación matemática intermedia
-MA1031
-Análisis estadístico
-TC1003B
-Modelación de la ingeniería con matemática computacional
-TC1030
-Programación orientada a objetos
-EG1003
-Optativa de ciencias sociales y del comportamiento
-MA1033
-Análisis de ecuaciones diferenciales
-TC1004B
-Implementación de internet de las cosas
-TC1031
-Programación de estructuras de datos y algoritmos fundamentales
-TC1032
-Modelación de sistemas mínimos y arquitecturas computacionales
-TI1015
-Análisis de requerimientos de software
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 TC2005B
 Construcción de software y toma de decisiones
 TC2006B
 Interconexión de dispositivos
 TC2037
 Implementación de métodos computacionales
-EG1005
-Optativa de ética y ciudadanía
 TC2007B
 Integración de seguridad informática en redes y sistemas de software
 TC2008B
@@ -2262,74 +836,12 @@ TC2038
 Análisis y diseño de algoritmos avanzados
 TC3001B
 Desarrollo de software
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-OP3001B
-Optativa profesional multidisciplinaria
 TC3002B
 Desarrollo de aplicaciones avanzadas de ciencias computacionales
 TC3003B
 Implementación de redes de área amplia y servicios distribuidos
-EG1001
-Optativa de matemáticas y ciencias
-F1001B
-Modelación de la ingeniería y ciencias
-F1004B
-Modelación computacional del movimiento
-F1005B
-Modelación computacional aplicando leyes de conservación
-MA1028
-Modelación matemática fundamental
-Q1020
-Análisis de la estructura y propiedades de la materia
-TC1029
-Pensamiento computacional y programación
-BT1013
-Análisis de biología computacional
-EG1002
-Optativa de humanidades y bellas artes
-F1008
-Experimentación física y pensamiento estadístico
-F1013B
-Modelación computacional de sistemas eléctricos
-F1014B
-Modelación computacional de sistemas electromagnéticos
-MA1029
-Modelación matemática intermedia
-MA1031
-Análisis estadístico
-TC1003B
-Modelación de la ingeniería con matemática computacional
-TC1030
-Programación orientada a objetos
-EG1003
-Optativa de ciencias sociales y del comportamiento
-MA1033
-Análisis de ecuaciones diferenciales
-TC1004B
-Implementación de internet de las cosas
-TC1031
-Programación de estructuras de datos y algoritmos fundamentales
-TC1032
-Modelación de sistemas mínimos y arquitecturas computacionales
-TI1015
-Análisis de requerimientos de software
-VA1001B
-Tópico de exploración
 AD2029
 Modelación, estructura y operación de los negocios
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 TI2002B
 Evaluación de arquitecturas empresariales
 TI2003B
@@ -2344,8 +856,6 @@ AD2008B
 Administración del cambio
 AD2030
 Análisis del comportamiento y desempeño organizacional
-EG1005
-Optativa de ética y ciudadanía
 FZ2025
 Análisis de las actividades económicas
 TI2005B
@@ -2360,46 +870,8 @@ TI3002B
 Innovación y diseño de iniciativas de transformación digital
 TI3003B
 Aplicación de analítica y gobierno de datos
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-OP3001B
-Optativa profesional multidisciplinaria
 TI3004B
 Transformación digital de la organización
-A1004
-Cultura visual y sonora
-AV1002B
-Técnicas y discursos fotográficos
-CO1001B
-Metodologías de investigación de factores humanos
-DL1022
-Metodologías del pensamiento creativo
-EG1001
-Optativa de matemáticas y ciencias
-EH1001B
-Inmersión y experimentación creativa
-AR1001B
-Representación formal del espacio
-AV1001B
-Narrativa audiovisual
-EG1002
-Optativa de humanidades y bellas artes
-EH1008
-Imaginarios culturales de México
-EH1009
-Semiótica y narratologías contemporáneas
-H1001B
-Estructuras simbólicas en la imagen, la literatura y la música
 A2001B
 Pre-producción de cortometraje animado
 A2002B
@@ -2410,10 +882,6 @@ A2013
 Historia de la animación
 A2014
 Fundamentos de la animación
-EG1003
-Optativa de ciencias sociales y del comportamiento
-VA1001B
-Tópico de exploración
 A2003B
 Arte conceptual
 A2004B
@@ -2424,10 +892,6 @@ A2015
 Exploración de la forma
 A2016
 Introducción al 3D
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
-EG1005
-Optativa de ética y ciudadanía
 OP3070
 Optativa de arte digital I
 OP3071
@@ -2442,82 +906,8 @@ OP3075
 Optativa de arte digital VI
 AT3001B
 Proyecto de arte digital
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
 AT3002B
 Proyecto integral de arte digital
-OP3001B
-Optativa profesional multidisciplinaria
-AD1000B
-El rol de los negocios en la sociedad
-AD1014
-Dirección de los negocios
-CF1015
-Análisis financiero
-EC1017
-Economía empresarial
-EG1001
-Optativa de matemáticas y ciencias
-FZ1011
-Decisiones financieras
-MA1027
-Razonamiento matemático
-NI1001B
-Globalización de los negocios
-RH1001B
-Estrategia y talento
-TC1027
-Programación para negocios
-AD1016
-Comunicación que inspira
-CD1004
-Análisis para la toma de decisiones
-CD1005
-Pensamiento estadístico
-CF1001B
-Dirección financiera
-D1029
-Legalidad y negocios responsables
-EG1002
-Optativa de humanidades y bellas artes
-EM1001B
-Ideación y prototipado
-EM1009
-Innovación de modelos de negocios
-MT1001B
-Descubrimientos del mercado para el desarrollo de estrategias
-RH1004
-Procesos de gestión de talento
-AD1001B
-Creación de valor compartido
-CF1016
-Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
-EM1010
-Proyecto de innovación empresarial
-FZ1012
-Evaluación de proyectos de inversión
-MT1002B
-Construcción de soluciones para el mercado
-MT1011
-Estrategias de mercado y diferenciación
-NI1004
-Competitividad internacional  y oportunidades de crecimiento
-RH1005
-Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
 AD2001B
 Detección de oportunidades estratégicas
 AD2002B
@@ -2526,8 +916,6 @@ AD2004B
 Liderazgo para la transformación
 AD2025
 Pensamiento estratégico
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 AD2005B
 Aseguramiento de la co-creación de valor
 AD2006B
@@ -2536,100 +924,10 @@ AD2026
 Construcción de habilidades interpersonales
 AD2027
 Innovación y co-creación de valor
-EG1005
-Optativa de ética y ciudadanía
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
 AD3001B
 Gestión estratégica de PYMES
 AD3002B
 Institucionalización de la empresa familiar
-OP3001B
-Optativa profesional multidisciplinaria
-AD1000B
-El rol de los negocios en la sociedad
-AD1014
-Dirección de los negocios
-CF1015
-Análisis financiero
-EC1017
-Economía empresarial
-EG1001
-Optativa de matemáticas y ciencias
-FZ1011
-Decisiones financieras
-MA1027
-Razonamiento matemático
-NI1001B
-Globalización de los negocios
-RH1001B
-Estrategia y talento
-TC1027
-Programación para negocios
-AD1016
-Comunicación que inspira
-CD1004
-Análisis para la toma de decisiones
-CD1005
-Pensamiento estadístico
-CF1001B
-Dirección financiera
-D1029
-Legalidad y negocios responsables
-EG1002
-Optativa de humanidades y bellas artes
-EM1001B
-Ideación y prototipado
-EM1009
-Innovación de modelos de negocios
-MT1001B
-Descubrimientos del mercado para el desarrollo de estrategias
-RH1004
-Procesos de gestión de talento
-AD1001B
-Creación de valor compartido
-CF1016
-Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
-EM1010
-Proyecto de innovación empresarial
-FZ1012
-Evaluación de proyectos de inversión
-MT1002B
-Construcción de soluciones para el mercado
-MT1011
-Estrategias de mercado y diferenciación
-NI1004
-Competitividad internacional  y oportunidades de crecimiento
-RH1005
-Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 FZ2001B
 Análisis de inversiones
 FZ2002B
@@ -2642,8 +940,6 @@ FZ2020
 Series de tiempo
 FZ2021
 Teoría de inversiones
-EG1005
-Optativa de ética y ciudadanía
 FZ2005B
 Análisis de financiamiento
 FZ2008B
@@ -2656,48 +952,14 @@ FZ2023
 Instrumentos derivados
 FZ2024
 Modelación y programación financiera
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
 FZ3001B
 Administración financiera internacional
 FZ3002B
 Gestión de fondos de inversión
-OP3001B
-Optativa profesional multidisciplinaria
-EG1001
-Optativa de matemáticas y ciencias
-SD1001
-Sistema musculoesquelético
 SD1001B
 Bases de la salud
 SD1002
 Sistema digestivo
-SD1002B
-Metabolismo y energía
-SD1003
-Aporte y consumo de oxígeno
 SD1003B
 Mecanismos celulares y moleculares
 SD1004
@@ -2706,8 +968,6 @@ SD1005
 Genética humana
 SD1006
 Sistema endócrino
-EG1002
-Optativa de humanidades y bellas artes
 SD1004B
 Ciclo de vida: concepción y embarazo
 SD1005B
@@ -2724,10 +984,6 @@ SD1010
 Desarrollo emocional y conductual
 SD1011
 Morfofisiología renal
-SD1012
-Sistema nervioso
-EG1003
-Optativa de ciencias sociales y del comportamiento
 SD1007B
 Entornos saludables para el adulto mayor
 SD1008B
@@ -2744,10 +1000,6 @@ SD1017
 Sangre y hematopoyesis
 SD1018
 Introducción a la clínica
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 MB2001B
 Bases histopatológicas
 MB2002B
@@ -2760,8 +1012,6 @@ MB2060
 Microbiota patógena
 MB2061
 Genética médica
-EG1005
-Optativa de ética y ciudadanía
 MB2004B
 Bases de los sistemas nervioso y endócrino
 MB2005B
@@ -2792,84 +1042,12 @@ MB2080
 Farmacología de los sistemas biocontroladores y de la reproducción
 SD2001B
 Modelo multidisciplinario de atención en salud
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
 BI3002B
 Proyecto de investigación traslacional
 BI3003B
 Gestión de proyectos de innovación científica
 BI3004B
 Emprendimiento en biociencias
-AD1000B
-El rol de los negocios en la sociedad
-AD1014
-Dirección de los negocios
-CF1015
-Análisis financiero
-EC1017
-Economía empresarial
-EG1001
-Optativa de matemáticas y ciencias
-FZ1011
-Decisiones financieras
-MA1027
-Razonamiento matemático
-NI1001B
-Globalización de los negocios
-RH1001B
-Estrategia y talento
-TC1027
-Programación para negocios
-AD1016
-Comunicación que inspira
-CD1004
-Análisis para la toma de decisiones
-CD1005
-Pensamiento estadístico
-CF1001B
-Dirección financiera
-D1029
-Legalidad y negocios responsables
-EG1002
-Optativa de humanidades y bellas artes
-EM1001B
-Ideación y prototipado
-EM1009
-Innovación de modelos de negocios
-MT1001B
-Descubrimientos del mercado para el desarrollo de estrategias
-RH1004
-Procesos de gestión de talento
-AD1001B
-Creación de valor compartido
-CF1016
-Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
-EM1010
-Proyecto de innovación empresarial
-FZ1012
-Evaluación de proyectos de inversión
-MT1002B
-Construcción de soluciones para el mercado
-MT1011
-Estrategias de mercado y diferenciación
-NI1004
-Competitividad internacional  y oportunidades de crecimiento
-RH1005
-Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
 CF2001B
 Diagnóstico financiero
 CF2002B
@@ -2878,8 +1056,6 @@ CF2022
 Cumplimiento fiscal
 CF2023
 Optimización de costos
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 FZ2003B
 Decisiones de negocio estratégicas
 TI2016
@@ -2892,24 +1068,10 @@ CF2025
 Valuación y presentación de financiamientos
 CF2026
 Valuación y presentación de inversiones
-EG1005
-Optativa de ética y ciudadanía
 FZ2006B
 Análisis fundamental de empresas
 FZ2007B
 Creación de valor corporativo
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
 CF3001B
 Formación de juicio crítico profesional
 CF3024
@@ -2920,152 +1082,30 @@ CF3027
 Consolidación de información financiera
 CF3002B
 Dirección financiera y contraloría estratégica
-OP3001B
-Optativa profesional multidisciplinaria
-A1004
-Cultura visual y sonora
-AV1002B
-Técnicas y discursos fotográficos
-CO1001B
-Metodologías de investigación de factores humanos
-DL1022
-Metodologías del pensamiento creativo
-EG1001
-Optativa de matemáticas y ciencias
-EH1001B
-Inmersión y experimentación creativa
-AR1001B
-Representación formal del espacio
-AV1001B
-Narrativa audiovisual
-EG1002
-Optativa de humanidades y bellas artes
-EH1008
-Imaginarios culturales de México
-EH1009
-Semiótica y narratologías contemporáneas
-H1001B
-Estructuras simbólicas en la imagen, la literatura y la música
 AV2001B
 Producción de audio, video y diseño digital
 CO2001B
 Metodologías de investigación para la comunicación
 CO2011
 Teorías de la comunicación
-EG1003
-Optativa de ciencias sociales y del comportamiento
 EH2006
 Del humanismo al post-humanismo
-VA1001B
-Tópico de exploración
 AV2002B
 Guionismo y producción de narrativas audiovisuales
 AV2016
 Fotografía publicitaria y comercial
 CR2001B
 Comunicación estratégica aplicada
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 AV2003B
 Narrativa documental
 CO2002B
 Comunicación, mercadotecnia digital y minería de datos
 CO2012
 Estudios culturales y medios
-EG1005
-Optativa de ética y ciudadanía
 MI2003B
 Producción periodística convergente
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
 CO3001B
 Proyecto integrador de comunicación
-OP3001B
-Optativa profesional multidisciplinaria
-AD1000B
-El rol de los negocios en la sociedad
-AD1014
-Dirección de los negocios
-CF1015
-Análisis financiero
-EC1017
-Economía empresarial
-EG1001
-Optativa de matemáticas y ciencias
-FZ1011
-Decisiones financieras
-MA1027
-Razonamiento matemático
-NI1001B
-Globalización de los negocios
-RH1001B
-Estrategia y talento
-TC1027
-Programación para negocios
-AD1016
-Comunicación que inspira
-CD1004
-Análisis para la toma de decisiones
-CD1005
-Pensamiento estadístico
-CF1001B
-Dirección financiera
-D1029
-Legalidad y negocios responsables
-EG1002
-Optativa de humanidades y bellas artes
-EM1001B
-Ideación y prototipado
-EM1009
-Innovación de modelos de negocios
-MT1001B
-Descubrimientos del mercado para el desarrollo de estrategias
-RH1004
-Procesos de gestión de talento
-AD1001B
-Creación de valor compartido
-CF1016
-Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
-EM1010
-Proyecto de innovación empresarial
-FZ1012
-Evaluación de proyectos de inversión
-MT1002B
-Construcción de soluciones para el mercado
-MT1011
-Estrategias de mercado y diferenciación
-NI1004
-Competitividad internacional  y oportunidades de crecimiento
-RH1005
-Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 EM2001B
 Adaptación de oportunidad y solución
 EM2002B
@@ -3078,8 +1118,6 @@ EM2014
 Liderazgo emprendedor
 EM2015
 Oportunidades de emprendimiento corporativo
-EG1005
-Optativa de ética y ciudadanía
 EM2004B
 Diseño de prototipos
 EM2005B
@@ -3092,60 +1130,10 @@ EM2017
 Metodologías de innovación tecnológica
 EM2018
 Técnicas de prototipaje
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
 EM3001B
 Escalabilidad
 EM3002B
 Persuasión y ventas
-OP3001B
-Optativa profesional multidisciplinaria
-A1004
-Cultura visual y sonora
-AV1002B
-Técnicas y discursos fotográficos
-CO1001B
-Metodologías de investigación de factores humanos
-DL1022
-Metodologías del pensamiento creativo
-EG1001
-Optativa de matemáticas y ciencias
-EH1001B
-Inmersión y experimentación creativa
-AR1001B
-Representación formal del espacio
-AV1001B
-Narrativa audiovisual
-EG1002
-Optativa de humanidades y bellas artes
-EH1008
-Imaginarios culturales de México
-EH1009
-Semiótica y narratologías contemporáneas
-H1001B
-Estructuras simbólicas en la imagen, la literatura y la música
 DL2001B
 Comunicación digital del producto
 DL2002B
@@ -3154,10 +1142,6 @@ DL2042
 Representación visual
 DL2043
 Materia y expresión
-EG1003
-Optativa de ciencias sociales y del comportamiento
-VA1001B
-Tópico de exploración
 DL2003B
 Pensamiento y proceso creativo
 DL2004B
@@ -3166,10 +1150,6 @@ DL2005B
 Diseño e innovación
 DL2044
 Administración de proyectos de diseño
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
-EG1005
-Optativa de ética y ciudadanía
 OP3076
 Optativa de diseño I
 OP3077
@@ -3184,84 +1164,8 @@ OP3081
 Optativa de diseño VI
 DL3001B
 Proyecto de diseño
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
 DL3002B
 Proyecto integral de diseño
-OP3001B
-Optativa profesional multidisciplinaria
-AD1000B
-El rol de los negocios en la sociedad
-AD1014
-Dirección de los negocios
-CF1015
-Análisis financiero
-EC1017
-Economía empresarial
-EG1001
-Optativa de matemáticas y ciencias
-FZ1011
-Decisiones financieras
-MA1027
-Razonamiento matemático
-NI1001B
-Globalización de los negocios
-RH1001B
-Estrategia y talento
-TC1027
-Programación para negocios
-AD1016
-Comunicación que inspira
-CD1004
-Análisis para la toma de decisiones
-CD1005
-Pensamiento estadístico
-CF1001B
-Dirección financiera
-D1029
-Legalidad y negocios responsables
-EG1002
-Optativa de humanidades y bellas artes
-EM1001B
-Ideación y prototipado
-EM1009
-Innovación de modelos de negocios
-MT1001B
-Descubrimientos del mercado para el desarrollo de estrategias
-RH1004
-Procesos de gestión de talento
-AD1001B
-Creación de valor compartido
-CF1016
-Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
-EM1010
-Proyecto de innovación empresarial
-FZ1012
-Evaluación de proyectos de inversión
-MT1002B
-Construcción de soluciones para el mercado
-MT1011
-Estrategias de mercado y diferenciación
-NI1004
-Competitividad internacional  y oportunidades de crecimiento
-RH1005
-Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 RH2001B
 Estrategias para potenciar el talento humano
 RH2002B
@@ -3276,8 +1180,6 @@ TI2015
 Analítica del talento
 AD2028
 Responsabilidad social y talento humano
-EG1005
-Optativa de ética y ciudadanía
 RH2004B
 Comprensión del ambiente laboral
 RH2005B
@@ -3288,82 +1190,10 @@ RH2014
 Organizaciones positivas
 RH2015
 Versatilidad organizacional
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
-OP3001B
-Optativa profesional multidisciplinaria
 RH3001B
 Liderazgo estratégico del talento
 RH3002B
 Potenciación de la cultura organizacional
-EC1001B
-Transformación del México contemporáneo
-EG1001
-Optativa de matemáticas y ciencias
-MA1022
-Pensamiento matemático I
-P1010
-Filosofía política para los dilemas contemporáneos
-P1011
-Introducción a las ciencias sociales
-RI1001B
-Desafíos globales
-TC1001B
-Principios de programación para las ciencias sociales
-D1001B
-Introducción al derecho
-EC1002B
-Emprendimiento y tecnología para la transformación de México
-EC1013
-Macroeconomía
-EC1014
-Microeconomía
-EG1002
-Optativa de humanidades y bellas artes
-MA1023
-Métodos cuantitativos I
-MA1024
-Pensamiento matemático II
-TC1002B
-Herramientas tecnológicas para las ciencias sociales
-EC1003B
-Macroeconomía y desarrollo económico
-EC1015
-Economía conductual
-EC1016
-Economía para la toma de decisiones
-EG1003
-Optativa de ciencias sociales y del comportamiento
-MA1025
-Métodos cuantitativos II
-MA1026
-Pensamiento matemático III
-P1001B
-Participación política y sociología de la identidad
-VA1001B
-Tópico de exploración
 EC2001B
 Dinero y capitales
 EC2003B
@@ -3372,8 +1202,6 @@ EC2004B
 Origen y futuro del panorama macroeconómico
 EC2029
 Fundamentos de econometría
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 MA2012
 Fundamentos de estadística
 MA2013
@@ -3390,66 +1218,8 @@ EC2031
 Econometría II
 EC2032
 Multivariante
-EG1005
-Optativa de ética y ciudadanía
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
 EC3002B
 Solución y evaluación de problemas económicos
-OP3001B
-Optativa profesional multidisciplinaria
-EC1001B
-Transformación del México contemporáneo
-EG1001
-Optativa de matemáticas y ciencias
-MA1022
-Pensamiento matemático I
-P1010
-Filosofía política para los dilemas contemporáneos
-P1011
-Introducción a las ciencias sociales
-RI1001B
-Desafíos globales
-TC1001B
-Principios de programación para las ciencias sociales
-D1001B
-Introducción al derecho
-EC1002B
-Emprendimiento y tecnología para la transformación de México
-EC1013
-Macroeconomía
-EC1014
-Microeconomía
-EG1002
-Optativa de humanidades y bellas artes
-MA1023
-Métodos cuantitativos I
-MA1024
-Pensamiento matemático II
-TC1002B
-Herramientas tecnológicas para las ciencias sociales
 D2001B
 Bienes y derechos reales
 D2002B
@@ -3466,10 +1236,6 @@ D2035
 Seminario de teoría del derecho
 D2036
 Teoría del derecho
-EG1003
-Optativa de ciencias sociales y del comportamiento
-VA1001B
-Tópico de exploración
 D2003B
 Derecho penal y delitos en especial
 D2004B
@@ -3482,8 +1248,6 @@ D2038
 Derecho de las obligaciones II
 D2039
 Seminario de derecho de las obligaciones I
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 D2006B
 Contratos civiles y mercantiles
 D2007B
@@ -3496,8 +1260,6 @@ D2041
 Derecho laboral ll
 D2042
 Seminario de derecho de las obligaciones II
-EG1005
-Optativa de ética y ciudadanía
 D3001B
 Controles constitucionales I
 D3002B
@@ -3534,46 +1296,8 @@ D3049
 Seminario de derecho internacional público
 D3050
 Títulos y operaciones de crédito
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
 D3007B
 Investigación jurídica aplicada
-OP3001B
-Optativa profesional multidisciplinaria
-A1004
-Cultura visual y sonora
-AV1002B
-Técnicas y discursos fotográficos
-CO1001B
-Metodologías de investigación de factores humanos
-DL1022
-Metodologías del pensamiento creativo
-EG1001
-Optativa de matemáticas y ciencias
-EH1001B
-Inmersión y experimentación creativa
-AR1001B
-Representación formal del espacio
-AV1001B
-Narrativa audiovisual
-EG1002
-Optativa de humanidades y bellas artes
-EH1008
-Imaginarios culturales de México
-EH1009
-Semiótica y narratologías contemporáneas
-H1001B
-Estructuras simbólicas en la imagen, la literatura y la música
 ED2001
 Fundamentos de la pedagogía
 ED2001B
@@ -3582,10 +1306,6 @@ ED2002
 Metodologías de la investigación educativa
 ED2002B
 Fundamentación pedagógica aplicada a las soluciones de aprendizaje
-EG1003
-Optativa de ciencias sociales y del comportamiento
-VA1001B
-Tópico de exploración
 ED2003
 Introducción a la administración educativa
 ED2003B
@@ -3594,106 +1314,14 @@ ED2004B
 Exploración de tendencias tecnológicas en educación
 ED2005B
 Uso de tecnología en la investigación educativa
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 ED2004
 Educación global y comparada
 ED2006B
 Diseño de soluciones para retos educativos
 ED2007B
 Desarrollo de proyectos en el marco de las políticas educativas vigentes
-EG1005
-Optativa de ética y ciudadanía
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
 ED3001B
 Proyecto integrador de innovación educativa
-OP3001B
-Optativa profesional multidisciplinaria
-AD1000B
-El rol de los negocios en la sociedad
-AD1014
-Dirección de los negocios
-CF1015
-Análisis financiero
-EC1017
-Economía empresarial
-EG1001
-Optativa de matemáticas y ciencias
-FZ1011
-Decisiones financieras
-MA1027
-Razonamiento matemático
-NI1001B
-Globalización de los negocios
-RH1001B
-Estrategia y talento
-TC1027
-Programación para negocios
-AD1016
-Comunicación que inspira
-CD1004
-Análisis para la toma de decisiones
-CD1005
-Pensamiento estadístico
-CF1001B
-Dirección financiera
-D1029
-Legalidad y negocios responsables
-EG1002
-Optativa de humanidades y bellas artes
-EM1001B
-Ideación y prototipado
-EM1009
-Innovación de modelos de negocios
-MT1001B
-Descubrimientos del mercado para el desarrollo de estrategias
-RH1004
-Procesos de gestión de talento
-AD1001B
-Creación de valor compartido
-CF1016
-Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
-EM1010
-Proyecto de innovación empresarial
-FZ1012
-Evaluación de proyectos de inversión
-MT1002B
-Construcción de soluciones para el mercado
-MT1011
-Estrategias de mercado y diferenciación
-NI1004
-Competitividad internacional  y oportunidades de crecimiento
-RH1005
-Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 MT2001B
 Inteligencia de mercado para la generación de conocimiento del consumidor
 MT2002B
@@ -3706,8 +1334,6 @@ MT2028
 Diseño de métricas de mercadotecnia
 MT2029
 Visión holística del consumidor
-EG1005
-Optativa de ética y ciudadanía
 MT2004B
 Desarrollo de marcas que transforman
 MT2005B
@@ -3718,204 +1344,10 @@ MT2030
 Diseño de estrategias de mercadotecnia interna
 MT2031
 Optimización de precios y cadenas de valor
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
 MT3001B
 Liderazgo de mercadotecnia I
 MT3002B
 Liderazgo de mercadotecnia II
-OP3001B
-Optativa profesional multidisciplinaria
-AD1000B
-El rol de los negocios en la sociedad
-AD1014
-Dirección de los negocios
-CF1015
-Análisis financiero
-EC1017
-Economía empresarial
-EG1001
-Optativa de matemáticas y ciencias
-FZ1011
-Decisiones financieras
-MA1027
-Razonamiento matemático
-NI1001B
-Globalización de los negocios
-RH1001B
-Estrategia y talento
-TC1027
-Programación para negocios
-AD1016
-Comunicación que inspira
-CD1004
-Análisis para la toma de decisiones
-CD1005
-Pensamiento estadístico
-CF1001B
-Dirección financiera
-D1029
-Legalidad y negocios responsables
-EG1002
-Optativa de humanidades y bellas artes
-EM1001B
-Ideación y prototipado
-EM1009
-Innovación de modelos de negocios
-MT1001B
-Descubrimientos del mercado para el desarrollo de estrategias
-RH1004
-Procesos de gestión de talento
-AD1001B
-Creación de valor compartido
-CF1016
-Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
-EM1010
-Proyecto de innovación empresarial
-FZ1012
-Evaluación de proyectos de inversión
-MT1002B
-Construcción de soluciones para el mercado
-MT1011
-Estrategias de mercado y diferenciación
-NI1004
-Competitividad internacional  y oportunidades de crecimiento
-RH1005
-Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
-NI2001B
-Panorama internacional de los negocios
-NI2002B
-Plan de exportación
-NI2026
-Negocios globales: tendencias y detección de riesgos
-NI2027
-Operación logística internacional
-EG1005
-Optativa de ética y ciudadanía
-NI2003B
-Administración de importaciones y sus regulaciones
-NI2004B
-Desarrollo internacional de servicios
-NI2025
-Negociación Intercultural
-NI2028
-Ventas y contratos internacionales
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
-NI3001B
-Desarrollo de estrategias de internacionalización para el siglo XXI
-OP3001B
-Optativa profesional multidisciplinaria
-AD1000B
-El rol de los negocios en la sociedad
-AD1014
-Dirección de los negocios
-CF1015
-Análisis financiero
-EC1017
-Economía empresarial
-EG1001
-Optativa de matemáticas y ciencias
-FZ1011
-Decisiones financieras
-MA1027
-Razonamiento matemático
-NI1001B
-Globalización de los negocios
-RH1001B
-Estrategia y talento
-TC1027
-Programación para negocios
-AD1016
-Comunicación que inspira
-CD1004
-Análisis para la toma de decisiones
-CD1005
-Pensamiento estadístico
-CF1001B
-Dirección financiera
-D1029
-Legalidad y negocios responsables
-EG1002
-Optativa de humanidades y bellas artes
-EM1001B
-Ideación y prototipado
-EM1009
-Innovación de modelos de negocios
-MT1001B
-Descubrimientos del mercado para el desarrollo de estrategias
-RH1004
-Procesos de gestión de talento
-AD1001B
-Creación de valor compartido
-CF1016
-Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
-EM1010
-Proyecto de innovación empresarial
-FZ1012
-Evaluación de proyectos de inversión
-MT1002B
-Construcción de soluciones para el mercado
-MT1011
-Estrategias de mercado y diferenciación
-NI1004
-Competitividad internacional  y oportunidades de crecimiento
-RH1005
-Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
 AD2003B
 Indicadores y riesgos con visión estratégica
 CD2001B
@@ -3924,8 +1356,6 @@ CD2008
 Análisis descriptivo
 CD2009
 Manipulación de datos
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 TI2017
 Integración de base de datos
 AD2007B
@@ -3934,66 +1364,12 @@ CD2010
 Introducción a la econometría
 CD2011
 Minería de datos
-EG1005
-Optativa de ética y ciudadanía
 TC2003B
 Gestión de proyectos de plataformas tecnológicas
 TI2001B
 Plataformas de analítica de negocios para organizaciones
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
 AD3003B
 Planeación estratégica basada en analítica prescriptiva
-OP3001B
-Optativa profesional multidisciplinaria
-A1004
-Cultura visual y sonora
-AV1002B
-Técnicas y discursos fotográficos
-CO1001B
-Metodologías de investigación de factores humanos
-DL1022
-Metodologías del pensamiento creativo
-EG1001
-Optativa de matemáticas y ciencias
-EH1001B
-Inmersión y experimentación creativa
-AR1001B
-Representación formal del espacio
-AV1001B
-Narrativa audiovisual
-EG1002
-Optativa de humanidades y bellas artes
-EH1008
-Imaginarios culturales de México
-EH1009
-Semiótica y narratologías contemporáneas
-H1001B
-Estructuras simbólicas en la imagen, la literatura y la música
-EG1003
-Optativa de ciencias sociales y del comportamiento
 H2001B
 Análisis del discurso
 H2002B
@@ -4002,10 +1378,6 @@ H2050
 Análisis crítico de textos
 H2051
 Estructuras y análisis del español
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 H2003B
 Literatura de los Siglos de Oro
 H2004B
@@ -4014,8 +1386,6 @@ H2005B
 Literatura novohispana
 H2052
 Teoría literaria
-EG1005
-Optativa de ética y ciudadanía
 H2006B
 Narrativa Iberoamericana de los siglos XIX y XX
 H2007B
@@ -4024,96 +1394,8 @@ H2008B
 Teatro y ensayo iberoamericanos de los siglos XIX y XX
 H2053
 Desarrollo de modelos y prototipos editoriales
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
 H3001B
 Proyecto integrador de letras
-OP3001B
-Optativa profesional multidisciplinaria
-EG1001
-Optativa de matemáticas y ciencias
-SD1001
-Sistema musculoesquelético
-SD1001B
-Bases de la salud
-SD1002
-Sistema digestivo
-SD1002B
-Metabolismo y energía
-SD1003
-Aporte y consumo de oxígeno
-SD1003B
-Mecanismos celulares y moleculares
-SD1004
-Control de la energía
-SD1005
-Genética humana
-SD1006
-Sistema endócrino
-EG1002
-Optativa de humanidades y bellas artes
-SD1004B
-Ciclo de vida: concepción y embarazo
-SD1005B
-Ciclo de vida: infancia y adolescencia
-SD1006B
-Ciclo de vida: edad adulta
-SD1007
-Embriología
-SD1008
-Reproducción humana
-SD1009
-Crecimiento y desarrollo
-SD1010
-Desarrollo emocional y conductual
-SD1011
-Morfofisiología renal
-SD1012
-Sistema nervioso
-EG1003
-Optativa de ciencias sociales y del comportamiento
-SD1007B
-Entornos saludables para el adulto mayor
-SD1008B
-Innovación en salud poblacional
-SD1013
-Administración e innovación en salud
-SD1014
-Metodología de la investigación
-SD1015
-Microbiota humana
-SD1016
-Salud pública y bioestadística
-SD1017
-Sangre y hematopoyesis
-SD1018
-Introducción a la clínica
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 NU2001B
 Diagnóstico nutricional
 NU2002B
@@ -4126,8 +1408,6 @@ NU2021
 Fisiología del ejercicio
 NU2027
 Metodología y diseño de programas de ejercicio físico
-EG1005
-Optativa de ética y ciudadanía
 NU2004B
 Administración de servicios de alimentación
 NU2005B
@@ -4156,8 +1436,6 @@ NU2035
 Nutrición integrativa
 NU2036
 Cultura y psicología de la alimentación
-SD2001B
-Modelo multidisciplinario de atención en salud
 Primer Trimestre
 NC3001B
 Clínica nutricional en bienestar integral
@@ -4189,7 +1467,6 @@ Optativa profesional I
 OP3058
 Optativa profesional II
 OP3060
-Optativa profesional III
 Tercer Trimestre
 NC3003B
 Clínica nutricional en medicina interna
@@ -4232,42 +1509,10 @@ NC3037
 Fisiopatología en ginecología
 NC3038
 Terapia médico nutricional en ginecología
-A1004
-Cultura visual y sonora
-AV1002B
-Técnicas y discursos fotográficos
-CO1001B
-Metodologías de investigación de factores humanos
-DL1022
-Metodologías del pensamiento creativo
-EG1001
-Optativa de matemáticas y ciencias
-EH1001B
-Inmersión y experimentación creativa
-AR1001B
-Representación formal del espacio
-AV1001B
-Narrativa audiovisual
-EG1002
-Optativa de humanidades y bellas artes
-EH1008
-Imaginarios culturales de México
-EH1009
-Semiótica y narratologías contemporáneas
-H1001B
-Estructuras simbólicas en la imagen, la literatura y la música
-CO2011
-Teorías de la comunicación
-EG1003
-Optativa de ciencias sociales y del comportamiento
 MI2001B
 Metodologías de la investigación periodística
 SO2001
 Estudios sociales y políticos
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 MI2002B
 Producción de contenidos noticiosos
 MI2007
@@ -4276,100 +1521,10 @@ RI2001B
 Análisis histórico del sistema internacional
 AV2004B
 Producción de narrativas convergentes multimodales
-EG1005
-Optativa de ética y ciudadanía
-MI2003B
-Producción periodística convergente
 MI2008
 Fundamentos del periodismo hipermedia y transmedia
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
 MI3001B
 Proyecto integrador de periodismo
-OP3001B
-Optativa profesional multidisciplinaria
-EG1001
-Optativa de matemáticas y ciencias
-SD1001
-Sistema musculoesquelético
-SD1001B
-Bases de la salud
-SD1002
-Sistema digestivo
-SD1002B
-Metabolismo y energía
-SD1003
-Aporte y consumo de oxígeno
-SD1003B
-Mecanismos celulares y moleculares
-SD1004
-Control de la energía
-SD1005
-Genética humana
-SD1006
-Sistema endócrino
-EG1002
-Optativa de humanidades y bellas artes
-SD1004B
-Ciclo de vida: concepción y embarazo
-SD1005B
-Ciclo de vida: infancia y adolescencia
-SD1006B
-Ciclo de vida: edad adulta
-SD1007
-Embriología
-SD1008
-Reproducción humana
-SD1009
-Crecimiento y desarrollo
-SD1010
-Desarrollo emocional y conductual
-SD1011
-Morfofisiología renal
-SD1012
-Sistema nervioso
-EG1003
-Optativa de ciencias sociales y del comportamiento
-SD1007B
-Entornos saludables para el adulto mayor
-SD1008B
-Innovación en salud poblacional
-SD1013
-Administración e innovación en salud
-SD1014
-Metodología de la investigación
-SD1015
-Microbiota humana
-SD1016
-Salud pública y bioestadística
-SD1017
-Sangre y hematopoyesis
-SD1018
-Introducción a la clínica
-VA1001B
-Tópico de exploración
 CC2001B
 Psicología de la comunidad
 CC2002B
@@ -4382,8 +1537,6 @@ CC2027
 Teorías de la personalidad
 CC2028
 Psicología del adolescente, adulto y adulto mayor
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 CC2004B
 Evaluación clínica psicológica
 CC2005B
@@ -4396,8 +1549,6 @@ CC2030
 Informe psicológico
 CC2031
 Diseño de instrumentos de evaluación psicológica
-EG1005
-Optativa de ética y ciudadanía
 CC2007B
 Psicología de la salud
 CC2008B
@@ -4414,9 +1565,6 @@ CC2036
 Psicopatología
 CC2037
 Psicología clínica infantil
-SD2001B
-Modelo multidisciplinario de atención en salud
-Primer Trimestre
 CC3001B
 Clínica de neuropsicología
 CC3018
@@ -4431,7 +1579,6 @@ CC3022
 Trastornos neurológicos
 CC3023
 Trastornos neuropsiquiátricos
-Segundo Trimestre
 CC3002B
 Clínica de niños, adolescentes y adultos
 CC3024
@@ -4446,20 +1593,6 @@ CC3028
 Modelos de intervención psicoterapéutica
 CC3029
 Psicoterapia en adultos
-Tercer Trimestre
-OP3010B
-Clínica optativa profesional I
-OP3011B
-Clínica optativa profesional II
-OP3012B
-Clínica optativa profesional III
-OP3057
-Optativa profesional I
-OP3058
-Optativa profesional II
-OP3060
-Optativa profesional III
-Cuarto Trimestre
 CC3003B
 Clínica hospitalaria
 CC3030
@@ -4470,62 +1603,6 @@ CC3032
 Duelo en las enfermedades crónicas
 CC3033
 Atención al cuidador formal e informal
-SD3001
-Bioética
-SD3001B
-Clínica multidisciplinaria
-SD3002
-Calidad y seguridad del paciente
-EC1001B
-Transformación del México contemporáneo
-EG1001
-Optativa de matemáticas y ciencias
-MA1022
-Pensamiento matemático I
-P1010
-Filosofía política para los dilemas contemporáneos
-P1011
-Introducción a las ciencias sociales
-RI1001B
-Desafíos globales
-TC1001B
-Principios de programación para las ciencias sociales
-D1001B
-Introducción al derecho
-EC1002B
-Emprendimiento y tecnología para la transformación de México
-EC1013
-Macroeconomía
-EC1014
-Microeconomía
-EG1002
-Optativa de humanidades y bellas artes
-MA1023
-Métodos cuantitativos I
-MA1024
-Pensamiento matemático II
-TC1002B
-Herramientas tecnológicas para las ciencias sociales
-EC1003B
-Macroeconomía y desarrollo económico
-EC1015
-Economía conductual
-EC1016
-Economía para la toma de decisiones
-EG1003
-Optativa de ciencias sociales y del comportamiento
-MA1025
-Métodos cuantitativos II
-MA1026
-Pensamiento matemático III
-P1001B
-Participación política y sociología de la identidad
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
-RI2001B
-Análisis histórico del sistema internacional
 RI2002B
 Escenarios regionales en el mundo contemporáneo
 RI2003B
@@ -4534,8 +1611,6 @@ RI2039
 Teorías clásicas de relaciones internacionales
 RI2040
 Teorías contemporáneas de relaciones internacionales
-EG1005
-Optativa de ética y ciudadanía
 RI2004B
 Conflicto y negociación
 RI2005B
@@ -4548,60 +1623,8 @@ RI2042
 Organismos internacionales
 RI2043
 Riesgos y amenazas en la agenda global contemporánea
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-OP3001B
-Optativa profesional multidisciplinaria
 RI3002B
 Análisis y estrategias de política exterior
-A1004
-Cultura visual y sonora
-AV1002B
-Técnicas y discursos fotográficos
-CO1001B
-Metodologías de investigación de factores humanos
-DL1022
-Metodologías del pensamiento creativo
-EG1001
-Optativa de matemáticas y ciencias
-EH1001B
-Inmersión y experimentación creativa
-AR1001B
-Representación formal del espacio
-AV1001B
-Narrativa audiovisual
-EG1002
-Optativa de humanidades y bellas artes
-EH1008
-Imaginarios culturales de México
-EH1009
-Semiótica y narratologías contemporáneas
-H1001B
-Estructuras simbólicas en la imagen, la literatura y la música
-EG1003
-Optativa de ciencias sociales y del comportamiento
 F2010B
 Fundamentos de la acústica
 TM2001
@@ -4610,10 +1633,6 @@ TM2001B
 Entrenamiento auditivo e instrumental
 TM2002
 Negocios en la industria de la música
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 TM2002B
 Aplicación de tecnología en la producción sonora
 TM2003
@@ -4622,8 +1641,6 @@ TM2003B
 Técnicas de grabación sonora
 TM2004B
 Proyecto de producción musical
-EG1005
-Optativa de ética y ciudadanía
 TM2004
 Postproducción de audio para cine y video
 TM2005B
@@ -4632,82 +1649,8 @@ TM2006B
 Musicalización de productos audiovisuales
 TM2007B
 Producción y mercadotecnia audiovisual
-OP3091
-Optativa Profesional I
-OP3092
-Optativa Profesional II
-OP3093
-Optativa profesional III
-OP3094
-Optativa profesional IV
-OP3095
-Optativa profesional V
-OP3096
-Optativa profesional VI
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
-OP3001B
-Optativa profesional multidisciplinaria
 TM3001B
 Proyecto integrador de tecnología y producción musical
-EC1001B
-Transformación del México contemporáneo
-EG1001
-Optativa de matemáticas y ciencias
-MA1022
-Pensamiento matemático I
-P1010
-Filosofía política para los dilemas contemporáneos
-P1011
-Introducción a las ciencias sociales
-RI1001B
-Desafíos globales
-TC1001B
-Principios de programación para las ciencias sociales
-D1001B
-Introducción al derecho
-EC1002B
-Emprendimiento y tecnología para la transformación de México
-EC1013
-Macroeconomía
-EC1014
-Microeconomía
-EG1002
-Optativa de humanidades y bellas artes
-MA1023
-Métodos cuantitativos I
-MA1024
-Pensamiento matemático II
-TC1002B
-Herramientas tecnológicas para las ciencias sociales
-EC1003B
-Macroeconomía y desarrollo económico
-EC1015
-Economía conductual
-EC1016
-Economía para la toma de decisiones
-EG1003
-Optativa de ciencias sociales y del comportamiento
-MA1025
-Métodos cuantitativos II
-MA1026
-Pensamiento matemático III
-P1001B
-Participación política y sociología de la identidad
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 P2001B
 Opinión pública
 P2002B
@@ -4718,8 +1661,6 @@ TC3066
 Métodos econométricos y política pública
 EC2002B
 Economía conductual y neurociencia política
-EG1005
-Optativa de ética y ciudadanía
 P2003B
 Políticas tecnológicas para el desarrollo
 P2013
@@ -4734,50 +1675,22 @@ P3001B
 Gobierno, sector privado, tecnología y nuevos mercados
 TC3065
 Experimentos e inferencia causal para política pública
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
-OP3001B
-Optativa profesional multidisciplinaria
 P3002B
 Diseño e implementación de innovaciones públicas
-AR1002B
-Exploración en el hábitat: de la escala del elemento al territorio
 AR1003B
 Modelación de la física en el ambiente construido
 CV1007
 Razonamiento basado en matemáticas
 CV1008
 Resolución de problemas con lógica computacional
-CV1009
-Análisis químico del ambiente y de los materiales de construcción
-EG1001
-Optativa de matemáticas y ciencias
 AR1004B
 Modelación y representación gráfica de un edificio
 AR1005B
 Modelación y representación gráfica de tu campus con topografía
 AR1006B
 Modelación y representación gráfica de tu entorno con geomática
-CV1010
-Fundamentos de geología aplicada al ambiente construido
-CV1011
-Evaluación del impacto ambiental de proyectos territoriales
-CV1012
-Aplicación de métodos numéricos al ambiente construido
 CV1013
 Análisis de fenómenos naturales y sociales con probabilidad y estadística
-EG1002
-Optativa de humanidades y bellas artes
 AR2001B
 Diagnóstico territorial
 AR2003B
@@ -4788,10 +1701,6 @@ BT2027
 Ecología urbana
 CV2041
 Infraestructura urbana
-EG1003
-Optativa de ciencias sociales y del comportamiento
-VA1001B
-Tópico de exploración
 AR2005B
 Ciudades competitivas: Innovación
 AR2006B
@@ -4800,8 +1709,6 @@ AR2010B
 Ciudades competitivas: Calidad de vida
 AR2038
 Ciudades del futuro
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 AR3001B
 Metrópolis sostenible: Mitigación
 AR3002B
@@ -4810,116 +1717,12 @@ AR3004B
 Metrópolis sostenible: Adaptación
 EC2033
 Economía urbana
-EG1005
-Optativa de ética y ciudadanía
-VA3111
-Tópicos I
-VA3112
-Tópicos II
-VA3113
-Tópicos III
-VA3114
-Tópicos IV
-VA3115
-Tópicos V
-VA3116
-Tópicos VI
 AR3003B
 Gestión y administración de proyectos territoriales de inversión
 AR3005B
 Ciudades emergentes
 AR3006B
 Complejidad y debate
-OP3001B
-Optativa profesional multidisciplinaria
-EG1001
-Optativa de matemáticas y ciencias
-SD1001
-Sistema musculoesquelético
-SD1001B
-Bases de la salud
-SD1002
-Sistema digestivo
-SD1002B
-Metabolismo y energía
-SD1003
-Aporte y consumo de oxígeno
-SD1003B
-Mecanismos celulares y moleculares
-SD1004
-Control de la energía
-SD1005
-Genética humana
-SD1006
-Sistema endócrino
-EG1002
-Optativa de humanidades y bellas artes
-SD1004B
-Ciclo de vida: concepción y embarazo
-SD1005B
-Ciclo de vida: infancia y adolescencia
-SD1006B
-Ciclo de vida: edad adulta
-SD1007
-Embriología
-SD1008
-Reproducción humana
-SD1009
-Crecimiento y desarrollo
-SD1010
-Desarrollo emocional y conductual
-SD1011
-Morfofisiología renal
-SD1012
-Sistema nervioso
-EG1003
-Optativa de ciencias sociales y del comportamiento
-SD1007B
-Entornos saludables para el adulto mayor
-SD1008B
-Innovación en salud poblacional
-SD1013
-Administración e innovación en salud
-SD1014
-Metodología de la investigación
-SD1015
-Microbiota humana
-SD1016
-Salud pública y bioestadística
-SD1017
-Sangre y hematopoyesis
-SD1018
-Introducción a la clínica
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
-MB2001B
-Bases histopatológicas
-MB2002B
-Inmunobiología
-MB2003B
-Herencia y desarrollo
-MB2059
-Microestructura normal y patológica
-MB2060
-Microbiota patógena
-MB2061
-Genética médica
-EG1005
-Optativa de ética y ciudadanía
-MB2004B
-Bases de los sistemas nervioso y endócrino
-MB2005B
-Farmacoterapia
-MB2006B
-Propedéutica médica
-MB2062
-Ecosistema endócrino y neural
-MB2063
-Moléculas bioactivas y principios terapéuticos
-MB2064
-Procesos fisiopatológicos
 MB2007B
 Trastornos inmunitarios
 MB2008B
@@ -4932,12 +1735,6 @@ MB2067
 Fisiopatología del sistema digestivo
 MB2068
 Farmacología de aparatos y sistemas
-MB2069
-Fisiopatología de las enfermedades infecciosas
-MB2070
-Farmacología de los agentes antimicrobianos
-SD2001B
-Modelo multidisciplinario de atención en salud
 MB2009B
 Trastornos cardiovasculares
 MB2010B
@@ -4956,46 +1753,30 @@ MB2075
 Fisiopatología del sistema renal
 MB2076
 Medicina legal y prehospitalaria
-MB2012B
-Trastornos endócrinos y metabólicos
-MB2013B
-Desórdenes neurológicos
 MB2014B
 Innovación en atención primaria
-MB2077
-Fisiopatología del sistema endócrino
-MB2078
-Patología de los sistemas biocontroladores y de la reproducción
-MB2079
-Fisiopatología del sistema nervioso
-MB2080
-Farmacología de los sistemas biocontroladores y de la reproducción
 MB2081
 Fisiopatología de la reproducción y el embarazo
 MB2082
 Medicina familiar
-Primer Trimestre
 MC3001B
 Clínica de ginecología y obstetricia
 MC3134
 Urología y oncología quirúrgica
 MC3135
 Ginecología y obstetricia
-Segundo Trimestre
 MC3002B
 Clínica de pediatría
 MC3136
 Infectología y dermatología
 MC3137
 Pediatría
-Tercer Trimestre
 MC3003B
 Clínica de medicina interna
 MC3138
 Cardiología y enfermedades metabólicas
 MC3139
 Medicina interna
-Cuarto Trimestre
 MC3004B
 Clínica de cirugía general
 MC3140
@@ -5013,12 +1794,6 @@ MC3143
 Emergencias y radiología
 MC3147
 Aspectos legales de la medicina
-SD3001
-Bioética
-SD3001B
-Clínica multidisciplinaria
-SD3002
-Calidad y seguridad del paciente
 Sexto Trimestre
 MC3007B
 Clínica de neurología y neurocirugía
@@ -5034,17 +1809,8 @@ MC3146
 Psiquiatría
 Séptimo Trimestre
 OP3002B
-Clínica optativa profesional I
 OP3003B
-Clínica optativa profesional II
 OP3004B
-Clínica optativa profesional III
-OP3057
-Optativa profesional I
-OP3058
-Optativa profesional II
-OP3060
-Optativa profesional III
 Octavo Trimestre
 OP3005B
 Clínica optativa de especialidades médicas I
@@ -5058,68 +1824,6 @@ OP3068
 Optativa de especialidades médicas II
 OP3069
 Optativa de especialidades médicas III
-EG1001
-Optativa de matemáticas y ciencias
-SD1001
-Sistema musculoesquelético
-SD1001B
-Bases de la salud
-SD1002
-Sistema digestivo
-SD1002B
-Metabolismo y energía
-SD1003
-Aporte y consumo de oxígeno
-SD1003B
-Mecanismos celulares y moleculares
-SD1004
-Control de la energía
-SD1005
-Genética humana
-SD1006
-Sistema endócrino
-EG1002
-Optativa de humanidades y bellas artes
-SD1004B
-Ciclo de vida: concepción y embarazo
-SD1005B
-Ciclo de vida: infancia y adolescencia
-SD1006B
-Ciclo de vida: edad adulta
-SD1007
-Embriología
-SD1008
-Reproducción humana
-SD1009
-Crecimiento y desarrollo
-SD1010
-Desarrollo emocional y conductual
-SD1011
-Morfofisiología renal
-SD1012
-Sistema nervioso
-EG1003
-Optativa de ciencias sociales y del comportamiento
-SD1007B
-Entornos saludables para el adulto mayor
-SD1008B
-Innovación en salud poblacional
-SD1013
-Administración e innovación en salud
-SD1014
-Metodología de la investigación
-SD1015
-Microbiota humana
-SD1016
-Salud pública y bioestadística
-SD1017
-Sangre y hematopoyesis
-SD1018
-Introducción a la clínica
-VA1001B
-Tópico de exploración
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 OD2001B
 Fisiología de la masticación
 OD2002B
@@ -5132,8 +1836,6 @@ OD2017
 Histología y embriología bucodental
 OD2018
 Fundamentos clínicos e histológicos de la patología oral
-EG1005
-Optativa de ética y ciudadanía
 OD2004B
 Protocolos de adhesión
 OD2005B
@@ -5162,8 +1864,6 @@ OD2026
 Introducción a la exodoncia
 OD2027
 Microbiología odontológica
-SD2001B
-Modelo multidisciplinario de atención en salud
 OD2009B
 Manejo quirúrgico y protésico en odontología
 OD2010B
@@ -5200,163 +1900,21 @@ OD2038
 Implantología avanzada
 OD2039
 Intervención ortodóntica de la oclusión dental
-Primer Trimestre
 OD3001B
 Clínica integral de odontología I
 OD3035
 Procesos legales y administrativos en odontología
 OD3036
 Odontología forense
-SD3001
-Bioética
-SD3001B
-Clínica multidisciplinaria
-SD3002
-Calidad y seguridad del paciente
-Segundo Trimestre
-OP3010B
-Clínica optativa profesional I
-OP3011B
-Clínica optativa profesional II
-OP3012B
-Clínica optativa profesional III
-OP3057
-Optativa profesional I
-OP3058
-Optativa profesional II
-OP3060
-Optativa profesional III
-Tercer Trimestre
 OD3002B
 Clínica integral de odontología II
 OD3037
 Odontología basada en evidencia
 OD3038
 Análisis de información odontológica
-Cuarto Trimestre
 OD3003B
 Clínica integral de odontología III
 OD3039
 Seminario de odontología integral
 OD3040
 Protocolos de investigación odontológica
-AD1000B
-El rol de los negocios en la sociedad
-AD1014
-Dirección de los negocios
-CF1015
-Análisis financiero
-EC1017
-Economía empresarial
-EG1001
-Optativa de matemáticas y ciencias
-FZ1011
-Decisiones financieras
-MA1027
-Razonamiento matemático
-NI1001B
-Globalización de los negocios
-RH1001B
-Estrategia y talento
-TC1027
-Programación para negocios
-AD1016
-Comunicación que inspira
-CD1004
-Análisis para la toma de decisiones
-CD1005
-Pensamiento estadístico
-CF1001B
-Dirección financiera
-D1029
-Legalidad y negocios responsables
-EG1002
-Optativa de humanidades y bellas artes
-EM1001B
-Ideación y prototipado
-EM1009
-Innovación de modelos de negocios
-MT1001B
-Descubrimientos del mercado para el desarrollo de estrategias
-RH1004
-Procesos de gestión de talento
-AD1001B
-Creación de valor compartido
-CF1016
-Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
-EM1010
-Proyecto de innovación empresarial
-FZ1012
-Evaluación de proyectos de inversión
-MT1002B
-Construcción de soluciones para el mercado
-MT1011
-Estrategias de mercado y diferenciación
-NI1004
-Competitividad internacional  y oportunidades de crecimiento
-RH1005
-Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
-EG1001
-Optativa de matemáticas y ciencias
-SD1001
-Sistema musculoesquelético
-SD1001B
-Bases de la salud
-SD1002
-Sistema digestivo
-SD1002B
-Metabolismo y energía
-SD1003
-Aporte y consumo de oxígeno
-SD1003B
-Mecanismos celulares y moleculares
-SD1004
-Control de la energía
-SD1005
-Genética humana
-SD1006
-Sistema endócrino
-EG1002
-Optativa de humanidades y bellas artes
-SD1004B
-Ciclo de vida: concepción y embarazo
-SD1005B
-Ciclo de vida: infancia y adolescencia
-SD1006B
-Ciclo de vida: edad adulta
-SD1007
-Embriología
-SD1008
-Reproducción humana
-SD1009
-Crecimiento y desarrollo
-SD1010
-Desarrollo emocional y conductual
-SD1011
-Morfofisiología renal
-SD1012
-Sistema nervioso
-EG1003
-Optativa de ciencias sociales y del comportamiento
-SD1007B
-Entornos saludables para el adulto mayor
-SD1008B
-Innovación en salud poblacional
-SD1013
-Administración e innovación en salud
-SD1014
-Metodología de la investigación
-SD1015
-Microbiota humana
-SD1016
-Salud pública y bioestadística
-SD1017
-Sangre y hematopoyesis
-SD1018
-Introducción a la clínica
-VA1001B
-Tópico de exploración

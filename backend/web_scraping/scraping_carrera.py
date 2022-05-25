@@ -13,7 +13,7 @@ opts.headless = True
 chrome_driver = "./chromedriver"
 
 driver = webdriver.Chrome(options=opts, executable_path=chrome_driver)
-driver.set_page_load_timeout(10)
+driver.set_page_load_timeout(600)
 
 #//////////////////////////////////////////////////////////////////////////////
 
