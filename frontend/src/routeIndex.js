@@ -6,8 +6,8 @@ export {default as  PerfilAsesor  } from './views/asesor/perfil/PerfilAsesor.jsx
 export {default as  PerfilAsesorado  } from './views/asesorado/perfil/PerfilAsesorado.jsx';
 export {default as PerfilDirectivo } from './views/directivo/perfil/PerfilDirectivo.jsx'
 export {default as EditarPerfil } from './views/commons/editarPerfil/EditarPerfil.jsx'
-// export {default as DanielFlores } from './views/componentPreview/DanielFlores/DanielFlores.js';
-export {default as DanielFlores } from './views/asesorado/perfil/PerfilAsesorado.jsx';
+export {default as DanielFlores } from './views/componentPreview/DanielFlores/DanielFlores.js';
+// export {default as DanielFlores } from './views/directivo/administrarPerfilAsesorDirectivos/AdministrarPerfilAsesorDirectivos.jsx';
 
 export {default as DanielMaldonado } from './views/componentPreview/DanielMaldonado/DanielMaldonado.jsx'
 export {default as DanielMunive } from './views/componentPreview/DanielMunive/DanielMunive.jsx'
@@ -91,3 +91,4 @@ export {default as AdministrarPerfilAsesorDirectivos } from './views/directivo/a
 export {default as RespuestasEncuestas } from './views/commons/respuestasEncuestas/RespuestasEncuestas.jsx'
 export {default as AsesoriasExistentesDiaDirectivos } from './views/directivo/asesoriasExistentesDiaDirectivos/AsesoriasExistentesDiaDirectivos.jsx'
 export { default as CampoTextoMenuDesplegable } from './components/reusable/CampoTextoMenuDesplegable/CampoTextoMenuDesplegable.jsx'
+export {default as RegistroAsesorUF } from './views/asesor/registroAsesorUF/RegistroAsesorUF.jsx'
