@@ -1,6 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 // import axios from 'axios'
 import './AgendarAsesoria.css'
+
+import axios from 'axios';
 
 import LoadingSpin from "react-loading-spin";
 
@@ -55,6 +57,10 @@ function AgendarAsesoria({
     const routeChange = route => navigate(`/${route}`);
 
     const [loadingNext, setLoadingNext] = useState(false)
+
+    // const [imagesOnDatabase, setImagesOnDatabase] = useState(0)
+    let imagesUploaded = [1,2,3,4]
+    let numImagesUploaded = -1
 
     // Función que se ejecutará siempre que se de click al botón de Cancelar
     // Elimina todos los campos que se hayan creado en el localStorage
@@ -154,8 +160,93 @@ function AgendarAsesoria({
             }
         }
         
+        else if(data.view === 5) {
+            const usr = data.props
+
+            if(!localStorage.usuario) {
+                localStorage.clear()
+                navigate('/landingPage')
+                return
+            }
+
+            setLoadingNext(true)
+
+            const horaStr = usr.horaSelected
+            
+            const config = {
+                method: 'post',
+                url: 'http://20.225.209.57:3094/asesoria/nueva/',
+                headers: { 
+                  'Content-Type': 'application/json'
+                },
+                data : JSON.stringify({
+                    "uf": usr.ufSelected,
+                    "anio": usr.anioSelected,
+                    "mes": usr.mesSelected,
+                    "dia": usr.diaSelected,
+                    "hora": parseInt(horaStr.slice(0, horaStr.indexOf(':'))),
+                    "duda": usr.dudaSelected,
+                    "asesorado": localStorage.usuario
+                })
+            }
+
+            // Eliminamos los undefined
+            imagesUploaded = usr.imagesSelected.filter(image => image !== undefined)
+            numImagesUploaded = 0
+              
+            axios(config)
+            .then(response => {
+                const id_asesoria = response.data.idAsesoria
+
+                imagesUploaded.forEach((imagen, index) => {
+                    const config2 = {
+                        method: 'post',
+                        url: 'http://20.225.209.57:3094/asesoria/insertar_imagen/',
+                        headers: { 
+                            'Content-Type': 'application/json'
+                        },
+                        data : JSON.stringify({
+                            "idAsesoria": id_asesoria,
+                            "imagen": imagen
+                        })
+                    };
+                        
+                    axios(config2)
+                    .then(response => {
+                        // Aquí debo descubrir cómo hacer que salga cuando se carguen todas las imágenes
+                        numImagesUploaded++
+                        console.log(response.data, index);
+                    })
+                    .catch(_error => {
+                        alert(`ERROR: No se pudo guardar tu imagen #${index+1}, intenta subir otra imagen`)
+                        return
+                    })
+                })
+
+            })
+            .catch(_error => {
+                alert("No se pude generar la asesoría, intente de nuevo más tarde")
+                navigate('/agendarAsesoriaUF/error')
+                setLoadingNext(false)
+                return
+            })
+
+        }
+
         setLoadingNext(false)
     }
+
+    // --- No FUNCIONAAA ---
+    useEffect(() => {
+        console.log("a:", imagesUploaded.length)
+        console.log("b:", numImagesUploaded)
+
+        if(imagesUploaded.length === numImagesUploaded){
+            console.log("terminé")
+        }
+    
+    }, [imagesUploaded.length, numImagesUploaded])
+    
 
     return (
         <Template view="agendarAsesoria">

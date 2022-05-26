@@ -49,6 +49,7 @@ function AgendarAsesoriaResumen() {
   const diaSelected = localStorage.asesoria_dia
   const horaSelected = localStorage.asesoria_hora
   const dudaSelected = localStorage.asesoria_duda
+  const imagesSelected = [localStorage.asesoria_imagen1, localStorage.asesoria_imagen2, localStorage.asesoria_imagen3]
 
   useEffect(() => {
     // Si no se cuenta con los datos necesarios, se redirecciona al usuario a la primera pantalla
@@ -61,7 +62,11 @@ function AgendarAsesoriaResumen() {
   <AgendarAsesoria 
     showAtrasBtn={true} 
     btnAtrasRoute={`./agendarAsesoriaHora/${anioSelected}/${mesSelected}/${diaSelected}`}
-    btnSiguienteRoute="./Calendario"
+    btnSiguienteProps={
+    {
+      view: 5, 
+      props: { ufSelected, anioSelected, mesSelected, diaSelected, horaSelected, dudaSelected, imagesSelected }
+    }}
     showTarjetaMaestraMini={true} 
     sizeTarjetaMaestraMini="normal" 
     progressBarJSON={progressBar}>
@@ -74,7 +79,7 @@ function AgendarAsesoriaResumen() {
               { title: "Fecha", info: diaSelected + " de " + dateFunctions.getMonthEspanol(mesSelected-1) + " del " + anioSelected },
               { title: "Hora", info: horaSelected },
               { title: "Duda", info: dudaSelected },
-              { title: "Fotos", info: [localStorage.asesoria_imagen1, localStorage.asesoria_imagen2, localStorage.asesoria_imagen3] },
+              { title: "Fotos", info: imagesSelected },
             ]
           }/>
         </div>
