@@ -93,7 +93,7 @@ def SQLUnidadFormacionCarrera():
     ignore = carrerasIgnore.readlines()
     
     SQL = open("./SQL/UnidadFormacionCarrera.sql", "w")
-    query = "INSERT INTO \"Carrera\" VALUES\n"
+    query = "INSERT INTO \"UnidadFormacionCarrera\" VALUES\n"
 
     n = len(siglas)
     for i in range(n):
