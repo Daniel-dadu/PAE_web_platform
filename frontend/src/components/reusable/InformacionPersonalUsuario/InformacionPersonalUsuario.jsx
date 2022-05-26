@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { FaPen } from "react-icons/fa";
-import { BiImageAdd } from 'react-icons/bi';
-import { CampoSeleccionarEnListaDesplegable, 
-    CampoTextoPequeno, 
-    BotonSencillo, 
-    ImagenAsesoria,BotonConImagen } from '../../../routeIndex';
-
 import axios from 'axios';
+
+import { CampoSeleccionarEnListaDesplegable, CampoTextoPequeno, BotonSencillo, ImagenPerfilCambiar } from '../../../routeIndex';
+
+import noUserImg from '../../../assets/noUserImg.png'
+
 import './informacionPersonalUsuario.css';
-// import data from './data.json';
-import ImageUploading from "react-images-uploading";
 
 /*
     DOCUMENTACION PARA USO DEL COMPONENTE
@@ -56,8 +53,11 @@ const InformacionPersonalUsuario = () => {
 
     }, [setListaCarreras])
 
+    const rolUsr = localStorage.rolUsuario
+    // const rolUsr = 'directivo'
+
     let data = {   
-        "tipoUsuario" : localStorage.rolUsuario === "directivo" ? 2 : 1,
+        "tipoUsuario" : rolUsr === "directivo" ? 2 : 1,
     
         "relleno": {
             "carrera": listaCarreras,
@@ -83,13 +83,8 @@ const InformacionPersonalUsuario = () => {
                     "nombreClase": "carrera" 
                 },
                 {
-                    "campo": "Semestre",
-                    "info": 1,
-                    "nombreClase": "semestre"  
-                },
-                {
                     "campo": "Telefono",
-                    "info":   222777888,
+                    "info": 222777888,
                     "nombreClase":"telefono"
                 }
             ]
@@ -97,15 +92,20 @@ const InformacionPersonalUsuario = () => {
         
     }
 
+    if (rolUsr === 'asesor') {
+        data.informacion.camposVariantes.push({
+            "campo": "Semestre",
+            "info": 1,
+            "nombreClase": "semestre"  
+        })
+    }
+
     //usados para el cambio de imagen
     const [editar, setEditar] = useState(false);
 
-    const [previewImage, setPreviewImage] = useState([]);
+    const [imagenPerfil, setImagenPerfil] = useState(localStorage.fotoUsuario)
 
-    const onChange = (imageList) => {
-        setPreviewImage(imageList);
-        console.log(imageList);
-   };
+    const onHandleUploadImage = image => setImagenPerfil(image)
 
    // usado para alternar entre editar y visualizacion de los datos
     const handleEditarPerfil = () => {
@@ -142,7 +142,7 @@ const InformacionPersonalUsuario = () => {
 
                             <div className='contenedor-img-perfil-InfPerUsuario'>
 
-                                <img src={ require( `../../../assets/img-editar-perfil-tmp.JPG` ) } alt="imgProfile" className='imagen-InfPerUsuario'/>
+                                <img src={ imagenPerfil ? imagenPerfil : noUserImg } alt="imgProfile" className='imagen-InfPerUsuario'/>
                                 <button className='btn-editar-InfPerUsuario' onClick={ handleEditarPerfil }>
                                     <div className='contenedor-btn-editar-InfPerUsuario'>
                                         <p className='btn-texto-InfPerUsuario'>Editar</p>
@@ -165,7 +165,7 @@ const InformacionPersonalUsuario = () => {
                                 
                                 <p className={ `etiqueta-${campos.nombreClase}-InfPerUsuario` }  >
 
-                                    { 
+                                    { rolUsr !== 'directivo' &&
                                         //condicional para arreglar cadena de carreras
                                         ( campos.campo === "Carrera(s)" ?
                                             (campos.info.length === 1 ? 
@@ -191,56 +191,8 @@ const InformacionPersonalUsuario = () => {
                     <div className='contenedor-InfPerUsuario'>
 
                         <div className='contenedor-InfPerUsuario-izq-actualizar-img' >
-                            
-                            {/* Aqui es donde podemos modificar la imagen de perfil */}
-                            <ImageUploading multiple value={previewImage} onChange={onChange} maxNumber={1} dataURLKey="data_url">
-                                {
-                                    ({ imageList, onImageUpload, onImageRemove }) => (
-
-                                        <div className="container_ImageUploading_RegistroAsesor">
-
-                                            <div className='container_imagenes_RegistroAsesor'>
-                                                {
-                                                    //si no hay imagenes guardadas ponemos la imagen actual
-                                                    imageList.length === 0 ? 
-                                                    <img 
-                                                        src={ require( `../../../assets/img-editar-perfil-tmp.JPG` ) } 
-                                                        alt="imgProfile" 
-                                                        className='imagen-InfPerUsuario-actualizar-img'
-                                                    />
-                                                    
-                                                    : //de otro modo, iteramos el arreglo de imagenes y usamos el componente de ImagenAsesoria 
-                                                    imageList.map((image, index) => (
-                                                        <ImagenAsesoria
-                                                            allowClosed = '1'
-                                                            onClickX = {() => onImageRemove(index)}
-                                                            size = 'reducida'
-                                                            source = {image.data_url}
-                                                            alt = {`ImagenAsesoria${index}`}
-                                                            nameDownloadImage = {`ImagenAsesoria${index}`}
-                                                        />
-                                                    ))
-                                                }
-                                            </div>
-                                            <div className='btn_upload'>
-                                                <BotonConImagen 
-                                                    onClick={imageList.length === 1 ? () => alert('No se permite subir más de 1 imagen') : onImageUpload} 
-                                                    backgroundColor="azulCielo" 
-                                                    size="largo" 
-                                                    Image={BiImageAdd} 
-                                                >
-                                                    Subir imagen
-                                                </BotonConImagen>
-
-                                            </div>
-
-                                        </div>
-                                )}
-                            </ImageUploading>
-
+                          <ImagenPerfilCambiar onUploadImage={onHandleUploadImage} previousImage={imagenPerfil}/>
                         </div>
-
-                        
                         
                         <div className='contenedor-InfPerUsuario-der' >
                             
@@ -249,21 +201,30 @@ const InformacionPersonalUsuario = () => {
                              
                              {
                                  // si el usuario asesor o asesorado, se mostraran todos los campos
-                                 data["tipoUsuario"] === 1 ?
-                                 (
-                                     <div>
-                                        <p className='etiqueta-carrera-InfPerUsuario' > Carrera: </p><CampoSeleccionarEnListaDesplegable size="big"  idList="carrera" options={ data.relleno.carrera } />
-                                        <p className='etiqueta-carrera-InfPerUsuario' > Carrera 2: </p><CampoSeleccionarEnListaDesplegable size="big"  idList="carrera" options={ data.relleno.carrera } />
-                                        <p className='etiqueta-semestre-InfPerUsuario'> Semestre: </p><CampoSeleccionarEnListaDesplegable size="small" idList="semestre" options={ data.relleno.semestre} />
-                                        <p className='etiqueta-telefono-InfPerUsuario'> Telefono </p><CampoTextoPequeno size="medium"/>
-                                     </div>
-                                 )
-                                 : // si es diractivo, solo podra modificar el numero telefonico
-                                 (
-                                     <div>
-                                         <p className='etiqueta-telefono-InfPerUsuario'> Telefono </p><CampoTextoPequeno size="medium"/>
-                                     </div>
-                                 )
+                                data["tipoUsuario"] === 1 ?
+                                <div>
+                                    <p className='etiqueta-carrera-InfPerUsuario' > Carrera: </p>
+                                    <CampoSeleccionarEnListaDesplegable size="big"  idList="carrera" options={ data.relleno.carrera } />
+                                    
+                                    <p className='etiqueta-carrera-InfPerUsuario' > Carrera 2: </p>
+                                    <CampoSeleccionarEnListaDesplegable size="big"  idList="carrera" options={ data.relleno.carrera } />
+
+                                    { // Si es un asesor, se muestra el campo para cambiar el semestre
+                                        rolUsr === 'asesor' && 
+                                        <div>
+                                            <p className='etiqueta-semestre-InfPerUsuario'> Semestre: </p>
+                                            <CampoSeleccionarEnListaDesplegable size="small" idList="semestre" options={data.relleno.semestre} />
+                                        </div>
+                                    }
+
+                                    <p className='etiqueta-telefono-InfPerUsuario'> Telefono </p>
+                                    <CampoTextoPequeno size="medium"/>
+                                </div>
+                                : // si es diractivo, solo podra modificar el numero telefonico
+                                <div>
+                                    <p className='etiqueta-telefono-InfPerUsuario'> Telefono </p>
+                                    <CampoTextoPequeno size="medium"/>
+                                </div>
  
                              }
                              
