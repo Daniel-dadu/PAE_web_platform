@@ -2,6 +2,11 @@ version: "3.3"
 
 services:
 
+  client:
+    image: microservice-api-gateway
+    ports: 
+      - 81:80
+
   default:
     image: microservice-default
     command: python Default.py

@@ -1,11 +1,10 @@
+https://galvarado.com.mx/post/desplegar-un-api-gateway-con-nginx/
+
 etc/
 └── nginx/
-    ├── api_conf.d/ ………………………………… Subdirectory for per-API configuration
-    │   └── pae_api.conf …………………… Definition and policy of the Warehouse API
-    ├── api_backends.conf ………………… The backend services (upstreams)
-    ├── api_gateway.conf …………………… Top-level configuration for the API gateway server
-    ├── api_json_errors.conf ………… HTTP error responses in JSON format
-    ├── conf.d/
-    │   ├── ...
-    │   └── existing_apps.conf
-    └── nginx.conf
+    ├── api_conf.d/ ………………………………… Subdirectorio de configuración para cada API
+    │   └── bookstore_api.conf …… Definición y politicas de la API (Bookstore)
+    ├── api_json_errors.conf ………………… Definición de respuestas a errores
+    ├── api_keys.conf ………………… Definición de llaves de autenticación
+    ├── api_gateway.conf …………………… Configuración raiz del API Gateway
+    ├── nginx.conf …………………… Configuración raiz de nginx
