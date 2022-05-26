@@ -24,6 +24,9 @@
     gap: 10px;
     align-items: flex-end;
 }
+.container_navButtons .loading_spin {
+    margin: 0 40px;
+}
 
 .btn_right {
     margin-left: auto;

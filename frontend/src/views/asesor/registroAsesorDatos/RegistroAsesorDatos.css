@@ -1,0 +1,80 @@
+.campo_RegistroAsesorDatos{
+    font-style: normal;
+    font-weight: 700;
+    color: #1B4858;
+    
+}
+
+.datosAsesor_texto{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 30px;
+    color: rgba(0, 0, 0, 0.35);
+}
+
+.contener_DatosAsesorInputRegistro{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.contenedro_deInputsAsesorRegistro{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+
+}
+
+.texto_contenedor_deInputsAsesorRegistro{
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 23px;
+
+color: #000000;
+}
+
+.contenedro_deInputsAsesorRegistro .arrow_down {
+    bottom: 5%;
+}
+
+.container_ImageUploading_RegistroAsesor{
+    position: relative;
+    height: 60%;
+}
+
+.container_imagenes_RegistroAsesor{
+    display: flex;
+    gap: 3%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 100%;
+    margin: auto;
+    height: 250px;
+    
+}
+
+.container_ImageUploading_RegistroAsesor .container_imagenes_RegistroAsesor p {
+    width: fit-content;
+    margin: auto;
+    font-size: 1.3rem;
+}
+
+.container_ImageUploading_RegistroAsesor .container_imagenes_RegistroAsesor .btn_upload {
+    position: absolute;;
+    width: fit-content;
+    bottom: 0%;
+    left: 50%;
+
+    transform: translate(-50%,0%);
+}
+
+
+

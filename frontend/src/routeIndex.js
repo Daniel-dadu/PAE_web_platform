@@ -6,7 +6,9 @@ export {default as  PerfilAsesor  } from './views/asesor/perfil/PerfilAsesor.jsx
 export {default as  PerfilAsesorado  } from './views/asesorado/perfil/PerfilAsesorado.jsx';
 export {default as PerfilDirectivo } from './views/directivo/perfil/PerfilDirectivo.jsx'
 export {default as EditarPerfil } from './views/commons/editarPerfil/EditarPerfil.jsx'
-export {default as DanielFlores } from './views/componentPreview/DanielFlores/DanielFlores.js'
+export {default as DanielFlores } from './views/componentPreview/DanielFlores/DanielFlores.js';
+// export {default as DanielFlores } from './views/directivo/enviarNotificacionDirectivos/EnviarNotificacionDirectivos.jsx';
+
 export {default as DanielMaldonado } from './views/componentPreview/DanielMaldonado/DanielMaldonado.jsx'
 export {default as DanielMunive } from './views/componentPreview/DanielMunive/DanielMunive.jsx'
 export {default as Ezequiel } from './views/componentPreview/Ezequiel/Ezequiel.jsx'
@@ -36,14 +38,57 @@ export {default as CalendarioMini } from './components/reusable/CalendarioMini/C
 export {default as AgendarAsesoria } from './views/commons/agendarAsesoria/AgendarAsesoria.jsx'
 export {default as AgendarAsesoriaUF } from './views/asesorado/agendarAsesoriaUF/AgendarAsesoriaUF.jsx'
 export {default as AgendarAsesoriaDuda } from './views/asesorado/agendarAsesoriaDuda/AgendarAsesoriaDuda.jsx'
+export {default as AgendarAsesoriaCalendario } from './views/asesorado/agendarAsesoriaCalendario/AgendarAsesoriaCalendario.jsx'
+export {default as AgendarAsesoriaHora } from './views/asesorado/agendarAsesoriaHora/AgendarAsesoriaHora.jsx'
+export {default as AgendarAsesoriaResumen } from './views/asesorado/AgendarAsesoriaResumen/AgendarAsesoriaResumen.jsx'
 
 export {default as CambioMesPeriodo } from './components/reusable/CambioMesPeriodo/CambioMesPeriodo.jsx'
 
 export {default as PopUpInformacionAsesoria } from './components/reusable/PopUpInformacionAsesoria/PopUpInformacionAsesoria.jsx'
 
-export {default as AgendarAsesoriaCalendario } from './views/asesorado/agendarAsesoriaCalendario/AgendarAsesoriaCalendario.jsx'
-export {default as AgendarAsesoriaHora } from './views/asesorado/agendarAsesoriaHora/AgendarAsesoriaHora.jsx'
-
 export {default as TarjetaInformacion } from './components/reusable/TarjetaInformacion/TarjetaInformacion.jsx'
 
-export {default as AgendarAsesoriaResumen } from './views/asesorado/AgendarAsesoriaResumen/AgendarAsesoriaResumen.jsx'
+export {default as BotonCambioPerfil } from './components/reusable/BotonCambioPerfil/BotonCambioPerfil.jsx'
+export {default as PreguntaAbiertaEncuesta } from './components/reusable/PreguntaAbiertaEncuesta/PreguntaAbiertaEncuesta.jsx'
+export {default as BotonAdministrarInformacion } from './components/reusable/BotonAdministrarInformacion/BotonAdministrarInformacion.jsx'
+
+export {default as PreguntaCerradaEncuesta } from './components/reusable/PreguntaCerradaEncuesta/PreguntaCerradaEncuesta.jsx'
+export {default as TemplateRegistroUsuario } from './views/TemplateRegistroUsuario/TemplateRegistroUsuario.jsx'
+export {default as Notificacion } from './components/reusable/Notificacion/Notificacion.jsx'
+
+export {default as RegistroAsesorCondiciones } from './views/asesor/registroAsesorCondiciones/RegistroAsesorCondiciones.jsx'
+export {default as AdministrarUsuarios } from './views/directivo/administrarUsuario/AdministrarUsuarios.jsx'
+export {default as CalendarioDisponibilidad } from './components/reusable/CalendarioDisponibilidad/CalendarioDisponibilidad.jsx'
+
+export {default as RegistroAsesoradoDatos } from './views/asesorado/registroAsesoradoDatos/RegistroAsesoradoDatos.jsx'
+export {default as RegistroAsesoradoCondiciones } from './views/asesorado/registroAsesoradoCondiciones/RegistroAsesoradoCondiciones.jsx'
+export {default as RegistroAsesoradoResumen } from './views/asesorado/registroAsesoradoResumen/RegistroAsesoradoResumen.jsx'
+
+export {default as PanelNotificaciones } from './views/commons/panelNotificaciones/PanelNotificaciones.jsx'
+
+export {default as RegistroAsesorDatos } from './views/asesor/registroAsesorDatos/RegistroAsesorDatos.jsx'
+export {default as RegistroAsesorHorario } from './views/asesor/registroAsesorHorario/RegistroAsesorHorario.jsx'
+
+
+export {default as AdministrarUsuariosDirectivos } from './views/commons/administrarUsuariosDirectivos/AdministrarUsuariosDirectivos.jsx'
+export {default as ListaUsuarios } from './components/reusable/ListaUsuarios/ListaUsuarios.js';
+export {default as InformacionPersonalUsuario } from './components/reusable/InformacionPersonalUsuario/InformacionPersonalUsuario.js';
+export {default as ImagenPerfilActualizar } from './components/reusable/ImagenPerfilActualizar/ImagenPerfilActualizar.js';
+export {default as TarjetaListaDesplegable } from './components/reusable/TarjetaListaDesplegable/TarjetaListaDesplegable.js';
+export {default as ListaDesplegable } from './components/reusable/ListaDesplegable/ListaDesplegable.js';
+export {default as PopUpEncuesta } from './components/reusable/PopUpEncuesta/PopUpEncuesta.js';
+export {default as ListaUnidadesDeFormacionAsesor } from './components/reusable/ListaUnidadesDeFormacionAsesor/ListaUnidadesDeFormacionAsesor.js';
+
+export {default as Perfil } from './views/commons/perfil/Perfil.jsx'
+export {default as imageCompressor } from './assets/reusableFunctions/imageCompressor.js'
+
+export {default as ImagenPerfilCambiar } from './components/reusable/ImagenPerfilCambiar/ImagenPerfilCambiar.jsx'
+
+export {default as AdministrarPerfilAsesoradoDirectivos } from './views/directivo/administrarPerfilAsesoradoDirectivos/administrarPerfilAsesoradoDirectivos.jsx'
+export {default as PopUpGeneral } from './components/reusable/PopUpGeneral/PopUpGeneral.js'
+export {default as RegistroAsesorResumen } from './views/asesor/registroAsesorResumen/RegistroAsesorResumen.jsx'
+export {default as AdministrarPerfilAsesorDirectivos } from './views/directivo/administrarPerfilAsesorDirectivos/AdministrarPerfilAsesorDirectivos.jsx'
+export {default as RespuestasEncuestas } from './views/commons/respuestasEncuestas/RespuestasEncuestas.jsx'
+export {default as AsesoriasExistentesDiaDirectivos } from './views/directivo/asesoriasExistentesDiaDirectivos/AsesoriasExistentesDiaDirectivos.jsx'
+export { default as CampoTextoMenuDesplegable } from './components/reusable/CampoTextoMenuDesplegable/CampoTextoMenuDesplegable.jsx'
+export {default as RegistroAsesorUF } from './views/asesor/registroAsesorUF/RegistroAsesorUF.jsx'

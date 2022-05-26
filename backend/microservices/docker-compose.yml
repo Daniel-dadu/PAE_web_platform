@@ -13,3 +13,8 @@ services:
     command: python NoDefault.py
     ports: 
       - 4001:4000
+
+  client:
+    image: microservice-client
+    ports: 
+      - 80:80

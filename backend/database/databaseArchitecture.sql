@@ -11,17 +11,30 @@ CREATE TABLE "Usuario" (
   "rol" ROLES,
   "nombreUsuario" VARCHAR(50) NOT NULL,
   "apellidoPaterno" VARCHAR(30) NOT NULL,
-  "apellidoMaterno" VARCHAR(30) NOT NULL,
   "fotoPerfil" TEXT,
   "ultimaConexion" TIMESTAMP,
-  "statusAcceso" STATUSACCESS
+  "statusAcceso" STATUSACCESS,
+  "telefono" VARCHAR(10),
+  "apellidoMaterno" VARCHAR(30)
+);
+
+-- 1.1 --
+
+CREATE TABLE "Acceso" (
+  "idUsuario" VARCHAR(10) NOT NULL,
+  "password" TEXT NOT NULL,
+  "salt" VARCHAR(16) NOT NULL, -- String random para mayor seguridad
+
+  FOREIGN KEY ("idUsuario") 
+  REFERENCES "Usuario" ("idUsuario")
+  ON DELETE CASCADE
 );
 
 -- 2 --
 
 CREATE TABLE "Asesor" (
   "idUsuario" VARCHAR(10) NOT NULL,
-  "telefono" VARCHAR(10),
+  "carrera" SMALLINT NOT NULL,
   "semestre" SMALLINT NOT NULL,
   "cantidadCambioHorario" SMALLINT NOT NULL,
   
@@ -207,14 +220,19 @@ CREATE TABLE "HorarioDisponible" (
   "idHorarioDisponible" SERIAL PRIMARY KEY,
   "idHorarioDisponiblePeriodo" INTEGER NOT NULL,
   "fechaHora" TIMESTAMP NOT NULL,
-  "status" STATUSHORARIO NOT NULL
+  "status" STATUSHORARIO NOT NULL,
+
+  FOREIGN KEY ("idHorarioDisponiblePeriodo") 
+  REFERENCES "HorarioDisponiblePeriodo" ("idHorarioDisponiblePeriodo")
+  ON DELETE CASCADE
 );
 
 -- 16 --
 
-CREATE TYPE STATUSASESORIA AS ENUM ('reservada', 'agendada', 'finalizada', 'cancelada');
+CREATE TYPE STATUSASESORIA AS ENUM ('registrando', 'reservada', 'confirmada', 'finalizada', 'cancelada');
+-- registrando es cuando el usuario está llenando los datos en el front pero no ha confirmado su reserva
 -- reservada es antes de la confirmación de PAE
--- agendada es después de la confirmación de PAE
+-- confirmada es después de la confirmación de PAE
 -- cancelada es cuando el asesor/asesorado cancelo la asesoria o PAE ha rechazado la solicitud
 
 CREATE TABLE "Asesoria" (
@@ -248,7 +266,11 @@ CREATE TABLE "Asesoria" (
 
 CREATE TABLE "AsesoriaImagen" (
   "idAsesoria" INTEGER NOT NULL,
-  "imagen" TEXT
+  "imagen" TEXT,
+
+  FOREIGN KEY ("idAsesoria")
+  REFERENCES "Asesoria" ("idAsesoria")
+  ON DELETE CASCADE
 );
 
 -- 18 --
@@ -278,9 +300,9 @@ CREATE TABLE "PoliticaDocumento" (
 
 -- 20 --
 
-CREATE TYPE ORIGENNOTIFICACION AS ENUM ('Asesoria reservada', 'Asesoria agendada', 'Asesoria cancelada', 'PAE');
+CREATE TYPE ORIGENNOTIFICACION AS ENUM ('Asesoria reservada', 'Asesoria confirmada', 'Asesoria cancelada', 'PAE');
 -- Asesoria reservada es para confirmar la peticion de una asesoria antes de la confirmación de PAE
--- Asesoria agendada es para informar de la confirmación de PAE para la asesoria
+-- Asesoria confirmada es para informar de la confirmación de PAE para la asesoria
 -- Asesoria cancelada es cuando el asesor/asesorado cancelo la asesoria o PAE ha rechazado la solicitud
 
 CREATE TABLE "Notificacion" (
@@ -328,3 +350,89 @@ CREATE TABLE "ProfesorUnidadFormacion" (
   REFERENCES "UnidadFormacion" ("idUF")
   ON DELETE CASCADE
 );
+
+------------ FUNCIÓN -----------------
+
+-- Función para crear una asesoría a partir de un asesorado y uf
+-- Se debe ejecutar en la primera pantalla de AgendarAsesoría, cuando el asesorado escoge la UF
+-- Esta regresa el Id de la nueva asesoría creada
+
+CREATE OR REPLACE FUNCTION new_asesoria (idAsesorado VARCHAR(10), idUF VARCHAR(50))
+RETURNS INTEGER AS $id$
+DECLARE
+	id INTEGER;
+  randomasesor VARCHAR(10);
+BEGIN
+  
+  SELECT "idUsuario" FROM "Usuario" WHERE "rol" = 'asesor' LIMIT 1 INTO randomasesor;
+  INSERT INTO "Asesoria" VALUES 
+    (DEFAULT, randomasesor, idAsesorado, idUF, 'registrando', null, null, 1);
+  SELECT "idAsesoria" into id FROM "Asesoria" ORDER BY "idAsesoria" DESC LIMIT 1;
+  RETURN id;
+
+END;
+$id$ LANGUAGE plpgsql;
+
+-- Función para actualizar la hora de últimaConexión del usuario al hacer el Login
+-- regresa el rol del usuario, su imagen de perfil, su modo (claro/oscuro) e idioma (espanol/ingles)
+-- Utilizada en el endpoint 'validateCredentials' de login
+-- Esta se debe ejecutar de la siguiente: SELECT * FROM update_ultima_conexion('A01657967'); 
+
+CREATE OR REPLACE FUNCTION update_ultima_conexion (idUsuario VARCHAR(10))
+RETURNS TABLE (
+  rol_user ROLES,
+  foto_user TEXT,
+  modo_user MODO,
+  idioma_user IDIOMA
+)
+LANGUAGE plpgsql AS 
+$func$
+BEGIN
+  
+  UPDATE "Usuario" SET "ultimaConexion" = CURRENT_TIMESTAMP WHERE "idUsuario" = idUsuario;
+  RETURN QUERY
+    SELECT "rol" AS rol_user, "fotoPerfil" AS foto_user, "modoInterfaz" AS modo_user, "lenguaje" AS idioma_user
+    FROM "Usuario", "Preferencia"
+    WHERE "Usuario"."idUsuario" = "Preferencia"."idUsuario" AND "Usuario"."idUsuario" = idUsuario;
+
+END
+$func$;
+
+------------ PROCEDURES ---------------
+
+-- Procedimiento para hacer el registro de un asesorado
+-- Se usa en las pantallas de Registro de Asesorados
+
+CREATE OR REPLACE PROCEDURE registro_asesorado(
+  matriculaUsr VARCHAR(10), 
+  passwordUsr TEXT, 
+  saltUsr VARCHAR(16), 
+  nombreUsr VARCHAR(50),
+  apellidoPaternoUsr VARCHAR(30),
+  apellidoMaternoUsr VARCHAR(30),
+  fotoPerfilUsr TEXT,
+  telefonoUsr VARCHAR(10),
+  carreraUsr VARCHAR(3)
+)
+LANGUAGE plpgsql AS
+$$
+BEGIN
+  INSERT INTO "Usuario" 
+    ("idUsuario", "rol", "nombreUsuario", "apellidoPaterno", "fotoPerfil", "ultimaConexion", "statusAcceso", "telefono", "apellidoMaterno")
+  VALUES 
+    (matriculaUsr, 'asesorado', nombreUsr, apellidoPaternoUsr, fotoPerfilUsr, CURRENT_TIMESTAMP, 'activo', telefonoUsr, apellidoMaternoUsr);
+  INSERT INTO "Acceso" ("idUsuario", "password", "salt") VALUES 
+    (matriculaUsr, passwordUsr, saltUsr);
+  INSERT INTO "EstudianteCarrera" ("idCarrera", "idUsuario") VALUES
+    (carreraUsr, matriculaUsr);
+  INSERT INTO "Preferencia" ("idUsuario", "modoInterfaz", "lenguaje", "subscripcionCorreo") VALUES
+    (matriculaUsr, 'claro', 'espanol', TRUE);
+END
+$$;
+
+------------ VIEWS -----------------
+
+-- Para consultar los usuarios sin mostrar su texto largo de fotoPerfil 
+-- Se puede consultar ejecutando la query: SELECT * FROM usuarios; 
+
+CREATE VIEW usuarios AS SELECT "idUsuario", "rol", "nombreUsuario", "apellidoPaterno", "apellidoMaterno", "telefono", "ultimaConexion", "statusAcceso" FROM "Usuario";

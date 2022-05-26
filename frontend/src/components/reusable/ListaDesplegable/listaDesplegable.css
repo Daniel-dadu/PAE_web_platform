@@ -1,0 +1,154 @@
+.contenedor-listaDesplegable {
+    height: 100%;
+    width: 100%;
+    max-width: 460px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contenedor-listaDesplegable-2 {
+    height: 100%;
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-listaDesplegable {
+    width: 100%;
+    max-width: 460px;
+}
+
+.container-listaDesplegable-2 {
+    width: 100%;
+    max-width: calc(100% - 10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contenedor-listaDesplegable .header-listaDesplegable {
+    width: 100%;
+    height: auto;
+    min-height: 40px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0 15px 0 15px;
+}
+
+.contenedor-listaDesplegable-2 .header-listaDesplegable-2 {
+    width: 100%;
+    height: auto;
+    min-height: 40px;
+    border-radius: 11px;
+    background: #1B4858;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0 15px 0 15px;
+}
+.contenedor-listaDesplegable .header-listaDesplegable .icono-listaDesplegable {
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.contenedor-listaDesplegable-2 .header-listaDesplegable-2 .icono-listaDesplegable {
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.contenedor-listaDesplegable .contenido-listaDesplegable {
+    /* width: 95%;
+    height: auto; */
+    width: 95%;
+    border-radius: 0 0 8px 8px;
+    background: #499AB7;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 0 10px 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    height: 0;
+    opacity: 0;
+}
+.contenedor-listaDesplegable-2 .contenido-listaDesplegable {
+    /* width: 95%;
+    height: auto; */
+    width: 95%;
+    border-radius: 0 0 8px 8px;
+    background: #499AB7;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 0 10px 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    height: 0;
+    opacity: 0;
+}
+.contenedor-listaDesplegable .show{
+    /* height: auto; */
+    height: 300px;
+    opacity: 1;
+    width: 95%;
+}
+.contenedor-listaDesplegable-2 .show{
+    /* height: auto; */
+    height: 300px;
+    opacity: 1;
+    width: 95%;
+}
+
+.contenedor-listaDesplegable .contenido-listaDesplegable .container-listaDesplegable {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.contenedor-listaDesplegable-2 .contenido-listaDesplegable .container-listaDesplegable {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+/* colores de header del acordeon */
+
+.azul_tipo_1 {
+    background: #1B4858;
+}
+.amarillo_tipo_1 {
+    background: #4C451E;
+}
+.rojo_tipo_1 {
+    background: #581B1B;
+}
+

@@ -6,10 +6,19 @@ import './CampoTextoGrande.css'
 size: se recibe un string que puede ser "small", "medium" o "big"
 */
 
-function CampoTextoGrande({ size }) {
+function CampoTextoGrande({ size, parentCallback, defaultText }) {
+
+  const onTrigger = (texto) => parentCallback(texto)
+
   return (
     <div className="container_ctg">
-        <textarea type="text" rows="6" style={{width: size === "small" ? "150px" : size === "medium" ? "350px" : "100%"}}/>
+        <textarea 
+          type="text" 
+          rows="6" 
+          style={{width: size === "small" ? "150px" : size === "medium" ? "350px" : "100%"}} 
+          value={defaultText}
+          onChange={(input) => onTrigger(input.target.value)}
+        />
     </div>
   )
 }
