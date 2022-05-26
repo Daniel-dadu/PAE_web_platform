@@ -1,0 +1,139 @@
+Primer Semestre
+EC1001B
+Transformación del México contemporáneo
+EG1001
+Optativa de matemáticas y ciencias
+MA1022
+Pensamiento matemático I
+P1010
+Filosofía política para los dilemas contemporáneos
+P1011
+Introducción a las ciencias sociales
+RI1001B
+Desafíos globales
+TC1001B
+Principios de programación para las ciencias sociales
+Segundo Semestre
+D1001B
+Introducción al derecho
+EC1002B
+Emprendimiento y tecnología para la transformación de México
+EC1013
+Macroeconomía
+EC1014
+Microeconomía
+EG1002
+Optativa de humanidades y bellas artes
+MA1023
+Métodos cuantitativos I
+MA1024
+Pensamiento matemático II
+TC1002B
+Herramientas tecnológicas para las ciencias sociales
+Tercer Semestre
+D2001B
+Bienes y derechos reales
+D2002B
+Derecho constitucional
+D2031
+Argumentación jurídica
+D2032
+Personas y acto jurídico
+D2033
+Seminario de argumentación jurídica
+D2034
+Seminario de personas y acto jurídico
+D2035
+Seminario de teoría del derecho
+D2036
+Teoría del derecho
+EG1003
+Optativa de ciencias sociales y del comportamiento
+VA1001B
+Tópico de exploración
+Cuarto Semestre
+D2003B
+Derecho penal y delitos en especial
+D2004B
+Derechos humanos y su interpretación judicial
+D2005B
+Solución de conflictos y teoría general del proceso
+D2037
+Derecho de las obligaciones I
+D2038
+Derecho de las obligaciones II
+D2039
+Seminario de derecho de las obligaciones I
+EG1004
+Optativa de liderazgo, emprendimiento e innovación
+Quinto Semestre
+D2006B
+Contratos civiles y mercantiles
+D2007B
+Derecho administrativo I
+D2008B
+Familia y sucesiones
+D2040
+Derecho laboral I
+D2041
+Derecho laboral ll
+D2042
+Seminario de derecho de las obligaciones II
+EG1005
+Optativa de ética y ciudadanía
+Sexto Semestre
+D3001B
+Controles constitucionales I
+D3002B
+Derecho administrativo II
+D3003B
+Derecho procesal civil y mercantil
+D3039
+Derecho fiscal
+D3040
+Derecho procesal laboral
+D3041
+Empresa y cumplimiento regulatorio
+D3042
+Juicios orales
+D3043
+Sistema penal acusatorio
+D3044
+Sociedades mercantiles
+Séptimo Semestre
+D3004B
+Controles constitucionales II
+D3005B
+Derecho internacional privado y arbitraje comercial internacional
+D3006B
+Derecho procesal fiscal y administrativo
+D3045
+Derecho de la propiedad intelectual
+D3046
+Derecho internacional público
+D3047
+Ética para abogados
+D3048
+Inglés legal
+D3049
+Seminario de derecho internacional público
+D3050
+Títulos y operaciones de crédito
+Octavo Semestre 
+VA3111
+Tópicos I
+VA3112
+Tópicos II
+VA3113
+Tópicos III
+VA3114
+Tópicos IV
+VA3115
+Tópicos V
+VA3116
+Tópicos VI
+Noveno Semestre
+D3007B
+Investigación jurídica aplicada
+OP3001B
+Optativa profesional multidisciplinaria

@@ -1,0 +1,742 @@
+AC1001
+Lógica computacional
+AC1001B
+Modelación de la física: Estática
+AC1002
+Razonamiento matemático
+AC1002B
+Modelación de la física: Dinámica
+AR1002B
+Exploración en el hábitat: de la escala del elemento al territorio
+CV1009
+Análisis químico del ambiente y de los materiales de construcción
+EG1001
+Optativa de matemáticas y ciencias
+AR1025
+Creatividad y diseño
+AR1026
+Metodologías de investigación para proyectos de diseño
+EG1001
+Optativa de matemáticas y ciencias
+AD1000B
+El rol de los negocios en la sociedad
+AD1014
+Dirección de los negocios
+CF1015
+Análisis financiero
+EC1017
+Economía empresarial
+EG1001
+Optativa de matemáticas y ciencias
+FZ1011
+Decisiones financieras
+MA1027
+Razonamiento matemático
+NI1001B
+Globalización de los negocios
+RH1001B
+Estrategia y talento
+TC1027
+Programación para negocios
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1006B
+Modelación del movimiento en ingeniería
+F1007B
+Aplicación de las leyes de conservación en sistemas ingenieriles
+MA1028
+Modelación matemática fundamental
+Q1019
+Análisis de la estructura, propiedades y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1006B
+Modelación del movimiento en ingeniería
+F1007B
+Aplicación de las leyes de conservación en sistemas ingenieriles
+MA1028
+Modelación matemática fundamental
+Q1019
+Análisis de la estructura, propiedades y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EC1001B
+Transformación del México contemporáneo
+EG1001
+Optativa de matemáticas y ciencias
+MA1022
+Pensamiento matemático I
+P1010
+Filosofía política para los dilemas contemporáneos
+P1011
+Introducción a las ciencias sociales
+RI1001B
+Desafíos globales
+TC1001B
+Principios de programación para las ciencias sociales
+A1004
+Cultura visual y sonora
+AV1002B
+Técnicas y discursos fotográficos
+CO1001B
+Metodologías de investigación de factores humanos
+DL1022
+Metodologías del pensamiento creativo
+EG1001
+Optativa de matemáticas y ciencias
+EH1001B
+Inmersión y experimentación creativa
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1002B
+Modelación del movimiento en bioingeniería y procesos químicos
+F1003B
+Aplicación de las leyes de conservación en ingeniería de procesos
+MA1028
+Modelación matemática fundamental
+Q1019
+Análisis de la estructura, propiedades y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1002B
+Modelación del movimiento en bioingeniería y procesos químicos
+F1003B
+Aplicación de las leyes de conservación en ingeniería de procesos
+MA1028
+Modelación matemática fundamental
+Q1019
+Análisis de la estructura, propiedades y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1002B
+Modelación del movimiento en bioingeniería y procesos químicos
+F1003B
+Aplicación de las leyes de conservación en ingeniería de procesos
+MA1028
+Modelación matemática fundamental
+Q1028
+Fundamentación de la estructura y transformación de la materia
+Q1029
+Análisis de la estructura y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1002B
+Modelación del movimiento en bioingeniería y procesos químicos
+F1003B
+Aplicación de las leyes de conservación en ingeniería de procesos
+MA1028
+Modelación matemática fundamental
+Q1019
+Análisis de la estructura, propiedades y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1008B
+Modelación del movimiento en ciencias
+F1009B
+Aplicación de las leyes de conservación en ciencias
+MA1028
+Modelación matemática fundamental
+Q1028
+Fundamentación de la estructura y transformación de la materia
+Q1029
+Análisis de la estructura y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1004B
+Modelación computacional del movimiento
+F1005B
+Modelación computacional aplicando leyes de conservación
+MA1028
+Modelación matemática fundamental
+Q1028
+Fundamentación de la estructura y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+TC1033
+Pensamiento computacional orientado a objetos
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1006B
+Modelación del movimiento en ingeniería
+F1007B
+Aplicación de las leyes de conservación en sistemas ingenieriles
+MA1028
+Modelación matemática fundamental
+Q1019
+Análisis de la estructura, propiedades y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1008B
+Modelación del movimiento en ciencias
+F1009B
+Aplicación de las leyes de conservación en ciencias
+MA1028
+Modelación matemática fundamental
+Q1020
+Análisis de la estructura y propiedades de la materia
+TC1029
+Pensamiento computacional y programación
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1002B
+Modelación del movimiento en bioingeniería y procesos químicos
+F1003B
+Aplicación de las leyes de conservación en ingeniería de procesos
+MA1028
+Modelación matemática fundamental
+Q1019
+Análisis de la estructura, propiedades y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1006B
+Modelación del movimiento en ingeniería
+F1007B
+Aplicación de las leyes de conservación en sistemas ingenieriles
+MA1028
+Modelación matemática fundamental
+Q1019
+Análisis de la estructura, propiedades y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1008B
+Modelación del movimiento en ciencias
+F1009B
+Aplicación de las leyes de conservación en ciencias
+MA1028
+Modelación matemática fundamental
+Q1019
+Análisis de la estructura, propiedades y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1006B
+Modelación del movimiento en ingeniería
+F1007B
+Aplicación de las leyes de conservación en sistemas ingenieriles
+MA1028
+Modelación matemática fundamental
+Q1019
+Análisis de la estructura, propiedades y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1006B
+Modelación del movimiento en ingeniería
+F1007B
+Aplicación de las leyes de conservación en sistemas ingenieriles
+MA1028
+Modelación matemática fundamental
+Q1019
+Análisis de la estructura, propiedades y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1006B
+Modelación del movimiento en ingeniería
+F1007B
+Aplicación de las leyes de conservación en sistemas ingenieriles
+MA1028
+Modelación matemática fundamental
+Q1028
+Fundamentación de la estructura y transformación de la materia
+Q1029
+Análisis de la estructura y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1006B
+Modelación del movimiento en ingeniería
+F1007B
+Aplicación de las leyes de conservación en sistemas ingenieriles
+MA1028
+Modelación matemática fundamental
+Q1019
+Análisis de la estructura, propiedades y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1006B
+Modelación del movimiento en ingeniería
+F1007B
+Aplicación de las leyes de conservación en sistemas ingenieriles
+MA1028
+Modelación matemática fundamental
+Q1019
+Análisis de la estructura, propiedades y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1006B
+Modelación del movimiento en ingeniería
+F1007B
+Aplicación de las leyes de conservación en sistemas ingenieriles
+MA1028
+Modelación matemática fundamental
+Q1019
+Análisis de la estructura, propiedades y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1008B
+Modelación del movimiento en ciencias
+F1009B
+Aplicación de las leyes de conservación en ciencias
+MA1028
+Modelación matemática fundamental
+Q1019
+Análisis de la estructura, propiedades y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1002B
+Modelación del movimiento en bioingeniería y procesos químicos
+F1003B
+Aplicación de las leyes de conservación en ingeniería de procesos
+MA1028
+Modelación matemática fundamental
+Q1019
+Análisis de la estructura, propiedades y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1004B
+Modelación computacional del movimiento
+F1005B
+Modelación computacional aplicando leyes de conservación
+MA1028
+Modelación matemática fundamental
+Q1020
+Análisis de la estructura y propiedades de la materia
+TC1029
+Pensamiento computacional y programación
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1004B
+Modelación computacional del movimiento
+F1005B
+Modelación computacional aplicando leyes de conservación
+MA1028
+Modelación matemática fundamental
+Q1020
+Análisis de la estructura y propiedades de la materia
+TC1029
+Pensamiento computacional y programación
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1004B
+Modelación computacional del movimiento
+F1005B
+Modelación computacional aplicando leyes de conservación
+MA1028
+Modelación matemática fundamental
+Q1020
+Análisis de la estructura y propiedades de la materia
+TC1029
+Pensamiento computacional y programación
+A1004
+Cultura visual y sonora
+AV1002B
+Técnicas y discursos fotográficos
+CO1001B
+Metodologías de investigación de factores humanos
+DL1022
+Metodologías del pensamiento creativo
+EG1001
+Optativa de matemáticas y ciencias
+EH1001B
+Inmersión y experimentación creativa
+AD1000B
+El rol de los negocios en la sociedad
+AD1014
+Dirección de los negocios
+CF1015
+Análisis financiero
+EC1017
+Economía empresarial
+EG1001
+Optativa de matemáticas y ciencias
+FZ1011
+Decisiones financieras
+MA1027
+Razonamiento matemático
+NI1001B
+Globalización de los negocios
+RH1001B
+Estrategia y talento
+TC1027
+Programación para negocios
+AD1000B
+El rol de los negocios en la sociedad
+AD1014
+Dirección de los negocios
+CF1015
+Análisis financiero
+EC1017
+Economía empresarial
+EG1001
+Optativa de matemáticas y ciencias
+FZ1011
+Decisiones financieras
+MA1027
+Razonamiento matemático
+NI1001B
+Globalización de los negocios
+RH1001B
+Estrategia y talento
+TC1027
+Programación para negocios
+AD1000B
+El rol de los negocios en la sociedad
+AD1014
+Dirección de los negocios
+CF1015
+Análisis financiero
+EC1017
+Economía empresarial
+EG1001
+Optativa de matemáticas y ciencias
+FZ1011
+Decisiones financieras
+MA1027
+Razonamiento matemático
+NI1001B
+Globalización de los negocios
+RH1001B
+Estrategia y talento
+TC1027
+Programación para negocios
+A1004
+Cultura visual y sonora
+AV1002B
+Técnicas y discursos fotográficos
+CO1001B
+Metodologías de investigación de factores humanos
+DL1022
+Metodologías del pensamiento creativo
+EG1001
+Optativa de matemáticas y ciencias
+EH1001B
+Inmersión y experimentación creativa
+AD1000B
+El rol de los negocios en la sociedad
+AD1014
+Dirección de los negocios
+CF1015
+Análisis financiero
+EC1017
+Economía empresarial
+EG1001
+Optativa de matemáticas y ciencias
+FZ1011
+Decisiones financieras
+MA1027
+Razonamiento matemático
+NI1001B
+Globalización de los negocios
+RH1001B
+Estrategia y talento
+TC1027
+Programación para negocios
+A1004
+Cultura visual y sonora
+AV1002B
+Técnicas y discursos fotográficos
+CO1001B
+Metodologías de investigación de factores humanos
+DL1022
+Metodologías del pensamiento creativo
+EG1001
+Optativa de matemáticas y ciencias
+EH1001B
+Inmersión y experimentación creativa
+AD1000B
+El rol de los negocios en la sociedad
+AD1014
+Dirección de los negocios
+CF1015
+Análisis financiero
+EC1017
+Economía empresarial
+EG1001
+Optativa de matemáticas y ciencias
+FZ1011
+Decisiones financieras
+MA1027
+Razonamiento matemático
+NI1001B
+Globalización de los negocios
+RH1001B
+Estrategia y talento
+TC1027
+Programación para negocios
+EC1001B
+Transformación del México contemporáneo
+EG1001
+Optativa de matemáticas y ciencias
+MA1022
+Pensamiento matemático I
+P1010
+Filosofía política para los dilemas contemporáneos
+P1011
+Introducción a las ciencias sociales
+RI1001B
+Desafíos globales
+TC1001B
+Principios de programación para las ciencias sociales
+EC1001B
+Transformación del México contemporáneo
+EG1001
+Optativa de matemáticas y ciencias
+MA1022
+Pensamiento matemático I
+P1010
+Filosofía política para los dilemas contemporáneos
+P1011
+Introducción a las ciencias sociales
+RI1001B
+Desafíos globales
+TC1001B
+Principios de programación para las ciencias sociales
+A1004
+Cultura visual y sonora
+AV1002B
+Técnicas y discursos fotográficos
+CO1001B
+Metodologías de investigación de factores humanos
+DL1022
+Metodologías del pensamiento creativo
+EG1001
+Optativa de matemáticas y ciencias
+EH1001B
+Inmersión y experimentación creativa
+AD1000B
+El rol de los negocios en la sociedad
+AD1014
+Dirección de los negocios
+CF1015
+Análisis financiero
+EC1017
+Economía empresarial
+EG1001
+Optativa de matemáticas y ciencias
+FZ1011
+Decisiones financieras
+MA1027
+Razonamiento matemático
+NI1001B
+Globalización de los negocios
+RH1001B
+Estrategia y talento
+TC1027
+Programación para negocios
+AD1000B
+El rol de los negocios en la sociedad
+AD1014
+Dirección de los negocios
+CF1015
+Análisis financiero
+EC1017
+Economía empresarial
+EG1001
+Optativa de matemáticas y ciencias
+FZ1011
+Decisiones financieras
+MA1027
+Razonamiento matemático
+NI1001B
+Globalización de los negocios
+RH1001B
+Estrategia y talento
+TC1027
+Programación para negocios
+AD1000B
+El rol de los negocios en la sociedad
+AD1014
+Dirección de los negocios
+CF1015
+Análisis financiero
+EC1017
+Economía empresarial
+EG1001
+Optativa de matemáticas y ciencias
+FZ1011
+Decisiones financieras
+MA1027
+Razonamiento matemático
+NI1001B
+Globalización de los negocios
+RH1001B
+Estrategia y talento
+TC1027
+Programación para negocios
+A1004
+Cultura visual y sonora
+AV1002B
+Técnicas y discursos fotográficos
+CO1001B
+Metodologías de investigación de factores humanos
+DL1022
+Metodologías del pensamiento creativo
+EG1001
+Optativa de matemáticas y ciencias
+EH1001B
+Inmersión y experimentación creativa
+A1004
+Cultura visual y sonora
+AV1002B
+Técnicas y discursos fotográficos
+CO1001B
+Metodologías de investigación de factores humanos
+DL1022
+Metodologías del pensamiento creativo
+EG1001
+Optativa de matemáticas y ciencias
+EH1001B
+Inmersión y experimentación creativa
+EC1001B
+Transformación del México contemporáneo
+EG1001
+Optativa de matemáticas y ciencias
+MA1022
+Pensamiento matemático I
+P1010
+Filosofía política para los dilemas contemporáneos
+P1011
+Introducción a las ciencias sociales
+RI1001B
+Desafíos globales
+TC1001B
+Principios de programación para las ciencias sociales
+A1004
+Cultura visual y sonora
+AV1002B
+Técnicas y discursos fotográficos
+CO1001B
+Metodologías de investigación de factores humanos
+DL1022
+Metodologías del pensamiento creativo
+EG1001
+Optativa de matemáticas y ciencias
+EH1001B
+Inmersión y experimentación creativa
+EC1001B
+Transformación del México contemporáneo
+EG1001
+Optativa de matemáticas y ciencias
+MA1022
+Pensamiento matemático I
+P1010
+Filosofía política para los dilemas contemporáneos
+P1011
+Introducción a las ciencias sociales
+RI1001B
+Desafíos globales
+TC1001B
+Principios de programación para las ciencias sociales
+AR1002B
+Exploración en el hábitat: de la escala del elemento al territorio
+AR1003B
+Modelación de la física en el ambiente construido
+CV1007
+Razonamiento basado en matemáticas
+CV1008
+Resolución de problemas con lógica computacional
+CV1009
+Análisis químico del ambiente y de los materiales de construcción
+EG1001
+Optativa de matemáticas y ciencias
+AD1000B
+El rol de los negocios en la sociedad
+AD1014
+Dirección de los negocios
+CF1015
+Análisis financiero
+EC1017
+Economía empresarial
+EG1001
+Optativa de matemáticas y ciencias
+FZ1011
+Decisiones financieras
+MA1027
+Razonamiento matemático
+NI1001B
+Globalización de los negocios
+RH1001B
+Estrategia y talento
+TC1027
+Programación para negocios
