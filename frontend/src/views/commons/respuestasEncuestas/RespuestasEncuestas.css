@@ -1,0 +1,24 @@
+.containerBarraBusqueda{
+    width: fit-content;
+    margin-left: 33px;
+    color: #ADADAD;
+    background: #E6E6E6;
+    border-radius: 6px;
+    margin-bottom: 30px;
+}
+
+.containerBarraBusqueda input{
+    width: 90%;
+    height: 30px;
+    padding: 10px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ADADAD;
+    background: #E6E6E6;
+    border-radius: 6px;
+}
+
+.containerBarraBusqueda .icono{
+    color: #ADADAD;
+}

@@ -122,11 +122,13 @@
 .profile-img-login {
     position: relative;
     display: block;
-    width: 25%;
+    width: 8rem;
+    height: 8rem;
     border-radius: 100%;
     border: 3px solid #000;
     margin: auto;
     background-color: white;
+    object-fit: cover;
 }
 
 .btn-login-ingresar {

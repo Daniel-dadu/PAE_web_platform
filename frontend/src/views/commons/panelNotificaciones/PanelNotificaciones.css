@@ -1,0 +1,12 @@
+.btn_NotificacionIrAEnviar{
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.btn_NotificacionIrAEnviar .botonEnviarNotiHola .btn{
+    color: var(--negro);
+    box-shadow: 5px 5px 5px 4px rgba(0, 0, 0, 0.2);
+}

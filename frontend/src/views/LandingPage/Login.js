@@ -131,7 +131,7 @@ const Login = () => {
 
                         <div className='contenedor-boton'>
                             <button className='btn-login-ingresar' onClick={handleSubmit}> Ingresar </button>
-                            <a href='/'>¿No tienes cuenta?</a>
+                            <a href='/registroAsesoradoDatos'>¿No tienes cuenta?</a>
                         </div>
                         
                     </form>

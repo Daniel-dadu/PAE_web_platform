@@ -51,7 +51,7 @@ function AgendarAsesoriaDuda() {
   useEffect(() => {
     if(!localStorage.asesoria_uf)
       navigate('/agendarAsesoriaUF/ok')
-  }, [])
+  }, [navigate])
 
   // En caso de que el usuario cierre la pestaña o se cambie a otra ruta, se eliminan los datos de la asesoría
   window.addEventListener("unload", () => {

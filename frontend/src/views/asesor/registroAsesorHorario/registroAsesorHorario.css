@@ -1,0 +1,17 @@
+.contenedor-cambio-periodo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-calendarioDisponibilidad {
+    width: 80%;
+    height: 550px;
+    display: flex;
+    justify-content: centere;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}

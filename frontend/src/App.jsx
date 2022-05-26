@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { RegistroAsesoradoDatos, RegistroAsesorDatos, PanelNotificaciones, RegistroAsesoradoCondiciones, RegistroAsesorCondiciones, AdministrarUsuarios, TemporalHome, LandingPage, Calendario, PerfilAsesor, PerfilAsesorado, PerfilDirectivo, EditarPerfil, AgendarAsesoriaUF, AgendarAsesoriaDuda, AgendarAsesoriaCalendario, AgendarAsesoriaHora, AgendarAsesoriaResumen, DanielFlores, DanielMaldonado, DanielMunive, Ezequiel, Fernando } from './routeIndex'
+import { RegistroAsesorUF, RespuestasEncuestas, AsesoriasExistentesDiaDirectivos, RegistroAsesorResumen, RegistroAsesorHorario, AdministrarPerfilAsesoradoDirectivos, AdministrarUsuariosDirectivos, RegistroAsesoradoDatos, RegistroAsesorDatos, PanelNotificaciones, RegistroAsesoradoCondiciones, RegistroAsesoradoResumen, RegistroAsesorCondiciones, AdministrarUsuarios, TemporalHome, LandingPage, Calendario, PerfilAsesor, PerfilAsesorado, PerfilDirectivo, EditarPerfil, AgendarAsesoriaUF, AgendarAsesoriaDuda, AgendarAsesoriaCalendario, AgendarAsesoriaHora, AgendarAsesoriaResumen, DanielFlores, DanielMaldonado, DanielMunive, Ezequiel, Fernando } from './routeIndex'
 
 const App = () => {
   return (
@@ -28,16 +28,26 @@ const App = () => {
         <Route path='/ezequiel' element={<Ezequiel/>} />
         <Route path='/fernando' element={<Fernando/>} />
 
-        {/* Views de Asesorado */}
+        {/* Views de Registro de Asesorado */}
         <Route path='/registroAsesoradoCondiciones' element={<RegistroAsesoradoCondiciones/>} />
         <Route path='/registroAsesoradoDatos' element={<RegistroAsesoradoDatos/>} />
+        <Route path='/registroAsesoradoResumen' element={<RegistroAsesoradoResumen/>} />
 
         {/* Views de Asesor  */}
         <Route path='/registroAsesorCondiciones' element={<RegistroAsesorCondiciones/>} />
         <Route path='/registroAsesorDatos' element={<RegistroAsesorDatos/>} />
+        <Route path='/registroAsesorResumen' element={<RegistroAsesorResumen/>} />
+        <Route path='/registroAsesorHorario' element={ <RegistroAsesorHorario/> }/>
+        <Route path='/registroAsesorUF' element={ <RegistroAsesorUF/> }/>
+
 
           {/* Views de Directivos */}
         <Route path='/administrarUsuarios' element={<AdministrarUsuarios/>} />
+        <Route path='/informacionUsuarios' element={<AdministrarUsuariosDirectivos/>} />
+        <Route path='/administrarPerfilAsesorados' element={<AdministrarPerfilAsesoradoDirectivos/>} />
+        <Route path='/asesoriasExistentesDiaDirectivos' element={<AsesoriasExistentesDiaDirectivos/>} />
+        <Route path='/respuestasEncuestas' element={<RespuestasEncuestas/>} />
+
 
         {/* Esta última ruta es a donde se redirige al usuario cuando se busca una ruta inexistente */}
         <Route path='*' element={<TemporalHome />} />
