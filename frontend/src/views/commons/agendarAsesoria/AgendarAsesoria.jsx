@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 // import axios from 'axios'
 import './AgendarAsesoria.css'
 
@@ -58,21 +58,21 @@ function AgendarAsesoria({
 
     const [loadingNext, setLoadingNext] = useState(false)
 
-    // const [imagesOnDatabase, setImagesOnDatabase] = useState(0)
-    let imagesUploaded = [1,2,3,4]
-    let numImagesUploaded = -1
+    const clearLocalStorageAsesoria = () => {
+        localStorage.removeItem('asesoria_uf')
+        localStorage.removeItem('asesoria_duda')
+        for(let i = 1; i <= 3; i++) localStorage.removeItem(`asesoria_imagen${i}`)
+        localStorage.removeItem('asesoria_anio')
+        localStorage.removeItem('asesoria_mes')
+        localStorage.removeItem('asesoria_dia')
+        localStorage.removeItem('asesoria_hora')
+    }
 
     // Función que se ejecutará siempre que se de click al botón de Cancelar
     // Elimina todos los campos que se hayan creado en el localStorage
     const onCancelarClick = () => {
         if(window.confirm("¿Estás seguro que quieres cancelar tu asesoría?")) {
-            localStorage.removeItem('asesoria_uf')
-            localStorage.removeItem('asesoria_duda')
-            for(let i = 1; i <= 3; i++) localStorage.removeItem(`asesoria_imagen${i}`)
-            localStorage.removeItem('asesoria_anio')
-            localStorage.removeItem('asesoria_mes')
-            localStorage.removeItem('asesoria_dia')
-            localStorage.removeItem('asesoria_hora')
+            clearLocalStorageAsesoria()
             navigate("/calendario")
         }
     }
@@ -169,10 +169,13 @@ function AgendarAsesoria({
                 return
             }
 
+            // Ponemos la rueda de carga
             setLoadingNext(true)
 
+            // Obtenemos la hora del localStorage para luego sacarle solo la parte entera
             const horaStr = usr.horaSelected
             
+            // Establecemos las características de la API request para crear la asesoría
             const config = {
                 method: 'post',
                 url: 'http://20.225.209.57:3094/asesoria/nueva/',
@@ -190,15 +193,20 @@ function AgendarAsesoria({
                 })
             }
 
-            // Eliminamos los undefined
-            imagesUploaded = usr.imagesSelected.filter(image => image !== undefined)
-            numImagesUploaded = 0
-              
-            axios(config)
-            .then(response => {
-                const id_asesoria = response.data.idAsesoria
+            // Eliminamos las imagenes en undefined
+            const imagesUploaded = usr.imagesSelected.filter(image => image !== undefined)
 
-                imagesUploaded.forEach((imagen, index) => {
+            try {
+                // Hacemos la API Request
+                const asesoriaResponse = await axios(config)
+
+                // Obtenemos el idAsesoria dado por la API request
+                const id_asesoria = asesoriaResponse.data.idAsesoria
+                
+                // Recorremos el array de imagenes (solo entra si el usuario subió imágenes)
+                for (let index = 0; index < imagesUploaded.length; index++) {
+
+                    // Establecemos las características de la API request para insertar la imagen
                     const config2 = {
                         method: 'post',
                         url: 'http://20.225.209.57:3094/asesoria/insertar_imagen/',
@@ -207,46 +215,38 @@ function AgendarAsesoria({
                         },
                         data : JSON.stringify({
                             "idAsesoria": id_asesoria,
-                            "imagen": imagen
+                            "imagen": imagesUploaded[index]
                         })
-                    };
-                        
-                    axios(config2)
-                    .then(response => {
-                        // Aquí debo descubrir cómo hacer que salga cuando se carguen todas las imágenes
-                        numImagesUploaded++
-                        console.log(response.data, index);
-                    })
-                    .catch(_error => {
+                    }
+                    
+                    try {
+                        // Hacemos la API Request
+                        const imageUploadResponse = await axios(config2)
+                        console.log(imageUploadResponse.data, index)
+                    } catch (error) {
+                        // Si hay un error subiendo alguna imagen, le indicamos al usuario cuál fue la imagen que generó ese problema
                         alert(`ERROR: No se pudo guardar tu imagen #${index+1}, intenta subir otra imagen`)
+                        setLoadingNext(false)
                         return
-                    })
-                })
-
-            })
-            .catch(_error => {
-                alert("No se pude generar la asesoría, intente de nuevo más tarde")
-                navigate('/agendarAsesoriaUF/error')
+                    }
+                    
+                }
+                
+            } catch (error) {
+                // Si hay un error creando la asesoria, el indicamos al usuario que pruebe con otra hora
+                alert("ERROR: Ese horario ya no está disponible, intenta con otra hora/fecha")
                 setLoadingNext(false)
                 return
-            })
+            }
+            
+            alert("La asesoría ha sido agendada de forma adecuada")
+            clearLocalStorageAsesoria()
+            navigate('/calendario')
 
         }
 
         setLoadingNext(false)
     }
-
-    // --- No FUNCIONAAA ---
-    useEffect(() => {
-        console.log("a:", imagesUploaded.length)
-        console.log("b:", numImagesUploaded)
-
-        if(imagesUploaded.length === numImagesUploaded){
-            console.log("terminé")
-        }
-    
-    }, [imagesUploaded.length, numImagesUploaded])
-    
 
     return (
         <Template view="agendarAsesoria">
