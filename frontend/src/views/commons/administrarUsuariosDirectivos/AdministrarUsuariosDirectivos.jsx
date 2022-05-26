@@ -6,8 +6,45 @@ import { Template, ListaUsuarios, BotonSencillo, BotonConImagen } from '../../..
 
 import { FaCopy} from 'react-icons/fa'
 
+const dataUsuarios = [
+    {
+        "id": 1,
+        "nombreCompleto": "Daniel Esteban Maldonado Espitia"
 
-const AdministrarUsuariosDirectivos = (userTypeUsuariosDirectivos) => {
+    },
+    {
+        "id": 2,
+        "nombreCompleto": "Daniel Munive Meneses"
+
+    },
+    {
+        "id": 3,
+        "nombreCompleto": "Daniel Flores Rodriguez"
+
+    },
+    {
+        "id": 4,
+        "nombreCompleto": "Ezequiel Lozano Guerrero"
+
+    },
+    {
+        "id": 5,
+        "nombreCompleto": "Fernando Jimenez"
+
+    },
+    {
+        "id": 6,
+        "nombreCompleto": "Emiliano Zapata"
+
+    },
+    {
+        "id": 5,
+        "nombreCompleto": "Leticia Rodríguez Aguilar"
+
+    }
+]
+
+const AdministrarUsuariosDirectivos = ({userTypeUsuariosDirectivos}) => { /* En caso de ser asesorados se espera un tipo de usuario "asesorados", para mostrar unicamente el titulo de asesorados, cualquier otra palabra mostrara el titulo asesor y el boton de link para asesores */
 
     let navigate = useNavigate()
     const routeChange = route => navigate(`/${route}`);
@@ -27,7 +64,7 @@ const AdministrarUsuariosDirectivos = (userTypeUsuariosDirectivos) => {
         <Template view = "administrar">
 
 
-        {(userTypeUsuariosDirectivos === 'Asesorados') ? 
+        {(userTypeUsuariosDirectivos === 'asesorados') ? 
 
         <h1> Administrar asesorados </h1>
         
@@ -53,7 +90,7 @@ const AdministrarUsuariosDirectivos = (userTypeUsuariosDirectivos) => {
  
 
             <div className = 'divListaUsuarios'>
-                <ListaUsuarios></ListaUsuarios>
+                <ListaUsuarios data = {dataUsuarios}></ListaUsuarios>
             </div>
 
             <div className = 'btnAtras'>

@@ -5,7 +5,7 @@ import { ImCross } from 'react-icons/im';
 import { BotonSencillo }  from '../../../routeIndex'
 import { ImagenAsesoria } from '../../../routeIndex'
 
-import  Modal from '../../../components/reusable/PopUpInformacionAsesoria/Modal';
+
 
 export default function PopUpInformacionAsesoria({userTypePopUpAsesoria, infoAsesoria, estado}) {
 

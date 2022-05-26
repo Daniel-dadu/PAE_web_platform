@@ -1,6 +1,6 @@
 import React from 'react'
 
- import { Perfil } from '../../../routeIndex'
+ import { AdministrarUsuarios } from '../../../routeIndex'
  
 
 function DanielMunive() {
@@ -17,7 +17,7 @@ function DanielMunive() {
         }}
       >
 
-        <Perfil></Perfil>
+        <AdministrarUsuarios></AdministrarUsuarios>
 
 
     </div>

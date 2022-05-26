@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { PreguntaCerradaEncuesta, PreguntaAbiertaEncuesta, ImagenAsesoria } from '../../../routeIndex';
 import { useIsOverflowX } from '../../../hooks/useIsOverflowX';
 import ImageUploading from "react-images-uploading";
@@ -7,68 +7,68 @@ import './popUpEncuesta.css';
 
 
 
+// PARTE DE LA DOCUMENTACION =======================================================================
+// const data = [
+//     {
+//         tipoDePregunta:"cerrada",
+//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
 
-const data = [
-    {
-        tipoDePregunta:"cerrada",
-        pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
+//     },
+//     {
+//         tipoDePregunta:"cerrada",
+//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
 
-    },
-    {
-        tipoDePregunta:"cerrada",
-        pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
+//     },
+//     {
+//         tipoDePregunta:"abierta",
+//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
 
-    },
-    {
-        tipoDePregunta:"abierta",
-        pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
+//     },
+//     {
+//         tipoDePregunta:"cerrada",
+//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
 
-    },
-    {
-        tipoDePregunta:"cerrada",
-        pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
+//     },
+//     {
+//         tipoDePregunta:"cerrada",
+//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
 
-    },
-    {
-        tipoDePregunta:"cerrada",
-        pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
+//     }
 
-    }
+// ]
 
-]
+// const data2 = [
+//     {
+//         tipoDePregunta:"cerrada",
+//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
+//         respuesta: 9
 
-const data2 = [
-    {
-        tipoDePregunta:"cerrada",
-        pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
-        respuesta: 9
+//     },
+//     {
+//         tipoDePregunta:"cerrada",
+//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
+//         respuesta: 3
+//     },
+//     {
+//         tipoDePregunta:"abierta",
+//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
+//         respuesta: "Mucho texto muy explicito."
+//     },
+//     {
+//         tipoDePregunta:"cerrada",
+//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
+//         respuesta: 6
 
-    },
-    {
-        tipoDePregunta:"cerrada",
-        pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
-        respuesta: 3
-    },
-    {
-        tipoDePregunta:"abierta",
-        pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
-        respuesta: "Mucho texto muy explicito."
-    },
-    {
-        tipoDePregunta:"cerrada",
-        pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
-        respuesta: 6
+//     },
+//     {
+//         tipoDePregunta:"cerrada",
+//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
+//         respuesta: 8
 
-    },
-    {
-        tipoDePregunta:"cerrada",
-        pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
-        respuesta: 8
+//     }
 
-    }
-
-]
-
+// ]
+// ==================================================================================================
 
 
 
@@ -166,8 +166,6 @@ const PopUpEncuesta = ({
     // usamos el custom hook, le mandamos la referencia del elemento 
     const ref = useRef();
     const isOverflow = useIsOverflowX(ref);
-
-    console.log(isOverflow)
 
     const [images, setImages] = React.useState([]);
     const onChange = (imageList) => {
