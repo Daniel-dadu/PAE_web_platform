@@ -1,5 +1,4 @@
 const { request, response } = require('express')
-
 const Pool = require('pg').Pool
 
 // IMPORTANTE: Estas credenciales de Postgres no deben estar aquí, solo es para probar
@@ -11,42 +10,28 @@ const pool = new Pool({
   port: 5432
 })
 
-const politica_vigente = (_request, response) => {
-    const consulta = `SELECT "titulo", "descripcion" FROM "Politica" WHERE "status" = 'vigente' AND "fechaUltimoCambio" = (SELECT MAX("fechaUltimoCambio") FROM "Politica");`
-    pool.query(consulta, (error, result) => {
+const get_notificaciones_usuario = (request, response) => {
+    
+    const id = request.query.idUsuario
+
+    if(id === "null") {
+        response.status(400).json([])
+        return
+    }
+
+    const consulta = `SELECT * FROM get_notificaciones_usuario($1);` // SELECT * FROM get_notificaciones_usuario('A01657967');
+
+    pool.query(consulta, [id], (error, result) => {
         if(error) {
             throw error
         } else {
             response.status(200).json(result.rows)
+            // console.log(result.rows)
         }
     })
-}
 
-const nuevo_asesorado = (request, response) => {
-    const matricula = request.body.matricula
-    const contrasena = request.body.contrasena
-    const nombre = request.body.nombre
-    const apellidoPaterno = request.body.apellidoPaterno
-    const apellidoMaterno = request.body.apellidoMaterno
-    const fotoPerfil = request.body.fotoPerfil
-    const telefono = request.body.telefono
-    const carrera = request.body.carrera
-
-    const consulta = `CALL registro_asesorado($1, $2, $3, $4, $5, $6, $7, $8, $9);`
-    const params = [matricula, password, salt, nombre, apellidoPaterno, apellidoMaterno, fotoPerfil, telefono, carrera]
-
-    pool.query(consulta, params, (error) => {
-        if(error) {
-            response.status(409).send('La matrícula ya está registrada')
-        } else {
-            response.status(200).send('Se registró al nuevo usuario (asesorado)')
-        }
-    })
 }
 
 module.exports = {
-    prueba_fotoPerfil,
-    prueba_getfotoPerfil,
-    politica_vigente,
-    nuevo_asesorado
+    get_notificaciones_usuario
 }
