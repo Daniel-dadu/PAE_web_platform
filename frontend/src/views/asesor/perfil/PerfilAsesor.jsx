@@ -81,17 +81,15 @@ function PerfilAsesor(){
                 </div>
 
                 <div className = 'boxPerfilCommon'>
-                    <InformacionPersonalUsuario data = {dataExample}> </InformacionPersonalUsuario>
+                    <InformacionPersonalUsuario data = {dataExample} />
                 </div>
 
                 <div className = 'containerBtnCambioTipoUsuario'>
-                    <BotonCambioPerfil>
-                    </BotonCambioPerfil>
+                    <BotonCambioPerfil />
                 </div>
 
                 <div className = 'containerListaUFsAsesor'>
-                  <ListaUnidadesDeFormacionAsesor>
-                  </ListaUnidadesDeFormacionAsesor>
+                  <ListaUnidadesDeFormacionAsesor />
                 </div>
 
             </Template>

@@ -34,11 +34,6 @@ app.use(
     })
 )
 
-// --- OBTENER LISTA DE CARRERAS ---
-// Obtener todas las carreras. NO REQUIERE QUERY PARAMS.
-app.get('/asesoria/get_carreras', db.getCarreras)
-
-
 // --- OBTENER LISTA DE UFs A PARTIR DE LA CARRERA Y SEMESTRE ---
 // Obtener lista de Unidades de Formación apartir de una carrera y semestre
 // Ejemplo de consulta con query params:

@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaPen } from "react-icons/fa";
 import { BiImageAdd } from 'react-icons/bi';
 import { CampoSeleccionarEnListaDesplegable, 
     CampoTextoPequeno, 
     BotonSencillo, 
     ImagenAsesoria,BotonConImagen } from '../../../routeIndex';
+
+import axios from 'axios';
 import './informacionPersonalUsuario.css';
-import data from './data.json';
+// import data from './data.json';
 import ImageUploading from "react-images-uploading";
 
 /*
@@ -32,9 +34,74 @@ import ImageUploading from "react-images-uploading";
 
 const InformacionPersonalUsuario = () => {
 
+    // Hook para guardar la lista de carreras
+    const [listaCarreras, setListaCarreras] = useState(['Cargando...'])
+
+    // Obtenemos la lista de carreras de la API
+    useEffect(() => {
+        const config = {
+            method: 'get',
+            url: 'http://20.225.209.57:3091/general/get_carreras',
+            headers: { }
+        };
+        
+        axios(config)
+        .then(response => {
+            const carreras = response.data.map(carrera => carrera.idCarrera + ' - ' + carrera.nombreCarrera)
+            setListaCarreras(carreras)
+        })
+        .catch(_error => {
+            alert("ERROR: No se pudieron obtener las carreras")
+        })
+
+    }, [setListaCarreras])
+
+    let data = {   
+        "tipoUsuario" : localStorage.rolUsuario === "directivo" ? 2 : 1,
+    
+        "relleno": {
+            "carrera": listaCarreras,
+            "semestre": [1,2,3,4,5,6,7,8,9]
+        },
+        "informacion": {
+            "camposObligatorios": [
+                {
+                    "campo": "Nombre",
+                    "info": "Mario Alonso",
+                    "nombreClase": "nombre"
+                },
+                {
+                    "campo": "Matricula",
+                    "info": "A01734184",
+                    "nombreClase": "matricula"   
+                }
+            ],
+            "camposVariantes": [
+                {
+                    "campo": "Carrera(s)",
+                    "info": ["ITC","IRS"],
+                    "nombreClase": "carrera" 
+                },
+                {
+                    "campo": "Semestre",
+                    "info": 1,
+                    "nombreClase": "semestre"  
+                },
+                {
+                    "campo": "Telefono",
+                    "info":   222777888,
+                    "nombreClase":"telefono"
+                }
+            ]
+        }
+        
+    }
+
     //usados para el cambio de imagen
     const [editar, setEditar] = useState(false);
+
     const [previewImage, setPreviewImage] = useState([]);
+
     const onChange = (imageList) => {
         setPreviewImage(imageList);
         console.log(imageList);

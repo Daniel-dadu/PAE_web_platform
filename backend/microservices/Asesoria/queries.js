@@ -11,17 +11,6 @@ const pool = new Pool({
   port: 5432,
 })
 
-
-const getCarreras = (_request, response) => {
-  pool.query('SELECT * FROM "Carrera"', (error, results) => {
-    if (error) {
-      throw error
-    }
-    response.status(200).json(results.rows)
-  })
-}
-
-
 const getUF_carreraSemestre = (request, response) => {
   // Parámetros proporcionados en la request HTTP
   const carrera = request.query.carrera
