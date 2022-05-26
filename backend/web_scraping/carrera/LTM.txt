@@ -1,0 +1,92 @@
+Primer Semestre
+A1004
+Cultura visual y sonora
+AV1002B
+Técnicas y discursos fotográficos
+CO1001B
+Metodologías de investigación de factores humanos
+DL1022
+Metodologías del pensamiento creativo
+EG1001
+Optativa de matemáticas y ciencias
+EH1001B
+Inmersión y experimentación creativa
+Segundo Semestre
+AR1001B
+Representación formal del espacio
+AV1001B
+Narrativa audiovisual
+EG1002
+Optativa de humanidades y bellas artes
+EH1008
+Imaginarios culturales de México
+EH1009
+Semiótica y narratologías contemporáneas
+H1001B
+Estructuras simbólicas en la imagen, la literatura y la música
+Tercer Semestre
+EG1003
+Optativa de ciencias sociales y del comportamiento
+F2010B
+Fundamentos de la acústica
+TM2001
+Teoría y estilos musicales
+TM2001B
+Entrenamiento auditivo e instrumental
+TM2002
+Negocios en la industria de la música
+VA1001B
+Tópico de exploración
+Cuarto Semestre
+EG1004
+Optativa de liderazgo, emprendimiento e innovación
+TM2002B
+Aplicación de tecnología en la producción sonora
+TM2003
+Producción sonora y mezcla digital
+TM2003B
+Técnicas de grabación sonora
+TM2004B
+Proyecto de producción musical
+Quinto Semestre
+EG1005
+Optativa de ética y ciudadanía
+TM2004
+Postproducción de audio para cine y video
+TM2005B
+Diseño de aplicaciones interactivas de tecnología musical
+TM2006B
+Musicalización de productos audiovisuales
+TM2007B
+Producción y mercadotecnia audiovisual
+Sexto Semestre 
+OP3091
+Optativa Profesional I
+OP3092
+Optativa Profesional II
+OP3093
+Optativa profesional III
+OP3094
+Optativa profesional IV
+OP3095
+Optativa profesional V
+OP3096
+Optativa profesional VI
+Séptimo Semestre 
+VA3111
+Tópicos I
+VA3112
+Tópicos II
+VA3113
+Tópicos III
+VA3114
+Tópicos IV
+VA3115
+Tópicos V
+VA3116
+Tópicos VI
+Octavo Semestre
+OP3001B
+Optativa profesional multidisciplinaria
+TM3001B
+Proyecto integrador de tecnología y producción musical
