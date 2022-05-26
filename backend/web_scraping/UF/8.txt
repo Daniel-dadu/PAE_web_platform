@@ -6,138 +6,74 @@ AR3008B
 Gestión arquitectónica
 NI3001B
 Desarrollo de estrategias de internacionalización para el siglo XXI
-OP3001B
-Optativa profesional multidisciplinaria
 IN3001B
 Diseño de un sistema organizacional inteligente
-OP3001B
-Optativa profesional multidisciplinaria
 MR3002B
 Diseño e implementación de sistemas mecatrónicos
-OP3001B
-Optativa profesional multidisciplinaria
 AG3002B
 Transformación digital de biosistemas productivos
 AG3003B
 Gestión integral y ecoeficiente
-OP3001B
-Optativa profesional multidisciplinaria
-OP3001B
-Optativa profesional multidisciplinaria
 TA3002B
 Administración de procesos de producción y distribución de alimentos
 BT3002B
 Diseño de procesos biotecnológicos y de bioproductos
-OP3001B
-Optativa profesional multidisciplinaria
 CV3001B
 Integración de proyectos de ingeniería civil
-OP3001B
-Optativa profesional multidisciplinaria
 MA3001B
 Desarrollo de proyectos de ingeniería matemática
-OP3001B
-Optativa profesional multidisciplinaria
 DS3001B
 Diseño de estrategias de sustentabilidad corporativa
 IQ3001B
 Desarrollo de modelos de sustentabilidad energética
-OP3001B
-Optativa profesional multidisciplinaria
-OP3001B
-Optativa profesional multidisciplinaria
 TE3004B
 Desarrollo de telecomunicaciones y sistemas energéticos
 F3001B
 Integración de ingeniería física
-OP3001B
-Optativa profesional multidisciplinaria
 NN3002B
 Desarrollo de proyecto integrador de innovación
-OP3001B
-Optativa profesional multidisciplinaria
-IN3001B
-Diseño de un sistema organizacional inteligente
-OP3001B
-Optativa profesional multidisciplinaria
 BI3001B
 Desarrollo de dispositivos médicos
-OP3001B
-Optativa profesional multidisciplinaria
-MR3002B
-Diseño e implementación de sistemas mecatrónicos
-OP3001B
-Optativa profesional multidisciplinaria
 M3001B
 Diseño de máquinas
-OP3001B
-Optativa profesional multidisciplinaria
-OP3001B
-Optativa profesional multidisciplinaria
 Q3001B
 Desarrollo de proyectos de nanotecnología
 IQ3002B
 Aplicación de la ingeniería de procesos en proyectos industriales
-OP3001B
-Optativa profesional multidisciplinaria
-OP3001B
-Optativa profesional multidisciplinaria
 TE3003B
 Integración de robótica y sistemas inteligentes
-OP3001B
-Optativa profesional multidisciplinaria
 TC3002B
 Desarrollo de aplicaciones avanzadas de ciencias computacionales
 TC3003B
 Implementación de redes de área amplia y servicios distribuidos
-OP3001B
-Optativa profesional multidisciplinaria
 TI3004B
 Transformación digital de la organización
 AT3002B
 Proyecto integral de arte digital
-OP3001B
-Optativa profesional multidisciplinaria
 AD3001B
 Gestión estratégica de PYMES
 AD3002B
 Institucionalización de la empresa familiar
-OP3001B
-Optativa profesional multidisciplinaria
 FZ3001B
 Administración financiera internacional
 FZ3002B
 Gestión de fondos de inversión
-OP3001B
-Optativa profesional multidisciplinaria
 CF3002B
 Dirección financiera y contraloría estratégica
-OP3001B
-Optativa profesional multidisciplinaria
 CO3001B
 Proyecto integrador de comunicación
-OP3001B
-Optativa profesional multidisciplinaria
 EM3001B
 Escalabilidad
 EM3002B
 Persuasión y ventas
-OP3001B
-Optativa profesional multidisciplinaria
 DL3002B
 Proyecto integral de diseño
-OP3001B
-Optativa profesional multidisciplinaria
-OP3001B
-Optativa profesional multidisciplinaria
 RH3001B
 Liderazgo estratégico del talento
 RH3002B
 Potenciación de la cultura organizacional
 EC3002B
 Solución y evaluación de problemas económicos
-OP3001B
-Optativa profesional multidisciplinaria
 VA3111
 Tópicos I
 VA3112
@@ -152,45 +88,23 @@ VA3116
 Tópicos VI
 ED3001B
 Proyecto integrador de innovación educativa
-OP3001B
-Optativa profesional multidisciplinaria
 MT3001B
 Liderazgo de mercadotecnia I
 MT3002B
 Liderazgo de mercadotecnia II
-OP3001B
-Optativa profesional multidisciplinaria
-NI3001B
-Desarrollo de estrategias de internacionalización para el siglo XXI
-OP3001B
-Optativa profesional multidisciplinaria
 AD3003B
 Planeación estratégica basada en analítica prescriptiva
-OP3001B
-Optativa profesional multidisciplinaria
 H3001B
 Proyecto integrador de letras
-OP3001B
-Optativa profesional multidisciplinaria
 MI3001B
 Proyecto integrador de periodismo
-OP3001B
-Optativa profesional multidisciplinaria
-OP3001B
-Optativa profesional multidisciplinaria
 RI3002B
 Análisis y estrategias de política exterior
-OP3001B
-Optativa profesional multidisciplinaria
 TM3001B
 Proyecto integrador de tecnología y producción musical
-OP3001B
-Optativa profesional multidisciplinaria
 P3002B
 Diseño e implementación de innovaciones públicas
 AR3005B
 Ciudades emergentes
 AR3006B
 Complejidad y debate
-OP3001B
-Optativa profesional multidisciplinaria
