@@ -37,7 +37,11 @@ INSERT INTO "UnidadFormacion" VALUES
     ('AD2035', 'Introducción a los negocios conscientes', 1);
 
 INSERT INTO "Carrera" VALUES
-    ('OPTG', 'Optativa General');
+    ('OPTG', 'Optativa General'),
+    ('OPTI', 'Optativa de Ingeniería'),
+    ('OPTA', 'Optativa de Arte Digital'),
+    ('OPTD', 'Optativa de Diseño'),
+    ('OPTP', 'Optativa Profesional');
 
 INSERT INTO "UnidadFormacionCarrera" VALUES
     ('EC1020', 'OPTG'),
@@ -76,3 +80,32 @@ INSERT INTO "UnidadFormacionCarrera" VALUES
     ('H1063','OPTG'),
     ('MB1001','OPTG'),
     ('AD2035','OPTG');
+
+INSERT INTO "UnidadFormacionCarrera" VALUES
+    ('OP1007', 'OPTI'),
+    ('OP2019', 'OPTI'),
+    ('OP2026', 'OPTI'),
+    ('OP2027', 'OPTI'),
+    ('OP2028', 'OPTI'),
+
+    ('OP3070', 'OPTA'),
+    ('OP3071', 'OPTA'),
+    ('OP3072', 'OPTA'),
+    ('OP3073', 'OPTA'),
+    ('OP3074', 'OPTA'),
+    ('OP3075', 'OPTA'),
+    
+    ('OP3076', 'OPTD'),
+    ('OP3077', 'OPTD'),
+    ('OP3078', 'OPTD'),
+    ('OP3079', 'OPTD'),
+    ('OP3080', 'OPTD'),
+    ('OP3081', 'OPTD'),
+
+    ('OP3091', 'OPTP'),
+    ('OP3092', 'OPTP'),
+    ('OP3093', 'OPTP'),
+    ('OP3094', 'OPTP'),
+    ('OP3095', 'OPTP'),
+    ('OP3096', 'OPTP'),
+    ('OP3001B', 'OPTP');
