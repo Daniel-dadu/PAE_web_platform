@@ -89,8 +89,9 @@ function CalendarioMini(){
         // Si no se seleccionó una asesoría, se redirecciona al usuario a la primera pantalla
         if(!localStorage.asesoria_uf) {
             navigate('/agendarAsesoriaUF/error')
+            return
         }
-    })
+    }, [navigate])
     
     // Obtenemos la fecha hoy
     const today = new Date()

@@ -49,8 +49,10 @@ function AgendarAsesoriaDuda() {
 
   // Si se intenta ingresar a esta vista pero no se cuenta con el localStorage.asesoria_uf, se redirige al /agendarAsesoriaUF/ok
   useEffect(() => {
-    if(!localStorage.asesoria_uf)
+    if(!localStorage.asesoria_uf){
       navigate('/agendarAsesoriaUF/ok')
+      return
+    }
   }, [navigate])
 
   // Revisando si hay una duda en el localStorage y cargándolas en caso de que sí
