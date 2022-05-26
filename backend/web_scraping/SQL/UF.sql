@@ -1,4 +1,4 @@
-INSERT INTO UnidadFormacion VALUES
+INSERT INTO "UnidadFormacion" VALUES
     ('AC1001', 'Lógica computacional', 1),
     ('AC1001B', 'Modelación de la física: Estática', 1),
     ('AC1002', 'Razonamiento matemático', 1),

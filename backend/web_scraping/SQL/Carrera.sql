@@ -1,4 +1,4 @@
-INSERT INTO Carrera VALUES
+INSERT INTO "Carrera" VALUES
     ('AMC', 'Ambiente Construido/ Exploración'),
     ('ESC', 'Estudios Creativos / Exploración'),
     ('ARQ', 'Arquitecto'),

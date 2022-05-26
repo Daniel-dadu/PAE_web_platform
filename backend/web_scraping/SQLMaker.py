@@ -37,7 +37,7 @@ def SQLCarrera():
     nombres = carrerasNombres.readlines()
     
     SQL = open("./SQL/Carrera.sql", "w")
-    query = "INSERT INTO Carrera VALUES\n"
+    query = "INSERT INTO \"Carrera\" VALUES\n"
 
     n = len(siglas)
     for i in range(n):
@@ -61,7 +61,7 @@ def SQLUF():
     UFs = UFList.readlines()
     
     SQL = open("./SQL/UF.sql", "w")
-    query = "INSERT INTO UnidadFormacion VALUES\n"
+    query = "INSERT INTO \"UnidadFormacion\" VALUES\n"
 
     n = len(UFs)
     i = 0
@@ -93,7 +93,7 @@ def SQLUnidadFormacionCarrera():
     ignore = carrerasIgnore.readlines()
     
     SQL = open("./SQL/UnidadFormacionCarrera.sql", "w")
-    query = "INSERT INTO Carrera VALUES\n"
+    query = "INSERT INTO \"Carrera\" VALUES\n"
 
     n = len(siglas)
     for i in range(n):

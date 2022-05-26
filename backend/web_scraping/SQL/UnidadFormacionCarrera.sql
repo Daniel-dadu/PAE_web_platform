@@ -1,4 +1,4 @@
-INSERT INTO Carrera VALUES
+INSERT INTO "Carrera" VALUES
     ('AC1001', 'AMC'),
     ('AC1001B', 'AMC'),
     ('AC1002', 'AMC'),
