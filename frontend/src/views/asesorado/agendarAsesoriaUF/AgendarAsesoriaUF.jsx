@@ -12,31 +12,31 @@ let progressBar = {
           "name" : "Selección",
           "state": null,
           "next": "done",
-          "path" : "./AgendarAsesoriaUF"
+          "path" : "/agendarAsesoriaUF/ok"
         }, 
         {
           "name" : "Información",
           "state": null,
           "next": "enable",
-          "path" : "./AgendarAsesoriaUF"
+          "path" : "/agendarAsesoriaUF/ok"
         },
         {
           "name" : "Fecha",
           "state": null,
           "next": "enable",
-          "path" : "./AgendarAsesoriaUF"
+          "path" : "/agendarAsesoriaUF/ok"
         },
         {
           "name" : "Hora",
           "state": null,
           "next": "enable",
-          "path" : "./AgendarAsesoriaUF"
+          "path" : "/agendarAsesoriaUF/ok"
         },
         {
           "name" : "Confirmación",
           "state": null,
           "next": "enable",
-          "path" : "./AgendarAsesoriaUF"
+          "path" : "/agendarAsesoriaUF/ok"
       }
   ]
 }
@@ -62,7 +62,7 @@ function AgendarAsesoriaUF() {
   // Hook para verificar si se recibió un error en la ruta
   useEffect(() => {
     if(statusasesoriaurl === "error" && countErrorMessage === 0) {
-      alert("Error, no se llenaron los campos correctamente")
+      alert("Error, intente hacer la reservación nuevamente")
       navigate('/agendarAsesoriaUF/ok') // Se redirige al usuario a la ruta con el ok
       window.location.reload(false) // Se recarga la página para limpiar los campos seleccionados
       countErrorMessage++
@@ -202,6 +202,10 @@ function AgendarAsesoriaUF() {
 
         : // Si todo sale bien con la llamada a la API, se entra en este bloque
         <div className='container_out_aauf'>
+          
+          <h2 className='title_instructions_agendarAsesoria'>Selecciona la materia o unidad de formación en la que tienes duda</h2>
+          <h4 className='subtitle_instructions_agendarAsesoria'>Primero indica a qué carrera y semestre corresponde dicha Unidad de formación</h4>
+
           <div className='container_in_aauf'>
 
             <h3 id="CarreraTitleInput">Carrera</h3>

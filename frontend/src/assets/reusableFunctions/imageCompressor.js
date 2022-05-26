@@ -40,7 +40,8 @@ const resize = async (img, type, MAX_SIZE) => {
     
     blob = await new Promise(rs => canvas.toBlob(rs, 'image/'+type, 1))
     
-    console.log("1 RESIZING: Blob size", blob.size)
+    // // Mostrando el tamaño en esta iteración
+    // console.log("1 RESIZING: Blob size", blob.size)
     if (blob.size < MAX_SIZE) return blob
     
     let blobOptions = []
@@ -51,7 +52,8 @@ const resize = async (img, type, MAX_SIZE) => {
         if (mid === last || (blob.size < MAX_SIZE && blob.size > MIN_SIZE)) break
         last = mid
         blob = await new Promise(rs => canvas.toBlob(rs, 'image/'+type, mid))
-        console.log("RESIZING: Blob size", blob.size)
+        // // Mostrando el tamaño en esta iteración
+        // console.log("RESIZING: Blob size", blob.size)
         blobOptions.push(blob)
         if (blob.size > MAX_SIZE) end = mid 
         if (blob.size < MAX_SIZE) start = mid
@@ -60,7 +62,8 @@ const resize = async (img, type, MAX_SIZE) => {
     if(blob.size > MAX_SIZE){
         blobOptions.sort((a, b) => a.size > b.size ? 1 : -1)
         for (let i = blobOptions.length-1; i >= 0; i--) {
-            console.log(`Blob option ${i}`, blobOptions[i].size)
+            // // Mostrando el tamaño en esta iteración
+            // console.log(`Blob option ${i}`, blobOptions[i].size)
             if(blobOptions[i].size < MAX_SIZE) return blobOptions[i]
         }
         return "error: imagen muy grande"

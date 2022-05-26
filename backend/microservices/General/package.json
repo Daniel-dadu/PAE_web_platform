@@ -1,16 +1,17 @@
 {
-  "name": "imagecompressor",
+  "name": "general",
   "version": "1.0.0",
   "description": "",
-  "main": "compressor.js",
+  "main": "General.js",
   "scripts": {
+    "start": "node General.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-fetch": "^3.2.4"
-  },
-  "type": "module"
+    "express": "^4.18.1",
+    "pg": "^8.7.3"
+  }
 }

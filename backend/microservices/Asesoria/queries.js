@@ -48,148 +48,109 @@ const getUF_carreraSemestre = (request, response) => {
 }
 
 
-const getDias_uf = (request, response) => {
+const getDiasDisponibles = (request, response) => {
 
-  const uf = request.body.uf
+  const uf = request.query.uf
+  const anio = parseInt(request.query.anio)
+  const mes = parseInt(request.query.mes)
 
-  // Consulta que regresa los días de asesoría disponibles para cierta materia descartando duplicados y descartando los horarios de disponibilidad pasados
-  const consulta = `SELECT DISTINCT("HorarioDisponible"."fechaHora"::date) FROM "AsesorUnidadFormacion", "HorarioDisponiblePeriodo", "HorarioDisponible" WHERE "AsesorUnidadFormacion"."idUsuario" = "HorarioDisponiblePeriodo"."idAsesor" AND "HorarioDisponiblePeriodo"."idHorarioDisponiblePeriodo" = "HorarioDisponible"."idHorarioDisponiblePeriodo" AND "HorarioDisponible"."status" = 'disponible' AND "HorarioDisponible"."fechaHora" > (CURRENT_DATE + INTERVAL '1 day') AND "AsesorUnidadFormacion"."idUF" = $1`
+  // Función para obtener el nombre del mes a partir del número
+  const getMonthEspanol = mesEnNumero => 
+    mesEnNumero === 1 ? 'Enero' : 
+    mesEnNumero === 2 ? 'Febrero' : 
+    mesEnNumero === 3 ? 'Marzo' : 
+    mesEnNumero === 4 ? 'Abril' :
+    mesEnNumero === 5 ? 'Mayo' :
+    mesEnNumero === 6 ? 'Junio' :
+    mesEnNumero === 7 ? 'Julio' :
+    mesEnNumero === 8 ? 'Agosto' :
+    mesEnNumero === 9 ? 'Septiembre' :
+    mesEnNumero === 10 ? 'Octubre' :
+    mesEnNumero === 11 ? 'Noviembre' : 'Diciembre'
 
-  pool.query(consulta, [uf], (error, results) => {
+  pool.query(`SELECT * FROM get_dias_disponibles($1, $2, $3)`, [uf, anio, mes], (error, results) => {
     if(error){
       throw error
     } else {
-      response.status(200).json(results.rows)
+      response.status(200).json({ [getMonthEspanol(mes)]: results.rows.map(object => object.dias_disponibles) })
     }
   })
+
 }
 
-const getHoras_ufDia = (request, response) => {
+const getHorasDisponibles = (request, response) => {
 
-  const uf = request.body.uf
-  const dia = request.body.dia
+  const uf = request.query.uf
+  const anio = request.query.anio
+  const mes = request.query.mes
+  const dia = request.query.dia
 
   // Consulta que regresa las horas disponibles para cierta materia y descartando los horarios de disponibilidad pasados
-  const consulta = `SELECT DISTINCT("HorarioDisponible"."fechaHora"::time), "HorarioDisponible"."idHorarioDisponible" FROM "AsesorUnidadFormacion", "HorarioDisponiblePeriodo", "HorarioDisponible" WHERE "AsesorUnidadFormacion"."idUsuario" = "HorarioDisponiblePeriodo"."idAsesor" AND "HorarioDisponiblePeriodo"."idHorarioDisponiblePeriodo" = "HorarioDisponible"."idHorarioDisponiblePeriodo" AND "HorarioDisponible"."status" = 'disponible' AND "AsesorUnidadFormacion"."idUF" = $1 AND "HorarioDisponible"."fechaHora"::date = $2`
+  const consulta = `SELECT * FROM get_horas_disponibles($1, $2, $3, $4);`
 
-  pool.query(consulta, [uf, dia], (error, results) => {
+  pool.query(consulta, [uf, anio, mes, dia], (error, results) => {
     if(error){
       throw error
     } else {
-      response.status(200).json(results.rows)
+      response.status(200).json({horas_disponibles: results.rows.map(object => object.horas_disponibles)})
     }
   })
 }
-
-
-const getInfo_ufFechaHora = (request, response) => {
-
-  const idAsesoria = request.body.idAsesoria
-
-  const consulta = `SELECT "UnidadFormacion"."idUF", "UnidadFormacion"."nombreUF", "HorarioDisponible"."fechaHora"::date AS fecha, "HorarioDisponible"."fechaHora"::time AS hora FROM "Asesoria", "UnidadFormacion", "HorarioDisponible" WHERE "Asesoria"."idUF" = "UnidadFormacion"."idUF" AND "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible" AND "Asesoria"."idAsesoria" = $1`
-
-  pool.query(consulta, [idAsesoria], (error, result) => {
-    if(error){
-      throw error
-    } else {
-      response.status(200).json(result.rows[0])
-    }
-  })
-}
-
 
 const createAsesoria = (request, response) => {
 
-  const asesorado = request.body.asesorado
   const uf = request.body.uf
+  const anio = request.body.anio
+  const mes = request.body.mes
+  const dia = request.body.dia
+  const hora = request.body.hora
+  const duda = request.body.duda
+  const asesorado = request.body.asesorado
 
-  // Hacemos la llamada a la funcion new_asesoria para crear la nueva asesoría con los parámetros proporcionados por el usuario
-  pool.query('SELECT new_asesoria($1, $2)', [asesorado, uf], (error, result) => {
-    if (error) throw error
-    response.status(201).json({idAsesoria: result.rows[0].new_asesoria})
+  const consulta1 = `SELECT * FROM verificar_horarios_disponibles($1, $2, $3, $4, $5)`
+
+  pool.query(consulta1, [uf, anio, mes, dia, hora], (error, result) => {
+    if (error) {
+      response.status(409).send("Error: El horario ya ha sido reservado")
+    } else {
+
+      const idHorario = result.rows[0].idhorariodisponible
+      const consulta2 = `SELECT * FROM nueva_asesoria($1, $2, $3, $4, $5, $6, $7, $8)`
+
+      pool.query(consulta2, [uf, anio, mes, dia, hora, asesorado, idHorario, duda], (error, results) => {
+        if(error){
+          response.status(404).send("Error: No se pudo agendar la asesoría")
+        } else {
+          response.status(200).json({ idAsesoria: results.rows[0].nueva_asesoria })
+        }
+      })
+
+    }
   })
 
 }
 
-
-const setAsesoria_updateDuda = (request, response) => {
+const insertImagen = (request, response) => {
   const idAsesoria = request.body.idAsesoria
-  const duda = request.body.duda
-  const imagenes = request.body.imagenes
+  const imagen = request.body.imagen
 
-  const consultas = [
-    'UPDATE "Asesoria" SET "descripcionDuda" = $1 WHERE "idAsesoria" = $2',
-    'INSERT INTO "AsesoriaImagen" VALUES ($1, $2)'
-  ]
-
-  // Se ejecuta la primera consulta, la cual actualiza la descripción de la duda
-  pool.query(consultas[0], [duda, idAsesoria], error => {
-    if (error) {
-      throw error
-    } else {
-      // Se itera por el array de imagenes que se recibe y se insertan todas
-      imagenes.map(imagen => {
-        pool.query(consultas[1], [idAsesoria, imagen], error => {
-          if (error) {
-            throw error
-          }
-        })
-      })
+  const consulta = 'INSERT INTO "AsesoriaImagen" ("idAsesoria", "imagen") VALUES ($1, $2)'
   
-      response.status(200).send('Duda e imagenes insertadas en la asesoría con ID:' + idAsesoria)
+  pool.query(consulta, [idAsesoria, imagen], (error) => {
+    if(error) {
+      response.status(400).send("Error: No se pudo insertar la imagen")
+    } else {
+      response.status(200).send("Se insertó la imagen correctamente")
     }
   })
 }
 
-
-const setAsesoria_updateFechaHora = (request, response) => {
-  const idAsesoria = request.body.idAsesoria
-  const idHorarioDisponible = request.body.idHorarioDisponible
-
-  const consulta = 'UPDATE "Asesoria" SET "idHorarioDisponible" = $1 WHERE "idAsesoria" = $2'
-
-  pool.query(consulta, [idHorarioDisponible, idAsesoria], error => {
-    if(error) throw error
-
-    response.status(200).send('Horario disponible insertado en la asesoría con ID:' + idAsesoria)
-  })
-}
-
-
-const setAsesoria_reservarHorario = (request, response) => {
-  const idHorarioDisponible = request.body.idHorarioDisponible
-
-  const consulta = `UPDATE "HorarioDisponible" SET "status" = 'reservada' WHERE "idHorarioDisponible" = $1`
-
-  pool.query(consulta, [idHorarioDisponible], error => {
-    if(error) throw error
-
-    response.status(200).send(`Status cambiado a reservada en horario disponible con id ${idHorarioDisponible}`)
-  })
-}
-
-
-const deleteAsesoria = (request, response) => {
-  const idAsesoria = request.body.idAsesoria
-
-  const consulta = 'DELETE FROM "Asesoria" WHERE "idAsesoria" = $1'
-
-  pool.query(consulta, [idAsesoria], error => {
-    if(error) throw error
-
-    response.status(200).send(`Asesoria con id ${idAsesoria} correctamente ELIMINADA`)
-  })
-}
 
 module.exports = {
   getCarreras,
   getUF_carreraSemestre,
-  getDias_uf,
-  getHoras_ufDia,
-  getInfo_ufFechaHora,
+  getDiasDisponibles,
+  getHorasDisponibles,
   createAsesoria,
-  setAsesoria_updateDuda,
-  setAsesoria_updateFechaHora,
-  setAsesoria_reservarHorario,
-  deleteAsesoria
+  insertImagen
 }

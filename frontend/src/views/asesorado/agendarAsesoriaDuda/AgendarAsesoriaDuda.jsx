@@ -15,31 +15,31 @@ let progressBar = {
           "name" : "Selección",
           "state": true,
           "next": "enable",
-          "path" : "./AgendarAsesoriaUF"
+          "path" : "/AgendarAsesoriaUF/ok"
         }, 
         {
           "name" : "Información",
           "state": true,
           "next": "enable",
-          "path" : "./AgendarAsesoriaDuda"
+          "path" : "/AgendarAsesoriaDuda"
         },
         {
           "name" : "Fecha",
           "state": null,
           "next": "enable",
-          "path" : "./AgendarAsesoriaDuda"
+          "path" : "/AgendarAsesoriaDuda"
         },
         {
           "name" : "Hora",
           "state": null,
           "next": "enable",
-          "path" : "./AgendarAsesoriaDuda"
+          "path" : "/AgendarAsesoriaDuda"
         },
         {
           "name" : "Confirmación",
           "state": null,
           "next": "enable",
-          "path" : "./AgendarAsesoriaDuda"
+          "path" : "/AgendarAsesoriaDuda"
       }
   ]
 }
@@ -52,13 +52,6 @@ function AgendarAsesoriaDuda() {
     if(!localStorage.asesoria_uf)
       navigate('/agendarAsesoriaUF/ok')
   }, [navigate])
-
-  // En caso de que el usuario cierre la pestaña o se cambie a otra ruta, se eliminan los datos de la asesoría
-  window.addEventListener("unload", () => {
-    localStorage.removeItem('asesoria_uf')
-    localStorage.removeItem('asesoria_duda')
-    for(let i = 1; i <= 3; i++) localStorage.removeItem(`asesoria_imagen${i}`)
-  })
 
   // Revisando si hay una duda en el localStorage y cargándolas en caso de que sí
   // Esto es útil para cuando se regresa a esta vista con el botón 'atras'
@@ -95,15 +88,17 @@ function AgendarAsesoriaDuda() {
       progressBarJSON={progressBar}
     >
         <div className='container-aad'>
+            <h2 className='title_instructions_agendarAsesoria'>Explica tu duda en el cuadro de texto y sube imagenes si lo requieres</h2>
+            
             <div className='top'>
-                <h3>Explica tu duda:</h3>
+                <p>Escribe tu duda a continuación:</p>
                 <CampoTextoGrande parentCallback={handleDuda} defaultText={dudaUser}/>
             </div>
                 
             <ImageUploading multiple value={images} onChange={onChangeImages} maxNumber={3} dataURLKey="data_url" acceptType={['jpg', 'png']}>
                 {({ imageList, onImageUpload, onImageRemove }) => (
                 <div className="container_ImageUploading">
-                    <div className='container_imagenes'>
+                    <div className='container_imagenes' style={{height: imageList.length !== 0 && '8rem'}}>
                         {imageList.length === 0 ? 
                         <p>No se ha subido ninguna imagen</p>
                         : imageList.map((image, index) => (
@@ -114,6 +109,7 @@ function AgendarAsesoriaDuda() {
                                 source = {image.data_url}
                                 alt = {`ImagenAsesoria${index}`}
                                 nameDownloadImage = {`ImagenAsesoria${index}`}
+                                key={index}
                             />
                         ))}
                     </div>
