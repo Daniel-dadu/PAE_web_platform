@@ -81,3 +81,7 @@
     width: 100%;
     height: 10px;
 }
+
+.barra_progreso_container_step_path a {
+    color: black;
+}

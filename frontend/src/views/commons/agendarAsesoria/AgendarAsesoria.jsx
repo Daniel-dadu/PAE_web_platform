@@ -1,6 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 // import axios from 'axios'
 import './AgendarAsesoria.css'
+
+import axios from 'axios';
 
 import LoadingSpin from "react-loading-spin";
 
@@ -48,6 +50,7 @@ function AgendarAsesoria({
     showTarjetaMaestraMini, 
     sizeTarjetaMaestraMini,
     progressBarJSON, 
+    isResumenView = false,
     children
 }) {
 
@@ -56,13 +59,21 @@ function AgendarAsesoria({
 
     const [loadingNext, setLoadingNext] = useState(false)
 
+    const clearLocalStorageAsesoria = () => {
+        localStorage.removeItem('asesoria_uf')
+        localStorage.removeItem('asesoria_duda')
+        for(let i = 1; i <= 3; i++) localStorage.removeItem(`asesoria_imagen${i}`)
+        localStorage.removeItem('asesoria_anio')
+        localStorage.removeItem('asesoria_mes')
+        localStorage.removeItem('asesoria_dia')
+        localStorage.removeItem('asesoria_hora')
+    }
+
     // Función que se ejecutará siempre que se de click al botón de Cancelar
     // Elimina todos los campos que se hayan creado en el localStorage
     const onCancelarClick = () => {
         if(window.confirm("¿Estás seguro que quieres cancelar tu asesoría?")) {
-            localStorage.removeItem('asesoria_uf')
-            localStorage.removeItem('asesoria_duda')
-            for(let i = 1; i <= 3; i++) localStorage.removeItem(`asesoria_imagen${i}`)
+            clearLocalStorageAsesoria()
             navigate("/calendario")
         }
     }
@@ -129,7 +140,112 @@ function AgendarAsesoria({
             navigate('/agendarAsesoriaCalendario')
 
         }
+
+        // Se entra en caso de que el botón se ejecute en la view 3 - AgendarAsesoriaCalendario
+        else if(data.view === 3) {
+            alert("Selecciona uno de los días en color verde para visualizar los horarios disponibles en dicho día.\nSi no hay días en verde, ya no tenemos días disponibles para ofrecer asesorías :(")
+        }
+
+        // Se entra en caso de que el botón se ejecute en la view 2 - AgendarAsesoriaHora
+        else if(data.view === 4) {
+            const usr = data.props
+            if(usr.horaSeleccionada === null) {
+                alert("Es necesario que se seleccione una hora para continuar")
+                return
+            } else {
+                localStorage.setItem("asesoria_anio", usr.anio)
+                localStorage.setItem("asesoria_mes", usr.mes)
+                localStorage.setItem("asesoria_dia", usr.dia)
+                localStorage.setItem("asesoria_hora", usr.horaSeleccionada)
+                navigate('/agendarAsesoriaResumen')
+            }
+        }
         
+        else if(data.view === 5) {
+            const usr = data.props
+
+            if(!localStorage.usuario) {
+                localStorage.clear()
+                navigate('/landingPage')
+                return
+            }
+
+            // Ponemos la rueda de carga
+            setLoadingNext(true)
+
+            // Obtenemos la hora del localStorage para luego sacarle solo la parte entera
+            const horaStr = usr.horaSelected
+            
+            // Establecemos las características de la API request para crear la asesoría
+            const config = {
+                method: 'post',
+                url: 'http://20.225.209.57:3094/asesoria/nueva/',
+                headers: { 
+                  'Content-Type': 'application/json'
+                },
+                data : JSON.stringify({
+                    "uf": usr.ufSelected,
+                    "anio": usr.anioSelected,
+                    "mes": usr.mesSelected,
+                    "dia": usr.diaSelected,
+                    "hora": parseInt(horaStr.slice(0, horaStr.indexOf(':'))),
+                    "duda": usr.dudaSelected,
+                    "asesorado": localStorage.usuario
+                })
+            }
+
+            // Eliminamos las imagenes en undefined
+            const imagesUploaded = usr.imagesSelected.filter(image => image !== undefined)
+
+            try {
+                // Hacemos la API Request
+                const asesoriaResponse = await axios(config)
+
+                // Obtenemos el idAsesoria dado por la API request
+                const id_asesoria = asesoriaResponse.data.idAsesoria
+                
+                // Recorremos el array de imagenes (solo entra si el usuario subió imágenes)
+                for (let index = 0; index < imagesUploaded.length; index++) {
+
+                    // Establecemos las características de la API request para insertar la imagen
+                    const config2 = {
+                        method: 'post',
+                        url: 'http://20.225.209.57:3094/asesoria/insertar_imagen/',
+                        headers: { 
+                            'Content-Type': 'application/json'
+                        },
+                        data : JSON.stringify({
+                            "idAsesoria": id_asesoria,
+                            "imagen": imagesUploaded[index]
+                        })
+                    }
+                    
+                    try {
+                        // Hacemos la API Request
+                        const imageUploadResponse = await axios(config2)
+                        if (imageUploadResponse.data) setLoadingNext(true)
+                    } catch (error) {
+                        // Si hay un error subiendo alguna imagen, le indicamos al usuario cuál fue la imagen que generó ese problema
+                        alert(`ERROR: No se pudo guardar tu imagen #${index+1}, intenta subir otra imagen`)
+                        setLoadingNext(false)
+                        return
+                    }
+                    
+                }
+                
+            } catch (error) {
+                // Si hay un error creando la asesoria, el indicamos al usuario que pruebe con otra hora
+                alert("ERROR: Ese horario ya no está disponible, intenta con otra hora/fecha")
+                setLoadingNext(false)
+                return
+            }
+            
+            alert("La asesoría ha sido agendada de forma adecuada")
+            clearLocalStorageAsesoria()
+            navigate('/calendario')
+
+        }
+
         setLoadingNext(false)
     }
 
@@ -168,9 +284,16 @@ function AgendarAsesoria({
                     </div>
                     :
                     <div>
-                        <BotonSencillo onClick={() => onSiguienteClick(btnSiguienteProps)} backgroundColor='verde' size='normal'>
-                            Siguiente
-                        </BotonSencillo>
+                        {
+                            isResumenView ?
+                            <BotonSencillo onClick={() => onSiguienteClick(btnSiguienteProps)} backgroundColor='verde' size='normal'>
+                                Confirmar
+                            </BotonSencillo>
+                            :
+                            <BotonSencillo onClick={() => onSiguienteClick(btnSiguienteProps)} backgroundColor='verde' size='normal'>
+                                Siguiente
+                            </BotonSencillo>
+                        }
                     </div>
                 }
             </div>
