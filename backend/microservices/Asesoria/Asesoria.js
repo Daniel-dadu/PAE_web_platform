@@ -53,26 +53,21 @@ app.get('/asesoria/get_dias/', db.getDiasDisponibles)
 app.get('/asesoria/get_horas/', db.getHorasDisponibles)
 
 
-// Obtener lista de horas disponibles para dar asesoría en la unidad de formación y día proporcionado
+// Crear una nueva asesoría recibiendo lo siguiente (regresa el ID de la asesoría)
 /****** Ejemplo del JSON body: ******
 {
-    "idAsesoria": 10
-}
-*/
-app.get('/asesoria/get_uf_fecha_hora/', db.getInfo_ufFechaHora)
-
-
-// Crear una nueva asesoría recibiendo su unidad de formación
-/****** Ejemplo del JSON body: ******
-{
-    "asesorado": "A01657967",
-    "uf": "TC1028"
+    "uf": "TC1028",
+    "anio": 2022,
+    "mes": 3,
+    "dia": 15,
+    "hora": 10,
+    "duda": "otra prueba x4",
+    "asesorado": "A01657967"
 }
 */
 app.post('/asesoria/nueva/', db.createAsesoria)
 
-// ---------- IMPORTANTE ----------
-// Implementar otro endpoint para insertar las imágenes
+app.post('/asesoria/insertar_imagen', db.insertImagen)
 
 app.listen(port, '0.0.0.0', () => {
     console.log(`App running on port ${port}.`)

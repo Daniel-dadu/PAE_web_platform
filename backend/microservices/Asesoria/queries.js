@@ -97,23 +97,6 @@ const getHorasDisponibles = (request, response) => {
   })
 }
 
-
-const getInfo_ufFechaHora = (request, response) => {
-
-  const idAsesoria = request.body.idAsesoria
-
-  const consulta = `SELECT "UnidadFormacion"."idUF", "UnidadFormacion"."nombreUF", "HorarioDisponible"."fechaHora"::date AS fecha, "HorarioDisponible"."fechaHora"::time AS hora FROM "Asesoria", "UnidadFormacion", "HorarioDisponible" WHERE "Asesoria"."idUF" = "UnidadFormacion"."idUF" AND "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible" AND "Asesoria"."idAsesoria" = $1`
-
-  pool.query(consulta, [idAsesoria], (error, result) => {
-    if(error){
-      throw error
-    } else {
-      response.status(200).json(result.rows[0])
-    }
-  })
-}
-
-
 const createAsesoria = (request, response) => {
 
   const uf = request.body.uf
@@ -147,6 +130,20 @@ const createAsesoria = (request, response) => {
 
 }
 
+const insertImagen = (request, response) => {
+  const idAsesoria = request.body.idAsesoria
+  const imagen = request.body.imagen
+
+  const consulta = 'INSERT INTO "AsesoriaImagen" ("idAsesoria", "imagen") VALUES ($1, $2)'
+  
+  pool.query(consulta, [idAsesoria, imagen], (error) => {
+    if(error) {
+      response.status(400).send("Error: No se pudo insertar la imagen")
+    } else {
+      response.status(200).send("Se insertó la imagen correctamente")
+    }
+  })
+}
 
 
 module.exports = {
@@ -154,6 +151,6 @@ module.exports = {
   getUF_carreraSemestre,
   getDiasDisponibles,
   getHorasDisponibles,
-  getInfo_ufFechaHora,
-  createAsesoria
+  createAsesoria,
+  insertImagen
 }
