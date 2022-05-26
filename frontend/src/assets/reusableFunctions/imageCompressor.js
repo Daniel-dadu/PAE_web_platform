@@ -40,7 +40,8 @@ const resize = async (img, type, MAX_SIZE) => {
     
     blob = await new Promise(rs => canvas.toBlob(rs, 'image/'+type, 1))
     
-    console.log("1 RESIZING: Blob size", blob.size)
+    // // Mostrando el tamaño en esta iteración
+    // console.log("1 RESIZING: Blob size", blob.size)
     if (blob.size < MAX_SIZE) return blob
     
     let blobOptions = []
@@ -51,7 +52,8 @@ const resize = async (img, type, MAX_SIZE) => {
         if (mid === last || (blob.size < MAX_SIZE && blob.size > MIN_SIZE)) break
         last = mid
         blob = await new Promise(rs => canvas.toBlob(rs, 'image/'+type, mid))
-        console.log("RESIZING: Blob size", blob.size)
+        // // Mostrando el tamaño en esta iteración
+        // console.log("RESIZING: Blob size", blob.size)
         blobOptions.push(blob)
         if (blob.size > MAX_SIZE) end = mid 
         if (blob.size < MAX_SIZE) start = mid
