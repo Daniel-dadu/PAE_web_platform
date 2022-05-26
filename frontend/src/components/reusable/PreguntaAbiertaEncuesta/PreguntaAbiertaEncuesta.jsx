@@ -17,7 +17,7 @@ function PreguntaAbiertaEncuesta({preguntaAbierta, indexPregunta=1, respuesta=''
     <div className='contenedorPreguntaAbiertaEncuesta'>
         <div className='textoPreguntaAbiertaEncuesta'> {preguntaAbierta} </div>
 
-        <div> <CampoTextoGrande defaultText={ respuesta} >  </CampoTextoGrande></div>
+        <div> <CampoTextoGrande defaultText={ respuesta } >  </CampoTextoGrande></div>
 
     </div>
   )
