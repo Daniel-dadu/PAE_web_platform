@@ -12,8 +12,6 @@ AD1001B
 Creación de valor compartido
 CF1016
 Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
 EM1010
 Proyecto de innovación empresarial
 FZ1012
@@ -26,10 +24,6 @@ NI1004
 Competitividad internacional  y oportunidades de crecimiento
 RH1005
 Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
 IN1001B
 Diseño y análisis de experimentos para la innovación ingenieril
 IN1002B
@@ -42,44 +36,20 @@ MA1035
 Modelación en ingeniería mediante sistemas dinámicos
 TE1020
 Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IN1001B
-Diseño y análisis de experimentos para la innovación ingenieril
-IN1002B
-Desarrollo de proyectos de análisis de datos
-M1011
-Análisis de equilibrio estático
-MA1034
-Modelación de procesos mediante algebra lineal
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
 EC1003B
 Macroeconomía y desarrollo económico
 EC1015
 Economía conductual
 EC1016
 Economía para la toma de decisiones
-EG1003
-Optativa de ciencias sociales y del comportamiento
 MA1025
 Métodos cuantitativos II
 MA1026
 Pensamiento matemático III
 P1001B
 Participación política y sociología de la identidad
-VA1001B
-Tópico de exploración
 BT1014
 Fundamentación de la biología molecular
-EG1003
-Optativa de ciencias sociales y del comportamiento
 IQ1001B
 Aplicación de la conservación de la materia en ingeniería de procesos
 IQ1002B
@@ -92,64 +62,6 @@ Q1026
 Análisis estructural de moléculas orgánicas y sus propiedades
 Q1027
 Fundamentación de la estructura y propiedades de biomoléculas
-VA1001B
-Tópico de exploración
-BT1014
-Fundamentación de la biología molecular
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IQ1001B
-Aplicación de la conservación de la materia en ingeniería de procesos
-IQ1002B
-Aplicación de la conservación de la energía en ingeniería de procesos
-Q1024
-Aplicación del análisis químico
-Q1025
-Experimentación en química analítica
-Q1026
-Análisis estructural de moléculas orgánicas y sus propiedades
-Q1027
-Fundamentación de la estructura y propiedades de biomoléculas
-VA1001B
-Tópico de exploración
-BT1014
-Fundamentación de la biología molecular
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IQ1001B
-Aplicación de la conservación de la materia en ingeniería de procesos
-IQ1002B
-Aplicación de la conservación de la energía en ingeniería de procesos
-Q1024
-Aplicación del análisis químico
-Q1025
-Experimentación en química analítica
-Q1026
-Análisis estructural de moléculas orgánicas y sus propiedades
-Q1027
-Fundamentación de la estructura y propiedades de biomoléculas
-VA1001B
-Tópico de exploración
-BT1014
-Fundamentación de la biología molecular
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IQ1001B
-Aplicación de la conservación de la materia en ingeniería de procesos
-IQ1002B
-Aplicación de la conservación de la energía en ingeniería de procesos
-Q1024
-Aplicación del análisis químico
-Q1025
-Experimentación en química analítica
-Q1026
-Análisis estructural de moléculas orgánicas y sus propiedades
-Q1027
-Fundamentación de la estructura y propiedades de biomoléculas
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
 F1009
 Análisis de métodos matemáticos para la física
 F1010
@@ -160,10 +72,6 @@ MA1002B
 Modelación de sistemas con ecuaciones diferenciales
 MA1036
 Fundamentación del álgebra lineal
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
 MA1033
 Análisis de ecuaciones diferenciales
 TC1004B
@@ -174,260 +82,20 @@ TC1032
 Modelación de sistemas mínimos y arquitecturas computacionales
 TI1015
 Análisis de requerimientos de software
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IN1001B
-Diseño y análisis de experimentos para la innovación ingenieril
-IN1002B
-Desarrollo de proyectos de análisis de datos
-M1011
-Análisis de equilibrio estático
-MA1034
-Modelación de procesos mediante algebra lineal
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
-F1009
-Análisis de métodos matemáticos para la física
-F1010
-Modelación con ecuaciones diferenciales
-MA1001B
-Modelación estadística para la toma de decisiones
-MA1002B
-Modelación de sistemas con ecuaciones diferenciales
-MA1036
-Fundamentación del álgebra lineal
-VA1001B
-Tópico de exploración
 DS1008
 Evaluación del capital natural y principios de sustentabilidad
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IQ1001B
-Aplicación de la conservación de la materia en ingeniería de procesos
-IQ1002B
-Aplicación de la conservación de la energía en ingeniería de procesos
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
-Q1026
-Análisis estructural de moléculas orgánicas y sus propiedades
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IN1001B
-Diseño y análisis de experimentos para la innovación ingenieril
-IN1002B
-Desarrollo de proyectos de análisis de datos
-M1011
-Análisis de equilibrio estático
-MA1034
-Modelación de procesos mediante algebra lineal
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
-F1009
-Análisis de métodos matemáticos para la física
-F1010
-Modelación con ecuaciones diferenciales
-MA1001B
-Modelación estadística para la toma de decisiones
-MA1002B
-Modelación de sistemas con ecuaciones diferenciales
-MA1036
-Fundamentación del álgebra lineal
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IN1001B
-Diseño y análisis de experimentos para la innovación ingenieril
-IN1002B
-Desarrollo de proyectos de análisis de datos
-M1011
-Análisis de equilibrio estático
-MA1034
-Modelación de procesos mediante algebra lineal
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IN1001B
-Diseño y análisis de experimentos para la innovación ingenieril
-IN1002B
-Desarrollo de proyectos de análisis de datos
-M1011
-Análisis de equilibrio estático
-MA1034
-Modelación de procesos mediante algebra lineal
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IN1001B
-Diseño y análisis de experimentos para la innovación ingenieril
-IN1002B
-Desarrollo de proyectos de análisis de datos
-M1011
-Análisis de equilibrio estático
-MA1034
-Modelación de procesos mediante algebra lineal
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IN1002B
-Desarrollo de proyectos de análisis de datos
-MA1034
-Modelación de procesos mediante algebra lineal
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
 SD1001
 Sistema musculoesquelético
 SD1002B
 Metabolismo y energía
 SD1003
 Aporte y consumo de oxígeno
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IN1001B
-Diseño y análisis de experimentos para la innovación ingenieril
-IN1002B
-Desarrollo de proyectos de análisis de datos
-M1011
-Análisis de equilibrio estático
-MA1034
-Modelación de procesos mediante algebra lineal
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IN1001B
-Diseño y análisis de experimentos para la innovación ingenieril
-IN1002B
-Desarrollo de proyectos de análisis de datos
-M1011
-Análisis de equilibrio estático
-MA1034
-Modelación de procesos mediante algebra lineal
-MA1035
-Modelación en ingeniería mediante sistemas dinámicos
-TE1020
-Análisis de circuitos eléctricos
-VA1001B
-Tópico de exploración
-BT1014
-Fundamentación de la biología molecular
-EG1003
-Optativa de ciencias sociales y del comportamiento
 Q1001B
 Fundamentación de las propiedades de nanomateriales y materiales
 Q1002B
 Obtención de nanomateriales, materiales orgánicos y bioinorgánicos
-Q1024
-Aplicación del análisis químico
-Q1025
-Experimentación en química analítica
-Q1026
-Análisis estructural de moléculas orgánicas y sus propiedades
-Q1027
-Fundamentación de la estructura y propiedades de biomoléculas
-VA1001B
-Tópico de exploración
-BT1014
-Fundamentación de la biología molecular
-EG1003
-Optativa de ciencias sociales y del comportamiento
-IQ1001B
-Aplicación de la conservación de la materia en ingeniería de procesos
-IQ1002B
-Aplicación de la conservación de la energía en ingeniería de procesos
-Q1024
-Aplicación del análisis químico
-Q1025
-Experimentación en química analítica
-Q1026
-Análisis estructural de moléculas orgánicas y sus propiedades
-Q1027
-Fundamentación de la estructura y propiedades de biomoléculas
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
-MA1033
-Análisis de ecuaciones diferenciales
-TC1004B
-Implementación de internet de las cosas
-TC1031
-Programación de estructuras de datos y algoritmos fundamentales
-TC1032
-Modelación de sistemas mínimos y arquitecturas computacionales
 TE1019
 Fundamentación de ingeniería eléctrica y electrónica
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
-MA1033
-Análisis de ecuaciones diferenciales
-TC1004B
-Implementación de internet de las cosas
-TC1031
-Programación de estructuras de datos y algoritmos fundamentales
-TC1032
-Modelación de sistemas mínimos y arquitecturas computacionales
-TI1015
-Análisis de requerimientos de software
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
-MA1033
-Análisis de ecuaciones diferenciales
-TC1004B
-Implementación de internet de las cosas
-TC1031
-Programación de estructuras de datos y algoritmos fundamentales
-TC1032
-Modelación de sistemas mínimos y arquitecturas computacionales
-TI1015
-Análisis de requerimientos de software
-VA1001B
-Tópico de exploración
 A2001B
 Pre-producción de cortometraje animado
 A2002B
@@ -438,102 +106,14 @@ A2013
 Historia de la animación
 A2014
 Fundamentos de la animación
-EG1003
-Optativa de ciencias sociales y del comportamiento
-VA1001B
-Tópico de exploración
-AD1001B
-Creación de valor compartido
-CF1016
-Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
-EM1010
-Proyecto de innovación empresarial
-FZ1012
-Evaluación de proyectos de inversión
-MT1002B
-Construcción de soluciones para el mercado
-MT1011
-Estrategias de mercado y diferenciación
-NI1004
-Competitividad internacional  y oportunidades de crecimiento
-RH1005
-Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
-AD1001B
-Creación de valor compartido
-CF1016
-Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
-EM1010
-Proyecto de innovación empresarial
-FZ1012
-Evaluación de proyectos de inversión
-MT1002B
-Construcción de soluciones para el mercado
-MT1011
-Estrategias de mercado y diferenciación
-NI1004
-Competitividad internacional  y oportunidades de crecimiento
-RH1005
-Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
-AD1001B
-Creación de valor compartido
-CF1016
-Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
-EM1010
-Proyecto de innovación empresarial
-FZ1012
-Evaluación de proyectos de inversión
-MT1002B
-Construcción de soluciones para el mercado
-MT1011
-Estrategias de mercado y diferenciación
-NI1004
-Competitividad internacional  y oportunidades de crecimiento
-RH1005
-Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
 AV2001B
 Producción de audio, video y diseño digital
 CO2001B
 Metodologías de investigación para la comunicación
 CO2011
 Teorías de la comunicación
-EG1003
-Optativa de ciencias sociales y del comportamiento
 EH2006
 Del humanismo al post-humanismo
-VA1001B
-Tópico de exploración
-AD1001B
-Creación de valor compartido
-CF1016
-Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
-EM1010
-Proyecto de innovación empresarial
-FZ1012
-Evaluación de proyectos de inversión
-MT1002B
-Construcción de soluciones para el mercado
-MT1011
-Estrategias de mercado y diferenciación
-NI1004
-Competitividad internacional  y oportunidades de crecimiento
-RH1005
-Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
 DL2001B
 Comunicación digital del producto
 DL2002B
@@ -542,46 +122,6 @@ DL2042
 Representación visual
 DL2043
 Materia y expresión
-EG1003
-Optativa de ciencias sociales y del comportamiento
-VA1001B
-Tópico de exploración
-AD1001B
-Creación de valor compartido
-CF1016
-Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
-EM1010
-Proyecto de innovación empresarial
-FZ1012
-Evaluación de proyectos de inversión
-MT1002B
-Construcción de soluciones para el mercado
-MT1011
-Estrategias de mercado y diferenciación
-NI1004
-Competitividad internacional  y oportunidades de crecimiento
-RH1005
-Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
-EC1003B
-Macroeconomía y desarrollo económico
-EC1015
-Economía conductual
-EC1016
-Economía para la toma de decisiones
-EG1003
-Optativa de ciencias sociales y del comportamiento
-MA1025
-Métodos cuantitativos II
-MA1026
-Pensamiento matemático III
-P1001B
-Participación política y sociología de la identidad
-VA1001B
-Tópico de exploración
 D2001B
 Bienes y derechos reales
 D2002B
@@ -598,10 +138,6 @@ D2035
 Seminario de teoría del derecho
 D2036
 Teoría del derecho
-EG1003
-Optativa de ciencias sociales y del comportamiento
-VA1001B
-Tópico de exploración
 ED2001
 Fundamentos de la pedagogía
 ED2001B
@@ -610,72 +146,6 @@ ED2002
 Metodologías de la investigación educativa
 ED2002B
 Fundamentación pedagógica aplicada a las soluciones de aprendizaje
-EG1003
-Optativa de ciencias sociales y del comportamiento
-VA1001B
-Tópico de exploración
-AD1001B
-Creación de valor compartido
-CF1016
-Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
-EM1010
-Proyecto de innovación empresarial
-FZ1012
-Evaluación de proyectos de inversión
-MT1002B
-Construcción de soluciones para el mercado
-MT1011
-Estrategias de mercado y diferenciación
-NI1004
-Competitividad internacional  y oportunidades de crecimiento
-RH1005
-Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
-AD1001B
-Creación de valor compartido
-CF1016
-Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
-EM1010
-Proyecto de innovación empresarial
-FZ1012
-Evaluación de proyectos de inversión
-MT1002B
-Construcción de soluciones para el mercado
-MT1011
-Estrategias de mercado y diferenciación
-NI1004
-Competitividad internacional  y oportunidades de crecimiento
-RH1005
-Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
-AD1001B
-Creación de valor compartido
-CF1016
-Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
-EM1010
-Proyecto de innovación empresarial
-FZ1012
-Evaluación de proyectos de inversión
-MT1002B
-Construcción de soluciones para el mercado
-MT1011
-Estrategias de mercado y diferenciación
-NI1004
-Competitividad internacional  y oportunidades de crecimiento
-RH1005
-Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
 H2001B
 Análisis del discurso
 H2002B
@@ -684,36 +154,10 @@ H2050
 Análisis crítico de textos
 H2051
 Estructuras y análisis del español
-VA1001B
-Tópico de exploración
-CO2011
-Teorías de la comunicación
-EG1003
-Optativa de ciencias sociales y del comportamiento
 MI2001B
 Metodologías de la investigación periodística
 SO2001
 Estudios sociales y políticos
-VA1001B
-Tópico de exploración
-EC1003B
-Macroeconomía y desarrollo económico
-EC1015
-Economía conductual
-EC1016
-Economía para la toma de decisiones
-EG1003
-Optativa de ciencias sociales y del comportamiento
-MA1025
-Métodos cuantitativos II
-MA1026
-Pensamiento matemático III
-P1001B
-Participación política y sociología de la identidad
-VA1001B
-Tópico de exploración
-EG1003
-Optativa de ciencias sociales y del comportamiento
 F2010B
 Fundamentos de la acústica
 TM2001
@@ -722,24 +166,6 @@ TM2001B
 Entrenamiento auditivo e instrumental
 TM2002
 Negocios en la industria de la música
-VA1001B
-Tópico de exploración
-EC1003B
-Macroeconomía y desarrollo económico
-EC1015
-Economía conductual
-EC1016
-Economía para la toma de decisiones
-EG1003
-Optativa de ciencias sociales y del comportamiento
-MA1025
-Métodos cuantitativos II
-MA1026
-Pensamiento matemático III
-P1001B
-Participación política y sociología de la identidad
-VA1001B
-Tópico de exploración
 AR2001B
 Diagnóstico territorial
 AR2003B
@@ -750,27 +176,3 @@ BT2027
 Ecología urbana
 CV2041
 Infraestructura urbana
-EG1003
-Optativa de ciencias sociales y del comportamiento
-VA1001B
-Tópico de exploración
-AD1001B
-Creación de valor compartido
-CF1016
-Estrategias de planeación financiera
-EG1003
-Optativa de ciencias sociales y del comportamiento
-EM1010
-Proyecto de innovación empresarial
-FZ1012
-Evaluación de proyectos de inversión
-MT1002B
-Construcción de soluciones para el mercado
-MT1011
-Estrategias de mercado y diferenciación
-NI1004
-Competitividad internacional  y oportunidades de crecimiento
-RH1005
-Dimensión estratégica del capital humano
-VA1001B
-Tópico de exploración

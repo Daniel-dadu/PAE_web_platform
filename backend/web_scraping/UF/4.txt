@@ -6,8 +6,6 @@ AR2039
 Investigación y proyecto arquitectónico
 EG1004
 Optativa de liderazgo, emprendimiento e innovación
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 NI2001B
 Panorama internacional de los negocios
 NI2002B
@@ -16,8 +14,6 @@ NI2026
 Negocios globales: tendencias y detección de riesgos
 NI2027
 Operación logística internacional
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 IN2001B
 Desarrollo de proyectos con visión sistémica
 IN2002B
@@ -30,8 +26,6 @@ IN2037
 Diseño de sistemas ciberfísicos
 IN2038
 Evaluación económica de proyectos
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 M2001B
 Análisis de materiales y manufactura
 M2005
@@ -54,12 +48,8 @@ AG2030
 Integración de procesos bioproductivos
 DS2001B
 Conservación de recursos naturales en biosistemas
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 IN2033
 Gestión de biosistemas productivos
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 TA2001B
 Diseño de alimentos saludables
 TA2002B
@@ -80,8 +70,6 @@ BT2019
 Análisis y estudio de biosistemas
 BT2020
 Aplicación de bases moleculares
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 CV2001B
 Análisis de la interacción del ambiente construido y el entorno
 CV2002B
@@ -94,10 +82,6 @@ CV2036
 Gestión de costos
 CV2037
 Planeación y control de obra
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 MA2001B
 Optimización determinista
 MA2002B
@@ -112,8 +96,6 @@ TC2034
 Modelación del aprendizaje con inteligencia artificial
 DS2002B
 Implementación de programas de manejo de recursos
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 IQ2001B
 Integración de procesos energéticos
 IQ2002B
@@ -124,8 +106,6 @@ IQ2010
 Diseño de procesos para el transporte de fluidos
 IQ2011
 Diseño de procesos de transferencia de calor
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 TE2005B
 Aplicación de la teoría electromagnética
 TE2006B
@@ -138,8 +118,6 @@ TE2048
 Análisis de sistemas lógicos y circuitos digitales
 TE2049
 Fundamentación de la física de estado sólido y optoelectrónica
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 F2002B
 Solución de problemas de mecánica clásica
 F2003B
@@ -148,8 +126,6 @@ F2004B
 Aplicación de las fuentes alternas de energía
 F2017
 Fundamentación de la electrodinámica
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 NN2001B
 Diseño y creación de soluciones innovadoras
 NN2007
@@ -158,20 +134,6 @@ OP2019
 Optativa de acentuación en ingeniería I
 OP2026
 Optativa de acentuación en ingeniería II
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
-IN2001B
-Desarrollo de proyectos con visión sistémica
-IN2002B
-Mejora de un proceso organizacional con métodos estadísticos
-IN2003B
-Conceptualización de procesos con enfoque innovador
-IN2032
-Análisis estadístico de datos
-IN2037
-Diseño de sistemas ciberfísicos
-IN2038
-Evaluación económica de proyectos
 BI2001B
 Diseño de sistemas de bioinstrumentación analógica
 BI2002B
@@ -182,24 +144,6 @@ BI2010
 Análisis de señales y sistemas biomédicos
 BI2011
 Aplicación de tecnologías de la información en salud
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
-M2001B
-Análisis de materiales y manufactura
-M2005
-Análisis  de mecanismos
-MR2003B
-Integración mecatrónica
-MR2004B
-Implementación de sistemas mecatrónicos
-MR2022
-Análisis de elementos de la mecatrónica
-MR2023
-Modelación y automatización
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 M2002B
 Diseño de productos sometidos a cargas estáticas
 M2003B
@@ -210,8 +154,6 @@ M2034
 Análisis del movimiento de cuerpos rígidos
 M2035
 Fundamentación de ingeniería de materiales
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 NT2001B
 Fabricación de nanoestructuras por métodos químicos
 NT2002B
@@ -222,8 +164,6 @@ Q2024
 Caracterización de materiales y nanomateriales
 Q2025
 Fundamentación de química médica y nanomedicina
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 IQ2007B
 Diseño de sistemas de flujo de fluidos
 IQ2008B
@@ -232,8 +172,6 @@ IQ2009B
 Análisis de procesos de transferencia de calor y flujo de fluidos
 IQ2015
 Modelación de fenómenos de transporte
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 MA2016
 Modelación matemática avanzada
 TE2002B
@@ -244,8 +182,6 @@ TE2044
 Fundamentación electrónica
 TE2045
 Diseño de circuitos electrónicos
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 TC2005B
 Construcción de software y toma de decisiones
 TC2006B
@@ -254,8 +190,6 @@ TC2037
 Implementación de métodos computacionales
 AD2029
 Modelación, estructura y operación de los negocios
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 TI2002B
 Evaluación de arquitecturas empresariales
 TI2003B
@@ -276,8 +210,6 @@ A2015
 Exploración de la forma
 A2016
 Introducción al 3D
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 AD2001B
 Detección de oportunidades estratégicas
 AD2002B
@@ -286,10 +218,6 @@ AD2004B
 Liderazgo para la transformación
 AD2025
 Pensamiento estratégico
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 FZ2001B
 Análisis de inversiones
 FZ2002B
@@ -310,8 +238,6 @@ CF2022
 Cumplimiento fiscal
 CF2023
 Optimización de costos
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 FZ2003B
 Decisiones de negocio estratégicas
 TI2016
@@ -322,10 +248,6 @@ AV2016
 Fotografía publicitaria y comercial
 CR2001B
 Comunicación estratégica aplicada
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 EM2001B
 Adaptación de oportunidad y solución
 EM2002B
@@ -346,10 +268,6 @@ DL2005B
 Diseño e innovación
 DL2044
 Administración de proyectos de diseño
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 RH2001B
 Estrategias para potenciar el talento humano
 RH2002B
@@ -370,8 +288,6 @@ EC2004B
 Origen y futuro del panorama macroeconómico
 EC2029
 Fundamentos de econometría
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 MA2012
 Fundamentos de estadística
 MA2013
@@ -388,8 +304,6 @@ D2038
 Derecho de las obligaciones II
 D2039
 Seminario de derecho de las obligaciones I
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 ED2003
 Introducción a la administración educativa
 ED2003B
@@ -398,10 +312,6 @@ ED2004B
 Exploración de tendencias tecnológicas en educación
 ED2005B
 Uso de tecnología en la investigación educativa
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 MT2001B
 Inteligencia de mercado para la generación de conocimiento del consumidor
 MT2002B
@@ -414,16 +324,6 @@ MT2028
 Diseño de métricas de mercadotecnia
 MT2029
 Visión holística del consumidor
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
-NI2001B
-Panorama internacional de los negocios
-NI2002B
-Plan de exportación
-NI2026
-Negocios globales: tendencias y detección de riesgos
-NI2027
-Operación logística internacional
 AD2003B
 Indicadores y riesgos con visión estratégica
 CD2001B
@@ -432,12 +332,8 @@ CD2008
 Análisis descriptivo
 CD2009
 Manipulación de datos
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 TI2017
 Integración de base de datos
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 H2003B
 Literatura de los Siglos de Oro
 H2004B
@@ -446,16 +342,10 @@ H2005B
 Literatura novohispana
 H2052
 Teoría literaria
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 MI2002B
 Producción de contenidos noticiosos
 MI2007
 Ejercicio periodístico, derecho a la información y opinión pública
-RI2001B
-Análisis histórico del sistema internacional
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 RI2001B
 Análisis histórico del sistema internacional
 RI2002B
@@ -466,8 +356,6 @@ RI2039
 Teorías clásicas de relaciones internacionales
 RI2040
 Teorías contemporáneas de relaciones internacionales
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 TM2002B
 Aplicación de tecnología en la producción sonora
 TM2003
@@ -476,8 +364,6 @@ TM2003B
 Técnicas de grabación sonora
 TM2004B
 Proyecto de producción musical
-EG1004
-Optativa de liderazgo, emprendimiento e innovación
 P2001B
 Opinión pública
 P2002B
@@ -494,5 +380,3 @@ AR2010B
 Ciudades competitivas: Calidad de vida
 AR2038
 Ciudades del futuro
-EG1004
-Optativa de liderazgo, emprendimiento e innovación

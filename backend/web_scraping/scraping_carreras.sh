@@ -14,6 +14,7 @@ gawk NF < UFs_temp.txt > UFs.txt
 
 #Eliminar UFs repetidas
 python3 UFFilter.py
+python3 UFClaveFilter.py
 echo "Primer Semestre" > UFs.txt
 cat ./UF/1.txt >> UFs.txt
 echo "Segundo Semestre" >> UFs.txt
@@ -33,8 +34,6 @@ cat ./UF/8.txt >> UFs.txt
 echo "Noveno Semestre" >> UFs.txt
 cat ./UF/9.txt >> UFs.txt
 
-cp UFs.txt UFs_temp.txt
-gawk '!repeat[$0]++' < UFs_temp.txt > UFs.txt
 rm UFs_temp.txt
 
 python3 SQLMaker.py
