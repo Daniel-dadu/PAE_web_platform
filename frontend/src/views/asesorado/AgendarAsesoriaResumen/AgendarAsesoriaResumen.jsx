@@ -32,31 +32,31 @@ function AgendarAsesoriaResumen() {
             "name" : "Selección",
             "state": true,
             "next": "enable",
-            "path" : "./AgendarAsesoriaUF/ok"
+            "path" : "/AgendarAsesoriaUF/ok"
           }, 
           {
             "name" : "Información",
             "state": true,
             "next": "enable",
-            "path" : "./AgendarAsesoriaDuda"
+            "path" : "/AgendarAsesoriaDuda"
           },
           {
             "name" : "Fecha",
             "state": true,
             "next": "enable",
-            "path" : "./AgendarAsesoriaCalendario"
+            "path" : "/AgendarAsesoriaCalendario"
           },
           {
             "name" : "Hora",
             "state": true,
             "next": "enable",
-            "path" : `./AgendarAsesoriaHora/${anioSelected}/${mesSelected}/${diaSelected}`
+            "path" : `/AgendarAsesoriaHora/${anioSelected}/${mesSelected}/${diaSelected}`
           },
           {
             "name" : "Confirmación",
             "state": null,
             "next": "enable",
-            "path" : "./AgendarAsesoriaResumen"
+            "path" : "/AgendarAsesoriaResumen"
         }
     ]
   }

@@ -12,31 +12,31 @@ let progressBar = {
           "name" : "Selección",
           "state": null,
           "next": "done",
-          "path" : "./AgendarAsesoriaUF"
+          "path" : "/agendarAsesoriaUF/ok"
         }, 
         {
           "name" : "Información",
           "state": null,
           "next": "enable",
-          "path" : "./AgendarAsesoriaUF"
+          "path" : "/agendarAsesoriaUF/ok"
         },
         {
           "name" : "Fecha",
           "state": null,
           "next": "enable",
-          "path" : "./AgendarAsesoriaUF"
+          "path" : "/agendarAsesoriaUF/ok"
         },
         {
           "name" : "Hora",
           "state": null,
           "next": "enable",
-          "path" : "./AgendarAsesoriaUF"
+          "path" : "/agendarAsesoriaUF/ok"
         },
         {
           "name" : "Confirmación",
           "state": null,
           "next": "enable",
-          "path" : "./AgendarAsesoriaUF"
+          "path" : "/agendarAsesoriaUF/ok"
       }
   ]
 }

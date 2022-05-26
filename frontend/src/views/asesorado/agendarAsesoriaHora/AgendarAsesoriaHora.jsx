@@ -5,44 +5,45 @@ import axios from 'axios'
 
 import { AgendarAsesoria, SeleccionarHorarioAsesoria, dateFunctions } from '../../../routeIndex'
 
-let progressBar = {
-  "currentStep": 3,
-  "steps": [
-      {
-          "name" : "Selección",
-          "state": true,
-          "next": "enable",
-          "path" : "./AgendarAsesoriaUF"
-        }, 
-        {
-          "name" : "Información",
-          "state": true,
-          "next": "enable",
-          "path" : "./AgendarAsesoriaDuda"
-        },
-        {
-          "name" : "Fecha",
-          "state": true,
-          "next": "enable",
-          "path" : "./AgendarAsesoriaDuda"
-        },
-        {
-          "name" : "Hora",
-          "state": null,
-          "next": "enable",
-          "path" : "./AgendarAsesoriaDuda"
-        },
-        {
-          "name" : "Confirmación",
-          "state": null,
-          "next": "enable",
-          "path" : "./AgendarAsesoriaDuda"
-      }
-  ]
-}
 function AgendarAsesoriaHora() {
 
   const { anio, mes, dia } = useParams();
+
+  const progressBar = {
+    "currentStep": 3,
+    "steps": [
+      {
+        "name" : "Selección",
+        "state": true,
+        "next": "enable",
+        "path" : "/AgendarAsesoriaUF/ok"
+      }, 
+      {
+        "name" : "Información",
+        "state": true,
+        "next": "enable",
+        "path" : "/AgendarAsesoriaDuda"
+      },
+      {
+        "name" : "Fecha",
+        "state": true,
+        "next": "enable",
+        "path" : "/AgendarAsesoriaCalendario"
+      },
+      {
+        "name" : "Hora",
+        "state": true,
+        "next": "enable",
+        "path" : `/AgendarAsesoriaHora/${anio}/${mes}/${dia}`
+      },
+      {
+        "name" : "Confirmación",
+        "state": null,
+        "next": "enable",
+        "path" : `/AgendarAsesoriaHora/${anio}/${mes}/${dia}`
+      }
+    ]
+  }
 
   const navigate = useNavigate()
 
