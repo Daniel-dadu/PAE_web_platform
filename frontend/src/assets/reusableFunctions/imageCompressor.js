@@ -60,7 +60,8 @@ const resize = async (img, type, MAX_SIZE) => {
     if(blob.size > MAX_SIZE){
         blobOptions.sort((a, b) => a.size > b.size ? 1 : -1)
         for (let i = blobOptions.length-1; i >= 0; i--) {
-            console.log(`Blob option ${i}`, blobOptions[i].size)
+            // // Mostrando el tamaño en esta iteración
+            // console.log(`Blob option ${i}`, blobOptions[i].size)
             if(blobOptions[i].size < MAX_SIZE) return blobOptions[i]
         }
         return "error: imagen muy grande"

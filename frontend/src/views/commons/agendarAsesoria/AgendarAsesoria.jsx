@@ -223,7 +223,7 @@ function AgendarAsesoria({
                     try {
                         // Hacemos la API Request
                         const imageUploadResponse = await axios(config2)
-                        console.log(imageUploadResponse.data, index)
+                        if (imageUploadResponse.data) setLoadingNext(true)
                     } catch (error) {
                         // Si hay un error subiendo alguna imagen, le indicamos al usuario cuál fue la imagen que generó ese problema
                         alert(`ERROR: No se pudo guardar tu imagen #${index+1}, intenta subir otra imagen`)

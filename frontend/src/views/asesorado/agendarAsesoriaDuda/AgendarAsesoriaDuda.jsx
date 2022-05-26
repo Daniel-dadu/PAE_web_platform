@@ -109,6 +109,7 @@ function AgendarAsesoriaDuda() {
                                 source = {image.data_url}
                                 alt = {`ImagenAsesoria${index}`}
                                 nameDownloadImage = {`ImagenAsesoria${index}`}
+                                key={index}
                             />
                         ))}
                     </div>
