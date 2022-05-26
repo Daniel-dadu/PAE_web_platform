@@ -28,6 +28,7 @@ Economía empresarial
 FZ1011
 Decisiones financieras
 MA1027
+Razonamiento matemático
 NI1001B
 Globalización de los negocios
 RH1001B
@@ -883,6 +884,7 @@ Análisis de sistemas y dispositivos electrónicos de control
 TE2046
 Análisis de señales y sistemas
 TE2050
+Diseño de circuitos electrónicos
 F2005B
 Análisis de fenómenos ópticos
 F2006B
@@ -1319,6 +1321,30 @@ Gobierno, sector privado, tecnología y nuevos mercados
 TC3065
 Experimentos e inferencia causal para política pública
 Séptimo Semestre
+OP3091
+Optativa Profesional I
+OP3092
+Optativa Profesional II
+OP3093
+Optativa profesional III
+OP3094
+Optativa profesional IV
+OP3095
+Optativa profesional V
+OP3096
+Optativa profesional VI
+VA3111
+Tópicos I
+VA3112
+Tópicos II
+VA3113
+Tópicos III
+VA3114
+Tópicos IV
+VA3115
+Tópicos V
+VA3116
+Tópicos VI
 CF3001B
 Formación de juicio crítico profesional
 CF3024
@@ -1424,6 +1450,18 @@ RH3002B
 Potenciación de la cultura organizacional
 EC3002B
 Solución y evaluación de problemas económicos
+VA3111
+Tópicos I
+VA3112
+Tópicos II
+VA3113
+Tópicos III
+VA3114
+Tópicos IV
+VA3115
+Tópicos V
+VA3116
+Tópicos VI
 ED3001B
 Proyecto integrador de innovación educativa
 MT3001B
@@ -1449,3 +1487,5 @@ Complejidad y debate
 Noveno Semestre
 D3007B
 Investigación jurídica aplicada
+OP3001B
+Optativa profesional multidisciplinaria
