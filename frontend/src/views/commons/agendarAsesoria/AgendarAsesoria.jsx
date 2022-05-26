@@ -50,6 +50,7 @@ function AgendarAsesoria({
     showTarjetaMaestraMini, 
     sizeTarjetaMaestraMini,
     progressBarJSON, 
+    isResumenView = false,
     children
 }) {
 
@@ -283,9 +284,16 @@ function AgendarAsesoria({
                     </div>
                     :
                     <div>
-                        <BotonSencillo onClick={() => onSiguienteClick(btnSiguienteProps)} backgroundColor='verde' size='normal'>
-                            Siguiente
-                        </BotonSencillo>
+                        {
+                            isResumenView ?
+                            <BotonSencillo onClick={() => onSiguienteClick(btnSiguienteProps)} backgroundColor='verde' size='normal'>
+                                Confirmar
+                            </BotonSencillo>
+                            :
+                            <BotonSencillo onClick={() => onSiguienteClick(btnSiguienteProps)} backgroundColor='verde' size='normal'>
+                                Siguiente
+                            </BotonSencillo>
+                        }
                     </div>
                 }
             </div>

@@ -12,7 +12,19 @@ const pool = new Pool({
 const getMeses_inicio_fin_semestre = (_request, response) => {
     pool.query('SELECT * FROM get_meses_inicio_fin_semestre()', (error, result) => {
         if(error) {
-            throw error
+            response.status(400).send("Error: no se pudo acceder a la información")
+        } else {
+            response.status(200).json(result.rows[0])
+        }
+    })
+}
+
+const getNombreUF = (request, response) => {
+    const idUF = request.query.id_uf
+
+    pool.query(`SELECT "nombreUF" FROM "UnidadFormacion" WHERE "idUF" = $1`, [idUF], (error, result) => {
+        if(error) {
+            response.status(400).send("Error: no se pudo acceder a la información")
         } else {
             response.status(200).json(result.rows[0])
         }
@@ -21,5 +33,6 @@ const getMeses_inicio_fin_semestre = (_request, response) => {
 
 
 module.exports = {
-    getMeses_inicio_fin_semestre
+    getMeses_inicio_fin_semestre,
+    getNombreUF
 }
