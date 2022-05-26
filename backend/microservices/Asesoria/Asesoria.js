@@ -71,44 +71,8 @@ app.get('/asesoria/get_uf_fecha_hora/', db.getInfo_ufFechaHora)
 */
 app.post('/asesoria/nueva/', db.createAsesoria)
 
-
-// Editar la asesoría que se recibe poniendo la nueva duda que también se recibe en el JSON del body.
-/****** Ejemplo del JSON body: ******
-{
-    "idAsesoria": 10,
-    "duda": "No entiendo nada",
-    "imagenes": ["Foto1", "Foto2", "Foto3"]
-}
-*/
-app.put('/asesoria/nueva_duda/', db.setAsesoria_updateDuda)
-
-
-// Editar la asesoría que se recibe poniendo el nuevo horario (idHorarioDisponible) que se recibe.
-/****** Ejemplo del JSON body: ******
-{
-    "idAsesoria": 10,
-    "idHorarioDisponible": 1 
-}
-*/
-app.put('/asesoria/nueva_fechahora/', db.setAsesoria_updateFechaHora)
-
-
-// Editar el status de un horario para que esté 'reservada' a partir del idHorarioDisponible que se recibe.
-/****** Ejemplo del JSON body: ******
-{
-    "idHorarioDisponible": 1 
-}
-*/
-app.put('/asesoria/reservar_horario/', db.setAsesoria_reservarHorario)
-
-
-// Elimina una asesoría a partir de su id.
-/****** Ejemplo del JSON body: ******
-{
-    "idAsesoria": 10
-}
-*/
-app.delete('/asesoria/eliminar', db.deleteAsesoria)
+// ---------- IMPORTANTE ----------
+// Implementar otro endpoint para insertar las imágenes
 
 app.listen(port, '0.0.0.0', () => {
     console.log(`App running on port ${port}.`)

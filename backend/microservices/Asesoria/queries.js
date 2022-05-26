@@ -116,86 +116,38 @@ const getInfo_ufFechaHora = (request, response) => {
 
 const createAsesoria = (request, response) => {
 
-  const asesorado = request.body.asesorado
   const uf = request.body.uf
-
-  // Hacemos la llamada a la funcion new_asesoria para crear la nueva asesoría con los parámetros proporcionados por el usuario
-  pool.query('SELECT new_asesoria($1, $2)', [asesorado, uf], (error, result) => {
-    if (error) throw error
-    response.status(201).json({idAsesoria: result.rows[0].new_asesoria})
-  })
-
-}
-
-
-const setAsesoria_updateDuda = (request, response) => {
-  const idAsesoria = request.body.idAsesoria
+  const anio = request.body.anio
+  const mes = request.body.mes
+  const dia = request.body.dia
+  const hora = request.body.hora
   const duda = request.body.duda
-  const imagenes = request.body.imagenes
+  const asesorado = request.body.asesorado
 
-  const consultas = [
-    'UPDATE "Asesoria" SET "descripcionDuda" = $1 WHERE "idAsesoria" = $2',
-    'INSERT INTO "AsesoriaImagen" VALUES ($1, $2)'
-  ]
+  const consulta1 = `SELECT * FROM verificar_horarios_disponibles($1, $2, $3, $4, $5)`
 
-  // Se ejecuta la primera consulta, la cual actualiza la descripción de la duda
-  pool.query(consultas[0], [duda, idAsesoria], error => {
+  pool.query(consulta1, [uf, anio, mes, dia, hora], (error, result) => {
     if (error) {
-      throw error
+      response.status(409).send("Error: El horario ya ha sido reservado")
     } else {
-      // Se itera por el array de imagenes que se recibe y se insertan todas
-      imagenes.map(imagen => {
-        pool.query(consultas[1], [idAsesoria, imagen], error => {
-          if (error) {
-            throw error
-          }
-        })
+
+      const idHorario = result.rows[0].idhorariodisponible
+      const consulta2 = `SELECT * FROM nueva_asesoria($1, $2, $3, $4, $5, $6, $7, $8)`
+
+      pool.query(consulta2, [uf, anio, mes, dia, hora, asesorado, idHorario, duda], (error, results) => {
+        if(error){
+          response.status(404).send("Error: No se pudo agendar la asesoría")
+        } else {
+          response.status(200).json({ idAsesoria: results.rows[0].nueva_asesoria })
+        }
       })
-  
-      response.status(200).send('Duda e imagenes insertadas en la asesoría con ID:' + idAsesoria)
+
     }
   })
+
 }
 
 
-const setAsesoria_updateFechaHora = (request, response) => {
-  const idAsesoria = request.body.idAsesoria
-  const idHorarioDisponible = request.body.idHorarioDisponible
-
-  const consulta = 'UPDATE "Asesoria" SET "idHorarioDisponible" = $1 WHERE "idAsesoria" = $2'
-
-  pool.query(consulta, [idHorarioDisponible, idAsesoria], error => {
-    if(error) throw error
-
-    response.status(200).send('Horario disponible insertado en la asesoría con ID:' + idAsesoria)
-  })
-}
-
-
-const setAsesoria_reservarHorario = (request, response) => {
-  const idHorarioDisponible = request.body.idHorarioDisponible
-
-  const consulta = `UPDATE "HorarioDisponible" SET "status" = 'reservada' WHERE "idHorarioDisponible" = $1`
-
-  pool.query(consulta, [idHorarioDisponible], error => {
-    if(error) throw error
-
-    response.status(200).send(`Status cambiado a reservada en horario disponible con id ${idHorarioDisponible}`)
-  })
-}
-
-
-const deleteAsesoria = (request, response) => {
-  const idAsesoria = request.body.idAsesoria
-
-  const consulta = 'DELETE FROM "Asesoria" WHERE "idAsesoria" = $1'
-
-  pool.query(consulta, [idAsesoria], error => {
-    if(error) throw error
-
-    response.status(200).send(`Asesoria con id ${idAsesoria} correctamente ELIMINADA`)
-  })
-}
 
 module.exports = {
   getCarreras,
@@ -203,9 +155,5 @@ module.exports = {
   getDiasDisponibles,
   getHorasDisponibles,
   getInfo_ufFechaHora,
-  createAsesoria,
-  setAsesoria_updateDuda,
-  setAsesoria_updateFechaHora,
-  setAsesoria_reservarHorario,
-  deleteAsesoria
+  createAsesoria
 }
