@@ -2,10 +2,10 @@ version: "3.3"
 
 services:
 
-  client:
+  gateway:
     image: microservice-api-gateway
     ports: 
-      - 81:80
+      - 80:80
 
   default:
     image: microservice-default
@@ -22,4 +22,4 @@ services:
   client:
     image: microservice-client
     ports: 
-      - 80:80
+      - 81:80
