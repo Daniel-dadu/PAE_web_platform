@@ -12,14 +12,14 @@ opts.binary_location = "/usr/bin/google-chrome"
 opts.headless = True
 chrome_driver = "./chromedriver"
 
-driver = webdriver.Chrome(options=opts, executable_path=chrome_driver)
-driver.set_page_load_timeout(600)
-
 #//////////////////////////////////////////////////////////////////////////////
 
 def scraping(URL, wait):
     #Obtener la carrera
     #URL = "https://samp.itesm.mx/Programas/VistaPrograma?clave=AMC19&modoVista=Default&idioma=ES&cols=0"
+
+    driver = webdriver.Chrome(options=opts, executable_path=chrome_driver)
+    driver.set_page_load_timeout(600)
 
     scrap = ""
 
@@ -50,5 +50,6 @@ def scraping(URL, wait):
                 scrap += ufData[0].text.strip() + "\n"
                 #nombre
                 scrap += ufData[1].text.strip() + "\n"
-            
+    
+    driver.quit()
     return scrap
