@@ -67,7 +67,7 @@ function AgendarAsesoriaUF() {
       window.location.reload(false) // Se recarga la página para limpiar los campos seleccionados
       countErrorMessage++
     } 
-  })
+  }, [statusasesoriaurl, countErrorMessage, navigate])
 
   const [infoBtnSiguiente, setInfoBtnSiguiente] = useState(null)
 

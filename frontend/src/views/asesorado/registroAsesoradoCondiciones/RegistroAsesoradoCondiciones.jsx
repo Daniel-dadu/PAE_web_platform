@@ -55,6 +55,7 @@ function RegistroAsesoradoCondiciones() {
     !localStorage.registro1_carrera) {
       localStorage.clear()
       navigate('/landingPage')
+      return
     }
   }, [navigate])
 
@@ -80,7 +81,7 @@ function RegistroAsesoradoCondiciones() {
           setErrorCondicionesApiCall(error)
         }
       )
-  }, [setCondicionesApiState])
+  }, [setCondicionesApiState, setErrorCondicionesApiCall])
 
   return (
 

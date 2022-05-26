@@ -22,6 +22,7 @@ function AgendarAsesoriaResumen() {
     // Si no se cuenta con los datos necesarios, se redirecciona al usuario a la primera pantalla
     if(!ufSelected || !anioSelected || !mesSelected || !diaSelected || !horaSelected) {
       navigate('/agendarAsesoriaUF/error')
+      return
     }
   }, [ufSelected, anioSelected, mesSelected, diaSelected, horaSelected, navigate])
 

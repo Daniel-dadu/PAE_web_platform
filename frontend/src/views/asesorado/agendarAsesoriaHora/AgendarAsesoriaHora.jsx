@@ -51,8 +51,9 @@ function AgendarAsesoriaHora() {
     // Si no se seleccionó una asesoría, se redirecciona al usuario a la primera pantalla
     if(!localStorage.asesoria_uf) {
       navigate('/agendarAsesoriaUF/error')
+      return
     }
-  })
+  }, [navigate])
 
   const [horasDisponibles, setHorasDisponibles] = useState({
     day : "Cargando...",

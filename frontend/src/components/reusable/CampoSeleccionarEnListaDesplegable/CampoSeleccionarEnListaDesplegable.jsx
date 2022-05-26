@@ -26,6 +26,7 @@ function CampoSeleccionarEnListaDesplegable({ size, parentCallback, options, def
         style={{width: size === "small" ? "100px" : size === "medium" ? "250px" : "350px"}}
         onSelect={(item) => onTrigger(item)}
         items={options.map((option) => { return {id: option, value: option}})}
+        isExpandedStyle={{overflow: 'auto', height: options.length > 4 ? '10rem' : 'auto'}}
       />
       <FiChevronDown className="arrow_down" size={30} />
     </div>
