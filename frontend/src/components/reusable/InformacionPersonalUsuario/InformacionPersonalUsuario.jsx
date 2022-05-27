@@ -44,6 +44,7 @@ const InformacionPersonalUsuario = () => {
         }
     )
 
+    // Petición a la API para obtener la información de perfil
     useEffect(() => {
         const config = {
             method: 'get',
@@ -83,6 +84,27 @@ const InformacionPersonalUsuario = () => {
 
     }, [setListaCarreras])
 
+    const [imagenPerfil, setImagenPerfil] = useState(localStorage.fotoUsuario)
+    const onHandleUploadImage = image => setImagenPerfil(image)
+
+    const [telefotoChanged, setTelefotoChanged] = useState(infoUserJSON.telefonousuario)
+    const onInsertTelefono = inputTelefono => setTelefotoChanged(inputTelefono)
+
+    const [carrera1Changed, setCarrera1Changed] = useState(infoUserJSON.carrerausuario1)
+    const onInsertCarrera1 = inputCarrera => setCarrera1Changed(inputCarrera)
+    
+    const [carrera2Changed, setCarrera2Changed] = useState(infoUserJSON.carrerausuario2)
+    const onInsertCarrera2 = inputCarrera => setCarrera2Changed(inputCarrera)
+
+    const [semestreChanged, setSemestreChanged] = useState(infoUserJSON.semestreusuario)
+    const onInsertSemestre = inputSemestre => setSemestreChanged(inputSemestre)
+
+    // Para que se actualicen las carreras una vez se carguen de la APIº
+    useEffect(() => {
+        setCarrera1Changed(infoUserJSON.carrerausuario1)
+        setCarrera2Changed(infoUserJSON.carrerausuario2)
+    }, [infoUserJSON, setCarrera1Changed, setCarrera2Changed])
+
     let data = {   
         "tipoUsuario" : rolUsr === "directivo" ? 2 : 1,
     
@@ -106,12 +128,12 @@ const InformacionPersonalUsuario = () => {
             "camposVariantes": [
                 {
                     "campo": "Carrera(s)",
-                    "info": [infoUserJSON.carrerausuario1, infoUserJSON.carrerausuario2].filter(carrera => carrera !== null && carrera !== ''),
+                    "info": [carrera1Changed, carrera2Changed].filter(carrera => carrera !== null && carrera !== ''),
                     "nombreClase": "carrera" 
                 },
                 {
                     "campo": "Teléfono",
-                    "info": infoUserJSON.telefonousuario ? infoUserJSON.telefonousuario : "No se ingresó un teléfono",
+                    "info": telefotoChanged ? telefotoChanged : "No se ingresó un teléfono",
                     "nombreClase":"telefono"
                 }
             ]
@@ -122,22 +144,18 @@ const InformacionPersonalUsuario = () => {
     if (rolUsr === 'asesor') {
         data.informacion.camposVariantes.push({
             "campo": "Semestre",
-            "info": 1,
+            "info": semestreChanged,
             "nombreClase": "semestre"  
         })
     }
 
+    // const onConfirmChange = () => {
+
+    // }
+
+
     //usados para el cambio de imagen
     const [editar, setEditar] = useState(false);
-
-    const [imagenPerfil, setImagenPerfil] = useState(localStorage.fotoUsuario)
-
-    const onHandleUploadImage = image => setImagenPerfil(image)
-
-   // usado para alternar entre editar y visualizacion de los datos
-    const handleEditarPerfil = () => {
-        setEditar(!editar);
-    }
 
     //función para armar cadena del campo cadenas, retorna un String armado
     const armarCadenaCarrea = (carreras) => {
@@ -152,7 +170,6 @@ const InformacionPersonalUsuario = () => {
 
         return cadena;
     }
-
 
   return (
     <>
@@ -170,7 +187,7 @@ const InformacionPersonalUsuario = () => {
                             <div className='contenedor-img-perfil-InfPerUsuario'>
 
                                 <img src={ imagenPerfil !== "null" ? imagenPerfil : noUserImg } alt="imgProfile" className='imagen-InfPerUsuario'/>
-                                <button className='btn-editar-InfPerUsuario' onClick={ handleEditarPerfil }>
+                                <button className='btn-editar-InfPerUsuario' onClick={ () => setEditar(!editar) }>
                                     <div className='contenedor-btn-editar-InfPerUsuario'>
                                         <p className='btn-texto-InfPerUsuario'>Editar</p>
                                         <FaPen/>
@@ -188,9 +205,9 @@ const InformacionPersonalUsuario = () => {
 
                             {
                             // iteramos con map entre los camposVariantes que tenemos en el archivo json
-                            data["informacion"].camposVariantes.map((campos) => (
+                            data["informacion"].camposVariantes.map((campos, index) => (
                                 
-                                <p className={ `etiqueta-${campos.nombreClase}-InfPerUsuario` }  >
+                                <p className={ `etiqueta-${campos.nombreClase}-InfPerUsuario` } key={index} >
 
                                     { rolUsr !== 'directivo' &&
                                         //condicional para arreglar cadena de carreras
@@ -231,26 +248,26 @@ const InformacionPersonalUsuario = () => {
                                 data["tipoUsuario"] === 1 ?
                                 <div>
                                     <p className='etiqueta-carrera-InfPerUsuario' > Carrera: </p>
-                                    <CampoSeleccionarEnListaDesplegable size="big"  idList="carrera" options={ data.relleno.carrera } />
+                                    <CampoSeleccionarEnListaDesplegable size="big" options={ data.relleno.carrera } parentCallback={onInsertCarrera1}/>
                                     
                                     <p className='etiqueta-carrera-InfPerUsuario' > Carrera 2: </p>
-                                    <CampoSeleccionarEnListaDesplegable size="big"  idList="carrera" options={ data.relleno.carrera } />
+                                    <CampoSeleccionarEnListaDesplegable size="big" options={ data.relleno.carrera } parentCallback={onInsertCarrera2}/>
 
                                     { // Si es un asesor, se muestra el campo para cambiar el semestre
                                         rolUsr === 'asesor' && 
                                         <div>
                                             <p className='etiqueta-semestre-InfPerUsuario'> Semestre: </p>
-                                            <CampoSeleccionarEnListaDesplegable size="small" idList="semestre" options={data.relleno.semestre} />
+                                            <CampoSeleccionarEnListaDesplegable size="small" options={data.relleno.semestre} parentCallback={onInsertSemestre} />
                                         </div>
                                     }
 
-                                    <p className='etiqueta-telefono-InfPerUsuario'> Telefono </p>
-                                    <CampoTextoPequeno size="medium"/>
+                                    <p className='etiqueta-telefono-InfPerUsuario'> Teléfono </p>
+                                    <CampoTextoPequeno size="medium" onInsertText={onInsertTelefono} maxNumCaracteres="10" previousText={telefotoChanged}/>
                                 </div>
                                 : // si es diractivo, solo podra modificar el numero telefonico
                                 <div>
-                                    <p className='etiqueta-telefono-InfPerUsuario'> Telefono </p>
-                                    <CampoTextoPequeno size="medium"/>
+                                    <p className='etiqueta-telefono-InfPerUsuario'> Teléfono </p>
+                                    <CampoTextoPequeno size="medium" onInsertText={onInsertTelefono} maxNumCaracteres="10"/>
                                 </div>
  
                              }
@@ -258,8 +275,8 @@ const InformacionPersonalUsuario = () => {
                             {/* Contenedor de botones de cancelar y guardar */}
                              <div className='contenedor-btn-editar'>
  
-                                 <BotonSencillo  onClick={ handleEditarPerfil } backgroundColor="gris" size="normal" children="Cancelar" />
-                                 <BotonSencillo  onClick={ handleEditarPerfil } backgroundColor="verde" size="normal" children="Confirmar" />
+                                 <BotonSencillo  onClick={ () => setEditar(!editar) } backgroundColor="gris" size="normal" children="Cancelar" />
+                                 <BotonSencillo  onClick={ () => setEditar(!editar) } backgroundColor="verde" size="normal" children="Confirmar" />
  
                              </div>
  
