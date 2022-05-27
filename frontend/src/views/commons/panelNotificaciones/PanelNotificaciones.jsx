@@ -133,7 +133,7 @@ const PanelNotificaciones = ({userTypeNotificaciones}) => { /* En caso de ser di
 
                     <div className='botonEnviarNotiHola'>
                         <BotonConImagen 
-                        onClick={'Hola'} 
+                        onClick={() => navigate('/EnviarNotificacionDirectivos')} 
                         backgroundColor='blanco'
                         size="largo" 
                         Image={FiMail} >
