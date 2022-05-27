@@ -488,6 +488,36 @@ BEGIN
 END;
 $func$;
 
+------------ FUNCIÓN -----------------
+
+-- Obtención de las notificaciones de un usuario a partir de su ID
+CREATE OR REPLACE FUNCTION get_notificaciones_usuario(
+  idUsuario VARCHAR(10)
+)
+RETURNS TABLE (
+  origen ORIGENNOTIFICACION,
+  titulo VARCHAR(200),
+  leyenda TIMESTAMP,
+  contenido TEXT
+)
+LANGUAGE plpgsql AS $func$
+
+BEGIN
+
+  RETURN QUERY
+    SELECT
+      "Notificacion"."origen",
+      "Notificacion"."titulo",
+      "Notificacion"."fechaHora" AS leyenda,
+      "Notificacion"."descripcion" AS contenido
+    FROM "NotificacionUsuario", "Notificacion", "Usuario"
+    WHERE "NotificacionUsuario"."idNotificacion" = "Notificacion"."idNotificacion"
+    AND "NotificacionUsuario"."idUsuario" = "Usuario"."idUsuario"
+    AND "Usuario"."idUsuario" = idUsuario;
+
+END;
+$func$;
+
 ------------ PROCEDURES ---------------
 
 -- Procedimiento para hacer el registro de un asesorado

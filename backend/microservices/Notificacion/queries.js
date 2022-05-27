@@ -25,7 +25,7 @@ const get_notificaciones_usuario = (request, response) => {
         if(error) {
             throw error
         } else {
-            response.status(200).json(result.rows)
+            response.status(200).json({'notificaciones': result.rows})
             // console.log(result.rows)
         }
     })
