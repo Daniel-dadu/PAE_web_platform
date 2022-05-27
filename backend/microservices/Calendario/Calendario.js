@@ -37,13 +37,18 @@ app.use(
 
 // OBTENER LAS ASESORÍAS DE UN USUARIO
 // Ejemplo de consulta GET:
-// http://20.225.209.57:3031/calendario/get_asesorias/?idUsuario=A01657967&?mes=2&anio=2022
+// http://20.225.209.57:3031/calendario/get_asesorias/?idUsuario=A01657967&mes=2&anio=2022
 app.get('/calendario/get_asesorias/', db.get_asesorias_usuario)
 
 // OBTENER LAS ASESORÍAS DE TODOS LOS USUARIOS
 // Ejemplo de consulta GET:
 // http://20.225.209.57:3031/calendario/get_allAsesorias/?mes=2&anio=2022
 app.get('/calendario/get_allAsesorias/', db.get_allAsesorias)
+
+// OBTENER LA INFORMACIÓN DE LA ASESORÍA DE UN USUARIO
+// Ejemplo de consulta GET:
+// http://20.225.209.57:3031/calendario/get_informacionAsesoria/?idUsuario=A94949494&hora=10&dia=1&mes=6&anio=2022
+app.get('/calendario/get_informacionAsesoria/', db.get_informacionAsesoria)
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)

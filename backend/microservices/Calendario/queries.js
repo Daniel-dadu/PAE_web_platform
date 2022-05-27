@@ -45,7 +45,7 @@ const get_asesorias_usuario = (request, response) => {
                         'status': currentValue['status'],
                         'hora': currentValue['hora'],
                         // 'openPanel': `() => {toggle()}`
-                        'openPanel': `() => {toggle(${currentValue['numerodia']}, ${mes}, ${anio})}`
+                        'openPanel': `() => {toggle(${currentValue['hora']}, ${currentValue['numerodia']}, ${mes}, ${anio})}`
                     });
                     // Return the current iteration `result` value, this will be taken as next iteration `result` value and accumulate
                     return result;
@@ -78,10 +78,6 @@ const get_allAsesorias = (request, response) => {
             throw error
         } else {
             
-            // response.status(200).json({'dias': result.rows})
-            // console.log({'dias': result.rows})
-            
-            // const output = [{'dias': result.rows}];
             const output = result.rows;
             
             // Accepts the array and key
@@ -109,7 +105,67 @@ const get_allAsesorias = (request, response) => {
 
 }
 
+const get_informacionAsesoria = (request, response) => {
+
+    const id = request.query.idUsuario
+    const hora = request.query.hora
+    const dia = request.query.dia
+    const mes = request.query.mes
+    const anio = request.query.anio
+
+    if(id === "null" || hora === "null" || dia === "null" || mes === "null" || anio === "null"){
+        response.status(400).json([])
+        return
+    }
+
+    const consulta = `SELECT * FROM get_informacionAsesoria($1, $2, $3, $4, $5);` // SELECT * FROM get_notificaciones_usuario('A01657967');
+
+    pool.query(consulta, [id, hora, dia, mes, anio], (error, result) => {
+        if(error) {
+            throw error
+        } else {
+
+            const output = result.rows;
+
+            // Accepts the array and key
+            const groupBy = (array, key) => {
+                
+                // Return the end result
+                return array.reduce((result, currentValue) => {
+                    // If an array already present for key, push it to the array. Else create an array and push the object
+
+                    result['hora'] = currentValue['hora'],
+                    result['dia'] = currentValue['dia'],
+                    result['mes'] = currentValue['mes'],
+                    result['anio'] = currentValue['anio'],
+                    result['usuario'] = currentValue['usuario'],
+                    result['lugar'] =  currentValue['lugar'],
+                    result['uF'] = currentValue['uf'],
+                    result['duda'] = currentValue['duda']
+
+                    if(result['images'] != undefined){
+                        result['images'].push(currentValue[key])
+                    }
+                    else{
+                        result['images'] = [currentValue[key]]
+                    }
+
+                    // Return the current iteration `result` value, this will be taken as next iteration `result` value and accumulate
+                    return result;
+                }, {}); // empty object is the initial value for result object
+            };
+            
+            // Group by color as key to the person array
+            const finalJSON = groupBy(output, 'image');
+            response.status(200).json(finalJSON)
+
+        }
+    })
+
+}
+
 module.exports = {
     get_asesorias_usuario,
-    get_allAsesorias
+    get_allAsesorias,
+    get_informacionAsesoria
 }

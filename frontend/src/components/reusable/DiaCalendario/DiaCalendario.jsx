@@ -61,7 +61,7 @@ const DiaCalendario = ({
                                                     // grande
                                             >
                                                 {
-                                                    (asesorias['asesorias'][index]['status'] === 'Activa')
+                                                    (asesorias['asesorias'][index]['status'] === 'confirmada')
                                                         ? asesorias['asesorias'][index]['hora']
                                                         : asesorias['asesorias'][index]['status']
                                                 }
