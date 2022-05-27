@@ -44,6 +44,23 @@ const InformacionPersonalUsuario = () => {
         }
     )
 
+    const getIDcarrera = carreraVal => carreraVal.slice(0, carreraVal.indexOf(' '))
+
+    const [imagenPerfil, setImagenPerfil] = useState(localStorage.fotoUsuario)
+    const onHandleUploadImage = image => setImagenPerfil(image)
+
+    const [telefotoChanged, setTelefotoChanged] = useState(null)
+    const onInsertTelefono = inputTelefono => setTelefotoChanged(inputTelefono)
+
+    const [carrera1Changed, setCarrera1Changed] = useState(null)
+    const onInsertCarrera1 = inputCarrera => setCarrera1Changed(getIDcarrera(inputCarrera.value))
+    
+    const [carrera2Changed, setCarrera2Changed] = useState(null)
+    const onInsertCarrera2 = inputCarrera => setCarrera2Changed(getIDcarrera(inputCarrera.value))
+
+    const [semestreChanged, setSemestreChanged] = useState(null)
+    const onInsertSemestre = inputSemestre => setSemestreChanged(inputSemestre.value)
+
     // Petición a la API para obtener la información de perfil
     useEffect(() => {
         const config = {
@@ -54,7 +71,14 @@ const InformacionPersonalUsuario = () => {
         
         axios(config)
         .then(response => {
-            setInfoUserJSON(response.data)
+            const jsonResponse = response.data
+            
+            setInfoUserJSON(jsonResponse)
+
+            setTelefotoChanged(jsonResponse.telefonousuario)
+            setCarrera1Changed(jsonResponse.carrerausuario1)
+            setCarrera2Changed(jsonResponse.carrerausuario2)
+            setSemestreChanged(jsonResponse.semestreusuario)
         })
         .catch(_error => {
             alert("No se pudo obtener la información de perfil")
@@ -83,23 +107,6 @@ const InformacionPersonalUsuario = () => {
         })
 
     }, [setListaCarreras])
-
-    const getIDcarrera = carreraVal => carreraVal.slice(0, carreraVal.indexOf(' '))
-
-    const [imagenPerfil, setImagenPerfil] = useState(localStorage.fotoUsuario)
-    const onHandleUploadImage = image => setImagenPerfil(image)
-
-    const [telefotoChanged, setTelefotoChanged] = useState(infoUserJSON.telefonousuario)
-    const onInsertTelefono = inputTelefono => setTelefotoChanged(inputTelefono)
-
-    const [carrera1Changed, setCarrera1Changed] = useState(infoUserJSON.carrerausuario1)
-    const onInsertCarrera1 = inputCarrera => setCarrera1Changed(getIDcarrera(inputCarrera.value))
-    
-    const [carrera2Changed, setCarrera2Changed] = useState(infoUserJSON.carrerausuario2)
-    const onInsertCarrera2 = inputCarrera => setCarrera2Changed(getIDcarrera(inputCarrera.value))
-
-    const [semestreChanged, setSemestreChanged] = useState(infoUserJSON.semestreusuario)
-    const onInsertSemestre = inputSemestre => setSemestreChanged(inputSemestre)
 
     // Para que se actualicen las carreras una vez se carguen de la APIº
     useEffect(() => {
@@ -154,13 +161,8 @@ const InformacionPersonalUsuario = () => {
     const onConfirmChange = async () => {
         let imageToDatabase = null
         if(imagenPerfil) {
-            imageToDatabase = await imageCompressor(imagenPerfil, 10000)
+            imageToDatabase = await imageCompressor(imagenPerfil)
         }
-        console.log("imagen", imagenPerfil)
-        console.log("telefono", telefotoChanged)
-        console.log("carrera1Changed", carrera1Changed)
-        console.log("carrera2Changed", carrera2Changed)
-        console.log("semestre", semestreChanged)
 
         const config = {
             method: 'put',
@@ -174,14 +176,14 @@ const InformacionPersonalUsuario = () => {
                 "foto": imageToDatabase,
                 "telefono": telefotoChanged,
                 "carrera1": carrera1Changed,
-                "carrera2": carrera2Changed ? carrera2Changed : ''
+                "carrera2": carrera2Changed ? carrera2Changed : '',
+                "semestre": semestreChanged ? semestreChanged : 0
             })
-        };
+        }
           
         try {
             const response = await axios(config)
-            if(response) setImagenPerfil(imageToDatabase)
-
+            if(response) setImagenPerfil(imageToDatabase) // Linea de relleno para usar el response 
         } catch (error) {
             alert("No se pudo hacer la actualización de la información de tu perfil")
         }
@@ -189,6 +191,27 @@ const InformacionPersonalUsuario = () => {
         // Después de hacer la API request, se actualiza la imagen comprimida
         setImagenPerfil(imageToDatabase) 
 
+        localStorage.setItem('fotoUsuario', imageToDatabase)
+
+        setInfoUserJSON({
+            "nombreusuario": infoUserJSON.nombreusuario,
+            "telefonousuario": telefotoChanged,
+            "carrerausuario1": carrera1Changed,
+            "carrerausuario2": carrera2Changed ? carrera2Changed : null,
+            "semestreusuario": semestreChanged ? semestreChanged : 0
+        })
+
+        setEditar(!editar)
+
+        window.location.reload(false)
+    }
+
+    const onCancelChange = () => {
+        setImagenPerfil(localStorage.fotoUsuario)
+        setTelefotoChanged(infoUserJSON.telefonousuario)
+        setCarrera1Changed(infoUserJSON.carrerausuario1)
+        setCarrera2Changed(infoUserJSON.carrerausuario2)
+        setSemestreChanged(infoUserJSON.semestreusuario)
         setEditar(!editar)
     }
 
@@ -274,7 +297,7 @@ const InformacionPersonalUsuario = () => {
                     <div className='contenedor-InfPerUsuario'>
 
                         <div className='contenedor-InfPerUsuario-izq-actualizar-img' >
-                          <ImagenPerfilCambiar onUploadImage={onHandleUploadImage} previousImage={imagenPerfil}/>
+                          <ImagenPerfilCambiar onUploadImage={onHandleUploadImage} previousImage={imagenPerfil !== "null" ? imagenPerfil : noUserImg}/>
                         </div>
                         
                         <div className='contenedor-InfPerUsuario-der' >
@@ -314,7 +337,7 @@ const InformacionPersonalUsuario = () => {
                             {/* Contenedor de botones de cancelar y guardar */}
                              <div className='contenedor-btn-editar'>
  
-                                 <BotonSencillo  onClick={ () => setEditar(!editar) } backgroundColor="gris" size="normal" children="Cancelar" />
+                                 <BotonSencillo  onClick={ onCancelChange } backgroundColor="gris" size="normal" children="Cancelar" />
                                  <BotonSencillo  onClick={ onConfirmChange } backgroundColor="verde" size="normal" children="Confirmar" />
  
                              </div>

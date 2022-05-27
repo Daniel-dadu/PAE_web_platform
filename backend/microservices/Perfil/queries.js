@@ -29,10 +29,11 @@ const updateInfoUser = (request, response) => {
     const user_telefono = request.body.telefono
     const user_carrera1 = request.body.carrera1
     const user_carrera2 = request.body.carrera2
+    const user_semestre = request.body.semestre
     
-    const consulta = `CALL update_info_perfil($1, $2, $3, $4, $5, $6)`
+    const consulta = `CALL update_info_perfil($1, $2, $3, $4, $5, $6, CAST($7 AS SMALLINT))`
 
-    const parameters = [user_id, user_rol, user_foto, user_telefono, user_carrera1, user_carrera2]
+    const parameters = [user_id, user_rol, user_foto, user_telefono, user_carrera1, user_carrera2, user_semestre]
 
     pool.query(consulta, parameters, error => {
         if(error) {
