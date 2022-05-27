@@ -42,9 +42,13 @@ function PerfilAsesorado() {
             <BotonCambioPerfil />
           </div>
         }
+
+
+        {/* Código temporal - eliminar después */}
         <button onClick={ cerrarEncuesta } style={{width:200, height:60, backgroundColor:'grey', color: 'white', borderRadius: '20px', margin: 'auto', display: 'block', cursor: 'pointer', fontSize: '1.5rem', marginTop: '3rem' }}> 
           Mostrar Encuesta 
         </button>
+
       </Perfil>
 
     </>
