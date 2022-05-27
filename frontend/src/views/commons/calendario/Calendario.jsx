@@ -1,14 +1,27 @@
-import React, { useState } from 'react'
-
+import React, { useState, useEffect } from 'react'
 import { Template, CambioMesPeriodo, ComponenteCalendario, PopUpInformacionAsesoria, dateFunctions } from '../../../routeIndex'
-
-import CalendarioJSON from './PruebaCommonCalendario.json'
+import CalendarioJSON_Test from './PruebaCommonCalendario.json'
 import './CalendarioStyle.css'
 import  Modal from '../../../components/reusable/PopUpInformacionAsesoria/Modal';
+import { useNavigate } from "react-router-dom"
+import axios from 'axios'
 
 // Importante: es necesario revisar cómo se va a manejar el tema e idioma de la BARRA LATERAL. Aquí está hardcodeado
 
-function Calendario() {
+function Calendario(){
+
+  const navigate = useNavigate();
+  
+  // Si se intenta ingresar a esta vista pero no se cuenta con el localStorage.usuario, se redirige a /landingPage
+  useEffect(() => {
+    if(!localStorage.usuario){
+        localStorage.clear()
+        navigate('/landingPage')
+        return
+    }
+  }, [navigate])
+
+  const [calendarioJSON, setCalendarioJSON] = useState({});
 
   // Variable para conocer la fecha de hoy y actualizar el año
   const [today, setToday] = useState(new Date())
@@ -52,6 +65,9 @@ function Calendario() {
         }
       )
     }
+
+    handleSubmit()
+
   }
 
   const [active, setActive] = useState(false);
@@ -62,7 +78,50 @@ function Calendario() {
   
   window.toggle = toggle;
 
-  return (
+   // Hook para hacer la llamada a la API haciendo uso de la librería axios de JS
+  useEffect(() => {
+        
+    var config = {
+        method: 'get',
+        url: (localStorage.rolUsuario === "directivo") ? `http://20.225.209.57:3031/calendario/get_allAsesorias/?mes=${dateFunctions.monthsEnNumero[mesAnio.mes]+1}&anio=${mesAnio.anio}` : `http://20.225.209.57:3031/calendario/get_asesorias/?idUsuario=${localStorage.usuario}&mes=${dateFunctions.monthsEnNumero[mesAnio.mes]+1}&anio=${mesAnio.anio}`,
+        headers: {}
+    };
+    
+    axios(config)
+    .then(function (response) {
+        // console.log(JSON.stringify(response.data));
+        setCalendarioJSON(response.data);
+        // console.log(JSON.stringify(response.data))
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+
+  }, [setCalendarioJSON, mesAnio])
+
+  // Función que se ejecuta al darle click al botón de ingresar
+  const handleSubmit = async e => {
+    e.preventDefault()
+
+    // Características de petición a la API
+    let config = {
+        method: 'get',
+        url: (localStorage.rolUsuario === "directivo") ? `http://20.225.209.57:3031/calendario/get_allAsesorias/?mes=${dateFunctions.monthsEnNumero[mesAnio.mes]+1}&anio=${mesAnio.anio}` : `http://20.225.209.57:3031/calendario/get_asesorias/?idUsuario=${localStorage.usuario}&mes=${dateFunctions.monthsEnNumero[mesAnio.mes]+1}&anio=${mesAnio.anio}`,
+        headers: {}
+    }
+
+    // Se realiza la consulta a la api en un try catch para manejar errores
+    try{
+        // Se pide la consulta a la API exigiendo que se ejecute la promesa en ese momento
+        const response = await axios(config)
+        setCalendarioJSON(response.data)
+    } catch (error) {
+        alert(error)
+    }
+
+  }
+
+  return(
     <>
 
     <Template view="calendario">
@@ -74,14 +133,14 @@ function Calendario() {
       </div>
 
       <Modal active={active} toggle={toggle}>
-        <PopUpInformacionAsesoria  userTypePopUpAsesoria = "alumno" infoAsesoria = {CalendarioJSON} estado={toggle} /> 
+        <PopUpInformacionAsesoria  userTypePopUpAsesoria = {(localStorage.rolUsuario === "directivo") ? localStorage.rolUsuario : 'alumno'} infoAsesoria = {CalendarioJSON_Test} estado={toggle} /> 
       </Modal>
 
 
       <div className='calendarioStyle'> 
         <ComponenteCalendario
-          userTypeCalendario = 'alumno'
-          diasCalendario = {CalendarioJSON}
+          userTypeCalendario = {(localStorage.rolUsuario === "directivo") ? localStorage.rolUsuario : 'alumno'}
+          diasCalendario = {calendarioJSON}
           sizeCalendario = 'grande'
           mes = {mesAnio.mes}
           anio = {mesAnio.anio}

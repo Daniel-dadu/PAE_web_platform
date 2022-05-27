@@ -5,7 +5,7 @@ import '../../../index.css'
 import './PanelNotificaciones.css'
 import Modal from '../../../components/reusable/PopUpInformacionAsesoria/Modal.js'
 // import notificacionesJSON from './PruebaPanelNotificaciones.json'
-import { Template, Notificacion, PopUpInformacionAsesoria, BotonConImagen} from '../../../routeIndex'
+import { Template, Notificacion, PopUpInformacionAsesoria, BotonConImagen, PopUp} from '../../../routeIndex'
 import { FiMail } from 'react-icons/fi'
 import { useNavigate } from "react-router-dom"
 import axios from 'axios'
@@ -14,7 +14,7 @@ const PanelNotificaciones = ({userTypeNotificaciones}) => { /* En caso de ser di
 
     const navigate = useNavigate();
 
-    // Si se intenta ingresar a esta vista pero no se cuenta con el localStorage.asesoria_uf, se redirige al /agendarAsesoriaUF/ok
+    // Si se intenta ingresar a esta vista pero no se cuenta con el localStorage.usuario, se redirige a /landingPage
     useEffect(() => {
     if(!localStorage.usuario){
         localStorage.clear()
@@ -54,8 +54,6 @@ const PanelNotificaciones = ({userTypeNotificaciones}) => { /* En caso de ser di
         });
 
     }, [setNotificacionesJSON])
-
-    console.log(JSON.stringify(notificacionesJSON))
 
     return(
         <>
