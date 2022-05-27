@@ -44,8 +44,8 @@ const get_asesorias_usuario = (request, response) => {
                     })['asesorias'].push({
                         'status': currentValue['status'],
                         'hora': currentValue['hora'],
-                        'openPanel': `() => {toggle()}`
-                        // 'openPanel': `() => {toggle(${currentValue['numerodia']}, ${mes}, ${anio})}`
+                        // 'openPanel': `() => {toggle()}`
+                        'openPanel': `() => {toggle(${currentValue['numerodia']}, ${mes}, ${anio})}`
                     });
                     // Return the current iteration `result` value, this will be taken as next iteration `result` value and accumulate
                     return result;

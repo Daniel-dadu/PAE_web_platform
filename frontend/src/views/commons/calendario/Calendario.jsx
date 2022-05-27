@@ -72,8 +72,16 @@ function Calendario(){
 
   const [active, setActive] = useState(false);
   
-  const toggle = () => {
+  const toggle = (dia, mes, anio) => {
+
+    if(dia !== undefined && mes !== undefined && anio !== undefined){
+      // alert(dia);
+      // alert(mes);
+      // alert(anio);
+    }
+
     setActive(!active)
+
   }
   
   window.toggle = toggle;
