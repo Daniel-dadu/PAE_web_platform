@@ -95,3 +95,7 @@ export {default as RespuestasEncuestas } from './views/commons/respuestasEncuest
 export {default as AsesoriasExistentesDiaDirectivos } from './views/directivo/asesoriasExistentesDiaDirectivos/AsesoriasExistentesDiaDirectivos.jsx'
 export { default as CampoTextoMenuDesplegable } from './components/reusable/CampoTextoMenuDesplegable/CampoTextoMenuDesplegable.jsx'
 export {default as RegistroAsesorUF } from './views/asesor/registroAsesorUF/RegistroAsesorUF.jsx'
+<<<<<<< HEAD
+export {default as PupUpSolicitudAsesoria } from './components/reusable/PopUpSolicitudAsesoria/PopUpSolicitudAsesoria.jsx'
+=======
+>>>>>>> develop
