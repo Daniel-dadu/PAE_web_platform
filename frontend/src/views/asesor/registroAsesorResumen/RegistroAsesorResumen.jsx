@@ -142,7 +142,8 @@ function RegistroAsesorResumen() {
         <TemplateRegistroUsuario 
             progressBarJSON = {progressBar}
             btnAtrasRoute = "./registroAsesorCondiciones"
-            btnSiguienteRoute = "./calendario"
+            btnSiguienteProps={{ view: 5, props: null }}
+            isRegistroAsesor={true}
         >
 
             <h1> Resumen de información </h1>

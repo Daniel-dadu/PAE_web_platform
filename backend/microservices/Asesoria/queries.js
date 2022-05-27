@@ -136,7 +136,6 @@ const insertImagen = (request, response) => {
 
 
 module.exports = {
-  getCarreras,
   getUF_carreraSemestre,
   getDiasDisponibles,
   getHorasDisponibles,

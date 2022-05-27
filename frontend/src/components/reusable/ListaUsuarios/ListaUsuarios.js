@@ -85,7 +85,7 @@ const ListaUsuarios = ({ data }) => {
                                 </p>
                             </td>
                             <td className='contenedor-btn-editar'>
-                                <a href='./calendario' className='btn-editar-ListaUsuarios'> <FaEdit className='icono-btn-editar-ListaUsuarios'/> </a>
+                                <a href='./administrarPerfilAsesorados' className='btn-editar-ListaUsuarios'> <FaEdit className='icono-btn-editar-ListaUsuarios'/> </a>
                             </td>
                         </tr>
                         ))
