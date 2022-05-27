@@ -9,6 +9,16 @@ const pool = new Pool({
     port: 5432,
 })
 
+const getCarreras = (_request, response) => {
+    pool.query('SELECT * FROM "Carrera"', (error, results) => {
+        if (error) {
+            response.status(400).send("Error: no se pudieron obtener las carreras de la base de datos")
+        } else {
+            response.status(200).json(results.rows)
+        }
+    })
+}  
+
 const getMeses_inicio_fin_semestre = (_request, response) => {
     pool.query('SELECT * FROM get_meses_inicio_fin_semestre()', (error, result) => {
         if(error) {
@@ -33,6 +43,7 @@ const getNombreUF = (request, response) => {
 
 
 module.exports = {
+    getCarreras,
     getMeses_inicio_fin_semestre,
     getNombreUF
 }

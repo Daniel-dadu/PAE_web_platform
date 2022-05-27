@@ -72,12 +72,12 @@ export {default as RegistroAsesorHorario } from './views/asesor/registroAsesorHo
 
 export {default as AdministrarUsuariosDirectivos } from './views/commons/administrarUsuariosDirectivos/AdministrarUsuariosDirectivos.jsx'
 export {default as ListaUsuarios } from './components/reusable/ListaUsuarios/ListaUsuarios.js';
-export {default as InformacionPersonalUsuario } from './components/reusable/InformacionPersonalUsuario/InformacionPersonalUsuario.js';
+export {default as InformacionPersonalUsuario } from './components/reusable/InformacionPersonalUsuario/InformacionPersonalUsuario.jsx';
 export {default as ImagenPerfilActualizar } from './components/reusable/ImagenPerfilActualizar/ImagenPerfilActualizar.js';
 export {default as TarjetaListaDesplegable } from './components/reusable/TarjetaListaDesplegable/TarjetaListaDesplegable.js';
 export {default as ListaDesplegable } from './components/reusable/ListaDesplegable/ListaDesplegable.js';
 export {default as PopUpEncuesta } from './components/reusable/PopUpEncuesta/PopUpEncuesta.js';
-export {default as ListaUnidadesDeFormacionAsesor } from './components/reusable/ListaUnidadesDeFormacionAsesor/ListaUnidadesDeFormacionAsesor.js';
+export {default as ListaUnidadesDeFormacionAsesor } from './components/reusable/ListaUnidadesDeFormacionAsesor/ListaUnidadesDeFormacionAsesor.jsx';
 
 export {default as Perfil } from './views/commons/perfil/Perfil.jsx'
 export {default as imageCompressor } from './assets/reusableFunctions/imageCompressor.js'

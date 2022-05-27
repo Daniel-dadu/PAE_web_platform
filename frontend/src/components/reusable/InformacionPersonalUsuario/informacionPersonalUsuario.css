@@ -40,7 +40,6 @@
 
     height: 60%;
     width: 60%;
-    /* background: #000; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,7 +50,9 @@
 .contenedor-img-perfil-InfPerUsuario .imagen-InfPerUsuario {
     height: 300px;
     width: 300px;
-    border-radius: 150px;   
+    border-radius: 100%;   
+    object-fit: cover;
+    border: 3px solid;
 }
 
 .contenedor-img-perfil-InfPerUsuario .btn-editar-InfPerUsuario {
