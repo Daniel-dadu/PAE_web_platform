@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Template, CambioMesPeriodo, ComponenteCalendario, PopUpInformacionAsesoria, dateFunctions } from '../../../routeIndex'
-import CalendarioJSON_Test from './PruebaCommonCalendario.json'
+// import asesoriaJSON from './PruebaCommonCalendario.json'
 import './CalendarioStyle.css'
 import  Modal from '../../../components/reusable/PopUpInformacionAsesoria/Modal';
 import { useNavigate } from "react-router-dom"
@@ -22,6 +22,17 @@ function Calendario(){
   }, [navigate])
 
   const [calendarioJSON, setCalendarioJSON] = useState({});
+  const [asesoriaJSON, setAsesoriaJSON] = useState(
+    {
+      "hora": 0,
+      "dia": 0,
+      "mes": 0,
+      "anio": 0,
+      "usuario": "",
+      "duda": "",
+      "images": []
+    }
+  );
 
   // Variable para conocer la fecha de hoy y actualizar el año
   const [today, setToday] = useState(new Date())
@@ -72,12 +83,39 @@ function Calendario(){
 
   const [active, setActive] = useState(false);
   
-  const toggle = (dia, mes, anio) => {
+  const toggle = (hora, dia, mes, anio) => {
 
-    if(dia !== undefined && mes !== undefined && anio !== undefined){
-      // alert(dia);
-      // alert(mes);
-      // alert(anio);
+    if(hora !== undefined && dia !== undefined && mes !== undefined && anio !== undefined){
+
+      var config = {
+          method: 'get',
+          url: `http://20.225.209.57:3031/calendario/get_informacionAsesoria/?idUsuario=${localStorage.usuario}&hora=${hora}&dia=${dia}&mes=${dateFunctions.monthsEnNumero[mesAnio.mes]+1}&anio=${mesAnio.anio}`,
+          headers: {}
+      };
+      
+      axios(config)
+      .then(function (response) {
+          // console.log(JSON.stringify(response.data));
+          // console.log(JSON.stringify(response.data))
+          setAsesoriaJSON(response.data);
+      })
+      .catch(function (error) {
+          console.log(error);
+      });
+
+    }
+    else{
+      setAsesoriaJSON(
+        {
+          "hora": 0,
+          "dia": 0,
+          "mes": 0,
+          "anio": 0,
+          "usuario": "",
+          "duda": "",
+          "images": []
+        }
+      );
     }
 
     setActive(!active)
@@ -141,7 +179,7 @@ function Calendario(){
       </div>
 
       <Modal active={active} toggle={toggle}>
-        <PopUpInformacionAsesoria  userTypePopUpAsesoria = {(localStorage.rolUsuario === "directivo") ? localStorage.rolUsuario : 'alumno'} infoAsesoria = {CalendarioJSON_Test} estado={toggle} /> 
+        <PopUpInformacionAsesoria  userTypePopUpAsesoria = {(localStorage.rolUsuario === "directivo") ? localStorage.rolUsuario : 'alumno'} infoAsesoria = {asesoriaJSON} estado={toggle} /> 
       </Modal>
 
 
