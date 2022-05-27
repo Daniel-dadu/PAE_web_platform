@@ -1,9 +1,9 @@
-
 .boxPerfilCommon{
-
     padding-top: 5%;
-    }
+}
 
 .btonDescargarEstadiPerfilDirectivo{
-    padding-left: 20.6%;
+    padding-left: 20%;
+    position: absolute;
+    bottom: 20%;
 }
