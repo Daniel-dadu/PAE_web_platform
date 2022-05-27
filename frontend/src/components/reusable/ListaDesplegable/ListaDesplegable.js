@@ -14,7 +14,7 @@ const COLORES_TIPO_1 = [
 
 
 
-const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido=data.listaGrande } ) => {
+const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido=data.listaChica } ) => {
 
 
     /*
