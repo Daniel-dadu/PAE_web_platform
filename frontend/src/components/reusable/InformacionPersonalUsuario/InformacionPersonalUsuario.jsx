@@ -280,13 +280,15 @@ const InformacionPersonalUsuario = () => {
                                 
                                 <p className={ `etiqueta-${campos.nombreClase}-InfPerUsuario` } key={index} >
 
-                                    { rolUsr !== 'directivo' &&
+                                    { //
                                         //condicional para arreglar cadena de carreras
-                                        ( campos.campo === "Carrera(s)" ?
-                                            (campos.info.length === 1 ? 
+                                        ( campos.campo === "Carrera(s)" ? 
+                                            ( rolUsr !== 'directivo' &&
+                                                (campos.info.length === 1 ? 
                                                 `${ campos.campo }: ${ campos.info[0]}`
                                                 : 
-                                                `${campos.campo}: ${ armarCadenaCarrea(campos.info) }`  )
+                                                `${campos.campo}: ${ armarCadenaCarrea(campos.info) }`  ) 
+                                            )
                                             : 
                                             `${campos.campo}: ${campos.info}`
                                         )  
@@ -335,10 +337,10 @@ const InformacionPersonalUsuario = () => {
                                     <p className='etiqueta-telefono-InfPerUsuario'> Teléfono </p>
                                     <CampoTextoPequeno size="medium" onInsertText={onInsertTelefono} maxNumCaracteres="10" previousText={telefotoChanged}/>
                                 </div>
-                                : // si es diractivo, solo podra modificar el numero telefonico
+                                : // si es directivo, solo podra modificar el numero telefonico
                                 <div>
                                     <p className='etiqueta-telefono-InfPerUsuario'> Teléfono </p>
-                                    <CampoTextoPequeno size="medium" onInsertText={onInsertTelefono} maxNumCaracteres="10"/>
+                                    <CampoTextoPequeno size="medium" onInsertText={onInsertTelefono} maxNumCaracteres="10" previousText={telefotoChanged}/>
                                 </div>
  
                              }
