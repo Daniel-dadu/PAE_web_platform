@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaPen } from "react-icons/fa";
 import axios from 'axios';
 
-import { CampoSeleccionarEnListaDesplegable, CampoTextoPequeno, BotonSencillo, ImagenPerfilCambiar } from '../../../routeIndex';
+import { CampoSeleccionarEnListaDesplegable, CampoTextoPequeno, BotonSencillo, ImagenPerfilCambiar, imageCompressor } from '../../../routeIndex';
 
 import noUserImg from '../../../assets/noUserImg.png'
 
@@ -84,6 +84,8 @@ const InformacionPersonalUsuario = () => {
 
     }, [setListaCarreras])
 
+    const getIDcarrera = carreraVal => carreraVal.slice(0, carreraVal.indexOf(' '))
+
     const [imagenPerfil, setImagenPerfil] = useState(localStorage.fotoUsuario)
     const onHandleUploadImage = image => setImagenPerfil(image)
 
@@ -91,10 +93,10 @@ const InformacionPersonalUsuario = () => {
     const onInsertTelefono = inputTelefono => setTelefotoChanged(inputTelefono)
 
     const [carrera1Changed, setCarrera1Changed] = useState(infoUserJSON.carrerausuario1)
-    const onInsertCarrera1 = inputCarrera => setCarrera1Changed(inputCarrera)
+    const onInsertCarrera1 = inputCarrera => setCarrera1Changed(getIDcarrera(inputCarrera.value))
     
     const [carrera2Changed, setCarrera2Changed] = useState(infoUserJSON.carrerausuario2)
-    const onInsertCarrera2 = inputCarrera => setCarrera2Changed(inputCarrera)
+    const onInsertCarrera2 = inputCarrera => setCarrera2Changed(getIDcarrera(inputCarrera.value))
 
     const [semestreChanged, setSemestreChanged] = useState(infoUserJSON.semestreusuario)
     const onInsertSemestre = inputSemestre => setSemestreChanged(inputSemestre)
@@ -149,9 +151,46 @@ const InformacionPersonalUsuario = () => {
         })
     }
 
-    // const onConfirmChange = () => {
+    const onConfirmChange = async () => {
+        let imageToDatabase = null
+        if(imagenPerfil) {
+            imageToDatabase = await imageCompressor(imagenPerfil, 10000)
+        }
+        console.log("imagen", imagenPerfil)
+        console.log("telefono", telefotoChanged)
+        console.log("carrera1Changed", carrera1Changed)
+        console.log("carrera2Changed", carrera2Changed)
+        console.log("semestre", semestreChanged)
 
-    // }
+        const config = {
+            method: 'put',
+            url: 'http://20.225.209.57:3092/perfil/update_info_perfil',
+            headers: { 
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify({
+                "user": idUsr,
+                "rol": rolUsr,
+                "foto": imageToDatabase,
+                "telefono": telefotoChanged,
+                "carrera1": carrera1Changed,
+                "carrera2": carrera2Changed ? carrera2Changed : ''
+            })
+        };
+          
+        try {
+            const response = await axios(config)
+            if(response) setImagenPerfil(imageToDatabase)
+
+        } catch (error) {
+            alert("No se pudo hacer la actualización de la información de tu perfil")
+        }
+        
+        // Después de hacer la API request, se actualiza la imagen comprimida
+        setImagenPerfil(imageToDatabase) 
+
+        setEditar(!editar)
+    }
 
 
     //usados para el cambio de imagen
@@ -186,7 +225,7 @@ const InformacionPersonalUsuario = () => {
 
                             <div className='contenedor-img-perfil-InfPerUsuario'>
 
-                                <img src={ imagenPerfil !== "null" ? imagenPerfil : noUserImg } alt="imgProfile" className='imagen-InfPerUsuario'/>
+                                <img src={ imagenPerfil !== "null" && imagenPerfil ? imagenPerfil : noUserImg } alt="imgProfile" className='imagen-InfPerUsuario'/>
                                 <button className='btn-editar-InfPerUsuario' onClick={ () => setEditar(!editar) }>
                                     <div className='contenedor-btn-editar-InfPerUsuario'>
                                         <p className='btn-texto-InfPerUsuario'>Editar</p>
@@ -276,7 +315,7 @@ const InformacionPersonalUsuario = () => {
                              <div className='contenedor-btn-editar'>
  
                                  <BotonSencillo  onClick={ () => setEditar(!editar) } backgroundColor="gris" size="normal" children="Cancelar" />
-                                 <BotonSencillo  onClick={ () => setEditar(!editar) } backgroundColor="verde" size="normal" children="Confirmar" />
+                                 <BotonSencillo  onClick={ onConfirmChange } backgroundColor="verde" size="normal" children="Confirmar" />
  
                              </div>
  

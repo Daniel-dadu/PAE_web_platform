@@ -36,6 +36,8 @@ app.use(
 
 app.get('/perfil/get_info_perfil', db.getInfoUser)
 
+app.put('/perfil/update_info_perfil', db.updateInfoUser)
+
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
 })
