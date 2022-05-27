@@ -7,8 +7,11 @@ import  administrarAsesores  from  './imagesAdministra/administrarAsesores.png'
 import  administrarAsesorados  from  './imagesAdministra/administrarAsesorados.png'
 
 import { Template, BotonAdministrarInformacion } from '../../../routeIndex'
+import { useNavigate } from 'react-router-dom'
 
 function AdministrarUsuarios() {
+
+    const navigate = useNavigate()
   return (
     <div>
 
@@ -21,13 +24,13 @@ function AdministrarUsuarios() {
             <div className='botonesSuperiores_administrarUsuarios'> 
 
         <BotonAdministrarInformacion 
-                onClick={() => {alert('Administrar asesores')}}  
+                onClick={() => navigate('/informacionUsuarios')}  
                 Imagen={administrarAsesores} 
                 children='Administrar asesores'> 
             </BotonAdministrarInformacion>
 
             <BotonAdministrarInformacion 
-                onClick={() => {alert('Administrar asesorados')}}  
+                onClick={() => navigate('/informacionUsuarios')}  
                 Imagen={administrarAsesorados} 
                 children='Administrar asesorados'> 
             </BotonAdministrarInformacion>
@@ -36,14 +39,14 @@ function AdministrarUsuarios() {
 
             <div className='botonesInferiores_administrarUsuarios'> 
             <BotonAdministrarInformacion 
-                onClick={() => {alert('Respuestas de encuestas a asesores')}}  
+                onClick={() => navigate('/respuestasEncuestas')}  
                 Imagen={respuetasEncuestas} 
                 children='Respuestas de encuestas a asesores'> 
             </BotonAdministrarInformacion>
 
 
             <BotonAdministrarInformacion 
-                onClick={() => {alert('Respuestas de encuestas a asesorados')}}  
+                onClick={() => navigate('/respuestasEncuestas')}  
                 Imagen={respuetasEncuestas} 
                 children='Respuestas de encuestas a asesorados'> 
             </BotonAdministrarInformacion>
