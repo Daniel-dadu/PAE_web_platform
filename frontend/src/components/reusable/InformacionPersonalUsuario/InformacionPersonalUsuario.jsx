@@ -31,6 +31,36 @@ import './informacionPersonalUsuario.css';
 
 const InformacionPersonalUsuario = () => {
 
+    const idUsr = localStorage.usuario
+    const rolUsr = localStorage.rolUsuario
+
+    const [infoUserJSON, setInfoUserJSON] = useState(
+        {
+            "nombreusuario": "Cargando...",
+            "telefonousuario": null,
+            "carrerausuario1": null,
+            "carrerausuario2": null,
+            "semestreusuario": 0
+        }
+    )
+
+    useEffect(() => {
+        const config = {
+            method: 'get',
+            url: `http://20.225.209.57:3092/perfil/get_info_perfil?user=${idUsr}&rol=${rolUsr}`,
+            headers: { }
+        };
+        
+        axios(config)
+        .then(response => {
+            setInfoUserJSON(response.data)
+        })
+        .catch(_error => {
+            alert("No se pudo obtener la información de perfil")
+        });
+    }, [idUsr, rolUsr, setInfoUserJSON])
+
+
     // Hook para guardar la lista de carreras
     const [listaCarreras, setListaCarreras] = useState(['Cargando...'])
 
@@ -53,9 +83,6 @@ const InformacionPersonalUsuario = () => {
 
     }, [setListaCarreras])
 
-    const rolUsr = localStorage.rolUsuario
-    // const rolUsr = 'directivo'
-
     let data = {   
         "tipoUsuario" : rolUsr === "directivo" ? 2 : 1,
     
@@ -67,24 +94,24 @@ const InformacionPersonalUsuario = () => {
             "camposObligatorios": [
                 {
                     "campo": "Nombre",
-                    "info": "Mario Alonso",
+                    "info": infoUserJSON.nombreusuario,
                     "nombreClase": "nombre"
                 },
                 {
                     "campo": "Matricula",
-                    "info": "A01734184",
+                    "info": idUsr,
                     "nombreClase": "matricula"   
                 }
             ],
             "camposVariantes": [
                 {
                     "campo": "Carrera(s)",
-                    "info": ["ITC","IRS"],
+                    "info": [infoUserJSON.carrerausuario1, infoUserJSON.carrerausuario2].filter(carrera => carrera !== null && carrera !== ''),
                     "nombreClase": "carrera" 
                 },
                 {
-                    "campo": "Telefono",
-                    "info": 222777888,
+                    "campo": "Teléfono",
+                    "info": infoUserJSON.telefonousuario ? infoUserJSON.telefonousuario : "No se ingresó un teléfono",
                     "nombreClase":"telefono"
                 }
             ]
@@ -142,7 +169,7 @@ const InformacionPersonalUsuario = () => {
 
                             <div className='contenedor-img-perfil-InfPerUsuario'>
 
-                                <img src={ imagenPerfil ? imagenPerfil : noUserImg } alt="imgProfile" className='imagen-InfPerUsuario'/>
+                                <img src={ imagenPerfil !== "null" ? imagenPerfil : noUserImg } alt="imgProfile" className='imagen-InfPerUsuario'/>
                                 <button className='btn-editar-InfPerUsuario' onClick={ handleEditarPerfil }>
                                     <div className='contenedor-btn-editar-InfPerUsuario'>
                                         <p className='btn-texto-InfPerUsuario'>Editar</p>
