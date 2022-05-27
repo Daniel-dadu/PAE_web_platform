@@ -1,8 +1,25 @@
-.calendario_container {
-    width: 100%;
+.titles_calendarioMini_container {
+    display: flex;
+    height: 18%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titles_calendarioMini_container h2 {
+    margin-top: 0;
+    padding-top: 0.2rem;
+    padding-bottom: 0.5rem;
+}
+.titles_calendarioMini_container h4 {
+    margin-top: 0;
     height: 100%;
+}
+
+.calendarioMini_container {
+    width: 100%;
+    height: 82%;
     margin: auto;
     display: flex;
-    
 }
 

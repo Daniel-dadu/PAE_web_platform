@@ -98,7 +98,7 @@ function RegistroAsesoradoDatos() {
             setErrorCarreraApiCall(error);
             }
         )
-    }, [setCarreraApiState])
+    }, [setCarreraApiState, setErrorCarreraApiCall])
 
     // ************************************************************************************************ //
 

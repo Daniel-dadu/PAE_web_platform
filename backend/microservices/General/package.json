@@ -1,10 +1,10 @@
 {
-  "name": "asesoria",
+  "name": "general",
   "version": "1.0.0",
   "description": "",
-  "main": "Asesoria.js",
+  "main": "General.js",
   "scripts": {
-    "start": "node Asesoria.js",
+    "start": "node General.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

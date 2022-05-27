@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 
-import { Template, CambioMesPeriodo, ComponenteCalendario, PopUpInformacionAsesoria } from '../../../routeIndex'
+import { Template, CambioMesPeriodo, ComponenteCalendario, PopUpInformacionAsesoria, dateFunctions } from '../../../routeIndex'
 
 import CalendarioJSON from './PruebaCommonCalendario.json'
 import './CalendarioStyle.css'
 import  Modal from '../../../components/reusable/PopUpInformacionAsesoria/Modal';
-
-import dateFunctions from '../../../assets/reusableFunctions/dateFunctions.js'
 
 // Importante: es necesario revisar cómo se va a manejar el tema e idioma de la BARRA LATERAL. Aquí está hardcodeado
 
