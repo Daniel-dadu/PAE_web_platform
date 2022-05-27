@@ -319,18 +319,13 @@ const PopUpEncuesta = ({
                     <div className='contenido-contenedor-encuesta' ref={ ref }>
     
                         {
-                            isOverflow?
-                            (
-                                <div className={ `contenedor-espacio-encuesta-${tipo}` }></div>
-                                                                
-                            ):
-                            (
-                                <></>
-                            )
+                            isOverflow &&
+                            <div className={ `contenedor-espacio-encuesta-${tipo}` }></div>
+                          
                         }
     
                         {
-                            tipo === 2 ?
+                            tipo === 2 &&
                             (
                                 <div className='contenedor-pregunta-encuesta-imagen'>
                                     <ImageUploading multiple value={images} onChange={onChange} maxNumber={1} dataURLKey="data_url">
@@ -356,9 +351,6 @@ const PopUpEncuesta = ({
                                         )}
                                     </ImageUploading>
                                 </div>
-                            ):
-                            (
-                                <></>
                             )
                         }
     
