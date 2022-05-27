@@ -5,16 +5,47 @@ import '../../../index.css'
 import './PanelNotificaciones.css'
 import Modal from '../../../components/reusable/PopUpInformacionAsesoria/Modal.js'
 // import notificacionesJSON from './PruebaPanelNotificaciones.json'
-import { Template, Notificacion, PopUpInformacionAsesoria, BotonConImagen} from '../../../routeIndex'
+import { Template, Notificacion, PopUpInformacionAsesoria, BotonConImagen, PupUpSolicitudAsesoria} from '../../../routeIndex'
 import { FiMail } from 'react-icons/fi'
 import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 
+const info = {
+    fecha:{
+        "dia":9,
+        "mes":"marzo",
+        "hora":"3:00 PM"
+    },
+    asesorado:"Ezequiel Lozano",
+    unidadFormacion: "Fundamentos químicos",
+    duda:"Aquí debe ir mucho texto que describa la duda que tiene el alumno y debe estar escrita de la forma más específica posible.",
+    imagenes:{
+        img1:"https://bobbyhadz.com/images/blog/react-image-link/banner.webp",
+        img2:"https://i.redd.it/rt5xnrhm93s51.jpg",
+        img3:"https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Screenshots_2020/screenshot-windows-10-1.png"
+    }, 
+    asesores: [
+        {
+            nombre: "Fernando Alonso"
+        },
+        {
+            nombre: "Casimiro Buenavista"
+        },
+        {
+            nombre:"Daniel Rodriguez"
+        },
+        {
+            nombre:"Rafael Gonzales"
+        }
+    ]
+}
+
 const PanelNotificaciones = ({userTypeNotificaciones}) => { /* En caso de ser directivo se espera un tipo de usuario "directivo", para mostrar el boton de enviar notificacion, cualquier otra palabra para el panel de notificaciones de asesor y asesorado */
 
+    const [activePopUp, setActivePopUp] = useState(false);
     const navigate = useNavigate();
 
-    // Si se intenta ingresar a esta vista pero no se cuenta con el localStorage.asesoria_uf, se redirige al /agendarAsesoriaUF/ok
+    // Si se intenta ingresar a esta vista pero no se cuenta con el localStorage.usuario, se redirige a /landingPage
     useEffect(() => {
     if(!localStorage.usuario){
         localStorage.clear()
@@ -55,10 +86,14 @@ const PanelNotificaciones = ({userTypeNotificaciones}) => { /* En caso de ser di
 
     }, [setNotificacionesJSON])
 
-    console.log(JSON.stringify(notificacionesJSON))
-
     return(
         <>
+        <PupUpSolicitudAsesoria
+            data = {info}
+            activo = {activePopUp}
+            accion = {() => {setActivePopUp(!activePopUp)}}
+        >
+        </PupUpSolicitudAsesoria>
         <Template view = "notificaciones">
 
             {/* ESTE POP UP DEBE CAMBIARSE AL DE SOLICITUD ASESORÍA CUANDO DANOMAN LO HAGA */}
@@ -127,7 +162,7 @@ const PanelNotificaciones = ({userTypeNotificaciones}) => { /* En caso de ser di
                                 onClick = {
                                     (localStorage.rolUsuario === 'directivo')
                                         ? (notificacionesJSON['notificaciones'][index]['origen'] === "Asesoria reservada")
-                                            ? () => {toggle()}
+                                            ? () => {setActivePopUp(!activePopUp)}
                                             : () => {}
                                         : () => {}
                                 }
