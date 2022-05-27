@@ -518,6 +518,150 @@ BEGIN
 END;
 $func$;
 
+-- Obtención de las asesorías de un usuario a partir de su ID, mes y año
+CREATE OR REPLACE FUNCTION get_asesorias_usuario(
+  idUsuario VARCHAR(10),
+  mes INTEGER,
+  anio INTEGER
+)
+RETURNS TABLE (
+  numeroDia DOUBLE PRECISION,
+  status STATUSASESORIA,
+  hora DOUBLE PRECISION
+)
+LANGUAGE plpgsql AS $func$
+
+BEGIN
+
+  RETURN QUERY
+    SELECT
+      EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") AS numeroDia,
+      "Asesoria"."status",
+      EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") AS hora
+    FROM "Asesoria", "HorarioDisponible", "Usuario"
+    WHERE "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+    AND (
+      "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+      "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+    )
+    AND "Usuario"."idUsuario" = idUsuario
+    AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mes
+    AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anio;
+
+END;
+$func$;
+
+-- Obtención de las asesorías de todos los usuarios
+CREATE OR REPLACE FUNCTION get_allAsesorias(
+  mes INTEGER,
+  anio INTEGER
+)
+RETURNS TABLE (
+  numeroDia DOUBLE PRECISION,
+  status STATUSASESORIA,
+  hora DOUBLE PRECISION
+)
+LANGUAGE plpgsql AS $func$
+
+BEGIN
+
+  RETURN QUERY
+    SELECT
+      EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") AS numeroDia,
+      "Asesoria"."status",
+      EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") AS hora
+    FROM "Asesoria", "HorarioDisponible", "Usuario"
+    WHERE "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+    AND (
+      "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+      "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+    )
+    AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mes
+    AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anio;
+
+END;
+$func$;
+
+-- Obtención de la información de una asesoría, a partir del idUsuario, día, mes, anio
+CREATE OR REPLACE FUNCTION get_informacionAsesoria(
+  idUsuario VARCHAR(10),
+  horaC INTEGER,
+  diaC INTEGER,
+  mesC INTEGER,
+  anioC INTEGER
+)
+RETURNS TABLE (
+  hora DOUBLE PRECISION,
+  dia DOUBLE PRECISION,
+  mes DOUBLE PRECISION,
+  anio DOUBLE PRECISION,
+  usuario VARCHAR(50),
+  lugar TEXT,
+  uF VARCHAR(100),
+  duda TEXT,
+  image TEXT
+)
+LANGUAGE plpgsql AS $func$
+
+BEGIN
+
+  RETURN QUERY
+    SELECT
+      EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") AS hora,
+      EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") AS dia,
+      EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") AS mes,
+      EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") AS anio,
+      (
+        SELECT "Usuario"."nombreUsuario"
+        FROM "Asesoria", "HorarioDisponible", "Usuario"
+        WHERE
+          (
+            "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+            "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+          )
+          AND "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+          AND "Usuario"."idUsuario" != idUsuario
+          AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = horaC
+          AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
+          AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
+          AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC
+      ) AS usuario,
+      "Asesoria"."lugar",
+      "UnidadFormacion"."nombreUF",
+      "Asesoria"."descripcionDuda",
+      "AsesoriaImagen"."imagen"
+    FROM "Asesoria", "AsesoriaImagen", "HorarioDisponible", "Usuario", "UnidadFormacion"
+    WHERE
+      "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+      AND (
+        "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+        "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+      )
+      AND "Asesoria"."idUF" = "UnidadFormacion"."idUF"
+      AND "AsesoriaImagen"."idAsesoria" = (
+        SELECT "Asesoria"."idAsesoria"
+          FROM "Asesoria", "HorarioDisponible", "Usuario", "UnidadFormacion"
+          WHERE "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+          AND (
+            "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+            "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+          )
+          AND "Asesoria"."idUF" = "UnidadFormacion"."idUF"
+          AND "Usuario"."idUsuario" = idUsuario
+          AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = horaC
+          AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
+          AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
+          AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC
+      )
+      AND "Usuario"."idUsuario" = idUsuario
+      AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = horaC
+      AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
+      AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
+      AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC;
+
+END;
+$func$;
+
 ------------ PROCEDURES ---------------
 
 -- Procedimiento para hacer el registro de un asesorado
