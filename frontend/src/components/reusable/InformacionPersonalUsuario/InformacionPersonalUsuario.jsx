@@ -6,6 +6,8 @@ import { CampoSeleccionarEnListaDesplegable, CampoTextoPequeno, BotonSencillo, I
 
 import noUserImg from '../../../assets/noUserImg.png'
 
+import LoadingSpin from "react-loading-spin";
+
 import './informacionPersonalUsuario.css';
 
 /*
@@ -158,7 +160,12 @@ const InformacionPersonalUsuario = () => {
         })
     }
 
+    const [loadingNext, setLoadingNext] = useState(false)
+
     const onConfirmChange = async () => {
+        
+        setLoadingNext(true)
+
         let imageToDatabase = null
         if(imagenPerfil) {
             imageToDatabase = await imageCompressor(imagenPerfil)
@@ -200,6 +207,8 @@ const InformacionPersonalUsuario = () => {
             "carrerausuario2": carrera2Changed ? carrera2Changed : null,
             "semestreusuario": semestreChanged ? semestreChanged : 0
         })
+
+        setLoadingNext(false)
 
         setEditar(!editar)
 
@@ -338,7 +347,15 @@ const InformacionPersonalUsuario = () => {
                              <div className='contenedor-btn-editar'>
  
                                  <BotonSencillo  onClick={ onCancelChange } backgroundColor="gris" size="normal" children="Cancelar" />
-                                 <BotonSencillo  onClick={ onConfirmChange } backgroundColor="verde" size="normal" children="Confirmar" />
+
+                                {
+                                    loadingNext ? 
+                                    <div className='loading_spin'>
+                                        <LoadingSpin />
+                                    </div>
+                                    :
+                                    <BotonSencillo  onClick={ onConfirmChange } backgroundColor="verde" size="normal" children="Confirmar" />
+                                }
  
                              </div>
  

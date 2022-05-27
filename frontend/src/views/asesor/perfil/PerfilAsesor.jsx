@@ -1,7 +1,6 @@
 import React from 'react'
 import './PerfilAsesor.css'
-import { Template, InformacionPersonalUsuario, BotonConImagen, BotonCambioPerfil, ListaUnidadesDeFormacionAsesor } from '../../../routeIndex'
-import { BsBoxArrowInRight } from 'react-icons/bs'
+import { BotonCambioPerfil, ListaUnidadesDeFormacionAsesor, Perfil } from '../../../routeIndex'
 
 const dataExample = [
   {
@@ -59,42 +58,15 @@ function PerfilAsesor(){
 
     return(
 
-        <div>
+        <Perfil>
+            <div className = 'containerBtnCambioTipoUsuario'>
+                <BotonCambioPerfil />
+            </div>
 
-            <Template view = 'perfil'>
-
-                <div className = 'btn_PerfilCommon'>
-
-                    <h1> Administrar perfil </h1>
-
-                    <div className = 'botonCerrarSesion'>
-                        <BotonConImagen 
-                            onClick = {'Hola'} 
-                            backgroundColor = 'grisClaro'
-                            size = "grande" 
-                            Image = {BsBoxArrowInRight}
-                        >
-                            Cerrar Sesión
-                        </BotonConImagen>
-                    </div>
-
-                </div>
-
-                <div className = 'boxPerfilCommon'>
-                    <InformacionPersonalUsuario data = {dataExample} />
-                </div>
-
-                <div className = 'containerBtnCambioTipoUsuario'>
-                    <BotonCambioPerfil />
-                </div>
-
-                <div className = 'containerListaUFsAsesor'>
-                  <ListaUnidadesDeFormacionAsesor />
-                </div>
-
-            </Template>
-
-        </div>
+            <div className = 'containerListaUFsAsesor'>
+                <ListaUnidadesDeFormacionAsesor data = {dataExample} />
+            </div>
+        </Perfil>
         
     )
 

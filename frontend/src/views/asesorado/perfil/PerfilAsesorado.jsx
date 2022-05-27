@@ -1,12 +1,17 @@
 import React from 'react';
 import './perfilAsesorado.css';
 
-import { Perfil } from '../../../routeIndex';
+import { Perfil, BotonCambioPerfil } from '../../../routeIndex';
 
 function PerfilAsesorado() {
   return (
     <Perfil>
-      <h3>Más info</h3>
+      {
+        localStorage.usuarioAsesor &&
+        <div className = 'containerBtnCambioTipoUsuario'>
+          <BotonCambioPerfil />
+        </div>
+      }
     </Perfil>
   )
 }
