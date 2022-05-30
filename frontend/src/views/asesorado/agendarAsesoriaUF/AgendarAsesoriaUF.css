@@ -29,29 +29,50 @@
     margin-top: 1.5rem;
 }
 
+.container_optativasOnly_checkbox {
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.container_optativasOnly_checkbox input {
+    border-radius: 100%;
+    height: 0.7rem;
+}
+
+.container_optativasOnly_checkbox label {
+    font-size: .9rem;
+    margin-bottom: 20px;
+    margin-left: .3rem;
+    font-weight: 300;
+}
+
 .container_in_aauf h3 {
     margin: 12% 0 7% 0;
     font-size: 1.3rem;
 }
 
+.container_in_aauf .container-boxBlocked {
+    position: absolute;
+    background-color: rgba(128, 128, 128, 0.418);
+    height: 6rem;
+    width: 112%;
+    border-radius: 1rem;
+    z-index: 1;
+}
+
+.container_in_aauf .carrera {
+    transform: translate(-0.9rem, -0.2rem);
+}
+.container_in_aauf .semestre {
+    transform: translate(-0.9rem, 1.7rem);
+}
+
+
 .container_in_aauf #CarreraTitleInput {
     margin-top: 0;
 }
 
-.container_in_aauf .ufTitleLupa_container {
-    margin: 12% 0 7% 0;
-}
-
 .container_in_aauf #CarreraTitleInput3 {
-    display: inline;
-}
-
-.container_in_aauf .lupaIcon {
-    background-color: #e6e6e6;
-    /* background-color: transparent; */
-    color: #7e7e7e;
-    margin-left: 30px;
-    cursor: pointer;
-    padding: 3px 5px;
-    border-radius: 5px;
+    margin: 12% 0 7% 0;
 }
