@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from "react-router-dom"
 import './AgendarAsesoriaUF.css'
-import { FaSearch } from 'react-icons/fa'
 
 import { AgendarAsesoria, CampoSeleccionarEnListaDesplegable } from '../../../routeIndex'
 
@@ -106,7 +105,7 @@ function AgendarAsesoriaUF() {
   // Hook para guardar las opciones de las unidades de formación
   const [opcionesUF, setOpcionesUF] = useState([])
   // Opción por defecto que se debe mostrar en caso de que no se haya seleccionado la carrera y/o el semestre
-  const defaultUFoption = ["* Una vez selecciones la carrera y el semestre, presiona el botón de la lupa para buscar la unidad de formación correspondiente"]
+  const defaultUFoption = []
 
   // Hook con las propiedades que se le envían al botón "Siguiente"
   const [infoBtnSiguiente, setInfoBtnSiguiente] = useState(null)
@@ -125,6 +124,8 @@ function AgendarAsesoriaUF() {
       uf: null 
     }) 
     setCarreraSeleccionada(carreraValue.value)
+
+    if(semestreSeleccionado) ufApiCall(carreraValue.value, semestreSeleccionado)
   }
 
   // Función que recibe el semestre seleccionado en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a semestreSeleccionado
@@ -136,6 +137,8 @@ function AgendarAsesoriaUF() {
       uf: null 
     })
     setSemestreSeleccionado(semestreValue.value)
+
+    if(carreraSeleccionada) ufApiCall(carreraSeleccionada, semestreValue.value)
   }
 
   // Hook usado para conocer el estado de la petición a la API para consultar las UFs
@@ -156,12 +159,16 @@ function AgendarAsesoriaUF() {
   }
 
   // Función que hace la llamada a la api para consultar las UFs (solo se ejecuta cuando se le llama en el botón de la lupa)
-  const ufApiCall = () => {
+  const ufApiCall = (carreraParam, semestreParam) => {
+    
+    // const carreraAPI = carreraSeleccionada ? carreraSeleccionada : carreraParam
+    // const semestreAPI = semestreSeleccionado ? semestreSeleccionado : semestreParam
+
     setUfApiState({ loading: true })
     // A la request le agregamos los query params necesarios para esta consulta
     fetch('http://20.225.209.57:3094/asesoria/get_uf/?' + new URLSearchParams({
-      carrera: getIDstring(carreraSeleccionada), // Cortamos el string para usar únicamente el ID de la carrera
-      semestre: semestreSeleccionado
+      carrera: getIDstring(carreraParam), // Cortamos el string para usar únicamente el ID de la carrera
+      semestre: semestreParam
     }))
       .then(res => res.json()) // Se indica que la respuesta se regresará en un JSON
       .then(
@@ -185,6 +192,20 @@ function AgendarAsesoriaUF() {
   }
 
   // ************************************************************************************************ //
+
+  const [userChecked, setUserChecked] = useState(false)
+
+  const clickOptativasOnly = () => {
+    setUserChecked(!userChecked)
+    if(userChecked) {
+      const carreraOpt = 'OPTG - Optativa General'
+      const semestreOpt = 1
+      setCarreraSeleccionada(carreraOpt)
+      setSemestreSeleccionado(semestreOpt)
+      ufApiCall(carreraOpt, semestreOpt)
+    }
+  }
+
 
   return (
     <AgendarAsesoria 
@@ -219,6 +240,12 @@ function AgendarAsesoriaUF() {
 
           <div className='container_in_aauf'>
 
+            <div className='container_optativasOnly_checkbox'> 
+              <input type="checkbox" id="optativas" name="optativas" value="SoloOptativas" onChange={() => clickOptativasOnly()} />
+              <label htmlFor="optativas" > Solo mostrar optativas </label>
+            </div>
+
+            <div className={ !userChecked ? 'container-boxBlocked carrera' : '' } ></div>
             <h3 id="CarreraTitleInput">Carrera</h3>
             {
               carreraApiState.apiData === null || carreraApiState.apiData === undefined ?
@@ -236,27 +263,32 @@ function AgendarAsesoriaUF() {
               />
             }
 
+            <div className={ !userChecked ? 'container-boxBlocked semestre' : '' } ></div>
             <h3>Semestre</h3>
-            <CampoSeleccionarEnListaDesplegable 
-              size="small" 
-              options={[1,2,3,4,5,6,7,8,9]} 
-              parentCallback={handleSemestre}
-              defaultValue={semestreSeleccionado}
-            />
+
+              <CampoSeleccionarEnListaDesplegable 
+                size="small" 
+                options={[1,2,3,4,5,6,7,8,9]} 
+                parentCallback={handleSemestre}
+                defaultValue={semestreSeleccionado}
+              />
             
-            <div className='ufTitleLupa_container'>
-              <h3 id="CarreraTitleInput3">Unidad de formación</h3>
-              <button onClick={() => ufApiCall()} className="lupaIcon">
-                <FaSearch size={17}/>
-              </button>
-            </div>
+            <h3 id="CarreraTitleInput3">Unidad de formación</h3>
             {
               (errorUfApiCall || ufApiState.loading) ? 
-              <CampoSeleccionarEnListaDesplegable size="medium" options={defaultUFoption} parentCallback={handleUF} 
-              defaultValue={localStorage.asesoria_uf ? localStorage.asesoria_uf : ''} />
+              <CampoSeleccionarEnListaDesplegable 
+                size="medium" 
+                options={defaultUFoption} 
+                parentCallback={handleUF} 
+                defaultValue={localStorage.asesoria_uf ? localStorage.asesoria_uf : ''} 
+              />
               :
-              <CampoSeleccionarEnListaDesplegable size="medium" options={opcionesUF} parentCallback={handleUF} 
-              defaultValue={localStorage.asesoria_uf ? localStorage.asesoria_uf : ''}/>
+              <CampoSeleccionarEnListaDesplegable 
+                size="medium" 
+                options={opcionesUF} 
+                parentCallback={handleUF} 
+                defaultValue={localStorage.asesoria_uf ? localStorage.asesoria_uf : ''}
+              />
             }
 
           </div>
