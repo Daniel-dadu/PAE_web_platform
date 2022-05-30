@@ -69,8 +69,6 @@ function AgendarAsesoriaUF() {
     } 
   }, [statusasesoriaurl, countErrorMessage, navigate])
 
-  const [infoBtnSiguiente, setInfoBtnSiguiente] = useState(null)
-
   // ****************** Hooks y código usado para la consulta de las carreras a la API ****************** //
 
   // Hook usado para conocer el estado de la petición a la API para consultar las carreras
@@ -110,29 +108,33 @@ function AgendarAsesoriaUF() {
   // Opción por defecto que se debe mostrar en caso de que no se haya seleccionado la carrera y/o el semestre
   const defaultUFoption = ["* Una vez selecciones la carrera y el semestre, presiona el botón de la lupa para buscar la unidad de formación correspondiente"]
 
-  // Función que recibe la UF seleccionada en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a carreraSeleccionada
-  const handleUF = ufValue => {
-    const isNotUF = ufValue.value[0] === '*'
-    setInfoBtnSiguiente({
-      uf: isNotUF ? null : getIDstring(ufValue.value) // Cortamos el string para usar únicamente el ID de la carrera
-    })
-  }
+  // Hook con las propiedades que se le envían al botón "Siguiente"
+  const [infoBtnSiguiente, setInfoBtnSiguiente] = useState(null)
 
   // Hook para guardar la carrera seleccionada
-  const [carreraSeleccionada, setCarreraSeleccionada] = useState(null)
+  const [carreraSeleccionada, setCarreraSeleccionada] = useState(localStorage.asesoria_carrera ? localStorage.asesoria_carrera : null)
+  // Hook para guardar el semestre seleccionado
+  const [semestreSeleccionado, setSemestreSeleccionado] = useState(localStorage.asesoria_semestre ? localStorage.asesoria_semestre : null)
+
   // Función que recibe la carrera seleccionada en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a carreraSeleccionada
   const handleCarrera = carreraValue => {
     setOpcionesUF(defaultUFoption) // En caso de que se haga un cambio en la carrera, se establece la opcion por default en las opcionesUF
-    setInfoBtnSiguiente({ uf: null }) 
+    setInfoBtnSiguiente({ 
+      carrera: carreraValue.value,
+      semestre: semestreSeleccionado,
+      uf: null 
+    }) 
     setCarreraSeleccionada(carreraValue.value)
   }
-  
-  // Hook para guardar el semestre seleccionado
-  const [semestreSeleccionado, setSemestreSeleccionado] = useState(null)
+
   // Función que recibe el semestre seleccionado en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a semestreSeleccionado
   const handleSemestre = semestreValue => {
     setOpcionesUF(defaultUFoption) // En caso de que se haga un cambio en la carrera, se establece la opcion por default en las opcionesUF
-    setInfoBtnSiguiente({ uf: null }) 
+    setInfoBtnSiguiente({ 
+      carrera: carreraSeleccionada,
+      semestre: semestreValue.value,
+      uf: null 
+    })
     setSemestreSeleccionado(semestreValue.value)
   }
 
@@ -143,6 +145,15 @@ function AgendarAsesoriaUF() {
   })
   // Hook usado para indicar el error de la petición a la API para consultar las UFs, en caso de que ocurra
   const [errorUfApiCall, setErrorUfApiCall] = useState(null)
+
+  // Función que recibe la UF seleccionada en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a carreraSeleccionada
+  const handleUF = ufValue => {
+    setInfoBtnSiguiente({
+      carrera: carreraSeleccionada,
+      semestre: semestreSeleccionado,
+      uf: ufValue.value[0] === '*' ? null : getIDstring(ufValue.value) // Cortamos el string para usar únicamente el ID de la carrera
+    })
+  }
 
   // Función que hace la llamada a la api para consultar las UFs (solo se ejecuta cuando se le llama en el botón de la lupa)
   const ufApiCall = () => {
@@ -211,13 +222,27 @@ function AgendarAsesoriaUF() {
             <h3 id="CarreraTitleInput">Carrera</h3>
             {
               carreraApiState.apiData === null || carreraApiState.apiData === undefined ?
-              <CampoSeleccionarEnListaDesplegable size="medium" options={["Cargando..."]}/>
+              <CampoSeleccionarEnListaDesplegable 
+                size="medium" 
+                options={["Cargando..."]} 
+                defaultValue={carreraSeleccionada} 
+              />
               : 
-              <CampoSeleccionarEnListaDesplegable size="medium" options={carreraApiState.apiData} parentCallback={handleCarrera}/>
+              <CampoSeleccionarEnListaDesplegable 
+                size="medium" 
+                options={carreraApiState.apiData}
+                parentCallback={handleCarrera}
+                defaultValue={carreraSeleccionada}
+              />
             }
 
             <h3>Semestre</h3>
-            <CampoSeleccionarEnListaDesplegable size="small" options={[1,2,3,4,5,6,7,8,9]} parentCallback={handleSemestre}/>
+            <CampoSeleccionarEnListaDesplegable 
+              size="small" 
+              options={[1,2,3,4,5,6,7,8,9]} 
+              parentCallback={handleSemestre}
+              defaultValue={semestreSeleccionado}
+            />
             
             <div className='ufTitleLupa_container'>
               <h3 id="CarreraTitleInput3">Unidad de formación</h3>
@@ -227,9 +252,11 @@ function AgendarAsesoriaUF() {
             </div>
             {
               (errorUfApiCall || ufApiState.loading) ? 
-              <CampoSeleccionarEnListaDesplegable size="medium" options={defaultUFoption} parentCallback={handleUF} />
+              <CampoSeleccionarEnListaDesplegable size="medium" options={defaultUFoption} parentCallback={handleUF} 
+              defaultValue={localStorage.asesoria_uf ? localStorage.asesoria_uf : ''} />
               :
-              <CampoSeleccionarEnListaDesplegable size="medium" options={opcionesUF} parentCallback={handleUF} />
+              <CampoSeleccionarEnListaDesplegable size="medium" options={opcionesUF} parentCallback={handleUF} 
+              defaultValue={localStorage.asesoria_uf ? localStorage.asesoria_uf : ''}/>
             }
 
           </div>

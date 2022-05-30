@@ -321,10 +321,20 @@ const InformacionPersonalUsuario = () => {
                                 data["tipoUsuario"] === 1 ?
                                 <div>
                                     <p className='etiqueta-carrera-InfPerUsuario' > Carrera: </p>
-                                    <CampoSeleccionarEnListaDesplegable size="big" options={ data.relleno.carrera } parentCallback={onInsertCarrera1}/>
+                                    <CampoSeleccionarEnListaDesplegable 
+                                        size="big" 
+                                        options={ data.relleno.carrera } 
+                                        parentCallback={onInsertCarrera1} 
+                                        defaultValue={carrera1Changed} 
+                                    />
                                     
                                     <p className='etiqueta-carrera-InfPerUsuario' > Carrera 2: </p>
-                                    <CampoSeleccionarEnListaDesplegable size="big" options={ data.relleno.carrera } parentCallback={onInsertCarrera2}/>
+                                    <CampoSeleccionarEnListaDesplegable 
+                                        size="big" 
+                                        options={ data.relleno.carrera } 
+                                        parentCallback={onInsertCarrera2}
+                                        defaultValue={carrera2Changed}
+                                    />
 
                                     { // Si es un asesor, se muestra el campo para cambiar el semestre
                                         rolUsr === 'asesor' && 

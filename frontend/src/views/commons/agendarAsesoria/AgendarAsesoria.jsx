@@ -60,6 +60,8 @@ function AgendarAsesoria({
     const [loadingNext, setLoadingNext] = useState(false)
 
     const clearLocalStorageAsesoria = () => {
+        localStorage.removeItem('asesoria_carrera')
+        localStorage.removeItem('asesoria_semestre')
         localStorage.removeItem('asesoria_uf')
         localStorage.removeItem('asesoria_duda')
         for(let i = 1; i <= 3; i++) localStorage.removeItem(`asesoria_imagen${i}`)
@@ -85,14 +87,21 @@ function AgendarAsesoria({
         // Se entra en caso de que el botón se ejecute en la view 1 - AgendarAsesoriaUF
         if(data.view === 1) {
 
-            // Eliminamos la UF (por si usa el botón de atrás)
+            // Eliminamos la carrera, semestre y UF previas (por si usa el botón de atrás)
+            localStorage.removeItem('asesoria_carrera')
+            localStorage.removeItem('asesoria_semestre')
             localStorage.removeItem('asesoria_uf')
             
             // Si los datos proporcionados no son válidos, se manda el mensaje de error
-            if(data.props === null || data.props.uf === null) {
+            if(data.props === null || 
+                data.props.carera === null ||
+                data.props.semestre === null ||
+                data.props.uf === null) {
                 navigate('/agendarAsesoriaUF/error')
             } else {
                 // Se guarda la UF en el localStorage
+                localStorage.setItem('asesoria_carrera', data.props.carrera)
+                localStorage.setItem('asesoria_semestre', data.props.semestre)
                 localStorage.setItem('asesoria_uf', data.props.uf)
                 navigate('/agendarAsesoriaDuda')
             }

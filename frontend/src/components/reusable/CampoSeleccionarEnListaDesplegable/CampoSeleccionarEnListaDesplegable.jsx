@@ -14,15 +14,15 @@ EJEMPLO:
 <CampoSeleccionarEnListaDesplegable size="small" options={info.semestre} idList="carrera"/>
 */
 
-function CampoSeleccionarEnListaDesplegable({ size, parentCallback, options, defectValue = '' }) {
+function CampoSeleccionarEnListaDesplegable({ size, parentCallback, options, defaultValue = '' }) {
 
   // Función que envía al componente padre el valor del elemento seleccionado
-  const onTrigger = (selectedItem) => parentCallback(selectedItem)
+  const onTrigger = selectedItem => parentCallback(selectedItem)
 
   return (
     <div className="container_cseld">
       <DatalistInput
-        value = {defectValue}
+        value = {defaultValue}
         style={{width: size === "small" ? "100px" : size === "medium" ? "250px" : "350px"}}
         onSelect={(item) => onTrigger(item)}
         items={options.map((option) => { return {id: option, value: option}})}
