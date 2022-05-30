@@ -97,7 +97,7 @@ function AgendarAsesoria({
                 data.props.carera === null ||
                 data.props.semestre === null ||
                 data.props.uf === null) {
-                navigate('/agendarAsesoriaUF/error')
+                alert("No se han llenado todos los campos correctamente")
             } else {
                 // Se guarda la UF en el localStorage
                 localStorage.setItem('asesoria_carrera', data.props.carrera)

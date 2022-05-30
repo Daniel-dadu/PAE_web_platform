@@ -28,7 +28,10 @@ function CampoSeleccionarEnListaDesplegable({ size, parentCallback, options, def
   // Función que envía al componente padre el valor del elemento seleccionado
   const onTrigger = selectedItem => parentCallback(selectedItem)
 
-  const clearInput = () => setValue('')
+  const clearInput = () => {
+    setValue('')
+    onTrigger('')
+  }
   
 
   return (

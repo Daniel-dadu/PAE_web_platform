@@ -104,8 +104,6 @@ function AgendarAsesoriaUF() {
 
   // Hook para guardar las opciones de las unidades de formación
   const [opcionesUF, setOpcionesUF] = useState([])
-  // Opción por defecto que se debe mostrar en caso de que no se haya seleccionado la carrera y/o el semestre
-  const defaultUFoption = []
 
   // Hook con las propiedades que se le envían al botón "Siguiente"
   const [infoBtnSiguiente, setInfoBtnSiguiente] = useState(null)
@@ -114,10 +112,12 @@ function AgendarAsesoriaUF() {
   const [carreraSeleccionada, setCarreraSeleccionada] = useState(localStorage.asesoria_carrera ? localStorage.asesoria_carrera : null)
   // Hook para guardar el semestre seleccionado
   const [semestreSeleccionado, setSemestreSeleccionado] = useState(localStorage.asesoria_semestre ? localStorage.asesoria_semestre : null)
+  // Hook para guardar la UF seleccionado
+  const [ufSeleccionada, setUfSeleccionada] = useState(localStorage.asesoria_uf ? localStorage.asesoria_uf : null)
 
   // Función que recibe la carrera seleccionada en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a carreraSeleccionada
   const handleCarrera = carreraValue => {
-    setOpcionesUF(defaultUFoption) // En caso de que se haga un cambio en la carrera, se establece la opcion por default en las opcionesUF
+    setOpcionesUF([]) // En caso de que se haga un cambio en la carrera, se establece la opcion por default en las opcionesUF
     setInfoBtnSiguiente({ 
       carrera: carreraValue.value,
       semestre: semestreSeleccionado,
@@ -125,12 +125,13 @@ function AgendarAsesoriaUF() {
     }) 
     setCarreraSeleccionada(carreraValue.value)
 
+    setUfSeleccionada('')
     if(semestreSeleccionado) ufApiCall(carreraValue.value, semestreSeleccionado)
   }
 
   // Función que recibe el semestre seleccionado en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a semestreSeleccionado
   const handleSemestre = semestreValue => {
-    setOpcionesUF(defaultUFoption) // En caso de que se haga un cambio en la carrera, se establece la opcion por default en las opcionesUF
+    setOpcionesUF([]) // En caso de que se haga un cambio en la carrera, se establece la opcion por default en las opcionesUF
     setInfoBtnSiguiente({ 
       carrera: carreraSeleccionada,
       semestre: semestreValue.value,
@@ -138,6 +139,7 @@ function AgendarAsesoriaUF() {
     })
     setSemestreSeleccionado(semestreValue.value)
 
+    setUfSeleccionada('')
     if(carreraSeleccionada) ufApiCall(carreraSeleccionada, semestreValue.value)
   }
 
@@ -151,18 +153,19 @@ function AgendarAsesoriaUF() {
 
   // Función que recibe la UF seleccionada en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a carreraSeleccionada
   const handleUF = ufValue => {
-    setInfoBtnSiguiente({
-      carrera: carreraSeleccionada,
-      semestre: semestreSeleccionado,
-      uf: ufValue.value[0] === '*' ? null : getIDstring(ufValue.value) // Cortamos el string para usar únicamente el ID de la carrera
-    })
+    if(ufValue === '') {
+      ufApiCall(carreraSeleccionada, semestreSeleccionado)
+    } else {
+      setInfoBtnSiguiente({
+        carrera: carreraSeleccionada,
+        semestre: semestreSeleccionado,
+        uf: ufValue.value[0] === '*' ? null : getIDstring(ufValue.value) // Cortamos el string para usar únicamente el ID de la carrera
+      })
+    }
   }
 
   // Función que hace la llamada a la api para consultar las UFs (solo se ejecuta cuando se le llama en el botón de la lupa)
   const ufApiCall = (carreraParam, semestreParam) => {
-    
-    // const carreraAPI = carreraSeleccionada ? carreraSeleccionada : carreraParam
-    // const semestreAPI = semestreSeleccionado ? semestreSeleccionado : semestreParam
 
     setUfApiState({ loading: true })
     // A la request le agregamos los query params necesarios para esta consulta
@@ -186,7 +189,7 @@ function AgendarAsesoriaUF() {
         error => {
           setUfApiState({ loading: false })
           setErrorUfApiCall(error)
-          setOpcionesUF(defaultUFoption)
+          setOpcionesUF([])
         }
       )
   }
@@ -196,14 +199,15 @@ function AgendarAsesoriaUF() {
   const [userChecked, setUserChecked] = useState(false)
 
   const clickOptativasOnly = () => {
-    setUserChecked(!userChecked)
-    if(userChecked) {
+    if(!userChecked) {
       const carreraOpt = 'OPTG - Optativa General'
       const semestreOpt = 1
       setCarreraSeleccionada(carreraOpt)
       setSemestreSeleccionado(semestreOpt)
       ufApiCall(carreraOpt, semestreOpt)
     }
+    setUserChecked(!userChecked)
+
   }
 
 
@@ -241,11 +245,11 @@ function AgendarAsesoriaUF() {
           <div className='container_in_aauf'>
 
             <div className='container_optativasOnly_checkbox'> 
-              <input type="checkbox" id="optativas" name="optativas" value="SoloOptativas" onChange={() => clickOptativasOnly()} />
+              <input type="checkbox" id="optativas" name="optativas" value="SoloOptativas" onChange={clickOptativasOnly} />
               <label htmlFor="optativas" > Solo mostrar optativas </label>
             </div>
 
-            <div className={ !userChecked ? 'container-boxBlocked carrera' : '' } ></div>
+            <div className={ userChecked ? 'container-boxBlocked carrera' : '' } ></div>
             <h3 id="CarreraTitleInput">Carrera</h3>
             {
               carreraApiState.apiData === null || carreraApiState.apiData === undefined ?
@@ -263,7 +267,7 @@ function AgendarAsesoriaUF() {
               />
             }
 
-            <div className={ !userChecked ? 'container-boxBlocked semestre' : '' } ></div>
+            <div className={ userChecked ? 'container-boxBlocked semestre' : '' } ></div>
             <h3>Semestre</h3>
 
               <CampoSeleccionarEnListaDesplegable 
@@ -278,16 +282,16 @@ function AgendarAsesoriaUF() {
               (errorUfApiCall || ufApiState.loading) ? 
               <CampoSeleccionarEnListaDesplegable 
                 size="medium" 
-                options={defaultUFoption} 
+                options={[]} 
                 parentCallback={handleUF} 
-                defaultValue={localStorage.asesoria_uf ? localStorage.asesoria_uf : ''} 
+                defaultValue={ufSeleccionada} 
               />
               :
               <CampoSeleccionarEnListaDesplegable 
                 size="medium" 
                 options={opcionesUF} 
                 parentCallback={handleUF} 
-                defaultValue={localStorage.asesoria_uf ? localStorage.asesoria_uf : ''}
+                defaultValue={ufSeleccionada}
               />
             }
 
