@@ -184,9 +184,9 @@ function RegistroAsesoradoDatos() {
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Carrera * </div>
                     {
                         carreraApiState.apiData === null || carreraApiState.apiData === undefined ?
-                        <CampoSeleccionarEnListaDesplegable size="large" options={["Cargando..."]}/>
+                        <CampoSeleccionarEnListaDesplegable size="large" options={["Cargando..."]} defaultValue={carrera} />
                         : 
-                        <CampoSeleccionarEnListaDesplegable size="large" options={carreraApiState.apiData} parentCallback={handleCarrera}/>
+                        <CampoSeleccionarEnListaDesplegable size="large" options={carreraApiState.apiData} parentCallback={handleCarrera} defaultValue={carrera}/>
                     }
                 </div>
 
