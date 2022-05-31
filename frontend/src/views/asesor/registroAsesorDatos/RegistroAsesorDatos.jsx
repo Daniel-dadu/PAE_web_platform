@@ -204,7 +204,7 @@ function RegistroAsesorDatos() {
                     }
                 </div>
                 <div className='contenedro_deInputsAsesorRegistro'> 
-                    <div className='texto_contenedor_deInputsAsesorRegistro'> 2da Carrera * </div>
+                    <div className='texto_contenedor_deInputsAsesorRegistro'> 2da Carrera </div>
                     {
                         carreraApiState.apiData === null || carreraApiState.apiData === undefined ?
                         <CampoSeleccionarEnListaDesplegable size="large" options={["Cargando..."]} defaultValue={carrera2} />
