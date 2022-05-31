@@ -1,0 +1,110 @@
+OP3001B
+Optativa profesional multidisciplinaria
+AR3007B
+Emprendimiento en el ámbito de la arquitectura
+AR3008B
+Gestión arquitectónica
+NI3001B
+Desarrollo de estrategias de internacionalización para el siglo XXI
+IN3001B
+Diseño de un sistema organizacional inteligente
+MR3002B
+Diseño e implementación de sistemas mecatrónicos
+AG3002B
+Transformación digital de biosistemas productivos
+AG3003B
+Gestión integral y ecoeficiente
+TA3002B
+Administración de procesos de producción y distribución de alimentos
+BT3002B
+Diseño de procesos biotecnológicos y de bioproductos
+CV3001B
+Integración de proyectos de ingeniería civil
+MA3001B
+Desarrollo de proyectos de ingeniería matemática
+DS3001B
+Diseño de estrategias de sustentabilidad corporativa
+IQ3001B
+Desarrollo de modelos de sustentabilidad energética
+TE3004B
+Desarrollo de telecomunicaciones y sistemas energéticos
+F3001B
+Integración de ingeniería física
+NN3002B
+Desarrollo de proyecto integrador de innovación
+BI3001B
+Desarrollo de dispositivos médicos
+M3001B
+Diseño de máquinas
+Q3001B
+Desarrollo de proyectos de nanotecnología
+IQ3002B
+Aplicación de la ingeniería de procesos en proyectos industriales
+TE3003B
+Integración de robótica y sistemas inteligentes
+TC3002B
+Desarrollo de aplicaciones avanzadas de ciencias computacionales
+TC3003B
+Implementación de redes de área amplia y servicios distribuidos
+TI3004B
+Transformación digital de la organización
+AT3002B
+Proyecto integral de arte digital
+AD3001B
+Gestión estratégica de PYMES
+AD3002B
+Institucionalización de la empresa familiar
+FZ3001B
+Administración financiera internacional
+FZ3002B
+Gestión de fondos de inversión
+CF3002B
+Dirección financiera y contraloría estratégica
+CO3001B
+Proyecto integrador de comunicación
+EM3001B
+Escalabilidad
+EM3002B
+Persuasión y ventas
+DL3002B
+Proyecto integral de diseño
+RH3001B
+Liderazgo estratégico del talento
+RH3002B
+Potenciación de la cultura organizacional
+EC3002B
+Solución y evaluación de problemas económicos
+VA3111
+Tópicos I
+VA3112
+Tópicos II
+VA3113
+Tópicos III
+VA3114
+Tópicos IV
+VA3115
+Tópicos V
+VA3116
+Tópicos VI
+ED3001B
+Proyecto integrador de innovación educativa
+MT3001B
+Liderazgo de mercadotecnia I
+MT3002B
+Liderazgo de mercadotecnia II
+AD3003B
+Planeación estratégica basada en analítica prescriptiva
+H3001B
+Proyecto integrador de letras
+MI3001B
+Proyecto integrador de periodismo
+RI3002B
+Análisis y estrategias de política exterior
+TM3001B
+Proyecto integrador de tecnología y producción musical
+P3002B
+Diseño e implementación de innovaciones públicas
+AR3005B
+Ciudades emergentes
+AR3006B
+Complejidad y debate
