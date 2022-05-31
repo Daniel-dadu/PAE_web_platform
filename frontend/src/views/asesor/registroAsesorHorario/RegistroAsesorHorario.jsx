@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { TemplateRegistroUsuario, CambioMesPeriodo, CalendarioDisponibilidad } from '../../../routeIndex'
-import dateFunctions from '../../../assets/reusableFunctions/dateFunctions.js'
 
 import "./registroAsesorHorario.css"
 
@@ -46,51 +45,29 @@ function RegistroAsesorHorario() {
 
 
   // Variable para conocer la fecha de hoy y actualizar el año
-  const [today, setToday] = useState(new Date())
+  const currentYear = (new Date()).getFullYear()
 
   // Variable de tipo objeto para actuazlizar los valores del mes y año
-  const [mesAnio, setmesAnio] = useState(
+  const [periodo, setPeriodo] = useState(
     {
-      mes: dateFunctions.getMonthEspanol(today.getMonth()),
-      anio: today.getFullYear()
+      num: "Periodo 1",
+      anio: currentYear
     }
   )
 
-    // Función que maneja se ejecuta cuando se da click a una flecha del componente CambioMesPeriodo
-    // Recibe como parámetro el tipo de botón al que se le dió click y cambia el valor de 'mesAnio' y 'today'
-    const handleArrowClick = arrow => {
-      let currentMonth = mesAnio.mes
-
-      if(currentMonth === 'Diciembre' && arrow === 'next') {
-        setmesAnio(
-          {
-            mes: 'Enero',
-            anio: today.getFullYear()+1
-          }
-        )
-        setToday(new Date(today.getFullYear()+1, today.getMonth(), today.getDate()))
-
-      } else if (currentMonth === 'Enero' && arrow === 'back') {
-        setmesAnio(
-          {
-            mes: 'Diciembre',
-            anio: today.getFullYear()-1
-          }
-        )
-        setToday(new Date(today.getFullYear()-1, today.getMonth(), today.getDate()))
-
-      } else {
-        setmesAnio (
-          {
-            mes: dateFunctions.getMonthEspanol(
-                arrow === 'next' ? dateFunctions.monthsEnNumero[currentMonth]+1 :
-                dateFunctions.monthsEnNumero[currentMonth]-1
-            ),
-            anio: today.getFullYear()
-          }
-        )
+  // Función que maneja se ejecuta cuando se da click a una flecha del componente CambioMesPeriodo
+  const handleArrowClick = arrow => { 
+    
+    setPeriodo (
+      {
+        num: periodo.num === "Periodo 1" ? (arrow === "back" ? "Periodo 1" : "Periodo 2") :
+          periodo.num === "Periodo 2" ? (arrow === "back" ? "Periodo 1" : "Periodo 3") :
+          (arrow === "back" ? "Periodo 2" : "Periodo 3")
+        ,
+        anio: currentYear
       }
-    }
+    )
+  }
 
   const [horarioPeriodo1, setHorarioPeriodo1] = useState(
     {
@@ -154,7 +131,7 @@ function RegistroAsesorHorario() {
 
       {/* contenido de la tarjeta y en donde se almacena el componente de CambioMesPeriodo y el componente de CalendarioDisponibilidad */}
       <div className = 'contenedor-cambio-periodo'>
-        <CambioMesPeriodo dataSupInf={{textoSuperior: mesAnio.mes, textoInferior: mesAnio.anio}} onClickArrow={handleArrowClick}/>
+        <CambioMesPeriodo dataSupInf={{textoSuperior: periodo.num, textoInferior: periodo.anio}} onClickArrow={handleArrowClick}/>
       </div>
 
       <div className = 'contenedor-calendarioDisponibilidad'>
