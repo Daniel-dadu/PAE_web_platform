@@ -1,9 +1,12 @@
 import React from 'react'
 import './CalendarioDisponibilidad.css'
 
-const CalendarioDisponibilidad = () => {
+const CalendarioDisponibilidad = ({ parentCallback }) => {
 
     const selectHour = id => {
+        
+        parentCallback(id)
+
         let hour = document.getElementById(id);
     
         if(window.getComputedStyle(hour).backgroundColor === 'rgb(196, 196, 196)'){
@@ -17,40 +20,42 @@ const CalendarioDisponibilidad = () => {
 
     return(
         <table className = {`calendarioDisponibilidad`} >
-            <tr>
-                <th className = 'nombreDiaCalendarioDisponibilidad' />
-                <th className = 'nombreDiaCalendarioDisponibilidad'> Lunes </th>
-                <th className = 'nombreDiaCalendarioDisponibilidad'> Martes </th>
-                <th className = 'nombreDiaCalendarioDisponibilidad'> Miércoles </th>
-                <th className = 'nombreDiaCalendarioDisponibilidad'> Jueves </th>
-                <th className = 'nombreDiaCalendarioDisponibilidad'> Viernes </th>
-            </tr>
+            <tbody>
+                <tr>
+                    <th className = 'nombreDiaCalendarioDisponibilidad' />
+                    <th className = 'nombreDiaCalendarioDisponibilidad'> Lunes </th>
+                    <th className = 'nombreDiaCalendarioDisponibilidad'> Martes </th>
+                    <th className = 'nombreDiaCalendarioDisponibilidad'> Miércoles </th>
+                    <th className = 'nombreDiaCalendarioDisponibilidad'> Jueves </th>
+                    <th className = 'nombreDiaCalendarioDisponibilidad'> Viernes </th>
+                </tr>
 
-            {
-                horas.map((horaElement, index) => 
-                    <tr key={index}>
+                {
+                    horas.map((horaElement, index) => 
+                        <tr key={index}>
 
-                        <td className = 'bloqueCalendarioDisponibilidad'>
-                            <div className = 'horaCalendarioDisponibilidad'>
-                                <p className = 'txtHoraCalendarioDisponibilidad'> {horaElement}:00 </p>
-                            </div>
-                        </td>
+                            <td className = 'bloqueCalendarioDisponibilidad'>
+                                <div className = 'horaCalendarioDisponibilidad'>
+                                    <p className = 'txtHoraCalendarioDisponibilidad'> {horaElement}:00 </p>
+                                </div>
+                            </td>
 
-                        {
-                            [0,1,2,3,4].map(i => 
-                                <td className = 'bloqueCalendarioDisponibilidad' key={i} >
-                                    <div 
-                                        className = 'seleccionCalendario' 
-                                        onClick = {() => selectHour(`${i}${horaElement}`)} 
-                                        id = {`${i}${horaElement}`} 
-                                    />
-                                </td>
-                            )
-                        }
+                            {
+                                [0,1,2,3,4].map(i => 
+                                    <td className = 'bloqueCalendarioDisponibilidad' key={i} >
+                                        <div 
+                                            className = 'seleccionCalendario' 
+                                            onClick = {() => selectHour(`${i}-${horaElement}`)} 
+                                            id = {`${i}-${horaElement}`} 
+                                        />
+                                    </td>
+                                )
+                            }
 
-                    </tr>
-                )
-            }
+                        </tr>
+                    )
+                }
+            </tbody>
         </table>
     );
 
