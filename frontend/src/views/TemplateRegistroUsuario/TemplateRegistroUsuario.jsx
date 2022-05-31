@@ -32,6 +32,7 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
     // Función para el registro de los datos del usuario
     // Es asincrona ya que para comprimir las imágenes y crear las asesorías se requiere esperar por el resultado 
     const registroDatos = async (isAsesor, usr) => {
+
         // Validamos que se hayan llenado los campos obligatorios
         if (usr.nombre === '' || 
             usr.apellidoParterno === '' || 
@@ -101,10 +102,13 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
         // Navegamos a la siguiente pantalla
         if(isAsesor) navigate('/registroAsesorHorario')
         else navigate('/registroAsesoradoCondiciones')
+
+        // Ponemos la animación de carga
+        setLoadingNext(false)
     }
     
     // Función que se ejecutará siempre que se de click al botón de siguiente
-    const onSiguienteClick = (data) => {
+    const onSiguienteClick = async (data) => {
 
         // Ponemos la animación de carga
         setLoadingNext(true)
@@ -122,9 +126,10 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
 
             if(data.view === 1) {
                 // Llamamos a la función que registra los datos del asesor
-                registroDatos(true, usr)
+                await registroDatos(true, usr)
                 
-            } else if(data.view === 2) {
+            } 
+            else if(data.view === 2) {
                 navigate('/registroAsesorUF')
             } else if(data.view === 3) {
                 navigate('/registroAsesorCondiciones')
@@ -138,7 +143,7 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
 
             if(data.view === 1) {
                 // Llamamos a la función que registra los datos del asesor
-                registroDatos(false, usr)
+                await registroDatos(false, usr)
             }
     
             else if(data.view === 2) {
