@@ -189,11 +189,14 @@ CREATE TABLE "Preferencia" (
 
 -- 13 --
 
+CREATE TYPE STATUSPERIODO AS ENUM ('actual', 'pasado');
+
 CREATE TABLE "Periodo" (
   "idPeriodo" SERIAL PRIMARY KEY,
-  "número" SMALLINT NOT NULL,
+  "numero" SMALLINT NOT NULL,
   "fechaInicial" TIMESTAMP NOT NULL,
-  "fechaFinal" TIMESTAMP NOT NULL
+  "fechaFinal" TIMESTAMP NOT NULL,
+  "status" STATUSPERIODO NOT NULL
 );
 
 -- 14 --
@@ -398,6 +401,267 @@ BEGIN
 END
 $func$;
 
+-- A partir de una UF, un mes y un año, se deben buscar los horarios disponibles de esas características
+CREATE OR REPLACE FUNCTION get_dias_disponibles (idUF VARCHAR(50), anio INTEGER, mes INTEGER)
+RETURNS TABLE (dias_disponibles DOUBLE PRECISION)
+
+LANGUAGE plpgsql AS $func$
+  
+BEGIN
+  
+  RETURN QUERY
+    SELECT DISTINCT EXTRACT(DAY FROM "fechaHora") AS dias
+    FROM "HorarioDisponible" 
+    WHERE "idHorarioDisponiblePeriodo" IN (
+      SELECT "idHorarioDisponiblePeriodo" 
+      FROM "HorarioDisponiblePeriodo" 
+      WHERE "idAsesor" IN (
+        SELECT "idUsuario" 
+        FROM "AsesorUnidadFormacion"   
+        WHERE "AsesorUnidadFormacion"."idUF" = idUF
+      )
+    ) 
+    AND "status" = 'disponible'
+    AND EXTRACT(YEAR FROM "fechaHora") = anio
+    AND EXTRACT(MONTH FROM "fechaHora") = mes;
+
+END;
+$func$;
+
+-- Función que regresa el mes de inicio y mes de cierre de semestre
+-- Este solo toma en cuenta los periodos con status actual, por lo que usa el semestre actual
+CREATE OR REPLACE FUNCTION get_meses_inicio_fin_semestre ()
+RETURNS TABLE (
+  mes_inicio_semestre DOUBLE PRECISION, 
+  mes_fin_semestre DOUBLE PRECISION
+)
+
+LANGUAGE plpgsql AS $func$
+
+DECLARE
+  mes_inicio_semestre DOUBLE PRECISION;
+  mes_fin_semestre DOUBLE PRECISION;
+
+BEGIN
+
+  SELECT EXTRACT(MONTH FROM "fechaInicial") 
+  FROM "Periodo" 
+  WHERE "status" = 'actual' AND "numero" = 1 
+  INTO mes_inicio_semestre;
+
+  SELECT EXTRACT(MONTH FROM "fechaFinal") 
+  FROM "Periodo" 
+  WHERE "status" = 'actual' AND "numero" = 3
+  INTO mes_fin_semestre;
+  
+  RETURN QUERY
+    SELECT mes_inicio_semestre, mes_fin_semestre;
+
+END;
+$func$;
+
+-- A partir de una UF, un mes, un año y día, se deben buscar las horas disponibles de esas características
+CREATE OR REPLACE FUNCTION get_horas_disponibles (idUF VARCHAR(50), anio INTEGER, mes INTEGER, dia INTEGER)
+RETURNS TABLE (horas_disponibles DOUBLE PRECISION)
+
+LANGUAGE plpgsql AS $func$
+  
+BEGIN
+  
+  RETURN QUERY
+    SELECT DISTINCT EXTRACT(HOUR FROM "fechaHora") AS horas
+    FROM "HorarioDisponible" 
+    WHERE "idHorarioDisponiblePeriodo" IN (
+      SELECT "idHorarioDisponiblePeriodo" 
+      FROM "HorarioDisponiblePeriodo" 
+      WHERE "idAsesor" IN (
+        SELECT "idUsuario" 
+        FROM "AsesorUnidadFormacion"   
+        WHERE "AsesorUnidadFormacion"."idUF" = idUF
+      )
+    ) 
+    AND "status" = 'disponible'
+    AND EXTRACT(YEAR FROM "fechaHora") = anio
+    AND EXTRACT(MONTH FROM "fechaHora") = mes
+    AND EXTRACT(DAY FROM "fechaHora") = dia;
+
+END;
+$func$;
+
+------------ FUNCIÓN -----------------
+
+-- Obtención de las notificaciones de un usuario a partir de su ID
+CREATE OR REPLACE FUNCTION get_notificaciones_usuario(
+  idUsuario VARCHAR(10)
+)
+RETURNS TABLE (
+  origen ORIGENNOTIFICACION,
+  titulo VARCHAR(200),
+  leyenda TIMESTAMP,
+  contenido TEXT
+)
+LANGUAGE plpgsql AS $func$
+
+BEGIN
+
+  RETURN QUERY
+    SELECT
+      "Notificacion"."origen",
+      "Notificacion"."titulo",
+      "Notificacion"."fechaHora" AS leyenda,
+      "Notificacion"."descripcion" AS contenido
+    FROM "NotificacionUsuario", "Notificacion", "Usuario"
+    WHERE "NotificacionUsuario"."idNotificacion" = "Notificacion"."idNotificacion"
+    AND "NotificacionUsuario"."idUsuario" = "Usuario"."idUsuario"
+    AND "Usuario"."idUsuario" = idUsuario;
+
+END;
+$func$;
+
+-- Obtención de las asesorías de un usuario a partir de su ID, mes y año
+CREATE OR REPLACE FUNCTION get_asesorias_usuario(
+  idUsuario VARCHAR(10),
+  mes INTEGER,
+  anio INTEGER
+)
+RETURNS TABLE (
+  numeroDia DOUBLE PRECISION,
+  status STATUSASESORIA,
+  hora DOUBLE PRECISION
+)
+LANGUAGE plpgsql AS $func$
+
+BEGIN
+
+  RETURN QUERY
+    SELECT
+      EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") AS numeroDia,
+      "Asesoria"."status",
+      EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") AS hora
+    FROM "Asesoria", "HorarioDisponible", "Usuario"
+    WHERE "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+    AND (
+      "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+      "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+    )
+    AND "Usuario"."idUsuario" = idUsuario
+    AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mes
+    AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anio;
+
+END;
+$func$;
+
+-- Obtención de las asesorías de todos los usuarios
+CREATE OR REPLACE FUNCTION get_allAsesorias(
+  mes INTEGER,
+  anio INTEGER
+)
+RETURNS TABLE (
+  numeroDia DOUBLE PRECISION,
+  status STATUSASESORIA,
+  hora DOUBLE PRECISION
+)
+LANGUAGE plpgsql AS $func$
+
+BEGIN
+
+  RETURN QUERY
+    SELECT
+      EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") AS numeroDia,
+      "Asesoria"."status",
+      EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") AS hora
+    FROM "Asesoria", "HorarioDisponible", "Usuario"
+    WHERE "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+    AND (
+      "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+      "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+    )
+    AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mes
+    AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anio;
+
+END;
+$func$;
+
+-- Obtención de la información de una asesoría, a partir del idUsuario, día, mes, anio
+CREATE OR REPLACE FUNCTION get_informacionAsesoria(
+  idUsuario VARCHAR(10),
+  horaC INTEGER,
+  diaC INTEGER,
+  mesC INTEGER,
+  anioC INTEGER
+)
+RETURNS TABLE (
+  hora DOUBLE PRECISION,
+  dia DOUBLE PRECISION,
+  mes DOUBLE PRECISION,
+  anio DOUBLE PRECISION,
+  usuario VARCHAR(50),
+  lugar TEXT,
+  uF VARCHAR(100),
+  duda TEXT,
+  image TEXT
+)
+LANGUAGE plpgsql AS $func$
+
+BEGIN
+
+  RETURN QUERY
+    SELECT
+      EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") AS hora,
+      EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") AS dia,
+      EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") AS mes,
+      EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") AS anio,
+      (
+        SELECT "Usuario"."nombreUsuario"
+        FROM "Asesoria", "HorarioDisponible", "Usuario"
+        WHERE
+          (
+            "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+            "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+          )
+          AND "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+          AND "Usuario"."idUsuario" != idUsuario
+          AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = horaC
+          AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
+          AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
+          AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC
+      ) AS usuario,
+      "Asesoria"."lugar",
+      "UnidadFormacion"."nombreUF",
+      "Asesoria"."descripcionDuda",
+      "AsesoriaImagen"."imagen"
+    FROM "Asesoria", "AsesoriaImagen", "HorarioDisponible", "Usuario", "UnidadFormacion"
+    WHERE
+      "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+      AND (
+        "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+        "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+      )
+      AND "Asesoria"."idUF" = "UnidadFormacion"."idUF"
+      AND "AsesoriaImagen"."idAsesoria" = (
+        SELECT "Asesoria"."idAsesoria"
+          FROM "Asesoria", "HorarioDisponible", "Usuario", "UnidadFormacion"
+          WHERE "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+          AND (
+            "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+            "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+          )
+          AND "Asesoria"."idUF" = "UnidadFormacion"."idUF"
+          AND "Usuario"."idUsuario" = idUsuario
+          AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = horaC
+          AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
+          AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
+          AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC
+      )
+      AND "Usuario"."idUsuario" = idUsuario
+      AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = horaC
+      AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
+      AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
+      AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC;
+
+END;
+$func$;
+
 ------------ PROCEDURES ---------------
 
 -- Procedimiento para hacer el registro de un asesorado
@@ -436,3 +700,11 @@ $$;
 -- Se puede consultar ejecutando la query: SELECT * FROM usuarios; 
 
 CREATE VIEW usuarios AS SELECT "idUsuario", "rol", "nombreUsuario", "apellidoPaterno", "apellidoMaterno", "telefono", "ultimaConexion", "statusAcceso" FROM "Usuario";
+
+
+---------------- IMPORTANTE ------------------
+
+-- Es necesario implementar los triggers para:
+--  > el cambio de status del horario de disponiblidad de los asesores cuando apartan
+--  > el cambio de status de los periodos
+--  > el cambio de status de los usuarios

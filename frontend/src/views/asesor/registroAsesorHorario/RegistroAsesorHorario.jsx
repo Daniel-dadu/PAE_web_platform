@@ -23,7 +23,7 @@ let progressBar = {
         },
         {
           "name" : "Unidad de Formacion",
-          "state": true,
+          "state": null,
           "next": "enable",
           "path" : "Ruta"
         },
@@ -94,8 +94,9 @@ function RegistroAsesorHorario() {
         
         <TemplateRegistroUsuario 
          progressBarJSON = {progressBar}
-          btnAtrasRoute="./calendario"
-          btnSiguienteRoute="./calendario"
+          btnAtrasRoute="./registroAsesorDatos"
+          btnSiguienteProps={{ view: 2, props: null }}
+          isRegistroAsesor={true}
         > 
              {/* encabezado del contenedor, donde va el titulo */}
             <div className='bloq_condicionesAsesor'>

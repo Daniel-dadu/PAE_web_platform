@@ -60,8 +60,9 @@ const RegistroAsesoradoResumen = () => {
         if(!nombreUser || !apellidoPatUser || !matriculaUser || !carreraUser) {
             localStorage.clear()
             navigate('/landingPage')
+            return
         }
-    })
+    }, [nombreUser, apellidoPatUser, matriculaUser, carreraUser, navigate])
 
     return (
     

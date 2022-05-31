@@ -34,7 +34,7 @@ var pruebaUsuariosJSON = {
 const EnviarNotificacionDirectivos = () => {
     return (
         <>
-            <Template view="perfil" >
+            <Template view="notificaciones" >
                 <div className='encabezado-enviarNotificacionesDir'>
                     <h1 className='texto-encabezado-enviarNotificacionesDir'>Enviar Notificación</h1>
                 </div>

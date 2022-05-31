@@ -95,7 +95,7 @@ const AdministrarUsuariosDirectivos = ({userTypeUsuariosDirectivos}) => { /* En 
 
             <div className = 'btnAtras'>
                 <BotonSencillo
-                    onClick = {() => routeChange("./AdministrarUsuarios")}
+                    onClick = {() => routeChange("./administrar")}
                     backgroundColor = 'turquesa'
                     size = 'normal'
                 >

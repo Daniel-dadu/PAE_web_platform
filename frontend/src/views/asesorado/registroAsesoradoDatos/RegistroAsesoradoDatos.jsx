@@ -84,7 +84,7 @@ function RegistroAsesoradoDatos() {
     // Hook para hacer la llamada a la API haciendo uso de la función fetch de JS
     useEffect(() => {
         setCarreraApiState({ loading: true })
-        fetch('http://20.225.209.57:3094/asesoria/get_carreras')
+        fetch('http://20.225.209.57:3091/general/get_carreras')
         .then(res => res.json()) // Se indica que la respuesta se regresará en un JSON
         .then(
             // En caso de que se obtenga la información de la API, se actualiza el carreraApiState
@@ -98,7 +98,7 @@ function RegistroAsesoradoDatos() {
             setErrorCarreraApiCall(error);
             }
         )
-    }, [setCarreraApiState])
+    }, [setCarreraApiState, setErrorCarreraApiCall])
 
     // ************************************************************************************************ //
 
@@ -184,9 +184,9 @@ function RegistroAsesoradoDatos() {
                     <div className='texto_contenedor_deInputsAsesoradoRegistro'> Carrera * </div>
                     {
                         carreraApiState.apiData === null || carreraApiState.apiData === undefined ?
-                        <CampoSeleccionarEnListaDesplegable size="large" options={["Cargando..."]}/>
+                        <CampoSeleccionarEnListaDesplegable size="large" options={["Cargando..."]} defaultValue={carrera} />
                         : 
-                        <CampoSeleccionarEnListaDesplegable size="large" options={carreraApiState.apiData} parentCallback={handleCarrera}/>
+                        <CampoSeleccionarEnListaDesplegable size="large" options={carreraApiState.apiData} parentCallback={handleCarrera} defaultValue={carrera}/>
                     }
                 </div>
 

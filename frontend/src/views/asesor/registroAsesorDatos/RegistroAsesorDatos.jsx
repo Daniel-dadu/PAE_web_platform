@@ -57,7 +57,8 @@ function RegistroAsesorDatos() {
     <TemplateRegistroUsuario 
     progressBarJSON = {progressBar}
      btnAtrasRoute='/landingPage'
-     btnSiguienteRoute="./calendario"> 
+     btnSiguienteProps={{ view: 1, props: null }}
+     isRegistroAsesor={true}> 
 
         <div>
             <h1 className='campo_RegistroAsesorDatos'> CAMPO 1: Datos generales </h1>
