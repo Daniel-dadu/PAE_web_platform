@@ -83,7 +83,6 @@ function RegistroAsesorDatos() {
 
     const [carrera, setCarrera] = useState(carreraUser ? carreraUser : '')
     const handleCarrera = carreraValue => setCarrera(carreraValue.value)
-
     const [carrera2, setCarrera2] = useState(carrera2User ? carrera2User : '')
     const handleCarrera2 = carreraValue => setCarrera2(carreraValue.value)
     
@@ -128,13 +127,12 @@ function RegistroAsesorDatos() {
         <TemplateRegistroUsuario 
         progressBarJSON = {progressBar}
         btnAtrasRoute="./landingPage"
-        btnSiguienteProps={ 
-            {
-                view: 1, 
-                props: errorCarreraApiCall ? null : 
-                    { nombre, apellidoParterno, apellidoMarterno, matricula, carrera, telefono, imageUploaded, contrasena, contrasenaConfirm }
-            } 
-        } > 
+        btnSiguienteProps={{
+            view: 1, 
+            props: errorCarreraApiCall ? null : 
+                { nombre, apellidoParterno, apellidoMarterno, matricula, carrera, carrera2, telefono, imageUploaded, contrasena, contrasenaConfirm }
+        }}
+        isRegistroAsesor={true} > 
 
             <div>
                 <h1 className='campo_RegistroAsesorDatos'> CAMPO 1: Datos generales </h1>
@@ -209,9 +207,9 @@ function RegistroAsesorDatos() {
                     <div className='texto_contenedor_deInputsAsesorRegistro'> 2da Carrera * </div>
                     {
                         carreraApiState.apiData === null || carreraApiState.apiData === undefined ?
-                        <CampoSeleccionarEnListaDesplegable size="large" options={["Cargando..."]} defaultValue={carrera} />
+                        <CampoSeleccionarEnListaDesplegable size="large" options={["Cargando..."]} defaultValue={carrera2} />
                         : 
-                        <CampoSeleccionarEnListaDesplegable size="large" options={carreraApiState.apiData} parentCallback={handleCarrera} defaultValue={carrera}/>
+                        <CampoSeleccionarEnListaDesplegable size="large" options={carreraApiState.apiData} parentCallback={handleCarrera2} defaultValue={carrera2}/>
                     }
                 </div>
 
