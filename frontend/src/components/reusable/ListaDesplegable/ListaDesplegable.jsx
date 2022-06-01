@@ -11,9 +11,6 @@ const COLORES_TIPO_1 = [
     "rojo_tipo_1"
 ];
 
-
-
-
 const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido=data.listaChica } ) => {
 
 

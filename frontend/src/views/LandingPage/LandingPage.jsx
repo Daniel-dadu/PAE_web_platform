@@ -83,7 +83,7 @@ export const LandingPage = () => {
 
 
             <div className='der'>
-                <img className='img-quienes-somos' src={ require('../../assets/estudiando-img.png') } />
+                <img className='img-quienes-somos' src={ require('../../assets/estudiando-img.png') } alt='texto' />
             </div>
 
 
@@ -100,7 +100,7 @@ export const LandingPage = () => {
             </div>
             
             <div className='der'>
-                <img className='img-quienes-somos' src={ require('../../assets/estudiando2-img.png') } />
+                <img className='img-quienes-somos' src={ require('../../assets/estudiando2-img.png') } alt='texto' />
             </div>
        </section>
 
