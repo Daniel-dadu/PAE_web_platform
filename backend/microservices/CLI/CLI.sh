@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-stty -echoctl # hide ^C
+#Hide ^C
+stty -echoctl
+#Catch signals 
 trap ctrl_c INT
+
 
 function ctrl_c() {
     end_all
@@ -39,7 +42,7 @@ function install_all(){
         echo "Installing ${SERVICE::-1}"
         cd $SERVICE
         npm install
-        cd $WORKING_DIR
+        cd ../
     done
 }
 
@@ -51,12 +54,18 @@ function start_all(){
         echo "Starting $SERVICE_NAME"
         cd $SERVICE
         
-        npm start&
+        if [ $VERBOSE = true ]
+            then
+                npm start &
+            else
+                npm start > /dev/null &
+        fi
+
         SERVICE_PID=$!
         echo -e "::\tPID $SERVICE_PID"
         MICROSERVICES_PIDS+=($SERVICE_PID)
 
-        cd $WORKING_DIR
+        cd ../
     done
 }
 
@@ -69,8 +78,15 @@ function end_all(){
 
 function main(){
 
+    cd $WORKING_DIR
+
     search_services
-    install_all
+    
+    if [ $INSTALL_DEPS = true ]
+        then
+            install_all
+    fi
+
     start_all
 
     echo "PRESS CTRL-C to exit"
@@ -80,8 +96,46 @@ function main(){
     done
 }
 
+function help(){
+    echo "--i for install dependecies"
+    echo "--D PATH for change working directory"
+    echo "--h for help"
+    echo "--v for print Node output"
+}
+
 WORKING_DIR=$PWD
 MICROSERVICES=()
 MICROSERVICES_PIDS=()
+
+#Conditionals
+INSTALL_DEPS=false
+VERBOSE=false
+
+while getopts :ihvD: opt
+do
+    case "${opt}" in
+        i) 
+            INSTALL_DEPS=true
+            ;;
+        D) 
+            WORKING_DIR=${OPTARG}
+            ;;
+        :)
+            echo "Error: --${OPTARG} requires an argument."
+            exit 1
+            ;;
+        h)
+            help
+            exit 0
+            ;;
+        v)
+            VERBOSE=true
+            ;;
+        *)
+            help
+            exit 0
+            ;;
+    esac
+done
 
 main
