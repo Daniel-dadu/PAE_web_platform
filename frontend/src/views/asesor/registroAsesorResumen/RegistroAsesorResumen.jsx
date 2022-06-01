@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { TemplateRegistroUsuario, InformacionPersonalUsuario, ListaUnidadesDeFormacionAsesor, CambioMesPeriodo, CalendarioDisponibilidad } from '../../../routeIndex'
 import "./RegistroAsesorResumen.css"
-import dateFunctions from '../../../assets/reusableFunctions/dateFunctions.js'
+import { useNavigate } from 'react-router-dom'
 
 let progressBar = {
   "currentStep": 4,
@@ -93,48 +93,53 @@ const listaUF = [
 
 function RegistroAsesorResumen() {
 
-    // Variable para conocer la fecha de hoy y actualizar el año
-    const [today, setToday] = useState(new Date())
+    let navigate = useNavigate()
 
-    // Variable de tipo objeto para actuazlizar los valores del mes y año
-    const [mesAnio, setmesAnio] = useState(
-        {
-        mes: dateFunctions.getMonthEspanol(today.getMonth()),
-        anio: today.getFullYear()
-        }
-    )
+    const localStoragePeriodos = [
+        localStorage.registro1_horarioPeriodo1, 
+        localStorage.registro1_horarioPeriodo2, 
+        localStorage.registro1_horarioPeriodo3
+    ]
+
+    useEffect(() => {
+        [
+            localStorage.registro1_horarioPeriodo1, 
+            localStorage.registro1_horarioPeriodo2, 
+            localStorage.registro1_horarioPeriodo3
+        ]
+        .forEach(periodo => {
+            if(!periodo){
+                alert("Error: No se cuenta con todos los datos. Intente nuevamente.")
+                navigate('/RegistroAsesorDatos')
+            } 
+        })
+    }, [navigate])
+
+    // Variable para conocer la fecha de hoy y actualizar el año
+    const currentYear = (new Date()).getFullYear()
+
+    // Variable de tipo objeto para actuazlizar los valores del periodo y año
+    const [periodo, setPeriodo] = useState({ num: "Periodo 1", anio: currentYear })
+
+    const horarioPeriodos = [ 
+        JSON.parse(localStoragePeriodos[0]), 
+        JSON.parse(localStoragePeriodos[1]), 
+        JSON.parse(localStoragePeriodos[2])
+    ]
+
+    const [currentHorarioPeriodo, setCurrentHorarioPeriodo] = useState(horarioPeriodos[0])
+  
+    // Función para convertir el string del nombre del periodo a su número
+    const periodoStringToNum = periodoString => parseInt(periodoString[periodoString.length-1]) - 1
 
     // Función que maneja se ejecuta cuando se da click a una flecha del componente CambioMesPeriodo
-    // Recibe como parámetro el tipo de botón al que se le dió click y cambia el valor de 'mesAnio' y 'today'
     const handleArrowClick = arrow => {
-        let currentMonth = mesAnio.mes
-        if(currentMonth === 'Diciembre' && arrow === 'next') {
-        setmesAnio(
-            {
-            mes: 'Enero',
-            anio: today.getFullYear()+1
-            }
-        )
-        setToday(new Date(today.getFullYear()+1, today.getMonth(), today.getDate()))
-        } else if (currentMonth === 'Enero' && arrow === 'back') {
-        setmesAnio(
-            {
-            mes: 'Diciembre',
-            anio: today.getFullYear()-1
-            }
-        )
-        setToday(new Date(today.getFullYear()-1, today.getMonth(), today.getDate()))
-        } else {
-        setmesAnio(
-            {
-            mes: dateFunctions.getMonthEspanol(
-                arrow === 'next' ? dateFunctions.monthsEnNumero[currentMonth]+1 :
-                dateFunctions.monthsEnNumero[currentMonth]-1
-            ),
-            anio: today.getFullYear()
-            }
-        )
-        }
+        const newPeriodo = periodo.num === "Periodo 1" ? (arrow === "back" ? "Periodo 1" : "Periodo 2") :
+        periodo.num === "Periodo 2" ? (arrow === "back" ? "Periodo 1" : "Periodo 3") :
+        (arrow === "back" ? "Periodo 2" : "Periodo 3")
+
+        setPeriodo ({ num: newPeriodo, anio: currentYear })
+        setCurrentHorarioPeriodo(horarioPeriodos[periodoStringToNum(newPeriodo)])
     }
 
     return (
@@ -158,11 +163,11 @@ function RegistroAsesorResumen() {
             </div>
 
             <div className = 'containerCambioMesPeriodoResumen'>
-                <CambioMesPeriodo dataSupInf={{textoSuperior: mesAnio.mes, textoInferior: mesAnio.anio}} onClickArrow={handleArrowClick}/>
+                <CambioMesPeriodo dataSupInf={{textoSuperior: periodo.num, textoInferior: periodo.anio}} onClickArrow={handleArrowClick}/>  
             </div>
 
             <div className = 'containerCalendarioDisponibilidadResumen'>
-                <CalendarioDisponibilidad/>
+                <CalendarioDisponibilidad previousHorario={currentHorarioPeriodo} blocked={true} />
             </div>
 
         </TemplateRegistroUsuario>

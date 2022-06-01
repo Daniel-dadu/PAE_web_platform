@@ -127,7 +127,6 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
             if(data.view === 1) {
                 // Llamamos a la función que registra los datos del asesor
                 await registroDatos(true, usr)
-                
             } 
 
             else if(data.view === 2) {
@@ -152,7 +151,11 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
             else if(data.view === 3) {
                 navigate('/registroAsesorCondiciones')
             } else if(data.view === 4) {
-                navigate('/registroAsesorResumen')
+                if(usr.userChecked) {
+                    navigate('/registroAsesorResumen')
+                } else {
+                    alert('Es necesario que se acepten los términos y condiciones')
+                }
             } else if(data.view === 5) {
                 navigate('/landingPage')
             }

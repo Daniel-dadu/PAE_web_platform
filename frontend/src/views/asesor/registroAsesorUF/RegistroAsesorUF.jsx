@@ -57,7 +57,7 @@ function RegistroAsesorUF({planEstudios = planEstudiosJSON}){
         <TemplateRegistroUsuario 
             progressBarJSON = {progressBar}
             btnAtrasRoute = "./registroAsesorHorario"
-            btnSiguienteProps={{ view: 3, props: null }}
+            btnSiguienteProps={{ view: 3, props: "pendiente" }}
             isRegistroAsesor={true}
         >
 
