@@ -50,7 +50,7 @@ function RegistroAsesorHorario() {
   const [periodo, setPeriodo] = useState({ num: "Periodo 1", anio: currentYear })
 
   const [horarioPeriodos, setHorarioPeriodos] = useState(
-    [
+    [ localStorage.registro1_horarioPeriodo1 ? JSON.parse(localStorage.registro1_horarioPeriodo1) :
       {
         lunes: [],
         martes: [],
@@ -59,6 +59,7 @@ function RegistroAsesorHorario() {
         viernes: [],
         total: 0
       },
+      localStorage.registro1_horarioPeriodo2 ? JSON.parse(localStorage.registro1_horarioPeriodo2) :
       {
         lunes: [],
         martes: [],
@@ -67,6 +68,7 @@ function RegistroAsesorHorario() {
         viernes: [],
         total: 0
       }, 
+      localStorage.registro1_horarioPeriodo3 ? JSON.parse(localStorage.registro1_horarioPeriodo3) :
       {
         lunes: [],
         martes: [],
