@@ -55,65 +55,62 @@ function RegistroAsesorHorario() {
     }
   )
 
+  const [horarioPeriodos, setHorarioPeriodos] = useState(
+    [
+      {
+        lunes: [8,9,10],
+        martes: [],
+        miercoles: [],
+        jueves: [],
+        viernes: [],
+        total: 0
+      },
+      {
+        lunes: [],
+        martes: [],
+        miercoles: [],
+        jueves: [],
+        viernes: [],
+        total: 0
+      },
+      {
+        lunes: [],
+        martes: [],
+        miercoles: [],
+        jueves: [],
+        viernes: [],
+        total: 0
+      }
+    ]
+  )
+
+  const [currentHorarioPeriodo, setCurrentHorarioPeriodo] = useState(horarioPeriodos[0])
+
   // Función que maneja se ejecuta cuando se da click a una flecha del componente CambioMesPeriodo
-  const handleArrowClick = arrow => { 
-    
+  const handleArrowClick = arrow => {
+    const newPeriodo = periodo.num === "Periodo 1" ? (arrow === "back" ? "Periodo 1" : "Periodo 2") :
+      periodo.num === "Periodo 2" ? (arrow === "back" ? "Periodo 1" : "Periodo 3") :
+      (arrow === "back" ? "Periodo 2" : "Periodo 3")
     setPeriodo (
       {
-        num: periodo.num === "Periodo 1" ? (arrow === "back" ? "Periodo 1" : "Periodo 2") :
-          periodo.num === "Periodo 2" ? (arrow === "back" ? "Periodo 1" : "Periodo 3") :
-          (arrow === "back" ? "Periodo 2" : "Periodo 3")
+        num: newPeriodo
         ,
         anio: currentYear
       }
     )
+    const numberPeriodo = parseInt(newPeriodo[newPeriodo.length-1]) - 1
+    setCurrentHorarioPeriodo(horarioPeriodos[numberPeriodo])
   }
 
-  const [horarioPeriodo1, setHorarioPeriodo1] = useState(
-    {
-      lunes: [],
-      martes: [],
-      miercoles: [],
-      jueves: [],
-      viernes: [],
-      total: 0
-    }
-  )
-  
-  const onChangeHorario = idHorario => {
-    let newHorario = horarioPeriodo1
+  const getCurrentPeriodoNum = () => periodo.num === "Periodo 1" ? 0 : periodo.num === "Periodo 2" ? 1 : 2
 
-    const horaInt = idHorario.length < 4 ? parseInt(idHorario[2]) : parseInt(idHorario.substring(2,4))
+  const onChangeHorario = horarioUpdated => {
+    let newHorarios = horarioPeriodos
+    newHorarios[getCurrentPeriodoNum()] = horarioUpdated
 
-    const updateNewHorario = (dia) => {
-      const indexHora = newHorario[dia].indexOf(horaInt)
-
-      if (indexHora === -1) {
-        newHorario[dia].push(horaInt)
-        newHorario.total++
-      } else {
-        newHorario[dia].splice(indexHora, 1)
-        newHorario.total--
-      }
-    }
-
-    // Si se selecciona una horario del lunes
-    if(idHorario[0] === '0') updateNewHorario('lunes')
-    
-    // Si se selecciona una horario del martes
-    else if(idHorario[0] === '1') updateNewHorario('martes')
-    
-    // Si se selecciona una horario del martes
-    else if(idHorario[0] === '2') updateNewHorario('miercoles')
-    
-    // Si se selecciona una horario del martes
-    else if(idHorario[0] === '3') updateNewHorario('jueves')
-    
-    // Si se selecciona una horario del martes
-    else if(idHorario[0] === '4') updateNewHorario('viernes')
-
-    setHorarioPeriodo1(newHorario)
+    setHorarioPeriodos(newHorarios)
   }
+
 
 
   return (
@@ -135,10 +132,8 @@ function RegistroAsesorHorario() {
       </div>
 
       <div className = 'contenedor-calendarioDisponibilidad'>
-        <CalendarioDisponibilidad parentCallback={onChangeHorario} />
+        <CalendarioDisponibilidad parentCallback={onChangeHorario} previousHorario={currentHorarioPeriodo} />
       </div>
-
-      <button onClick={() => console.log(horarioPeriodo1)} >show horario</button>
     
     </TemplateRegistroUsuario>
 
