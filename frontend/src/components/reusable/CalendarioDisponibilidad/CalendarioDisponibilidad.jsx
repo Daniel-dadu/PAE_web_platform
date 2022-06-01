@@ -123,8 +123,6 @@ const CalendarioDisponibilidad = ({ parentCallback, previousHorario }) => {
                     )
                 }
             </tbody>
-            <button onClick={() => console.log(horario)}>horario</button>
-            <button onClick={() => console.log(colors)}>colores</button>
         </table>
     );
 

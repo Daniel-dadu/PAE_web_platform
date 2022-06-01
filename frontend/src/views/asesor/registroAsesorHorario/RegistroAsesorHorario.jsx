@@ -43,22 +43,16 @@ let progressBar = {
 
 function RegistroAsesorHorario() {
 
-
   // Variable para conocer la fecha de hoy y actualizar el año
   const currentYear = (new Date()).getFullYear()
 
-  // Variable de tipo objeto para actuazlizar los valores del mes y año
-  const [periodo, setPeriodo] = useState(
-    {
-      num: "Periodo 1",
-      anio: currentYear
-    }
-  )
+  // Variable de tipo objeto para actuazlizar los valores del periodo y año
+  const [periodo, setPeriodo] = useState({ num: "Periodo 1", anio: currentYear })
 
   const [horarioPeriodos, setHorarioPeriodos] = useState(
     [
       {
-        lunes: [8,9,10],
+        lunes: [],
         martes: [],
         miercoles: [],
         jueves: [],
@@ -72,7 +66,7 @@ function RegistroAsesorHorario() {
         jueves: [],
         viernes: [],
         total: 0
-      },
+      }, 
       {
         lunes: [],
         martes: [],
@@ -83,47 +77,42 @@ function RegistroAsesorHorario() {
       }
     ]
   )
-
+  
   const [currentHorarioPeriodo, setCurrentHorarioPeriodo] = useState(horarioPeriodos[0])
+  
+  // Función para convertir el string del nombre del periodo a su número
+  const periodoStringToNum = periodoString => parseInt(periodoString[periodoString.length-1]) - 1
 
   // Función que maneja se ejecuta cuando se da click a una flecha del componente CambioMesPeriodo
   const handleArrowClick = arrow => {
     const newPeriodo = periodo.num === "Periodo 1" ? (arrow === "back" ? "Periodo 1" : "Periodo 2") :
       periodo.num === "Periodo 2" ? (arrow === "back" ? "Periodo 1" : "Periodo 3") :
       (arrow === "back" ? "Periodo 2" : "Periodo 3")
-    setPeriodo (
-      {
-        num: newPeriodo
-        ,
-        anio: currentYear
-      }
-    )
-    const numberPeriodo = parseInt(newPeriodo[newPeriodo.length-1]) - 1
-    setCurrentHorarioPeriodo(horarioPeriodos[numberPeriodo])
+
+    setPeriodo ({ num: newPeriodo, anio: currentYear })
+    setCurrentHorarioPeriodo(horarioPeriodos[periodoStringToNum(newPeriodo)])
   }
 
-  const getCurrentPeriodoNum = () => periodo.num === "Periodo 1" ? 0 : periodo.num === "Periodo 2" ? 1 : 2
-
+  // Función que se ejecuta al presionar alguno de los botones de los horarios
   const onChangeHorario = horarioUpdated => {
     let newHorarios = horarioPeriodos
-    newHorarios[getCurrentPeriodoNum()] = horarioUpdated
+    newHorarios[periodoStringToNum(periodo.num)] = horarioUpdated
 
     setHorarioPeriodos(newHorarios)
   }
-
-
 
   return (
         
     <TemplateRegistroUsuario 
       progressBarJSON = {progressBar}
       btnAtrasRoute="./registroAsesorDatos"
-      btnSiguienteProps={{ view: 2, props: null }}
+      btnSiguienteProps={{ view: 2, props: horarioPeriodos }}
       isRegistroAsesor={true}
     > 
       {/* encabezado del contenedor, donde va el titulo */}
       <div className='bloq_condicionesAsesor'>
-        <h1 className='campo_RegistroAsesorCondiciones'> CAMPO 2: Elije tu disponibilidad </h1>
+        <h1 className='campo_RegistroAsesorCondiciones'> CAMPO 2: Elige tu disponibilidad </h1>
+        <h3 className='advertencia_asterisco'>  Selecciona los horarios que tienes disponibles para dar asesorías en los 3 periodos del semestre </h3>
       </div>
 
       {/* contenido de la tarjeta y en donde se almacena el componente de CambioMesPeriodo y el componente de CalendarioDisponibilidad */}
