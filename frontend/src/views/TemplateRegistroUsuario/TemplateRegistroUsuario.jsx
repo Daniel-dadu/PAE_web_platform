@@ -39,7 +39,8 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
             usr.matricula === '' || 
             usr.carrera === '' ||
             usr.contrasena === '' || 
-            usr.contrasenaConfirm === '') 
+            usr.contrasenaConfirm === '' ||
+            (isAsesor && usr.semestre === '')) 
         {
             alert('No se han llenado todos los campos obligatorios')
             setLoadingNext(false)
@@ -85,6 +86,8 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
         if(isAsesor) {
             localStorage.removeItem('registro1_carrera2')
             if(usr.carrera2) localStorage.setItem('registro1_carrera2', usr.carrera2.length > 4 ? sliceIDstring(usr.carrera2) : usr.carrera2)
+            localStorage.removeItem('registro1_semestre')
+            if(usr.semestre) localStorage.setItem('registro1_semestre', usr.semestre)
         }
         
         if(usr.imageUploaded) {
@@ -157,6 +160,8 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
                     alert('Es necesario que se acepten los términos y condiciones')
                 }
             } else if(data.view === 5) {
+                
+                localStorage.clear()
                 navigate('/landingPage')
             }
 
