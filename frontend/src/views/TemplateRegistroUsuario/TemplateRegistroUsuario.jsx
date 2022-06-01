@@ -133,23 +133,13 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
             else if(data.view === 2) {
 
                 // Validamos que haya ingresado mínimo 5 horas disponibles por periodo
-
-                const alertHorasInsuficientes = (horasIngresadas, periodo) => {
-                    alert(`Solo seleccionaste ${horasIngresadas} horas en el ${periodo} periodo. Debes seleccionar al menos 5 horas disponibles por periodo.`)
-                    setLoadingNext(false)
-                }
-
-                if(usr[0].total < 5) {
-                    alertHorasInsuficientes(usr[0].total, 'primer')
-                    return
-                }
-                if(usr[1].total < 5) {
-                    alertHorasInsuficientes(usr[1].total, 'segundo')
-                    return
-                }
-                if(usr[2].total < 5) {
-                    alertHorasInsuficientes(usr[2].total, 'tercer')
-                    return
+                for (let i = 0; i < 3; i++) {
+                    if(usr[i].total < 5) {
+                        alert(`Solo seleccionaste ${usr[i].total} horas en el ${i === 0 ? 'primer' : i === 1 ? 'segundo' : 'tercer'} periodo.
+                        \nDebes seleccionar al menos 5 horas disponibles por periodo.`)
+                        setLoadingNext(false)
+                        return
+                    }
                 }
 
                 localStorage.setItem('registro1_horarioPeriodo1', JSON.stringify(usr[0]))
