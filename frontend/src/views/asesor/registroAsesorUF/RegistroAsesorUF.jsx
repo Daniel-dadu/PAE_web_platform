@@ -44,15 +44,12 @@ let progressBar = {
 function RegistroAsesorUF({planEstudios = planEstudiosJSON}){
 
     // Hook para guardar el periodo seleccionado
-    const [periodoSeleccionado, setPeriodoSeleccionado] = useState(null)
-    
-    if(periodoSeleccionado === 0){
-        console.log(periodoSeleccionado);
-    }
+    const [semestreFilter, setSemestreFilter] = useState(null)
 
     // Función que recibe el periodo seleccionado en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a carreraSeleccionada
-    const handlePeriodo = periodoValue => {
-        setPeriodoSeleccionado(periodoValue.value)
+    const handleSemestreFilter = semestreValue => {
+        setSemestreFilter(semestreValue.value)
+        console.log(semestreFilter)
     }
 
     return (
@@ -75,34 +72,33 @@ function RegistroAsesorUF({planEstudios = planEstudiosJSON}){
                     <div className = 'containerSeleccionBusquedaUF'>
 
                         <div className = 'containerSeleccionPeriodo'>
-                            <CampoSeleccionarEnListaDesplegable defectValue = 'Periodo' size = "medium" options = {[1, 2, 3]} parentCallback = {handlePeriodo}/>
+                            <CampoSeleccionarEnListaDesplegable 
+                                placeholder = 'Seleccionar semestre' 
+                                size = "medium" 
+                                options = {[1,2,3,4,5,6,7,8,9].map(i => `Semestre ${i}`)} 
+                                parentCallback = {handleSemestreFilter}
+                            />
                         </div>
                         
                         <div className = 'barraBusquedaRegistroUF'>
-
                             <div className = 'containerBarraBusqueda'>
-                                <input type = 'text' placeholder = {`Buscar unidad de formación`} />
+                                <input type = 'text' placeholder = "PENDIENTE!!!" />
                                 <FaSearch className = 'icono'/>
                             </div>
-
                         </div>
 
                     </div>
 
                     {
-                        Object.keys(planEstudios['planEstudios']).map((index) => {
-                            return(
-                                <>
-                                <div className = {`containerListaDesplegableAsesorias listaDesplegableSemestre-${planEstudios['planEstudios'][index]['semestre']}`}>
-                                    <ListaDesplegable
-                                        fecha = {`Semestre ${planEstudios['planEstudios'][index]['semestre']}`}
-                                        tipo = {2}
-                                        arrContenido = {planEstudios['planEstudios'][index]['unidadesFormacion']}
-                                    />
-                                </div>
-                                </>
-                            )
-                        })
+                        Object.keys(planEstudios['planEstudios']).map((index) => 
+                            <div className = {`containerListaDesplegableAsesorias listaDesplegableSemestre-${planEstudios['planEstudios'][index]['semestre']}`}>
+                                <ListaDesplegable
+                                    fecha = {`Semestre ${planEstudios['planEstudios'][index]['semestre']}`}
+                                    tipo = {2}
+                                    arrContenido = {planEstudios['planEstudios'][index]['unidadesFormacion']}
+                                />
+                            </div>
+                        )
                     }
                     
                 </div>

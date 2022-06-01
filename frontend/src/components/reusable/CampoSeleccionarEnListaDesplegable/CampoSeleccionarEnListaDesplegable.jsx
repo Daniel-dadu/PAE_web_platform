@@ -15,7 +15,7 @@ EJEMPLO:
 <CampoSeleccionarEnListaDesplegable size="small" options={info.semestre} idList="carrera"/>
 */
 
-function CampoSeleccionarEnListaDesplegable({ size, parentCallback, options, defaultValue='' }) {
+function CampoSeleccionarEnListaDesplegable({ size, parentCallback, options, defaultValue='', placeholder='' }) {
 
   const { value, setValue } = useComboboxControls()
 
@@ -37,6 +37,7 @@ function CampoSeleccionarEnListaDesplegable({ size, parentCallback, options, def
   return (
     <div className="container_cseld">
       <DatalistInput
+        placeholder={placeholder}
         value={value}
         setValue={setValue}
         style={{width: size === "small" ? "100px" : size === "medium" ? "250px" : "350px"}}

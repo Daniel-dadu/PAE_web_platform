@@ -26,21 +26,130 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
             routeChange(route)
         }
     }
+
+    const sliceIDstring = str => str.slice(0, str.indexOf(" "))
+
+    // Función para el registro de los datos del usuario
+    // Es asincrona ya que para comprimir las imágenes y crear las asesorías se requiere esperar por el resultado 
+    const registroDatos = async (isAsesor, usr) => {
+
+        // Validamos que se hayan llenado los campos obligatorios
+        if (usr.nombre === '' || 
+            usr.apellidoParterno === '' || 
+            usr.matricula === '' || 
+            usr.carrera === '' ||
+            usr.contrasena === '' || 
+            usr.contrasenaConfirm === '') 
+        {
+            alert('No se han llenado todos los campos obligatorios')
+            setLoadingNext(false)
+            return
+        } 
+        // Validamos que la matrícula tenga 9 caracteres
+        if (usr.matricula.length !== 9) {
+            alert('La matrícula debe tener una longitud de 9 caracteres')
+            setLoadingNext(false)
+            return
+        }
+        // Validamos que la contraseña tenga como mínimo 8 caracteres
+        if (usr.contrasena.length < 8) {
+            alert('La contraseña debe tener al menos 8 caracteres')
+            setLoadingNext(false)
+            return
+        }
+        // Validamos que las contraseñas sean iguales
+        if (usr.contrasena !== usr.contrasenaConfirm) {
+            alert('Las contraseñas no coinciden')
+            setLoadingNext(false)
+            return
+        }
+
+        // Establecemos las variables en el localStorage
+        localStorage.setItem('registro1_matricula', usr.matricula)
+        localStorage.setItem('registro1_contrasena', usr.contrasena)
+        localStorage.setItem('registro1_nombre', usr.nombre)
+        localStorage.setItem('registro1_apellidoPaterno', usr.apellidoParterno)
+        // Validamos la longitud de la carrera por si se usan las siglas pre-grabadas en el localSorage
+        localStorage.setItem('registro1_carrera', usr.carrera.length > 4 ? sliceIDstring(usr.carrera) : usr.carrera)
+
+        // Eliminamos los campos no obligatorios en caso de que se hayan eliminado manuelmente al dar usar el btn Atras
+        localStorage.removeItem('registro1_apellidoMaterno')
+        localStorage.removeItem('registro1_telefono')
+        localStorage.removeItem('registro1_imagenPerfil')
+
+        
+        // Verificamos los campos no obligatorios que haya ingresado el usuario y los guardamos 
+        if(usr.apellidoMarterno) localStorage.setItem('registro1_apellidoMaterno', usr.apellidoMarterno)
+        if(usr.telefono) localStorage.setItem('registro1_telefono', usr.telefono)
+        
+        if(isAsesor) {
+            localStorage.removeItem('registro1_carrera2')
+            if(usr.carrera2) localStorage.setItem('registro1_carrera2', usr.carrera2.length > 4 ? sliceIDstring(usr.carrera2) : usr.carrera2)
+        }
+        
+        if(usr.imageUploaded) {
+            // Comprimimos la imagen de perfil
+            let imageCompressed = await imageCompressor(usr.imageUploaded)
+            // Si no se puede comprimir, se le indica al usuario
+            if(imageCompressed.slice(0, 5) === "error"){
+                alert('Tu imagen es muy grande.\nReduce el tamaño y vuelve a intentarlo')
+                setLoadingNext(false)
+                return
+            }
+            localStorage.setItem('registro1_imagenPerfil', imageCompressed)
+        } 
+
+        // Navegamos a la siguiente pantalla
+        if(isAsesor) navigate('/registroAsesorHorario')
+        else navigate('/registroAsesoradoCondiciones')
+
+        // Ponemos la animación de carga
+        setLoadingNext(false)
+    }
     
     // Función que se ejecutará siempre que se de click al botón de siguiente
-    // Es asincrona ya que para comprimir las imágenes y crear las asesorías se requiere esperar por el resultado 
     const onSiguienteClick = async (data) => {
 
         // Ponemos la animación de carga
         setLoadingNext(true)
 
+        let usr = data.props
+
+        // Si hubo un error con la API
+        if(usr === null) {
+            navigate('/landingPage')
+            setLoadingNext(false)
+            return
+        }
+
         if(isRegistroAsesor) {
 
             if(data.view === 1) {
-                navigate('/registroAsesorHorario')
-            } else if(data.view === 2) {
+                // Llamamos a la función que registra los datos del asesor
+                await registroDatos(true, usr)
+                
+            } 
+
+            else if(data.view === 2) {
+
+                // Validamos que haya ingresado mínimo 5 horas disponibles por periodo
+                for (let i = 0; i < 3; i++) {
+                    if(usr[i].total < 5) {
+                        alert(`Solo seleccionaste ${usr[i].total} horas en el ${i === 0 ? 'primer' : i === 1 ? 'segundo' : 'tercer'} periodo.
+                        \nDebes seleccionar al menos 5 horas disponibles por periodo.`)
+                        setLoadingNext(false)
+                        return
+                    }
+                }
+
+                localStorage.setItem('registro1_horarioPeriodo1', JSON.stringify(usr[0]))
+                localStorage.setItem('registro1_horarioPeriodo2', JSON.stringify(usr[1]))
+                localStorage.setItem('registro1_horarioPeriodo3', JSON.stringify(usr[2]))
+
                 navigate('/registroAsesorUF')
-            } else if(data.view === 3) {
+            } 
+            
+            else if(data.view === 3) {
                 navigate('/registroAsesorCondiciones')
             } else if(data.view === 4) {
                 navigate('/registroAsesorResumen')
@@ -50,78 +159,9 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
 
         } else {
 
-            let usr = data.props
-
-            // Si hubo un error con la API
-            if(usr === null) {
-                navigate('/landingPage')
-                setLoadingNext(false)
-                return
-            }
-
             if(data.view === 1) {
-    
-                // Validamos que se hayan llenado los campos obligatorios
-                if (usr.nombre === '' || 
-                    usr.apellidoParterno === '' || 
-                    usr.matricula === '' || 
-                    usr.carrera === '' ||
-                    usr.contrasena === '' || 
-                    usr.contrasenaConfirm === '') {
-                    alert('No se han llenado todos los campos obligatorios')
-                    setLoadingNext(false)
-                    return
-                } 
-                // Validamos que la matrícula tenga 9 caracteres
-                if (usr.matricula.length !== 9) {
-                    alert('La matrícula debe tener una longitud de 9 caracteres')
-                    setLoadingNext(false)
-                    return
-                }
-                // Validamos que la contraseña tenga como mínimo 8 caracteres
-                if (usr.contrasena.length < 8) {
-                    alert('La contraseña debe tener al menos 8 caracteres')
-                    setLoadingNext(false)
-                    return
-                }
-                // Validamos que las contraseñas sean iguales
-                if (usr.contrasena !== usr.contrasenaConfirm) {
-                    alert('Las contraseñas no coinciden')
-                    setLoadingNext(false)
-                    return
-                }
-    
-                // Establecemos las variables en el localStorage
-                localStorage.setItem('registro1_matricula', usr.matricula)
-                localStorage.setItem('registro1_contrasena', usr.contrasena)
-                localStorage.setItem('registro1_nombre', usr.nombre)
-                localStorage.setItem('registro1_apellidoPaterno', usr.apellidoParterno)
-                // Validamos la longitud de la carrera por si se usan las siglas pre-grabadas en el localSorage
-                localStorage.setItem('registro1_carrera', usr.carrera.length > 3 ? usr.carrera.slice(0, usr.carrera.indexOf(" ")) : usr.carrera)
-    
-                // Eliminamos los campos no obligatorios en caso de que se hayan eliminado manuelmente al dar usar el btn Atras
-                localStorage.removeItem('registro1_apellidoMaterno')
-                localStorage.removeItem('registro1_telefono')
-                localStorage.removeItem('registro1_imagenPerfil')
-    
-                // Verificamos los campos no obligatorios que haya ingresado el usuario y los guardamos 
-                if(usr.apellidoMarterno) localStorage.setItem('registro1_apellidoMaterno', usr.apellidoMarterno)
-                if(usr.telefono) localStorage.setItem('registro1_telefono', usr.telefono)
-                
-                if(usr.imageUploaded) {
-                    // Comprimimos la imagen de perfil
-                    let imageCompressed = await imageCompressor(usr.imageUploaded)
-                    // Si no se puede comprimir, se le indica al usuario
-                    if(imageCompressed.slice(0, 5) === "error"){
-                        alert('Tu imagen es muy grande.\nReduce el tamaño y vuelve a intentarlo')
-                        setLoadingNext(false)
-                        return
-                    }
-                    localStorage.setItem('registro1_imagenPerfil', imageCompressed)
-                } 
-    
-                // Navegamos a la siguiente pantalla
-                navigate('/registroAsesoradoCondiciones')
+                // Llamamos a la función que registra los datos del asesor
+                await registroDatos(false, usr)
             }
     
             else if(data.view === 2) {

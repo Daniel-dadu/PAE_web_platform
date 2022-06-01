@@ -1,12 +1,12 @@
 
 export {default as TemporalHome} from './views/componentPreview/TemporalHome/TemporalHome.jsx';
-export {default as LandingPage } from './views/LandingPage/LandingPage.js';
+export {default as LandingPage } from './views/LandingPage/LandingPage.jsx';
 export {default as Calendario } from './views/commons/calendario/Calendario.jsx';
 export {default as  PerfilAsesor  } from './views/asesor/perfil/PerfilAsesor.jsx';
 export {default as  PerfilAsesorado  } from './views/asesorado/perfil/PerfilAsesorado.jsx';
 export {default as PerfilDirectivo } from './views/directivo/perfil/PerfilDirectivo.jsx'
 export {default as EditarPerfil } from './views/commons/editarPerfil/EditarPerfil.jsx'
-export {default as DanielFlores } from './views/componentPreview/DanielFlores/DanielFlores.js';
+export {default as DanielFlores } from './views/componentPreview/DanielFlores/DanielFlores.jsx';
 export {default as EnviarNotificacionDirectivos } from './views/directivo/enviarNotificacionDirectivos/EnviarNotificacionDirectivos.jsx';
 
 export {default as DanielMaldonado } from './views/componentPreview/DanielMaldonado/DanielMaldonado.jsx'
@@ -71,23 +71,23 @@ export {default as RegistroAsesorHorario } from './views/asesor/registroAsesorHo
 
 
 export {default as AdministrarUsuariosDirectivos } from './views/commons/administrarUsuariosDirectivos/AdministrarUsuariosDirectivos.jsx'
-export {default as ListaUsuarios } from './components/reusable/ListaUsuarios/ListaUsuarios.js';
+export {default as ListaUsuarios } from './components/reusable/ListaUsuarios/ListaUsuarios.jsx';
 export {default as InformacionPersonalUsuario } from './components/reusable/InformacionPersonalUsuario/InformacionPersonalUsuario.jsx';
-export {default as ImagenPerfilActualizar } from './components/reusable/ImagenPerfilActualizar/ImagenPerfilActualizar.js';
-export {default as TarjetaListaDesplegable } from './components/reusable/TarjetaListaDesplegable/TarjetaListaDesplegable.js';
-export {default as ListaDesplegable } from './components/reusable/ListaDesplegable/ListaDesplegable.js';
-export {default as PopUpEncuesta } from './components/reusable/PopUpEncuesta/PopUpEncuesta.js';
+export {default as ImagenPerfilActualizar } from './components/reusable/ImagenPerfilActualizar/ImagenPerfilActualizar.jsx';
+export {default as TarjetaListaDesplegable } from './components/reusable/TarjetaListaDesplegable/TarjetaListaDesplegable.jsx';
+export {default as ListaDesplegable } from './components/reusable/ListaDesplegable/ListaDesplegable.jsx';
+export {default as PopUpEncuesta } from './components/reusable/PopUpEncuesta/PopUpEncuesta.jsx';
 export {default as ListaUnidadesDeFormacionAsesor } from './components/reusable/ListaUnidadesDeFormacionAsesor/ListaUnidadesDeFormacionAsesor.jsx';
 
 export {default as Perfil } from './views/commons/perfil/Perfil.jsx'
-export {default as imageCompressor } from './assets/reusableFunctions/imageCompressor.js'
 
 export {default as ImagenPerfilCambiar } from './components/reusable/ImagenPerfilCambiar/ImagenPerfilCambiar.jsx'
 
 export {default as AdministrarPerfilAsesoradoDirectivos } from './views/directivo/administrarPerfilAsesoradoDirectivos/administrarPerfilAsesoradoDirectivos.jsx'
-export {default as PopUpGeneral } from './components/reusable/PopUpGeneral/PopUpGeneral.js'
+export {default as PopUpGeneral } from './components/reusable/PopUpGeneral/PopUpGeneral.jsx'
 export {default as RegistroAsesorResumen } from './views/asesor/registroAsesorResumen/RegistroAsesorResumen.jsx'
 
+export {default as imageCompressor } from './assets/reusableFunctions/imageCompressor.js'
 export {default as dateFunctions } from './assets/reusableFunctions/dateFunctions.js'
 
 export {default as AdministrarPerfilAsesorDirectivos } from './views/directivo/administrarPerfilAsesorDirectivos/AdministrarPerfilAsesorDirectivos.jsx'
