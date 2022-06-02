@@ -1,7 +1,8 @@
 
 /* estilo para contenedor general */
 .contenedor-TarjetaListaDesplegable {
-    height: 40px;
+    height: 45px;
+    min-height: 40px;
 }
 
 /* estilos para el tipo de tarjeta 1 */
@@ -288,4 +289,113 @@
 }
 .rojo_tipo_2 {
     background: #581B1B;
+}
+
+
+/* Estilos para tabla tipo 5 */
+
+.tipo5 {
+    width: 90%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.tipo5 .tabla-tipo-1 {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+
+}
+
+.tipo5 .tabla-tipo-1 .fila-general-TarjetaListaDesplegable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+}
+
+.tipo5 .tabla-tipo-1 .claveUF-tipo-1 {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.tipo5 .tabla-tipo-1 .nombreUF-tipo-1 {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Estilos para tabla tipo 6 */
+
+
+.tipo6 {
+    width: 90%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.tipo6 .tabla-tipo-1 {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+
+}
+
+.tipo6 .tabla-tipo-1 .fila-general-TarjetaListaDesplegable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+}
+
+.tipo6 .tabla-tipo-1 .foto-user {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#imagen-usuario-tipo5 {
+    border-radius: 100px;
+    height: 95%
+}
+
+.tipo6 .tabla-tipo-1 .nombre-user {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.tipo6 .tabla-tipo-1 .matricula-user {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
 }
