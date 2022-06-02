@@ -20,16 +20,24 @@ const info = {
     }, 
     asesores: [
         {
-            nombre: "Fernando Alonso"
+            "matricula":"A01734184",
+            "nombre":"Daniel Flores"
         },
         {
-            nombre: "Casimiro Buenavista"
+            "matricula":"A01734184",
+            "nombre":"Daniel Flores"
         },
         {
-            nombre:"Daniel Rodriguez"
+            "matricula":"A01734184",
+            "nombre":"Daniel Flores"
         },
         {
-            nombre:"Rafael Gonzales"
+            "matricula":"A01734184",
+            "nombre":"Daniel Flores"
+        },
+        {
+            "matricula":"A01734184",
+            "nombre":"Daniel Flores"
         }
     ]
 }
@@ -124,7 +132,9 @@ const PopUpSolicitudAsesoria = ({ data = info, activo, accion }) => {
                             <input type="text" name="lugar_asesoria" id="lugar_asesoria" />
                         </div>
                         <div className='contenedor-asesores'>
-                            <ListaDesplegable tipo={ 1 } semestre={1} />     
+                            
+                            <ListaDesplegable tipo={ 3 } arrContenido={ data.asesores } />  
+
                         </div>
                     </div>
                     <div className='footer-PuSolicitudAsesoria'>

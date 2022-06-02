@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './tarjetaListaDesplegable.css';
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
@@ -32,7 +32,11 @@ const TarjetaListaDesplegable = (
         colorTipo1,
         colorTipo3,
         horaAsesoria, 
-        contenido  
+        contenido,
+        matricula,
+        nombreAsesor,
+        accion,
+        imagenUsuario
     }) => {
 
     /* 
@@ -62,7 +66,7 @@ const TarjetaListaDesplegable = (
                 -> contenido: tipo string, es la cadena que ira dento de la tarjeta de tipo 3.
 
         Ejemplo de uso:
-            Tipo1:  <TarjetaListaDesplegable tipo={ 1 } claveUF="TC3005B"  nombreUF="Desarrollo de software" colorTipo3="verde" />
+            Tipo1:  <TarjetaListaDesplegable tipo={ 1 } claveUF="TC3005B"  nombreUF="Desarrollo de software" colorTipo1="blanco_tipo_1" />
             Tipo2:  <TarjetaListaDesplegable tipo={ 2 } claveUF="TC3005B"  nombreUF="Desarrollo de software"  semestre={1} />
             Tipo3:  <TarjetaListaDesplegable tipo={ 3 } claveUF="TC3005B" colorTipo3="verde_tipo3" horaAsesoria="11 AM" contenido=" Ezequiel Lozano Guerrero le dará asesoria a Daniel Maldonado Espitia " />
             Tipo4:  <TarjetaListaDesplegable tipo={ 4 } claveUF="TC3005B"  nombreUF="Desarrollo de software"  semestre={1} />
@@ -75,16 +79,23 @@ const TarjetaListaDesplegable = (
     const BackgroundColor3 = COLORES_TIPO_3.includes(colorTipo3) ? colorTipo3 :COLORES_TIPO_3[0];
     const BackgroundColor2 = semestre !== 0 ? COLORES_TIPO_2[semestre-1] : COLORES_TIPO_2[0]; 
     const BackgroundColor1 = COLORES_TIPO_1.includes( colorTipo1 )? colorTipo1: COLORES_TIPO_1[0];
+
+
+    const [activo, setActivo] = useState(false);
+    
+    const handleActivo = () => {
+        setActivo(!activo);
+    }
         
   return (
 
     <>
-        <div className={ `contenedor-TarjetaListaDesplegable tipo${ tipo }` }> 
+        <div className={ `contenedor-TarjetaListaDesplegable tipo${ tipo }` } > 
             {
                 //dependiedo del tipo de tarjeta, se renderiza el HTMl correspondiente
                 tipo === 1 ?
                 (
-                    <table className={`tabla-tipo-1 ${ BackgroundColor1 }`}> 
+                    <table className={`tabla-tipo-1 ${  !activo?  BackgroundColor1: "gris_tipo_1" }`} onClick={ handleActivo } > 
 
                         <tr className='fila-general-TarjetaListaDesplegable'>
                             <td className='claveUF-tipo-1' > { claveUF } </td>
@@ -109,7 +120,7 @@ const TarjetaListaDesplegable = (
                     ):
                     tipo === 3?
                     (
-                        <table className={`tabla-tipo-3 ${ BackgroundColor3 }`}> 
+                        <table className={`tabla-tipo-3 ${ BackgroundColor3 }`} onClick={ accion } > 
 
                             <tr className='fila-general-TarjetaListaDesplegable'>
                                 <td className='hora-asesoria-tipo-3' > { horaAsesoria } </td>
@@ -133,7 +144,35 @@ const TarjetaListaDesplegable = (
                             </table>
                         ):
                         (
-                            <h1>LozanoHot</h1>
+                            tipo === 5?
+                            (
+                                <table className={`tabla-tipo-1 ${  !activo?  BackgroundColor1: "gris_tipo_1" }`} onClick={ handleActivo } > 
+
+                                    <tr className='fila-general-TarjetaListaDesplegable'>
+                                        <td className='claveUF-tipo-1' > { matricula } </td>
+                                        <td className='nombreUF-tipo-1'> { nombreAsesor } </td>
+                                    </tr>
+        
+                                </table>
+                            )
+                            :
+                            (
+                                tipo === 6?
+                                (
+                                    <table className={`tabla-tipo-1 ${  !activo?  BackgroundColor1: "gris_tipo_1" }`} onClick={ handleActivo } > 
+
+                                    <tr className='fila-general-TarjetaListaDesplegable'>
+                                        <td className='foto-user'> <img src={ imagenUsuario } alt="imagen-usuario" id="imagen-usuario-tipo5"/> </td>
+                                        <td className='nombre-user' > { matricula } </td>
+                                        <td className='matricula-user'> { nombreAsesor } </td>
+                                    </tr>
+        
+                                </table>
+                                ):
+                                (
+                                    <h1>Hola</h1>
+                                )
+                            )
                         )
                     )
                 )
