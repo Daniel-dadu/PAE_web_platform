@@ -1,6 +1,6 @@
 .encabezado-enviarNotificacionesDir {
     width: 100%;
-    height: 15%;
+    height: 10%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -15,7 +15,7 @@
 
 .contenedor-contenido-enviarNotificacionDirectivos {
     width: 100%;
-    height: 85%;
+    height: 75%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -93,7 +93,7 @@
 
 .contenedor-botones-enviarNotificacionDirectivos {
     width: 100%;
-    height: 150px;
+    /* height: 150px; */
     display: flex;
     justify-content: space-around;
     align-items: center;

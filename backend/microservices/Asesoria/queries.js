@@ -24,9 +24,7 @@ const getUF_carreraSemestre = (request, response) => {
   const consulta = 'SELECT "UnidadFormacion"."idUF" AS "claveUF", "nombreUF" FROM "UnidadFormacion", "UnidadFormacionCarrera" WHERE "UnidadFormacionCarrera"."idUF" = "UnidadFormacion"."idUF" AND "UnidadFormacionCarrera"."idCarrera" = $1 AND "UnidadFormacion"."semestre" = $2'
 
   pool.query(consulta, [carrera, semestre], (error, results) => {
-    if (error) {
-      throw error
-    } else if(!results.rows.length) {
+    if (error || !results.rows.length) {
       // En caso de que no se encuentre ninguna UF con ese semestre y carrera
       response.status(404).json({"ERROR": "No se encontraron UFs para esa carrera y semestre"})
     } else {
@@ -136,7 +134,6 @@ const insertImagen = (request, response) => {
 
 
 module.exports = {
-  getCarreras,
   getUF_carreraSemestre,
   getDiasDisponibles,
   getHorasDisponibles,

@@ -1,0 +1,76 @@
+Primer Semestre
+AR1025
+Creatividad y diseño
+AR1026
+Metodologías de investigación para proyectos de diseño
+EG1001
+Optativa de matemáticas y ciencias
+Segundo Semestre
+AR1027
+Métodos de diseño
+AR1028
+Técnicas de representación espacial y de imagen
+EG1002
+Optativa de humanidades y bellas artes
+Tercer Semestre
+AR2002B
+Diseño y construcción de un hábitat efímero
+AR2035
+La conceptualización del espacio, su teoría y su historia
+AR2036
+Representación de la arquitectura y su construcción
+EG1003
+Optativa de ciencias sociales y del comportamiento
+VA1001B
+Tópico de exploración
+Cuarto Semestre
+AR2004B
+Arquitectura y contextos
+AR2007B
+Equipamiento comunitario
+AR2039
+Investigación y proyecto arquitectónico
+EG1004
+Optativa de liderazgo, emprendimiento e innovación
+Quinto Semestre
+AR2008B
+Vivienda colectiva
+AR2009B
+Vivienda unifamiliar
+AR2040
+Constructibilidad
+EG1005
+Optativa de ética y ciudadanía
+Sexto Semestre 
+VA3111
+Tópicos I
+VA3112
+Tópicos II
+VA3113
+Tópicos III
+VA3114
+Tópicos IV
+VA3115
+Tópicos V
+VA3116
+Tópicos VI
+Séptimo Semestre 
+OP3091
+Optativa Profesional I
+OP3092
+Optativa Profesional II
+OP3093
+Optativa profesional III
+OP3094
+Optativa profesional IV
+OP3095
+Optativa profesional V
+OP3096
+Optativa profesional VI
+Octavo Semestre
+OP3001B
+Optativa profesional multidisciplinaria
+AR3007B
+Emprendimiento en el ámbito de la arquitectura
+AR3008B
+Gestión arquitectónica

@@ -20,9 +20,18 @@
     color: #7e7e7e;
     position: absolute;
     right: 2%;
-    bottom: 10%;
+    top: 18%;
     pointer-events: none;
     background-color: #e6e6e6;
+}
+
+.container_cseld .cross_clear {
+    color: #7e7e7e;
+    position: absolute;
+    top: 25%;
+    background-color: #e6e6e6;
+    cursor: pointer;
+    border: 3px solid #e6e6e6;
 }
 
 /* For DatalistInput */

@@ -51,11 +51,12 @@
     overflow-y: hidden;
     overflow-x: hidden;
     align-items: center;
+    /* height: 50px; */
 
 }
 
 .three .divImg{
-    /* */
+    height:10rem;
 }
 
 .four{

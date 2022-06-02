@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { RegistroAsesorUF, RespuestasEncuestas, AsesoriasExistentesDiaDirectivos, RegistroAsesorResumen, RegistroAsesorHorario, AdministrarPerfilAsesoradoDirectivos, AdministrarUsuariosDirectivos, RegistroAsesoradoDatos, RegistroAsesorDatos, PanelNotificaciones, RegistroAsesoradoCondiciones, RegistroAsesoradoResumen, RegistroAsesorCondiciones, AdministrarUsuarios, TemporalHome, LandingPage, Calendario, PerfilAsesor, PerfilAsesorado, PerfilDirectivo, EditarPerfil, AgendarAsesoriaUF, AgendarAsesoriaDuda, AgendarAsesoriaCalendario, AgendarAsesoriaHora, AgendarAsesoriaResumen, DanielFlores, DanielMaldonado, DanielMunive, Ezequiel, Fernando } from './routeIndex'
+import { RegistroAsesorUF, RespuestasEncuestas, AsesoriasExistentesDiaDirectivos, RegistroAsesorResumen, RegistroAsesorHorario, AdministrarPerfilAsesoradoDirectivos, AdministrarUsuariosDirectivos, RegistroAsesoradoDatos, RegistroAsesorDatos, PanelNotificaciones, RegistroAsesoradoCondiciones, RegistroAsesoradoResumen, RegistroAsesorCondiciones, AdministrarUsuarios, TemporalHome, LandingPage, Calendario, PerfilAsesor, PerfilAsesorado, PerfilDirectivo, EditarPerfil, AgendarAsesoriaUF, AgendarAsesoriaDuda, AgendarAsesoriaCalendario, AgendarAsesoriaHora, AgendarAsesoriaResumen, DanielFlores, DanielMaldonado, DanielMunive, Ezequiel, Fernando, EnviarNotificacionDirectivos } from './routeIndex'
 
 const App = () => {
   return (
@@ -42,11 +42,12 @@ const App = () => {
 
 
           {/* Views de Directivos */}
-        <Route path='/administrarUsuarios' element={<AdministrarUsuarios/>} />
+        <Route path='/administrar' element={<AdministrarUsuarios/>} />
         <Route path='/informacionUsuarios' element={<AdministrarUsuariosDirectivos/>} />
         <Route path='/administrarPerfilAsesorados' element={<AdministrarPerfilAsesoradoDirectivos/>} />
         <Route path='/asesoriasExistentesDiaDirectivos' element={<AsesoriasExistentesDiaDirectivos/>} />
         <Route path='/respuestasEncuestas' element={<RespuestasEncuestas/>} />
+        <Route path='/EnviarNotificacionDirectivos' element={<EnviarNotificacionDirectivos/>} />
 
 
         {/* Esta última ruta es a donde se redirige al usuario cuando se busca una ruta inexistente */}

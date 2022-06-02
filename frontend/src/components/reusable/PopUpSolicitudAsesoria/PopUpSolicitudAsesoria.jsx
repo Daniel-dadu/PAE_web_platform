@@ -78,7 +78,7 @@ const PopUpSolicitudAsesoria = ({ data = info, activo, accion }) => {
 
   return (
         <>
-            <div className={ `contenedor-general-PuSolicitudAsesoria${activo?"":" show"}` } onClick={ accion }>
+            <div className={ `contenedor-general-PuSolicitudAsesoria${activo?"":" show"}` }>
                 <div className='contenedor-PuSolicitudAsesoria'>
                     
                     <div className='encabezado-PuSolicitudAsesoria'>
