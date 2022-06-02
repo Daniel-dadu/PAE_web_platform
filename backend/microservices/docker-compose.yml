@@ -1,0 +1,8 @@
+version: "3.3"
+
+services:
+
+  client:
+    image: microservice-client
+    ports: 
+      - 80:80

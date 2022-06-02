@@ -3,7 +3,6 @@ import { TarjetaListaDesplegable } from '../../../routeIndex';
 
 import { FaAngleDown,FaAngleUp } from "react-icons/fa";
 import './listaDesplegable.css';
-import data from './data.json';
 
 const COLORES_TIPO_1 = [
     "azul_tipo_1",
@@ -11,7 +10,104 @@ const COLORES_TIPO_1 = [
     "rojo_tipo_1"
 ];
 
-const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido=data.listaChica } ) => {
+
+// const listaChica = [
+    
+//     {
+//         "claveUF":"TC3005B",
+//         "nombreUF":"Desarrollo de software"
+//     },
+//     {
+//         "claveUF":"TC4005B",
+//         "nombreUF":"Implementación de software"
+//     },
+//     {
+//         "claveUF":"TC5005B",
+//         "nombreUF":"Eliminación de software innecesario"
+//     },
+//     {
+//         "claveUF":"TC5005B",
+//         "nombreUF":"Eliminación de software innecesario"
+//     },
+//     {
+//         "claveUF":"TC5005B",
+//         "nombreUF":"Eliminación de software innecesario"
+//     },
+//     {
+//         "claveUF":"TC5005B",
+//         "nombreUF":"Eliminación de software innecesario"
+//     },
+//     {
+//         "claveUF":"TC5005B",
+//         "nombreUF":"Eliminación de software innecesario"
+//     },
+//     {
+//         "claveUF":"TC5005B",
+//         "nombreUF":"Eliminación de software innecesario"
+//     },
+//     {
+//         "claveUF":"TC5005B",
+//         "nombreUF":"Eliminación de software innecesario"
+//     }
+        
+// ];
+
+// const listaGrande = [
+//     {
+//         "claveUF":"TC3005B",
+//         "colorTipo3":"verde_tipo3",
+//         "horaAsesoria":"11 AM",
+//         "contenido":"Ezequiel Lozano Guerrero le dará asesoria a Daniel Maldonado Espitia"
+//     },
+//     {
+//         "claveUF":"TC3005B",
+//         "colorTipo3":"rojo_tipo3",
+//         "horaAsesoria":"11 AM",
+//         "contenido":"CANCELADA"
+//     },
+//     {
+//         "claveUF":"TC3005B",
+//         "colorTipo3":"verde_tipo3",
+//         "horaAsesoria":"11 AM",
+//         "contenido":"Ezequiel Lozano Guerrero le dará asesoria a Daniel Maldonado Espitia"
+//     },
+//     {
+//         "claveUF":"TC3005B",
+//         "colorTipo3":"verde_tipo3",
+//         "horaAsesoria":"11 AM",
+//         "contenido":"Ezequiel Lozano Guerrero le dará asesoria a Daniel Maldonado Espitia"
+//     }
+
+// ];
+
+// const listaAsesores = [
+//     {
+//         "matricula":"A01734184",
+//         "nombre":"Daniel Flores"
+//     },
+//     {
+//         "matricula":"A01734184",
+//         "nombre":"Daniel Flores"
+//     },
+//     {
+//         "matricula":"A01734184",
+//         "nombre":"Daniel Flores"
+//     },
+//     {
+//         "matricula":"A01734184",
+//         "nombre":"Daniel Flores"
+//     },
+//     {
+//         "matricula":"A01734184",
+//         "nombre":"Daniel Flores"
+//     }
+// ];
+
+
+
+
+
+const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido } ) => {
 
 
     /*
@@ -21,14 +117,25 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido=data.listaChica
             -> El uso de un json solo es una simulacion para poder probar los componentes, 
             de hecho, los arreglos recibidos en la propiedad de "arrContenido", deberian ser pasados desde el componente o view
             de donde se este mandando a llamar el componente, esto despues de extraerlo toda esa informacion del json de verdad.
-            
+
             -> los datos del archivo json deben de estar acomodados de la manera como si indica en el json de ejemplo (data.json)
+
             -> Existen dos tipo de ListaDesplegable:
                     1 => es la lista desplegable chica, la cual solo aparece la clave de la UF y el Nombre, es decir, la listaDesplegable de semestre
                     2 => es la lista desplegable grande, aparecen las citas agendadas en en la seccion de directivos.
+
             -> Es importante siempre mandar el property de tipo, ya que podria marcar un error
+
             -> Con propocitos de prueba del componente, se crea un json de prueba (data.json) pero se debera asignar el array de informacion desde el componente op 
             view en donde se mande a llamar.
+
+            -> Es importante manejar la informacion recibida en la propiedad "arrContenido", ya que depederá del tipo de lista con la que se 
+            vaya a trabajar, se sugiere mandar esta información a traves de un objeto, dependiendo del tipo de ListaDesplegable que se vaya a usar.
+        
+                Si se va usar el tipo 1 === usar una estructura como se muestra en el objeto de arriba llamado "listaChica".
+
+                Si se va usar el tipo 2 === usar una estructura como se muestra en el objeto de arriba llamado "listaGrande".
+                    Nota** -> en el atributo color_Tipo3 es importante basarse en los colores de "COLORES_TIPO_1" de la parte de arriba.
 
         Uso:
 
@@ -40,10 +147,10 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido=data.listaChica
         Ejemplo de uso:
 
             De tipo 1: 
-           <ListaDesplegable tipo={ 1 } semestre={1} /> 
+           <ListaDesplegable tipo={ 1 } semestre={1}  arrContenido={ objeto_info }/> 
 
            De tipo 2:
-          <ListaDesplegable tipo={ 2 } fecha="7 de marzo del 2022" />
+          <ListaDesplegable tipo={ 2 } fecha="7 de marzo del 2022" arrContenido={ objeto_info } />
 
 
     
@@ -89,21 +196,24 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido=data.listaChica
                         <div className='container-listaDesplegable'>
                             
                             {
-                                arrContenido[0].semestre1.map((materia, index) => (
+                                arrContenido.map((materia, index) => (
                                     
                                     <TarjetaListaDesplegable 
                                         tipo={1} 
                                         claveUF={materia.claveUF} 
                                         nombreUF={ materia.nombreUF } 
                                         colorTipo1="blanco_tipo_1" 
-                                        key={index}/>
+                                        key={index}
+                                    />
                                 ))
                             }
                         </div>
                 
                     </div>
                 </div>
-            ):
+            )
+            :
+            tipo === 2 ? 
             (
                 <div className='contenedor-listaDesplegable-2'>
                     <div className={ `header-listaDesplegable-2` } >
@@ -140,6 +250,7 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido=data.listaChica
                                         colorTipo3={ cita.colorTipo3 } 
                                         horaAsesoria={ cita.horaAsesoria } 
                                         contenido={ cita.contenido }
+                                        accion={ ()=>{ window.alert("Abrir PopUpInformacionAsesoria") } }
                                         key={index}
                                     />
                                 ))
@@ -147,6 +258,34 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido=data.listaChica
 
                         </div>
             
+                    </div>
+                </div>
+            )
+            :
+            (
+                <div className='contenedor-listaDesplegable'>
+                    <div className={ `header-listaDesplegable negro_tipo_3` } >
+
+                        <p> Seleccionar asesor: </p>
+                    </div>
+            
+                    <div className={ "contenido-listaDesplegable-3 show" }>
+                        <div className='container-listaDesplegable'>
+                            
+                            {
+                                arrContenido.map((asesor, index) => (
+                                    
+                                    <TarjetaListaDesplegable 
+                                        tipo={5} 
+                                        matricula={asesor.matricula} 
+                                        nombreAsesor={ asesor.nombre } 
+                                        colorTipo1="blanco_tipo_1" 
+                                        key={index}
+                                    />
+                                ))
+                            }
+                        </div>
+                
                     </div>
                 </div>
             )

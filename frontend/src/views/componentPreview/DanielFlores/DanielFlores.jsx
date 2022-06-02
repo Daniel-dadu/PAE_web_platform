@@ -1,20 +1,44 @@
-import React, { useState } from 'react';
-import { Template, PupUpSolicitudAsesoria } from '../../../routeIndex';
+import React from 'react';
+import { Template, ListaDesplegable } from '../../../routeIndex';
 import './danielFlores.css';
 
-const DanielFlores = () => {
-  const [active, setActive] = useState(false);
 
-  const handleActive = () => {
-    setActive(!active);
+const listaAsesores = [
+  {
+      "matricula":"A01734184",
+      "nombre":"Daniel Flores"
+  },
+  {
+      "matricula":"A01734184",
+      "nombre":"Daniel Flores"
+  },
+  {
+      "matricula":"A01734184",
+      "nombre":"Daniel Flores"
+  },
+  {
+      "matricula":"A01734184",
+      "nombre":"Daniel Flores"
+  },
+  {
+      "matricula":"A01734184",
+      "nombre":"Daniel Flores"
   }
+];
+
+
+const DanielFlores = () => {
+ 
   return (
     <>
 
-        <PupUpSolicitudAsesoria  activo={active} accion={ handleActive } />
+
         
         <Template view="perfil">
-          <button onClick={ handleActive }>PopUp solicitud asesoria</button>
+          <ListaDesplegable tipo={ 3 } arrContenido={ listaAsesores } />  
+          {/* <ListaDesplegable tipo={ 2 } fecha="7 de marzo del 2022" arrContenido={listaGrande} /> */}
+
+
         </Template>
 
 

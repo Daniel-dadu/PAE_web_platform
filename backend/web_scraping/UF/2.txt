@@ -1,0 +1,114 @@
+AC1003
+Análisis con Probabilidad y Estadística
+AC1003B
+Sistemas constructivos
+AC1004B
+Información espacial
+AC1005B
+Sistemas de información geográfica
+CV1010
+Fundamentos de geología aplicada al ambiente construido
+CV1011
+Evaluación del impacto ambiental de proyectos territoriales
+CV1012
+Aplicación de métodos numéricos al ambiente construido
+EG1002
+Optativa de humanidades y bellas artes
+AR1027
+Métodos de diseño
+AR1028
+Técnicas de representación espacial y de imagen
+AD1016
+Comunicación que inspira
+CD1004
+Análisis para la toma de decisiones
+CD1005
+Pensamiento estadístico
+CF1001B
+Dirección financiera
+D1029
+Legalidad y negocios responsables
+EM1001B
+Ideación y prototipado
+EM1009
+Innovación de modelos de negocios
+MT1001B
+Descubrimientos del mercado para el desarrollo de estrategias
+RH1004
+Procesos de gestión de talento
+F1008
+Experimentación física y pensamiento estadístico
+F1015B
+Aplicación de la termodinámica en sistemas ingenieriles
+F1016B
+Análisis de sistemas eléctricos en sistemas ingenieriles
+F1017B
+Análisis de sistemas electromagnéticos en sistemas ingenieriles
+MA1029
+Modelación matemática intermedia
+MA1030
+Modelación matricial
+MA1031
+Análisis estadístico
+Q1021
+Experimentación química y pensamiento estadístico fundamental
+D1001B
+Introducción al derecho
+EC1002B
+Emprendimiento y tecnología para la transformación de México
+EC1013
+Macroeconomía
+EC1014
+Microeconomía
+MA1023
+Métodos cuantitativos I
+MA1024
+Pensamiento matemático II
+TC1002B
+Herramientas tecnológicas para las ciencias sociales
+AR1001B
+Representación formal del espacio
+AV1001B
+Narrativa audiovisual
+EH1008
+Imaginarios culturales de México
+EH1009
+Semiótica y narratologías contemporáneas
+H1001B
+Estructuras simbólicas en la imagen, la literatura y la música
+F1010B
+Aplicación de la termodinámica en ingeniería de procesos
+F1011B
+Análisis de sistemas eléctricos en ingeniería de procesos
+F1012B
+Análisis de sistemas electromagnéticos en ingeniería de procesos
+Q1022
+Análisis de la transformación de la materia en procesos químicos
+Q1023
+Experimentación química y pensamiento estadístico intermedio
+F1018B
+Aplicación de la termodinámica en ciencias
+F1019B
+Análisis de sistemas eléctricos en ciencias
+F1020B
+Análisis de sistemas electromagnéticos en ciencias
+BT1013
+Análisis de biología computacional
+F1013B
+Modelación computacional de sistemas eléctricos
+F1014B
+Modelación computacional de sistemas electromagnéticos
+TC1003B
+Modelación de la ingeniería con matemática computacional
+TC1030
+Programación orientada a objetos
+OP1007
+Optativa de fundamentos en ingeniería
+AR1004B
+Modelación y representación gráfica de un edificio
+AR1005B
+Modelación y representación gráfica de tu campus con topografía
+AR1006B
+Modelación y representación gráfica de tu entorno con geomática
+CV1013
+Análisis de fenómenos naturales y sociales con probabilidad y estadística
