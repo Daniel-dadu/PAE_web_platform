@@ -57,3 +57,11 @@
 .listaDesplegableSemestre-3 .header-listaDesplegable-2{
     background-color: #581B1B;
 }
+
+.list_ufsBySemester {
+    /* background-color: #9ac4d3; */
+    height: 85%;
+    width: 90%;
+    margin: auto;
+    overflow: scroll;
+}

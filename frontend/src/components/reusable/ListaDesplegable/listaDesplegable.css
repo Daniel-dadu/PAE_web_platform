@@ -1,7 +1,7 @@
 .contenedor-listaDesplegable {
     height: 100%;
     width: 100%;
-    max-width: 460px;
+    max-width: 95%;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -21,7 +21,7 @@
 
 .container-listaDesplegable {
     width: 100%;
-    max-width: 460px;
+    /* max-width: 460px; */
 }
 
 .container-listaDesplegable-2 {
@@ -90,6 +90,8 @@
     transition: all 0.5s ease-in-out;
     height: 0;
     opacity: 0;
+    margin-bottom: 1rem;
+
 }
 
 .contenedor-listaDesplegable .contenido-listaDesplegable-3 {

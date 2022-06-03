@@ -72,8 +72,8 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido } ) => {
         setActive(!active);
     }
 
-    // const BackgroundColorTipo1 = semestre !== 0 ? COLORES_TIPO_1[semestre-1] : COLORES_TIPO_1[0];
-    const BackgroundColorTipo1 = COLORES_TIPO_1[semestre-1];
+    const BackgroundColorTipo1 = semestre !== 0 ? COLORES_TIPO_1[semestre-1] : COLORES_TIPO_1[0];
+    // const BackgroundColorTipo1 = COLORES_TIPO_1[semestre-1];
 
 
   return (

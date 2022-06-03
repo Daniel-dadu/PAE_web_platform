@@ -108,31 +108,23 @@ function RegistroAsesorUF({planEstudios = planEstudiosJSON}){
                         
                     </div>
 
-                    {/* {
-                        Object.keys(planEstudios['planEstudios']).map((index) => 
-                            <div className = {`containerListaDesplegableAsesorias listaDesplegableSemestre-${planEstudios['planEstudios'][index]['semestre']}`}>
-                                <ListaDesplegable
-                                    fecha = {`Semestre ${planEstudios['planEstudios'][index]['semestre']}`}
-                                    tipo = {1}
-                                    semestre={planEstudios['planEstudios'][index]['semestre']}
-                                    arrContenido = {planEstudios['planEstudios'][index]['unidadesFormacion']}
-                                />
-                            </div>
-                        )
-                    } */}
-                    {
-                        Object.keys(planEstudiosAPI).map((index) => 
-                            <div className = {`containerListaDesplegableAsesorias listaDesplegableSemestre-${planEstudiosAPI[index]['semestre']}`}>
-                                <ListaDesplegable
-                                    fecha = {`Semestre ${planEstudiosAPI[index]['semestre']}`}
-                                    tipo = {1}
-                                    semestre={planEstudiosAPI[index]['semestre']}
-                                    arrContenido = {planEstudiosAPI[index]['unidadesFormacion']}
-                                />
-                            </div>
-                        )
-                    }
-                    
+                    <div className='list_ufsBySemester'>
+
+                        {
+                            Object.keys(planEstudiosAPI).map((index) => 
+                                <div className = {`containerListaDesplegableAsesorias listaDesplegableSemestre-${planEstudiosAPI[index]['semestre']}`}>
+                                    <ListaDesplegable
+                                        fecha = {`Semestre ${planEstudiosAPI[index]['semestre']}`}
+                                        tipo = {1}
+                                        semestre={planEstudiosAPI[index]['semestre']}
+                                        arrContenido = {planEstudiosAPI[index]['unidadesFormacion']}
+                                    />
+                                </div>
+                            )
+                        }
+
+                    </div>
+
                     
                 </div>
 
