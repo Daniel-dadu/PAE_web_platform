@@ -3,7 +3,6 @@ import { TemplateRegistroUsuario, ListaDesplegable, TarjetaListaDesplegable, Cam
 import planEstudiosJSON from './PruebaRegistroAsesorUF.json'
 import '../../../index.css'
 import "./RegistroAsesorUF.css"
-import { FaSearch } from "react-icons/fa";
 
 let progressBar = {
   "currentStep": 2,
@@ -80,13 +79,6 @@ function RegistroAsesorUF({planEstudios = planEstudiosJSON}){
                             />
                         </div>
                         
-                        <div className = 'barraBusquedaRegistroUF'>
-                            <div className = 'containerBarraBusqueda'>
-                                <input type = 'text' placeholder = "PENDIENTE!!!" />
-                                <FaSearch className = 'icono'/>
-                            </div>
-                        </div>
-
                     </div>
 
                     {

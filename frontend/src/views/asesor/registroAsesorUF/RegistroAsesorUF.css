@@ -38,23 +38,6 @@
     font-size: 1.2rem;
 }
 
-.barraBusquedaRegistroUF{
-    width: 60%;
-    float: left;
-    height: 100%;
-    padding-top: 20px;
-}
-
-.barraBusquedaRegistroUF .containerBarraBusqueda{
-    width: 83%;
-    margin: auto;
-}
-
-.barraBusquedaRegistroUF .containerBarraBusqueda input{
-    font-size: 1.2rem;
-    height: 43px;
-}
-
 .containerMateriaSeleccionada{
     margin-bottom: 10px;
 }
