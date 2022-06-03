@@ -143,11 +143,9 @@
     max-height: 350px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
     align-items: center;
     flex-direction: column;
     overflow-y: scroll;
-
 }
 
 .contenedor-listaDesplegable-2 .contenido-listaDesplegable .container-listaDesplegable {

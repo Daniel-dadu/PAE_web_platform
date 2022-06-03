@@ -1,6 +1,9 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { TemplateRegistroUsuario, ListaDesplegable, TarjetaListaDesplegable, CampoSeleccionarEnListaDesplegable } from '../../../routeIndex'
 import planEstudiosJSON from './PruebaRegistroAsesorUF.json'
+
+import axios from 'axios'
+
 import '../../../index.css'
 import "./RegistroAsesorUF.css"
 
@@ -51,6 +54,30 @@ function RegistroAsesorUF({planEstudios = planEstudiosJSON}){
         console.log(semestreFilter)
     }
 
+    
+
+    const [planEstudiosAPI, setPlanEstudiosAPI] = useState([])
+
+    useEffect(() => {
+        const config = {
+            method: 'get',
+            url: `http://20.225.209.57:3091/general/get_ufs_carreras?carrera1=${localStorage.registro1_carrera}&carrera2=${
+                localStorage.registro1_carrera2 ? localStorage.registro1_carrera2 : null
+            }`,
+            headers: { }
+        };
+          
+        axios(config)
+        .then(response => {
+            setPlanEstudiosAPI(response.data)
+            console.log(response.data)
+            console.log(Object.keys(response.data))
+        })
+        .catch(_error => {
+            alert("Error: no se pudieron cargar las Unidades de formación, intente de nuevo más tarde")
+        })
+    }, [setPlanEstudiosAPI])
+
     return (
         
         <TemplateRegistroUsuario 
@@ -81,17 +108,31 @@ function RegistroAsesorUF({planEstudios = planEstudiosJSON}){
                         
                     </div>
 
-                    {
+                    {/* {
                         Object.keys(planEstudios['planEstudios']).map((index) => 
                             <div className = {`containerListaDesplegableAsesorias listaDesplegableSemestre-${planEstudios['planEstudios'][index]['semestre']}`}>
                                 <ListaDesplegable
                                     fecha = {`Semestre ${planEstudios['planEstudios'][index]['semestre']}`}
-                                    tipo = {2}
+                                    tipo = {1}
+                                    semestre={planEstudios['planEstudios'][index]['semestre']}
                                     arrContenido = {planEstudios['planEstudios'][index]['unidadesFormacion']}
                                 />
                             </div>
                         )
+                    } */}
+                    {
+                        Object.keys(planEstudiosAPI).map((index) => 
+                            <div className = {`containerListaDesplegableAsesorias listaDesplegableSemestre-${planEstudiosAPI[index]['semestre']}`}>
+                                <ListaDesplegable
+                                    fecha = {`Semestre ${planEstudiosAPI[index]['semestre']}`}
+                                    tipo = {1}
+                                    semestre={planEstudiosAPI[index]['semestre']}
+                                    arrContenido = {planEstudiosAPI[index]['unidadesFormacion']}
+                                />
+                            </div>
+                        )
                     }
+                    
                     
                 </div>
 

@@ -51,7 +51,17 @@ const getUFs_fromCarreras = (request, response) => {
         if(error) {
             response.status(400).send("Error: no se encontraron UFs para esa(s) carrera(s)")
         } else {
-            response.status(200).json(result.rows)
+
+            let planEstudios = [1,2,3,4,5,6,7,8,9].map(i => ({semestre: i, unidadesFormacion: []}))
+
+            result.rows.forEach(UFjson => {
+                planEstudios[UFjson.semestre - 1].unidadesFormacion.push({
+                    claveUF: UFjson.idUF,
+                    nombreUF: UFjson.nombreUF
+                })
+            })
+            
+            response.status(200).json(planEstudios)
         } 
     })
 }

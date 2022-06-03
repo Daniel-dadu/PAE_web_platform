@@ -4,177 +4,184 @@
             "semestre": "1",
             "unidadesFormacion": [
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"PRIMEROOOO"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"PRIMEROOOO"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
-                },
-                {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
-                },
-                {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"ULTIMOOOOO"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"ültima UF con un nombre bastante grande lorem23 sdfsd sdfgsdf"
                 }
+                
             ]
         },
         {
             "semestre": "2",
             "unidadesFormacion": [
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"PRIMEROOOO"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"PRIMEROOOO"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
-                },
-                {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
-                },
-                {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"ULTIMOOOOO"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"ültima UF con un nombre bastante grande lorem23 sdfsd sdfgsdf"
                 }
+                
             ]
         },
         {
             "semestre": "3",
             "unidadesFormacion": [
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"PRIMEROOOO"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
                 },
                 {
-                    "claveUF":"",
-                    "colorTipo3":"blanco_tipo3",
-                    "horaAsesoria":"TC3005B",
-                    "contenido":"Desarrollo de software"
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
+                },
+                {
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
+                },
+                {
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
+                },
+                {
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
+                },
+                {
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
+                },
+                {
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
+                },
+                {
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
+                },
+                {
+                    "claveUF":"TC3005B",
+                    "nombreUF":"ültima UF con un nombre bastante grande lorem23 sdfsd sdfgsdf"
                 }
+                
+            ]
+        },
+        {
+            "semestre": "4",
+            "unidadesFormacion": [
+                {
+                    "claveUF":"TC3005B",
+                    "nombreUF":"PRIMEROOOO"
+                },
+                {
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
+                },
+                {
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
+                },
+                {
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
+                },
+                {
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
+                },
+                {
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
+                },
+                {
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
+                },
+                {
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
+                },
+                {
+                    "claveUF":"TC3005B",
+                    "nombreUF":"Nombre de la UF"
+                },
+                {
+                    "claveUF":"TC3005B",
+                    "nombreUF":"ültima UF con un nombre bastante grande lorem23 sdfsd sdfgsdf"
+                }
+                
             ]
         }
     ]
