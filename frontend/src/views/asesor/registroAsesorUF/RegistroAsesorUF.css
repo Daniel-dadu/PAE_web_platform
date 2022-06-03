@@ -59,9 +59,13 @@
 }
 
 .list_ufsBySemester {
-    /* background-color: #9ac4d3; */
     height: 85%;
     width: 90%;
     margin: auto;
+    overflow: scroll;
+}
+
+.list_selectedUFs {
+    height: 80%;
     overflow: scroll;
 }

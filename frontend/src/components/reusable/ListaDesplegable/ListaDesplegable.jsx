@@ -18,7 +18,7 @@ const COLORES_TIPO_1 = [
 
 
 
-const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido } ) => {
+const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected } ) => {
 
 
     /*
@@ -75,6 +75,9 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido } ) => {
     const BackgroundColorTipo1 = semestre !== 0 ? COLORES_TIPO_1[semestre-1] : COLORES_TIPO_1[0];
     // const BackgroundColorTipo1 = COLORES_TIPO_1[semestre-1];
 
+    const selectUF = infoUF => {
+        getUFSelected({ ...infoUF, semestre: semestre })
+    } 
 
   return (
     <>
@@ -115,6 +118,7 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido } ) => {
                                         claveUF={materia.claveUF} 
                                         nombreUF={ materia.nombreUF } 
                                         colorTipo1="blanco_tipo_1" 
+                                        getUFSelected={ selectUF }
                                         key={index}
                                     />
                                 ))
