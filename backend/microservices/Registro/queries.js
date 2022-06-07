@@ -75,71 +75,119 @@ const nuevo_asesorado = (request, response) => {
 }
 
 const nuevo_asesor = (request, response) => {
-    const matricula = request.body.matricula
-    const contrasena = request.body.contrasena
-    const nombre = request.body.nombre
-    const apellidoPaterno = request.body.apellidoPaterno
-    const apellidoMaterno = request.body.apellidoMaterno
-    const fotoPerfil = request.body.fotoPerfil
-    const telefono = request.body.telefono
-    const carrera = request.body.carrera
-    const carrera2 = request.body.carrera2
+    const matricula = request.body.matricula;
+    // const contrasena = request.body.contrasena
+    // const nombre = request.body.nombre
+    // const apellidoPaterno = request.body.apellidoPaterno
+    // const apellidoMaterno = request.body.apellidoMaterno
+    // const fotoPerfil = request.body.fotoPerfil
+    // const telefono = request.body.telefono
+    // const carrera = request.body.carrera
+    // const carrera2 = request.body.carrera2
 
     const horario1 = request.body.horarioPeriodo1
     const horario2 = request.body.horarioPeriodo2
     const horario3 = request.body.horarioPeriodo3
 
-    const rollbackTransaction = () => {
-        pool.query('ROLLBACK', error => {
-            if(error) 
-                response.status(400).send('Error: No se pudo detener la transacción en el proceso de registro. Probablemente se haya registrado parcialmente al asesor')
-            else 
-                response.status(409).send('Error: No se pudo registrar al asesor, probablemente la matrícula ya está resgitrada (transacción cancelada correctamente)')
-        })
-    }
+    // const rollbackTransaction = () => {
+    //     pool.query('ROLLBACK', error => {
+    //         if(error) 
+    //             response.status(400).send('Error: No se pudo detener la transacción en el proceso de registro. Probablemente se haya registrado parcialmente al asesor')
+    //         else 
+    //             response.status(409).send('Error: No se pudo registrar al asesor, probablemente la matrícula ya está resgitrada (transacción cancelada correctamente)')
+    //     })
+    // }
 
-    pool.query('BEGIN', error => {
-        if(error) rollbackTransaction()
-        else {
+    (async () => {
 
-            // JSON Checklist para ir indicando que se registró correctamente cada parte
-            let checklistRegistro = {
-                datosPerfil: false,
-                horario: false,
-                UFs: false
-            }
+        const client = await pool.connect()
 
-            // Obtenemos el nuevo salt y la contraseña encriptada
-            const salt = encrypt.getSalt()
-            const password = encrypt.getPassword(contrasena, salt)
+        try {
+            // ================= INICIO TRANSACCION ================= //
+            await client.query('BEGIN')
+            // ================= INICIO TRANSACCION ================= //
+
+            // // JSON Checklist para ir indicando que se registró correctamente cada parte
+            // let checklistRegistro = {
+            //     datosPerfil: false,
+            //     horario: false,
+            //     UFs: false
+            // }
+
+            // // Obtenemos el nuevo salt y la contraseña encriptada
+            // const salt = encrypt.getSalt()
+            // const password = encrypt.getPassword(contrasena, salt)
             
-            const consulta = `CALL registro_datosperfil_asesor($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)`
-            const params = [matricula, password, salt, nombre, apellidoPaterno, apellidoMaterno, fotoPerfil, telefono, carrera, carrera2]
+            // const consulta = `CALL registro_datosperfil_asesor($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)`
+            // const params = [matricula, password, salt, nombre, apellidoPaterno, apellidoMaterno, fotoPerfil, telefono, carrera, carrera2]
 
-            pool.query(consulta, params, error => {
-                if(error){
-                    rollbackTransaction()
-                    return
-                } else {
-                    checklistRegistro.datosPerfil = true
-                }
+            // pool.query(consulta, params, error => {
+            //     if(error){
+            //         rollbackTransaction()
+            //         return
+            //     } else {
+            //         checklistRegistro.datosPerfil = true
+            //     }
+            // })
+
+            const periodosData = await client.query(`SELECT "idPeriodo", "numero", "fechaInicial", "fechaFinal" FROM "Periodo" WHERE "status" = 'actual' ORDER BY "numero"`)
+            let periodos = periodosData.rows
+
+            periodos[0].horario = horario1
+            periodos[1].horario = horario2
+            periodos[2].horario = horario3
+
+            console.log(periodos)
+
+            periodos.forEach(async periodo => {
+
+                let NEWidHorarioDisponiblePeriodo
+
+                const consultaHorarioDP = `INSERT INTO "HorarioDisponiblePeriodo" ("idHorarioDisponiblePeriodo", "idAsesor", "idPeriodo") VALUES (DEFAULT, $1, $2) RETURNING "idHorarioDisponiblePeriodo"`
+
+                const getHorarioDP = await pool.query(consultaHorarioDP, [matricula, periodo.idPeriodo])
+
+                NEWidHorarioDisponiblePeriodo = getHorarioDP.rows[0].idHorarioDisponiblePeriodo
+
+                // let periodoStartDate = periodo.fechaInicial
+                
+                
+                // [horario1, horario2, horario3].forEach(horario => {
+                //     ['lunes', 'martes', 'miercoles', 'jueves', 'viernes'].forEach(dia => {
+                //         horario[dia].forEach(hora => {
+
+                //             for (let index = 0; index < 5; index++) {
+                //                 const consultaHorarioDispo = `INSERT INTO "HorarioDisponible" ("idHorarioDisponible", "idHorarioDisponiblePeriodo", "fechaHora", "status") VALUES (DEFAULT, $1, $2, 'disponible') RETURNING "fechaHora"`
+            
+                //                 const result = await pool.query(consultaHorarioDispo, [NEWidHorarioDisponiblePeriodo, periodoStartDate])
+                //                 // console.log(result.rows[0])
+                                
+                //                 periodoStartDate.setDate(periodoStartDate.getDate() + 7)
+                //             }
+                            
+                //         })
+                //     })
+                // })
+
             })
 
-            let periodos
+                        
+            // ================= FIN TRANSACCION ================= //
+            await client.query('COMMIT')
+            response.status(200).send('Se registró al asesor correctamente')
+            // ================= FIN TRANSACCION ================= //
 
-            pool.query(`SELECT "numero", "fechaInicial", "fechaFinal" FROM "Periodo" WHERE "status" = 'actual'`, (error, results) => {
-                if(error){
-                    rollbackTransaction()
-                    return
-                } else {
-                    periodos = results.rows
-                }
-            })
-
-
-
+        } catch (e) {
+            await client.query('ROLLBACK')
+            throw e
+            
+        } finally {
+            client.release()
         }
-    })
+
+    })().catch(_e => 
+        response.status(409).send('Error: No se pudo registrar al asesor, probablemente la matrícula ya está resgitrada (transacción cancelada correctamente)')
+    )
 
 }
 
@@ -147,5 +195,6 @@ module.exports = {
     prueba_fotoPerfil,
     prueba_getfotoPerfil,
     politica_vigente,
-    nuevo_asesorado
+    nuevo_asesorado,
+    nuevo_asesor
 }
