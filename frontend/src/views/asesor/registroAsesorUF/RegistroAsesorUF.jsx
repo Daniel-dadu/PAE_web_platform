@@ -80,7 +80,7 @@ function RegistroAsesorUF(){
     }
 
 
-    const [UFSelected, setUFSelected] = useState([])
+    const [UFSelected, setUFSelected] = useState(localStorage.registro1_UFs ? JSON.parse(localStorage.registro1_UFs) : [])
 
     const onSelectUF = infoUF => {
 
@@ -94,10 +94,7 @@ function RegistroAsesorUF(){
         )
     }
 
-    const onDeleteUF = claveUF => {
-        setUFSelected(UFSelected.filter(uf => uf.claveUF !== claveUF))
-    }
-
+    const onDeleteUF = claveUF => setUFSelected(UFSelected.filter(uf => uf.claveUF !== claveUF))
 
 
     return (
@@ -105,7 +102,7 @@ function RegistroAsesorUF(){
         <TemplateRegistroUsuario 
             progressBarJSON = {progressBar}
             btnAtrasRoute = "./registroAsesorHorario"
-            btnSiguienteProps={{ view: 3, props: "pendiente" }}
+            btnSiguienteProps={{ view: 3, props: UFSelected }}
             isRegistroAsesor={true}
         >
 
@@ -180,7 +177,6 @@ function RegistroAsesorUF(){
             </div>
 
         </TemplateRegistroUsuario>
-
   )
 }
 

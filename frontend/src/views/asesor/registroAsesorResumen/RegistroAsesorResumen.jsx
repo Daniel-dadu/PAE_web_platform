@@ -42,58 +42,6 @@ let progressBar = {
   ]
 }
 
-const listaUF = [
-    {
-        t1 : {
-            claveUF:"TC3005B",
-            nombreUF:"Desarrollo de software",
-            semestre:1
-        },
-        t2:{
-            claveUF:"TC3005B",
-            nombreUF:"Desarrollo de software",
-            semestre:1
-        }
-    },
-    {
-        t1 : {
-            claveUF:"TC3005B",
-            nombreUF:"Desarrollo de software",
-            semestre:2
-        },
-        t2:{
-            claveUF:"TC3005B",
-            nombreUF:"Desarrollo de software",
-            semestre:2
-        }
-    },
-    {
-        t1 : {
-            claveUF:"TC3005B",
-            nombreUF:"Desarrollo de software",
-            semestre:3
-        },
-        t2:{
-            claveUF:"TC3005B",
-            nombreUF:"Desarrollo de software",
-            semestre:3
-        }
-    },
-    {
-        t1 : {
-            claveUF:"TC3005B",
-            nombreUF:"Desarrollo de software",
-            semestre:3
-        },
-        t2:{
-            claveUF:"TC3005B",
-            nombreUF:"Desarrollo de software",
-            semestre:3
-        }
-    }
-  
-]
-
 function RegistroAsesorResumen() {
 
     let navigate = useNavigate()
@@ -106,6 +54,7 @@ function RegistroAsesorResumen() {
     const semestreUser = localStorage.registro1_semestre
     const telefonoUser = localStorage.registro1_telefono
     const imagenUser = localStorage.registro1_imagenPerfil
+    const UFsUser = localStorage.registro1_UFs
 
     const localStoragePeriodos = [
         localStorage.registro1_horarioPeriodo1, 
@@ -126,13 +75,13 @@ function RegistroAsesorResumen() {
             } 
         })
 
-        if(!nombreUser || !apellidoPatUser || !matriculaUser || !carreraUser || !semestreUser) {
+        if(!nombreUser || !apellidoPatUser || !matriculaUser || !carreraUser || !semestreUser || !UFsUser) {
             alert("Error: No se cuenta con todos los datos. Intente nuevamente.")
             navigate('/RegistroAsesorDatos')
             return
         }
 
-    }, [navigate, nombreUser, apellidoPatUser, matriculaUser, carreraUser, semestreUser])
+    }, [navigate, nombreUser, apellidoPatUser, matriculaUser, carreraUser, semestreUser, UFsUser])
 
     // Variable para conocer la fecha de hoy y actualizar el año
     const currentYear = (new Date()).getFullYear()
@@ -214,7 +163,7 @@ function RegistroAsesorResumen() {
             </div>
 
             <div className = 'containerListaUFResumen'>
-                <ListaUnidadesDeFormacionAsesor data = {listaUF} />
+                <ListaUnidadesDeFormacionAsesor data = {JSON.parse(UFsUser)} />
             </div>
 
             <div className = 'containerCambioMesPeriodoResumen'>

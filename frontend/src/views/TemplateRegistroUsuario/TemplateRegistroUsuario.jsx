@@ -152,7 +152,17 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
             } 
             
             else if(data.view === 3) {
+
+                // Validamos que haya seleccionado mínimo 5 UFs
+                if(usr.length < 5) {
+                    alert("PREGUNTAR A SOCIO FORMADOR: Cuántas materias se deben inscribir como mínimo? Preguntar a PAE\n (De momento son mínimo 5)")
+                    setLoadingNext(false)
+                    return
+                }
+
+                localStorage.setItem('registro1_UFs', JSON.stringify(usr))
                 navigate('/registroAsesorCondiciones')
+
             } else if(data.view === 4) {
                 if(usr.userChecked) {
                     navigate('/registroAsesorResumen')
