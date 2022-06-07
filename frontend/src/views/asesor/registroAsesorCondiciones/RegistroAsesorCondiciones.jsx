@@ -48,8 +48,9 @@ function RegistroAsesorCondiciones() {
         
          <TemplateRegistroUsuario 
          progressBarJSON = {progressBar}
-          btnAtrasRoute="./calendario"
-          btnSiguienteRoute="./calendario"> 
+          btnAtrasRoute="./registroAsesorUF"
+          btnSiguienteProps={{ view: 4, props: null }}
+          isRegistroAsesor={true}> 
              
          <div className='bloq_condicionesAsesor'>
             <h1 className='campo_RegistroAsesorCondiciones'> CAMPO 4: Consideraciones Finales </h1>

@@ -9,7 +9,7 @@ import LoadingSpin from "react-loading-spin";
 
 import { useNavigate } from "react-router-dom";
 
-const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btnSiguienteProps, ultimoTexto ="" }) => {
+const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btnSiguienteProps, ultimoTexto ="", isRegistroAsesor=false }) => {
 
     let navigate = useNavigate()
     const routeChange = route => navigate(`/${route}`);
@@ -26,9 +26,88 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
             routeChange(route)
         }
     }
+
+    const sliceIDstring = str => str.slice(0, str.indexOf(" "))
+
+    // Función para el registro de los datos del usuario
+    // Es asincrona ya que para comprimir las imágenes y crear las asesorías se requiere esperar por el resultado 
+    const registroDatos = async (isAsesor, usr) => {
+
+        // Validamos que se hayan llenado los campos obligatorios
+        if (usr.nombre === '' || 
+            usr.apellidoParterno === '' || 
+            usr.matricula === '' || 
+            usr.carrera === '' ||
+            usr.contrasena === '' || 
+            usr.contrasenaConfirm === '') 
+        {
+            alert('No se han llenado todos los campos obligatorios')
+            setLoadingNext(false)
+            return
+        } 
+        // Validamos que la matrícula tenga 9 caracteres
+        if (usr.matricula.length !== 9) {
+            alert('La matrícula debe tener una longitud de 9 caracteres')
+            setLoadingNext(false)
+            return
+        }
+        // Validamos que la contraseña tenga como mínimo 8 caracteres
+        if (usr.contrasena.length < 8) {
+            alert('La contraseña debe tener al menos 8 caracteres')
+            setLoadingNext(false)
+            return
+        }
+        // Validamos que las contraseñas sean iguales
+        if (usr.contrasena !== usr.contrasenaConfirm) {
+            alert('Las contraseñas no coinciden')
+            setLoadingNext(false)
+            return
+        }
+
+        // Establecemos las variables en el localStorage
+        localStorage.setItem('registro1_matricula', usr.matricula)
+        localStorage.setItem('registro1_contrasena', usr.contrasena)
+        localStorage.setItem('registro1_nombre', usr.nombre)
+        localStorage.setItem('registro1_apellidoPaterno', usr.apellidoParterno)
+        // Validamos la longitud de la carrera por si se usan las siglas pre-grabadas en el localSorage
+        localStorage.setItem('registro1_carrera', usr.carrera.length > 4 ? sliceIDstring(usr.carrera) : usr.carrera)
+
+        // Eliminamos los campos no obligatorios en caso de que se hayan eliminado manuelmente al dar usar el btn Atras
+        localStorage.removeItem('registro1_apellidoMaterno')
+        localStorage.removeItem('registro1_telefono')
+        localStorage.removeItem('registro1_imagenPerfil')
+
+        
+        // Verificamos los campos no obligatorios que haya ingresado el usuario y los guardamos 
+        if(usr.apellidoMarterno) localStorage.setItem('registro1_apellidoMaterno', usr.apellidoMarterno)
+        if(usr.telefono) localStorage.setItem('registro1_telefono', usr.telefono)
+        
+        if(isAsesor) {
+            localStorage.removeItem('registro1_carrera2')
+            if(usr.carrera2) localStorage.setItem('registro1_carrera2', usr.carrera2.length > 4 ? sliceIDstring(usr.carrera2) : usr.carrera2)
+        }
+        
+        if(usr.imageUploaded) {
+            // Comprimimos la imagen de perfil
+            let imageCompressed = await imageCompressor(usr.imageUploaded)
+            // Si no se puede comprimir, se le indica al usuario
+            if(imageCompressed.slice(0, 5) === "error"){
+                alert('Tu imagen es muy grande.\nReduce el tamaño y vuelve a intentarlo')
+                setLoadingNext(false)
+                return
+            }
+            localStorage.setItem('registro1_imagenPerfil', imageCompressed)
+        } 
+
+        // Navegamos a la siguiente pantalla
+        if(isAsesor) navigate('/registroAsesorHorario')
+        else navigate('/registroAsesoradoCondiciones')
+
+        // Ponemos la animación de carga
+        setLoadingNext(false)
+    }
     
     // Función que se ejecutará siempre que se de click al botón de siguiente
-    // Es asincrona ya que para comprimir las imágenes y crear las asesorías se requiere esperar por el resultado 
     const onSiguienteClick = async (data) => {
 
         // Ponemos la animación de carga
@@ -43,118 +122,97 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
             return
         }
 
-        if(data.view === 1) {
+        if(isRegistroAsesor) {
 
-            // Validamos que se hayan llenado los campos obligatorios
-            if (usr.nombre === '' || 
-                usr.apellidoParterno === '' || 
-                usr.matricula === '' || 
-                usr.carrera === '' ||
-                usr.contrasena === '' || 
-                usr.contrasenaConfirm === '') {
-                alert('No se han llenado todos los campos obligatorios')
-                setLoadingNext(false)
-                return
+            if(data.view === 1) {
+                // Llamamos a la función que registra los datos del asesor
+                await registroDatos(true, usr)
+                
             } 
-            // Validamos que la matrícula tenga 9 caracteres
-            if (usr.matricula.length !== 9) {
-                alert('La matrícula debe tener una longitud de 9 caracteres')
-                setLoadingNext(false)
-                return
-            }
-            // Validamos que la contraseña tenga como mínimo 8 caracteres
-            if (usr.contrasena.length < 8) {
-                alert('La contraseña debe tener al menos 8 caracteres')
-                setLoadingNext(false)
-                return
-            }
-            // Validamos que las contraseñas sean iguales
-            if (usr.contrasena !== usr.contrasenaConfirm) {
-                alert('Las contraseñas no coinciden')
-                setLoadingNext(false)
-                return
-            }
 
-            // Establecemos las variables en el localStorage
-            localStorage.setItem('registro1_matricula', usr.matricula)
-            localStorage.setItem('registro1_contrasena', usr.contrasena)
-            localStorage.setItem('registro1_nombre', usr.nombre)
-            localStorage.setItem('registro1_apellidoPaterno', usr.apellidoParterno)
-            // Validamos la longitud de la carrera por si se usan las siglas pre-grabadas en el localSorage
-            localStorage.setItem('registro1_carrera', usr.carrera.length > 3 ? usr.carrera.slice(0, usr.carrera.indexOf(" ")) : usr.carrera)
+            else if(data.view === 2) {
 
-            // Eliminamos los campos no obligatorios en caso de que se hayan eliminado manuelmente al dar usar el btn Atras
-            localStorage.removeItem('registro1_apellidoMaterno')
-            localStorage.removeItem('registro1_telefono')
-            localStorage.removeItem('registro1_imagenPerfil')
-
-            // Verificamos los campos no obligatorios que haya ingresado el usuario y los guardamos 
-            if(usr.apellidoMarterno) localStorage.setItem('registro1_apellidoMaterno', usr.apellidoMarterno)
-            if(usr.telefono) localStorage.setItem('registro1_telefono', usr.telefono)
-            
-            if(usr.imageUploaded) {
-                // Comprimimos la imagen de perfil
-                let imageCompressed = await imageCompressor(usr.imageUploaded)
-                // Si no se puede comprimir, se le indica al usuario
-                if(imageCompressed.slice(0, 5) === "error"){
-                    alert('Tu imagen es muy grande.\nReduce el tamaño y vuelve a intentarlo')
-                    setLoadingNext(false)
-                    return
+                // Validamos que haya ingresado mínimo 5 horas disponibles por periodo
+                for (let i = 0; i < 3; i++) {
+                    if(usr[i].total < 5) {
+                        alert(`Solo seleccionaste ${usr[i].total} horas en el ${i === 0 ? 'primer' : i === 1 ? 'segundo' : 'tercer'} periodo.
+                        \nDebes seleccionar al menos 5 horas disponibles por periodo.`)
+                        setLoadingNext(false)
+                        return
+                    }
                 }
-                localStorage.setItem('registro1_imagenPerfil', imageCompressed)
+
+                localStorage.setItem('registro1_horarioPeriodo1', JSON.stringify(usr[0]))
+                localStorage.setItem('registro1_horarioPeriodo2', JSON.stringify(usr[1]))
+                localStorage.setItem('registro1_horarioPeriodo3', JSON.stringify(usr[2]))
+
+                navigate('/registroAsesorUF')
             } 
-
-            // Navegamos a la siguiente pantalla
-            navigate('/registroAsesoradoCondiciones')
-        }
-
-        else if(data.view === 2) {
-            if(usr.userChecked) {
-                navigate('/registroAsesoradoResumen')
-            } else {
-                alert('Es necesario que se acepten los términos y condiciones')
-            }
-        }
-
-        else if (data.view === 3) {
-            const matricula_confirmed = localStorage.registro1_matricula
-            const contrasena_confirmed = localStorage.registro1_contrasena
-            const nombre_confirmed = localStorage.registro1_nombre
-            const apellidoPat_confirmed = localStorage.registro1_apellidoPaterno
-            const apellidoMat_confirmed = localStorage.registro1_apellidoMaterno
-            const carrera_confirmed = localStorage.registro1_carrera
-            const telefono_confirmed = localStorage.registro1_telefono
-            const imagenPerfil_confirmed = localStorage.registro1_imagenPerfil
-
-            const config = {
-                method: 'post',
-                url: 'http://20.225.209.57:3090/registro/nuevo_asesorado',
-                headers: { 
-                    'Content-Type': 'application/json'
-                },
-                data: JSON.stringify({
-                    "matricula": matricula_confirmed,
-                    "contrasena": contrasena_confirmed,
-                    "nombre": nombre_confirmed,
-                    "apellidoPaterno": apellidoPat_confirmed,
-                    "apellidoMaterno": apellidoMat_confirmed ? apellidoMat_confirmed : null,
-                    "fotoPerfil": imagenPerfil_confirmed ? imagenPerfil_confirmed : null,
-                    "telefono": telefono_confirmed ? telefono_confirmed : null,
-                    "carrera": carrera_confirmed
-                })
-            }
             
-            axios(config)
-                .then(response => {
-                    alert("Bien, " + response.data)
-                    localStorage.clear()
-                    navigate('/landingPage')
-                })
-                .catch(error => {
-                    alert("Error: " + error.response.data)
-                    navigate('/registroAsesoradoDatos')
-                });
+            else if(data.view === 3) {
+                navigate('/registroAsesorCondiciones')
+            } else if(data.view === 4) {
+                navigate('/registroAsesorResumen')
+            } else if(data.view === 5) {
+                navigate('/landingPage')
+            }
+
+        } else {
+
+            if(data.view === 1) {
+                // Llamamos a la función que registra los datos del asesor
+                await registroDatos(false, usr)
+            }
+    
+            else if(data.view === 2) {
+                if(usr.userChecked) {
+                    navigate('/registroAsesoradoResumen')
+                } else {
+                    alert('Es necesario que se acepten los términos y condiciones')
+                }
+            }
+    
+            else if (data.view === 3) {
+                const matricula_confirmed = localStorage.registro1_matricula
+                const contrasena_confirmed = localStorage.registro1_contrasena
+                const nombre_confirmed = localStorage.registro1_nombre
+                const apellidoPat_confirmed = localStorage.registro1_apellidoPaterno
+                const apellidoMat_confirmed = localStorage.registro1_apellidoMaterno
+                const carrera_confirmed = localStorage.registro1_carrera
+                const telefono_confirmed = localStorage.registro1_telefono
+                const imagenPerfil_confirmed = localStorage.registro1_imagenPerfil
+    
+                const config = {
+                    method: 'post',
+                    url: 'http://20.225.209.57:3090/registro/nuevo_asesorado',
+                    headers: { 
+                        'Content-Type': 'application/json'
+                    },
+                    data: JSON.stringify({
+                        "matricula": matricula_confirmed,
+                        "contrasena": contrasena_confirmed,
+                        "nombre": nombre_confirmed,
+                        "apellidoPaterno": apellidoPat_confirmed,
+                        "apellidoMaterno": apellidoMat_confirmed ? apellidoMat_confirmed : null,
+                        "fotoPerfil": imagenPerfil_confirmed ? imagenPerfil_confirmed : null,
+                        "telefono": telefono_confirmed ? telefono_confirmed : null,
+                        "carrera": carrera_confirmed
+                    })
+                }
+                
+                axios(config)
+                    .then(response => {
+                        alert("Bien, " + response.data)
+                        localStorage.clear()
+                        navigate('/landingPage')
+                    })
+                    .catch(error => {
+                        alert("Error: " + error.response.data)
+                        navigate('/registroAsesoradoDatos')
+                    });
+            }
         }
+
 
         setLoadingNext(false)
     }

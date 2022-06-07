@@ -4,6 +4,7 @@
   "description": "",
   "main": "Asesoria.js",
   "scripts": {
+    "start": "node Asesoria.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

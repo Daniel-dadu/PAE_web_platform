@@ -34,15 +34,8 @@
 }
 
 .containerSeleccionPeriodo .container_cseld input{
-    background-color: #1B4858;
-    color: #FFFFFF;
     font-weight: bold;
     font-size: 1.2rem;
-}
-
-.containerSeleccionPeriodo .container_cseld .arrow_down{
-    color: #FFFFFF;
-    background-color: #1B4858;
 }
 
 .barraBusquedaRegistroUF{

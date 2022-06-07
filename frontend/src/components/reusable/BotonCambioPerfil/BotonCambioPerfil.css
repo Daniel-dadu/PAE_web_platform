@@ -1,42 +1,15 @@
 .contenedorBotonCambioPerfil{
-    display: flex;
-    flex-direction: row;
-    width: 10.5%;
-    background-color: #50C7F1;
-
+  display: flex;
+  flex-direction: row;
+  height: 3.5rem;
+  background-color: #50C7F1;
+  width: fit-content;
+  border-radius: 10px 10px 0 0;
 }
 
-
-.textoPreguntaCerradaEncuesta{
-    font-size: 20px;
+.contenedorBotonCambioPerfil button {
+  width: 6rem;
+  height: 3rem;
+  font-size: 1rem;
+  cursor: pointer;
 }
-
-.contenedorBotonCambioPerfil label {
-    display: inline-block;
-    line-height: 10px;
-  }
-
-.contenedorBotonCambioPerfil input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-
-    border: 1px;
-    padding: 0.5em;
-    width: 100px;
-    height: 50px;
-  
-    background-color: #E5E5E5;
-    transition: 0.2s all linear;
-  
-    position: relative;
-
-    border-radius: 5px;
-    
-  }
-  
-.contenedorBotonCambioPerfil input:checked {
-    background-color: #50C7F1;
-  }
-
-

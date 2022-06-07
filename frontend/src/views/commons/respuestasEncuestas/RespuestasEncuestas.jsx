@@ -23,7 +23,7 @@ function RespuestasEncuestas(){
 
         <div>
 
-            <Template view = 'calendario'>
+            <Template view = 'administrar'>
                 
                 <Modal active = {active} toggle = {toggleInformacionAsesoria}>
                     <PopUpInformacionAsesoria  userTypePopUpAsesoria = "alumno" estado = {toggleInformacionAsesoria} infoAsesoria = {
@@ -79,7 +79,7 @@ function RespuestasEncuestas(){
 
                 <div className = 'btnAtras'>
                     <BotonSencillo
-                        onClick = {() => routeChange("./administrarUsuarios")}
+                        onClick = {() => routeChange("./administrar")}
                         backgroundColor = 'turquesa'
                         size = 'normal'
                     >
