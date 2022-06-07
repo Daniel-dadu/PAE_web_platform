@@ -75,7 +75,7 @@ const nuevo_asesorado = (request, response) => {
 }
 
 const nuevo_asesor = (request, response) => {
-    const matricula = request.body.matricula;
+    const matricula = request.body.matricula
     // const contrasena = request.body.contrasena
     // const nombre = request.body.nombre
     // const apellidoPaterno = request.body.apellidoPaterno
@@ -88,6 +88,12 @@ const nuevo_asesor = (request, response) => {
     const horario1 = request.body.horarioPeriodo1
     const horario2 = request.body.horarioPeriodo2
     const horario3 = request.body.horarioPeriodo3
+    // const horario1 = `{"lunes":[8,10,11,9,12,13,14],"martes":[18,19],"miercoles":[8,9,10,11,12,13,14],"jueves":[18,19],"viernes":[8,9,10,11,12,13,14],"total":25}`
+    // const horario2 = `{"lunes":[8],"martes":[11,10,9,8],"miercoles":[8],"jueves":[8,9,10,11],"viernes":[8],"total":11}`
+    // const horario3 = `{"lunes":[12,13,14,15,16,17,19,18,8],"martes":[],"miercoles":[],"jueves":[],"viernes":[19,18,17,16,15,14,13,12,8],"total":18}`
+    // const horario1 = `{"lunes":[],"martes":[],"miercoles":[],"jueves":[],"viernes":[],"total":18}`
+    // const horario2 = `{"lunes":[8,9],"martes":[9],"miercoles":[],"jueves":[],"viernes":[10],"total":25}`
+    // const horario3 = `{"lunes":[],"martes":[],"miercoles":[],"jueves":[],"viernes":[],"total":18}`
 
     // const rollbackTransaction = () => {
     //     pool.query('ROLLBACK', error => {
@@ -98,7 +104,8 @@ const nuevo_asesor = (request, response) => {
     //     })
     // }
 
-    (async () => {
+    // Se pone un punto y coma antes para no tomar lo anterior como una función 
+    ;(async () => {
 
         const client = await pool.connect()
 
@@ -130,44 +137,75 @@ const nuevo_asesor = (request, response) => {
             //     }
             // })
 
+            let holyWeekStartDates = {
+                2022: new Date('11 April 2022'),
+                2023: new Date('3 April 2023'),
+                2024: new Date('25 March 2024'),
+                2025: new Date('14 April 2025'),
+                2026: new Date('30 March 2026'),
+                2027: new Date('22 March 2027'),
+                2028: new Date('10 April 2028'),
+                2029: new Date('26 March 2029'),
+                2030: new Date('15 April 2030')
+            }
+
             const periodosData = await client.query(`SELECT "idPeriodo", "numero", "fechaInicial", "fechaFinal" FROM "Periodo" WHERE "status" = 'actual' ORDER BY "numero"`)
             let periodos = periodosData.rows
 
-            periodos[0].horario = horario1
-            periodos[1].horario = horario2
-            periodos[2].horario = horario3
+            periodos[0].horario = JSON.parse(horario1)
+            periodos[1].horario = JSON.parse(horario2)
+            periodos[2].horario = JSON.parse(horario3)
 
-            console.log(periodos)
+            const currentHWStartDate = holyWeekStartDates[periodos[0].fechaInicial.getFullYear()]
 
             periodos.forEach(async periodo => {
-
-                let NEWidHorarioDisponiblePeriodo
 
                 const consultaHorarioDP = `INSERT INTO "HorarioDisponiblePeriodo" ("idHorarioDisponiblePeriodo", "idAsesor", "idPeriodo") VALUES (DEFAULT, $1, $2) RETURNING "idHorarioDisponiblePeriodo"`
 
                 const getHorarioDP = await pool.query(consultaHorarioDP, [matricula, periodo.idPeriodo])
 
-                NEWidHorarioDisponiblePeriodo = getHorarioDP.rows[0].idHorarioDisponiblePeriodo
+                let NEWidHorarioDisponiblePeriodo = getHorarioDP.rows[0].idHorarioDisponiblePeriodo
 
-                // let periodoStartDate = periodo.fechaInicial
-                
-                
-                // [horario1, horario2, horario3].forEach(horario => {
-                //     ['lunes', 'martes', 'miercoles', 'jueves', 'viernes'].forEach(dia => {
-                //         horario[dia].forEach(hora => {
+                const periodoStartDate = periodo.fechaInicial
 
-                //             for (let index = 0; index < 5; index++) {
-                //                 const consultaHorarioDispo = `INSERT INTO "HorarioDisponible" ("idHorarioDisponible", "idHorarioDisponiblePeriodo", "fechaHora", "status") VALUES (DEFAULT, $1, $2, 'disponible') RETURNING "fechaHora"`
-            
-                //                 const result = await pool.query(consultaHorarioDispo, [NEWidHorarioDisponiblePeriodo, periodoStartDate])
-                //                 // console.log(result.rows[0])
-                                
-                //                 periodoStartDate.setDate(periodoStartDate.getDate() + 7)
-                //             }
-                            
-                //         })
-                //     })
-                // })
+                console.log('\n\n ========= Periodo =========', periodo.numero)
+                console.log('Fecha inicial', periodo.fechaInicial)
+
+                const dias = [['lunes',0], ['martes',1], ['miercoles',2], ['jueves',3], ['viernes',4]]
+                
+                dias.forEach(dia => {
+                    
+                    let currentInsertDate = new Date(periodoStartDate)
+                    currentInsertDate.setDate(currentInsertDate.getDate() + dia[1])
+                    const currentSpecificDate = new Date(currentInsertDate)
+
+                    console.log("\n > Dia", dia[0])
+                    
+                    periodo.horario[dia[0]].forEach(async hora => {
+                        
+                        currentInsertDate = new Date(currentSpecificDate)
+
+                        console.log("currentSpecificDate", currentSpecificDate)
+
+                        currentInsertDate.setHours(hora)
+                        console.log("Hora", hora)
+
+                        for (let index = 0; index < 5; index++) {
+                            // Si la fecha está dentro de semana santa, se aumenta una semana
+                            if(currentInsertDate >= currentHWStartDate && 
+                                currentInsertDate < new Date(currentHWStartDate.getFullYear(), currentHWStartDate.getMonth(), currentHWStartDate.getDate()+6)) 
+                            {
+                                currentInsertDate.setDate(currentInsertDate.getDate() + 7)
+                            }
+                            console.log("Date inserted", currentInsertDate)
+                            const consultaHorarioDispo = `INSERT INTO "HorarioDisponible" ("idHorarioDisponible", "idHorarioDisponiblePeriodo", "fechaHora", "status") VALUES (DEFAULT, $1, $2, 'disponible')`
+        
+                            await pool.query(consultaHorarioDispo, [NEWidHorarioDisponiblePeriodo, currentInsertDate])
+                            currentInsertDate.setDate(currentInsertDate.getDate() + 7)
+                        }
+                        
+                    })
+                })
 
             })
 
