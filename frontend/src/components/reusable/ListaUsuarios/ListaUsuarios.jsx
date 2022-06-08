@@ -83,7 +83,7 @@ const ListaUsuarios = ({ data }) => {
                                     <p> {usuario.matricula} </p>
                                 </td>
                                 <td className='contenedor-nombre'>
-                                    <p> {usuario.nombreCompleto} </p>
+                                    <p> {usuario.nombrecompleto} </p>
                                 </td>
                                 <td className='contenedor-btn-editar'>
                                     <a href='./administrarPerfilAsesorados' className='btn-editar-ListaUsuarios'> <FaEdit className='icono-btn-editar-ListaUsuarios'/> </a>

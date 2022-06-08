@@ -1,58 +1,77 @@
-import React  from 'react'
+import React, { useEffect, useState }  from 'react'
 import '../../../index.css'
 import './AdministrarUsuariosDirectivos.css'
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 import { Template, ListaUsuarios, BotonSencillo, BotonConImagen } from '../../../routeIndex'
 
 import { FaCopy} from 'react-icons/fa'
 
-const dataUsuarios = [
-    {
-        "matricula": "A00000001",
-        "nombreCompleto": "Daniel Esteban Maldonado Espitia"
+// const dataUsuarios = [
+//     {
+//         "matricula": "A00000001",
+//         "nombreCompleto": "Daniel Esteban Maldonado Espitia"
 
-    },
-    {
-        "matricula": "A00000002",
-        "nombreCompleto": "Daniel Munive Meneses"
+//     },
+//     {
+//         "matricula": "A00000002",
+//         "nombreCompleto": "Daniel Munive Meneses"
 
-    },
-    {
-        "matricula": "A00000003",
-        "nombreCompleto": "Daniel Flores Rodriguez"
+//     },
+//     {
+//         "matricula": "A00000003",
+//         "nombreCompleto": "Daniel Flores Rodriguez"
 
-    },
-    {
-        "matricula": "A00000004",
-        "nombreCompleto": "Ezequiel Lozano Guerrero"
+//     },
+//     {
+//         "matricula": "A00000004",
+//         "nombreCompleto": "Ezequiel Lozano Guerrero"
 
-    },
-    {
-        "matricula": "A00000005",
-        "nombreCompleto": "Fernando Jimenez"
+//     },
+//     {
+//         "matricula": "A00000005",
+//         "nombreCompleto": "Fernando Jimenez"
 
-    },
-    {
-        "matricula": "A00000006",
-        "nombreCompleto": "Emiliano Zapata"
+//     },
+//     {
+//         "matricula": "A00000006",
+//         "nombreCompleto": "Emiliano Zapata"
 
-    },
-    {
-        "matricula": "A00000007",
-        "nombreCompleto": "Leticia Rodríguez Aguilar"
-    }
-]
+//     },
+//     {
+//         "matricula": "A00000007",
+//         "nombreCompleto": "Leticia Rodríguez Aguilar"
+//     }
+// ]
 
 const AdministrarUsuariosDirectivos = ({userTypeUsuariosDirectivos}) => { /* En caso de ser asesorados se espera un tipo de usuario "asesorados", para mostrar unicamente el titulo de asesorados, cualquier otra palabra mostrara el titulo asesor y el boton de link para asesores */
 
     let navigate = useNavigate()
     const routeChange = route => navigate(`/${route}`);
 
+    const [dataUsuarios, setDataUsuarios] = useState([])
+
+    useEffect(() => {
+        var config = {
+            method: 'get',
+            url: `http://20.225.209.57:3093/administracion/get_users_by_rol?rol=${userTypeUsuariosDirectivos}`,
+            headers: { }
+        };
+        
+        axios(config)
+        .then(function (response) {
+            setDataUsuarios(response.data)
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    })
+
     return(
         <Template view = "administrar">
 
 
-            {(userTypeUsuariosDirectivos === 'asesorados') ? 
+            {(userTypeUsuariosDirectivos === 'asesorado') ? 
 
             <h1> Administrar asesorados </h1>
             
