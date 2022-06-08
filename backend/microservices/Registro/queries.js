@@ -76,14 +76,15 @@ const nuevo_asesorado = (request, response) => {
 
 const nuevo_asesor = (request, response) => {
     const matricula = request.body.matricula
-    // const contrasena = request.body.contrasena
-    // const nombre = request.body.nombre
-    // const apellidoPaterno = request.body.apellidoPaterno
-    // const apellidoMaterno = request.body.apellidoMaterno
-    // const fotoPerfil = request.body.fotoPerfil
-    // const telefono = request.body.telefono
-    // const carrera = request.body.carrera
-    // const carrera2 = request.body.carrera2
+    const contrasena = request.body.contrasena
+    const nombre = request.body.nombre
+    const apellidoPaterno = request.body.apellidoPaterno
+    const apellidoMaterno = request.body.apellidoMaterno
+    const fotoPerfil = request.body.fotoPerfil
+    const telefono = request.body.telefono
+    const carrera = request.body.carrera
+    const carrera2 = request.body.carrera2
+    const semestre = request.body.semestre
 
     const horario1 = request.body.horarioPeriodo1
     const horario2 = request.body.horarioPeriodo2
@@ -95,14 +96,8 @@ const nuevo_asesor = (request, response) => {
     // const horario2 = `{"lunes":[8,9],"martes":[9],"miercoles":[],"jueves":[],"viernes":[10],"total":25}`
     // const horario3 = `{"lunes":[],"martes":[],"miercoles":[],"jueves":[],"viernes":[],"total":18}`
 
-    // const rollbackTransaction = () => {
-    //     pool.query('ROLLBACK', error => {
-    //         if(error) 
-    //             response.status(400).send('Error: No se pudo detener la transacción en el proceso de registro. Probablemente se haya registrado parcialmente al asesor')
-    //         else 
-    //             response.status(409).send('Error: No se pudo registrar al asesor, probablemente la matrícula ya está resgitrada (transacción cancelada correctamente)')
-    //     })
-    // }
+    const ufs = request.body.ufs
+    // const ufs = ["TC1031", "TC2005B", "TE3003B", "OP3096", "EG1003", "TC3003B", "OP3001B", "Q1020", "F1004B", "F1001B", "TC1029", "TC1028", "F1005B", "MA1028", "EG1001"]
 
     // Se pone un punto y coma antes para no tomar lo anterior como una función 
     ;(async () => {
@@ -110,33 +105,32 @@ const nuevo_asesor = (request, response) => {
         const client = await pool.connect()
 
         try {
+
             // ================= INICIO TRANSACCION ================= //
             await client.query('BEGIN')
             // ================= INICIO TRANSACCION ================= //
 
-            // // JSON Checklist para ir indicando que se registró correctamente cada parte
-            // let checklistRegistro = {
-            //     datosPerfil: false,
-            //     horario: false,
-            //     UFs: false
-            // }
+            ///////////////////////////////////////////////
+            //////// Registro de Datos personales /////////
+            ///////////////////////////////////////////////
 
-            // // Obtenemos el nuevo salt y la contraseña encriptada
-            // const salt = encrypt.getSalt()
-            // const password = encrypt.getPassword(contrasena, salt)
+            // Obtenemos el nuevo salt y la contraseña encriptada
+            const salt = encrypt.getSalt()
+            const password = encrypt.getPassword(contrasena, salt)
             
-            // const consulta = `CALL registro_datosperfil_asesor($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)`
-            // const params = [matricula, password, salt, nombre, apellidoPaterno, apellidoMaterno, fotoPerfil, telefono, carrera, carrera2]
+            const consulta = `CALL registro_datosperfil_asesor($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)`
+            const params = [matricula, password, salt, nombre, apellidoPaterno, apellidoMaterno, fotoPerfil, telefono, carrera, carrera2, semestre]
 
-            // pool.query(consulta, params, error => {
-            //     if(error){
-            //         rollbackTransaction()
-            //         return
-            //     } else {
-            //         checklistRegistro.datosPerfil = true
-            //     }
-            // })
+            await pool.query(consulta, params)
 
+            ///////////////////////////////////////////////
+            ///// Fin de registro de datos personales /////
+            ///////////////////////////////////////////////
+
+
+            ///////////////////////////////////////////////
+            ///////////// Registro de Horario /////////////
+            ///////////////////////////////////////////////
             let holyWeekStartDates = {
                 2022: new Date('11 April 2022'),
                 2023: new Date('3 April 2023'),
@@ -209,6 +203,20 @@ const nuevo_asesor = (request, response) => {
 
             })
 
+            ///////////////////////////////////////////////
+            ////////// Fin de Registro de Horario /////////
+            ///////////////////////////////////////////////
+
+
+            ///////////////////////////////////////////////
+            /////////////// Registro de UFs ///////////////
+            ///////////////////////////////////////////////
+            ufs.forEach(async claveUF => {
+                await pool.query(`INSERT INTO "AsesorUnidadFormacion" ("idUsuario","idUF") VALUES ($1, $2)`, [matricula, claveUF])
+            })
+            ///////////////////////////////////////////////
+            /////////// Fin de Registro de UFs ////////////
+            ///////////////////////////////////////////////
                         
             // ================= FIN TRANSACCION ================= //
             await client.query('COMMIT')
