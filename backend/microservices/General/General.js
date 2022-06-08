@@ -40,6 +40,8 @@ app.get('/general/meses_inicio_fin_semestre', db.getMeses_inicio_fin_semestre)
 
 app.get('/general/nombre_uf', db.getNombreUF)
 
+app.get('/general/get_ufs_carreras', db.getUFs_fromCarreras)
+
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
 })

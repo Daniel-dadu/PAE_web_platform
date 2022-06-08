@@ -61,6 +61,9 @@ app.get('/registro/politica_vigente', db.politica_vigente)
 app.post('/registro/nuevo_asesorado', db.nuevo_asesorado)
 
 
+app.post('/registro/nuevo_asesor', db.nuevo_asesor)
+
+
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
 })
