@@ -64,7 +64,6 @@ const ListaUsuarios = ({ data }) => {
     <>
         <div className='contenedorGeneral-ListaUsuarios'>
             <table className='tabla-ListaUsuarios'>
-                <div className='espacio-para-overflow'></div>
                 <tbody>
                     <tr className='encabazado-tabla-ListaUsuarios'>
                         <td className='contenedor-barraBusqueda'>

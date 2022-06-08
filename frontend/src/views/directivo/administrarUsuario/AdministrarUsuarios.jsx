@@ -35,6 +35,12 @@ function AdministrarUsuarios() {
                 children='Administrar asesorados'> 
             </BotonAdministrarInformacion>
 
+            <BotonAdministrarInformacion 
+                onClick={() => navigate('/administrarDirectivos')}  
+                Imagen={administrarAsesorados} 
+                children='Administrar directivos'> 
+            </BotonAdministrarInformacion>
+
             </div>
 
             <div className='botonesInferiores_administrarUsuarios'> 
