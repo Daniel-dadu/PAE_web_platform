@@ -48,6 +48,8 @@ function RegistroAsesorUF(){
 
     const [planEstudiosAPI, setPlanEstudiosAPI] = useState([])
 
+    const [UFSelected, setUFSelected] = useState([])
+
     useEffect(() => {
         const config = {
             method: 'get',
@@ -61,6 +63,23 @@ function RegistroAsesorUF(){
         .then(response => {
             setCONSTPlanEstudiosAPI(response.data)
             setPlanEstudiosAPI(response.data)
+
+            // Varificamos si hay UFs en el localStorage
+            if(localStorage.registro1_UFs) {
+                let previousUFs = JSON.parse(localStorage.registro1_UFs) // Obtenemos la lista de UFs previamente seleccionada
+                // Establecemos las UFs correctas
+                setUFSelected(
+                    // Filtramos las UFs verificando que cada una de las seleccionadas esté en las materias de la carrera actual
+                    previousUFs.filter(ufPrev => {
+                        for(let ufCarrera of response.data[ufPrev.semestre-1].unidadesFormacion) // Variante del For Each 
+                            if(ufCarrera.claveUF === ufPrev.claveUF) 
+                                return true
+
+                        return false
+                    })
+                )
+            }
+
         })
         .catch(_error => {
             alert("Error: no se pudieron cargar las Unidades de formación, intente de nuevo más tarde")
@@ -79,8 +98,6 @@ function RegistroAsesorUF(){
         )
     }
 
-
-    const [UFSelected, setUFSelected] = useState(localStorage.registro1_UFs ? JSON.parse(localStorage.registro1_UFs) : [])
 
     const onSelectUF = infoUF => {
 

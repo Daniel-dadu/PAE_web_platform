@@ -216,9 +216,8 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
                     localStorage.clear()
                     navigate('/landingPage')
                 })
-                .catch(error => {
-                    alert("Error")
-                    console.log(error);
+                .catch(_error => {
+                    alert("Error: La matrícula ya está registrada.")
                 })
                 
             }
