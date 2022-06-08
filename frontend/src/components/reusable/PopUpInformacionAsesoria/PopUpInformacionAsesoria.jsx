@@ -19,7 +19,7 @@ export default function PopUpInformacionAsesoria({userTypePopUpAsesoria, infoAse
           
           <div className='one'>
             <ImCross onClick={estado} className='close'> </ImCross>      
-            <p className= "titulo">Asesoria del {infoAsesoria.dia} de {dateFunctions.getMonthEspanol(infoAsesoria.mes)} del {infoAsesoria.anio} </p> 
+            <p className= "titulo">Asesoria del {infoAsesoria.dia} de {dateFunctions.getMonthEspanol(infoAsesoria.mes-1)} del {infoAsesoria.anio} </p> 
           </div>
   
           <div className='two'>
@@ -41,7 +41,7 @@ export default function PopUpInformacionAsesoria({userTypePopUpAsesoria, infoAse
           <div className='three'>
 
        {
-        (infoAsesoria.hasOwnProperty('images'))
+        (infoAsesoria.hasOwnProperty('images') && infoAsesoria.images[0] != null)
           ?
             infoAsesoria.images.map((img, index) => {
               return <div><ImagenAsesoria
@@ -52,7 +52,7 @@ export default function PopUpInformacionAsesoria({userTypePopUpAsesoria, infoAse
               nameDownloadImage = 'La imagen de Debian'
               > </ImagenAsesoria> </div>
             })
-          : <p></p>
+          : <p> No se adjuntaron imágenes </p>
        
        }   
           
