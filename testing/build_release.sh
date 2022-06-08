@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
+#Requiere de jq
+
 #Instalar las depedencias para realizar las pruebas
 #npm install
-
-#Instalar jq
 
 start_release(){
     if [ -d "../release/fail_building" ]
