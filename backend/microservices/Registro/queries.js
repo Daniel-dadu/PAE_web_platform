@@ -112,7 +112,6 @@ const nuevo_asesor = (request, response) => {
 
             ///////////////////////////////////////////////
             //////// Registro de Datos personales /////////
-            ///////////////////////////////////////////////
 
             // Obtenemos el nuevo salt y la contraseña encriptada
             const salt = encrypt.getSalt()
@@ -123,14 +122,12 @@ const nuevo_asesor = (request, response) => {
 
             await pool.query(consulta, params)
 
-            ///////////////////////////////////////////////
             ///// Fin de registro de datos personales /////
             ///////////////////////////////////////////////
 
 
             ///////////////////////////////////////////////
             ///////////// Registro de Horario /////////////
-            ///////////////////////////////////////////////
             let holyWeekStartDates = {
                 2022: new Date('11 April 2022'),
                 2023: new Date('3 April 2023'),
@@ -162,8 +159,8 @@ const nuevo_asesor = (request, response) => {
 
                 const periodoStartDate = periodo.fechaInicial
 
-                console.log('\n\n ========= Periodo =========', periodo.numero)
-                console.log('Fecha inicial', periodo.fechaInicial)
+                // console.log('\n\n ========= Periodo =========', periodo.numero)
+                // console.log('Fecha inicial', periodo.fechaInicial)
 
                 const dias = [['lunes',0], ['martes',1], ['miercoles',2], ['jueves',3], ['viernes',4]]
                 
@@ -173,16 +170,16 @@ const nuevo_asesor = (request, response) => {
                     currentInsertDate.setDate(currentInsertDate.getDate() + dia[1])
                     const currentSpecificDate = new Date(currentInsertDate)
 
-                    console.log("\n > Dia", dia[0])
+                    // console.log("\n > Dia", dia[0])
                     
                     periodo.horario[dia[0]].forEach(async hora => {
                         
                         currentInsertDate = new Date(currentSpecificDate)
 
-                        console.log("currentSpecificDate", currentSpecificDate)
+                        // console.log("currentSpecificDate", currentSpecificDate)
 
                         currentInsertDate.setHours(hora)
-                        console.log("Hora", hora)
+                        // console.log("Hora", hora)
 
                         for (let index = 0; index < 5; index++) {
                             // Si la fecha está dentro de semana santa, se aumenta una semana
@@ -191,7 +188,7 @@ const nuevo_asesor = (request, response) => {
                             {
                                 currentInsertDate.setDate(currentInsertDate.getDate() + 7)
                             }
-                            console.log("Date inserted", currentInsertDate)
+                            // console.log("Date inserted", currentInsertDate)
                             const consultaHorarioDispo = `INSERT INTO "HorarioDisponible" ("idHorarioDisponible", "idHorarioDisponiblePeriodo", "fechaHora", "status") VALUES (DEFAULT, $1, $2, 'disponible')`
         
                             await pool.query(consultaHorarioDispo, [NEWidHorarioDisponiblePeriodo, currentInsertDate])
@@ -203,18 +200,15 @@ const nuevo_asesor = (request, response) => {
 
             })
 
-            ///////////////////////////////////////////////
             ////////// Fin de Registro de Horario /////////
             ///////////////////////////////////////////////
 
 
             ///////////////////////////////////////////////
             /////////////// Registro de UFs ///////////////
-            ///////////////////////////////////////////////
             ufs.forEach(async claveUF => {
                 await pool.query(`INSERT INTO "AsesorUnidadFormacion" ("idUsuario","idUF") VALUES ($1, $2)`, [matricula, claveUF])
             })
-            ///////////////////////////////////////////////
             /////////// Fin de Registro de UFs ////////////
             ///////////////////////////////////////////////
                         

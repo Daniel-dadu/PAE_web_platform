@@ -170,6 +170,56 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
                     alert('Es necesario que se acepten los términos y condiciones')
                 }
             } else if(data.view === 5) {
+
+                // const matricula_lcst = localStorage.registro1_matricula
+                // const contrasena_lcst = localStorage.registro1_contrasena
+                // const nombre_lcst = localStorage.registro1_nombre
+                // const apellidoPat_lcst = localStorage.registro1_apellidoPaterno
+                const apellidoMat_lcst = localStorage.registro1_apellidoMaterno
+                // const carrera_lcst = localStorage.registro1_carrera
+                const carrera2_lcst = localStorage.registro1_carrera2
+                const telefono_lcst = localStorage.registro1_telefono
+                const imagenPerfil_lcst = localStorage.registro1_imagenPerfil
+                // const semestre_lcst = localStorage.registro1_semestre
+                // const horario1_lcst = localStorage.registro1_horarioPeriodo1
+                // const horario2_lcst = localStorage.registro1_horarioPeriodo2
+                // const horario3_lcst = localStorage.registro1_horarioPeriodo3
+                // const ufs_lcst = localStorage.registro1_UFs
+                
+                let config = {
+                    method: 'post',
+                    url: 'http://20.225.209.57:3090/registro/nuevo_asesor/',
+                    headers: { 
+                        'Content-Type': 'application/json'
+                    },
+                    data : JSON.stringify({
+                        "matricula": localStorage.registro1_matricula,
+                        "contrasena": localStorage.registro1_contrasena,
+                        "nombre": localStorage.registro1_nombre,
+                        "apellidoPaterno": localStorage.registro1_apellidoPaterno,
+                        "apellidoMaterno": apellidoMat_lcst ? apellidoMat_lcst : null,
+                        "fotoPerfil": imagenPerfil_lcst ? imagenPerfil_lcst : null,
+                        "telefono": telefono_lcst ? telefono_lcst : null,
+                        "carrera": localStorage.registro1_carrera,
+                        "carrera2": carrera2_lcst ? carrera2_lcst : "",
+                        "semestre": localStorage.registro1_semestre,
+                        "horarioPeriodo1": localStorage.registro1_horarioPeriodo1,
+                        "horarioPeriodo2": localStorage.registro1_horarioPeriodo2,
+                        "horarioPeriodo3": localStorage.registro1_horarioPeriodo3,
+                        "ufs": JSON.parse(localStorage.registro1_UFs).map(uf => uf.claveUF)
+                    })
+                };
+                
+                axios(config)
+                .then(response => {
+                    alert(response.data)
+                })
+                .catch(error => {
+                    alert("Error")
+                    console.log(error);
+                    setLoadingNext(false)
+                    return
+                })
                 
                 localStorage.clear()
                 navigate('/landingPage')

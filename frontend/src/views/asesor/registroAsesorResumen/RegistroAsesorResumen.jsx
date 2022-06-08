@@ -115,7 +115,7 @@ function RegistroAsesorResumen() {
         <TemplateRegistroUsuario 
             progressBarJSON = {progressBar}
             btnAtrasRoute = "./registroAsesorCondiciones"
-            btnSiguienteProps={{ view: 5, props: null }}
+            btnSiguienteProps={{ view: 5, props: "ignore" }}
             isRegistroAsesor={true}
             ultimoTexto='Confirmar'
         >
