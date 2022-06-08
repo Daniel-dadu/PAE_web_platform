@@ -19,25 +19,25 @@ let progressBar = {
           "name" : "Horario",
           "state": true,
           "next": "enable",
-          "path" : "Ruta"
+          "path" : "/registroAsesorHorario"
         },
         {
           "name" : "Unidad de Formacion",
           "state": true,
           "next": "enable",
-          "path" : "Ruta"
+          "path" : "/registroAsesorUF"
         },
         {
           "name" : "Consideraciones Finales",
           "state": null,
           "next": "enable",
-          "path" : "./registroAsesorCondiciones"
+          "path" : "/registroAsesorUF"
         },
         {
           "name" : "Confirmación",
           "state": null,
           "next": "enable",
-          "path" : "./registroAsesorResumen"
+          "path" : "/registroAsesorUF"
         }
   ]
 }

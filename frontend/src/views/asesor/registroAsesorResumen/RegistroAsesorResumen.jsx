@@ -7,39 +7,39 @@ import noUserImg from '../../../assets/noUserImg.png'
 
 
 let progressBar = {
-  "currentStep": 4,
-  "steps": [
-      {
-          "name" : "Datos Generales",
-          "state": true,
-          "next": "enable",
-          "path" : "/registroAsesorDatos"
+    "currentStep": 4,
+    "steps": [
+        {
+            "name" : "Datos Generales",
+            "state": true,
+            "next": "enable",
+            "path" : "/registroAsesorDatos"
         }, 
         {
-          "name" : "Horario",
-          "state": true,
-          "next": "enable",
-          "path" : "Ruta"
+            "name" : "Horario",
+            "state": true,
+            "next": "enable",
+            "path" : "/registroAsesorHorario"
         },
         {
-          "name" : "Unidad de Formacion",
-          "state": true,
-          "next": "enable",
-          "path" : "Ruta"
+            "name" : "Unidad de Formacion",
+            "state": true,
+            "next": "enable",
+            "path" : "/registroAsesorUF"
         },
         {
-          "name" : "Consideraciones Finales",
-          "state": true,
-          "next": "enable",
-          "path" : "./registroAsesorCondiciones"
+            "name" : "Consideraciones Finales",
+            "state": true,
+            "next": "enable",
+            "path" : "/registroAsesorCondiciones"
         },
         {
-          "name" : "Confirmación",
-          "state": null,
-          "next": "enable",
-          "path" : "./registroAsesorResumen"
+            "name" : "Confirmación",
+            "state": null,
+            "next": "enable",
+            "path" : "/registroAsesorResumen"
         }
-  ]
+    ]  
 }
 
 function RegistroAsesorResumen() {
