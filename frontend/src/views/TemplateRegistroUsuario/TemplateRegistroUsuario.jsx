@@ -213,16 +213,14 @@ const TemplateRegistroUsuario = ({ progressBarJSON, children, btnAtrasRoute, btn
                 axios(config)
                 .then(response => {
                     alert(response.data)
+                    localStorage.clear()
+                    navigate('/landingPage')
                 })
                 .catch(error => {
                     alert("Error")
                     console.log(error);
-                    setLoadingNext(false)
-                    return
                 })
                 
-                localStorage.clear()
-                navigate('/landingPage')
             }
 
         } else {

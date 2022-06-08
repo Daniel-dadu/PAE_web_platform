@@ -89,15 +89,8 @@ const nuevo_asesor = (request, response) => {
     const horario1 = request.body.horarioPeriodo1
     const horario2 = request.body.horarioPeriodo2
     const horario3 = request.body.horarioPeriodo3
-    // const horario1 = `{"lunes":[8,10,11,9,12,13,14],"martes":[18,19],"miercoles":[8,9,10,11,12,13,14],"jueves":[18,19],"viernes":[8,9,10,11,12,13,14],"total":25}`
-    // const horario2 = `{"lunes":[8],"martes":[11,10,9,8],"miercoles":[8],"jueves":[8,9,10,11],"viernes":[8],"total":11}`
-    // const horario3 = `{"lunes":[12,13,14,15,16,17,19,18,8],"martes":[],"miercoles":[],"jueves":[],"viernes":[19,18,17,16,15,14,13,12,8],"total":18}`
-    // const horario1 = `{"lunes":[],"martes":[],"miercoles":[],"jueves":[],"viernes":[],"total":18}`
-    // const horario2 = `{"lunes":[8,9],"martes":[9],"miercoles":[],"jueves":[],"viernes":[10],"total":25}`
-    // const horario3 = `{"lunes":[],"martes":[],"miercoles":[],"jueves":[],"viernes":[],"total":18}`
 
     const ufs = request.body.ufs
-    // const ufs = ["TC1031", "TC2005B", "TE3003B", "OP3096", "EG1003", "TC3003B", "OP3001B", "Q1020", "F1004B", "F1001B", "TC1029", "TC1028", "F1005B", "MA1028", "EG1001"]
 
     // Se pone un punto y coma antes para no tomar lo anterior como una función 
     ;(async () => {
@@ -164,7 +157,7 @@ const nuevo_asesor = (request, response) => {
 
                 const dias = [['lunes',0], ['martes',1], ['miercoles',2], ['jueves',3], ['viernes',4]]
                 
-                dias.forEach(dia => {
+                dias.forEach(async dia => {
                     
                     let currentInsertDate = new Date(periodoStartDate)
                     currentInsertDate.setDate(currentInsertDate.getDate() + dia[1])
@@ -172,14 +165,16 @@ const nuevo_asesor = (request, response) => {
 
                     // console.log("\n > Dia", dia[0])
                     
-                    periodo.horario[dia[0]].forEach(async hora => {
-                        
+                    let horasArray = periodo.horario[dia[0]]
+                    
+                    // Recorremos cada una de las horas de cierto día de la semana
+                    for (let i = 0; i < horasArray.length; i++) {
                         currentInsertDate = new Date(currentSpecificDate)
 
                         // console.log("currentSpecificDate", currentSpecificDate)
 
-                        currentInsertDate.setHours(hora)
-                        // console.log("Hora", hora)
+                        currentInsertDate.setHours(horasArray[i])
+                        // console.log("Hora", horasArray[i])
 
                         for (let index = 0; index < 5; index++) {
                             // Si la fecha está dentro de semana santa, se aumenta una semana
@@ -195,7 +190,8 @@ const nuevo_asesor = (request, response) => {
                             currentInsertDate.setDate(currentInsertDate.getDate() + 7)
                         }
                         
-                    })
+                    }
+                    
                 })
 
             })
