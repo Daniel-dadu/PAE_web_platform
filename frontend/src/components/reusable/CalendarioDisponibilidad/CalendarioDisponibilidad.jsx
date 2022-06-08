@@ -1,303 +1,129 @@
-import React from 'react'
-import '../../../index.css'
+import React, { useState, useEffect, useCallback } from 'react'
 import './CalendarioDisponibilidad.css'
 
-function selectHour(id){
-
-    let hour = document.getElementById(id);
-
-    if(window.getComputedStyle(hour).backgroundColor === 'rgb(196, 196, 196)'){
-        hour.style.backgroundColor = '#B1FF96';
-    }
-    else{
-        hour.style.backgroundColor = '#C4C4C4';
-    }
-
+/*
+previousHorario:
+{
+    lunes: [],
+    martes: [],
+    miercoles: [],
+    jueves: [],
+    viernes: [],
+    total: 0
 }
+*/
 
-const CalendarioDisponibilidad = () => {
+const CalendarioDisponibilidad = ({ parentCallback, previousHorario, blocked=false }) => {
 
-    var diasCalendario = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes'];
+    const [horario, setHorario] = useState(previousHorario)
+
+    const onSelectHorario = idHorario => {
+
+        let nuevoHorario = horario
+        const horaInt = idHorario.length < 4 ? parseInt(idHorario[2]) : parseInt(idHorario.substring(2,4))
+        
+        const updateNewHorario = (dia) => { 
+            const indexHora = nuevoHorario[dia].indexOf(horaInt)
+            if (indexHora === -1) {
+                nuevoHorario[dia].push(horaInt)
+                nuevoHorario.total++
+            } else {
+                nuevoHorario[dia].splice(indexHora, 1)
+                nuevoHorario.total--
+            }
+        }
+
+        updateNewHorario(
+            idHorario[0] === '0' ? 'lunes' : 
+            idHorario[0] === '1' ? 'martes' : 
+            idHorario[0] === '2' ? 'miercoles' : 
+            idHorario[0] === '3' ? 'jueves' : 'viernes'
+        )
+
+        setHorario(nuevoHorario)
+    }
+
+    const colorVerification = useCallback((hora, dia) => 
+        dia === 0 ? (horario.lunes.indexOf(hora) !== -1 ? '#B1FF96' : '#C4C4C4') :
+        dia === 1 ? (horario.martes.indexOf(hora) !== -1 ? '#B1FF96' : '#C4C4C4') :
+        dia === 2 ? (horario.miercoles.indexOf(hora) !== -1 ? '#B1FF96' : '#C4C4C4') :
+        dia === 3 ? (horario.jueves.indexOf(hora) !== -1 ? '#B1FF96' : '#C4C4C4') :
+        (horario.viernes.indexOf(hora) !== -1 ? '#B1FF96' : '#C4C4C4')
+    , [horario])
+    
+
+    const horas = [8,9,10,11,12,13,14,15,16,17,18,19]
+    const numsDiasSemana = [0,1,2,3,4]
+
+    const createMatrixColors = () => 
+        horas.map(hora => 
+            numsDiasSemana.map(dia => 
+                colorVerification(hora, dia)
+            )
+        )
+
+    const [colors, setColors] = useState(createMatrixColors())
+
+    const selectHour = id => {
+        onSelectHorario(id)
+        setColors(createMatrixColors())
+        parentCallback(horario)
+    }
+
+    useEffect(() => {
+        setHorario(previousHorario)
+    }, [previousHorario])
+
+    useEffect(() => {
+        setColors(
+            [8,9,10,11,12,13,14,15,16,17,18,19].map(hora => 
+                [0,1,2,3,4].map(dia => 
+                    colorVerification(hora, dia)
+                )
+            )
+        )
+    }, [horario, colorVerification])
 
     return(
-        <>
-        <table
-            className = {`calendarioDisponibilidad`}
-        >
-            <tr>
-                <th className = 'nombreDiaCalendarioDisponibilidad'> </th>
-                <th className = 'nombreDiaCalendarioDisponibilidad'> Lunes </th>
-                <th className = 'nombreDiaCalendarioDisponibilidad'> Martes </th>
-                <th className = 'nombreDiaCalendarioDisponibilidad'> Miércoles </th>
-                <th className = 'nombreDiaCalendarioDisponibilidad'> Jueves </th>
-                <th className = 'nombreDiaCalendarioDisponibilidad'> Viernes </th>
-            </tr>
+        <table className = {`calendarioDisponibilidad`} >
+            <tbody>
+                <tr>
+                    <th className = 'nombreDiaCalendarioDisponibilidad' />
+                    <th className = 'nombreDiaCalendarioDisponibilidad'> Lunes </th>
+                    <th className = 'nombreDiaCalendarioDisponibilidad'> Martes </th>
+                    <th className = 'nombreDiaCalendarioDisponibilidad'> Miércoles </th>
+                    <th className = 'nombreDiaCalendarioDisponibilidad'> Jueves </th>
+                    <th className = 'nombreDiaCalendarioDisponibilidad'> Viernes </th>
+                </tr>
 
-            <tr>
+                {
+                    horas.map((horaElement, index) => 
+                        <tr key={index}>
 
-                <td className = 'bloqueCalendarioDisponibilidad'>
-                    <div className = 'horaCalendarioDisponibilidad'>
-                        <p className = 'txtHoraCalendarioDisponibilidad'> 08:00 </p>
-                    </div>
-                </td>
-
-                {(
-                    Object.keys(diasCalendario).slice(0, 5).map((index) => {
-                        return(
-                            <>
-                                <td className = 'bloqueCalendarioDisponibilidad'>
-                                    <div className = 'seleccionCalendario' onClick = {() => selectHour(`${index}8`)} id = {`${index}8`}> </div>
-                                </td>
-                            </>
-                        )
-                    })
-                )}
-
-            </tr>
-
-            <tr>
-
-                <td className = 'bloqueCalendarioDisponibilidad'>
-                    <div className = 'horaCalendarioDisponibilidad'>
-                        <p className = 'txtHoraCalendarioDisponibilidad'> 09:00 </p>
-                    </div>
-                </td>
-
-                {(
-                    Object.keys(diasCalendario).slice(0, 5).map((index) => {
-                        return(
-                            <>
-                                <td className = 'bloqueCalendarioDisponibilidad'>
-                                    <div className = 'seleccionCalendario' onClick = {() => selectHour(`${index}9`)} id = {`${index}9`}> </div>
-                                </td>
-                            </>
-                        )
-                    })
-                )}
-
-            </tr>
-
-            <tr>
-
-                <td className = 'bloqueCalendarioDisponibilidad'>
-                    <div className = 'horaCalendarioDisponibilidad'>
-                        <p className = 'txtHoraCalendarioDisponibilidad'> 10:00 </p>
-                    </div>
-                </td>
-
-                {(
-                    Object.keys(diasCalendario).slice(0, 5).map((index) => {
-                        return(
-                            <>
-                                <td className = 'bloqueCalendarioDisponibilidad'>
-                                    <div className = 'seleccionCalendario' onClick = {() => selectHour(`${index}10`)} id = {`${index}10`}> </div>
-                                </td>
-                            </>
-                        )
-                    })
-                )}
-
-            </tr>
-
-            <tr>
-
-                <td className = 'bloqueCalendarioDisponibilidad'>
-                    <div className = 'horaCalendarioDisponibilidad'>
-                        <p className = 'txtHoraCalendarioDisponibilidad'> 11:00 </p>
-                    </div>
-                </td>
-                
-                {(
-                    Object.keys(diasCalendario).slice(0, 5).map((index) => {
-                        return(
-                            <>
-                                <td className = 'bloqueCalendarioDisponibilidad'>
-                                    <div className = 'seleccionCalendario' onClick = {() => selectHour(`${index}11`)} id = {`${index}11`}> </div>
-                                </td>
-                            </>
-                        )
-                    })
-                )}
-
-            </tr>
-
-            <tr>
-
-                <td className = 'bloqueCalendarioDisponibilidad'>
-                    <div className = 'horaCalendarioDisponibilidad'>
-                        <p className = 'txtHoraCalendarioDisponibilidad'> 12:00 </p>
-                    </div>
-                </td>
-                {(
-                    Object.keys(diasCalendario).slice(0, 5).map((index) => {
-                        return(
-                            <>
-                                <td className = 'bloqueCalendarioDisponibilidad'>
-                                    <div className = 'seleccionCalendario' onClick = {() => selectHour(`${index}12`)} id = {`${index}12`}> </div>
-                                </td>
-                            </>
-                        )
-                    })
-                )}
-
-            </tr>
-
-            <tr>
-
-                <td className = 'bloqueCalendarioDisponibilidad'>
-                    <div className = 'horaCalendarioDisponibilidad'>
-                        <p className = 'txtHoraCalendarioDisponibilidad'> 13:00 </p>
-                    </div>
-                </td>
-                
-                {(
-                    Object.keys(diasCalendario).slice(0, 5).map((index) => {
-                        return(
-                            <>
-                                <td className = 'bloqueCalendarioDisponibilidad'>
-                                    <div className = 'seleccionCalendario' onClick = {() => selectHour(`${index}13`)} id = {`${index}13`}> </div>
-                                </td>
-                            </>
-                        )
-                    })
-                )}
-
-            </tr>
-
-            <tr>
-
-                <td className = 'bloqueCalendarioDisponibilidad'>
-                    <div className = 'horaCalendarioDisponibilidad'>
-                        <p className = 'txtHoraCalendarioDisponibilidad'> 14:00 </p>
-                    </div>
-                </td>
-                
-                {(
-                    Object.keys(diasCalendario).slice(0, 5).map((index) => {
-                        return(
-                            <>
-                                <td className = 'bloqueCalendarioDisponibilidad'>
-                                    <div className = 'seleccionCalendario' onClick = {() => selectHour(`${index}14`)} id = {`${index}14`}> </div>
-                                </td>
-                            </>
-                        )
-                    })
-                )}
-
-            </tr>
-
-            <tr>
-
-            <td className = 'bloqueCalendarioDisponibilidad'>
-                <div className = 'horaCalendarioDisponibilidad'>
-                    <p className = 'txtHoraCalendarioDisponibilidad'> 15:00 </p>
-                </div>
-            </td>
-
-            {(
-                Object.keys(diasCalendario).slice(0, 5).map((index) => {
-                    return(
-                        <>
                             <td className = 'bloqueCalendarioDisponibilidad'>
-                                <div className = 'seleccionCalendario' onClick = {() => selectHour(`${index}15`)} id = {`${index}15`}> </div>
+                                <div className = 'horaCalendarioDisponibilidad'>
+                                    <p className = 'txtHoraCalendarioDisponibilidad'> {horaElement}:00 </p>
+                                </div>
                             </td>
-                        </>
+
+                            { 
+                                numsDiasSemana.map(i => 
+                                    <td className = 'bloqueCalendarioDisponibilidad' key={i} >
+                                        <div 
+                                            className = 'seleccionCalendario' 
+                                            onClick = {blocked ? null : () => selectHour(`${i}-${horaElement}`)} 
+                                            id = {`${i}-${horaElement}`} 
+                                            style={{backgroundColor: colors[horaElement-8][i], cursor: (blocked && "default") }}
+                                        />
+                                    </td>
+                                )
+                            }
+
+                        </tr>
                     )
-                })
-            )}
-
-            </tr>
-
-            <tr>
-
-                <td className = 'bloqueCalendarioDisponibilidad'>
-                    <div className = 'horaCalendarioDisponibilidad'>
-                        <p className = 'txtHoraCalendarioDisponibilidad'> 16:00 </p>
-                    </div>
-                </td>
-
-                {(
-                    Object.keys(diasCalendario).slice(0, 5).map((index) => {
-                        return(
-                            <>
-                                <td className = 'bloqueCalendarioDisponibilidad'>
-                                    <div className = 'seleccionCalendario' onClick = {() => selectHour(`${index}16`)} id = {`${index}16`}> </div>
-                                </td>
-                            </>
-                        )
-                    })
-                )}
-
-            </tr>
-
-            <tr>
-
-                <td className = 'bloqueCalendarioDisponibilidad'>
-                    <div className = 'horaCalendarioDisponibilidad'>
-                        <p className = 'txtHoraCalendarioDisponibilidad'> 17:00 </p>
-                    </div>
-                </td>
-
-                {(
-                    Object.keys(diasCalendario).slice(0, 5).map((index) => {
-                        return(
-                            <>
-                                <td className = 'bloqueCalendarioDisponibilidad'>
-                                    <div className = 'seleccionCalendario' onClick = {() => selectHour(`${index}17`)} id = {`${index}17`}> </div>
-                                </td>
-                            </>
-                        )
-                    })
-                )}
-
-            </tr>
-
-            <tr>
-
-                <td className = 'bloqueCalendarioDisponibilidad'>
-                    <div className = 'horaCalendarioDisponibilidad'>
-                        <p className = 'txtHoraCalendarioDisponibilidad'> 18:00 </p>
-                    </div>
-                </td>
-
-                {(
-                    Object.keys(diasCalendario).slice(0, 5).map((index) => {
-                        return(
-                            <>
-                                <td className = 'bloqueCalendarioDisponibilidad'>
-                                    <div className = 'seleccionCalendario' onClick = {() => selectHour(`${index}18`)} id = {`${index}18`}> </div>
-                                </td>
-                            </>
-                        )
-                    })
-                )}
-                
-            </tr>
-
-            <tr>
-
-                <td className = 'bloqueCalendarioDisponibilidad'>
-                    <div className = 'horaCalendarioDisponibilidad'>
-                        <p className = 'txtHoraCalendarioDisponibilidad'> 19:00 </p>
-                    </div>
-                </td>
-
-                {(
-                    Object.keys(diasCalendario).slice(0, 5).map((index) => {
-                        return(
-                            <>
-                                <td className = 'bloqueCalendarioDisponibilidad'>
-                                    <div className = 'seleccionCalendario' onClick = {() => selectHour(`${index}19`)} id = {`${index}19`}> </div>
-                                </td>
-                            </>
-                        )
-                    })
-                )}
-                
-            </tr>
-
+                }
+            </tbody>
         </table>
-        </>
     );
 
 };

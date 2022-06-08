@@ -34,32 +34,8 @@
 }
 
 .containerSeleccionPeriodo .container_cseld input{
-    background-color: #1B4858;
-    color: #FFFFFF;
     font-weight: bold;
     font-size: 1.2rem;
-}
-
-.containerSeleccionPeriodo .container_cseld .arrow_down{
-    color: #FFFFFF;
-    background-color: #1B4858;
-}
-
-.barraBusquedaRegistroUF{
-    width: 60%;
-    float: left;
-    height: 100%;
-    padding-top: 20px;
-}
-
-.barraBusquedaRegistroUF .containerBarraBusqueda{
-    width: 83%;
-    margin: auto;
-}
-
-.barraBusquedaRegistroUF .containerBarraBusqueda input{
-    font-size: 1.2rem;
-    height: 43px;
 }
 
 .containerMateriaSeleccionada{
@@ -80,4 +56,16 @@
 
 .listaDesplegableSemestre-3 .header-listaDesplegable-2{
     background-color: #581B1B;
+}
+
+.list_ufsBySemester {
+    height: 85%;
+    width: 90%;
+    margin: auto;
+    overflow: scroll;
+}
+
+.list_selectedUFs {
+    height: 80%;
+    overflow: scroll;
 }

@@ -82,6 +82,10 @@
     height: 10px;
 }
 
+.barra_progreso_container_step_path a {
+    color: black;
+}
+
 
 @media screen and (max-width: 480px){ 
 
@@ -131,9 +135,8 @@
     flex-direction: column;
     width: 25px;
     align-items: center;
-    
+    }
 
 }
 
 
-}

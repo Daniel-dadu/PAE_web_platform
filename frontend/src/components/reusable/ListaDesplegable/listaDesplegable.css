@@ -1,7 +1,7 @@
 .contenedor-listaDesplegable {
     height: 100%;
     width: 100%;
-    max-width: 460px;
+    max-width: 95%;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -21,16 +21,16 @@
 
 .container-listaDesplegable {
     width: 100%;
-    max-width: 460px;
+    /* max-width: 460px; */
 }
 
 .container-listaDesplegable-2 {
     width: 100%;
     max-width: calc(100% - 10px);
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: scroll;
 }
 
 .contenedor-listaDesplegable .header-listaDesplegable {
@@ -90,6 +90,25 @@
     transition: all 0.5s ease-in-out;
     height: 0;
     opacity: 0;
+    margin-bottom: 1rem;
+
+}
+
+.contenedor-listaDesplegable .contenido-listaDesplegable-3 {
+    /* width: 95%;
+    height: auto; */
+    width: 95%;
+    border-radius: 0 0 8px 8px;
+    background: #EEEEEE;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 0 10px 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    height: 0;
+    opacity: 0;
 }
 .contenedor-listaDesplegable-2 .contenido-listaDesplegable {
     /* width: 95%;
@@ -112,6 +131,7 @@
     height: 300px;
     opacity: 1;
     width: 95%;
+    /* overflow-y: scroll; */
 }
 .contenedor-listaDesplegable-2 .show{
     /* height: auto; */
@@ -122,12 +142,12 @@
 
 .contenedor-listaDesplegable .contenido-listaDesplegable .container-listaDesplegable {
     height: 100%;
+    max-height: 350px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
     align-items: center;
     flex-direction: column;
-
+    overflow-y: scroll;
 }
 
 .contenedor-listaDesplegable-2 .contenido-listaDesplegable .container-listaDesplegable {
@@ -137,6 +157,19 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    overflow-y: scroll;
+
+}
+
+.contenedor-listaDesplegable .contenido-listaDesplegable-3 .container-listaDesplegable {
+    height: 100%;
+    max-height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
 
 }
 
@@ -152,3 +185,8 @@
     background: #581B1B;
 }
 
+/* color de tipo 3 (seleccionar asesor) */
+
+.negro_tipo_3 {
+    background: #323232;
+}

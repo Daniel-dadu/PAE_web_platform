@@ -1,0 +1,106 @@
+Primer Semestre
+EG1001
+Optativa de matemáticas y ciencias
+F1001B
+Modelación de la ingeniería y ciencias
+F1002B
+Modelación del movimiento en bioingeniería y procesos químicos
+F1003B
+Aplicación de las leyes de conservación en ingeniería de procesos
+MA1028
+Modelación matemática fundamental
+Q1019
+Análisis de la estructura, propiedades y transformación de la materia
+TC1028
+Pensamiento computacional para ingeniería
+Segundo Semestre
+EG1002
+Optativa de humanidades y bellas artes
+F1008
+Experimentación física y pensamiento estadístico
+F1010B
+Aplicación de la termodinámica en ingeniería de procesos
+F1011B
+Análisis de sistemas eléctricos en ingeniería de procesos
+F1012B
+Análisis de sistemas electromagnéticos en ingeniería de procesos
+MA1029
+Modelación matemática intermedia
+Q1021
+Experimentación química y pensamiento estadístico fundamental
+Q1022
+Análisis de la transformación de la materia en procesos químicos
+Q1023
+Experimentación química y pensamiento estadístico intermedio
+Tercer Semestre
+DS1008
+Evaluación del capital natural y principios de sustentabilidad
+EG1003
+Optativa de ciencias sociales y del comportamiento
+IQ1001B
+Aplicación de la conservación de la materia en ingeniería de procesos
+IQ1002B
+Aplicación de la conservación de la energía en ingeniería de procesos
+MA1035
+Modelación en ingeniería mediante sistemas dinámicos
+Q1026
+Análisis estructural de moléculas orgánicas y sus propiedades
+TE1020
+Análisis de circuitos eléctricos
+VA1001B
+Tópico de exploración
+Cuarto Semestre
+DS2002B
+Implementación de programas de manejo de recursos
+EG1004
+Optativa de liderazgo, emprendimiento e innovación
+IQ2001B
+Integración de procesos energéticos
+IQ2002B
+Dimensionamiento de procesos energéticos
+IQ2009
+Análisis termodinámico de procesos energéticos
+IQ2010
+Diseño de procesos para el transporte de fluidos
+IQ2011
+Diseño de procesos de transferencia de calor
+Quinto Semestre
+EG1005
+Optativa de ética y ciudadanía
+IQ2003B
+Evaluación de procesos energéticos
+IQ2004B
+Evaluación del desempeño energético de procesos industriales
+IQ2012
+Aplicación de los principios de eficiencia energética
+IQ2013
+Análisis de procesos y economía circular
+Sexto Semestre
+DS2002
+Innovación de modelos de sustentabilidad corporativa
+IQ2005B
+Dimensionamiento avanzado y monitoreo de procesos energéticos
+IQ2006B
+Innovación de los procesos en su cadena de valor
+IQ2014
+Mejora de procesos productivos aplicando principios de economía circular
+Séptimo Semestre 
+OP3091
+Optativa Profesional I
+OP3092
+Optativa Profesional II
+OP3093
+Optativa profesional III
+OP3094
+Optativa profesional IV
+OP3095
+Optativa profesional V
+OP3096
+Optativa profesional VI
+Octavo Semestre
+DS3001B
+Diseño de estrategias de sustentabilidad corporativa
+IQ3001B
+Desarrollo de modelos de sustentabilidad energética
+OP3001B
+Optativa profesional multidisciplinaria

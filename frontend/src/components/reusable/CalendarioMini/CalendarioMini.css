@@ -14,33 +14,27 @@
     justify-content: space-between;
 }
 
-span{
+.calendario_mini_top .title_mes_anio{
     align-self: center;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 .buttonArrow{
     margin-inline: 50px;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none; 
     align-self: center;
+    background: none;
+    cursor: pointer;
 }
 
-.arrow {
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-  }
-  
-.right {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
+.arrow_calendarioMini {
+    border-radius: 100%;
+    background-color: rgb(230, 230, 230);
+    margin-top: 3px;
 }
 
-.left {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
+.arrow_calendarioMini:hover {
+    background-color: rgb(189, 189, 189);
 }
 
 .calendario_mini_month{
@@ -50,10 +44,9 @@ span{
 
 .calendario_mini_week_day{
     text-align: center;
-}
-
-a{
-    color: inherit;
+    font-weight: 400;
+    color: grey;
+    width: calc(100% / 7);
 }
 
 .calendario_mini_day{
@@ -61,11 +54,6 @@ a{
     font-weight: bold;
 }
 
-
-@media screen and (max-width: 480px){ 
-  
-    
-
-
-
-    }
+.calendario_mini_day a {
+    color: inherit;
+}

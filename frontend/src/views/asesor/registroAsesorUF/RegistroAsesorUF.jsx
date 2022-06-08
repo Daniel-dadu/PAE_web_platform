@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { TemplateRegistroUsuario, ListaDesplegable, TarjetaListaDesplegable, CampoSeleccionarEnListaDesplegable } from '../../../routeIndex'
-import planEstudiosJSON from './PruebaRegistroAsesorUF.json'
+
+import axios from 'axios'
+
 import '../../../index.css'
 import "./RegistroAsesorUF.css"
-import { FaSearch } from "react-icons/fa";
 
 let progressBar = {
   "currentStep": 2,
@@ -18,49 +19,108 @@ let progressBar = {
           "name" : "Horario",
           "state": true,
           "next": "enable",
-          "path" : "Ruta"
+          "path" : "/registroAsesorHorario"
         },
         {
           "name" : "Unidad de Formacion",
           "state": true,
           "next": "enable",
-          "path" : "Ruta"
+          "path" : "/registroAsesorUF"
         },
         {
           "name" : "Consideraciones Finales",
           "state": null,
           "next": "enable",
-          "path" : "./registroAsesorCondiciones"
+          "path" : "/registroAsesorUF"
         },
         {
           "name" : "Confirmación",
           "state": null,
           "next": "enable",
-          "path" : "./registroAsesorResumen"
+          "path" : "/registroAsesorUF"
         }
   ]
 }
 
-function RegistroAsesorUF({planEstudios = planEstudiosJSON}){
+function RegistroAsesorUF(){
 
-    // Hook para guardar el periodo seleccionado
-    const [periodoSeleccionado, setPeriodoSeleccionado] = useState(null)
-    
-    if(periodoSeleccionado === 0){
-        console.log(periodoSeleccionado);
+    const [CONSTplanEstudiosAPI, setCONSTPlanEstudiosAPI] = useState([])
+
+    const [planEstudiosAPI, setPlanEstudiosAPI] = useState([])
+
+    const [UFSelected, setUFSelected] = useState([])
+
+    useEffect(() => {
+        const config = {
+            method: 'get',
+            url: `http://20.225.209.57:3091/general/get_ufs_carreras?carrera1=${localStorage.registro1_carrera}&carrera2=${
+                localStorage.registro1_carrera2 ? localStorage.registro1_carrera2 : null
+            }`,
+            headers: { }
+        }
+          
+        axios(config)
+        .then(response => {
+            setCONSTPlanEstudiosAPI(response.data)
+            setPlanEstudiosAPI(response.data)
+
+            // Varificamos si hay UFs en el localStorage
+            if(localStorage.registro1_UFs) {
+                let previousUFs = JSON.parse(localStorage.registro1_UFs) // Obtenemos la lista de UFs previamente seleccionada
+                // Establecemos las UFs correctas
+                setUFSelected(
+                    // Filtramos las UFs verificando que cada una de las seleccionadas esté en las materias de la carrera actual
+                    previousUFs.filter(ufPrev => {
+                        for(let ufCarrera of response.data[ufPrev.semestre-1].unidadesFormacion) // Variante del For Each 
+                            if(ufCarrera.claveUF === ufPrev.claveUF) 
+                                return true
+
+                        return false
+                    })
+                )
+            }
+
+        })
+        .catch(_error => {
+            alert("Error: no se pudieron cargar las Unidades de formación, intente de nuevo más tarde")
+        })
+    }, [setPlanEstudiosAPI, setCONSTPlanEstudiosAPI])
+
+
+    // Función que recibe el semestre seleccionado en el componente "CampoSeleccionarEnListaDesplegable"
+    const handleSemestreFilter = semestreValue => {
+        const semestreStr = semestreValue.value
+        const semestreInt = semestreStr ? parseInt(semestreStr[semestreStr.length - 1]) : null
+
+        setPlanEstudiosAPI( semestreStr && semestreInt ?
+            [CONSTplanEstudiosAPI[semestreInt - 1]] : 
+            CONSTplanEstudiosAPI
+        )
     }
 
-    // Función que recibe el periodo seleccionado en el componente "CampoSeleccionarEnListaDesplegable" y asigna el valor a carreraSeleccionada
-    const handlePeriodo = periodoValue => {
-        setPeriodoSeleccionado(periodoValue.value)
+
+    const onSelectUF = infoUF => {
+
+        const ufAlreadySelected = UFSelected.find(uf => uf.claveUF === infoUF.claveUF)
+
+        // Si la UF ya había sido seleccionada, se elimina. Si no, se agrega al array de UFSelected
+        setUFSelected(
+            ufAlreadySelected ?
+            UFSelected.filter(uf => uf.claveUF !== infoUF.claveUF) :
+            [...UFSelected, infoUF]
+        )
     }
+
+    const onDeleteUF = claveUF => setUFSelected(UFSelected.filter(uf => uf.claveUF !== claveUF))
+
 
     return (
         
         <TemplateRegistroUsuario 
             progressBarJSON = {progressBar}
             btnAtrasRoute = "./registroAsesorHorario"
-            btnSiguienteRoute = "./registroAsesorCondiciones"
+            btnSiguienteProps={{ view: 3, props: UFSelected }}
+            isRegistroAsesor={true}
         >
 
             <div className='bloq_condicionesAsesor'>
@@ -74,35 +134,34 @@ function RegistroAsesorUF({planEstudios = planEstudiosJSON}){
                     <div className = 'containerSeleccionBusquedaUF'>
 
                         <div className = 'containerSeleccionPeriodo'>
-                            <CampoSeleccionarEnListaDesplegable defectValue = 'Periodo' size = "medium" options = {[1, 2, 3]} parentCallback = {handlePeriodo}/>
+                            <CampoSeleccionarEnListaDesplegable 
+                                placeholder = 'Seleccionar semestre' 
+                                size = "medium" 
+                                options = {[1,2,3,4,5,6,7,8,9].map(i => `Semestre ${i}`)} 
+                                parentCallback = {handleSemestreFilter}
+                            />
                         </div>
                         
-                        <div className = 'barraBusquedaRegistroUF'>
+                    </div>
 
-                            <div className = 'containerBarraBusqueda'>
-                                <input type = 'text' placeholder = {`Buscar unidad de formación`} />
-                                <FaSearch className = 'icono'/>
-                            </div>
+                    <div className='list_ufsBySemester'>
 
-                        </div>
+                        {
+                            Object.keys(planEstudiosAPI).map((index) => 
+                                <div className = {`containerListaDesplegableAsesorias listaDesplegableSemestre-${planEstudiosAPI[index]['semestre']}`} key={index} >
+                                    <ListaDesplegable
+                                        fecha = {`Semestre ${planEstudiosAPI[index]['semestre']}`}
+                                        tipo = {1}
+                                        semestre={planEstudiosAPI[index]['semestre']}
+                                        arrContenido = {planEstudiosAPI[index]['unidadesFormacion']}
+                                        getUFSelected={ onSelectUF }
+                                    />
+                                </div>
+                            )
+                        }
 
                     </div>
 
-                    {
-                        Object.keys(planEstudios['planEstudios']).map((index) => {
-                            return(
-                                <>
-                                <div className = {`containerListaDesplegableAsesorias listaDesplegableSemestre-${planEstudios['planEstudios'][index]['semestre']}`}>
-                                    <ListaDesplegable
-                                        fecha = {`Semestre ${planEstudios['planEstudios'][index]['semestre']}`}
-                                        tipo = {2}
-                                        arrContenido = {planEstudios['planEstudios'][index]['unidadesFormacion']}
-                                    />
-                                </div>
-                                </>
-                            )
-                        })
-                    }
                     
                 </div>
 
@@ -112,31 +171,22 @@ function RegistroAsesorUF({planEstudios = planEstudiosJSON}){
                     
                     {/*Esto se debe realizar dinámicamente, cuando DANO agregue el atributo onClick a las tarjetas de la ListaDesplegable*/}
 
-                    <div className = 'containerMateriaSeleccionada'>
-                        <TarjetaListaDesplegable
-                            tipo = {2}
-                            semestre = {1}
-                            claveUF = 'TC3005B'
-                            nombreUF = 'Desarrollo de software'
-                        />
-                    </div>
+                    <div className='list_selectedUFs'>
 
-                    <div className = 'containerMateriaSeleccionada'>
-                        <TarjetaListaDesplegable
-                            tipo = {2}
-                            semestre = {2}
-                            claveUF = 'TC3005B'
-                            nombreUF = 'Desarrollo de software'
-                        />
-                    </div>
+                        {  
+                            UFSelected.map((UF, index) => 
+                                <div className = 'containerMateriaSeleccionada' key={index} >
+                                    <TarjetaListaDesplegable
+                                        tipo = {2}
+                                        semestre = {UF.semestre}
+                                        claveUF = {UF.claveUF}
+                                        nombreUF = {UF.nombreUF}
+                                        getUFSelected = { onDeleteUF }
+                                    />
+                                </div>
+                            )
+                        }
 
-                    <div className = 'containerMateriaSeleccionada'>
-                        <TarjetaListaDesplegable
-                            tipo = {2}
-                            semestre = {3}
-                            claveUF = 'TC3005B'
-                            nombreUF = 'Desarrollo de software'
-                        />
                     </div>
 
                 </div>
@@ -144,7 +194,6 @@ function RegistroAsesorUF({planEstudios = planEstudiosJSON}){
             </div>
 
         </TemplateRegistroUsuario>
-
   )
 }
 

@@ -1,0 +1,101 @@
+.encabezado-enviarNotificacionesDir {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+}
+.encabezado-enviarNotificacionesDir .texto-encabezado-enviarNotificacionesDir {
+    font-family: 'Dosis', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    
+}
+
+.contenedor-contenido-enviarNotificacionDirectivos {
+    width: 100%;
+    height: 75%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contenedor-contenido-enviarNotificacionDirectivos .contenedor-para-enviarNotificacionDirectivos {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 25px;
+}
+
+.contenedor-para-enviarNotificacionDirectivos .texto-contenedor-para {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+.contenedor-contenido-enviarNotificacionDirectivos .contenedor-asunto-enviarNotificacionesDir {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 25px;
+}
+
+.contenedor-asunto-enviarNotificacionesDir .texto-contenedor-asunto {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+.contenedor-contenido-enviarNotificacionDirectivos .contenedor-mensaje-enviarNotificacionesDir{
+    width: 90%;
+    height: auto;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 25px;
+}
+
+.contenedor-mensaje-enviarNotificacionesDir .texto-contenedor-mensaje {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#asunto_envNotificaciones {
+    padding: 10px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.2rem;
+    background: #E6E6E6;
+    width: 100%;
+    border-radius: 6px;
+
+}
+
+#mensaje_envNotificaciones {
+    padding: 10px;
+    font-size: 1.2rem;
+    margin: 0;
+    border: none;
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    resize: none;
+    border-radius: 6px;
+    width: 80%;
+    height: 200px;
+}
+
+
+
+.contenedor-botones-enviarNotificacionDirectivos {
+    width: 100%;
+    /* height: 150px; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}

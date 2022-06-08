@@ -1,0 +1,178 @@
+AR2002B
+Diseño y construcción de un hábitat efímero
+AR2035
+La conceptualización del espacio, su teoría y su historia
+AR2036
+Representación de la arquitectura y su construcción
+EG1003
+Optativa de ciencias sociales y del comportamiento
+VA1001B
+Tópico de exploración
+AD1001B
+Creación de valor compartido
+CF1016
+Estrategias de planeación financiera
+EM1010
+Proyecto de innovación empresarial
+FZ1012
+Evaluación de proyectos de inversión
+MT1002B
+Construcción de soluciones para el mercado
+MT1011
+Estrategias de mercado y diferenciación
+NI1004
+Competitividad internacional  y oportunidades de crecimiento
+RH1005
+Dimensión estratégica del capital humano
+IN1001B
+Diseño y análisis de experimentos para la innovación ingenieril
+IN1002B
+Desarrollo de proyectos de análisis de datos
+M1011
+Análisis de equilibrio estático
+MA1034
+Modelación de procesos mediante algebra lineal
+MA1035
+Modelación en ingeniería mediante sistemas dinámicos
+TE1020
+Análisis de circuitos eléctricos
+EC1003B
+Macroeconomía y desarrollo económico
+EC1015
+Economía conductual
+EC1016
+Economía para la toma de decisiones
+MA1025
+Métodos cuantitativos II
+MA1026
+Pensamiento matemático III
+P1001B
+Participación política y sociología de la identidad
+BT1014
+Fundamentación de la biología molecular
+IQ1001B
+Aplicación de la conservación de la materia en ingeniería de procesos
+IQ1002B
+Aplicación de la conservación de la energía en ingeniería de procesos
+Q1024
+Aplicación del análisis químico
+Q1025
+Experimentación en química analítica
+Q1026
+Análisis estructural de moléculas orgánicas y sus propiedades
+Q1027
+Fundamentación de la estructura y propiedades de biomoléculas
+F1009
+Análisis de métodos matemáticos para la física
+F1010
+Modelación con ecuaciones diferenciales
+MA1001B
+Modelación estadística para la toma de decisiones
+MA1002B
+Modelación de sistemas con ecuaciones diferenciales
+MA1036
+Fundamentación del álgebra lineal
+MA1033
+Análisis de ecuaciones diferenciales
+TC1004B
+Implementación de internet de las cosas
+TC1031
+Programación de estructuras de datos y algoritmos fundamentales
+TC1032
+Modelación de sistemas mínimos y arquitecturas computacionales
+TI1015
+Análisis de requerimientos de software
+DS1008
+Evaluación del capital natural y principios de sustentabilidad
+SD1001
+Sistema musculoesquelético
+SD1002B
+Metabolismo y energía
+SD1003
+Aporte y consumo de oxígeno
+Q1001B
+Fundamentación de las propiedades de nanomateriales y materiales
+Q1002B
+Obtención de nanomateriales, materiales orgánicos y bioinorgánicos
+TE1019
+Fundamentación de ingeniería eléctrica y electrónica
+A2001B
+Pre-producción de cortometraje animado
+A2002B
+Producción de cortometraje animado
+A2012
+Dibujo
+A2013
+Historia de la animación
+A2014
+Fundamentos de la animación
+AV2001B
+Producción de audio, video y diseño digital
+CO2001B
+Metodologías de investigación para la comunicación
+CO2011
+Teorías de la comunicación
+EH2006
+Del humanismo al post-humanismo
+DL2001B
+Comunicación digital del producto
+DL2002B
+Configuración del objeto
+DL2042
+Representación visual
+DL2043
+Materia y expresión
+D2001B
+Bienes y derechos reales
+D2002B
+Derecho constitucional
+D2031
+Argumentación jurídica
+D2032
+Personas y acto jurídico
+D2033
+Seminario de argumentación jurídica
+D2034
+Seminario de personas y acto jurídico
+D2035
+Seminario de teoría del derecho
+D2036
+Teoría del derecho
+ED2001
+Fundamentos de la pedagogía
+ED2001B
+Análisis de problemáticas educativas
+ED2002
+Metodologías de la investigación educativa
+ED2002B
+Fundamentación pedagógica aplicada a las soluciones de aprendizaje
+H2001B
+Análisis del discurso
+H2002B
+Textos clásicos
+H2050
+Análisis crítico de textos
+H2051
+Estructuras y análisis del español
+MI2001B
+Metodologías de la investigación periodística
+SO2001
+Estudios sociales y políticos
+F2010B
+Fundamentos de la acústica
+TM2001
+Teoría y estilos musicales
+TM2001B
+Entrenamiento auditivo e instrumental
+TM2002
+Negocios en la industria de la música
+AR2001B
+Diagnóstico territorial
+AR2003B
+Ecobarrio
+AR2037
+Derecho Urbano
+BT2027
+Ecología urbana
+CV2041
+Infraestructura urbana
