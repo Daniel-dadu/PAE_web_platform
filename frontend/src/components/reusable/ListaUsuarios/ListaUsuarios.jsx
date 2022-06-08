@@ -77,17 +77,18 @@ const ListaUsuarios = ({ data }) => {
                     </tr>
 
                     {
-                        data.map((usuario) => (
-                            <tr className='fila-elemento-ListaUsuarios' key={usuario.id}>
-                            <td className='contenedor-nombre'>
-                                <p>
-                                    {usuario.nombreCompleto}
-                                </p>
-                            </td>
-                            <td className='contenedor-btn-editar'>
-                                <a href='./administrarPerfilAsesorados' className='btn-editar-ListaUsuarios'> <FaEdit className='icono-btn-editar-ListaUsuarios'/> </a>
-                            </td>
-                        </tr>
+                        data.map((usuario, index) => (
+                            <tr className='fila-elemento-ListaUsuarios' key={index}>
+                                <td className='contenedor-matricula'>
+                                    <p> {usuario.matricula} </p>
+                                </td>
+                                <td className='contenedor-nombre'>
+                                    <p> {usuario.nombreCompleto} </p>
+                                </td>
+                                <td className='contenedor-btn-editar'>
+                                    <a href='./administrarPerfilAsesorados' className='btn-editar-ListaUsuarios'> <FaEdit className='icono-btn-editar-ListaUsuarios'/> </a>
+                                </td>
+                            </tr>
                         ))
                     }
                </tbody>

@@ -1,4 +1,4 @@
-import React,{useState}  from 'react'
+import React  from 'react'
 import '../../../index.css'
 import './AdministrarUsuariosDirectivos.css'
 import { useNavigate } from "react-router-dom";
@@ -8,39 +8,38 @@ import { FaCopy} from 'react-icons/fa'
 
 const dataUsuarios = [
     {
-        "id": 1,
+        "matricula": "A00000001",
         "nombreCompleto": "Daniel Esteban Maldonado Espitia"
 
     },
     {
-        "id": 2,
+        "matricula": "A00000002",
         "nombreCompleto": "Daniel Munive Meneses"
 
     },
     {
-        "id": 3,
+        "matricula": "A00000003",
         "nombreCompleto": "Daniel Flores Rodriguez"
 
     },
     {
-        "id": 4,
+        "matricula": "A00000004",
         "nombreCompleto": "Ezequiel Lozano Guerrero"
 
     },
     {
-        "id": 5,
+        "matricula": "A00000005",
         "nombreCompleto": "Fernando Jimenez"
 
     },
     {
-        "id": 6,
+        "matricula": "A00000006",
         "nombreCompleto": "Emiliano Zapata"
 
     },
     {
-        "id": 5,
+        "matricula": "A00000007",
         "nombreCompleto": "Leticia Rodríguez Aguilar"
-
     }
 ]
 
@@ -49,46 +48,34 @@ const AdministrarUsuariosDirectivos = ({userTypeUsuariosDirectivos}) => { /* En 
     let navigate = useNavigate()
     const routeChange = route => navigate(`/${route}`);
 
-    const [active, setActive] = useState(false);
-  
-    const toggle = () => {
-        setActive(!active)
-    }
-    
-    window.toggle = toggle;
-
-
-
     return(
-        <>
         <Template view = "administrar">
 
 
-        {(userTypeUsuariosDirectivos === 'asesorados') ? 
+            {(userTypeUsuariosDirectivos === 'asesorados') ? 
 
-        <h1> Administrar asesorados </h1>
-        
-        :
+            <h1> Administrar asesorados </h1>
+            
+            :
 
-        <div className='btn_AdministrarUsuariosDirectivos'>
+            <div className='btn_AdministrarUsuariosDirectivos'>
 
-        <h1> Administrar asesores </h1>
+            <h1> Administrar asesores </h1>
 
-        <div className='botonCopiarLinkRegistro'>
-            <BotonConImagen 
-            onClick={'Hola'} 
-            backgroundColor='grisClaro'
-            size="largo" 
-            Image={FaCopy} >
-                <div className='textoDeBoton'>Generar Nuevo Link de Registro</div> 
-            </BotonConImagen>
-        </div>
+            <div className='botonCopiarLinkRegistro'>
+                <BotonConImagen 
+                onClick={'Hola'} 
+                backgroundColor='grisClaro'
+                size="largo" 
+                Image={FaCopy} >
+                    <div className='textoDeBoton'>Generar Nuevo Link de Registro</div> 
+                </BotonConImagen>
+            </div>
 
-        </div> 
-        
-        }
+            </div> 
+            
+            }
  
-
             <div className = 'divListaUsuarios'>
                 <ListaUsuarios data = {dataUsuarios}></ListaUsuarios>
             </div>
@@ -104,7 +91,6 @@ const AdministrarUsuariosDirectivos = ({userTypeUsuariosDirectivos}) => { /* En 
             </div>
             
         </Template>
-        </>
     )
 
 };

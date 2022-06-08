@@ -43,7 +43,8 @@ const App = () => {
 
           {/* Views de Directivos */}
         <Route path='/administrar' element={<AdministrarUsuarios/>} />
-        <Route path='/informacionUsuarios' element={<AdministrarUsuariosDirectivos/>} />
+        <Route path='/administrarAsesores' element={<AdministrarUsuariosDirectivos userTypeUsuariosDirectivos='asesores' />} />
+        <Route path='/administrarAsesorados' element={<AdministrarUsuariosDirectivos userTypeUsuariosDirectivos='asesorados' />} />
         <Route path='/administrarPerfilAsesorados' element={<AdministrarPerfilAsesoradoDirectivos/>} />
         <Route path='/asesoriasExistentesDiaDirectivos' element={<AsesoriasExistentesDiaDirectivos/>} />
         <Route path='/respuestasEncuestas' element={<RespuestasEncuestas/>} />
