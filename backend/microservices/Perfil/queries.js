@@ -44,7 +44,20 @@ const updateInfoUser = (request, response) => {
     })
 }
 
+const getFotoUser = (request, response) => {
+    const iduser = request.query.iduser
+
+    pool.query('SELECT "fotoPerfil" FROM "Usuario" WHERE "idUsuario" = $1', [iduser], (error, result) => {
+        if(error) {
+            response.status(400).send("Error: No se pudo obtener la imagen de perfil del usuario")
+        } else {
+            response.status(200).json(result.rows[0])
+        }
+    })
+}
+
 module.exports = {
     getInfoUser,
-    updateInfoUser
+    updateInfoUser,
+    getFotoUser
 }

@@ -83,14 +83,14 @@ export {default as Perfil } from './views/commons/perfil/Perfil.jsx'
 
 export {default as ImagenPerfilCambiar } from './components/reusable/ImagenPerfilCambiar/ImagenPerfilCambiar.jsx'
 
-export {default as AdministrarPerfilAsesoradoDirectivos } from './views/directivo/administrarPerfilAsesoradoDirectivos/administrarPerfilAsesoradoDirectivos.jsx'
+export {default as AdministrarPerfil } from './views/directivo/administrarPerfil/AdministrarPerfil.jsx'
 export {default as PopUpGeneral } from './components/reusable/PopUpGeneral/PopUpGeneral.jsx'
 export {default as RegistroAsesorResumen } from './views/asesor/registroAsesorResumen/RegistroAsesorResumen.jsx'
 
 export {default as imageCompressor } from './assets/reusableFunctions/imageCompressor.js'
 export {default as dateFunctions } from './assets/reusableFunctions/dateFunctions.js'
 
-export {default as AdministrarPerfilAsesorDirectivos } from './views/directivo/administrarPerfilAsesorDirectivos/AdministrarPerfilAsesorDirectivos.jsx'
+
 export {default as RespuestasEncuestas } from './views/commons/respuestasEncuestas/RespuestasEncuestas.jsx'
 export {default as AsesoriasExistentesDiaDirectivos } from './views/directivo/asesoriasExistentesDiaDirectivos/AsesoriasExistentesDiaDirectivos.jsx'
 export { default as CampoTextoMenuDesplegable } from './components/reusable/CampoTextoMenuDesplegable/CampoTextoMenuDesplegable.jsx'

@@ -31,10 +31,10 @@ import './informacionPersonalUsuario.css';
                         "camposVariables" => podrán variar segun la informacion obtenida de la BD y del tipo de usuario
 */ 
 
-const InformacionPersonalUsuario = () => {
+const InformacionPersonalUsuario = ({idUserParam = null, rolUserParam = null}) => {
 
-    const idUsr = localStorage.usuario
-    const rolUsr = localStorage.rolUsuario
+    const idUsr = idUserParam ? idUserParam : localStorage.usuario
+    const rolUsr = rolUserParam ? rolUserParam : localStorage.rolUsuario
 
     const [infoUserJSON, setInfoUserJSON] = useState(
         {
@@ -65,6 +65,22 @@ const InformacionPersonalUsuario = () => {
 
     // Petición a la API para obtener la información de perfil
     useEffect(() => {
+        if(idUserParam) {
+            const config = {
+                method: 'get',
+                url: `http://20.225.209.57:3092/perfil/get_foto_user?iduser=${idUsr}`,
+                headers: { }
+            };
+            
+            axios(config)
+            .then(response => {
+                setImagenPerfil(response.data.fotoPerfil)
+            })
+            .catch(_error => {
+                alert("No se pudo obtener la información de perfil")
+            });
+        }
+
         const config = {
             method: 'get',
             url: `http://20.225.209.57:3092/perfil/get_info_perfil?user=${idUsr}&rol=${rolUsr}`,
@@ -85,7 +101,7 @@ const InformacionPersonalUsuario = () => {
         .catch(_error => {
             alert("No se pudo obtener la información de perfil")
         });
-    }, [idUsr, rolUsr, setInfoUserJSON])
+    }, [idUsr, rolUsr, setInfoUserJSON, idUserParam, setImagenPerfil])
 
 
     // Hook para guardar la lista de carreras
@@ -198,7 +214,7 @@ const InformacionPersonalUsuario = () => {
         // Después de hacer la API request, se actualiza la imagen comprimida
         setImagenPerfil(imageToDatabase) 
 
-        localStorage.setItem('fotoUsuario', imageToDatabase)
+        if(!idUserParam) localStorage.setItem('fotoUsuario', imageToDatabase)
 
         setInfoUserJSON({
             "nombreusuario": infoUserJSON.nombreusuario,
@@ -212,7 +228,7 @@ const InformacionPersonalUsuario = () => {
 
         setEditar(!editar)
 
-        window.location.reload(false)
+        if(!idUserParam) window.location.reload(false)
     }
 
     const onCancelChange = () => {

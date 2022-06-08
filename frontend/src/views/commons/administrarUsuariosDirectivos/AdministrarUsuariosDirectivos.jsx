@@ -97,7 +97,7 @@ const AdministrarUsuariosDirectivos = ({userRol}) => { /* En caso de ser asesora
             }
  
             <div className = 'divListaUsuarios'>
-                <ListaUsuarios data = {dataUsuarios} />
+                <ListaUsuarios data = {dataUsuarios} rol={userRol} />
             </div>
 
             <div className = 'btnAtras'>

@@ -3,65 +3,24 @@ import { FaEdit, FaSearch } from "react-icons/fa";
 import './listaUsuarios.css';
 
 
-// const usuarios = [
-//     {
-//         "id": 1,
-//         "nombreCompleto": "Daniel Esteban Maldonado Espitia"
+/*
+    DOCUMENTACION DEL COMPONENTE
 
-//     },
-//     {
-//         "id": 2,
-//         "nombreCompleto": "Daniel Munive Meneses"
+    Notas importantes:
+        -----
 
-//     },
-//     {
-//         "id": 3,
-//         "nombreCompleto": "Daniel Flores Rodriguez"
+    uso:
+        Properties:
+        -> data. objeto que contendra la lista de usuarios que se desea renderizar en el componente, 
+        el formato de este objeto, se muestra en la parte de arriba (objeto llamado usuarios)
 
-//     },
-//     {
-//         "id": 4,
-//         "nombreCompleto": "Ezequiel Lozano Guerrero"
+    Ejemplo de uso:
+        <ListaUsuarios data={ usuarios }/>
 
-//     },
-//     {
-//         "id": 5,
-//         "nombreCompleto": "Fernando Jimenez"
+*/
+const ListaUsuarios = ({ data, rol }) => {
 
-//     },
-//     {
-//         "id": 6,
-//         "nombreCompleto": "Emiliano Zapata"
-
-//     },
-//     {
-//         "id": 5,
-//         "nombreCompleto": "Leticia Rodríguez Aguilar"
-
-//     }
-// ]
-
-
-const ListaUsuarios = ({ data }) => {
-
-
-    /*
-        DOCUMENTACION DEL COMPONENTE
-
-        Notas importantes:
-            -----
-
-        uso:
-            Properties:
-            -> data. objeto que contendra la lista de usuarios que se desea renderizar en el componente, 
-            el formato de este objeto, se muestra en la parte de arriba (objeto llamado usuarios)
-
-        Ejemplo de uso:
-            <ListaUsuarios data={ usuarios }/>
-
-    */
-  return (
-    <>
+    return (
         <div className='contenedorGeneral-ListaUsuarios'>
             <table className='tabla-ListaUsuarios'>
                 <tbody>
@@ -85,7 +44,9 @@ const ListaUsuarios = ({ data }) => {
                                     <p> {usuario.nombrecompleto} </p>
                                 </td>
                                 <td className='contenedor-btn-editar'>
-                                    <a href='./administrarPerfilAsesorados' className='btn-editar-ListaUsuarios'> <FaEdit className='icono-btn-editar-ListaUsuarios'/> </a>
+                                    <a href={`./administrarPerfil/${rol}/${usuario.matricula}`} className='btn-editar-ListaUsuarios'> 
+                                        <FaEdit className='icono-btn-editar-ListaUsuarios'/>
+                                    </a>
                                 </td>
                             </tr>
                         ))
@@ -93,7 +54,6 @@ const ListaUsuarios = ({ data }) => {
                </tbody>
             </table>
         </div>
-    </>
   )
 }
 
