@@ -56,32 +56,30 @@ function RegistroAsesorResumen() {
     const imagenUser = localStorage.registro1_imagenPerfil
     const UFsUser = localStorage.registro1_UFs
 
-    const localStoragePeriodos = [
-        localStorage.registro1_horarioPeriodo1, 
-        localStorage.registro1_horarioPeriodo2, 
-        localStorage.registro1_horarioPeriodo3
-    ]
-
     useEffect(() => {
-        [
-            localStorage.registro1_horarioPeriodo1, 
-            localStorage.registro1_horarioPeriodo2, 
-            localStorage.registro1_horarioPeriodo3
-        ]
-        .forEach(periodo => {
-            if(!periodo){
-                alert("Error: No se cuenta con todos los datos. Intente nuevamente.")
-                navigate('/RegistroAsesorDatos')
-            } 
-        })
 
-        if(!nombreUser || !apellidoPatUser || !matriculaUser || !carreraUser || !semestreUser || !UFsUser) {
+        if( !nombreUser || 
+            !apellidoPatUser || 
+            !matriculaUser || 
+            !carreraUser || 
+            !semestreUser || 
+            !UFsUser || 
+            !localStorage.registro1_horarioPeriodo1 || 
+            !localStorage.registro1_horarioPeriodo2 ||
+            !localStorage.registro1_horarioPeriodo3) 
+        {
             alert("Error: No se cuenta con todos los datos. Intente nuevamente.")
             navigate('/RegistroAsesorDatos')
             return
         }
 
-    }, [navigate, nombreUser, apellidoPatUser, matriculaUser, carreraUser, semestreUser, UFsUser])
+    }, [nombreUser, apellidoPatUser, matriculaUser, carreraUser, semestreUser, UFsUser, navigate])
+
+    const localStoragePeriodos = [
+        localStorage.registro1_horarioPeriodo1, 
+        localStorage.registro1_horarioPeriodo2, 
+        localStorage.registro1_horarioPeriodo3
+    ]
 
     // Variable para conocer la fecha de hoy y actualizar el año
     const currentYear = (new Date()).getFullYear()
