@@ -17,25 +17,25 @@ let progressBar = {
             "name" : "Horario",
             "state": null,
             "next": "enable",
-            "path" : "Ruta"
+            "path" : "/registroAsesorDatos"
           },
           {
             "name" : "Unidad de Formacion",
             "state": null,
             "next": "enable",
-            "path" : "Ruta"
+            "path" : "/registroAsesorDatos"
           },
           {
             "name" : "Consideraciones Finales",
             "state": null,
             "next": "enable",
-            "path" : "./registroAsesorCondiciones"
+            "path" : "/registroAsesorDatos"
           },
           {
             "name" : "Confirmación",
             "state": null,
             "next": "enable",
-            "path" : "Ruta"
+            "path" : "/registroAsesorDatos"
           }
     ]
   }
@@ -49,6 +49,7 @@ function RegistroAsesorDatos() {
     const apellidoMatUser = localStorage.registro1_apellidoMaterno
     const carreraUser = localStorage.registro1_carrera
     const carrera2User = localStorage.registro1_carrera2
+    const semestreUser = localStorage.registro1_semestre
     const telefonoUser = localStorage.registro1_telefono
     const imagenUser = localStorage.registro1_imagenPerfil
 
@@ -73,6 +74,9 @@ function RegistroAsesorDatos() {
     const handleCarrera = carreraValue => setCarrera(carreraValue.value)
     const [carrera2, setCarrera2] = useState(carrera2User ? carrera2User : '')
     const handleCarrera2 = carreraValue => setCarrera2(carreraValue.value)
+    
+    const [semestre, setSemestre] = useState(semestreUser ? semestreUser : '')
+    const handleSemestre = semestreValue => setSemestre(semestreValue.value)
     
     // ****************** Hooks y código usado para la consulta de las carreras a la API ****************** //
 
@@ -118,7 +122,7 @@ function RegistroAsesorDatos() {
         btnSiguienteProps={{
             view: 1, 
             props: errorCarreraApiCall ? null : 
-                { nombre, apellidoParterno, apellidoMarterno, matricula, carrera, carrera2, telefono, imageUploaded, contrasena, contrasenaConfirm }
+                { nombre, apellidoParterno, apellidoMarterno, matricula, carrera, carrera2, semestre, telefono, imageUploaded, contrasena, contrasenaConfirm }
         }}
         isRegistroAsesor={true} > 
 
@@ -199,6 +203,11 @@ function RegistroAsesorDatos() {
                         : 
                         <CampoSeleccionarEnListaDesplegable size="large" options={carreraApiState.apiData} parentCallback={handleCarrera2} defaultValue={carrera2}/>
                     }
+                </div>
+
+                <div className='contenedro_deInputsAsesorRegistro'> 
+                    <div className='texto_contenedor_deInputsAsesorRegistro'> Semestre * </div>
+                    <CampoSeleccionarEnListaDesplegable size="small" options={[1,2,3,4,5,6,7,8,9]} parentCallback={handleSemestre} defaultValue={semestre}/>
                 </div>
 
 

@@ -225,14 +225,12 @@
     width: 85%;
     margin-top: 5px;
     margin-bottom: 5px;
-    cursor: pointer;
 }
 
 .tipo4 .tabla-tipo-4 {
     width: 100%;
-    height: 100%;
+    height: 45px;
     border-radius: 5px;
-
 }
 
 .tipo4 .tabla-tipo-4 .fila-general-TarjetaListaDesplegable {
@@ -271,15 +269,14 @@
 }
 
 .tipo4 .tabla-tipo-4 .nombreUF-tipo-4{
-    height: 100%;
+    height: 45px;
+    overflow: auto;
     width: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-family: 'Dosis', sans-serif;
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
+    margin: auto;
 }
 .azul_tipo_2 {
     background: #1B4858;

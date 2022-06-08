@@ -11,7 +11,13 @@ const COLORES_TIPO_1 = [
 const COLORES_TIPO_2 = [
     "azul_tipo_2",
     "amarillo_tipo_2",
-    "rojo_tipo_2"
+    "rojo_tipo_2",
+    "azul_tipo_2",
+    "amarillo_tipo_2",
+    "rojo_tipo_2",
+    "azul_tipo_2",
+    "amarillo_tipo_2",
+    "rojo_tipo_2",
 ];
 
 const COLORES_TIPO_3 = [
@@ -36,7 +42,8 @@ const TarjetaListaDesplegable = (
         matricula,
         nombreAsesor,
         accion,
-        imagenUsuario
+        imagenUsuario,
+        getUFSelected
     }) => {
 
     /* 
@@ -86,6 +93,15 @@ const TarjetaListaDesplegable = (
     const handleActivo = () => {
         setActivo(!activo);
     }
+
+    const selectUF = () => {
+        handleActivo()
+        getUFSelected({claveUF, nombreUF})
+    }
+
+    const deleteUF = () => {
+        getUFSelected(claveUF)
+    }
         
   return (
 
@@ -95,12 +111,15 @@ const TarjetaListaDesplegable = (
                 //dependiedo del tipo de tarjeta, se renderiza el HTMl correspondiente
                 tipo === 1 ?
                 (
-                    <table className={`tabla-tipo-1 ${  !activo?  BackgroundColor1: "gris_tipo_1" }`} onClick={ handleActivo } > 
+                    // <table className={`tabla-tipo-1 ${  !activo?  BackgroundColor1: "gris_tipo_1" }`} onClick={ selectUF } > 
+                    <table className={`tabla-tipo-1 ${ BackgroundColor1 }`} onClick={ selectUF } >
 
-                        <tr className='fila-general-TarjetaListaDesplegable'>
-                            <td className='claveUF-tipo-1' > { claveUF } </td>
-                            <td className='nombreUF-tipo-1'> { nombreUF } </td>
-                        </tr>
+                        <tbody>
+                            <tr className='fila-general-TarjetaListaDesplegable'>
+                                <td className='claveUF-tipo-1' > { claveUF } </td>
+                                <td className='nombreUF-tipo-1'> { nombreUF } </td>
+                            </tr>    
+                        </tbody> 
 
                     </table>
                 ):
@@ -109,12 +128,14 @@ const TarjetaListaDesplegable = (
                     (
                         <table className={`tabla-tipo-2 ${ BackgroundColor2 }`}> 
 
-                            <tr className='fila-general-TarjetaListaDesplegable'>
-                                <td className='semestre-tipo-2' >Semestre: { semestre }</td>
-                                <td className='claveUF-tipo-2' > { claveUF } </td>
-                                <td className='nombreUF-tipo-2' > { nombreUF } </td>
-                                <td className='btn-cerrar-tipo2' onClick={ () => { window.alert("debería cerrarme :)") } }> <AiOutlineCloseCircle/> </td>
-                            </tr>
+                            <tbody>
+                                <tr className='fila-general-TarjetaListaDesplegable'>
+                                    <td className='semestre-tipo-2' >Semestre: { semestre }</td>
+                                    <td className='claveUF-tipo-2' > { claveUF } </td>
+                                    <td className='nombreUF-tipo-2' > { nombreUF } </td>
+                                    <td className='btn-cerrar-tipo2' onClick={ deleteUF }> <AiOutlineCloseCircle/> </td>
+                                </tr>
+                            </tbody>
 
                         </table>
                     ):
@@ -122,11 +143,13 @@ const TarjetaListaDesplegable = (
                     (
                         <table className={`tabla-tipo-3 ${ BackgroundColor3 }`} onClick={ accion } > 
 
-                            <tr className='fila-general-TarjetaListaDesplegable'>
-                                <td className='hora-asesoria-tipo-3' > { horaAsesoria } </td>
-                                <td className='contenido-tipo-3' > { contenido } </td>
-                                <td className='claveUF-tipo-3' > {claveUF} </td>
-                            </tr>
+                            <tbody>
+                                <tr className='fila-general-TarjetaListaDesplegable'>
+                                    <td className='hora-asesoria-tipo-3' > { horaAsesoria } </td>
+                                    <td className='contenido-tipo-3' > { contenido } </td>
+                                    <td className='claveUF-tipo-3' > {claveUF} </td>
+                                </tr>
+                            </tbody>
 
                         </table>
                     ):
@@ -135,11 +158,13 @@ const TarjetaListaDesplegable = (
                         (
                             <table className={`tabla-tipo-4 ${ BackgroundColor2 }`}> 
 
-                                <tr className='fila-general-TarjetaListaDesplegable'>
-                                    <td className='semestre-tipo-4' >Semestre: { semestre }</td>
-                                    <td className='claveUF-tipo-4' > { claveUF } </td>
-                                    <td className='nombreUF-tipo-4' > { nombreUF } </td>
-                                </tr>
+                                <tbody>
+                                    <tr className='fila-general-TarjetaListaDesplegable'>
+                                        <td className='semestre-tipo-4' >Semestre: { semestre }</td>
+                                        <td className='claveUF-tipo-4' > { claveUF } </td>
+                                        <td className='nombreUF-tipo-4' > { nombreUF } </td>
+                                    </tr>
+                                </tbody>
 
                             </table>
                         ):
@@ -148,10 +173,12 @@ const TarjetaListaDesplegable = (
                             (
                                 <table className={`tabla-tipo-1 ${  !activo?  BackgroundColor1: "gris_tipo_1" }`} onClick={ handleActivo } > 
 
-                                    <tr className='fila-general-TarjetaListaDesplegable'>
-                                        <td className='claveUF-tipo-1' > { matricula } </td>
-                                        <td className='nombreUF-tipo-1'> { nombreAsesor } </td>
-                                    </tr>
+                                    <tbody>
+                                        <tr className='fila-general-TarjetaListaDesplegable'>
+                                            <td className='claveUF-tipo-1' > { matricula } </td>
+                                            <td className='nombreUF-tipo-1'> { nombreAsesor } </td>
+                                        </tr>
+                                    </tbody>
         
                                 </table>
                             )
@@ -159,13 +186,15 @@ const TarjetaListaDesplegable = (
                             (
                                 tipo === 6?
                                 (
-                                    <table className={`tabla-tipo-1 ${  !activo?  BackgroundColor1: "gris_tipo_1" }`} onClick={ handleActivo } > 
-
-                                    <tr className='fila-general-TarjetaListaDesplegable'>
-                                        <td className='foto-user'> <img src={ imagenUsuario } alt="imagen-usuario" id="imagen-usuario-tipo5"/> </td>
-                                        <td className='nombre-user' > { matricula } </td>
-                                        <td className='matricula-user'> { nombreAsesor } </td>
-                                    </tr>
+                                <table className={`tabla-tipo-1 ${  !activo?  BackgroundColor1: "gris_tipo_1" }`} onClick={ handleActivo } > 
+                                
+                                    <tbody>
+                                        <tr className='fila-general-TarjetaListaDesplegable'>
+                                            <td className='foto-user'> <img src={ imagenUsuario } alt="imagen-usuario" id="imagen-usuario-tipo5"/> </td>
+                                            <td className='nombre-user' > { matricula } </td>
+                                            <td className='matricula-user'> { nombreAsesor } </td>
+                                        </tr>
+                                    </tbody>
         
                                 </table>
                                 ):

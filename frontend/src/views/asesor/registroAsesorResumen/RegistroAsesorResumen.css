@@ -1,8 +1,16 @@
-.containerPerfilAsesoradoResumen{
-    margin-bottom: 40px;
+.contenedor-InfPerUsuario-asesor{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 3rem;
 }
 
 .containerListaUFResumen{
+    height: 50%;
+    width: 70%;
+    margin: auto;
     margin-bottom: 50px;
 }
 

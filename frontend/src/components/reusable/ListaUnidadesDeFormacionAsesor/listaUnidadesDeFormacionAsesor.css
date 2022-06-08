@@ -1,87 +1,29 @@
 .contendor-general-ludfa {
     width: 100%;
     height: 100%;
-    max-height: 500px;
-    /* background: #000; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-shadow: var(--box-shadow);
+    border-radius: 1rem;
 }
 
-.contendor-general-ludfa .contenedor-ludfa {
-    width: 90%;
-    height: 90%;
-    min-width: 750px;
-    border-radius: 10px;
-    box-shadow: 3px 7px 20px 0px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 3px 7px 20px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 3px 7px 20px 0px rgba(0,0,0,0.75);
-    /* background: red; */
-}
 
-.contenedor-ludfa .encabezado-ludfa {
-    /* background: green; */
-    width: 100%;
-    height: 20%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 20px;
-
-}
-.encabezado-ludfa .texto-encabezado-ludfa {
+.texto-encabezado-ludfa {
     font-size: 2rem;
     font-weight: 600;
+    margin: 0rem 2rem 1rem 2rem;
+    padding-top: 1rem;
 }
 
-.contenedor-ludfa .contenido-ludfa {
-    /* background: purple; */
+.contenido-ludfa {
+    height: 75%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 80%;
+    flex-flow: row wrap;
+    gap: 3%;
     width: 100%;
+    overflow: scroll;
 }
 
-.contenedor-ludfa .tabla-contenido-ludfa {
-    height: 100%;
-    width: 100%;
-    /* background: coral; */
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    overflow-x: scroll;
+.contenido-ludfa > * {
+    width: 45%;
+    margin: 0.6rem 0;
 }
-
-.tabla-contenido-ludfa .fila-tabla-contenido-ludfa {
-    width: 100%;
-    height: 70px;
-    min-height: 70px;
-    /* background: pink; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-
-}
-
-.tabla-contenido-ludfa .fila-tabla-contenido-ludfa .celda-tabla-contenido-ludfa {
-    height: 100%;
-    width: 100%;
-    /* background: brown; */
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
-.tabla-contenido-ludfa .espacio-overflow-table {
-    height: 100%;
-    min-height: 70px;
-    width: 100%;
-}
-
-

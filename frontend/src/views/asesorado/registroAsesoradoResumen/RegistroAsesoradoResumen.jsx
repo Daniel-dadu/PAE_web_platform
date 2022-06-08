@@ -19,30 +19,18 @@ let progressBar = {
             "name" : "Consideraciones Finales",
             "state": true,
             "next": "enable",
-            "path" : "./registroAsesoradoCondiciones"
+            "path" : "/registroAsesoradoCondiciones"
           },
           {
             "name" : "Confirmación",
             "state": null,
             "next": "enable",
-            "path" : "Ruta"
+            "path" : "/registroAsesoradoResumen"
           }
     ]
 }
 
 const RegistroAsesoradoResumen = () => {
-
-    // En caso de que el usuario cierre la pestaña o se cambie a otra ruta, se eliminan los datos de la asesoría
-    window.addEventListener("unload", () => {
-        localStorage.removeItem('registro1_matricula')
-        localStorage.removeItem('registro1_contrasena')
-        localStorage.removeItem('registro1_nombre')
-        localStorage.removeItem('registro1_apellidoPaterno')
-        localStorage.removeItem('registro1_apellidoMaterno')
-        localStorage.removeItem('registro1_carrera')
-        localStorage.removeItem('registro1_telefono')
-        localStorage.removeItem('registro1_imagenPerfil')
-    })
 
     let navigate = useNavigate()
 
