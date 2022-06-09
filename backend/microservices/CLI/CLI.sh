@@ -99,9 +99,12 @@ function main(){
 }
 
 function help(){
-    echo "--i for install dependecies"
     echo "--D PATH for change working directory"
+    echo "--e SERVICE_NAME for exclude service from services search"
     echo "--h for help"
+    echo "--i for install dependecies"
+    echo "--s SERVICE_NAME for work with just service selected, disable services search"
+    echo '--S "SERVICE_NAME_1 SERVICE_NAME_2 ..." for work with just services selected, disable services search'
     echo "--v for print Node output"
 }
 
@@ -115,29 +118,39 @@ INSTALL_DEPS=false
 SEARCH=true
 VERBOSE=false
 
-while getopts :ihvD:s: opt
+while getopts :D:e:his:S:v opt
 do
     case "${opt}" in
-        i) 
-            INSTALL_DEPS=true
+        :)
+            echo "Error: --${OPTARG} requires an argument."
+            exit 1
             ;;
         D) 
             WORKING_DIR=${OPTARG}
             ;;
-        :)
-            echo "Error: --${OPTARG} requires an argument."
-            exit 1
+        e) 
+            IGNOR_DIRS+=(${OPTARG}/)
             ;;
         h)
             help
             exit 0
             ;;
-        v)
-            VERBOSE=true
+        i) 
+            INSTALL_DEPS=true
             ;;
         s)
             SEARCH=false
             MICROSERVICES+=(${OPTARG}/)
+            ;;
+        S)
+            SEARCH=false
+            for SERVICE in ${OPTARG}
+            do
+                MICROSERVICES+=(${SERVICE}/)
+            done
+            ;;
+        v)
+            VERBOSE=true
             ;;
         *)
             help
