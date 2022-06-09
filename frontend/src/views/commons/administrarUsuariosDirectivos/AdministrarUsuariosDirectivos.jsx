@@ -7,43 +7,6 @@ import { Template, ListaUsuarios, BotonSencillo, BotonConImagen } from '../../..
 
 import { FaCopy} from 'react-icons/fa'
 
-// const dataUsuarios = [
-//     {
-//         "matricula": "A00000001",
-//         "nombreCompleto": "Daniel Esteban Maldonado Espitia"
-
-//     },
-//     {
-//         "matricula": "A00000002",
-//         "nombreCompleto": "Daniel Munive Meneses"
-
-//     },
-//     {
-//         "matricula": "A00000003",
-//         "nombreCompleto": "Daniel Flores Rodriguez"
-
-//     },
-//     {
-//         "matricula": "A00000004",
-//         "nombreCompleto": "Ezequiel Lozano Guerrero"
-
-//     },
-//     {
-//         "matricula": "A00000005",
-//         "nombreCompleto": "Fernando Jimenez"
-
-//     },
-//     {
-//         "matricula": "A00000006",
-//         "nombreCompleto": "Emiliano Zapata"
-
-//     },
-//     {
-//         "matricula": "A00000007",
-//         "nombreCompleto": "Leticia Rodríguez Aguilar"
-//     }
-// ]
-
 const AdministrarUsuariosDirectivos = ({userRol}) => { /* En caso de ser asesorados se espera un tipo de usuario "asesorados", para mostrar unicamente el titulo de asesorados, cualquier otra palabra mostrara el titulo asesor y el boton de link para asesores */
 
     let navigate = useNavigate()

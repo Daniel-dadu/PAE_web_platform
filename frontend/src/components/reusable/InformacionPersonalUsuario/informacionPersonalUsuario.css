@@ -147,15 +147,19 @@
 }
 
 .contenedor-InfPerUsuario-der .contenedor-btn-editar {
-    width: 60%;
+    /* width: 60%; */
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 4rem;
 }
 
 
+.DeleteCuentaBtn-Profile {
+    position: absolute;
+    transform: translate(5.5rem, 5rem);
+}
 
 
 /* seccion de responsive */
-

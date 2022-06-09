@@ -9,6 +9,7 @@ import noUserImg from '../../../assets/noUserImg.png'
 import LoadingSpin from "react-loading-spin";
 
 import './informacionPersonalUsuario.css';
+import { useNavigate } from 'react-router-dom';
 
 /*
     DOCUMENTACION PARA USO DEL COMPONENTE
@@ -33,6 +34,8 @@ import './informacionPersonalUsuario.css';
 
 const InformacionPersonalUsuario = ({idUserParam = null, rolUserParam = null}) => {
 
+    const navigate = useNavigate()
+
     const idUsr = idUserParam ? idUserParam : localStorage.usuario
     const rolUsr = rolUserParam ? rolUserParam : localStorage.rolUsuario
 
@@ -48,7 +51,7 @@ const InformacionPersonalUsuario = ({idUserParam = null, rolUserParam = null}) =
 
     const getIDcarrera = carreraVal => carreraVal.slice(0, carreraVal.indexOf(' '))
 
-    const [imagenPerfil, setImagenPerfil] = useState(localStorage.fotoUsuario)
+    const [imagenPerfil, setImagenPerfil] = useState(idUserParam ? null : localStorage.fotoUsuario)
     const onHandleUploadImage = image => setImagenPerfil(image)
 
     const [telefotoChanged, setTelefotoChanged] = useState(null)
@@ -74,7 +77,11 @@ const InformacionPersonalUsuario = ({idUserParam = null, rolUserParam = null}) =
             
             axios(config)
             .then(response => {
-                setImagenPerfil(response.data.fotoPerfil)
+                if(response.data) {
+                    setImagenPerfil(response.data.fotoPerfil)
+                } else {
+                    navigate('/administrar')
+                }
             })
             .catch(_error => {
                 alert("No se pudo obtener la información de perfil")
@@ -101,7 +108,7 @@ const InformacionPersonalUsuario = ({idUserParam = null, rolUserParam = null}) =
         .catch(_error => {
             alert("No se pudo obtener la información de perfil")
         });
-    }, [idUsr, rolUsr, setInfoUserJSON, idUserParam, setImagenPerfil])
+    }, [idUsr, rolUsr, setInfoUserJSON, idUserParam, setImagenPerfil, navigate])
 
 
     // Hook para guardar la lista de carreras
@@ -231,8 +238,27 @@ const InformacionPersonalUsuario = ({idUserParam = null, rolUserParam = null}) =
         if(!idUserParam) window.location.reload(false)
     }
 
+    const onBorrarCuenta = () => {
+        if(window.confirm("¿Seguro que quieres eliminar la cuenta?")) {
+            const config = {
+                method: 'delete',
+                url: `http://20.225.209.57:3092/perfil/delete_user?iduser=${idUsr}`,
+                headers: { }
+            };
+            
+            axios(config)
+            .then(response => {
+                alert(response.data)
+                navigate(idUserParam ? "/administrar" : "/landingPage")
+            })
+            .catch(_error => {
+                alert("No se pudo eliminar la cuenta")
+            });
+        }
+    }
+
     const onCancelChange = () => {
-        setImagenPerfil(localStorage.fotoUsuario)
+        setImagenPerfil(idUserParam ? null : localStorage.fotoUsuario)
         setTelefotoChanged(infoUserJSON.telefonousuario)
         setCarrera1Changed(infoUserJSON.carrerausuario1)
         setCarrera2Changed(infoUserJSON.carrerausuario2)
@@ -375,6 +401,10 @@ const InformacionPersonalUsuario = ({idUserParam = null, rolUserParam = null}) =
                              <div className='contenedor-btn-editar'>
  
                                  <BotonSencillo  onClick={ onCancelChange } backgroundColor="gris" size="normal" children="Cancelar" />
+                                 <div className="DeleteCuentaBtn-Profile">
+                                    <BotonSencillo onClick={ onBorrarCuenta } backgroundColor="negro" size="reducido" children="Borrar cuenta" />
+                                 </div>
+                                     
 
                                 {
                                     loadingNext ? 

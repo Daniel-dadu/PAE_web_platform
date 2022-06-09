@@ -1,8 +1,7 @@
 import React from 'react'
 import './AdministrarPerfil.css'
 
-import { Template, InformacionPersonalUsuario, BotonConImagen, BotonSencillo } from '../../../routeIndex';
-import { BsBoxArrowInRight } from 'react-icons/bs';
+import { Template, InformacionPersonalUsuario, BotonSencillo } from '../../../routeIndex';
 import { useNavigate, useParams } from 'react-router-dom';
 
 function AdministrarPerfil() {
@@ -16,33 +15,12 @@ function AdministrarPerfil() {
 
             <div className='btn_PerfilCommon'>
 
-                <h1> Administrar perfil {rol} {iduser} </h1>
-
-                <div className='botonCerrarSesion'>
-                    <BotonConImagen
-                        onClick={'Hola'}
-                        backgroundColor='grisClaro'
-                        size="grande"
-                        Image={BsBoxArrowInRight}
-                    >
-                        Cerrar Sesión
-                    </BotonConImagen>
-                </div>
+                <h1> Editar perfil de {rol} </h1>
 
             </div>
 
             <div className='boxPerfilCommon'>
                 <InformacionPersonalUsuario idUserParam={iduser} rolUserParam={rol} />
-            </div>
-
-            <div className='containerBtnEliminarCuenta'>
-                <BotonSencillo
-                    onClick={() => alert("Se debe preguntar para confirmar la eliminación")}
-                    backgroundColor='negro'
-                    size='grande'
-                >
-                    Eliminar cuenta
-                </BotonSencillo>
             </div>
 
             <div className = 'btnAtras'>
