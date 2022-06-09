@@ -11,7 +11,7 @@ function AdministrarPerfil() {
     const { rol, iduser } = useParams();
 
     return (
-        <Template view='perfil'>
+        <Template view='administrar'>
 
             <div className='btn_PerfilCommon'>
 
