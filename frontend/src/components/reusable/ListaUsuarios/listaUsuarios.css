@@ -122,9 +122,16 @@
     margin-left: 3px;
 }
 
+#Texto_on_hover {
+    display: none;
+    position: absolute;
+    transform: translateX(90%);
+    color: white;
+    background-color: #6b6b6b;
+    border-radius: 1rem;
+    padding: .5rem;
+}
 
-
-
-
-
-
+#barraBusqueda-ListaUsuarios:hover~#Texto_on_hover {
+    display: inline;
+} 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaEdit, FaSearch } from "react-icons/fa";
 import './listaUsuarios.css';
 
@@ -20,14 +20,31 @@ import './listaUsuarios.css';
 */
 const ListaUsuarios = ({ data, rol }) => {
 
+    const [textoBusqueda, setTextoBusqueda] = useState('')
+
+    const [dataUsers, setDataUsers] = useState(data)
+
+    useEffect(() => {
+        setDataUsers( 
+            textoBusqueda === '' ? data :
+            data.filter(usr => usr.matricula.startsWith(textoBusqueda) || usr.nombrecompleto.startsWith(textoBusqueda))
+        )
+    }, [textoBusqueda, data, setDataUsers])
+
     return (
         <div className='contenedorGeneral-ListaUsuarios'>
             <table className='tabla-ListaUsuarios'>
                 <tbody>
                     <tr className='encabazado-tabla-ListaUsuarios'>
                         <td className='contenedor-barraBusqueda'>
-                            <input type='text' id='barraBusqueda-ListaUsuarios' placeholder={`Bucar Usuario`} />
+                            <input 
+                                type='text' 
+                                id='barraBusqueda-ListaUsuarios' 
+                                placeholder='Bucar Usuario' 
+                                onChange={({ target }) => setTextoBusqueda(target.value)}
+                            />
                             <FaSearch className='icono-buscar-ListaUsuarios'/>
+                            <span id="Texto_on_hover">Ingrese la matrícula o el nombre del usuario que busca</span>
                         </td>
                         <td className='contenedor-texto-Accion'> 
                             <p>Acción</p>
@@ -35,7 +52,7 @@ const ListaUsuarios = ({ data, rol }) => {
                     </tr>
 
                     {
-                        data.map((usuario, index) => (
+                        dataUsers.map((usuario, index) => (
                             <tr className='fila-elemento-ListaUsuarios' key={index}>
                                 <td className='contenedor-matricula'>
                                     <p> {usuario.matricula} </p>
