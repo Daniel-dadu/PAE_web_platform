@@ -595,7 +595,7 @@ RETURNS TABLE (
   dia DOUBLE PRECISION,
   mes DOUBLE PRECISION,
   anio DOUBLE PRECISION,
-  usuario VARCHAR(50),
+  usuario TEXT,
   lugar TEXT,
   uF VARCHAR(100),
   duda TEXT,
@@ -604,60 +604,131 @@ RETURNS TABLE (
 LANGUAGE plpgsql AS $func$
 
 BEGIN
-
-  RETURN QUERY
-    SELECT
-      EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") AS hora,
-      EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") AS dia,
-      EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") AS mes,
-      EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") AS anio,
-      (
-        SELECT "Usuario"."nombreUsuario"
-        FROM "Asesoria", "HorarioDisponible", "Usuario"
-        WHERE
-          (
-            "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
-            "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
-          )
-          AND "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
-          AND "Usuario"."idUsuario" != idUsuario
-          AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = horaC
-          AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
-          AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
-          AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC
-      ) AS usuario,
-      "Asesoria"."lugar",
-      "UnidadFormacion"."nombreUF",
-      "Asesoria"."descripcionDuda",
-      "AsesoriaImagen"."imagen"
-    FROM "Asesoria", "AsesoriaImagen", "HorarioDisponible", "Usuario", "UnidadFormacion"
-    WHERE
-      "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
-      AND (
-        "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
-        "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
-      )
-      AND "Asesoria"."idUF" = "UnidadFormacion"."idUF"
-      AND "AsesoriaImagen"."idAsesoria" = (
-        SELECT "Asesoria"."idAsesoria"
-          FROM "Asesoria", "HorarioDisponible", "Usuario", "UnidadFormacion"
-          WHERE "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
-          AND (
-            "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
-            "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
-          )
-          AND "Asesoria"."idUF" = "UnidadFormacion"."idUF"
-          AND "Usuario"."idUsuario" = idUsuario
-          AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = horaC
-          AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
-          AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
-          AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC
-      )
-      AND "Usuario"."idUsuario" = idUsuario
-      AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = horaC
-      AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
-      AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
-      AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC;
+  
+  IF (
+      SELECT COUNT("AsesoriaImagen"."imagen")
+      FROM "Asesoria", "AsesoriaImagen", "HorarioDisponible", "Usuario", "UnidadFormacion"
+      WHERE
+        "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+        AND (
+          "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+          "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+        )
+        AND "Asesoria"."idUF" = "UnidadFormacion"."idUF"
+        AND "AsesoriaImagen"."idAsesoria" = (
+          SELECT "Asesoria"."idAsesoria"
+            FROM "Asesoria", "HorarioDisponible", "Usuario", "UnidadFormacion"
+            WHERE "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+            AND (
+              "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+              "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+            )
+            AND "Asesoria"."idUF" = "UnidadFormacion"."idUF"
+            AND "Usuario"."idUsuario" = idUsuario
+            AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = horaC
+            AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
+            AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
+            AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC
+        )
+        AND "Usuario"."idUsuario" = idUsuario
+        AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = horaC
+        AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
+        AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
+        AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC
+    ) > 0 then
+    RETURN QUERY
+      SELECT
+        EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") AS hora,
+        EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") AS dia,
+        EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") AS mes,
+        EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") AS anio,
+        (
+          SELECT CONCAT("Usuario"."nombreUsuario", ' ', "Usuario"."apellidoPaterno", ' ', "Usuario"."apellidoMaterno", ' - ', "Usuario"."idUsuario")
+          FROM "Asesoria", "HorarioDisponible", "Usuario"
+          WHERE
+            (
+              "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+              "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+            )
+            AND "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+            AND "Usuario"."idUsuario" != idUsuario
+            AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = horaC
+            AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
+            AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
+            AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC
+        ) AS usuario,
+        "Asesoria"."lugar",
+        "UnidadFormacion"."nombreUF",
+        "Asesoria"."descripcionDuda",
+        "AsesoriaImagen"."imagen"
+      FROM "Asesoria", "AsesoriaImagen", "HorarioDisponible", "Usuario", "UnidadFormacion"
+      WHERE
+        "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+        AND (
+          "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+          "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+        )
+        AND "Asesoria"."idUF" = "UnidadFormacion"."idUF"
+        AND "AsesoriaImagen"."idAsesoria" = (
+          SELECT "Asesoria"."idAsesoria"
+            FROM "Asesoria", "HorarioDisponible", "Usuario", "UnidadFormacion"
+            WHERE "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+            AND (
+              "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+              "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+            )
+            AND "Asesoria"."idUF" = "UnidadFormacion"."idUF"
+            AND "Usuario"."idUsuario" = idUsuario
+            AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = horaC
+            AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
+            AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
+            AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC
+        )
+        AND "Usuario"."idUsuario" = idUsuario
+        AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = horaC
+        AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
+        AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
+        AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC;
+  ELSE
+    RETURN QUERY
+      SELECT
+        EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") AS hora,
+        EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") AS dia,
+        EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") AS mes,
+        EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") AS anio,
+        (
+          SELECT CONCAT("Usuario"."nombreUsuario", ' ', "Usuario"."apellidoPaterno", ' ', "Usuario"."apellidoMaterno", ' - ', "Usuario"."idUsuario")
+          FROM "Asesoria", "HorarioDisponible", "Usuario"
+          WHERE
+            (
+              "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+              "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+            )
+            AND "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+            AND "Usuario"."idUsuario" != idUsuario
+            AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = horaC
+            AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
+            AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
+            AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC
+        ) AS usuario,
+        "Asesoria"."lugar",
+        "UnidadFormacion"."nombreUF",
+        "Asesoria"."descripcionDuda",
+        NULL AS image
+      FROM "Asesoria", "HorarioDisponible", "Usuario", "UnidadFormacion"
+      WHERE
+        "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+        AND (
+          "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+          "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+        )
+        AND "Asesoria"."idUF" = "UnidadFormacion"."idUF"
+        AND "Usuario"."idUsuario" = idUsuario
+        AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = horaC
+        AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
+        AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
+        AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC;
+  END IF;
 
 END;
 $func$;
