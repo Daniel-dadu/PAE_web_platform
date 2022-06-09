@@ -44,7 +44,33 @@ const updateInfoUser = (request, response) => {
     })
 }
 
+const getFotoUser = (request, response) => {
+    const iduser = request.query.iduser
+
+    pool.query('SELECT "fotoPerfil" FROM "Usuario" WHERE "idUsuario" = $1', [iduser], (error, result) => {
+        if(error) {
+            response.status(400).send("Error: No se pudo obtener la imagen de perfil del usuario")
+        } else {
+            response.status(200).json(result.rows[0])
+        }
+    })
+}
+
+const deleteUser = (request, response) => {
+    const iduser = request.query.iduser
+
+    pool.query('DELETE FROM "Usuario" WHERE "idUsuario" = $1', [iduser], error => {
+        if(error) {
+            response.status(400).send("Error: No se pudo eliminar la cuenta del usuario")
+        } else {
+            response.status(200).send("La cuenta se eliminó correctamente")
+        }
+    })
+}
+
 module.exports = {
     getInfoUser,
-    updateInfoUser
+    updateInfoUser,
+    getFotoUser,
+    deleteUser
 }

@@ -23,16 +23,22 @@ function AdministrarUsuarios() {
 
             <div className='botonesSuperiores_administrarUsuarios'> 
 
-        <BotonAdministrarInformacion 
-                onClick={() => navigate('/informacionUsuarios')}  
+            <BotonAdministrarInformacion 
+                onClick={() => navigate('/administrarAsesores')}  
                 Imagen={administrarAsesores} 
                 children='Administrar asesores'> 
             </BotonAdministrarInformacion>
 
             <BotonAdministrarInformacion 
-                onClick={() => navigate('/informacionUsuarios')}  
+                onClick={() => navigate('/administrarAsesorados')}  
                 Imagen={administrarAsesorados} 
                 children='Administrar asesorados'> 
+            </BotonAdministrarInformacion>
+
+            <BotonAdministrarInformacion 
+                onClick={() => navigate('/administrarDirectivos')}  
+                Imagen={administrarAsesorados} 
+                children='Administrar directivos'> 
             </BotonAdministrarInformacion>
 
             </div>

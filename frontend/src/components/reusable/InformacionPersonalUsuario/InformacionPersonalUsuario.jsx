@@ -9,6 +9,7 @@ import noUserImg from '../../../assets/noUserImg.png'
 import LoadingSpin from "react-loading-spin";
 
 import './informacionPersonalUsuario.css';
+import { useNavigate } from 'react-router-dom';
 
 /*
     DOCUMENTACION PARA USO DEL COMPONENTE
@@ -31,10 +32,12 @@ import './informacionPersonalUsuario.css';
                         "camposVariables" => podrán variar segun la informacion obtenida de la BD y del tipo de usuario
 */ 
 
-const InformacionPersonalUsuario = () => {
+const InformacionPersonalUsuario = ({idUserParam = null, rolUserParam = null}) => {
 
-    const idUsr = localStorage.usuario
-    const rolUsr = localStorage.rolUsuario
+    const navigate = useNavigate()
+
+    const idUsr = idUserParam ? idUserParam : localStorage.usuario
+    const rolUsr = rolUserParam ? rolUserParam : localStorage.rolUsuario
 
     const [infoUserJSON, setInfoUserJSON] = useState(
         {
@@ -48,7 +51,7 @@ const InformacionPersonalUsuario = () => {
 
     const getIDcarrera = carreraVal => carreraVal.slice(0, carreraVal.indexOf(' '))
 
-    const [imagenPerfil, setImagenPerfil] = useState(localStorage.fotoUsuario)
+    const [imagenPerfil, setImagenPerfil] = useState(idUserParam ? null : localStorage.fotoUsuario)
     const onHandleUploadImage = image => setImagenPerfil(image)
 
     const [telefotoChanged, setTelefotoChanged] = useState(null)
@@ -65,6 +68,26 @@ const InformacionPersonalUsuario = () => {
 
     // Petición a la API para obtener la información de perfil
     useEffect(() => {
+        if(idUserParam) {
+            const config = {
+                method: 'get',
+                url: `http://20.225.209.57:3092/perfil/get_foto_user?iduser=${idUsr}`,
+                headers: { }
+            };
+            
+            axios(config)
+            .then(response => {
+                if(response.data) {
+                    setImagenPerfil(response.data.fotoPerfil)
+                } else {
+                    navigate('/administrar')
+                }
+            })
+            .catch(_error => {
+                alert("No se pudo obtener la información de perfil")
+            });
+        }
+
         const config = {
             method: 'get',
             url: `http://20.225.209.57:3092/perfil/get_info_perfil?user=${idUsr}&rol=${rolUsr}`,
@@ -85,7 +108,7 @@ const InformacionPersonalUsuario = () => {
         .catch(_error => {
             alert("No se pudo obtener la información de perfil")
         });
-    }, [idUsr, rolUsr, setInfoUserJSON])
+    }, [idUsr, rolUsr, setInfoUserJSON, idUserParam, setImagenPerfil, navigate])
 
 
     // Hook para guardar la lista de carreras
@@ -198,7 +221,7 @@ const InformacionPersonalUsuario = () => {
         // Después de hacer la API request, se actualiza la imagen comprimida
         setImagenPerfil(imageToDatabase) 
 
-        localStorage.setItem('fotoUsuario', imageToDatabase)
+        if(!idUserParam) localStorage.setItem('fotoUsuario', imageToDatabase)
 
         setInfoUserJSON({
             "nombreusuario": infoUserJSON.nombreusuario,
@@ -212,11 +235,30 @@ const InformacionPersonalUsuario = () => {
 
         setEditar(!editar)
 
-        window.location.reload(false)
+        if(!idUserParam) window.location.reload(false)
+    }
+
+    const onBorrarCuenta = () => {
+        if(window.confirm("¿Seguro que quieres eliminar la cuenta?")) {
+            const config = {
+                method: 'delete',
+                url: `http://20.225.209.57:3092/perfil/delete_user?iduser=${idUsr}`,
+                headers: { }
+            };
+            
+            axios(config)
+            .then(response => {
+                alert(response.data)
+                navigate(idUserParam ? "/administrar" : "/landingPage")
+            })
+            .catch(_error => {
+                alert("No se pudo eliminar la cuenta")
+            });
+        }
     }
 
     const onCancelChange = () => {
-        setImagenPerfil(localStorage.fotoUsuario)
+        setImagenPerfil(idUserParam ? null : localStorage.fotoUsuario)
         setTelefotoChanged(infoUserJSON.telefonousuario)
         setCarrera1Changed(infoUserJSON.carrerausuario1)
         setCarrera2Changed(infoUserJSON.carrerausuario2)
@@ -359,6 +401,10 @@ const InformacionPersonalUsuario = () => {
                              <div className='contenedor-btn-editar'>
  
                                  <BotonSencillo  onClick={ onCancelChange } backgroundColor="gris" size="normal" children="Cancelar" />
+                                 <div className="DeleteCuentaBtn-Profile">
+                                    <BotonSencillo onClick={ onBorrarCuenta } backgroundColor="negro" size="reducido" children="Borrar cuenta" />
+                                 </div>
+                                     
 
                                 {
                                     loadingNext ? 
