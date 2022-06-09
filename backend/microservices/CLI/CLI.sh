@@ -13,7 +13,6 @@ function ctrl_c() {
 
 function check_in_ignore(){
     local RESULT="0"
-    local IGNOR_DIRS=("CLI/" "EncryptionFile/" "API-Gateway/" "Client/")
 
     for IGNOR_DIR in ${IGNOR_DIRS[@]}; do
         if  [ $1 = $IGNOR_DIR ]
@@ -80,8 +79,11 @@ function main(){
 
     cd $WORKING_DIR
 
-    search_services
-    
+    if [ $SEARCH = true ]
+    then 
+        search_services
+    fi
+
     if [ $INSTALL_DEPS = true ]
         then
             install_all
@@ -104,14 +106,16 @@ function help(){
 }
 
 WORKING_DIR=$PWD
+IGNOR_DIRS=("CLI/" "EncryptionFile/" "API-Gateway/" "Client/")
 MICROSERVICES=()
 MICROSERVICES_PIDS=()
 
 #Conditionals
 INSTALL_DEPS=false
+SEARCH=true
 VERBOSE=false
 
-while getopts :ihvD: opt
+while getopts :ihvD:s: opt
 do
     case "${opt}" in
         i) 
@@ -130,6 +134,10 @@ do
             ;;
         v)
             VERBOSE=true
+            ;;
+        s)
+            SEARCH=false
+            MICROSERVICES+=(${OPTARG}/)
             ;;
         *)
             help
