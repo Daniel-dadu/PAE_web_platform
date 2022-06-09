@@ -45,14 +45,14 @@ function AdministrarUsuarios() {
 
             <div className='botonesInferiores_administrarUsuarios'> 
             <BotonAdministrarInformacion 
-                onClick={() => navigate('/respuestasEncuestas')}  
+                onClick={() => navigate('/respuestasEncuestasAsesores')}  
                 Imagen={respuetasEncuestas} 
                 children='Respuestas de encuestas a asesores'> 
             </BotonAdministrarInformacion>
 
 
             <BotonAdministrarInformacion 
-                onClick={() => navigate('/respuestasEncuestas')}  
+                onClick={() => navigate('/respuestasEncuestasAsesorados')}  
                 Imagen={respuetasEncuestas} 
                 children='Respuestas de encuestas a asesorados'> 
             </BotonAdministrarInformacion>

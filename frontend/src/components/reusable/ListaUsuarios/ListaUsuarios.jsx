@@ -24,6 +24,7 @@ const ListaUsuarios = ({ data, rol }) => {
 
     const [dataUsers, setDataUsers] = useState(data)
 
+    // Cada vez que el texto de busqueda cambie, se actualiza la lista de usuarios dataUsers 
     useEffect(() => {
         setDataUsers( 
             textoBusqueda === '' ? data :

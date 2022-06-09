@@ -14,11 +14,20 @@
     font-family: 'Dosis', sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    color: #ADADAD;
+    color: #000000;
     background: #E6E6E6;
     border-radius: 6px;
 }
 
 .containerBarraBusqueda .icono{
     color: #ADADAD;
+}
+
+.containerListaDesplegableAsesorias {
+    margin-bottom: 1rem;
+}
+
+.users_encuestas_container {
+    height: 70%;
+    overflow-y: scroll;
 }
