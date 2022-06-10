@@ -45,6 +45,7 @@ export {default as AgendarAsesoriaResumen } from './views/asesorado/AgendarAseso
 export {default as CambioMesPeriodo } from './components/reusable/CambioMesPeriodo/CambioMesPeriodo.jsx'
 
 export {default as PopUpInformacionAsesoria } from './components/reusable/PopUpInformacionAsesoria/PopUpInformacionAsesoria.jsx'
+export {default as Modal } from './components/reusable/PopUpInformacionAsesoria/Modal.js'
 
 export {default as TarjetaInformacion } from './components/reusable/TarjetaInformacion/TarjetaInformacion.jsx'
 

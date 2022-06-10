@@ -125,7 +125,7 @@
     width: 100%;
     /* background: purple; */
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     align-items: center;
     flex-direction: column;
     overflow-x: scroll;
@@ -144,21 +144,23 @@
 }
 
 .contenedor-encuesta .contenido-contenedor-encuesta .contenedor-pregunta-encuesta-cerrada {
-    min-height: 110px;
-    max-height: 110px;
+    /* min-height: 110px; */
+    /* max-height: 110px; */
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 10px 0 10px 0;
+    width: 85%;
 }
 
 .contenedor-encuesta .contenido-contenedor-encuesta .contenedor-pregunta-encuesta-abierta {
-    min-height: 185px;
-    max-height: 185px;
+    /* min-height: 185px; */
+    /* max-height: 185px; */
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 10px 0 10px 0;
+    width: 85%;
 }
 
 .contenedor-encuesta .contenido-contenedor-encuesta .contenedor-pregunta-encuesta-imagen {

@@ -72,6 +72,76 @@ import './popUpEncuesta.css';
 
 
 
+/*
+    DOCUMENTACION DEL COMPONENTE
+
+    Notas importanes:
+        -> para este componente existen 3 tipos de diferente visualizacion y funcionamiento
+        las cuales se definen a contunuación:
+            -> 1 == PopUp de encuesta de asesorado
+            -> 2 == PopUp de encuesta de asesor
+            -> 3 == vuzualizacion de resultados de encuestas para los directivos
+        -> la informacion recibida debera de ser a traves de un objeto de js, tanto para las preguntas totales
+        y para poder saber las respuestas contestadas de los asesores y asesorados.
+        -> se recomienda usar este componente fuera de la tarjeta madre o plantilla, para obtener un centrado del PopUp
+        mucho mejor.
+        
+    
+    Uso:
+        -> para usar este componente, se requiere que se pasen propiedades, las cuales se definien a continuación:
+            
+            -> tipo => de valor entero, definimos que tipo de PopUpEncuesta se mostrará en pantalla, tal como se me mencionó
+            anteriormente, los valores validos son los siguientes :
+                -> 1 == PopUp de encuesta de asesorado
+                -> 2 == PopUp de encuesta de asesor
+                -> 3 == vuzualizacion de resultados de encuestas para los directivos
+            
+            -> nombreEvaluado => de valor string, definimos el nombre de la persona que está siendo evaluada en el componente
+            para que aparezca en el encabezado.
+            
+            ->preguntas => objeto en el que podremos recibir valores de las preguntas que conformarán el formulario
+            en la parte de arriba, en el objeto 'data', se da un ejemplo del formato que debe llevar dicha propiedad.
+
+            -> respuestasAsesorado => objeto que sirve para poder obtener las respuestas de las encuestas ya realizadas
+            con el fin de mostrarlos en el tipo de PopUp 3 (visualización). en la parte de arriba, se muestra un ejemplo de la
+            estructura de dicho objeto 'data2', lo dejamos como objeto vacio default cuando no se requiere mostrar las respuestas de asesorados
+
+            -> respuestasAsesor => bjeto que sirve para poder obtener las respuestas de las encuestas ya realizadas
+            con el fin de mostrarlos en el tipo de PopUp 3 (visualización). en la parte de arriba, se muestra un ejemplo de la
+            estructura de dicho objeto 'data2', lo dejamos como objeto vacio default cuando no se requiere mostrar las respuestas de asesores.
+
+            -> activo => booleano, usado para poder determinar si se muestra o no el componente, se recomienda usar useState desde
+            el componente padre o vista en donde se este invocando el componente PopUpEncuesta, como se muestra a continuación:
+            
+            const [activoEncuesta, setActivoEncuesta] = useState(false);
+
+            de esta manera podemos enviar la variable activoEncuesta a esta propiedad (activo).
+
+            ->ocultarPopUp => funcion que es invocada desde el componente padre o vista en donde se este invocando el componente
+            para poder ocultar dicho PopUp. Se recomienda tener una funcion declarada como se muestra a continuación: 
+
+            const cerrarEncuesta = () => {
+                setActivoEncuesta(!activoEncuesta);
+
+            };
+
+            y enviarla en esta propiedad del componente ("ocultarPopUp").
+
+    Ejemplo de uso:
+            
+            Para el tipo 1 :
+            <PopUpEncuesta tipo={1} nombreEvaluado="Daniel Maldonado" preguntas={ data } activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
+            
+            Para el tipo2:
+            <PopUpEncuesta tipo={2} nombreEvaluado="Daniel Maldonado" preguntas={ data } activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
+
+            Para el tipo3 (respuestas de asesores):
+            <PopUpEncuesta tipo={3} nombreEvaluado="Daniel Maldonado" respuestasAsesor={ data2 } activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
+
+            Para el tipo3 (respuestas de asesorados ):
+            <PopUpEncuesta tipo={3} nombreEvaluado="Daniel Maldonado" respuestasAsesorado={ data2 } activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
+
+*/
 const PopUpEncuesta = ({ 
     tipo, 
     nombreEvaluado, 
@@ -82,79 +152,6 @@ const PopUpEncuesta = ({
     activo, 
     ocultarPopUp
 } ) => {
-
-    /*
-        DOCUMENTACION DEL COMPONENTE
-
-        Notas importanes:
-            -> para este componente existen 3 tipos de diferente visualizacion y funcionamiento
-            las cuales se definen a contunuación:
-                -> 1 == PopUp de encuesta de asesorado
-                -> 2 == PopUp de encuesta de asesor
-                -> 3 == vuzualizacion de resultados de encuestas para los directivos
-            -> la informacion recibida debera de ser a traves de un objeto de js, tanto para las preguntas totales
-            y para poder saber las respuestas contestadas de los asesores y asesorados.
-            -> se recomienda usar este componente fuera de la tarjeta madre o plantilla, para obtener un centrado del PopUp
-            mucho mejor.
-            
-        
-        Uso:
-            -> para usar este componente, se requiere que se pasen propiedades, las cuales se definien a continuación:
-                
-                -> tipo => de valor entero, definimos que tipo de PopUpEncuesta se mostrará en pantalla, tal como se me mencionó
-                anteriormente, los valores validos son los siguientes :
-                    -> 1 == PopUp de encuesta de asesorado
-                    -> 2 == PopUp de encuesta de asesor
-                    -> 3 == vuzualizacion de resultados de encuestas para los directivos
-                
-                -> nombreEvaluado => de valor string, definimos el nombre de la persona que está siendo evaluada en el componente
-                para que aparezca en el encabezado.
-                
-                ->preguntas => objeto en el que podremos recibir valores de las preguntas que conformarán el formulario
-                en la parte de arriba, en el objeto 'data', se da un ejemplo del formato que debe llevar dicha propiedad.
-
-                -> respuestasAsesorado => objeto que sirve para poder obtener las respuestas de las encuestas ya realizadas
-                con el fin de mostrarlos en el tipo de PopUp 3 (visualización). en la parte de arriba, se muestra un ejemplo de la
-                estructura de dicho objeto 'data2', lo dejamos como objeto vacio default cuando no se requiere mostrar las respuestas de asesorados
-
-                -> respuestasAsesor => bjeto que sirve para poder obtener las respuestas de las encuestas ya realizadas
-                con el fin de mostrarlos en el tipo de PopUp 3 (visualización). en la parte de arriba, se muestra un ejemplo de la
-                estructura de dicho objeto 'data2', lo dejamos como objeto vacio default cuando no se requiere mostrar las respuestas de asesores.
-
-                -> activo => booleano, usado para poder determinar si se muestra o no el componente, se recomienda usar useState desde
-                el componente padre o vista en donde se este invocando el componente PopUpEncuesta, como se muestra a continuación:
-                
-                const [activoEncuesta, setActivoEncuesta] = useState(false);
-
-                de esta manera podemos enviar la variable activoEncuesta a esta propiedad (activo).
-
-                ->ocultarPopUp => funcion que es invocada desde el componente padre o vista en donde se este invocando el componente
-                para poder ocultar dicho PopUp. Se recomienda tener una funcion declarada como se muestra a continuación: 
-
-                const cerrarEncuesta = () => {
-                    setActivoEncuesta(!activoEncuesta);
-    
-                };
-
-                y enviarla en esta propiedad del componente ("ocultarPopUp").
-
-        Ejemplo de uso:
-                
-                Para el tipo 1 :
-                <PopUpEncuesta tipo={1} nombreEvaluado="Daniel Maldonado" preguntas={ data } activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
-                
-                Para el tipo2:
-                <PopUpEncuesta tipo={2} nombreEvaluado="Daniel Maldonado" preguntas={ data } activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
-
-                Para el tipo3 (respuestas de asesores):
-                <PopUpEncuesta tipo={3} nombreEvaluado="Daniel Maldonado" respuestasAsesor={ data2 } activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
-
-                Para el tipo3 (respuestas de asesorados ):
-                <PopUpEncuesta tipo={3} nombreEvaluado="Daniel Maldonado" respuestasAsesorado={ data2 } activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
-
-    */
-
-
 
     const btnNoLlegadaAsesorado = () => {
         window.alert("no llegó el asesorado");
@@ -318,11 +315,10 @@ const PopUpEncuesta = ({
     
                     <div className='contenido-contenedor-encuesta' ref={ ref }>
     
-                        {
+                        {/* {
                             isOverflow &&
-                            <div className={ `contenedor-espacio-encuesta-${tipo}` }></div>
-                          
-                        }
+                            <div className={ `contenedor-espacio-encuesta-${tipo}` } />
+                        } */}
     
                         {
                             tipo === 2 &&
@@ -358,17 +354,17 @@ const PopUpEncuesta = ({
                             preguntas.map((preg, index) => (
                                 preg.tipoDePregunta === "cerrada" ?
                                 (
-                                    <div className='contenedor-pregunta-encuesta-cerrada'>
+                                    <div className='contenedor-pregunta-encuesta-cerrada' key={index} >
                                         <PreguntaCerradaEncuesta 
-                                            preguntaCerrada=" ¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl? " 
+                                            preguntaCerrada={preg.pregunta}
                                             indexPregunta= {index+1}
                                         />
                                     </div>
                                 ):
                                 (
-                                    <div className='contenedor-pregunta-encuesta-abierta'>
+                                    <div className='contenedor-pregunta-encuesta-abierta' key={index}>
                                         <PreguntaAbiertaEncuesta
-                                            preguntaAbierta=" ¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl? "
+                                            preguntaAbierta={preg.pregunta}
                                             indexPregunta={ index+1 }
                                         />
                                     </div>

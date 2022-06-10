@@ -26,13 +26,13 @@ const data2 = [
     },
     {
         tipoDePregunta:"cerrada",
-        pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
+        pregunta:"¿honestamente uya no se que preguntate asi que solo porndre mucho tennto?",
         respuesta: 6
 
     },
     {
         tipoDePregunta:"cerrada",
-        pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
+        pregunta:"¿quieres una ultima pregunta o asi estas bien?",
         respuesta: 8
 
     }

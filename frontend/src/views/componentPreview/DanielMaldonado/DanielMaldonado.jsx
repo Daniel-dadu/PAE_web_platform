@@ -4,7 +4,7 @@ import './DanielMaldonado.css'
 import axios from 'axios'
 import ImageUploading from "react-images-uploading";
 
-import { Template, ImagenAsesoria, BotonConImagen, imageCompressor } from '../../../routeIndex'
+import { Template, ImagenAsesoria, BotonConImagen, imageCompressor, PopUpEncuesta, Modal } from '../../../routeIndex'
 
 import { BiImageAdd } from 'react-icons/bi'
 
@@ -67,9 +67,55 @@ function DanielMaldonado() {
 
   const btnStyle = {fontSize: 20, cursor: 'pointer', padding: 5, borderRadius: 10, backgroundColor: 'grey', color: 'white'}
 
+
+  // ========== PARA ENCUESTA =========== //
+
+  const [activoEncuesta, setActivoEncuesta] = useState(false);
+
+  const cerrarEncuesta = () => setActivoEncuesta(!activoEncuesta);
+
+  const dataEncuesta = [
+    {
+      tipoDePregunta:"cerrada",
+      pregunta:"Mucho texto",
+
+    },
+    {
+      tipoDePregunta:"cerrada",
+      pregunta:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque cupiditate vitae autem numquam ea obcaecati delectus at minus dolorem? Voluptas error iste nisi! In natus culpa laborum quos perferendis possimus?" ,
+
+    },
+    {
+      tipoDePregunta:"abierta",
+      pregunta:"Ojito con esta pregunta tan interesante",
+
+    },
+    {
+      tipoDePregunta:"cerrada",
+      pregunta:"¿honestamente uya no se que preguntate asi que solo porndre mucho tennto?",
+    },
+    {
+      tipoDePregunta:"cerrada",
+      pregunta:"¿quieres una ultima pregunta o asi estas bien?",
+    }
+  ]
+
   return (
     <div>
       <Template view="perfil">
+
+        <button className='btn_show_encuesta_dadu' onClick={cerrarEncuesta} >MOSTRAR ENCUESTA DE PRUEBA</button>
+
+        <Modal active = {activoEncuesta} toggle = {cerrarEncuesta}>
+          <PopUpEncuesta 
+            tipo={1} 
+            nombreEvaluado="Daniel Maldonado" 
+            preguntas={ dataEncuesta } 
+            activo={activoEncuesta} 
+            ocultarPopUp={cerrarEncuesta} 
+          />
+        </Modal>
+
         <h1>PRUEBA PARA SUBIR UNA IMAGEN EN BASE64 A LA BASE DE DATOS</h1>
         <h2>Esta prueba sube la imagen de perfil de un usuario, pero se debe indicar su matrícula en el campo de texto</h2>
 
