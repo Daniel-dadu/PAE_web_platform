@@ -36,7 +36,7 @@
 }   
 
 .contenedor-encuesta .encabezado-contenedor-encuesta {
-    height: 15%;
+    height: 10%;
     width: 100%;
     /* background: pink; */
     border-radius: 25px 25px 0 0;
@@ -89,6 +89,15 @@
 
 }
 
+.parrafo-descripcion-encuesta {
+    width: 85%;
+    background-color: #c4c4c4;
+    color: rgb(90, 90, 90);
+    text-align: center;
+    border-radius: .3rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
 
 .contenedor-encuesta .encabezado-contenedor-encuesta-tipo3 {
     height: 15%;
@@ -164,12 +173,12 @@
 }
 
 .contenedor-encuesta .contenido-contenedor-encuesta .contenedor-pregunta-encuesta-imagen {
-    min-height: 200px;
-    max-height: 185px;
+    /* min-height: 200px;
+    max-height: 185px; */
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 500px 0 10px 0;
+    /* margin: 500px 0 10px 0; */
     /* background: #1624DA; */
     width: 100%;
 }

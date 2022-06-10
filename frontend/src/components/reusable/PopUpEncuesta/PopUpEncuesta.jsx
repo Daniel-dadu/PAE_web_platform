@@ -1,7 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { PreguntaCerradaEncuesta, PreguntaAbiertaEncuesta, ImagenAsesoria } from '../../../routeIndex';
-import ImageUploading from "react-images-uploading";
-import { FaFileUpload } from "react-icons/fa";
+import { PreguntaCerradaEncuesta, PreguntaAbiertaEncuesta, ImagenPerfilCambiar } from '../../../routeIndex';
 import './popUpEncuesta.css';
 
 import axios from 'axios';
@@ -163,11 +161,6 @@ const PopUpEncuesta = ({
     // usamos el custom hook, le mandamos la referencia del elemento 
     const ref = useRef();
 
-    const [images, setImages] = useState([]);
-    const onChange = (imageList) => {
-        setImages(imageList);
-    };
-
     const [encuestaInfo, setEncuestaInfo] = useState({
         titulo: "Cargando...",
         descripcion: "Obteniendo preguntas",
@@ -175,10 +168,11 @@ const PopUpEncuesta = ({
     })
 
     useEffect(() => {
-        if(tipo === 1) {
+        if(tipo !== 3) {
+
             const config = {
                 method: 'get',
-                url: 'http://20.225.209.57:3096/encuesta/get_encuesta_asesorados/',
+                url: `http://20.225.209.57:3096/encuesta/get_encuesta/?rol=${tipo === 1 ? "asesorado" : "asesor"}`,
                 headers: { }
             }
             
@@ -189,8 +183,12 @@ const PopUpEncuesta = ({
             .catch(error => {
                 console.log(error);
             })
+
         }
     }, [tipo])
+
+    const [imageUploaded, setImageUploaded] = useState(null)
+    const onHandleUploadImage = image => setImageUploaded(image)
 
 
     // const preguntas = [
@@ -235,7 +233,7 @@ const PopUpEncuesta = ({
                                 <p className='encabezado-izq-encuesta-texto'>
                                     { encuestaInfo.titulo }
                                 </p>
-                            </div>
+                            </div>                          
                             
                         </div>
         
@@ -328,6 +326,10 @@ const PopUpEncuesta = ({
                         </div>
                         
                     </div>
+
+                    <p className='parrafo-descripcion-encuesta'>
+                        { encuestaInfo.descripcion }
+                    </p>
     
     
                     <div className='contenido-contenedor-encuesta' ref={ ref }>
@@ -336,28 +338,7 @@ const PopUpEncuesta = ({
                             tipo === 2 &&
                             (
                                 <div className='contenedor-pregunta-encuesta-imagen'>
-                                    <ImageUploading multiple value={images} onChange={onChange} maxNumber={1} dataURLKey="data_url">
-                                        {({ imageList, onImageUpload, onImageRemove }) => (
-                                        <div className="contenedor-subirImg">
-                                            <div className='container_imagenes_RegistroAsesor'>
-                                                {imageList.length === 0 ? 
-                                                <p className='texto-evidencia-encuesta' onClick={onImageUpload}>
-                                                    Evidencia de asesoría <FaFileUpload/>
-                                                </p>
-                                                : imageList.map((image, index) => (
-                                                    <ImagenAsesoria
-                                                        allowClosed = '1'
-                                                        onClickX = {() => onImageRemove(index)}
-                                                        size = 'reducida'
-                                                        source = {image.data_url}
-                                                        alt = {`ImagenAsesoria${index}`}
-                                                        nameDownloadImage = {`ImagenAsesoria${index}`}
-                                                    />
-                                                ))}
-                                            </div>
-                                        </div>
-                                        )}
-                                    </ImageUploading>
+                                    <ImagenPerfilCambiar onUploadImage={onHandleUploadImage} />
                                 </div>
                             )
                         }

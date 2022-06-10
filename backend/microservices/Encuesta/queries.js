@@ -9,11 +9,13 @@ const pool = new Pool({
     port: 5432,
 })
 
-const getEncuestaAsesorados = (_request, response) => {
+const getEncuesta = (request, response) => {
 
-    const consultaTitleDescripcion = `SELECT "idEncuesta", "titulo", "descripcion" FROM "Encuesta" WHERE "rol" = 'asesorado'`
+    const rolUser = request.query.rol
 
-    pool.query(consultaTitleDescripcion, (error, result) => {
+    const consultaTitleDescripcion = `SELECT "idEncuesta", "titulo", "descripcion" FROM "Encuesta" WHERE "rol" = $1`
+
+    pool.query(consultaTitleDescripcion, [rolUser], (error, result) => {
         if(error) {
             response.status(400).send("Error: no se pudo obtener la ancuesta de asesorados")
         } else {
@@ -37,5 +39,5 @@ const getEncuestaAsesorados = (_request, response) => {
 }
 
 module.exports = {
-    getEncuestaAsesorados
+    getEncuesta
 }

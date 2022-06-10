@@ -36,7 +36,7 @@ app.use(
 
 // ========================= ENDPOINTS ========================= // 
 
-app.get('/encuesta/get_encuesta_asesorados/', db.getEncuestaAsesorados)
+app.get('/encuesta/get_encuesta/', db.getEncuesta)
 
 // ========================= ENDPOINTS ========================= // 
 
