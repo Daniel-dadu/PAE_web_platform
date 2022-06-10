@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-const port = 3094
+const port = 3096
 
 const db = require('./queries')
 
@@ -34,34 +34,11 @@ app.use(
     })
 )
 
-// --- OBTENER LISTA DE UFs A PARTIR DE LA CARRERA Y SEMESTRE ---
-// Obtener lista de Unidades de Formación apartir de una carrera y semestre
-// Ejemplo de consulta con query params:
-// http://20.225.209.57:3094/asesoria/get_uf/?carrera=ITC&semestre=1
-app.get('/asesoria/get_uf/', db.getUF_carreraSemestre)
+// ========================= ENDPOINTS ========================= // 
 
+app.get('/encuesta/get_encuesta_asesorados/', db.getEncuestaAsesorados)
 
-app.get('/asesoria/get_dias/', db.getDiasDisponibles)
-
-
-app.get('/asesoria/get_horas/', db.getHorasDisponibles)
-
-
-// Crear una nueva asesoría recibiendo lo siguiente (regresa el ID de la asesoría)
-/****** Ejemplo del JSON body: ******
-{
-    "uf": "TC1028",
-    "anio": 2022,
-    "mes": 3,
-    "dia": 15,
-    "hora": 10,
-    "duda": "otra prueba x4",
-    "asesorado": "A01657967"
-}
-*/
-app.post('/asesoria/nueva/', db.createAsesoria)
-
-app.post('/asesoria/insertar_imagen', db.insertImagen)
+// ========================= ENDPOINTS ========================= // 
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
