@@ -74,34 +74,6 @@ function DanielMaldonado() {
 
   const cerrarEncuesta = () => setActivoEncuesta(!activoEncuesta);
 
-  const dataEncuesta = [
-    {
-      tipoDePregunta:"cerrada",
-      pregunta:"¿Qué número te gusta más?",
-      opciones: [1,2,3,4,5]
-    },
-    {
-      tipoDePregunta:"cerrada",
-      pregunta:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque cupiditate vitae autem numquam ea obcaecati delectus at minus dolorem? Voluptas error iste nisi! In natus culpa laborum quos perferendis possimus?" ,
-      opciones: ["mucho menos",1,2,3,4,5,"mucho más"]
-    },
-    {
-      tipoDePregunta:"abierta",
-      pregunta:"Ojito con esta pregunta tan interesante",
-
-    },
-    {
-      tipoDePregunta:"cerrada",
-      pregunta:"¿honestamente uya no se que preguntate asi que solo porndre mucho tennto?",
-      opciones: ["texto","ojo","a ver", "mucho texto solo para probar"]
-    },
-    {
-      tipoDePregunta:"cerrada",
-      pregunta:"¿quieres una ultima pregunta o asi estas bien?",
-      opciones: [1,2,3,4,5,6,7,8,9,10]
-    }
-  ]
-
   return (
     <div>
       <Template view="perfil">
@@ -111,8 +83,6 @@ function DanielMaldonado() {
         <Modal active = {activoEncuesta} toggle = {cerrarEncuesta}>
           <PopUpEncuesta 
             tipo={1} 
-            nombreEvaluado="Daniel Maldonado" 
-            preguntas={ dataEncuesta } 
             activo={activoEncuesta} 
             ocultarPopUp={cerrarEncuesta} 
           />

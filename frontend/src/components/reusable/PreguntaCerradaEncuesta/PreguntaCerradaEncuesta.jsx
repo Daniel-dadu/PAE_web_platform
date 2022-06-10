@@ -11,7 +11,7 @@ preguntaCerrada={'Aqui pon la pregunta que quieres que salga'}>
 </PreguntaCerradaEncuesta> */}
 
 
-function PreguntaCerradaEncuesta({ preguntaCerrada, opciones }) {
+function PreguntaCerradaEncuesta({ preguntaCerrada, opciones=[1,2,3,4,5] }) {
 
     const [selectedOption, setSelectedOption] = useState(null)
 
@@ -30,7 +30,6 @@ function PreguntaCerradaEncuesta({ preguntaCerrada, opciones }) {
                         </button>
                     )
                 }
-        
             </div>
         </div>
     );

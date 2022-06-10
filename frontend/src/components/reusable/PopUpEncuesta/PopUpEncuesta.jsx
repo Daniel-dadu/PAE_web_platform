@@ -1,6 +1,5 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { PreguntaCerradaEncuesta, PreguntaAbiertaEncuesta, ImagenAsesoria } from '../../../routeIndex';
-import { useIsOverflowX } from '../../../hooks/useIsOverflowX';
 import ImageUploading from "react-images-uploading";
 import { FaFileUpload } from "react-icons/fa";
 import './popUpEncuesta.css';
@@ -144,8 +143,8 @@ import './popUpEncuesta.css';
 */
 const PopUpEncuesta = ({ 
     tipo, 
-    nombreEvaluado, 
-    preguntas, 
+    // nombreEvaluado, 
+    // preguntas, 
     respuestasAsesorado=[], 
     respuestasAsesor=[], 
     imagenResultados="imgPruebaPopUpEncuesta.webp", 
@@ -153,22 +152,57 @@ const PopUpEncuesta = ({
     ocultarPopUp
 } ) => {
 
-    const btnNoLlegadaAsesorado = () => {
-        window.alert("no llegó el asesorado");
-    };
-    const btnNoLlegadaAsesor = () => {
-        window.alert("no llegó el asesor");
-    };
+    const btnNoLlegada = (tipoUser) => {
+        if(tipoUser === 1){
+            window.alert("no llegó el asesor");
+        } else {
+            window.alert("no llegó el asesorado");
+        }
+    }
 
     // usamos el custom hook, le mandamos la referencia del elemento 
     const ref = useRef();
-    const isOverflow = useIsOverflowX(ref);
 
-    const [images, setImages] = React.useState([]);
+    const [images, setImages] = useState([]);
     const onChange = (imageList) => {
         setImages(imageList);
     };
 
+    useEffect(() => {
+        if(tipo === 1) {
+            // Consultamos la encuesta de asesorados
+        }
+    }, [tipo])
+
+    const nombreEvaluado = "Daniel Maldonado"
+
+    const preguntas = [
+        {
+          tipoDePregunta:"cerrada",
+          pregunta:"¿Qué número te gusta más?",
+          opciones: [1,2,3,4,5]
+        },
+        {
+          tipoDePregunta:"cerrada",
+          pregunta:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque cupiditate vitae autem numquam ea obcaecati delectus at minus dolorem? Voluptas error iste nisi! In natus culpa laborum quos perferendis possimus?" ,
+          opciones: ["mucho menos",1,2,3,4,5,"mucho más"]
+        },
+        {
+          tipoDePregunta:"abierta",
+          pregunta:"Ojito con esta pregunta tan interesante",
+    
+        },
+        {
+          tipoDePregunta:"cerrada",
+          pregunta:"¿honestamente uya no se que preguntate asi que solo porndre mucho tennto?",
+          opciones: ["texto","ojo","a ver", "mucho texto solo para probar"]
+        },
+        {
+          tipoDePregunta:"cerrada",
+          pregunta:"¿quieres una ultima pregunta o asi estas bien?",
+          opciones: [1,2,3,4,5,6,7,8,9,10]
+        }
+    ]
 
   return (
     <>
@@ -192,26 +226,11 @@ const PopUpEncuesta = ({
                         <div className='contenido-contenedor-encuesta' ref={ ref }>
         
                             {
-                                isOverflow?
-                                (
-                                    <div className={ `contenedor-espacio-encuesta-${ respuestasAsesorado.length > 0 ? '1':'2' }` }></div>
-                                ):
-                                (
-                                    <></>
-                                )
-                            }
-        
-                            {
-                                respuestasAsesor.length > 0  ?
-                                (
-                                    <div className='contenedor-pregunta-encuesta-imagen-tipo3'>
-                                        <h4>Evidencia de asesoria</h4>
-                                        <img className='imagen-encuesta-tipo3' src={require( `../../../assets/${imagenResultados}` )} alt="imagenChida" />
-                                    </div>
-                                ):
-                                (
-                                    <></>
-                                )
+                                respuestasAsesor.length > 0 &&
+                                <div className='contenedor-pregunta-encuesta-imagen-tipo3'>
+                                    <h4>Evidencia de asesoria</h4>
+                                    <img className='imagen-encuesta-tipo3' src={require( `../../../assets/${imagenResultados}` )} alt="imagenChida" />
+                                </div>
                             }
         
                             {
@@ -249,7 +268,6 @@ const PopUpEncuesta = ({
                                                     preguntaCerrada=" ¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl? " 
                                                     indexPregunta= {index+1}
                                                     respuesta = { preg.respuesta }
-
                                                 />
                                             </div>
                                         ):
@@ -259,7 +277,6 @@ const PopUpEncuesta = ({
                                                     preguntaAbierta=" ¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl? "
                                                     indexPregunta={ index+1 }
                                                     respuesta = { preg.respuesta }
-
                                                 />
                                             </div>
                                         )
@@ -288,37 +305,15 @@ const PopUpEncuesta = ({
                         </div>
     
                         <div className='encabezado-der-encuesta'>
-                            {
-                                tipo === 1 ?
-                                (
-                                    <button 
-                                    onClick={ btnNoLlegadaAsesor } 
-                                    className='btn-encabezado-encuesta'
-                                    >
-                                        No llegó el asesor
-                                    </button>
-                                ):
-                                (
-                                    <button 
-                                    onClick={ btnNoLlegadaAsesorado } 
-                                    className='btn-encabezado-encuesta'
-                                    >
-                                        No llegó el asesorado
-                                    </button>
-                                )
-                            }
-                        
+                            <button onClick={ () => btnNoLlegada(tipo) } className='btn-encabezado-encuesta'>
+                                No llegó el {tipo === 1 ? "asesor" : "asesorado"} 
+                            </button>
                         </div>
                         
                     </div>
     
     
                     <div className='contenido-contenedor-encuesta' ref={ ref }>
-    
-                        {/* {
-                            isOverflow &&
-                            <div className={ `contenedor-espacio-encuesta-${tipo}` } />
-                        } */}
     
                         {
                             tipo === 2 &&
@@ -329,9 +324,9 @@ const PopUpEncuesta = ({
                                         <div className="contenedor-subirImg">
                                             <div className='container_imagenes_RegistroAsesor'>
                                                 {imageList.length === 0 ? 
-                                                <p 
-                                                    className='texto-evidencia-encuesta'
-                                                    onClick={onImageUpload}>Evidencia de asesoría <FaFileUpload/></p>
+                                                <p className='texto-evidencia-encuesta' onClick={onImageUpload}>
+                                                    Evidencia de asesoría <FaFileUpload/>
+                                                </p>
                                                 : imageList.map((image, index) => (
                                                     <ImagenAsesoria
                                                         allowClosed = '1'
@@ -366,8 +361,7 @@ const PopUpEncuesta = ({
                                     <div className='contenedor-pregunta-encuesta-abierta' key={index}>
                                         <PreguntaAbiertaEncuesta
                                             preguntaAbierta={preg.pregunta}
-                                            indexPregunta={ index+1 }
-                                            opciones={preg.opciones}
+                                            respuesta=""
                                         />
                                     </div>
                                 )
