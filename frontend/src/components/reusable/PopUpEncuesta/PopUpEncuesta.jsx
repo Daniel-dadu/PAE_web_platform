@@ -358,6 +358,7 @@ const PopUpEncuesta = ({
                                         <PreguntaCerradaEncuesta 
                                             preguntaCerrada={preg.pregunta}
                                             indexPregunta= {index+1}
+                                            opciones={preg.opciones}
                                         />
                                     </div>
                                 ):
@@ -366,6 +367,7 @@ const PopUpEncuesta = ({
                                         <PreguntaAbiertaEncuesta
                                             preguntaAbierta={preg.pregunta}
                                             indexPregunta={ index+1 }
+                                            opciones={preg.opciones}
                                         />
                                     </div>
                                 )
