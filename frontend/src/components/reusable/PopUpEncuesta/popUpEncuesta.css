@@ -173,15 +173,15 @@
 }
 
 .contenedor-encuesta .contenido-contenedor-encuesta .contenedor-pregunta-encuesta-imagen {
-    /* min-height: 200px;
-    max-height: 185px; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* margin: 500px 0 10px 0; */
-    /* background: #1624DA; */
+    margin-bottom: 1rem;
     width: 100%;
 }
+.contenedor-encuesta .contenido-contenedor-encuesta .contenedor-pregunta-encuesta-imagen > p {
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
 .contenedor-encuesta .contenido-contenedor-encuesta .contenedor-pregunta-encuesta-imagen-tipo3 {
     display: flex;
     align-items: center;

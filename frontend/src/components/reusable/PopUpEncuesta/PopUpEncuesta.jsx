@@ -338,7 +338,8 @@ const PopUpEncuesta = ({
                             tipo === 2 &&
                             (
                                 <div className='contenedor-pregunta-encuesta-imagen'>
-                                    <ImagenPerfilCambiar onUploadImage={onHandleUploadImage} />
+                                    <p>Evidencia de asesoría</p>
+                                    <ImagenPerfilCambiar onUploadImage={onHandleUploadImage} isImageEncuesta={true} />
                                 </div>
                             )
                         }
