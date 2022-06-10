@@ -4,7 +4,7 @@ import ImageUploading from "react-images-uploading";
 import { FaFileUpload } from "react-icons/fa";
 import './popUpEncuesta.css';
 
-
+import axios from 'axios';
 
 // PARTE DE LA DOCUMENTACION =======================================================================
 // const data = [
@@ -168,41 +168,58 @@ const PopUpEncuesta = ({
         setImages(imageList);
     };
 
+    const [encuestaInfo, setEncuestaInfo] = useState({
+        titulo: "Cargando...",
+        descripcion: "Obteniendo preguntas",
+        preguntas: []
+    })
+
     useEffect(() => {
         if(tipo === 1) {
-            // Consultamos la encuesta de asesorados
+            const config = {
+                method: 'get',
+                url: 'http://20.225.209.57:3096/encuesta/get_encuesta_asesorados/',
+                headers: { }
+            }
+            
+            axios(config)
+            .then(response => {
+                setEncuestaInfo(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            })
         }
     }, [tipo])
 
-    const nombreEvaluado = "Daniel Maldonado"
 
-    const preguntas = [
-        {
-          tipoDePregunta:"cerrada",
-          pregunta:"¿Qué número te gusta más?",
-          opciones: [1,2,3,4,5]
-        },
-        {
-          tipoDePregunta:"cerrada",
-          pregunta:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque cupiditate vitae autem numquam ea obcaecati delectus at minus dolorem? Voluptas error iste nisi! In natus culpa laborum quos perferendis possimus?" ,
-          opciones: ["mucho menos",1,2,3,4,5,"mucho más"]
-        },
-        {
-          tipoDePregunta:"abierta",
-          pregunta:"Ojito con esta pregunta tan interesante",
+    // const preguntas = [
+    //     {
+    //       tipoDePregunta:"cerrada",
+    //       pregunta:"¿Qué número te gusta más?",
+    //       opciones: [1,2,3,4,5]
+    //     },
+    //     {
+    //       tipoDePregunta:"cerrada",
+    //       pregunta:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque cupiditate vitae autem numquam ea obcaecati delectus at minus dolorem? Voluptas error iste nisi! In natus culpa laborum quos perferendis possimus?" ,
+    //       opciones: ["mucho menos",1,2,3,4,5,"mucho más"]
+    //     },
+    //     {
+    //       tipoDePregunta:"abierta",
+    //       pregunta:"Ojito con esta pregunta tan interesante",
     
-        },
-        {
-          tipoDePregunta:"cerrada",
-          pregunta:"¿honestamente uya no se que preguntate asi que solo porndre mucho tennto?",
-          opciones: ["texto","ojo","a ver", "mucho texto solo para probar"]
-        },
-        {
-          tipoDePregunta:"cerrada",
-          pregunta:"¿quieres una ultima pregunta o asi estas bien?",
-          opciones: [1,2,3,4,5,6,7,8,9,10]
-        }
-    ]
+    //     },
+    //     {
+    //       tipoDePregunta:"cerrada",
+    //       pregunta:"¿honestamente uya no se que preguntate asi que solo porndre mucho tennto?",
+    //       opciones: ["texto","ojo","a ver", "mucho texto solo para probar"]
+    //     },
+    //     {
+    //       tipoDePregunta:"cerrada",
+    //       pregunta:"¿quieres una ultima pregunta o asi estas bien?",
+    //       opciones: [1,2,3,4,5,6,7,8,9,10]
+    //     }
+    // ]
 
   return (
     <>
@@ -216,7 +233,7 @@ const PopUpEncuesta = ({
         
                             <div className='encabezado-izq-encuesta'>
                                 <p className='encabezado-izq-encuesta-texto'>
-                                    Encuesta de experiencia y mejora de asesoria con { nombreEvaluado }
+                                    { encuestaInfo.titulo }
                                 </p>
                             </div>
                             
@@ -300,7 +317,7 @@ const PopUpEncuesta = ({
     
                         <div className='encabezado-izq-encuesta'>
                             <p className='encabezado-izq-encuesta-texto'>
-                                Encuesta de experiencia y mejora de asesoria con { nombreEvaluado }
+                                { encuestaInfo.titulo }
                             </p>
                         </div>
     
@@ -346,14 +363,14 @@ const PopUpEncuesta = ({
                         }
     
                         {
-                            preguntas.map((preg, index) => (
+                            encuestaInfo.preguntas.map((preg, index) => (
                                 preg.tipoDePregunta === "cerrada" ?
                                 (
                                     <div className='contenedor-pregunta-encuesta-cerrada' key={index} >
                                         <PreguntaCerradaEncuesta 
                                             preguntaCerrada={preg.pregunta}
                                             indexPregunta= {index+1}
-                                            opciones={preg.opciones}
+                                            opciones={preg.opciones.split(',')}
                                         />
                                     </div>
                                 ):

@@ -15,6 +15,8 @@ function PreguntaCerradaEncuesta({ preguntaCerrada, opciones=[1,2,3,4,5] }) {
 
     const [selectedOption, setSelectedOption] = useState(null)
 
+    console.log(opciones)
+
     return (
         <div className="contenedorPreguntaCerradaEncuesta">
             <div className="textoPreguntaCerradaEncuesta"> {preguntaCerrada} </div>
