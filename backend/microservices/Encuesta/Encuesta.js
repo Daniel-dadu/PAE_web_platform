@@ -43,7 +43,7 @@ app.use(
 app.get('/encuesta/get_encuesta/', db.getEncuesta)
 
 // Crear una respuesta a una encuesta
-// app.post('/encuesta/set_respuesta_encuesta/', db.setRespuestaEncuesta)
+app.post('/encuesta/set_respuesta_encuesta/', db.setRespuestaEncuesta)
 
 // ========================= ENDPOINTS ========================= // 
 

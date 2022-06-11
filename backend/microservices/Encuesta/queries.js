@@ -38,6 +38,56 @@ const getEncuesta = (request, response) => {
     })
 }
 
+const setRespuestaEncuesta = (request, response) => {
+    const idAsesoria = request.body.idAsesoria
+    const rolUser = request.body.rol
+    const respuestas = request.body.respuestas
+
+    ;(async () => {
+
+        const client = await pool.connect()
+
+        try {
+
+            await client.query('BEGIN')
+
+            const consulta1 = `SELECT "idCalificacionEncuesta" FROM "CalificacionEncuesta" INNER JOIN "Encuesta" ON "CalificacionEncuesta"."idEncuesta" = "Encuesta"."idEncuesta" WHERE "idAsesoria" = $1 AND "rol" = $2`
+
+            const getIdCalificacionEncuesta = await client.query(consulta1, [idAsesoria, rolUser])
+
+            const consulta2 = `INSERT INTO "CalificacionPregunta" ("idCalificacionPregunta", "idCalificacionEncuesta", "idPregunta", "respuesta") VALUES (DEFAULT, $1, $2, $3)`
+
+            for (let idPregunta in respuestas) {
+                // const idCalEncuesta = getIdCalificacionEncuesta.rows[0].idCalificacionEncuesta
+                // const idPreguntaInt = parseInt(idPregunta)
+                // const respuestaPreg = respuestas[idPregunta]
+                // const arr = [idCalEncuesta, idPreguntaInt, respuestaPreg]
+                const arr = [getIdCalificacionEncuesta.rows[0].idCalificacionEncuesta, parseInt(idPregunta), respuestas[idPregunta]]
+                // console.log("arr", arr)
+                await client.query(consulta2, arr)
+                // console.log("ojo", idRes.rows[0])
+            }
+
+            // ================= FIN TRANSACCION ================= //
+            await client.query('COMMIT')
+            response.status(200).send("La respuesta a la encuesta se guardó exitosamente")
+            // ================= FIN TRANSACCION ================= //
+
+        } catch (e) {
+            await client.query('ROLLBACK')
+            throw e
+            
+        } finally {
+            client.release()
+        }
+
+    })().catch(_e => 
+        response.status(400).send('Error: No se pudo registrar la respuesta a la encuesta (transacción cancelada correctamente)')
+    )
+
+}
+
 module.exports = {
-    getEncuesta
+    getEncuesta,
+    setRespuestaEncuesta
 }

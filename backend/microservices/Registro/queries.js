@@ -113,7 +113,7 @@ const nuevo_asesor = (request, response) => {
             const consulta = `CALL registro_datosperfil_asesor($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)`
             const params = [matricula, password, salt, nombre, apellidoPaterno, apellidoMaterno, fotoPerfil, telefono, carrera, carrera2, semestre]
 
-            await pool.query(consulta, params)
+            await client.query(consulta, params)
 
             ///// Fin de registro de datos personales /////
             ///////////////////////////////////////////////
@@ -146,7 +146,7 @@ const nuevo_asesor = (request, response) => {
 
                 const consultaHorarioDP = `INSERT INTO "HorarioDisponiblePeriodo" ("idHorarioDisponiblePeriodo", "idAsesor", "idPeriodo") VALUES (DEFAULT, $1, $2) RETURNING "idHorarioDisponiblePeriodo"`
 
-                const getHorarioDP = await pool.query(consultaHorarioDP, [matricula, periodo.idPeriodo])
+                const getHorarioDP = await client.query(consultaHorarioDP, [matricula, periodo.idPeriodo])
 
                 let NEWidHorarioDisponiblePeriodo = getHorarioDP.rows[0].idHorarioDisponiblePeriodo
 
@@ -186,7 +186,7 @@ const nuevo_asesor = (request, response) => {
                             // console.log("Date inserted", currentInsertDate)
                             const consultaHorarioDispo = `INSERT INTO "HorarioDisponible" ("idHorarioDisponible", "idHorarioDisponiblePeriodo", "fechaHora", "status") VALUES (DEFAULT, $1, $2, 'disponible')`
         
-                            await pool.query(consultaHorarioDispo, [NEWidHorarioDisponiblePeriodo, currentInsertDate])
+                            await client.query(consultaHorarioDispo, [NEWidHorarioDisponiblePeriodo, currentInsertDate])
                             currentInsertDate.setDate(currentInsertDate.getDate() + 7)
                         }
                         
@@ -203,7 +203,7 @@ const nuevo_asesor = (request, response) => {
             ///////////////////////////////////////////////
             /////////////// Registro de UFs ///////////////
             ufs.forEach(async claveUF => {
-                await pool.query(`INSERT INTO "AsesorUnidadFormacion" ("idUsuario","idUF") VALUES ($1, $2)`, [matricula, claveUF])
+                await client.query(`INSERT INTO "AsesorUnidadFormacion" ("idUsuario","idUF") VALUES ($1, $2)`, [matricula, claveUF])
             })
             /////////// Fin de Registro de UFs ////////////
             ///////////////////////////////////////////////
