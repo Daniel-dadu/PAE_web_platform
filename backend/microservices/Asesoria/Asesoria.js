@@ -61,6 +61,13 @@ app.get('/asesoria/get_horas/', db.getHorasDisponibles)
 */
 app.post('/asesoria/nueva/', db.createAsesoria)
 
+// Insertar una imagen de una asesoría ya creada (no regresa nada)
+/****** Ejemplo del JSON body: ******
+{
+    "idAsesoria": 1,
+    "imagen": "data:image/jpeg;base64..."
+}
+*/
 app.post('/asesoria/insertar_imagen', db.insertImagen)
 
 app.listen(port, () => {

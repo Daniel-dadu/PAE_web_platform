@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { PreguntaCerradaEncuesta, PreguntaAbiertaEncuesta, ImagenPerfilCambiar } from '../../../routeIndex';
+import { PreguntaCerradaEncuesta, PreguntaAbiertaEncuesta, ImagenPerfilCambiar, imageCompressor } from '../../../routeIndex';
 import './popUpEncuesta.css';
 
 import axios from 'axios';
@@ -126,11 +126,11 @@ import axios from 'axios';
 
     Ejemplo de uso:
             
-            Para el tipo 1 :
-            <PopUpEncuesta tipo={1} nombreEvaluado="Daniel Maldonado" preguntas={ data } activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
+            Para el tipo 1 (con modificación de Dadu):
+            <PopUpEncuesta tipo={1} activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
             
-            Para el tipo2:
-            <PopUpEncuesta tipo={2} nombreEvaluado="Daniel Maldonado" preguntas={ data } activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
+            Para el tipo2 (con modificación de Dadu):
+            <PopUpEncuesta tipo={2} activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
 
             Para el tipo3 (respuestas de asesores):
             <PopUpEncuesta tipo={3} nombreEvaluado="Daniel Maldonado" respuestasAsesor={ data2 } activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
@@ -167,6 +167,8 @@ const PopUpEncuesta = ({
         preguntas: []
     })
 
+    const [respuestasUser, setRespuestasUser] = useState([])
+
     useEffect(() => {
         if(tipo !== 3) {
 
@@ -178,7 +180,21 @@ const PopUpEncuesta = ({
             
             axios(config)
             .then(response => {
-                setEncuestaInfo(response.data);
+                const preguntasAPI = response.data
+
+                // Hacemos la conversión de las preguntas cerradas a un array
+                setEncuestaInfo({
+                    titulo: preguntasAPI.titulo,
+                    descripcion: preguntasAPI.descripcion,
+                    preguntas: preguntasAPI.preguntas.map(preg => ({
+                        pregunta: preg.pregunta,
+                        tipoDePregunta: preg.tipoDePregunta,
+                        opciones: preg.opciones ? preg.opciones.split(',') : null
+                    }))
+                })
+
+                // Ponemos un arreglo de nulos en las respuestas del usuario
+                setRespuestasUser(Array(preguntasAPI.preguntas.length).fill(null))
             })
             .catch(error => {
                 console.log(error);
@@ -190,37 +206,49 @@ const PopUpEncuesta = ({
     const [imageUploaded, setImageUploaded] = useState(null)
     const onHandleUploadImage = image => setImageUploaded(image)
 
+    const guardarRespuesta = (res, indexPregunta) => {
+        let newRespuestas = respuestasUser
+        newRespuestas[indexPregunta] = res
+        setRespuestasUser(newRespuestas)
+    }
 
-    // const preguntas = [
-    //     {
-    //       tipoDePregunta:"cerrada",
-    //       pregunta:"¿Qué número te gusta más?",
-    //       opciones: [1,2,3,4,5]
-    //     },
-    //     {
-    //       tipoDePregunta:"cerrada",
-    //       pregunta:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque cupiditate vitae autem numquam ea obcaecati delectus at minus dolorem? Voluptas error iste nisi! In natus culpa laborum quos perferendis possimus?" ,
-    //       opciones: ["mucho menos",1,2,3,4,5,"mucho más"]
-    //     },
-    //     {
-    //       tipoDePregunta:"abierta",
-    //       pregunta:"Ojito con esta pregunta tan interesante",
-    
-    //     },
-    //     {
-    //       tipoDePregunta:"cerrada",
-    //       pregunta:"¿honestamente uya no se que preguntate asi que solo porndre mucho tennto?",
-    //       opciones: ["texto","ojo","a ver", "mucho texto solo para probar"]
-    //     },
-    //     {
-    //       tipoDePregunta:"cerrada",
-    //       pregunta:"¿quieres una ultima pregunta o asi estas bien?",
-    //       opciones: [1,2,3,4,5,6,7,8,9,10]
-    //     }
-    // ]
+    const enviarEncuesta = async () => {
+        let respuestasFinales = encuestaInfo.preguntas
 
-  return (
-    <>
+        for(let i = 0; i < respuestasUser.length; i++) {
+            const res = respuestasUser[i]
+            if(res === null) {
+                alert('Es necesario responder todas las preguntas')
+                return
+            }
+            const opcionesRespuestas = respuestasFinales[i].opciones
+            respuestasFinales[i] = opcionesRespuestas ? opcionesRespuestas[res] : res
+        }
+
+        let imageCompressed = null
+
+        if(tipo === 2) {
+            if(!imageUploaded) {
+                alert('Es necesario que subas una imagen como evidencia de que se llevó a cabo la asesoría.')
+            } else {
+                imageCompressed = await imageCompressor(imageUploaded)
+                
+                // Si no se puede comprimir, se le indica al usuario
+                if(imageCompressed.slice(0, 5) === "error") {
+                    alert('Tu imagen de la evidencia es muy grande.\nReduce el tamaño y vuelve a intentarlo')
+                    return
+                }
+            }
+        }
+        
+
+        console.log("Imagen evidencia: ", imageCompressed)
+        console.log("Respuestas: ", respuestasFinales)
+
+        ocultarPopUp()
+    }
+
+    return (
         <div className={ `fondo-display-PopUpEncuesta-responder ${ activo ? '':'ocultarEncuesta' }` }>
             {
                 tipo === 3 ?
@@ -351,8 +379,10 @@ const PopUpEncuesta = ({
                                     <div className='contenedor-pregunta-encuesta-cerrada' key={index} >
                                         <PreguntaCerradaEncuesta 
                                             preguntaCerrada={preg.pregunta}
-                                            indexPregunta= {index+1}
-                                            opciones={preg.opciones.split(',')}
+                                            indexPregunta= {index}
+                                            opciones={preg.opciones}
+                                            getOptionSelected={ guardarRespuesta }
+
                                         />
                                     </div>
                                 ):
@@ -360,7 +390,9 @@ const PopUpEncuesta = ({
                                     <div className='contenedor-pregunta-encuesta-abierta' key={index}>
                                         <PreguntaAbiertaEncuesta
                                             preguntaAbierta={preg.pregunta}
+                                            indexPregunta= {index}
                                             respuesta=""
+                                            getRespuesta={ guardarRespuesta }
                                         />
                                     </div>
                                 )
@@ -370,17 +402,14 @@ const PopUpEncuesta = ({
                     </div>
     
                     <div className='footer-contenedor-encuesta'>
-                        <button className='boton-footer-encuesta' onClick={ ocultarPopUp }  > Enviar </button>
+                        <button className='boton-footer-encuesta' onClick={ enviarEncuesta }  > Enviar </button>
                     </div>
                 </div>
                 )
             }
            
         </div>
-
-
-    </>
-  )
+    )
 }
 
 export default PopUpEncuesta

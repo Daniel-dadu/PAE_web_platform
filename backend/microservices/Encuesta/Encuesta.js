@@ -36,7 +36,14 @@ app.use(
 
 // ========================= ENDPOINTS ========================= // 
 
+// Obtener la encuesta con las preguntas para un 'asesor' / 'asesorado'
+// Se debe indicar en el query parameter 'rol' el tipo de usuario del que se solicita la encuesta
+// Ejemplo de solicitud de encuesta de asesores:
+// http://20.225.209.57:3096/encuesta/get_encuesta/?rol=asesorado}
 app.get('/encuesta/get_encuesta/', db.getEncuesta)
+
+// Crear una respuesta a una encuesta
+app.post('/encuesta/set_respuesta_encuesta/', db.setRespuestaEncuesta)
 
 // ========================= ENDPOINTS ========================= // 
 

@@ -82,7 +82,7 @@ function DanielMaldonado() {
 
         <Modal active = {activoEncuesta} toggle = {cerrarEncuesta}>
           <PopUpEncuesta 
-            tipo={2} 
+            tipo={1} 
             activo={activoEncuesta} 
             ocultarPopUp={cerrarEncuesta} 
           />
