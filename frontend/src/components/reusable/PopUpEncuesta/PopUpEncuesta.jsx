@@ -1,9 +1,11 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { PreguntaCerradaEncuesta, PreguntaAbiertaEncuesta, ImagenPerfilCambiar, imageCompressor } from '../../../routeIndex';
 import './popUpEncuesta.css';
 
 import axios from 'axios';
 import LoadingSpin from "react-loading-spin";
+
+import imagenRandomEvidencia from '../../../assets/imgPruebaPopUpEncuesta.webp'
 
 // PARTE DE LA DOCUMENTACION =======================================================================
 // const data = [
@@ -147,7 +149,7 @@ const PopUpEncuesta = ({
     // preguntas, 
     respuestasAsesorado=[], 
     respuestasAsesor=[], 
-    imagenResultados="imgPruebaPopUpEncuesta.webp", 
+    imagenResultados, 
     activo, 
     ocultarPopUp
 } ) => {
@@ -160,12 +162,10 @@ const PopUpEncuesta = ({
         }
     }
 
-    // usamos el custom hook, le mandamos la referencia del elemento 
-    const ref = useRef();
-
     const [encuestaInfo, setEncuestaInfo] = useState({
         titulo: "Cargando...",
         descripcion: "Obteniendo preguntas",
+        fotoEvdencia: null,
         preguntas: []
     })
 
@@ -208,6 +208,51 @@ const PopUpEncuesta = ({
             .catch(error => {
                 console.log(error);
             })
+
+        } else {
+
+            // =========== HARD CODEADO ===========
+
+            const ejemplo = {
+                titulo: "Ejemplo de encuesta",
+                descripcion: `Encuesta respondida por ${"Danoman"}, el cual tuvo la asesoría con ${"Daniman"}`,
+                fotoEvdencia: imagenRandomEvidencia,
+                preguntas: [
+                    {
+                        pregunta: "¿Te gustó la asesoría?",
+                        tipoDePregunta: "cerrada",
+                        opciones: "Sí,No".split(','),
+                        respuesta: "Sí"
+                    },
+                    {
+                        pregunta: "¿La tomarías de nuevo?",
+                        tipoDePregunta: "cerrada",
+                        opciones: "Sí,No".split(','),
+                        respuesta: "No"
+                    },
+                    {
+                        pregunta: "¿Por qué?",
+                        tipoDePregunta: "abierta",
+                        opciones: null,
+                        respuesta: "La verdad no tengo idea, pero no XD"
+                    },
+                    {
+                        pregunta: "¿La tomarías de nuevo?",
+                        tipoDePregunta: "cerrada",
+                        opciones: "20,30,40,45,más de 45".split(','),
+                        respuesta: "más de 45"
+                    },
+                    {
+                        pregunta: "¿Algún comentario sobre la asesoría?",
+                        tipoDePregunta: "abierta",
+                        opciones: null,
+                        respuesta: "Esta encuesta está muy bien hecha compañeres, felicidades"
+                    },
+                ]
+            }
+
+            setEncuestaInfo(ejemplo)
+            // =========== HARD CODEADO ===========
 
         }
     }, [tipo])
@@ -282,77 +327,46 @@ const PopUpEncuesta = ({
                 tipo === 3 ?
                 (
                     <div className='contenedor-encuesta'>
-
-                        <div className='encabezado-contenedor-encuesta-tipo3'>
         
-                            <div className='encabezado-izq-encuesta'>
-                                <p className='encabezado-izq-encuesta-texto'>
-                                    { encuestaInfo.titulo }
-                                </p>
-                            </div>                          
+                        <p className='titulo-encuesta-tipo3'>
+                            { encuestaInfo.titulo }
+                        </p>
                             
-                        </div>
+                        <p className='parrafo-descripcion-encuesta'>
+                            { encuestaInfo.descripcion }
+                        </p>
         
-        
-                        <div className='contenido-contenedor-encuesta' ref={ ref }>
+                        <div className='contenido-contenedor-encuesta'>
         
                             {
-                                respuestasAsesor.length > 0 &&
+                                encuestaInfo.fotoEvdencia &&
                                 <div className='contenedor-pregunta-encuesta-imagen-tipo3'>
                                     <h4>Evidencia de asesoria</h4>
-                                    <img className='imagen-encuesta-tipo3' src={require( `../../../assets/${imagenResultados}` )} alt="imagenChida" />
+                                    <img className='imagen-encuesta-tipo3' src={encuestaInfo.fotoEvdencia} alt="imagenChida" />
                                 </div>
                             }
         
                             {
-                                respuestasAsesorado.length > 0? 
-                                (
-                                    respuestasAsesorado.map((preg, index) => (
-                                        preg.tipoDePregunta === "cerrada" ?
-                                        (
-                                            <div className='contenedor-pregunta-encuesta-cerrada' key={index}>
-                                                <PreguntaCerradaEncuesta 
-                                                    preguntaCerrada=" ¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl? " 
-                                                    indexPregunta= {index+1}
-                                                    respuesta ={ preg.respuesta }
-                                                />
-                                            </div>
-                                        ):
-                                        (
-                                            <div className='contenedor-pregunta-encuesta-abierta' key={index}>
-                                                <PreguntaAbiertaEncuesta
-                                                    preguntaAbierta=" ¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl? "
-                                                    indexPregunta={ index+1 }
-                                                    respuesta = { preg.respuesta }
-                                                />
-                                            </div>
-                                        )
-                                    ))
-                                ):
-                                (
-                                    respuestasAsesor.map((preg, index) => (
-                                        preg.tipoDePregunta === "cerrada" ?
-                                        (
-                                            <div className='contenedor-pregunta-encuesta-cerrada' key={index}>
-                                                <PreguntaCerradaEncuesta 
-                                                    preguntaCerrada=" ¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl? " 
-                                                    indexPregunta= {index+1}
-                                                    respuesta = { preg.respuesta }
-                                                />
-                                            </div>
-                                        ):
-                                        (
-                                            <div className='contenedor-pregunta-encuesta-abierta' key={index}>
-                                                <PreguntaAbiertaEncuesta
-                                                    preguntaAbierta=" ¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl? "
-                                                    indexPregunta={ index+1 }
-                                                    respuesta = { preg.respuesta }
-                                                />
-                                            </div>
-                                        )
-                                    ))
-                                )
-                                
+                                encuestaInfo.preguntas.map((preg, index) => (
+                                    preg.tipoDePregunta === "cerrada" ?
+                                    (
+                                        <div className='contenedor-pregunta-encuesta-cerrada' key={index}>
+                                            <PreguntaCerradaEncuesta 
+                                                preguntaCerrada={ preg.pregunta }
+                                                opciones={ preg.opciones }
+                                                respuesta ={ preg.respuesta }
+                                            />
+                                        </div>
+                                    ):
+                                    (
+                                        <div className='contenedor-pregunta-encuesta-abierta' key={index}>
+                                            <PreguntaAbiertaEncuesta
+                                                preguntaAbierta={ preg.pregunta }
+                                                respuesta = { preg.respuesta }
+                                            />
+                                        </div>
+                                    )
+                                ))
                             }
         
                         </div>
@@ -361,7 +375,10 @@ const PopUpEncuesta = ({
                             <button className='boton-footer-encuesta-tipo3' onClick={ocultarPopUp}> Cerrar </button>
                         </div>
                     </div>
-                ):  //=================================================================================================
+                ):  
+                
+                // ================================================================================================= //
+                
                 (
                     <div className='contenedor-encuesta'>
 
@@ -387,16 +404,14 @@ const PopUpEncuesta = ({
                     </p>
     
     
-                    <div className='contenido-contenedor-encuesta' ref={ ref }>
+                    <div className='contenido-contenedor-encuesta'>
     
                         {
                             tipo === 2 &&
-                            (
-                                <div className='contenedor-pregunta-encuesta-imagen'>
-                                    <p>Evidencia de asesoría</p>
-                                    <ImagenPerfilCambiar onUploadImage={onHandleUploadImage} isImageEncuesta={true} />
-                                </div>
-                            )
+                            <div className='contenedor-pregunta-encuesta-imagen'>
+                                <p>Evidencia de asesoría</p>
+                                <ImagenPerfilCambiar onUploadImage={onHandleUploadImage} isImageEncuesta={true} />
+                            </div>
                         }
     
                         {

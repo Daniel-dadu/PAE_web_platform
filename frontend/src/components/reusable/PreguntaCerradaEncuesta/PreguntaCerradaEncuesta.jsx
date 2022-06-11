@@ -11,13 +11,15 @@ preguntaCerrada={'Aqui pon la pregunta que quieres que salga'}>
 </PreguntaCerradaEncuesta> */}
 
 
-function PreguntaCerradaEncuesta({ preguntaCerrada, opciones=[1,2,3,4,5], idPregunta, getOptionSelected }) {
+function PreguntaCerradaEncuesta({ preguntaCerrada, opciones=[1,2,3,4,5], idPregunta, getOptionSelected, respuesta=null }) {
 
-    const [selectedOption, setSelectedOption] = useState(null)
+    const [selectedOption, setSelectedOption] = useState(opciones.indexOf(respuesta))
     
     const selectOption = option => {
-        setSelectedOption(option)
-        getOptionSelected(opciones[option], idPregunta)
+        if(respuesta === null) {
+            setSelectedOption(option)
+            getOptionSelected(opciones[option], idPregunta)
+        }
     } 
 
     return (
@@ -29,7 +31,8 @@ function PreguntaCerradaEncuesta({ preguntaCerrada, opciones=[1,2,3,4,5], idPreg
                     opciones.map((opcion, index) => 
                         <button key={index} onClick={() => selectOption(index)} style={{
                             backgroundColor: selectedOption === index ? "#1624DA" : "#E5E5E5",
-                            color: selectedOption === index ? "white" : "black"
+                            color: selectedOption === index ? "white" : "black",
+                            cursor: respuesta === null ? "pointer" : "default"
                         }}>
                             {opcion}
                         </button>

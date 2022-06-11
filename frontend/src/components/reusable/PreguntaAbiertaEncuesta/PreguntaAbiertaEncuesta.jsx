@@ -12,13 +12,15 @@ preguntaAbierta={'Aqui pon la pregunta que quieras'}>
 
 </PreguntaAbiertaEncuesta> */}
 
-function PreguntaAbiertaEncuesta({preguntaAbierta, idPregunta, respuesta='', getRespuesta}) {
+function PreguntaAbiertaEncuesta({preguntaAbierta, idPregunta, getRespuesta, respuesta=''}) {
 
     const [respuestaUser, setRespuestaUser] = useState(respuesta)
 
     const handleRespuesta = res => {
-        setRespuestaUser(res)
-        getRespuesta(res, idPregunta)
+        if(respuesta === '') {
+            setRespuestaUser(res)
+            getRespuesta(res, idPregunta)
+        }
     }
 
     return (

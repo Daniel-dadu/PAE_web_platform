@@ -75,7 +75,7 @@ function RespuestasEncuestas({rolUser}){
                 <div className='users_encuestas_container'>
                     {
                         Object.keys(usuariosJSON['usuarios']).map((index) => 
-                            <div className = 'containerListaDesplegableAsesorias'>
+                            <div className = 'containerListaDesplegableAsesorias' key={index}>
                                 <ListaDesplegable
                                     fecha = {usuariosJSON['usuarios'][index]['nombreUsuario']}
                                     tipo = {2}

@@ -59,7 +59,6 @@
     font-family: 'Dosis', sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
-
 }
 
 
@@ -99,35 +98,11 @@
     margin-bottom: 1rem;
 }
 
-.contenedor-encuesta .encabezado-contenedor-encuesta-tipo3 {
-    height: 15%;
-    width: 100%;
-    /* background: pink; */
-    border-radius: 25px 25px 0 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 10px 0 50px;
-}
-
-.encabezado-contenedor-encuesta-tipo3 .encabezado-izq-encuesta {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    /* background: green; */
-
-}
-.encabezado-contenedor-encuesta-tipo3 .encabezado-izq-encuesta .encabezado-izq-encuesta-texto {
-    font-family: 'Dosis', sans-serif;
+.contenedor-encuesta .titulo-encuesta-tipo3 {
     font-size: 1.5rem;
     font-weight: 500;
-
+    margin-bottom: 1rem;
 }
-
-
-
 
 .contenedor-encuesta .contenido-contenedor-encuesta {
     height: 75%;
