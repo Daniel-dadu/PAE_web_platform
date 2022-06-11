@@ -310,7 +310,7 @@ const PopUpEncuesta = ({
                                     respuestasAsesorado.map((preg, index) => (
                                         preg.tipoDePregunta === "cerrada" ?
                                         (
-                                            <div className='contenedor-pregunta-encuesta-cerrada'>
+                                            <div className='contenedor-pregunta-encuesta-cerrada' key={index}>
                                                 <PreguntaCerradaEncuesta 
                                                     preguntaCerrada=" ¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl? " 
                                                     indexPregunta= {index+1}
@@ -319,12 +319,11 @@ const PopUpEncuesta = ({
                                             </div>
                                         ):
                                         (
-                                            <div className='contenedor-pregunta-encuesta-abierta'>
+                                            <div className='contenedor-pregunta-encuesta-abierta' key={index}>
                                                 <PreguntaAbiertaEncuesta
                                                     preguntaAbierta=" ¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl? "
                                                     indexPregunta={ index+1 }
                                                     respuesta = { preg.respuesta }
-                                                    
                                                 />
                                             </div>
                                         )
@@ -334,7 +333,7 @@ const PopUpEncuesta = ({
                                     respuestasAsesor.map((preg, index) => (
                                         preg.tipoDePregunta === "cerrada" ?
                                         (
-                                            <div className='contenedor-pregunta-encuesta-cerrada'>
+                                            <div className='contenedor-pregunta-encuesta-cerrada' key={index}>
                                                 <PreguntaCerradaEncuesta 
                                                     preguntaCerrada=" ¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl? " 
                                                     indexPregunta= {index+1}
@@ -343,7 +342,7 @@ const PopUpEncuesta = ({
                                             </div>
                                         ):
                                         (
-                                            <div className='contenedor-pregunta-encuesta-abierta'>
+                                            <div className='contenedor-pregunta-encuesta-abierta' key={index}>
                                                 <PreguntaAbiertaEncuesta
                                                     preguntaAbierta=" ¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl? "
                                                     indexPregunta={ index+1 }
