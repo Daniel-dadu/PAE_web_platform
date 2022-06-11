@@ -66,3 +66,23 @@
     font-size: 1rem;
     font-style: italic;
 }
+
+@media screen and (max-width: 480px){ 
+
+
+    .campo_RegistroAsesorDatos{
+        margin-top: 0rem;
+        font-size: 20px;
+        
+    }
+    
+    .advertencia_asterisco {
+        font-size: 15px;
+    }
+
+    .contenedro_deInputsAsesorRegistro{
+        width: 100%;
+    }
+ 
+
+}

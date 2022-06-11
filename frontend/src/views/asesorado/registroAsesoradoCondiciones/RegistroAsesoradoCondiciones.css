@@ -50,3 +50,25 @@
 }
 
 
+@media screen and (max-width: 480px){ 
+
+    .campo_RegistroAsesoradoCondiciones{
+        font-size: 20px;
+        margin-top: 0rem;
+    }
+    
+    .condicionesAsesorado_texto{
+        font-size: 18px;
+        margin-top: -15px;
+    }
+
+    .condiciones_condicionesAsesorado{
+        margin-top: -15px;
+    }
+    
+    .texto_condiciones_condicionesAsesorado{
+        font-size: 18px;
+    }
+ 
+
+}
