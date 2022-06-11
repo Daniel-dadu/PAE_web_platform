@@ -19,7 +19,7 @@ const getEncuesta = (request, response) => {
         if(error) {
             response.status(400).send("Error: no se pudo obtener la ancuesta de asesorados")
         } else {
-            const consultaPreguntas = `SELECT "tipo" AS "tipoDePregunta", "pregunta", "opcionesRespuesta" AS opciones FROM "Pregunta" WHERE "idEncuesta" = $1`
+            const consultaPreguntas = `SELECT "idPregunta", "tipo" AS "tipoDePregunta", "pregunta", "opcionesRespuesta" AS opciones FROM "Pregunta" WHERE "idEncuesta" = $1`
 
             pool.query(consultaPreguntas, [result.rows[0].idEncuesta], (error, results) => {
                 if(error) {

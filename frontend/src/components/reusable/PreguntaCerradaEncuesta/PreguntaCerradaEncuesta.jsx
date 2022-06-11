@@ -11,13 +11,13 @@ preguntaCerrada={'Aqui pon la pregunta que quieres que salga'}>
 </PreguntaCerradaEncuesta> */}
 
 
-function PreguntaCerradaEncuesta({ preguntaCerrada, opciones=[1,2,3,4,5], indexPregunta, getOptionSelected }) {
+function PreguntaCerradaEncuesta({ preguntaCerrada, opciones=[1,2,3,4,5], idPregunta, getOptionSelected }) {
 
     const [selectedOption, setSelectedOption] = useState(null)
     
     const selectOption = option => {
         setSelectedOption(option)
-        getOptionSelected(option, indexPregunta)
+        getOptionSelected(opciones[option], idPregunta)
     } 
 
     return (

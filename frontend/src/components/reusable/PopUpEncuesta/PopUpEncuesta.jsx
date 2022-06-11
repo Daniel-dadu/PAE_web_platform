@@ -141,6 +141,7 @@ import axios from 'axios';
 */
 const PopUpEncuesta = ({ 
     tipo, 
+    idAsesoria,
     // nombreEvaluado, 
     // preguntas, 
     respuestasAsesorado=[], 
@@ -167,7 +168,7 @@ const PopUpEncuesta = ({
         preguntas: []
     })
 
-    const [respuestasUser, setRespuestasUser] = useState([])
+    const [respuestasUser, setRespuestasUser] = useState({})
 
     useEffect(() => {
         if(tipo !== 3) {
@@ -187,14 +188,21 @@ const PopUpEncuesta = ({
                     titulo: preguntasAPI.titulo,
                     descripcion: preguntasAPI.descripcion,
                     preguntas: preguntasAPI.preguntas.map(preg => ({
+                        idPregunta: preg.idPregunta,
                         pregunta: preg.pregunta,
                         tipoDePregunta: preg.tipoDePregunta,
                         opciones: preg.opciones ? preg.opciones.split(',') : null
                     }))
                 })
 
+                let respuestasTemplate = {}
+                
+                for(let preg of preguntasAPI.preguntas) {
+                    respuestasTemplate[preg.idPregunta] = null
+                }
+
                 // Ponemos un arreglo de nulos en las respuestas del usuario
-                setRespuestasUser(Array(preguntasAPI.preguntas.length).fill(null))
+                setRespuestasUser(respuestasTemplate)
             })
             .catch(error => {
                 console.log(error);
@@ -206,24 +214,13 @@ const PopUpEncuesta = ({
     const [imageUploaded, setImageUploaded] = useState(null)
     const onHandleUploadImage = image => setImageUploaded(image)
 
-    const guardarRespuesta = (res, indexPregunta) => {
+    const guardarRespuesta = (res, idPregunta) => {
         let newRespuestas = respuestasUser
-        newRespuestas[indexPregunta] = res
+        newRespuestas[idPregunta] = res
         setRespuestasUser(newRespuestas)
     }
 
     const enviarEncuesta = async () => {
-        let respuestasFinales = encuestaInfo.preguntas
-
-        for(let i = 0; i < respuestasUser.length; i++) {
-            const res = respuestasUser[i]
-            if(res === null) {
-                alert('Es necesario responder todas las preguntas')
-                return
-            }
-            const opcionesRespuestas = respuestasFinales[i].opciones
-            respuestasFinales[i] = opcionesRespuestas ? opcionesRespuestas[res] : res
-        }
 
         let imageCompressed = null
 
@@ -235,15 +232,16 @@ const PopUpEncuesta = ({
                 
                 // Si no se puede comprimir, se le indica al usuario
                 if(imageCompressed.slice(0, 5) === "error") {
-                    alert('Tu imagen de la evidencia es muy grande.\nReduce el tamaño y vuelve a intentarlo')
+                    alert('Tu imagen de la evidencia es muy grande.\nReduce el tamaño y vuelve a intentarlo.')
                     return
                 }
             }
         }
         
 
+        console.log("Debemos usar este idAsesoria: ", idAsesoria)
         console.log("Imagen evidencia: ", imageCompressed)
-        console.log("Respuestas: ", respuestasFinales)
+        console.log("Respuestas: ", respuestasUser)
 
         ocultarPopUp()
     }
@@ -379,7 +377,7 @@ const PopUpEncuesta = ({
                                     <div className='contenedor-pregunta-encuesta-cerrada' key={index} >
                                         <PreguntaCerradaEncuesta 
                                             preguntaCerrada={preg.pregunta}
-                                            indexPregunta= {index}
+                                            idPregunta= {preg.idPregunta}
                                             opciones={preg.opciones}
                                             getOptionSelected={ guardarRespuesta }
 
@@ -390,8 +388,7 @@ const PopUpEncuesta = ({
                                     <div className='contenedor-pregunta-encuesta-abierta' key={index}>
                                         <PreguntaAbiertaEncuesta
                                             preguntaAbierta={preg.pregunta}
-                                            indexPregunta= {index}
-                                            respuesta=""
+                                            idPregunta= {preg.idPregunta}
                                             getRespuesta={ guardarRespuesta }
                                         />
                                     </div>
