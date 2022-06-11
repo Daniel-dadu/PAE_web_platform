@@ -3,6 +3,7 @@ import { PreguntaCerradaEncuesta, PreguntaAbiertaEncuesta, ImagenPerfilCambiar, 
 import './popUpEncuesta.css';
 
 import axios from 'axios';
+import LoadingSpin from "react-loading-spin";
 
 // PARTE DE LA DOCUMENTACION =======================================================================
 // const data = [
@@ -220,13 +221,18 @@ const PopUpEncuesta = ({
         setRespuestasUser(newRespuestas)
     }
 
+    const [loadingAnim, setLoadingAnim] = useState(false)
+
     const enviarEncuesta = async () => {
+
+        setLoadingAnim(true)
 
         let imageCompressed = null
 
         if(tipo === 2) {
             if(!imageUploaded) {
                 alert('Es necesario que subas una imagen como evidencia de que se llevó a cabo la asesoría.')
+                return
             } else {
                 imageCompressed = await imageCompressor(imageUploaded)
                 
@@ -243,6 +249,7 @@ const PopUpEncuesta = ({
         console.log("Imagen evidencia: ", imageCompressed)
         console.log("Respuestas: ", respuestasUser)
 
+        setLoadingAnim(false)
         ocultarPopUp()
     }
 
@@ -399,7 +406,14 @@ const PopUpEncuesta = ({
                     </div>
     
                     <div className='footer-contenedor-encuesta'>
-                        <button className='boton-footer-encuesta' onClick={ enviarEncuesta }  > Enviar </button>
+                        {
+                            loadingAnim ?
+                            <div className='loading_spin'>
+                                <LoadingSpin />
+                            </div>
+                            :
+                            <button className='boton-footer-encuesta' onClick={ enviarEncuesta }  > Enviar </button>
+                        }
                     </div>
                 </div>
                 )
