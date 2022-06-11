@@ -250,9 +250,23 @@ const PopUpEncuesta = ({
                 }
             }
             
-            console.log("Debemos usar este idAsesoria: ", idAsesoria)
-            console.log("Imagen evidencia: ", imageCompressed)
-            console.log("Respuestas: ", respuestasUser)
+            const config = {
+                method: 'post',
+                url: 'http://20.225.209.57:3096/encuesta/set_respuesta_encuesta/',
+                headers: { 
+                    'Content-Type': 'application/json'
+                },
+                data: JSON.stringify({
+                    "idAsesoria": idAsesoria,
+                    "rol": tipo === 1 ? "asesorado" : "asesor",
+                    "respuestas": respuestasUser,
+                    "fotoEvidencia": imageCompressed
+                })
+            }
+            
+            const response = await axios(config)
+            alert(response.data)
+            
             ocultarPopUp()
             
         } catch (error) {
