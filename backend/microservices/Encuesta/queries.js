@@ -17,13 +17,13 @@ const getEncuesta = (request, response) => {
 
     pool.query(consultaTitleDescripcion, [rolUser], (error, result) => {
         if(error) {
-            response.status(400).send("Error: no se pudo obtener la ancuesta de asesorados")
+            response.status(400).send("Error: no se pudo obtener la encuesta")
         } else {
             const consultaPreguntas = `SELECT "idPregunta", "tipo" AS "tipoDePregunta", "pregunta", "opcionesRespuesta" AS opciones FROM "Pregunta" WHERE "idEncuesta" = $1`
 
             pool.query(consultaPreguntas, [result.rows[0].idEncuesta], (error, results) => {
                 if(error) {
-                    response.status(400).send("Error: no se pudo obtener la ancuesta de asesorados")
+                    response.status(400).send("Error: no se pudo obtener la encuesta")
                 } else {
                     response.status(200).json(
                         {
@@ -85,7 +85,58 @@ const setRespuestaEncuesta = (request, response) => {
 
 }
 
+const getRespuestaEncuesta = (request, response) => {
+    const idAsesoria = request.query.idasesoria
+    const matricula = request.query.matriculaencuestado
+
+    const consulta1 = `SELECT idencuesta as "idEncuesta", tituloencuesta AS titulo, descripcionencuesta AS descripcion, fotoe AS "fotoEvidencia" FROM get_info_encuesta($1, $2)`
+
+    pool.query(consulta1, [idAsesoria, matricula], (error, result) => {
+        if(error) {
+            response.status(400).send('Error: No se pudo obtener la respuesta de la encuesta')
+        } else {
+            // response.status(200).json(result.rows[0])
+
+            const consultaPreguntas = `
+                SELECT 
+                    "tipo" AS "tipoDePregunta",
+                    "pregunta",
+                    "opcionesRespuesta" AS opciones,
+                    "respuesta"
+                FROM 
+                    "CalificacionEncuesta", 
+                    "Encuesta", 
+                    "Pregunta", 
+                    "CalificacionPregunta" 
+                WHERE 
+                    "CalificacionEncuesta"."idEncuesta" = "Encuesta"."idEncuesta" AND 
+                    "Pregunta"."idEncuesta" = "Encuesta"."idEncuesta" AND 
+                    "Pregunta"."idPregunta" = "CalificacionPregunta"."idPregunta" AND 
+                    "Encuesta"."idEncuesta" = $1 AND 
+                    "idAsesoria" = $2;
+            `
+
+            pool.query(consultaPreguntas, [result.rows[0].idEncuesta, idAsesoria], (error, results) => {
+                if(error) {
+                    response.status(400).send("Error: No se pudo obtener la respuesta de la encuesta")
+                } else {
+                    response.status(200).json(
+                        {
+                            titulo: result.rows[0].titulo, 
+                            descripcion: result.rows[0].descripcion, 
+                            fotoEvidencia: result.rows[0].fotoEvidencia, 
+                            preguntas: results.rows
+                        }
+                    )
+                }
+            })
+        }
+    })
+
+}
+
 module.exports = {
     getEncuesta,
-    setRespuestaEncuesta
+    setRespuestaEncuesta,
+    getRespuestaEncuesta
 }

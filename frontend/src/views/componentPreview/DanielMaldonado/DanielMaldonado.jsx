@@ -69,10 +69,9 @@ function DanielMaldonado() {
 
 
   // ========== PARA ENCUESTA =========== //
-
-  const [activoEncuesta, setActivoEncuesta] = useState(false);
-
-  const cerrarEncuesta = () => setActivoEncuesta(!activoEncuesta);
+  const [activoEncuesta, setActivoEncuesta] = useState(false)
+  const cerrarEncuesta = () => setActivoEncuesta(!activoEncuesta)
+  // ========== PARA ENCUESTA =========== //
 
   return (
     <div>
@@ -82,7 +81,7 @@ function DanielMaldonado() {
 
         <Modal active = {activoEncuesta} toggle = {cerrarEncuesta}>
           <PopUpEncuesta 
-            tipo={2} 
+            tipo={1} 
             idAsesoria={92} // Esto debe obtenerse del número de la asesoría al que corresponde
             activo={activoEncuesta} 
             ocultarPopUp={cerrarEncuesta} 

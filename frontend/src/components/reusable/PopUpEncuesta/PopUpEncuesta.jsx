@@ -5,73 +5,6 @@ import './popUpEncuesta.css';
 import axios from 'axios';
 import LoadingSpin from "react-loading-spin";
 
-import imagenRandomEvidencia from '../../../assets/imgPruebaPopUpEncuesta.webp'
-
-// PARTE DE LA DOCUMENTACION =======================================================================
-// const data = [
-//     {
-//         tipoDePregunta:"cerrada",
-//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
-
-//     },
-//     {
-//         tipoDePregunta:"cerrada",
-//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
-
-//     },
-//     {
-//         tipoDePregunta:"abierta",
-//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
-
-//     },
-//     {
-//         tipoDePregunta:"cerrada",
-//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
-
-//     },
-//     {
-//         tipoDePregunta:"cerrada",
-//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
-
-//     }
-
-// ]
-
-// const data2 = [
-//     {
-//         tipoDePregunta:"cerrada",
-//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
-//         respuesta: 9
-
-//     },
-//     {
-//         tipoDePregunta:"cerrada",
-//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
-//         respuesta: 3
-//     },
-//     {
-//         tipoDePregunta:"abierta",
-//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
-//         respuesta: "Mucho texto muy explicito."
-//     },
-//     {
-//         tipoDePregunta:"cerrada",
-//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
-//         respuesta: 6
-
-//     },
-//     {
-//         tipoDePregunta:"cerrada",
-//         pregunta:"¿Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus nisl?",
-//         respuesta: 8
-
-//     }
-
-// ]
-// ==================================================================================================
-
-
-
 /*
     DOCUMENTACION DEL COMPONENTE
 
@@ -130,26 +63,19 @@ import imagenRandomEvidencia from '../../../assets/imgPruebaPopUpEncuesta.webp'
     Ejemplo de uso:
             
             Para el tipo 1 (con modificación de Dadu):
-            <PopUpEncuesta tipo={1} activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
+            <PopUpEncuesta tipo={1} idAsesoria={92} activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
             
             Para el tipo2 (con modificación de Dadu):
-            <PopUpEncuesta tipo={2} activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
+            <PopUpEncuesta tipo={2} idAsesoria={92} activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
 
-            Para el tipo3 (respuestas de asesores):
-            <PopUpEncuesta tipo={3} nombreEvaluado="Daniel Maldonado" respuestasAsesor={ data2 } activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
-
-            Para el tipo3 (respuestas de asesorados ):
-            <PopUpEncuesta tipo={3} nombreEvaluado="Daniel Maldonado" respuestasAsesorado={ data2 } activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
+            Para el tipo3, respuestas de asesores/asesorados (con modificación de Dadu):
+            <PopUpEncuesta tipo={3} idAsesoria={92} matriculaEncuestado="A00000001" activo={activoEncuesta} ocultarPopUp={cerrarEncuesta} />
 
 */
 const PopUpEncuesta = ({ 
     tipo, 
     idAsesoria,
-    // nombreEvaluado, 
-    // preguntas, 
-    respuestasAsesorado=[], 
-    respuestasAsesor=[], 
-    imagenResultados, 
+    matriculaEncuestado,
     activo, 
     ocultarPopUp
 } ) => {
@@ -165,7 +91,7 @@ const PopUpEncuesta = ({
     const [encuestaInfo, setEncuestaInfo] = useState({
         titulo: "Cargando...",
         descripcion: "Obteniendo preguntas",
-        fotoEvdencia: null,
+        fotoEvidencia: null,
         preguntas: []
     })
 
@@ -205,57 +131,42 @@ const PopUpEncuesta = ({
                 // Ponemos un objeto con llaves idPregunta y valores null
                 setRespuestasUser(respuestasTemplate)
             })
-            .catch(error => {
-                console.log(error);
+            .catch(_error => {
+                alert("Error: No se pudo obtener la información de la encuesta")
             })
 
         } else {
 
-            // =========== HARD CODEADO ===========
-
-            const ejemplo = {
-                titulo: "Ejemplo de encuesta",
-                descripcion: `Encuesta respondida por ${"Danoman"}, el cual tuvo la asesoría con ${"Daniman"}`,
-                fotoEvdencia: imagenRandomEvidencia,
-                preguntas: [
-                    {
-                        pregunta: "¿Te gustó la asesoría?",
-                        tipoDePregunta: "cerrada",
-                        opciones: "Sí,No".split(','),
-                        respuesta: "Sí"
-                    },
-                    {
-                        pregunta: "¿La tomarías de nuevo?",
-                        tipoDePregunta: "cerrada",
-                        opciones: "Sí,No".split(','),
-                        respuesta: "No"
-                    },
-                    {
-                        pregunta: "¿Por qué?",
-                        tipoDePregunta: "abierta",
-                        opciones: null,
-                        respuesta: "La verdad no tengo idea, pero no XD"
-                    },
-                    {
-                        pregunta: "¿La tomarías de nuevo?",
-                        tipoDePregunta: "cerrada",
-                        opciones: "20,30,40,45,más de 45".split(','),
-                        respuesta: "más de 45"
-                    },
-                    {
-                        pregunta: "¿Algún comentario sobre la asesoría?",
-                        tipoDePregunta: "abierta",
-                        opciones: null,
-                        respuesta: "Esta encuesta está muy bien hecha compañeres, felicidades"
-                    },
-                ]
+            const config = {
+                method: 'get',
+                url: `http://20.225.209.57:3096/encuesta/get_respuesta_encuesta/?idasesoria=${idAsesoria}&matriculaencuestado=${matriculaEncuestado}`,
+                headers: { }
             }
+            
+            axios(config)
+            .then(response => {
+                const preguntasAPI = response.data
 
-            setEncuestaInfo(ejemplo)
-            // =========== HARD CODEADO ===========
+                // Hacemos la conversión de las preguntas cerradas a un array
+                setEncuestaInfo({
+                    titulo: preguntasAPI.titulo,
+                    descripcion: preguntasAPI.descripcion,
+                    fotoEvidencia: preguntasAPI.fotoEvidencia,
+                    preguntas: preguntasAPI.preguntas.map(preg => ({
+                        pregunta: preg.pregunta,
+                        tipoDePregunta: preg.tipoDePregunta,
+                        opciones: preg.opciones ? preg.opciones.split(',') : null,
+                        respuesta: preg.respuesta
+                    }))
+                })
+
+            })
+            .catch(_error => {
+                alert("Error: No se pudo obtener la información de la encuesta")
+            })
 
         }
-    }, [tipo])
+    }, [tipo, idAsesoria, matriculaEncuestado])
 
     const [imageUploaded, setImageUploaded] = useState(null)
     const onHandleUploadImage = image => setImageUploaded(image)
@@ -339,10 +250,10 @@ const PopUpEncuesta = ({
                         <div className='contenido-contenedor-encuesta'>
         
                             {
-                                encuestaInfo.fotoEvdencia &&
+                                encuestaInfo.fotoEvidencia &&
                                 <div className='contenedor-pregunta-encuesta-imagen-tipo3'>
                                     <h4>Evidencia de asesoria</h4>
-                                    <img className='imagen-encuesta-tipo3' src={encuestaInfo.fotoEvdencia} alt="imagenChida" />
+                                    <img className='imagen-encuesta-tipo3' src={encuestaInfo.fotoEvidencia} alt="imagenChida" />
                                 </div>
                             }
         

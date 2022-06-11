@@ -42,8 +42,26 @@ app.use(
 // http://20.225.209.57:3096/encuesta/get_encuesta/?rol=asesorado
 app.get('/encuesta/get_encuesta/', db.getEncuesta)
 
+
 // Crear una respuesta a una encuesta
+/* Ejemplo del JSON en el body:
+{
+    "idAsesoria": 92,
+    "rol": "asesor",
+    "respuestas": {
+        "21": "No",
+        "22": "Sí",
+        "23": "30",
+        "24": "Mi comentario de prueba",
+    },
+    "fotoEvidencia": "data:image/jpeg;base64..."
+}
+*/
 app.post('/encuesta/set_respuesta_encuesta/', db.setRespuestaEncuesta)
+
+
+// Obtener la respuesta a una encuesta a partir del idAsesoria y la matrícula de quien respondió la encuesta
+app.get('/encuesta/get_respuesta_encuesta/', db.getRespuestaEncuesta)
 
 // ========================= ENDPOINTS ========================= // 
 
