@@ -36,14 +36,20 @@
 
 /* RESPONSIVE 480 px */
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 480px){
 
     .nombreDiaCalendarioDisponibilidad{
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .txtHoraCalendarioDisponibilidad{
         font-size: 15px;
     }
+
+    .bloqueCalendarioDisponibilidad{
+        padding: 2.5px;
+        width: 100px;
+    }
+
 
 }

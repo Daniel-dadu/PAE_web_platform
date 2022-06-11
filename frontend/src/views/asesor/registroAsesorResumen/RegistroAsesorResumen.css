@@ -53,9 +53,9 @@
 
 }
 
-.calendarioDisponibilidad {
-    margin-left: -50px;
+.containerCalendarioDisponibilidadResumen .calendarioDisponibilidad{
+    margin-left: -30%;
 
-}  
+}
     
     }

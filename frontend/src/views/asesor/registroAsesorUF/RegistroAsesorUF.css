@@ -75,14 +75,7 @@
 
 @media screen and (max-width: 480px){ 
 
-    .containerSeleccionUF, .containerMateriasSeleccionadas{
-        position: relative;
-        width: 50%;
-        height: 100%;
-        float: none;
-        overflow: scroll;
 
-    }
 
     .campo_RegistroAsesorCondiciones{
         font-size: 20px;
@@ -91,9 +84,19 @@
     .containerUnidadesFormacion{
         display: flex;
         flex-direction:column;
-        width: 200%;
+        width: 100%;
         overflow-y: scroll;
     }
 
+    .containerSeleccionUF, .containerMateriasSeleccionadas{
+        width: 100%;
+        float: left;
+        height: 100%;
+    }
+
+    .list_selectedUFs {
+        height: 70%;
+        overflow: scroll;
+    }
 
 }
