@@ -202,7 +202,7 @@ const PopUpEncuesta = ({
                     respuestasTemplate[preg.idPregunta] = null
                 }
 
-                // Ponemos un arreglo de nulos en las respuestas del usuario
+                // Ponemos un objeto con llaves idPregunta y valores null
                 setRespuestasUser(respuestasTemplate)
             })
             .catch(error => {
@@ -227,30 +227,39 @@ const PopUpEncuesta = ({
 
         setLoadingAnim(true)
 
-        let imageCompressed = null
+        try {
 
-        if(tipo === 2) {
-            if(!imageUploaded) {
-                alert('Es necesario que subas una imagen como evidencia de que se llevó a cabo la asesoría.')
-                return
-            } else {
-                imageCompressed = await imageCompressor(imageUploaded)
-                
-                // Si no se puede comprimir, se le indica al usuario
-                if(imageCompressed.slice(0, 5) === "error") {
-                    alert('Tu imagen de la evidencia es muy grande.\nReduce el tamaño y vuelve a intentarlo.')
-                    return
+            for(let res in respuestasUser) {
+                if(respuestasUser[res] === null) {
+                    throw new Error('Es necesario responder todas las preguntas antes de continuar.')
                 }
             }
+    
+            let imageCompressed = null
+    
+            if(tipo === 2) {
+                if(!imageUploaded) {
+                    throw new Error('Es necesario que subas una imagen como evidencia de que se llevó a cabo la asesoría.')
+                } else {
+                    imageCompressed = await imageCompressor(imageUploaded)
+                    
+                    // Si no se puede comprimir, se le indica al usuario
+                    if(imageCompressed.slice(0, 5) === "error") {
+                        throw new Error('Tu imagen de la evidencia es muy grande.\nReduce el tamaño y vuelve a intentarlo.')
+                    }
+                }
+            }
+            
+            console.log("Debemos usar este idAsesoria: ", idAsesoria)
+            console.log("Imagen evidencia: ", imageCompressed)
+            console.log("Respuestas: ", respuestasUser)
+            ocultarPopUp()
+            
+        } catch (error) {
+            alert(error)
         }
-        
-
-        console.log("Debemos usar este idAsesoria: ", idAsesoria)
-        console.log("Imagen evidencia: ", imageCompressed)
-        console.log("Respuestas: ", respuestasUser)
 
         setLoadingAnim(false)
-        ocultarPopUp()
     }
 
     return (
