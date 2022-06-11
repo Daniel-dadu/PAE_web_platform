@@ -92,10 +92,9 @@ const getRespuestaEncuesta = (request, response) => {
     const consulta1 = `SELECT idencuesta as "idEncuesta", tituloencuesta AS titulo, descripcionencuesta AS descripcion, fotoe AS "fotoEvidencia" FROM get_info_encuesta($1, $2)`
 
     pool.query(consulta1, [idAsesoria, matricula], (error, result) => {
-        if(error) {
+        if(error || result.rows[0] === undefined) {
             response.status(400).send('Error: No se pudo obtener la respuesta de la encuesta')
         } else {
-            // response.status(200).json(result.rows[0])
 
             const consultaPreguntas = `
                 SELECT 

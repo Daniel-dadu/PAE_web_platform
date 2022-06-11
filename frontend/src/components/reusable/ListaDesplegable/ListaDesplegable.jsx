@@ -18,7 +18,7 @@ const COLORES_TIPO_1 = [
 
 
 
-const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected, onClickTipo2 } ) => {
+const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected, onClickTipo2, idEncuestado=null } ) => {
 
 
     /*
@@ -167,6 +167,8 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected,
                                         horaAsesoria={ cita.horaAsesoria } 
                                         contenido={ cita.contenido }
                                         accion={ onClickTipo2 }
+                                        idEncuestado={ idEncuestado }
+                                        idAsesoria={ cita.idAsesoria }
                                         key={index}
                                     />
                                 ))

@@ -24,15 +24,24 @@ function RespuestasEncuestas({rolUser}){
     const [activoEncuesta, setActivoEncuesta] = useState(false)
     const cerrarEncuesta = () => setActivoEncuesta(!activoEncuesta)
 
+    const [idAsesoriaState, setIdAsesoriaState] = useState(null)
+    const [idEncuestadoState, setIdEncuestadoState] = useState(null)
+
+    const selectEncuesta = (idAsesoria, idEncuestado) => {
+        setIdAsesoriaState(idAsesoria)
+        setIdEncuestadoState(idEncuestado)
+        cerrarEncuesta()
+    }
+
     return(
         <Template view = 'administrar'>
 
             <Modal active = {activoEncuesta} toggle = {cerrarEncuesta}>
                 <PopUpEncuesta 
                     tipo={3} 
-                    idAsesoria={92} // Esto debe obtenerse del número de la asesoría al que corresponde
+                    idAsesoria={idAsesoriaState} // Esto debe obtenerse del número de la asesoría al que corresponde
                     // matriculaEncuestado="A00000001" // Esto debe venir del usuario del que se busca la respuesta
-                    matriculaEncuestado="A01657967" // Esto debe venir del usuario del que se busca la respuesta
+                    matriculaEncuestado={idEncuestadoState} // Esto debe venir del usuario del que se busca la respuesta
                     activo={activoEncuesta} 
                     ocultarPopUp={cerrarEncuesta} 
                 />
@@ -57,7 +66,8 @@ function RespuestasEncuestas({rolUser}){
                                 fecha = {usersEncuestas[index]['matricula'] + " - " + usersEncuestas[index]['nombreUsuario']}
                                 tipo = {2}
                                 arrContenido = {usersEncuestas[index]['asesorias']}
-                                onClickTipo2 = {cerrarEncuesta}
+                                idEncuestado = {usersEncuestas[index]['matricula']}
+                                onClickTipo2 = {selectEncuesta}
                             />
                         </div>
                     )
