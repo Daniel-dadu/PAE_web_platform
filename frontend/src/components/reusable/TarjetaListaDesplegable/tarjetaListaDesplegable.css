@@ -396,3 +396,44 @@
     font-size: 1rem;
     font-weight: 500;
 }
+
+@media screen and (max-width: 480px){ 
+
+    .tipo1 .tabla-tipo-1 .claveUF-tipo-1 {
+        font-size: 10px;
+    }
+    
+    .tipo1 .tabla-tipo-1 .nombreUF-tipo-1 {
+        font-size: 10px;
+    }
+    
+
+    .tipo2 .tabla-tipo-2 .semestre-tipo-2 {
+        font-size: 8px;
+    
+    }
+
+
+    .tipo2 .tabla-tipo-2 .claveUF-tipo-2 {
+        font-size: 10px;
+
+    
+    }
+    
+    .tipo2 .tabla-tipo-2 .nombreUF-tipo-2 {
+        font-size: 10px;
+    }
+
+    
+    .tipo4 .tabla-tipo-4 .semestre-tipo-4 {
+    font-size: 8px;
+}
+    .tipo4 .tabla-tipo-4 .claveUF-tipo-4 {
+    font-size: 10px;
+}
+
+    .tipo4 .tabla-tipo-4 .nombreUF-tipo-4{
+    font-size: 10px;;
+}
+
+}

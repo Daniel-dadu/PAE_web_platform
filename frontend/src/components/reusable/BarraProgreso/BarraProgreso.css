@@ -125,7 +125,7 @@
     .barra_progreso_path_status {
         background-color: gray;
         position: relative;
-        width: 155%;
+        width: 140%;
         height: 10px;
         right: 9px;
     }
@@ -135,6 +135,11 @@
     flex-direction: column;
     width: 25px;
     align-items: center;
+    }
+
+    .barra_progreso_step_name {
+        display: none;
+        
     }
 
 }

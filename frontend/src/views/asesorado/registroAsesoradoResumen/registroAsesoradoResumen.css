@@ -1,0 +1,34 @@
+
+@media screen and (max-width: 480px){ 
+
+.contenedor-InfPerUsuario-izq{
+
+    position: relative;
+    bottom: 30%;
+    left: 30%;
+
+}
+
+.contenedor-InfPerUsuario-der{
+
+    position: relative;
+    top: 15%;
+    right: 20%
+
+
+}
+
+.contenedor-img-perfil-InfPerUsuario .imagen-InfPerUsuario{
+    height: 150px !important;
+    width: 150px !important;
+}
+
+.contenedor-InfPerUsuario-der .etiqueta-nombre-InfPerUsuario{
+    font-size: 30px !important;
+}
+
+.contenedor-InfPerUsuario-der .etiqueta-matricula-InfPerUsuario{
+    font-size: 20px !important;
+}
+
+}

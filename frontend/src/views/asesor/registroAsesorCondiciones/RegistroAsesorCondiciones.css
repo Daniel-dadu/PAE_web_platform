@@ -46,3 +46,27 @@
     padding: 15px;    
     color: #000000;
 }
+
+
+@media screen and (max-width: 480px){ 
+
+    .campo_RegistroAsesorCondiciones{
+        font-size: 20px;
+        margin-top: 0rem;
+    }
+    
+    .condicionesAsesor_texto{
+        font-size: 18px;
+        margin-top: -5px;
+    }
+
+    .condiciones_condicionesAsesor{
+        margin-top: -15px;
+    }
+    
+    .texto_condiciones_condicionesAsesor{
+        font-size: 18px;
+    }
+ 
+
+}
