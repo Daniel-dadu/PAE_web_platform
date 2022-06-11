@@ -122,7 +122,7 @@ const get_informacionAsesoria = (request, response) => {
 
     pool.query(consulta, [id, hora, dia, mes, anio], (error, result) => {
         if(error) {
-            throw error
+            console.log(error)
         } else {
 
             const output = result.rows;

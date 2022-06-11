@@ -3,89 +3,85 @@
 import React, {useState, useEffect} from 'react'
 import '../../../index.css'
 import './PanelNotificaciones.css'
-import { Template, Notificacion, BotonConImagen, PupUpSolicitudAsesoria} from '../../../routeIndex'
+import { Template, Notificacion, BotonConImagen, PupUpSolicitudAsesoria } from '../../../routeIndex'
 import { FiMail } from 'react-icons/fi'
 import { useNavigate } from "react-router-dom"
 import axios from 'axios'
-
-const info = {
-    fecha:{
-        "dia":9,
-        "mes":"marzo",
-        "hora":"3:00 PM"
-    },
-    asesorado:"Ezequiel Lozano",
-    unidadFormacion: "Fundamentos químicos",
-    duda:"Aquí debe ir mucho texto que describa la duda que tiene el alumno y debe estar escrita de la forma más específica posible.",
-    imagenes:{
-        img1:"https://bobbyhadz.com/images/blog/react-image-link/banner.webp",
-        img2:"https://i.redd.it/rt5xnrhm93s51.jpg",
-        img3:"https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Screenshots_2020/screenshot-windows-10-1.png"
-    }, 
-    asesores: [
-        {
-            nombre: "Fernando Alonso"
-        },
-        {
-            nombre: "Casimiro Buenavista"
-        },
-        {
-            nombre:"Daniel Rodriguez"
-        },
-        {
-            nombre:"Rafael Gonzales"
-        }
-    ]
-}
 
 const PanelNotificaciones = () => { /* En caso de ser directivo se espera un tipo de usuario "directivo", para mostrar el boton de enviar notificacion, cualquier otra palabra para el panel de notificaciones de asesor y asesorado */
 
     const [activePopUp, setActivePopUp] = useState(false);
     const [asesoriaJSON, setAsesoriaJSON] = useState(
         {
-          "hora": 0,
-          "dia": 0,
-          "mes": 0,
-          "anio": 0,
-          "usuario": "",
-          "duda": "",
-          "images": []
+            fecha:{
+                "dia":0,
+                "mes":0,
+                "hora":0
+            },
+            asesorado:"",
+            unidadFormacion: "",
+            duda:"",
+            imagenes:{
+                img1:"",
+                img2:"",
+                img3:""
+            },
+            asesores: []
         }
     );
     
     const togglePopUp = (idUsuario, hora, dia, mes, anio) => {
 
-        if(hora !== undefined && dia !== undefined && mes !== undefined && anio !== undefined){
+        console.log(idUsuario)
 
-        var config = {
-            method: 'get',
-            url: `http://20.225.209.57:3031/calendario/get_informacionAsesoria/?idUsuario=${localStorage.usuario}&hora=${hora}&dia=${dia}&mes=${dateFunctions.monthsEnNumero[mesAnio.mes]+1}&anio=${mesAnio.anio}`,
-            headers: {}
-        };
-        
-        axios(config)
-        .then(function (response) {
-            // console.log(JSON.stringify(response.data));
-            // console.log(JSON.stringify(response.data))
-            setAsesoriaJSON(response.data);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+        if(idUsuario !== undefined && hora !== undefined && dia !== undefined && mes !== undefined && anio !== undefined){
+
+            var config = {
+                method: 'get',
+                url: `http://20.225.209.57:3031/calendario/get_informacionAsesoria/?idUsuario=${idUsuario}&hora=${hora}&dia=${dia}&mes=${mes}&anio=${anio}`,
+                headers: {}
+            };
+            
+            axios(config)
+            .then(function (response) {
+                // console.log(JSON.stringify(response.data));
+                console.log(JSON.stringify(response.data))
+                setAsesoriaJSON(
+                    {
+                        fecha:{
+                            "dia":response.data['dia'],
+                            "mes":response.data['mes'],
+                            "hora":response.data['hora']
+                        },
+                        asesorado:idUsuario,
+                        unidadFormacion: response.data['uF'],
+                        duda:response.data['duda'],
+                        imagenes:{
+                            img1:response.data['images'][0],
+                            img2:response.data['images'][1],
+                            img3:response.data['images'][2]
+                        },
+                        asesores: []
+                    }
+                );
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
 
         }
         else{
-        setAsesoriaJSON(
-            {
-            "hora": 0,
-            "dia": 0,
-            "mes": 0,
-            "anio": 0,
-            "usuario": "",
-            "duda": "",
-            "images": []
-            }
-        );
+            setAsesoriaJSON(
+                {
+                "hora": 0,
+                "dia": 0,
+                "mes": 0,
+                "anio": 0,
+                "usuario": "",
+                "duda": "",
+                "images": []
+                }
+            );
         }
 
         setActivePopUp(!activePopUp)
@@ -131,9 +127,9 @@ const PanelNotificaciones = () => { /* En caso de ser directivo se espera un tip
     return(
         <>
         <PupUpSolicitudAsesoria
-            data = {info}
+            data = {asesoriaJSON}
             activo = {activePopUp}
-            accion = {() => {setActivePopUp(!activePopUp)}}
+            accion = {() => {togglePopUp("A94949494", 10, 1, 6, 2022)}}
         >
         </PupUpSolicitudAsesoria>
         <Template view = "notificaciones">
