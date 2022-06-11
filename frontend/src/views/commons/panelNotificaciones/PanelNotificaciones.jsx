@@ -40,7 +40,7 @@ const info = {
     ]
 }
 
-const PanelNotificaciones = ({userTypeNotificaciones}) => { /* En caso de ser directivo se espera un tipo de usuario "directivo", para mostrar el boton de enviar notificacion, cualquier otra palabra para el panel de notificaciones de asesor y asesorado */
+const PanelNotificaciones = () => { /* En caso de ser directivo se espera un tipo de usuario "directivo", para mostrar el boton de enviar notificacion, cualquier otra palabra para el panel de notificaciones de asesor y asesorado */
 
     const [activePopUp, setActivePopUp] = useState(false);
     const navigate = useNavigate();
@@ -148,7 +148,7 @@ const PanelNotificaciones = ({userTypeNotificaciones}) => { /* En caso de ser di
             }
             
             {
-                Object.keys(notificacionesJSON['notificaciones']).map((index) => {
+                Object.keys(notificacionesJSON['notificaciones']).reverse().map((index) => {
                     return(
                         <>
                         <div style = {
