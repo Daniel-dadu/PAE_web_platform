@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import './RespuestasEncuestas.css'
 import { useNavigate } from "react-router-dom";
 import Modal from '../../../components/reusable/PopUpInformacionAsesoria/Modal.js'
@@ -9,6 +9,17 @@ import usuariosJSON from './PruebaRespuestasEncuestas.json' // JSON de prueba
 function RespuestasEncuestas({rolUser}){
 
     let navigate = useNavigate()
+
+    const [usersEncuestas, setUsersEncuestas] = useState(usuariosJSON)
+
+    const [textoBusqueda, setTextoBusqueda] = useState('')
+
+    useEffect(() => {
+        setUsersEncuestas( 
+            textoBusqueda === '' ? usuariosJSON :
+            usuariosJSON.filter(usr => usr.matricula.startsWith(textoBusqueda) || usr.nombreUsuario.startsWith(textoBusqueda))
+        )
+    }, [textoBusqueda, setUsersEncuestas])
 
     const [activoEncuesta, setActivoEncuesta] = useState(false)
     const cerrarEncuesta = () => setActivoEncuesta(!activoEncuesta)
@@ -30,18 +41,22 @@ function RespuestasEncuestas({rolUser}){
             <h1> Respuestas de encuestas de { rolUser === 'asesor' ? "asesores" : "asesorados" } </h1>
 
             <div className = 'containerBarraBusqueda'>
-                <input type = 'text' placeholder = {`Bucar Usuario`} />
+                <input 
+                    type = 'text' 
+                    placeholder = {`Bucar Usuario`} 
+                    onChange={({ target }) => setTextoBusqueda(target.value)}
+                />
                 <FaSearch className = 'icono'/>
             </div>
 
             <div className='users_encuestas_container'>
                 {
-                    Object.keys(usuariosJSON['usuarios']).map((index) => 
+                    Object.keys(usersEncuestas).map((index) => 
                         <div className = 'containerListaDesplegableAsesorias' key={index}>
                             <ListaDesplegable
-                                fecha = {usuariosJSON['usuarios'][index]['nombreUsuario']}
+                                fecha = {usersEncuestas[index]['matricula'] + " - " + usersEncuestas[index]['nombreUsuario']}
                                 tipo = {2}
-                                arrContenido = {usuariosJSON['usuarios'][index]['asesorias']}
+                                arrContenido = {usersEncuestas[index]['asesorias']}
                                 onClickTipo2 = {cerrarEncuesta}
                             />
                         </div>
