@@ -25,7 +25,7 @@ const get_asesorias_usuario = (request, response) => {
 
     pool.query(consulta, [id, mes, anio], (error, result) => {
         if(error) {
-            throw error
+            console.log(error)
         } else {
             
             // response.status(200).json({'dias': result.rows})
@@ -75,7 +75,7 @@ const get_allAsesorias = (request, response) => {
 
     pool.query(consulta, [mes, anio], (error, result) => {
         if(error) {
-            throw error
+            console.log(error)
         } else {
             
             const output = result.rows;

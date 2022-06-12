@@ -733,6 +733,47 @@ BEGIN
 END;
 $func$;
 
+-- Obtención de los asesores que están disponibles para dar una asesoría, a partir de una hora, día, mes y año
+CREATE OR REPLACE FUNCTION get_asesoresDisponibles(
+  hora INTEGER,
+  dia INTEGER,
+  mes INTEGER,
+  anio INTEGER,
+  nombreUF VARCHAR(100)
+)
+RETURNS TABLE (
+  matricula VARCHAR(10),
+  nombre TEXT
+)
+LANGUAGE plpgsql AS $func$
+
+BEGIN
+
+  RETURN QUERY
+    SELECT
+      "Asesor"."idUsuario" AS matricula,
+      CONCAT("Usuario"."nombreUsuario", ' ', "Usuario"."apellidoPaterno", ' ', "Usuario"."apellidoMaterno") AS nombre
+    FROM "HorarioDisponible", "HorarioDisponiblePeriodo", "Asesor", "Usuario", "AsesorUnidadFormacion", "UnidadFormacion"
+    WHERE "HorarioDisponible"."idHorarioDisponiblePeriodo" = "HorarioDisponiblePeriodo"."idHorarioDisponiblePeriodo"
+    AND "HorarioDisponiblePeriodo"."idAsesor" = "Asesor"."idUsuario"
+    AND "Asesor"."idUsuario" = "Usuario"."idUsuario"
+    AND "AsesorUnidadFormacion"."idUsuario" = "Usuario"."idUsuario"
+    AND "AsesorUnidadFormacion"."idUF" = "UnidadFormacion"."idUF"
+    AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anio
+    AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mes
+    AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = dia
+    AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = hora
+    AND "UnidadFormacion"."idUF" = (
+      SELECT "idUF"
+      FROM "UnidadFormacion"
+      WHERE "nombreUF" = nombreUF
+    )
+    AND "HorarioDisponible"."status" = 'bloqueada';
+    
+
+END;
+$func$;
+
 ------------ PROCEDURES ---------------
 
 -- Procedimiento para hacer el registro de un asesorado
