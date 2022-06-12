@@ -38,6 +38,8 @@ app.get('/perfil/get_info_perfil', db.getInfoUser)
 
 app.get('/perfil/get_foto_user', db.getFotoUser)
 
+app.get('/perfil/get_user_ufs', db.getUserUFs)
+
 app.put('/perfil/update_info_perfil', db.updateInfoUser)
 
 app.delete('/perfil/delete_user', db.deleteUser)
