@@ -1,26 +1,12 @@
 .contenedorGeneral-ListaUsuarios {
-    top: 50px;
-    width:  95%;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-height: 500px;
+    height: 100%;
     overflow-y: scroll;
     scrollbar-width: 25px;
-
-}
-
-.espacio-para-overflow {
-    height: 150px;
-    width: 100%;
 }
 
 .tabla-ListaUsuarios {
     height: 100%;
     width: 100%;
-    
-
 }
 
 .tabla-ListaUsuarios .encabazado-tabla-ListaUsuarios {
@@ -32,6 +18,9 @@
     height: 80px;
     border-bottom: 2px solid #E5EAEE;
     padding: 0 30px 0 30px;
+    position: sticky;
+    top: 0;
+    background-color: white;
 }
 
 .tabla-ListaUsuarios .contenedor-barraBusqueda {
@@ -87,6 +76,17 @@
     padding: 0 30px 0 30px;
 }
 
+.tabla-ListaUsuarios .contenedor-matricula {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
 .tabla-ListaUsuarios .contenedor-nombre {
     height: 100%;
     width: 50%;
@@ -100,7 +100,7 @@
 
 .tabla-ListaUsuarios .contenedor-btn-editar {
     height: 100%;
-    width: 50%;
+    width: 20%;
     display: flex;
     justify-content: flex-end;
     align-items: center;   

@@ -64,6 +64,6 @@ app.post('/asesoria/nueva/', db.createAsesoria)
 
 app.post('/asesoria/insertar_imagen', db.insertImagen)
 
-app.listen(port, '0.0.0.0', () => {
+app.listen(port, () => {
     console.log(`App running on port ${port}.`)
 })

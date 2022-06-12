@@ -7,107 +7,18 @@ import './listaDesplegable.css';
 const COLORES_TIPO_1 = [
     "azul_tipo_1",
     "amarillo_tipo_1",
+    "rojo_tipo_1",
+    "azul_tipo_1",
+    "amarillo_tipo_1",
+    "rojo_tipo_1",
+    "azul_tipo_1",
+    "amarillo_tipo_1",
     "rojo_tipo_1"
 ];
 
 
-// const listaChica = [
-    
-//     {
-//         "claveUF":"TC3005B",
-//         "nombreUF":"Desarrollo de software"
-//     },
-//     {
-//         "claveUF":"TC4005B",
-//         "nombreUF":"Implementación de software"
-//     },
-//     {
-//         "claveUF":"TC5005B",
-//         "nombreUF":"Eliminación de software innecesario"
-//     },
-//     {
-//         "claveUF":"TC5005B",
-//         "nombreUF":"Eliminación de software innecesario"
-//     },
-//     {
-//         "claveUF":"TC5005B",
-//         "nombreUF":"Eliminación de software innecesario"
-//     },
-//     {
-//         "claveUF":"TC5005B",
-//         "nombreUF":"Eliminación de software innecesario"
-//     },
-//     {
-//         "claveUF":"TC5005B",
-//         "nombreUF":"Eliminación de software innecesario"
-//     },
-//     {
-//         "claveUF":"TC5005B",
-//         "nombreUF":"Eliminación de software innecesario"
-//     },
-//     {
-//         "claveUF":"TC5005B",
-//         "nombreUF":"Eliminación de software innecesario"
-//     }
-        
-// ];
 
-// const listaGrande = [
-//     {
-//         "claveUF":"TC3005B",
-//         "colorTipo3":"verde_tipo3",
-//         "horaAsesoria":"11 AM",
-//         "contenido":"Ezequiel Lozano Guerrero le dará asesoria a Daniel Maldonado Espitia"
-//     },
-//     {
-//         "claveUF":"TC3005B",
-//         "colorTipo3":"rojo_tipo3",
-//         "horaAsesoria":"11 AM",
-//         "contenido":"CANCELADA"
-//     },
-//     {
-//         "claveUF":"TC3005B",
-//         "colorTipo3":"verde_tipo3",
-//         "horaAsesoria":"11 AM",
-//         "contenido":"Ezequiel Lozano Guerrero le dará asesoria a Daniel Maldonado Espitia"
-//     },
-//     {
-//         "claveUF":"TC3005B",
-//         "colorTipo3":"verde_tipo3",
-//         "horaAsesoria":"11 AM",
-//         "contenido":"Ezequiel Lozano Guerrero le dará asesoria a Daniel Maldonado Espitia"
-//     }
-
-// ];
-
-// const listaAsesores = [
-//     {
-//         "matricula":"A01734184",
-//         "nombre":"Daniel Flores"
-//     },
-//     {
-//         "matricula":"A01734184",
-//         "nombre":"Daniel Flores"
-//     },
-//     {
-//         "matricula":"A01734184",
-//         "nombre":"Daniel Flores"
-//     },
-//     {
-//         "matricula":"A01734184",
-//         "nombre":"Daniel Flores"
-//     },
-//     {
-//         "matricula":"A01734184",
-//         "nombre":"Daniel Flores"
-//     }
-// ];
-
-
-
-
-
-const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido } ) => {
+const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected } ) => {
 
 
     /*
@@ -162,7 +73,11 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido } ) => {
     }
 
     const BackgroundColorTipo1 = semestre !== 0 ? COLORES_TIPO_1[semestre-1] : COLORES_TIPO_1[0];
+    // const BackgroundColorTipo1 = COLORES_TIPO_1[semestre-1];
 
+    const selectUF = infoUF => {
+        getUFSelected({ ...infoUF, semestre: semestre })
+    } 
 
   return (
     <>
@@ -172,7 +87,7 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido } ) => {
                 <div className='contenedor-listaDesplegable'>
                     <div className={ `header-listaDesplegable ${BackgroundColorTipo1}` } >
 
-                        <p> Semestre{semestre} </p>
+                        <p> Semestre {semestre} </p>
                         {
                             active === true ?
                             (
@@ -203,6 +118,7 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido } ) => {
                                         claveUF={materia.claveUF} 
                                         nombreUF={ materia.nombreUF } 
                                         colorTipo1="blanco_tipo_1" 
+                                        getUFSelected={ selectUF }
                                         key={index}
                                     />
                                 ))

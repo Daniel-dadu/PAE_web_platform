@@ -38,23 +38,6 @@
     font-size: 1.2rem;
 }
 
-.barraBusquedaRegistroUF{
-    width: 60%;
-    float: left;
-    height: 100%;
-    padding-top: 20px;
-}
-
-.barraBusquedaRegistroUF .containerBarraBusqueda{
-    width: 83%;
-    margin: auto;
-}
-
-.barraBusquedaRegistroUF .containerBarraBusqueda input{
-    font-size: 1.2rem;
-    height: 43px;
-}
-
 .containerMateriaSeleccionada{
     margin-bottom: 10px;
 }
@@ -73,4 +56,47 @@
 
 .listaDesplegableSemestre-3 .header-listaDesplegable-2{
     background-color: #581B1B;
+}
+
+.list_ufsBySemester {
+    height: 85%;
+    width: 90%;
+    margin: auto;
+    overflow: scroll;
+}
+
+.list_selectedUFs {
+    height: 80%;
+    overflow: scroll;
+}
+
+
+
+
+@media screen and (max-width: 480px){ 
+
+
+
+    .campo_RegistroAsesorCondiciones{
+        font-size: 20px;
+    }
+    
+    .containerUnidadesFormacion{
+        display: flex;
+        flex-direction:column;
+        width: 100%;
+        overflow-y: scroll;
+    }
+
+    .containerSeleccionUF, .containerMateriasSeleccionadas{
+        width: 100%;
+        float: left;
+        height: 100%;
+    }
+
+    .list_selectedUFs {
+        height: 70%;
+        overflow: scroll;
+    }
+
 }

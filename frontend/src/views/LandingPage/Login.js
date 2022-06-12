@@ -57,6 +57,7 @@ const Login = () => {
             const response = await axios(config)
             usuario = { 
                 matricula, 
+                nombre: response.data.nombre_user, 
                 rol: response.data.rol_user, 
                 foto: response.data.foto_user,
                 modo: response.data.modo_user,
@@ -76,6 +77,7 @@ const Login = () => {
         } else {
             // Si la petición funcionó adecuadamente, guardamos los datos del usuario en el localStorage
             localStorage.setItem("usuario", usuario.matricula)
+            localStorage.setItem("nombreCompleto", usuario.nombre)
             localStorage.setItem("rolUsuario", usuario.rol)
             localStorage.setItem("fotoUsuario", usuario.foto)
             localStorage.setItem("modo", usuario.modo)

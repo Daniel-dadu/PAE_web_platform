@@ -32,13 +32,16 @@ function PreguntaCerradaEncuesta({ preguntaCerrada, indexPregunta, respuesta = 0
               <input type="radio" id="cal1" name={ `Calificacion${indexPregunta}`} value="1"  />
             )
           }
-          <span
+          <span 
+          id="numeroPreguntaCerradaEncuesta"
             style={{
               position: "relative",
               left: "-24px",
               top: "-22px",
               fontSize: "20px"
-            }}
+            }
+          
+          }
           >
             1
           </span>
@@ -57,6 +60,7 @@ function PreguntaCerradaEncuesta({ preguntaCerrada, indexPregunta, respuesta = 0
               )
             }
           <span
+          id="numeroPreguntaCerradaEncuesta"
             style={{
               position: "relative",
               left: "-24px",
@@ -82,6 +86,7 @@ function PreguntaCerradaEncuesta({ preguntaCerrada, indexPregunta, respuesta = 0
           }
 
           <span
+          id="numeroPreguntaCerradaEncuesta"
             style={{
               position: "relative",
               left: "-24px",
@@ -108,6 +113,7 @@ function PreguntaCerradaEncuesta({ preguntaCerrada, indexPregunta, respuesta = 0
           }
 
           <span
+          id="numeroPreguntaCerradaEncuesta"
             style={{
               position: "relative",
               left: "-24px",
@@ -133,6 +139,7 @@ function PreguntaCerradaEncuesta({ preguntaCerrada, indexPregunta, respuesta = 0
             )
           }
           <span
+          id="numeroPreguntaCerradaEncuesta"
             style={{
               position: "relative",
               left: "-24px",
@@ -157,6 +164,7 @@ function PreguntaCerradaEncuesta({ preguntaCerrada, indexPregunta, respuesta = 0
             )
           }
           <span
+          id="numeroPreguntaCerradaEncuesta"
             style={{
               position: "relative",
               left: "-25px",
@@ -182,6 +190,7 @@ function PreguntaCerradaEncuesta({ preguntaCerrada, indexPregunta, respuesta = 0
             )
           }
           <span
+          id="numeroPreguntaCerradaEncuesta"
             style={{
               position: "relative",
               left: "-24px",
@@ -206,6 +215,7 @@ function PreguntaCerradaEncuesta({ preguntaCerrada, indexPregunta, respuesta = 0
             )
           }
           <span
+          id="numeroPreguntaCerradaEncuesta"
             style={{
               position: "relative",
               left: "-25px",
@@ -231,6 +241,7 @@ function PreguntaCerradaEncuesta({ preguntaCerrada, indexPregunta, respuesta = 0
             )
           }
           <span
+          id="numeroPreguntaCerradaEncuesta"
             style={{
               position: "relative",
               left: "-25px",
@@ -255,6 +266,7 @@ function PreguntaCerradaEncuesta({ preguntaCerrada, indexPregunta, respuesta = 0
             )
           }
           <span
+          id="numeroDiezPreguntaCerradaEncuesta"
             style={{
               position: "relative",
               left: "-28px",

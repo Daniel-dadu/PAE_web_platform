@@ -13,7 +13,7 @@ previousHorario:
 }
 */
 
-const CalendarioDisponibilidad = ({ parentCallback, previousHorario }) => {
+const CalendarioDisponibilidad = ({ parentCallback, previousHorario, blocked=false }) => {
 
     const [horario, setHorario] = useState(previousHorario)
 
@@ -111,9 +111,9 @@ const CalendarioDisponibilidad = ({ parentCallback, previousHorario }) => {
                                     <td className = 'bloqueCalendarioDisponibilidad' key={i} >
                                         <div 
                                             className = 'seleccionCalendario' 
-                                            onClick = {() => selectHour(`${i}-${horaElement}`)} 
+                                            onClick = {blocked ? null : () => selectHour(`${i}-${horaElement}`)} 
                                             id = {`${i}-${horaElement}`} 
-                                            style={{backgroundColor: colors[horaElement-8][i] }}
+                                            style={{backgroundColor: colors[horaElement-8][i], cursor: (blocked && "default") }}
                                         />
                                     </td>
                                 )

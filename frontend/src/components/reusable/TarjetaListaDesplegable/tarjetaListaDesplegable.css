@@ -225,14 +225,12 @@
     width: 85%;
     margin-top: 5px;
     margin-bottom: 5px;
-    cursor: pointer;
 }
 
 .tipo4 .tabla-tipo-4 {
     width: 100%;
-    height: 100%;
+    height: 45px;
     border-radius: 5px;
-
 }
 
 .tipo4 .tabla-tipo-4 .fila-general-TarjetaListaDesplegable {
@@ -271,15 +269,14 @@
 }
 
 .tipo4 .tabla-tipo-4 .nombreUF-tipo-4{
-    height: 100%;
+    height: 45px;
+    overflow: auto;
     width: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-family: 'Dosis', sans-serif;
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
+    margin: auto;
 }
 .azul_tipo_2 {
     background: #1B4858;
@@ -398,4 +395,45 @@
     font-family: 'Dosis', sans-serif;
     font-size: 1rem;
     font-weight: 500;
+}
+
+@media screen and (max-width: 480px){ 
+
+    .tipo1 .tabla-tipo-1 .claveUF-tipo-1 {
+        font-size: 10px;
+    }
+    
+    .tipo1 .tabla-tipo-1 .nombreUF-tipo-1 {
+        font-size: 10px;
+    }
+    
+
+    .tipo2 .tabla-tipo-2 .semestre-tipo-2 {
+        font-size: 8px;
+    
+    }
+
+
+    .tipo2 .tabla-tipo-2 .claveUF-tipo-2 {
+        font-size: 10px;
+
+    
+    }
+    
+    .tipo2 .tabla-tipo-2 .nombreUF-tipo-2 {
+        font-size: 10px;
+    }
+
+    
+    .tipo4 .tabla-tipo-4 .semestre-tipo-4 {
+    font-size: 8px;
+}
+    .tipo4 .tabla-tipo-4 .claveUF-tipo-4 {
+    font-size: 10px;
+}
+
+    .tipo4 .tabla-tipo-4 .nombreUF-tipo-4{
+    font-size: 10px;;
+}
+
 }
