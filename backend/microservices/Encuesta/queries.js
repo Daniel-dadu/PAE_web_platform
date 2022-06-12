@@ -140,8 +140,81 @@ const getRespuestaEncuesta = (request, response) => {
 
 }
 
+const getEncuestasRespondidas = (request, response) => {
+    // const matricula = request.query.matricula
+    const rolUser = request.query.rol
+
+    const tipoId = rolUser === 'asesor' ? '"idAsesor"' : '"idAsesorado"'
+
+    const consulta1 = `
+        SELECT 
+            DISTINCT ${tipoId},
+            CONCAT("nombreUsuario", ' ', "apellidoPaterno") AS "nombreUsuario"
+        FROM 
+            "CalificacionEncuesta"
+            INNER JOIN "Encuesta" USING("idEncuesta")
+            INNER JOIN "Asesoria" USING("idAsesoria")
+            INNER JOIN "Usuario" ON ${tipoId} = "idUsuario"
+        WHERE
+            "estado" = 'realizada' AND
+            "Encuesta"."rol" = $1
+    `
+
+    pool.query(consulta1, [rolUser], async (error, results1) => {
+        if(error) {
+            response.status(400).send("Error: No se pudo obtener la información de las encuestas")
+        } else {
+            const encuestados = results1.rows
+
+            let listaFinal = []
+
+            const consulta2 = `
+            SELECT 
+                "idAsesoria", 
+                "idUF",
+                "fecha" AS "horaRespuestaEncuesta",
+                "fechaHora" AS "horaAsesoria",
+                CONCAT(${rolUser === 'asesor' ? '"idAsesorado"' : '"idAsesor"' }, ' fue el ${rolUser === 'asesor' ? 'asesorado' : 'asesor'}.') AS contenido
+            FROM 
+                "CalificacionEncuesta" 
+                INNER JOIN "Encuesta" USING("idEncuesta")
+                INNER JOIN "Asesoria" USING("idAsesoria")
+                INNER JOIN "HorarioDisponible" USING("idHorarioDisponible")
+            WHERE
+                "rol" = $1 AND
+                "estado" = 'realizada' AND
+                ${tipoId} = $2;
+            `
+
+            for (let encuestado of encuestados) {
+
+                const matriculaUser = encuestado[rolUser === 'asesor' ? 'idAsesor' : 'idAsesorado']
+                
+                const results2 = await pool.query(consulta2, [rolUser, matriculaUser])
+
+                const formatDateSting = datePSQL => new Date(datePSQL.slice(0, -1)).toLocaleString()
+
+                listaFinal.push({
+                    nombreUsuario: encuestado.nombreUsuario,
+                    matricula: matriculaUser,
+                    respuestasEncuestas: results2.rows.map(encuesta => ({
+                        idAsesoria: encuesta.idAsesoria,
+                        idUF: encuesta.idUF,
+                        horaRespuestaEncuesta: formatDateSting(String(encuesta.horaRespuestaEncuesta)),
+                        horaAsesoria: formatDateSting(String(encuesta.horaAsesoria)),
+                        contenido: encuesta.contenido
+                    }))
+                })
+            }
+
+            response.status(200).json(listaFinal)
+        }
+    })
+}
+
 module.exports = {
     getEncuesta,
     setRespuestaEncuesta,
-    getRespuestaEncuesta
+    getRespuestaEncuesta,
+    getEncuestasRespondidas
 }

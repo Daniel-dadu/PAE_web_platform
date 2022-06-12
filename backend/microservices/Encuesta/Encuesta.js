@@ -65,6 +65,9 @@ app.post('/encuesta/set_respuesta_encuesta/', db.setRespuestaEncuesta)
 // http://20.225.209.57:3096/encuesta/get_respuesta_encuesta/?idasesoria=92&matriculaencuestado=A00000001
 app.get('/encuesta/get_respuesta_encuesta/', db.getRespuestaEncuesta)
 
+
+app.get('/encuesta/get_encuestas_respondidas/', db.getEncuestasRespondidas)
+
 // ========================= ENDPOINTS ========================= // 
 
 app.listen(port, () => {
