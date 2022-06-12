@@ -43,7 +43,8 @@ const TarjetaListaDesplegable = (
         nombreAsesor,
         accion,
         imagenUsuario,
-        getUFSelected
+        getUFSelected,
+        getAsesorSelected
     }) => {
 
     /* 
@@ -92,6 +93,11 @@ const TarjetaListaDesplegable = (
     
     const handleActivo = () => {
         setActivo(!activo);
+    }
+
+    const selectAsesor = () => {
+        handleActivo();
+        getAsesorSelected(matricula);
     }
 
     const selectUF = () => {
@@ -171,7 +177,7 @@ const TarjetaListaDesplegable = (
                         (
                             tipo === 5?
                             (
-                                <table className={`tabla-tipo-1 ${  !activo?  BackgroundColor1: "gris_tipo_1" }`} onClick={ handleActivo } > 
+                                <table className={`tabla-tipo-1 ${  !activo?  BackgroundColor1: "gris_tipo_1" }`} onClick={ selectAsesor } > 
 
                                     <tbody>
                                         <tr className='fila-general-TarjetaListaDesplegable'>

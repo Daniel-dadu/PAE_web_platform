@@ -8,6 +8,16 @@ import { FiMail } from 'react-icons/fi'
 import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 
+var informacionAsesoria = {
+    "idAsesor": '',
+    "nombreUF": '',
+    "idAsesorado": '',
+    "hora": 0,
+    "dia": 0,
+    "mes": 0,
+    "anio": 0
+}
+
 const PanelNotificaciones = () => { /* En caso de ser directivo se espera un tipo de usuario "directivo", para mostrar el boton de enviar notificacion, cualquier otra palabra para el panel de notificaciones de asesor y asesorado */
 
     const [activePopUp, setActivePopUp] = useState(false);
@@ -44,6 +54,14 @@ const PanelNotificaciones = () => { /* En caso de ser directivo se espera un tip
             .then(function (response) {
                 // console.log(JSON.stringify(response.data));
                 // console.log(JSON.stringify(response.data))
+                informacionAsesoria["idAsesorado"] = idUsuario;
+                informacionAsesoria["nombreUF"] = response.data['uF'];
+                informacionAsesoria["hora"] = response.data['hora'];
+                informacionAsesoria["dia"] = response.data['dia'];
+                informacionAsesoria["mes"] = response.data['mes'];
+                informacionAsesoria["anio"] = response.data['anio'];
+                // console.log(JSON.stringify(informacionAsesoria))
+
                 var unidadFormacion = response.data['uF'];
 
                 var config_2 = {
@@ -104,6 +122,19 @@ const PanelNotificaciones = () => { /* En caso de ser directivo se espera un tip
                     asesores: []
                 }
             );
+
+            informacionAsesoria = {
+                "idAsesor": '',
+                "nombreUF": '',
+                "idAsesorado": '',
+                "hora": 0,
+                "dia": 0,
+                "mes": 0,
+                "anio": 0
+            }
+
+            // console.log(JSON.stringify(informacionAsesoria))
+
         }
 
         setActivePopUp(!activePopUp)
@@ -114,11 +145,11 @@ const PanelNotificaciones = () => { /* En caso de ser directivo se espera un tip
 
     // Si se intenta ingresar a esta vista pero no se cuenta con el localStorage.usuario, se redirige a /landingPage
     useEffect(() => {
-    if(!localStorage.usuario){
-        localStorage.clear()
-        navigate('/landingPage')
-        return
-    }
+        if(!localStorage.usuario){
+            localStorage.clear()
+            navigate('/landingPage')
+            return
+        }
     }, [navigate])
 
     const [notificacionesJSON, setNotificacionesJSON] = useState({
@@ -146,6 +177,69 @@ const PanelNotificaciones = () => { /* En caso de ser directivo se espera un tip
 
     }, [setNotificacionesJSON])
 
+    const aceptarAsesoria = (idAsesor) => {
+
+        informacionAsesoria["idAsesor"] = idAsesor;
+        console.log(JSON.stringify(informacionAsesoria))
+
+        const config = {
+            method: 'post',
+            url: 'http://20.225.209.57:3030/notificacion/aceptarAsesoria',
+            headers: { 
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify({
+                "idAsesor": informacionAsesoria["idAsesor"],
+                "nombreUF": informacionAsesoria["nombreUF"],
+                "idAsesorado": informacionAsesoria["idAsesorado"],
+                "hora": informacionAsesoria["hora"],
+                "dia": informacionAsesoria["dia"],
+                "mes": informacionAsesoria["mes"],
+                "anio": informacionAsesoria["anio"]
+            })
+        }
+        
+        axios(config)
+        .then(response => {
+            
+            alert("Bien, " + response.data)
+
+            var config = {
+                method: 'get',
+                url: `http://20.225.209.57:3030/notificacion/get_notificaciones/?idUsuario=${localStorage.usuario}`,
+                headers: {}
+            };
+            
+            axios(config)
+            .then(function (response) {
+                // console.log(JSON.stringify(response.data));
+                setNotificacionesJSON(response.data);
+                // console.log(JSON.stringify(notificacionesJSON))
+                setActivePopUp(!activePopUp)
+
+                informacionAsesoria = {
+                    "idAsesor": '',
+                    "nombreUF": '',
+                    "idAsesorado": '',
+                    "hora": 0,
+                    "dia": 0,
+                    "mes": 0,
+                    "anio": 0
+                }
+
+                // console.log(JSON.stringify(informacionAsesoria))
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+        })
+        .catch(error => {
+            alert("Error: " + error.response.data)
+        });
+    }
+
     return(
         <>
         <PupUpSolicitudAsesoria
@@ -153,7 +247,7 @@ const PanelNotificaciones = () => { /* En caso de ser directivo se espera un tip
             activo = {activePopUp}
             accion = {togglePopUp}
             accionCancelar = {() => {alert('1')}}
-            accionConfirmar = {() => {alert('2')}}
+            accionConfirmar = {aceptarAsesoria}
         >
         </PupUpSolicitudAsesoria>
         <Template view = "notificaciones">

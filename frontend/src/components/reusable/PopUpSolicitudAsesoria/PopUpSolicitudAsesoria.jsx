@@ -3,6 +3,7 @@ import { ListaDesplegable, BotonSencillo } from '../../../routeIndex';
 import { ImCross } from "react-icons/im";
 import './popUpSolicitudAsesoria.css';
 
+var matriculaAsesor;
 
 const info = {
     fecha:{
@@ -76,6 +77,10 @@ const PopUpSolicitudAsesoria = ({ data = info, activo, accion, accionCancelar, a
                     
     */
 
+    const onSelectAsesor = matricula => {
+        matriculaAsesor = matricula;
+    }
+
   return (
         <>
             <div className={ `contenedor-general-PuSolicitudAsesoria${activo?"":" show"}` }>
@@ -145,13 +150,13 @@ const PopUpSolicitudAsesoria = ({ data = info, activo, accion, accionCancelar, a
                         </div>
                         <div className='contenedor-asesores'>
                             
-                            <ListaDesplegable tipo={ 3 } arrContenido={ data.asesores } />  
+                            <ListaDesplegable tipo={ 3 } arrContenido={ data.asesores } getAsesorSelected={ onSelectAsesor } />  
 
                         </div>
                     </div>
                     <div className='footer-PuSolicitudAsesoria'>
                             <BotonSencillo  backgroundColor="rojo" size="reducido" children="cancelar asesoria" onClick={ accionCancelar }/>
-                            <BotonSencillo  backgroundColor="verde" size="reducido" children="confirmar asesoria" onClick={ accionConfirmar }/>
+                            <BotonSencillo  backgroundColor="verde" size="reducido" children="confirmar asesoria" onClick= {() => accionConfirmar(matriculaAsesor)}/>
 
                     </div>
                 </div>

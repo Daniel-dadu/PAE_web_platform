@@ -18,7 +18,7 @@ const COLORES_TIPO_1 = [
 
 
 
-const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected } ) => {
+const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected, getAsesorSelected } ) => {
 
 
     /*
@@ -77,7 +77,11 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected 
 
     const selectUF = infoUF => {
         getUFSelected({ ...infoUF, semestre: semestre })
-    } 
+    }
+
+    const selectAsesor = matricula => {
+        getAsesorSelected(matricula)
+    }
 
   return (
     <>
@@ -196,6 +200,7 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected 
                                         matricula={asesor.matricula} 
                                         nombreAsesor={ asesor.nombre } 
                                         colorTipo1="blanco_tipo_1" 
+                                        getAsesorSelected={ selectAsesor }
                                         key={index}
                                     />
                                 ))
