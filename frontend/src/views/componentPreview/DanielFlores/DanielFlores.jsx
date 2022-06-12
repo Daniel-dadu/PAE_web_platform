@@ -35,7 +35,7 @@ const DanielFlores = () => {
 
         
         <Template view="perfil">
-          <ListaDesplegable tipo={ 3 } arrContenido={ listaAsesores } />  
+          {/* <ListaDesplegable tipo={ 3 } arrContenido={ listaAsesores } />   */}
           {/* <ListaDesplegable tipo={ 2 } fecha="7 de marzo del 2022" arrContenido={listaGrande} /> */}
 
 

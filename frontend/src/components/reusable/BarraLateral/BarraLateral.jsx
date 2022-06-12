@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './BarraLateral.css'
 
 import { BiCalendar, BiEdit } from 'react-icons/bi'
@@ -95,6 +95,26 @@ function BarraLateral({viewProp}) {
 
     const barIconSize = 80
 
+    const [isMobile, setIsMobile] = useState(false)
+    
+    //choose the screen size 
+    const handleResize = () => {
+    if (window.innerWidth < 720) {
+        setIsMobile(true)
+    } else {
+        setIsMobile(false)
+    }
+    }
+
+    // create an event listener
+    useEffect(() => {
+        window.addEventListener("resize", handleResize)
+    });
+
+
+
+
+
   return (
     <div className='barra_lateral-container'>
         <div className='pae_logo-container'>
@@ -109,14 +129,19 @@ function BarraLateral({viewProp}) {
             {
             btnInfo[localStorage.rolUsuario ? localStorage.rolUsuario : 'asesorado'].buttons.map((btn, index) => {
                 let isImageString = typeof btn.image === "string"
-                let heightBtn = (localStorage.rolUsuario === "asesor") ? '33%' : '25%'
+                let heightBtn = 0;
+                if(window.innerWidth < 720){
+                    heightBtn ='65px'
+                } else {
+                    heightBtn = (localStorage.rolUsuario === "asesor") ? '33%' : '25%'
+                }
 
                 if(isImageString){
                     let perfilSelected = viewProp === "perfil"
                     return <div className={'barra_button' + (perfilSelected ? ' barra_button-selected' : '') } style={{height: heightBtn}} key={index}>
                         <a href={ localStorage.rolUsuario === "asesor" ? "/perfilAsesor" : localStorage.rolUsuario === "asesorado" ? "/perfilAsesorado" : "/perfilDirectivo" }>
-                        <img src={localStorage.fotoUsuario !== "null" ? localStorage.fotoUsuario : noUserImg} alt="Perfil" className={'profile-img' + (perfilSelected ? ' selected_icon' : '')} />
-                        <p className={'btn-text' + (perfilSelected ? ' selected_icon' : '')}>{btn.text}</p>
+                            <img src={localStorage.fotoUsuario !== "null" ? localStorage.fotoUsuario : noUserImg} alt="Perfil" className={'profile-img' + (perfilSelected ? ' selected_icon' : '')} />
+                            <p className={'btn-text' + (perfilSelected ? ' selected_icon' : '')}>{btn.text}</p>
                         </a>
                         </div>
                 } else if(btn.image === 1) {
