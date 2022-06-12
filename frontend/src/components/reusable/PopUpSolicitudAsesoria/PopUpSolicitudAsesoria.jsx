@@ -119,9 +119,21 @@ const PopUpSolicitudAsesoria = ({ data = info, activo, accion }) => {
                         <div className='contenendor-imagenes'>
                             <b>Imagenes adjuntadas</b>
                             <div className='galeria-imagenes'>
-                                <img src={ data.imagenes.img1 } alt="img1" id="img-mostrada" />
-                                <img src={ data.imagenes.img2 } alt="img1" id="img-mostrada" />
-                                <img src={ data.imagenes.img3 } alt="img1" id="img-mostrada" />
+                                {
+                                    (data.imagenes['img1'] !== null)
+                                        ? <img src={ data.imagenes.img1 } alt="img1" id="img-mostrada" />
+                                        : <> <br/><br/><br/><br/><br/> <p>No se adjuntaron imágenes</p> </>
+                                }
+                                {
+                                    (data.imagenes['img2'] !== undefined)
+                                        ? <img src={ data.imagenes.img2 } alt="img2" id="img-mostrada" />
+                                        : <p></p>
+                                }
+                                {
+                                    (data.imagenes['img3'] !== undefined)
+                                        ? <img src={ data.imagenes.img3 } alt="img3" id="img-mostrada" />
+                                        : <p></p>
+                                }
                             </div>
                         </div>
                         <div className='separador-contenido-popUp'>

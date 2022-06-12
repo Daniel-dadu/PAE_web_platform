@@ -40,6 +40,10 @@ app.use(
 // http://20.225.209.57:3030/notificacion/get_notificaciones/?idUsuario=A01657967
 app.get('/notificacion/get_notificaciones/', db.get_notificaciones_usuario)
 
+// OBTENER LOS ASESORES DISPONIBLES
+// Ejemplo de consulta GET:
+// http://20.225.209.57:3030/notificacion/get_asesoresDisponibles/?hora=17&dia=13&mes=6&anio=2022&nombreUF=Fotografía%20publicitaria%20y%20comercial
+app.get('/notificacion/get_asesoresDisponibles/', db.get_asesoresDisponibles)
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
