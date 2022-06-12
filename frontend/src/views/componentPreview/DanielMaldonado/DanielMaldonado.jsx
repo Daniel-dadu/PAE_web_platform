@@ -81,8 +81,8 @@ function DanielMaldonado() {
 
         <Modal active = {activoEncuesta} toggle = {cerrarEncuesta}>
           <PopUpEncuesta 
-            tipo={1} 
-            idAsesoria={92} // Esto debe obtenerse del número de la asesoría al que corresponde
+            tipo={2} 
+            idAsesoria={93} // Esto debe obtenerse del número de la asesoría al que corresponde
             activo={activoEncuesta} 
             ocultarPopUp={cerrarEncuesta} 
           />

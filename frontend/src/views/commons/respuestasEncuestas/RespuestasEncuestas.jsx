@@ -39,9 +39,8 @@ function RespuestasEncuestas({rolUser}){
             <Modal active = {activoEncuesta} toggle = {cerrarEncuesta}>
                 <PopUpEncuesta 
                     tipo={3} 
-                    idAsesoria={idAsesoriaState} // Esto debe obtenerse del número de la asesoría al que corresponde
-                    // matriculaEncuestado="A00000001" // Esto debe venir del usuario del que se busca la respuesta
-                    matriculaEncuestado={idEncuestadoState} // Esto debe venir del usuario del que se busca la respuesta
+                    idAsesoria={idAsesoriaState}
+                    matriculaEncuestado={idEncuestadoState} 
                     activo={activoEncuesta} 
                     ocultarPopUp={cerrarEncuesta} 
                 />
