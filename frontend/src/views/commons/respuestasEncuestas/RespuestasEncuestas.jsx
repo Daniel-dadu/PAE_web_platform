@@ -39,6 +39,7 @@ function RespuestasEncuestas({rolUser}){
             <Modal active = {activoEncuesta} toggle = {cerrarEncuesta}>
                 <PopUpEncuesta 
                     tipo={3} 
+                    rolUser={rolUser}
                     idAsesoria={idAsesoriaState}
                     matriculaEncuestado={idEncuestadoState} 
                     activo={activoEncuesta} 
@@ -64,7 +65,7 @@ function RespuestasEncuestas({rolUser}){
                             <ListaDesplegable
                                 fecha = {usersEncuestas[index]['matricula'] + " - " + usersEncuestas[index]['nombreUsuario']}
                                 tipo = {2}
-                                arrContenido = {usersEncuestas[index]['asesorias']}
+                                arrContenido = {usersEncuestas[index].respuestasEncuestas}
                                 idEncuestado = {usersEncuestas[index]['matricula']}
                                 onClickTipo2 = {selectEncuesta}
                             />

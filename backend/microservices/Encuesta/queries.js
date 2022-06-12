@@ -88,34 +88,40 @@ const setRespuestaEncuesta = (request, response) => {
 const getRespuestaEncuesta = (request, response) => {
     const idAsesoria = request.query.idasesoria
     const matricula = request.query.matriculaencuestado
+    const rolUser = request.query.rol
 
-    const consulta1 = `SELECT idencuesta as "idEncuesta", tituloencuesta AS titulo, descripcionencuesta AS descripcion, fotoe AS "fotoEvidencia" FROM get_info_encuesta($1, $2)`
+    const consulta1 = `
+        SELECT 
+            idencuesta as "idEncuesta", 
+            tituloencuesta AS titulo, 
+            descripcionencuesta AS descripcion, 
+            fotoe AS "fotoEvidencia" 
+        FROM 
+            get_info_encuesta($1, $2, $3)
+    `
 
-    pool.query(consulta1, [idAsesoria, matricula], (error, result) => {
+    pool.query(consulta1, [idAsesoria, matricula, rolUser], (error, result) => {
         if(error || result.rows[0] === undefined) {
             response.status(400).send('Error: No se pudo obtener la respuesta de la encuesta')
         } else {
 
             const consultaPreguntas = `
-                SELECT 
-                    "tipo" AS "tipoDePregunta",
-                    "pregunta",
-                    "opcionesRespuesta" AS opciones,
-                    "respuesta"
-                FROM 
-                    "CalificacionEncuesta", 
-                    "Encuesta", 
-                    "Pregunta", 
-                    "CalificacionPregunta" 
-                WHERE 
-                    "CalificacionEncuesta"."idEncuesta" = "Encuesta"."idEncuesta" AND 
-                    "Pregunta"."idEncuesta" = "Encuesta"."idEncuesta" AND 
-                    "Pregunta"."idPregunta" = "CalificacionPregunta"."idPregunta" AND 
-                    "Encuesta"."idEncuesta" = $1 AND 
-                    "idAsesoria" = $2;
+            SELECT 
+                "tipo" AS "tipoDePregunta",
+                "pregunta",
+                "opcionesRespuesta" AS opciones,
+                "respuesta"
+            FROM 
+                "CalificacionEncuesta"
+                INNER JOIN "Asesoria" USING("idAsesoria")
+                INNER JOIN "Encuesta" USING("idEncuesta")
+                INNER JOIN "Pregunta" USING("idEncuesta") 
+                INNER JOIN "CalificacionPregunta" USING ("idCalificacionEncuesta", "idPregunta")
+            WHERE
+                "idAsesoria" = $1 AND
+                "rol" = $2;
             `
-
-            pool.query(consultaPreguntas, [result.rows[0].idEncuesta, idAsesoria], (error, results) => {
+            pool.query(consultaPreguntas, [idAsesoria, rolUser], (error, results) => {
                 if(error) {
                     response.status(400).send("Error: No se pudo obtener la respuesta de la encuesta")
                 } else {

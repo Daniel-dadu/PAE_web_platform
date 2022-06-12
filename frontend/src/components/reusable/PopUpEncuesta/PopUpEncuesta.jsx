@@ -75,8 +75,9 @@ import LoadingSpin from "react-loading-spin";
 const PopUpEncuesta = ({ 
     tipo, 
     idAsesoria,
+    rolUser,
     matriculaEncuestado,
-    activo, 
+    activo,
     ocultarPopUp
 } ) => {
 
@@ -102,7 +103,7 @@ const PopUpEncuesta = ({
 
             const config = {
                 method: 'get',
-                url: `http://20.225.209.57:3096/encuesta/get_encuesta/?rol=${tipo === 1 ? "asesorado" : "asesor"}`,
+                url: `http://20.225.209.57:3096/encuesta/get_encuesta/?rol=${rolUser}`,
                 headers: { }
             }
             
@@ -139,7 +140,7 @@ const PopUpEncuesta = ({
 
             const config = {
                 method: 'get',
-                url: `http://20.225.209.57:3096/encuesta/get_respuesta_encuesta/?idasesoria=${idAsesoria}&matriculaencuestado=${matriculaEncuestado}`,
+                url: `http://20.225.209.57:3096/encuesta/get_respuesta_encuesta/?idasesoria=${idAsesoria}&matriculaencuestado=${matriculaEncuestado}&rol=${rolUser}`,
                 headers: { }
             }
             
@@ -166,7 +167,7 @@ const PopUpEncuesta = ({
             })
 
         }
-    }, [tipo, idAsesoria, matriculaEncuestado])
+    }, [tipo, idAsesoria, matriculaEncuestado, rolUser])
 
     const [imageUploaded, setImageUploaded] = useState(null)
     const onHandleUploadImage = image => setImageUploaded(image)
@@ -214,7 +215,7 @@ const PopUpEncuesta = ({
                 },
                 data: JSON.stringify({
                     "idAsesoria": idAsesoria,
-                    "rol": tipo === 1 ? "asesorado" : "asesor",
+                    "rol": rolUser,
                     "respuestas": respuestasUser,
                     "fotoEvidencia": imageCompressed
                 })

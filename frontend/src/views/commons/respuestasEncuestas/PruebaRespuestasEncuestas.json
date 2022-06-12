@@ -2,7 +2,7 @@
     {
         "nombreUsuario": "Ezequiel Lozano Guerrero",
         "matricula": "A00000001",
-        "asesorias": [
+        "respuestasEncuestas": [
             {
                 "idAsesoria":92,
                 "claveUF":"TC3005B",
@@ -32,7 +32,7 @@
     {
         "nombreUsuario": "Reed Richards",
         "matricula": "A00000001",
-        "asesorias": [
+        "respuestasEncuestas": [
             {
                 "idAsesoria":92,
                 "claveUF":"TC3005B",
@@ -50,7 +50,7 @@
     {
         "nombreUsuario": "Julio Gabriel Verne",
         "matricula": "A01657967",
-        "asesorias": [
+        "respuestasEncuestas": [
             {
                 "claveUF":"TC3005B",
                 "idAsesoria":92,
@@ -68,7 +68,7 @@
     {
         "nombreUsuario": "Monica Rambeau",
         "matricula": "A01657967",
-        "asesorias": [
+        "respuestasEncuestas": [
             {
                 "claveUF":"TC3005B",
                 "idAsesoria":92,
