@@ -97,3 +97,5 @@ export {default as AsesoriasExistentesDiaDirectivos } from './views/directivo/as
 export { default as CampoTextoMenuDesplegable } from './components/reusable/CampoTextoMenuDesplegable/CampoTextoMenuDesplegable.jsx'
 export {default as RegistroAsesorUF } from './views/asesor/registroAsesorUF/RegistroAsesorUF.jsx'
 export {default as PupUpSolicitudAsesoria } from './components/reusable/PopUpSolicitudAsesoria/PopUpSolicitudAsesoria.jsx'
+
+export {default as RegistroDirectivo } from './views/directivo/registroDirectivo/RegistroDirectivo.jsx'

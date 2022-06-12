@@ -5,12 +5,11 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { Template, ListaUsuarios, BotonSencillo, BotonConImagen } from '../../../routeIndex'
 
-import { FaCopy} from 'react-icons/fa'
+import { FaCopy, FaUserPlus } from 'react-icons/fa'
 
 const AdministrarUsuariosDirectivos = ({userRol}) => { /* En caso de ser asesorados se espera un tipo de usuario "asesorados", para mostrar unicamente el titulo de asesorados, cualquier otra palabra mostrara el titulo asesor y el boton de link para asesores */
 
     let navigate = useNavigate()
-    const routeChange = route => navigate(`/${route}`);
 
     const [dataUsuarios, setDataUsuarios] = useState([])
 
@@ -53,9 +52,24 @@ const AdministrarUsuariosDirectivos = ({userRol}) => { /* En caso de ser asesora
 
             </div> 
             
+            : userRol === 'directivo' ? 
+
+            <div className='btn_AdministrarUsuariosDirectivos'>
+                <h1> Administrar directivos </h1>
+                <div className='botonCopiarLinkRegistro'>
+                    <BotonConImagen 
+                    onClick={() => navigate('/registrarDirectivo')} 
+                    backgroundColor='grisClaro'
+                    size="largo" 
+                    Image={FaUserPlus} >
+                        <span className='textoDeBoton'>Registrar un nuevo directivo</span> 
+                    </BotonConImagen>
+                </div>
+            </div>
+
             :
 
-            <h1> Administrar {userRol === 'asesorado' ? "asesorados" : "directivos"} </h1>
+            <h1> Administrar asesorados </h1>
             
             }
  
@@ -65,7 +79,7 @@ const AdministrarUsuariosDirectivos = ({userRol}) => { /* En caso de ser asesora
 
             <div className = 'btnAtras'>
                 <BotonSencillo
-                    onClick = {() => routeChange("./administrar")}
+                    onClick = {() => navigate("/administrar")}
                     backgroundColor = 'turquesa'
                     size = 'normal'
                 >
