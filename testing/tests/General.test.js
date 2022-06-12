@@ -61,10 +61,54 @@ describe('GET / Nombre de unidad de formacion', () => {
     test('GET nombre de TC1028', async () => {
         const response = await request(URL)
             .get('/?id_uf=TC1028')
-        expect(200)
+        expect(response.statusCode).toBe(200)
         expect(Object.keys(response.body).length).toBe(1)
         expect(response.body.nombreUF).toBe('Pensamiento computacional para ingeniería');
     });
 
+
+});
+
+//http://20.225.209.57:3091/general/get_ufs_carreras/?carrera1=ITC&carrera2=IBT
+describe('GET / Unidades de formacion de carrera', () => {
+
+    beforeAll(() => {
+        URL += "get_ufs_carreras"
+    });
+
+    afterAll(() => {
+        URL = 'http://20.225.209.57:3091/general/'
+    });
+
+    //deberia ser 200?
+    test('GET sin parametros', async () => {
+            await request(URL)
+            .get('/')
+            .expect(200);
+    });
+
+    test('GET carrera1', async () => {
+        const response = await request(URL)
+            .get('/?carrera1=ITC')
+
+            expect(response.body[0].unidadesFormacion.length).toBeGreaterThan(0)
+            expect(response.statusCode).toBe(200)
+    });
+
+    test('GET carrera2', async () => {
+        const response = await request(URL)
+            .get('/?carrera2=IBT')
+
+            expect(response.body[0].unidadesFormacion.length).toBeGreaterThan(0)
+            expect(response.statusCode).toBe(200)
+    });
+
+    test('GET carrera1 y carrera2', async () => {
+        const response = await request(URL)
+            .get('/?carrera1=ITC&carrera2=IBT')
+
+            expect(response.body[0].unidadesFormacion.length).toBeGreaterThan(0)
+            expect(response.statusCode).toBe(200)
+    });
 
 });

@@ -89,7 +89,6 @@ describe.skip('GET / Asesorias de todos los usuarios', () => {
 });
 
 // http://20.225.209.57:3031/calendario/get_informacionAsesoria/?idUsuario=A94949494&hora=10&dia=1&mes=6&anio=2022
-
 describe('GET / Infromacion de asesoria de un usuario', () => {
 
     beforeAll(() => {

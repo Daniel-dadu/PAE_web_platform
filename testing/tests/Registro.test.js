@@ -109,7 +109,7 @@ describe('POST / Registrar nuevo asesorado', () => {
             .expect(500);
     });
 
-    test.skip('POST registrar nuevo usuario', async () => {
+    test.skip('POST registrar nuevo asesorado', async () => {
 
         const response = await request(URL)
             .post('/')
@@ -119,7 +119,60 @@ describe('POST / Registrar nuevo asesorado', () => {
         expect(response.statusCode).toBe(200);
     });
 
-    test('POST registrar el mismo usuario usuario', async () => {
+    test('POST registrar el mismo asesorado', async () => {
+        const response = await request(URL)
+            .post('/')
+            .set('Content-type', 'application/json')
+            .send(usuarioPrueba)
+
+        expect(response.statusCode).toBe(409);
+    });
+});
+
+//http://20.225.209.57:3090/registro/nuevo_asesor
+//Por hacer
+describe.skip('POST / Registrar nuevo asesor', () => {
+
+    const usuarioPrueba = {
+        matricula: 'A01734666',
+        contrasena: 'sudo',
+        nombre: 'El Fer',
+        apellidoPaterno: 'Dios',
+        apellidoMaterno: 'Del Server',
+        fotoPerfil: fotoB64,
+        telefono: '777',
+        carrera: 'ITC',
+        semestre: 6
+    }
+
+    beforeAll(() => {
+        URL += "nuevo_asesor"
+    });
+
+    afterAll(() => {
+        URL = 'http://20.225.209.57:3090/registro/'
+    });
+
+    test('POST sin parametros', async () => {
+        const data = {}
+        await request(URL)
+            .post('/')
+            .set('Content-type', 'application/json')
+            .send(data)
+            .expect(500);
+    });
+
+    test.skip('POST registrar nuevo asesor', async () => {
+
+        const response = await request(URL)
+            .post('/')
+            .set('Content-type', 'application/json')
+            .send(usuarioPrueba)
+
+        expect(response.statusCode).toBe(200);
+    });
+
+    test('POST registrar el mismo asesor', async () => {
         const response = await request(URL)
             .post('/')
             .set('Content-type', 'application/json')
