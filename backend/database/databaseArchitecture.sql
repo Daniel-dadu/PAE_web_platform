@@ -806,6 +806,182 @@ BEGIN
 END
 $$;
 
+-- Aceptación de asesoría
+CREATE OR REPLACE PROCEDURE aceptarAsesoria(
+  idAsesor VARCHAR(10),
+  nombreUF VARCHAR(100),
+  idAsesorado VARCHAR(10),
+  hora INTEGER,
+  dia INTEGER,
+  mes INTEGER,
+  anio INTEGER
+)
+LANGUAGE plpgsql AS
+$$
+
+DECLARE
+  idAsesoriaC INTEGER;
+  horarioreservado TIMESTAMP;
+  nombreasesorado VARCHAR(100);
+  idnuevanotificacion INTEGER;
+  idhorariodisponible INTEGER;
+  idnotificacionsolicitud INTEGER;
+
+BEGIN
+
+  -- Obtención del ID de la asesoría
+  SELECT "Asesoria"."idAsesoria"
+  FROM "Asesoria", "HorarioDisponible", "Usuario", "UnidadFormacion"
+  WHERE
+    "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+    AND "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+    AND "Asesoria"."idUF" = "UnidadFormacion"."idUF"
+    AND "Usuario"."idUsuario" = idAsesorado
+    AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = hora
+    AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = dia
+    AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mes
+    AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anio
+  INTO idAsesoriaC;
+
+  -- Actualización del ID del asesor
+  UPDATE "Asesoria" 
+  SET "idAsesor" = idAsesor 
+  WHERE "idAsesoria" = idAsesoriaC;
+
+  -- Actualización del ID del horario disponible, correspondiente al asesor
+  UPDATE "Asesoria" 
+  SET "idHorarioDisponible" = (
+    SELECT "idHorarioDisponible"
+    FROM "HorarioDisponible" 
+    WHERE "idHorarioDisponiblePeriodo" IN (
+      SELECT "idHorarioDisponiblePeriodo" 
+      FROM "HorarioDisponiblePeriodo" 
+      WHERE "idAsesor" = idAsesor
+    )
+    AND EXTRACT(YEAR FROM "fechaHora") = anio
+    AND EXTRACT(MONTH FROM "fechaHora") = mes
+    AND EXTRACT(DAY FROM "fechaHora") = dia
+    AND EXTRACT(HOUR FROM "fechaHora") = hora
+    AND "status" = 'bloqueada'
+  )
+  WHERE "idAsesoria" = idAsesoriaC;
+
+  -- Guardado del ID del horario disponible, correspondiente al asesor
+
+  SELECT "idHorarioDisponible"
+  FROM "HorarioDisponible" 
+  WHERE "idHorarioDisponiblePeriodo" IN (
+    SELECT "idHorarioDisponiblePeriodo" 
+    FROM "HorarioDisponiblePeriodo" 
+    WHERE "idAsesor" = idAsesor
+  )
+  AND EXTRACT(YEAR FROM "fechaHora") = anio
+  AND EXTRACT(MONTH FROM "fechaHora") = mes
+  AND EXTRACT(DAY FROM "fechaHora") = dia
+  AND EXTRACT(HOUR FROM "fechaHora") = hora
+  AND "status" = 'bloqueada'
+  INTO idhorariodisponible;
+  
+  -- Actualización del status de la asesoría
+  UPDATE "Asesoria" 
+  SET "status" = 'confirmada' 
+  WHERE "idAsesoria" = idAsesoriaC;
+
+  -- Actualización del status del horario disponible del asesor
+  UPDATE "HorarioDisponible" 
+  SET "status" = 'reservada' 
+  WHERE "idHorarioDisponiblePeriodo" IN (
+    SELECT "idHorarioDisponiblePeriodo" 
+    FROM "HorarioDisponiblePeriodo" 
+    WHERE "idAsesor" = idAsesor
+  )
+  AND EXTRACT(YEAR FROM "fechaHora") = anio
+  AND EXTRACT(MONTH FROM "fechaHora") = mes
+  AND EXTRACT(DAY FROM "fechaHora") = dia
+  AND EXTRACT(HOUR FROM "fechaHora") = hora
+  AND "status" = 'bloqueada';
+
+  -- Actualización del status de los horarios disponibles del resto de asesores (desbloqueo)
+  UPDATE "HorarioDisponible" 
+  SET "status" = 'disponible' 
+  WHERE "idHorarioDisponible" IN (
+    SELECT "idHorarioDisponible"
+    FROM "HorarioDisponible" 
+    WHERE "idHorarioDisponiblePeriodo" IN (
+      SELECT "idHorarioDisponiblePeriodo" 
+      FROM "HorarioDisponiblePeriodo" 
+      WHERE "idAsesor" IN (
+        SELECT "idUsuario" 
+        FROM "AsesorUnidadFormacion"
+        WHERE "AsesorUnidadFormacion"."idUF" = (
+          SELECT "idUF"
+          FROM "UnidadFormacion"
+          WHERE "nombreUF" = nombreUF
+        )
+        AND "idUsuario" != idAsesor
+      )
+    ) 
+    AND EXTRACT(YEAR FROM "fechaHora") = anio
+    AND EXTRACT(MONTH FROM "fechaHora") = mes
+    AND EXTRACT(DAY FROM "fechaHora") = dia
+    AND EXTRACT(HOUR FROM "fechaHora") = hora
+    AND "status" = 'bloqueada'
+  );
+
+  -- Creación de la notificación de la confirmación de la asesoría
+  SELECT "fechaHora" FROM "HorarioDisponible" WHERE "idHorarioDisponible" = idHorarioDisponible INTO horarioreservado;
+  SELECT CONCAT("nombreUsuario", ' ', "apellidoPaterno") FROM "Usuario" WHERE "idUsuario" = idAsesorado INTO nombreasesorado;
+  INSERT INTO "Notificacion" 
+    ("idNotificacion", "origen", "titulo", "fechaHora", "descripcion")
+  VALUES
+    (DEFAULT, 'Asesoria confirmada', 'Nueva confirmación de asesoria', horarioreservado, 
+    CONCAT('El alumno ', nombreasesorado, ' con matrícula ', idAsesorado, ' tiene confirmada una nueva asesoría.'))
+  RETURNING "idNotificacion" INTO idnuevanotificacion;
+
+  -- Relación de la notificación con el asesorado
+  INSERT INTO "NotificacionUsuario" 
+    ("idNotificacion", "idUsuario")
+  VALUES
+    (idnuevanotificacion, idAsesorado);
+
+  -- Relación de la notificación con el asesor
+  INSERT INTO "NotificacionUsuario" 
+    ("idNotificacion", "idUsuario")
+  VALUES
+    (idnuevanotificacion, idAsesor);
+
+  -- Relación de la notificación con todos los directivos
+  INSERT INTO "NotificacionUsuario" 
+    ("idNotificacion", "idUsuario")
+  SELECT notificacion.idnuevanotificacion, directivos."idUsuario"
+  FROM 
+    (SELECT idnuevanotificacion) notificacion, 
+    (SELECT "idUsuario" FROM "Usuario" WHERE "rol" = 'directivo') directivos;
+
+  -- Eliminación de la notificación de solicitud de asesoría (creada cuando se agendó la asesoría que se acaba de aceptar)
+
+  SELECT "Notificacion"."idNotificacion"
+  FROM "NotificacionUsuario", "Notificacion", "Usuario"
+  WHERE
+    "NotificacionUsuario"."idNotificacion" = "Notificacion"."idNotificacion"
+    AND "NotificacionUsuario"."idUsuario" = "Usuario"."idUsuario"
+    AND "Notificacion"."origen" = 'Asesoria reservada'
+    AND "NotificacionUsuario"."idUsuario" = idAsesorado
+    AND EXTRACT(HOUR FROM "Notificacion"."fechaHora") = hora
+    AND EXTRACT(DAY FROM "Notificacion"."fechaHora") = dia
+    AND EXTRACT(MONTH FROM "Notificacion"."fechaHora") = mes
+    AND EXTRACT(YEAR FROM "Notificacion"."fechaHora") = anio
+  INTO idnotificacionsolicitud;
+
+  DELETE FROM "NotificacionUsuario"
+  WHERE "NotificacionUsuario"."idNotificacion" = idnotificacionsolicitud;
+
+  DELETE FROM "Notificacion"
+  WHERE "idNotificacion" = idnotificacionsolicitud;
+  
+END
+$$;
+
 ------------ VIEWS -----------------
 
 -- Para consultar los usuarios sin mostrar su texto largo de fotoPerfil 
