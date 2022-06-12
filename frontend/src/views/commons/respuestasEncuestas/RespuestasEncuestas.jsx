@@ -4,22 +4,42 @@ import { useNavigate } from "react-router-dom";
 import Modal from '../../../components/reusable/PopUpInformacionAsesoria/Modal.js'
 import { Template, BotonSencillo, ListaDesplegable, PopUpEncuesta } from '../../../routeIndex'
 import { FaSearch } from "react-icons/fa";
-import usuariosJSON from './PruebaRespuestasEncuestas.json' // JSON de prueba
+
+import axios from 'axios'
 
 function RespuestasEncuestas({rolUser}){
 
     let navigate = useNavigate()
 
-    const [usersEncuestas, setUsersEncuestas] = useState(usuariosJSON)
+    const [originalUsersEncuestas, setOriginalUsersEncuestas] = useState([])
+    const [usersEncuestas, setUsersEncuestas] = useState([])
+
+    useEffect(() => {
+        const config = {
+            method: 'get',
+            url: `http://20.225.209.57:3096/encuesta/get_encuestas_respondidas/?rol=${rolUser}`,
+            headers: { }
+        }
+        
+        axios(config)
+        .then(response => {
+            setOriginalUsersEncuestas(response.data)
+            setUsersEncuestas(response.data)
+        })
+        .catch(error => {
+            alert(error)
+        })
+          
+    }, [rolUser, setOriginalUsersEncuestas, setUsersEncuestas])
 
     const [textoBusqueda, setTextoBusqueda] = useState('')
 
     useEffect(() => {
         setUsersEncuestas( 
-            textoBusqueda === '' ? usuariosJSON :
-            usuariosJSON.filter(usr => usr.matricula.startsWith(textoBusqueda) || usr.nombreUsuario.startsWith(textoBusqueda))
+            textoBusqueda === '' ? originalUsersEncuestas :
+            originalUsersEncuestas.filter(usr => usr.matricula.startsWith(textoBusqueda) || usr.nombreUsuario.startsWith(textoBusqueda))
         )
-    }, [textoBusqueda, setUsersEncuestas])
+    }, [textoBusqueda, originalUsersEncuestas, setUsersEncuestas])
 
     const [activoEncuesta, setActivoEncuesta] = useState(false)
     const cerrarEncuesta = () => setActivoEncuesta(!activoEncuesta)

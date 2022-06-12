@@ -169,21 +169,21 @@ const getEncuestasRespondidas = (request, response) => {
             let listaFinal = []
 
             const consulta2 = `
-            SELECT 
-                "idAsesoria", 
-                "idUF",
-                "fecha" AS "horaRespuestaEncuesta",
-                "fechaHora" AS "horaAsesoria",
-                CONCAT(${rolUser === 'asesor' ? '"idAsesorado"' : '"idAsesor"' }, ' fue el ${rolUser === 'asesor' ? 'asesorado' : 'asesor'}.') AS contenido
-            FROM 
-                "CalificacionEncuesta" 
-                INNER JOIN "Encuesta" USING("idEncuesta")
-                INNER JOIN "Asesoria" USING("idAsesoria")
-                INNER JOIN "HorarioDisponible" USING("idHorarioDisponible")
-            WHERE
-                "rol" = $1 AND
-                "estado" = 'realizada' AND
-                ${tipoId} = $2;
+                SELECT 
+                    "idAsesoria", 
+                    "idUF" AS "claveUF",
+                    "fecha" AS "horaRespuestaEncuesta",
+                    "fechaHora" AS "horaAsesoria",
+                    CONCAT(${rolUser === 'asesor' ? '"idAsesorado"' : '"idAsesor"' }, ' fue el ${rolUser === 'asesor' ? 'asesorado' : 'asesor'}.') AS contenido
+                FROM 
+                    "CalificacionEncuesta" 
+                    INNER JOIN "Encuesta" USING("idEncuesta")
+                    INNER JOIN "Asesoria" USING("idAsesoria")
+                    INNER JOIN "HorarioDisponible" USING("idHorarioDisponible")
+                WHERE
+                    "rol" = $1 AND
+                    "estado" = 'realizada' AND
+                    ${tipoId} = $2;
             `
 
             for (let encuestado of encuestados) {
@@ -199,7 +199,7 @@ const getEncuestasRespondidas = (request, response) => {
                     matricula: matriculaUser,
                     respuestasEncuestas: results2.rows.map(encuesta => ({
                         idAsesoria: encuesta.idAsesoria,
-                        idUF: encuesta.idUF,
+                        claveUF: encuesta.claveUF,
                         horaRespuestaEncuesta: formatDateSting(String(encuesta.horaRespuestaEncuesta)),
                         horaAsesoria: formatDateSting(String(encuesta.horaAsesoria)),
                         contenido: encuesta.contenido
