@@ -152,6 +152,8 @@ const PanelNotificaciones = () => { /* En caso de ser directivo se espera un tip
             data = {asesoriaJSON}
             activo = {activePopUp}
             accion = {togglePopUp}
+            accionCancelar = {() => {alert('1')}}
+            accionConfirmar = {() => {alert('2')}}
         >
         </PupUpSolicitudAsesoria>
         <Template view = "notificaciones">

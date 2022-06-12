@@ -43,7 +43,7 @@ const info = {
 }
 
 
-const PopUpSolicitudAsesoria = ({ data = info, activo, accion }) => {
+const PopUpSolicitudAsesoria = ({ data = info, activo, accion, accionCancelar, accionConfirmar }) => {
 
     /*
         DOCUMENTCION DEL COMPONENTE
@@ -150,8 +150,8 @@ const PopUpSolicitudAsesoria = ({ data = info, activo, accion }) => {
                         </div>
                     </div>
                     <div className='footer-PuSolicitudAsesoria'>
-                            <BotonSencillo  backgroundColor="rojo" size="reducido" children="cancelar asesoria" onClick={ accion }/>
-                            <BotonSencillo  backgroundColor="verde" size="reducido" children="confirmar asesoria" onClick={ accion }/>
+                            <BotonSencillo  backgroundColor="rojo" size="reducido" children="cancelar asesoria" onClick={ accionCancelar }/>
+                            <BotonSencillo  backgroundColor="verde" size="reducido" children="confirmar asesoria" onClick={ accionConfirmar }/>
 
                     </div>
                 </div>
