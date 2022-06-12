@@ -8,7 +8,12 @@ import { Template, ImagenAsesoria, BotonConImagen, imageCompressor, PopUpEncuest
 
 import { BiImageAdd } from 'react-icons/bi'
 
+import useScript from '../../../hooks/useScript.js';
+
 function DanielMaldonado() {
+
+  useScript('https://smtpjs.com/v3/smtp.js')
+
 
   const [images, setImages] = useState([]);
   const onChangeImages = (imageList) => {
@@ -73,11 +78,27 @@ function DanielMaldonado() {
   const cerrarEncuesta = () => setActivoEncuesta(!activoEncuesta)
   // ========== PARA ENCUESTA =========== //
 
+
+  // Prueba de correos:
+
+  const sendEmail = () => {
+    window.Email.send({
+        SecureToken : "d852b9c0-032f-44da-a2b3-6769984428b2",
+        To : 'dadu9494@gmail.com',
+        From : "paetecpuebla@gmail.com",
+        Subject : "Mira este super correo",
+        Body : "Yo creo que esto te gusta"
+    }).then(
+        message => alert(message)
+    ); 
+  }
+
   return (
     <div>
       <Template view="perfil">
 
         <button className='btn_show_encuesta_dadu' onClick={cerrarEncuesta} >MOSTRAR ENCUESTA DE PRUEBA</button>
+        <button className='btn_show_encuesta_dadu' onClick={sendEmail} >Mandar correo</button>
 
         <Modal active = {activoEncuesta} toggle = {cerrarEncuesta}>
           <PopUpEncuesta 
