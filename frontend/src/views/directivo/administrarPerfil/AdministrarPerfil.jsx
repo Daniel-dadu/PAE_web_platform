@@ -1,14 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './AdministrarPerfil.css'
 
-import { Template, InformacionPersonalUsuario, BotonSencillo } from '../../../routeIndex';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Template, InformacionPersonalUsuario, BotonSencillo, ListaUnidadesDeFormacionAsesor } from '../../../routeIndex'
+import { useNavigate, useParams } from 'react-router-dom'
+import axios from 'axios'
+
 
 function AdministrarPerfil() {
 
     const navigate = useNavigate()
 
-    const { rol, iduser } = useParams();
+    const { rol, iduser } = useParams()
+
+    const [UFsUser, setUFsUser] = useState([])
+
+    useEffect(() => {
+        if(rol === 'asesor') {
+            const config = {
+                method: 'get',
+                url: `http://20.225.209.57:3092/perfil/get_user_ufs/?matricula=${iduser}`,
+                headers: { }
+            };
+            
+            axios(config)
+            .then(response => {
+                setUFsUser(response.data)
+            })
+            .catch(error => {
+                alert(error)
+            })
+        }
+          
+    }, [rol, iduser, setUFsUser])
+
 
     return (
         <Template view='administrar'>
@@ -23,7 +47,14 @@ function AdministrarPerfil() {
                 <InformacionPersonalUsuario idUserParam={iduser} rolUserParam={rol} />
             </div>
 
-            <div className = 'btnAtras'>
+            {
+                rol === 'asesor' &&
+                <div className = 'containerListaUFsAsesorAdmin'>
+                    <ListaUnidadesDeFormacionAsesor data = {UFsUser} />
+                </div>
+            }
+
+            <div className = {rol === 'asesor' ? 'btnAtrasAsesorPosition' : 'btnAtras'}>
                 <BotonSencillo
                     onClick = {() => navigate(rol === 'asesor' ? "/administrarAsesores" : rol === 'asesorado' ? "/administrarAsesorados" : "/administrarDirectivos")}
                     backgroundColor = 'turquesa'
