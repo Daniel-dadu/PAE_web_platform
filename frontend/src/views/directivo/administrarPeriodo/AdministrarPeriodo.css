@@ -1,0 +1,28 @@
+.paragraph-instrucciones-periodo-admin {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.container-select-dates-periodo {
+    background-color: rgb(212, 212, 212);
+    width: fit-content;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.container-select-dates-periodo h3 {
+    margin-bottom: 1rem;
+}
+
+.container-select-dates-periodo .campos-desplegables {
+    width: fit-content;
+    margin: auto;
+}
+
+.container-select-dates-periodo .campos-desplegables p {
+    margin: .4rem 0;
+}

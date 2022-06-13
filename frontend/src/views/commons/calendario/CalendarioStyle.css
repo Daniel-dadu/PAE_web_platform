@@ -27,3 +27,34 @@
     bottom: 55%;
     width: fit-content;
 }
+
+
+@media screen and (max-width: 480px){ 
+
+    .container_titleCalendar{
+        padding-top: 0px;
+    }
+
+    .title_calendario {
+        margin: 0 0 2rem 5rem;
+        font-size: 1.3rem;
+        display: relative;
+
+    }
+
+    .mesAno_style {
+        position: relative;
+        left: 12.54%;
+        bottom:-20%;
+ 
+    }
+
+    .calendarioStyle .calendario {
+        margin-top: 10%;
+
+    
+    }
+
+
+    
+    }

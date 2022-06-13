@@ -1,3 +1,4 @@
+/* eslint no-eval: 0 */
 import React, { useState } from 'react'
 import { TarjetaListaDesplegable } from '../../../routeIndex';
 
@@ -18,7 +19,7 @@ const COLORES_TIPO_1 = [
 
 
 
-const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected } ) => {
+const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected, onClickTipo2, idEncuestado=null, getAsesorSelected, isSend, getGrupoSelected } ) => {
 
 
     /*
@@ -77,7 +78,15 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected 
 
     const selectUF = infoUF => {
         getUFSelected({ ...infoUF, semestre: semestre })
-    } 
+    }
+
+    const selectAsesor = matricula => {
+        getAsesorSelected(matricula)
+    }
+
+    const selectGrupo = grupo => {
+        getGrupoSelected(grupo)
+    }
 
   return (
     <>
@@ -161,13 +170,16 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected 
                             {
                                 arrContenido.map((cita, index) => (
                                     <TarjetaListaDesplegable 
-                                        tipo={ 3 } 
+                                        tipo={ 7 } 
                                         claveUF={ cita.claveUF } 
                                         colorTipo3={ cita.colorTipo3 } 
-                                        horaAsesoria={ cita.horaAsesoria } 
+                                        horaAsesoria={ (isSend) ? cita.horaAsesoria : cita.horaAsesoria + ":00 hrs."}
                                         contenido={ cita.contenido }
-                                        accion={ ()=>{ window.alert("Abrir PopUpInformacionAsesoria") } }
+                                        accion={ (idEncuestado) ? onClickTipo2 : eval(cita.openPanel) }
+                                        idEncuestado={ idEncuestado }
+                                        idAsesoria={ cita.idAsesoria }
                                         key={index}
+                                        getGrupoSelected={selectGrupo}
                                     />
                                 ))
                             }
@@ -196,6 +208,7 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected 
                                         matricula={asesor.matricula} 
                                         nombreAsesor={ asesor.nombre } 
                                         colorTipo1="blanco_tipo_1" 
+                                        getAsesorSelected={ selectAsesor }
                                         key={index}
                                     />
                                 ))

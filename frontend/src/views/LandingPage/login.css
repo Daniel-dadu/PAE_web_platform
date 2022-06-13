@@ -255,6 +255,9 @@
         height: 60%;
     }
 
-
+    .logged-btn-align {
+        width: 30vw;
+        height: 10vh;
+    }
 
  }

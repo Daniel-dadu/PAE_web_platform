@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { CalendarioMini } from '../../../routeIndex'
  
 
 function DanielMunive() {

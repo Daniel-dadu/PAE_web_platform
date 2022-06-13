@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from 'react'
-import { Template, CambioMesPeriodo, ComponenteCalendario, PopUpInformacionAsesoria, dateFunctions } from '../../../routeIndex'
+import { Template, CambioMesPeriodo, ComponenteCalendario, PopUpInformacionAsesoria, dateFunctions, PopUpEncuesta } from '../../../routeIndex'
 // import asesoriaJSON from './PruebaCommonCalendario.json'
 import './CalendarioStyle.css'
 import  Modal from '../../../components/reusable/PopUpInformacionAsesoria/Modal';
 import { useNavigate } from "react-router-dom"
 import axios from 'axios'
+
+var informacionAsesoria = {
+  "nombreUF": '',
+  "idAsesorado": '',
+  "hora": 0,
+  "dia": 0,
+  "mes": 0,
+  "anio": 0
+}
 
 // Importante: es necesario revisar cómo se va a manejar el tema e idioma de la BARRA LATERAL. Aquí está hardcodeado
 
@@ -30,7 +39,8 @@ function Calendario(){
       "anio": 0,
       "usuario": "",
       "duda": "",
-      "images": []
+      "images": [],
+      "status": ""
     }
   );
 
@@ -98,6 +108,16 @@ function Calendario(){
           // console.log(JSON.stringify(response.data));
           // console.log(JSON.stringify(response.data))
           setAsesoriaJSON(response.data);
+
+          informacionAsesoria["nombreUF"] = response.data.uF;
+          informacionAsesoria["idAsesorado"] = (localStorage.rolUsuario === 'asesor') ? response.data.usuario.substring(response.data.usuario.length-9, response.data.usuario.length) : localStorage.usuario;
+          informacionAsesoria["hora"] = response.data.hora;
+          informacionAsesoria["dia"] = response.data.dia;
+          informacionAsesoria["mes"] = response.data.mes;
+          informacionAsesoria["anio"] = response.data.anio;
+
+          // console.log(JSON.stringify(informacionAsesoria))
+          
       })
       .catch(function (error) {
           console.log(error);
@@ -113,7 +133,8 @@ function Calendario(){
           "anio": 0,
           "usuario": "",
           "duda": "",
-          "images": []
+          "images": [],
+          "status": ""
         }
       );
     }
@@ -167,6 +188,75 @@ function Calendario(){
 
   }
 
+  const cancelarAsesoria = () => {
+
+    const config = {
+        method: 'post',
+        url: 'http://20.225.209.57:3030/notificacion/cancelarAsesoria',
+        headers: { 
+            'Content-Type': 'application/json'
+        },
+        data: JSON.stringify({
+            "nombreUF": informacionAsesoria["nombreUF"],
+            "idAsesorado": informacionAsesoria["idAsesorado"],
+            "hora": informacionAsesoria["hora"],
+            "dia": informacionAsesoria["dia"],
+            "mes": informacionAsesoria["mes"],
+            "anio": informacionAsesoria["anio"]
+        })
+    }
+    
+    axios(config)
+    .then(response => {
+        
+        alert("Bien, " + response.data)
+
+        var config = {
+            method: 'get',
+            url: (localStorage.rolUsuario === "directivo") ? `http://20.225.209.57:3031/calendario/get_allAsesorias/?mes=${dateFunctions.monthsEnNumero[mesAnio.mes]+1}&anio=${mesAnio.anio}` : `http://20.225.209.57:3031/calendario/get_asesorias/?idUsuario=${localStorage.usuario}&mes=${dateFunctions.monthsEnNumero[mesAnio.mes]+1}&anio=${mesAnio.anio}`,
+            headers: {}
+        };
+        
+        axios(config)
+        .then(function (response) {
+            // console.log(JSON.stringify(response.data));
+            setCalendarioJSON(response.data);
+            // console.log(JSON.stringify(response.data))
+            setActive(!active)
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+    })
+    .catch(error => {
+        alert("Error: " + error.response.data)
+    });
+  }
+
+  // ========== PARA ENCUESTA =========== //
+  const [activoEncuesta, setActivoEncuesta] = useState(false)
+  const cerrarEncuesta = () => setActivoEncuesta(!activoEncuesta)
+  // ========== PARA ENCUESTA =========== //
+
+  const [idAsesoriaEncuesta, setIdAsesoriaEncuesta] = useState(0) 
+  useEffect(() => {
+    const config = {
+      method: 'get',
+      url: 'http://20.225.209.57:3096/encuesta/get_asesoria_encuesta',
+      headers: { }
+    };
+    
+    axios(config)
+    .then(function (response) {
+      setIdAsesoriaEncuesta(response.data.idAsesoria)
+      if(response.data) setActivoEncuesta(!activoEncuesta)
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }, [setIdAsesoriaEncuesta, setActivoEncuesta, activoEncuesta])
+
   return(
     <>
 
@@ -179,9 +269,18 @@ function Calendario(){
       </div>
 
       <Modal active={active} toggle={toggle}>
-        <PopUpInformacionAsesoria  userTypePopUpAsesoria = {(localStorage.rolUsuario === "directivo") ? localStorage.rolUsuario : 'alumno'} infoAsesoria = {asesoriaJSON} estado={toggle} /> 
+        <PopUpInformacionAsesoria  userTypePopUpAsesoria = {(localStorage.rolUsuario === "directivo") ? localStorage.rolUsuario : 'alumno'} infoAsesoria = {asesoriaJSON} estado={toggle} accionCancelar = {() => {cancelarAsesoria()}}/> 
       </Modal>
 
+      <Modal active = {activoEncuesta} toggle = {cerrarEncuesta}>
+        <PopUpEncuesta 
+          tipo={localStorage.rolUsuario === "asesorado" ? 1 : 2} 
+          rolUser={localStorage.rolUsuario}
+          idAsesoria={idAsesoriaEncuesta} 
+          activo={activoEncuesta} 
+          ocultarPopUp={cerrarEncuesta}
+        />
+      </Modal>
 
       <div className='calendarioStyle'> 
         <ComponenteCalendario

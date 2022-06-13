@@ -43,7 +43,11 @@ const TarjetaListaDesplegable = (
         nombreAsesor,
         accion,
         imagenUsuario,
-        getUFSelected
+        getUFSelected,
+        idEncuestado,
+        idAsesoria,
+        getAsesorSelected,
+        getGrupoSelected
     }) => {
 
     /* 
@@ -94,6 +98,16 @@ const TarjetaListaDesplegable = (
         setActivo(!activo);
     }
 
+    const selectAsesor = () => {
+        handleActivo();
+        getAsesorSelected(matricula);
+    }
+
+    const selectGrupo = (grupo) => {
+        handleActivo();
+        getGrupoSelected(grupo);
+    }
+
     const selectUF = () => {
         handleActivo()
         getUFSelected({claveUF, nombreUF})
@@ -106,7 +120,7 @@ const TarjetaListaDesplegable = (
   return (
 
     <>
-        <div className={ `contenedor-TarjetaListaDesplegable tipo${ tipo }` } > 
+        <div className={ `contenedor-TarjetaListaDesplegable tipo${ (tipo === 7) ? 3 : tipo }` } > 
             {
                 //dependiedo del tipo de tarjeta, se renderiza el HTMl correspondiente
                 tipo === 1 ?
@@ -141,12 +155,12 @@ const TarjetaListaDesplegable = (
                     ):
                     tipo === 3?
                     (
-                        <table className={`tabla-tipo-3 ${ BackgroundColor3 }`} onClick={ accion } > 
+                        <table className={`tabla-tipo-3 ${ BackgroundColor3 }`} onClick={ idAsesoria ? () => accion(idAsesoria, idEncuestado) : accion } > 
 
                             <tbody>
                                 <tr className='fila-general-TarjetaListaDesplegable'>
                                     <td className='hora-asesoria-tipo-3' > { horaAsesoria } </td>
-                                    <td className='contenido-tipo-3' > { contenido } </td>
+                                    <td className='contenido-tipo-3' > { contenido.toUpperCase() } </td>
                                     <td className='claveUF-tipo-3' > {claveUF} </td>
                                 </tr>
                             </tbody>
@@ -171,7 +185,7 @@ const TarjetaListaDesplegable = (
                         (
                             tipo === 5?
                             (
-                                <table className={`tabla-tipo-1 ${  !activo?  BackgroundColor1: "gris_tipo_1" }`} onClick={ handleActivo } > 
+                                <table className={`tabla-tipo-1 ${  !activo?  BackgroundColor1: "gris_tipo_1" }`} onClick={ selectAsesor } > 
 
                                     <tbody>
                                         <tr className='fila-general-TarjetaListaDesplegable'>
@@ -199,7 +213,23 @@ const TarjetaListaDesplegable = (
                                 </table>
                                 ):
                                 (
-                                    <h1>Hola</h1>
+                                    tipo === 7?
+                                    (
+                                        <table className={`tabla-tipo-3 ${ BackgroundColor3 }`} onClick={ () => {selectGrupo(contenido.toUpperCase())} } > 
+                
+                                            <tbody>
+                                                <tr className='fila-general-TarjetaListaDesplegable'>
+                                                    <td className='hora-asesoria-tipo-3' > { horaAsesoria } </td>
+                                                    <td className='contenido-tipo-3' > { contenido.toUpperCase() } </td>
+                                                    <td className='claveUF-tipo-3' > {claveUF} </td>
+                                                </tr>
+                                            </tbody>
+                
+                                        </table>
+                                    ):
+                                    (
+                                        <h1>Hola</h1>
+                                    )
                                 )
                             )
                         )

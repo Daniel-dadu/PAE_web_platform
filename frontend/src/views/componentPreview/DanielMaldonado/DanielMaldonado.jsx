@@ -4,11 +4,14 @@ import './DanielMaldonado.css'
 import axios from 'axios'
 import ImageUploading from "react-images-uploading";
 
-import { Template, ImagenAsesoria, BotonConImagen, imageCompressor } from '../../../routeIndex'
+import { Template, ImagenAsesoria, BotonConImagen, imageCompressor, PopUpEncuesta, Modal } from '../../../routeIndex'
 
 import { BiImageAdd } from 'react-icons/bi'
 
+import useScript from '../../../hooks/useScript.js';
+
 function DanielMaldonado() {
+
 
   const [images, setImages] = useState([]);
   const onChangeImages = (imageList) => {
@@ -39,10 +42,10 @@ function DanielMaldonado() {
     
     axios(config)
     .then(function (response) {
-      console.log(response.data);
+      console.log(response.data)
     })
     .catch(function (error) {
-      console.log(error);
+      console.log(error)
     });
   }
 
@@ -67,9 +70,45 @@ function DanielMaldonado() {
 
   const btnStyle = {fontSize: 20, cursor: 'pointer', padding: 5, borderRadius: 10, backgroundColor: 'grey', color: 'white'}
 
+
+  // ========== PARA ENCUESTA =========== //
+  const [activoEncuesta, setActivoEncuesta] = useState(false)
+  const cerrarEncuesta = () => setActivoEncuesta(!activoEncuesta)
+  // ========== PARA ENCUESTA =========== //
+
+
+  // Prueba de correos:
+
+  useScript('https://smtpjs.com/v3/smtp.js')
+
+  const sendEmail = () => {
+    window.Email.send({
+        SecureToken : "d852b9c0-032f-44da-a2b3-6769984428b2",
+        To : 'dadu9494@gmail.com',
+        From : "paetecpuebla@gmail.com",
+        Subject : "Prueba link",
+        Body : "Yo creo que esto te gusta, un link: https://www.youtube.com/"
+    }).then(
+        message => alert(message)
+    ); 
+  }
+
   return (
     <div>
       <Template view="perfil">
+
+        <button className='btn_show_encuesta_dadu' onClick={cerrarEncuesta} >MOSTRAR ENCUESTA DE PRUEBA</button>
+        <button className='btn_show_encuesta_dadu' onClick={sendEmail} >Mandar correo</button>
+
+        <Modal active = {activoEncuesta} toggle = {cerrarEncuesta}>
+          <PopUpEncuesta 
+            tipo={2} 
+            idAsesoria={93} // Esto debe obtenerse del número de la asesoría al que corresponde
+            activo={activoEncuesta} 
+            ocultarPopUp={cerrarEncuesta} 
+          />
+        </Modal>
+
         <h1>PRUEBA PARA SUBIR UNA IMAGEN EN BASE64 A LA BASE DE DATOS</h1>
         <h2>Esta prueba sube la imagen de perfil de un usuario, pero se debe indicar su matrícula en el campo de texto</h2>
 

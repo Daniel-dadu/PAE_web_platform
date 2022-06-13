@@ -10,7 +10,7 @@
 .numeroDia{
     position: absolute;
     font-size: 25px;
-    z-index: 100;
+    z-index: 50;
 }
 
 .btnDirectivo{
@@ -122,6 +122,12 @@
 
     .btnAsesoria > button{
         font-size: 3.7vw;
+    }
+
+    .btnDirectivo > center > button{
+
+        font-size: 4vw;
+
     }
 
 }
