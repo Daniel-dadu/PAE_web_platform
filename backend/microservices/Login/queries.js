@@ -55,13 +55,21 @@ const getHashUser = (request, response) => {
     })
 }
 
-module.exports = {
-    validateCredentials,
-    getHashUser
+const updateContrasena = (request, response) => {
+    const matricula = request.query.matricula
+    const contrasena = request.query.contrasena
+
+    const salt = encrypt.getSalt()
+    const password = encrypt.getPassword(contrasena, salt)
+
+    pool.query('UPDATE "Acceso" SET "password" = $2, "salt" = $3 WHERE "idUsuario" = $1' , [matricula, password, salt], error => {
+        if (error) response.status(400).send("Error: no se pudo actualizar la contraseña del usuario")
+        else response.status(200).send("La contraseña se actualizó correctamente")
+    })
 }
 
-/*
-passwords:
-1. ojito
-
-*/
+module.exports = {
+    validateCredentials,
+    getHashUser,
+    updateContrasena
+}
