@@ -12,8 +12,6 @@ import useScript from '../../../hooks/useScript.js';
 
 function DanielMaldonado() {
 
-  useScript('https://smtpjs.com/v3/smtp.js')
-
 
   const [images, setImages] = useState([]);
   const onChangeImages = (imageList) => {
@@ -44,10 +42,10 @@ function DanielMaldonado() {
     
     axios(config)
     .then(function (response) {
-      console.log(response.data);
+      console.log(response.data)
     })
     .catch(function (error) {
-      console.log(error);
+      console.log(error)
     });
   }
 
@@ -81,13 +79,15 @@ function DanielMaldonado() {
 
   // Prueba de correos:
 
+  useScript('https://smtpjs.com/v3/smtp.js')
+
   const sendEmail = () => {
     window.Email.send({
         SecureToken : "d852b9c0-032f-44da-a2b3-6769984428b2",
         To : 'dadu9494@gmail.com',
         From : "paetecpuebla@gmail.com",
-        Subject : "Mira este super correo",
-        Body : "Yo creo que esto te gusta"
+        Subject : "Prueba link",
+        Body : "Yo creo que esto te gusta, un link: https://www.youtube.com/"
     }).then(
         message => alert(message)
     ); 

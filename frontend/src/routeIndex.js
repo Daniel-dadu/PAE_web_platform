@@ -99,3 +99,6 @@ export {default as RegistroAsesorUF } from './views/asesor/registroAsesorUF/Regi
 export {default as PupUpSolicitudAsesoria } from './components/reusable/PopUpSolicitudAsesoria/PopUpSolicitudAsesoria.jsx'
 
 export {default as RegistroDirectivo } from './views/directivo/registroDirectivo/RegistroDirectivo.jsx'
+
+export {default as RecuperarPassword } from './views/LandingPage/recuperarPassword/RecuperarPassword.jsx'
+export {default as ReestrablecerPassword } from './views/LandingPage/reestrablecerPassword/ReestrablecerPassword.jsx'

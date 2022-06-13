@@ -18,15 +18,15 @@ const client = new SMTPClient({
 });
 
 // send the message and get a callback with an error or details of the message that was sent
-client.send(
-	{
-		text: 'i hope this works',
-		from: 'Pae <paetecpuebla@gmail.com>',
-		to: 'Dadu <dadu9494@gmail.com>',
-		cc: '',
-		subject: 'testing emailjs',
-	},
-	(err, message) => {
-		console.log(err || message);
-	}
-);
+// client.send(
+// 	{
+// 		text: 'i hope this works',
+// 		from: 'Pae <paetecpuebla@gmail.com>',
+// 		to: 'Dadu <dadu9494@gmail.com>',
+// 		cc: '',
+// 		subject: 'testing emailjs',
+// 	},
+// 	(err, message) => {
+// 		console.log(err || message);
+// 	}
+// );

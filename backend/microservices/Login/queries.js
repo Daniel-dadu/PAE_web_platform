@@ -19,7 +19,7 @@ const validateCredentials = (request, response) => {
     // Se hace la consulta de la contraseña y salt que tiene ese "userID"
     pool.query('SELECT "password", "salt" FROM "Acceso" WHERE "idUsuario" = $1',[userID], (error, res) => {
         if (error) {
-            throw error
+            response.status(400).send("Error: no se pudieron validar las credenciales del usuario") 
         } else if(!res.rows.length) {
             // En caso de que no se encuentre ningún usuario con ese userID (matrícula), se manda un mensaje de error
             response.status(404).json({"ERROR": "invalid userID"})
@@ -34,7 +34,7 @@ const validateCredentials = (request, response) => {
             // Se evalua que la contraseña corresponda a la del usuario
             if(password === userPassHashed) {
                 pool.query('SELECT * FROM update_ultima_conexion($1)', [userID], (error, res) => {
-                    if(error) throw error
+                    if(error) response.status(400).send("Error: no se pudieron validar las credenciales del usuario") 
                     // Se regresa el tipo de rol del usuario que se ingresó
                     else response.status(200).json(res.rows[0])
                 })
@@ -46,8 +46,18 @@ const validateCredentials = (request, response) => {
     })
 }
 
+const getHashUser = (request, response) => {
+    const matricula = request.query.matricula
+
+    pool.query(`SELECT "password" FROM "Acceso" WHERE "idUsuario" = $1`, [matricula], (error, result) => {
+        if (error || result.rows[0] === undefined) response.status(400).send("Error: no se pudo obtener el hash del usuario")
+        else response.status(200).send(result.rows[0].password)
+    })
+}
+
 module.exports = {
-    validateCredentials
+    validateCredentials,
+    getHashUser
 }
 
 /*

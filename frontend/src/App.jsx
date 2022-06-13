@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { RegistroAsesorUF, RespuestasEncuestas, AsesoriasExistentesDiaDirectivos, RegistroAsesorResumen, RegistroAsesorHorario, AdministrarUsuariosDirectivos, RegistroAsesoradoDatos, RegistroAsesorDatos, PanelNotificaciones, RegistroAsesoradoCondiciones, RegistroAsesoradoResumen, RegistroAsesorCondiciones, AdministrarUsuarios, TemporalHome, LandingPage, Calendario, PerfilAsesor, PerfilAsesorado, PerfilDirectivo, EditarPerfil, AgendarAsesoriaUF, AgendarAsesoriaDuda, AgendarAsesoriaCalendario, AgendarAsesoriaHora, AgendarAsesoriaResumen, DanielFlores, DanielMaldonado, DanielMunive, Ezequiel, Fernando, EnviarNotificacionDirectivos, AdministrarPerfil, RegistroDirectivo } from './routeIndex'
+import { RegistroAsesorUF, RespuestasEncuestas, AsesoriasExistentesDiaDirectivos, RegistroAsesorResumen, RegistroAsesorHorario, AdministrarUsuariosDirectivos, RegistroAsesoradoDatos, RegistroAsesorDatos, PanelNotificaciones, RegistroAsesoradoCondiciones, RegistroAsesoradoResumen, RegistroAsesorCondiciones, AdministrarUsuarios, TemporalHome, LandingPage, Calendario, PerfilAsesor, PerfilAsesorado, PerfilDirectivo, EditarPerfil, AgendarAsesoriaUF, AgendarAsesoriaDuda, AgendarAsesoriaCalendario, AgendarAsesoriaHora, AgendarAsesoriaResumen, DanielFlores, DanielMaldonado, DanielMunive, Ezequiel, Fernando, EnviarNotificacionDirectivos, AdministrarPerfil, RegistroDirectivo, RecuperarPassword, ReestrablecerPassword } from './routeIndex'
 
 const App = () => {
   return (
@@ -14,6 +14,9 @@ const App = () => {
         <Route path='/perfilDirectivo' element={<PerfilDirectivo/>} />
         <Route path='/editarPerfil' element={<EditarPerfil/>} />
         <Route path='/notificaciones' element={<PanelNotificaciones/>} />
+
+        <Route path='/recuperarContrasena' element={<RecuperarPassword/>} />
+        <Route path='/reestablecerContrasena/:matricula/:hash' element={<ReestrablecerPassword/>} />
 
         {/* Views de Agendar Asesoría (asesorado) */}
         <Route path='/agendarAsesoriaUF/:statusasesoriaurl' element={<AgendarAsesoriaUF/>} />
