@@ -37,7 +37,7 @@ app.use(
 
 app.get('/administracion/get_users_by_rol', db.getUsersByRol)
 
-
+app.post('/administracion/set_new_periodos', db.setNewPeriodos)
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)

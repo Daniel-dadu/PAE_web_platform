@@ -3,9 +3,10 @@
 }
 
 .btnAtras{
-    position: absolute;
+    /* position: absolute;
     left: 30px;
-    bottom: 30px;
+    bottom: 30px; */
+    padding-top: 1rem;
 }
 
 .btn_AdministrarUsuariosDirectivos{
@@ -34,3 +35,13 @@
     margin: auto;
 }
 
+.span-link-copiado-asesores {
+    position: absolute;
+    right: 0;
+    transform: translate(-10rem, 5rem);
+    z-index: 100;
+    height: 3rem;
+    background-color: rgb(226, 226, 226);
+    padding: 1rem;
+    border-radius: 1rem;
+}

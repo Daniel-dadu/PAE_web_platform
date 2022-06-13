@@ -64,6 +64,9 @@ app.post('/registro/nuevo_asesorado', db.nuevo_asesorado)
 app.post('/registro/nuevo_asesor', db.nuevo_asesor)
 
 
+app.post('/registro/nuevo_directivo', db.nuevo_directivo)
+
+
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
 })

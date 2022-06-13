@@ -68,9 +68,35 @@ const deleteUser = (request, response) => {
     })
 }
 
+const getUserUFs = (request, response) => {
+    const matricula = request.query.matricula
+
+    const consulta = `
+    SELECT 
+        "idUF" AS "claveUF", 
+        "nombreUF", 
+        "semestre" 
+    FROM 
+        "AsesorUnidadFormacion" NATURAL JOIN "UnidadFormacion" 
+    WHERE 
+        "idUsuario" = $1 
+    ORDER BY 
+        "semestre"
+    `
+    
+    pool.query(consulta, [matricula], (error, results) => {
+        if(error) {
+            response.status(400).send("Error: no se pudo obtener las UFs de ese usuario")
+        } else {
+            response.status(200).json(results.rows)
+        }
+    })
+}
+
 module.exports = {
     getInfoUser,
     updateInfoUser,
     getFotoUser,
-    deleteUser
+    deleteUser,
+    getUserUFs
 }

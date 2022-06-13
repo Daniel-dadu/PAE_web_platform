@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import './PreguntaAbiertaEncuesta.css'
 import {  CampoTextoGrande } from '../../../routeIndex'
@@ -12,15 +12,25 @@ preguntaAbierta={'Aqui pon la pregunta que quieras'}>
 
 </PreguntaAbiertaEncuesta> */}
 
-function PreguntaAbiertaEncuesta({preguntaAbierta, indexPregunta=1, respuesta=''}) {
-  return (
-    <div className='contenedorPreguntaAbiertaEncuesta'>
-        <div className='textoPreguntaAbiertaEncuesta'> {preguntaAbierta} </div>
+function PreguntaAbiertaEncuesta({preguntaAbierta, idPregunta, getRespuesta, respuesta=''}) {
 
-        <div> <CampoTextoGrande defaultText={ respuesta } >  </CampoTextoGrande></div>
+    const [respuestaUser, setRespuestaUser] = useState(respuesta)
 
-    </div>
-  )
+    const handleRespuesta = res => {
+        if(respuesta === '') {
+            setRespuestaUser(res)
+            getRespuesta(res, idPregunta)
+        }
+    }
+
+    return (
+        <div className='contenedorPreguntaAbiertaEncuesta'>
+            <div className='textoPreguntaAbiertaEncuesta'> {preguntaAbierta} </div>
+            <div> 
+                <CampoTextoGrande parentCallback={handleRespuesta} defaultText={respuestaUser}/> 
+            </div>
+        </div>
+    )
 }
 
 export default PreguntaAbiertaEncuesta

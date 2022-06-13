@@ -39,7 +39,7 @@
     font-family: 'Dosis', sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    color: #ADADAD;
+    color: #000000;
     background: #E6E6E6;
     border-radius: 6px;
 }
@@ -122,9 +122,16 @@
     margin-left: 3px;
 }
 
+#Texto_on_hover {
+    display: none;
+    position: absolute;
+    transform: translateX(90%);
+    color: white;
+    background-color: #6b6b6b;
+    border-radius: 1rem;
+    padding: .5rem;
+}
 
-
-
-
-
-
+#barraBusqueda-ListaUsuarios:hover~#Texto_on_hover {
+    display: inline;
+} 

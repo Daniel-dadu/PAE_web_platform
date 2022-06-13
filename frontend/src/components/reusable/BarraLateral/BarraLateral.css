@@ -85,6 +85,9 @@
     color: #FFF;
 }
 
+.barra_button_ajustes {
+    display: none;
+}
 /* Footer */
 
 .footer-container {
@@ -107,3 +110,201 @@
     width: 50px;
     margin: 0.5rem;
 }
+
+.footer-container-general-responsive {
+    display: none;
+}
+
+/* responsive  */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    /* Logo PAE */
+
+    .pae_logo-container {
+        width: 20%;
+        margin: 0 auto;
+        margin-top: 7px;
+        margin-left: 10px;
+        background-color: white;
+        height: 9%;
+        border-radius: 20px;
+        box-shadow: var(--box-shadow);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+    }
+
+    .pae_logo-container img {
+        margin: auto;
+        width: 60%;
+        height: auto;
+    }
+
+    .barra_lateral-container {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row; 
+        position: relative;
+        bottom: 1%;
+        /* position: absolute;
+        top: calc(100% - 12%); */
+    }
+    .barra-container {
+        width: 96%;
+        height: 100%;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-top: 0%;
+        padding-bottom: 1%;
+        
+    }
+
+    
+    .barra_button_ajustes {
+        width: auto; 
+        padding: 0px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    
+    .barra_button-selected {
+        background-color: #1f3741;
+        border-radius: 0px 0px 20px 20px;
+    }
+    
+    .footer-container {
+        width: 10%;
+        margin: 0 auto;
+        border-radius: 20px 20px 0px 0px;
+        box-shadow: var(--box-shadow);
+        text-align: center;
+        justify-content: center;
+        display: none;
+    }
+
+    .icon_bar {
+        color: #000;
+        vertical-align: top;
+        width: auto;
+        height: 40px !important;
+    }
+    
+    .btn-text {
+        display: none;
+    }
+    
+    
+    .profile-img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 100%;
+        border: 2px solid #000;
+        background-color: white;
+        object-fit: cover;
+    }
+    
+    .selected_icon {
+        border-color: #FFF;
+        color: #FFF;
+    }
+    
+    .barra_button:hover {
+        background-color: #2c4c5a;
+        border-radius: 0 0 20px 20px;
+    }
+    
+    .barra_button:hover img {
+        border-color: #FFF;
+    }
+    
+    .barra_button:hover .icon_bar, .barra_button:hover .btn-text {
+        color: #FFF;
+    }
+    
+    
+    
+    .barra_button {
+        width: auto; 
+        height: 100% !important;
+        padding: 0px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Footer */
+
+  .footer-container-general-responsive {
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+      opacity: 10;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      right: -100%;
+      transition: all .1s ease-in-out;
+    }
+
+    .show-setting {
+        right: 0%;
+    }
+
+    .footer-container-general-responsive .footer-container-responsive {
+        width: 20%;
+        height: 20%;
+        margin: 0;
+        border-radius: 20px 0 0 20px;
+        box-shadow: var(--box-shadow);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        flex-direction: column;
+        position: relative;
+        bottom: 12%;
+    }
+
+    .footer-container-responsive .theme-icon {
+        color: #fff;
+        background-color: #565656;
+        border-radius: 10px;
+        margin: 0.5rem;
+    }
+    
+    .footer-container-responsive img {
+        width: 50px;
+        margin: 0.5rem;
+    }
+
+    
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    .container_templatee {
+        flex-direction: column-reverse;
+    }
+}
+
+
+

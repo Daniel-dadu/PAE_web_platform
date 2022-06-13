@@ -52,6 +52,10 @@ Se regresa un JSON con las siguientes respuestas:
 app.put('/login/validate/', db.validateCredentials)
 
 
+app.get('/login/get_hash_user', db.getHashUser)
+
+app.put('/login/update_contrasena', db.updateContrasena)
+
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
 })

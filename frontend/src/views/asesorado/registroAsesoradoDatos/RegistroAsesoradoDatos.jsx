@@ -96,6 +96,7 @@ function RegistroAsesoradoDatos() {
     const [imageUploaded, setImageUploaded] = useState(imagenUser ? imagenUser : null)
     const onHandleUploadImage = image => setImageUploaded(image)
 
+
     return (
         <TemplateRegistroUsuario 
         progressBarJSON = {progressBar}
