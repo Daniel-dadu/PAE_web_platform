@@ -62,7 +62,7 @@ const DiaCalendario = ({
                                             >
                                                 {
                                                     (asesorias['asesorias'][index]['status'] === 'confirmada')
-                                                        ? asesorias['asesorias'][index]['hora']
+                                                        ? asesorias['asesorias'][index]['hora'] + ':00 hrs.'
                                                         : asesorias['asesorias'][index]['status']
                                                 }
                                             </BotonSencillo>

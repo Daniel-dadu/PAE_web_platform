@@ -45,7 +45,8 @@ const TarjetaListaDesplegable = (
         imagenUsuario,
         getUFSelected,
         idEncuestado,
-        idAsesoria
+        idAsesoria,
+        getAsesorSelected
     }) => {
 
     /* 
@@ -94,6 +95,11 @@ const TarjetaListaDesplegable = (
     
     const handleActivo = () => {
         setActivo(!activo);
+    }
+
+    const selectAsesor = () => {
+        handleActivo();
+        getAsesorSelected(matricula);
     }
 
     const selectUF = () => {
@@ -148,7 +154,7 @@ const TarjetaListaDesplegable = (
                             <tbody>
                                 <tr className='fila-general-TarjetaListaDesplegable'>
                                     <td className='hora-asesoria-tipo-3' > { horaAsesoria } </td>
-                                    <td className='contenido-tipo-3' > { contenido } </td>
+                                    <td className='contenido-tipo-3' > { contenido.toUpperCase() } </td>
                                     <td className='claveUF-tipo-3' > {claveUF} </td>
                                 </tr>
                             </tbody>
@@ -173,7 +179,7 @@ const TarjetaListaDesplegable = (
                         (
                             tipo === 5?
                             (
-                                <table className={`tabla-tipo-1 ${  !activo?  BackgroundColor1: "gris_tipo_1" }`} onClick={ handleActivo } > 
+                                <table className={`tabla-tipo-1 ${  !activo?  BackgroundColor1: "gris_tipo_1" }`} onClick={ selectAsesor } > 
 
                                     <tbody>
                                         <tr className='fila-general-TarjetaListaDesplegable'>

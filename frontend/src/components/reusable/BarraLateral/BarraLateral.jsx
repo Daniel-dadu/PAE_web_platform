@@ -143,7 +143,7 @@ function BarraLateral({viewProp}) {
                             let perfilSelected = viewProp === "perfil"
                             return <div className={'barra_button' + (perfilSelected ? ' barra_button-selected' : '') } style={{height: heightBtn}} key={index}>
                                 <a href={ localStorage.rolUsuario === "asesor" ? "/perfilAsesor" : localStorage.rolUsuario === "asesorado" ? "/perfilAsesorado" : "/perfilDirectivo" }>
-                                    <img src={ noUserImg} alt="Perfil" className={'profile-img' + (perfilSelected ? ' selected_icon' : '')} />
+                                    <img src={localStorage.fotoUsuario !== "null" ? localStorage.fotoUsuario : noUserImg} alt="Perfil" className={'profile-img' + (perfilSelected ? ' selected_icon' : '')} />
                                     <p className={'btn-text' + (perfilSelected ? ' selected_icon' : '')}>{btn.text}</p>
                                 </a>
                                 </div>

@@ -52,7 +52,7 @@ const App = () => {
         <Route path='/AdministrarPeriodo' element={<AdministrarPeriodo />} />
         <Route path='/registrarDirectivo' element={<RegistroDirectivo />} />
         <Route path='/administrarPerfil/:rol/:iduser' element={<AdministrarPerfil/>} />
-        <Route path='/asesoriasExistentesDiaDirectivos' element={<AsesoriasExistentesDiaDirectivos/>} />
+        <Route path='/asesoriasExistentesDiaDirectivos/:dia/:mes/:anio' element={<AsesoriasExistentesDiaDirectivos/>} />
         <Route path='/respuestasEncuestasAsesores' element={<RespuestasEncuestas rolUser='asesor' />} />
         <Route path='/respuestasEncuestasAsesorados' element={<RespuestasEncuestas rolUser='asesorado' />} />
         <Route path='/EnviarNotificacionDirectivos' element={<EnviarNotificacionDirectivos/>} />
