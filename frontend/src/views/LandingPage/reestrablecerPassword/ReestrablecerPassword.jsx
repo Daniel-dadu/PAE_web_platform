@@ -32,7 +32,6 @@ const ReestrablecerPassword = () => {
             navigate('/landingPage')
         })
 
-
     }, [matricula, hash, navigate])
 
     const [contrasena, setContrasena] = useState('')
