@@ -19,7 +19,7 @@ const COLORES_TIPO_1 = [
 
 
 
-const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected, onClickTipo2, idEncuestado=null, getAsesorSelected } ) => {
+const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected, onClickTipo2, idEncuestado=null, getAsesorSelected, isSend, getGrupoSelected } ) => {
 
 
     /*
@@ -82,6 +82,10 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected,
 
     const selectAsesor = matricula => {
         getAsesorSelected(matricula)
+    }
+
+    const selectGrupo = grupo => {
+        getGrupoSelected(grupo)
     }
 
   return (
@@ -166,15 +170,16 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected,
                             {
                                 arrContenido.map((cita, index) => (
                                     <TarjetaListaDesplegable 
-                                        tipo={ 3 } 
+                                        tipo={ 7 } 
                                         claveUF={ cita.claveUF } 
                                         colorTipo3={ cita.colorTipo3 } 
-                                        horaAsesoria={ cita.horaAsesoria + ":00 hrs."}
+                                        horaAsesoria={ (isSend) ? cita.horaAsesoria : cita.horaAsesoria + ":00 hrs."}
                                         contenido={ cita.contenido }
                                         accion={ (idEncuestado) ? onClickTipo2 : eval(cita.openPanel) }
                                         idEncuestado={ idEncuestado }
                                         idAsesoria={ cita.idAsesoria }
                                         key={index}
+                                        getGrupoSelected={selectGrupo}
                                     />
                                 ))
                             }
