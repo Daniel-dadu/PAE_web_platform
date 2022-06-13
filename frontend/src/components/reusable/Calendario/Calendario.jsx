@@ -105,7 +105,7 @@ const Calendario = ({
                                 <DiaCalendario
                                     isActive = {(diasCalendario.hasOwnProperty(dayNumber.toString())) ? 1 : 0}
                                     userType = {userTypeCalendario}
-                                    onClickDirectivo = {(localStorage.rolUsuario === 'directivo') ? () => {navigate('/asesoriasExistentesDiaDirectivos')} : {}}
+                                    onClickDirectivo = {(localStorage.rolUsuario === 'directivo') ? () => {navigate(`/asesoriasExistentesDiaDirectivos/${dayNumber}/${dateFunctions.monthsEnNumero[mes]+1}/${anio}`)} : {}}
                                     asesorias = {(diasCalendario.hasOwnProperty(dayNumber.toString())) ? diasCalendario[dayNumber.toString()] : {}}
                                     numeroDia = {dayNumber}
                                     size = {CalendarioSize}
@@ -127,7 +127,7 @@ const Calendario = ({
                                 <DiaCalendario
                                     isActive = {(diasCalendario.hasOwnProperty(dayNumber.toString())) ? 1 : 0}
                                     userType = {userTypeCalendario}
-                                    onClickDirectivo = {(localStorage.rolUsuario === 'directivo') ? () => {navigate('/asesoriasExistentesDiaDirectivos')} : {}}
+                                    onClickDirectivo = {(localStorage.rolUsuario === 'directivo') ? () => {navigate(`/asesoriasExistentesDiaDirectivos/${dayNumber}/${dateFunctions.monthsEnNumero[mes]+1}/${anio}`)} : {}}
                                     asesorias = {(diasCalendario.hasOwnProperty(dayNumber.toString())) ? diasCalendario[dayNumber.toString()] : {}}
                                     numeroDia = {dayNumber}
                                     size = {CalendarioSize}
@@ -149,7 +149,7 @@ const Calendario = ({
                                 <DiaCalendario
                                     isActive = {(diasCalendario.hasOwnProperty(dayNumber.toString())) ? 1 : 0}
                                     userType = {userTypeCalendario}
-                                    onClickDirectivo = {(localStorage.rolUsuario === 'directivo') ? () => {navigate('/asesoriasExistentesDiaDirectivos')} : {}}
+                                    onClickDirectivo = {(localStorage.rolUsuario === 'directivo') ? () => {navigate(`/asesoriasExistentesDiaDirectivos/${dayNumber}/${dateFunctions.monthsEnNumero[mes]+1}/${anio}`)} : {}}
                                     asesorias = {(diasCalendario.hasOwnProperty(dayNumber.toString())) ? diasCalendario[dayNumber.toString()] : {}}
                                     numeroDia = {dayNumber}
                                     size = {CalendarioSize}
@@ -171,7 +171,7 @@ const Calendario = ({
                                 <DiaCalendario
                                     isActive = {(diasCalendario.hasOwnProperty(dayNumber.toString())) ? 1 : 0}
                                     userType = {userTypeCalendario}
-                                    onClickDirectivo = {(localStorage.rolUsuario === 'directivo') ? () => {navigate('/asesoriasExistentesDiaDirectivos')} : {}}
+                                    onClickDirectivo = {(localStorage.rolUsuario === 'directivo') ? () => {navigate(`/asesoriasExistentesDiaDirectivos/${dayNumber}/${dateFunctions.monthsEnNumero[mes]+1}/${anio}`)} : {}}
                                     asesorias = {(diasCalendario.hasOwnProperty(dayNumber.toString())) ? diasCalendario[dayNumber.toString()] : {}}
                                     numeroDia = {dayNumber}
                                     size = {CalendarioSize}
@@ -193,7 +193,7 @@ const Calendario = ({
                                 <DiaCalendario
                                     isActive = {(diasCalendario.hasOwnProperty(dayNumber.toString())) ? 1 : 0}
                                     userType = {userTypeCalendario}
-                                    onClickDirectivo = {(localStorage.rolUsuario === 'directivo') ? () => {navigate('/asesoriasExistentesDiaDirectivos')} : {}}
+                                    onClickDirectivo = {(localStorage.rolUsuario === 'directivo') ? () => {navigate(`/asesoriasExistentesDiaDirectivos/${dayNumber}/${dateFunctions.monthsEnNumero[mes]+1}/${anio}`)} : {}}
                                     asesorias = {(diasCalendario.hasOwnProperty(dayNumber.toString())) ? diasCalendario[dayNumber.toString()] : {}}
                                     numeroDia = {dayNumber}
                                     size = {CalendarioSize}
