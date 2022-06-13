@@ -24,6 +24,19 @@ const getUsersByRol = (request, response) => {
     })
 }
 
+const setNewPeriodos = (request, response) => {
+    const periodo1 = request.body.periodo1
+    const periodo2 = request.body.periodo2
+    const periodo3 = request.body.periodo3
+
+    const params = [periodo1.inicio, periodo1.fin, periodo2.inicio, periodo2.fin, periodo3.inicio, periodo3.fin]
+    pool.query(`CALL update_periodos($1,$2,$3,$4,$5,$6)`, params, error => {
+        if(error) response.status(400).send("Error: No se pudieron insertar los periodos")
+        else response.status(200).send("Se han registrado las nuevas fechas de los periodos correctamente")
+    })
+}
+
 module.exports = {
-    getUsersByRol
+    getUsersByRol,
+    setNewPeriodos
 }

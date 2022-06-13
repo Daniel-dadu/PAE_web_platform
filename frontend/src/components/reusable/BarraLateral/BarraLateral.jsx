@@ -189,9 +189,9 @@ function BarraLateral({viewProp}) {
                
                 (
                     <div className={'barra_button_ajustes  '}  style={{height: "40"}}>
-                        <a onClick={ handleConfigButton }>
+                        <button href='' onClick={ handleConfigButton } style={{cursor: 'pointer', backgroundColor: 'transparent'}}>
                             <MdOutlineSettings className={'icon_bar'} size={barIconSize}/>
-                        </a>
+                        </button>
                     </div>
                 )
                 }

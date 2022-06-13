@@ -127,7 +127,7 @@ const Login = () => {
                             <p>Contraseña</p>
                             <input type="password" id="inputPassword5" className="form-control" aria-describedby="passwordHelpBlock" onChange={({ target }) => setContrasena(target.value)}/>
                             <div className='contenedor-olv-contra'>
-                                <a href='./RecuperarPassword'> ¿Olvidaste tu constraseña? </a>
+                                <a href='./recuperarContrasena'> ¿Olvidaste tu constraseña? </a>
                             </div>
                         </div>
 
@@ -139,7 +139,6 @@ const Login = () => {
                     </form>
                     }
 
-        <a href="/registroAsesorDatos" style={{width:200, height:60, backgroundColor:'grey', color: 'white', borderRadius: '20px', margin: 'auto', display: 'block', cursor: 'pointer', fontSize: '1.5rem', marginTop: '1rem', textAlign: 'center', paddingTop: '1rem', position: 'absolute', bottom: 40 }}>Registro Asesor</a>
             </div>
 
         </section>

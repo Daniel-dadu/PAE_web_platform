@@ -9,7 +9,6 @@
     justify-content: center;
     width: 100%;
     margin: auto;
-    height: relative;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
@@ -19,7 +18,7 @@
     margin: auto;
 }
 
-.foto_subida_usuario {
+.container_image_selected .foto_subida_usuario {
     height: 12rem;
     width: 12rem;
     border: solid;
@@ -28,9 +27,30 @@
     object-fit: cover;
 }
 
+.container_image_selected .foto_evidencia_encuesta {
+    max-height: 12rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+}
+
 .btn_delete_userImg {
     position: absolute;
     right: 0%;
     background-color: transparent;
     cursor: pointer;
+}
+
+.btn_delete_evidenciaImg {
+    position: absolute;
+    transform: translate(-1rem, -1rem);
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.btn_delete_evidenciaImg svg {
+    border: 0.5px solid black;
+    background-color: black;
+    border-radius: 100%;
+    color: white;
 }
