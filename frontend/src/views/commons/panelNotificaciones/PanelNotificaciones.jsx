@@ -183,7 +183,7 @@ const PanelNotificaciones = () => { /* En caso de ser directivo se espera un tip
 
         informacionAsesoria["idAsesor"] = idAsesor;
         informacionAsesoria["lugar"] = lugarAsesoria;
-        console.log(JSON.stringify(informacionAsesoria))
+        // console.log(JSON.stringify(informacionAsesoria))
 
         const config = {
             method: 'post',
@@ -245,13 +245,73 @@ const PanelNotificaciones = () => { /* En caso de ser directivo se espera un tip
         });
     }
 
+    const cancelarAsesoria = () => {
+
+        const config = {
+            method: 'post',
+            url: 'http://20.225.209.57:3030/notificacion/cancelarAsesoria',
+            headers: { 
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify({
+                "nombreUF": informacionAsesoria["nombreUF"],
+                "idAsesorado": informacionAsesoria["idAsesorado"],
+                "hora": informacionAsesoria["hora"],
+                "dia": informacionAsesoria["dia"],
+                "mes": informacionAsesoria["mes"],
+                "anio": informacionAsesoria["anio"]
+            })
+        }
+        
+        axios(config)
+        .then(response => {
+            
+            alert("Bien, " + response.data)
+
+            var config = {
+                method: 'get',
+                url: `http://20.225.209.57:3030/notificacion/get_notificaciones/?idUsuario=${localStorage.usuario}`,
+                headers: {}
+            };
+            
+            axios(config)
+            .then(function (response) {
+                // console.log(JSON.stringify(response.data));
+                setNotificacionesJSON(response.data);
+                // console.log(JSON.stringify(notificacionesJSON))
+                setActivePopUp(!activePopUp)
+
+                informacionAsesoria = {
+                    "idAsesor": '',
+                    "nombreUF": '',
+                    "idAsesorado": '',
+                    "hora": 0,
+                    "dia": 0,
+                    "mes": 0,
+                    "anio": 0,
+                    "lugar": ''
+                }
+
+                // console.log(JSON.stringify(informacionAsesoria))
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+        })
+        .catch(error => {
+            alert("Error: " + error.response.data)
+        });
+    }
+
     return(
         <>
         <PupUpSolicitudAsesoria
             data = {asesoriaJSON}
             activo = {activePopUp}
             accion = {togglePopUp}
-            accionCancelar = {() => {alert('1')}}
+            accionCancelar = {() => {cancelarAsesoria()}}
             accionConfirmar = {aceptarAsesoria}
         >
         </PupUpSolicitudAsesoria>

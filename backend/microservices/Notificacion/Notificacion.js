@@ -54,11 +54,26 @@ app.get('/notificacion/get_asesoresDisponibles/', db.get_asesoresDisponibles)
     "hora": 18,
     "dia": 16,
     "mes": 6,
-    "anio": 2022
+    "anio": 2022,
+    "lugar": "Algún lugar del mundo"
 }
 */
 // http://20.225.209.57:3030/notificacion/aceptarAsesoria
 app.post('/notificacion/aceptarAsesoria/', db.aceptarAsesoria)
+
+// Cancelar una asesoría recibiendo lo siguiente:
+/****** Ejemplo del JSON body: ******
+{
+    "nombreUF": "Desarrollo de software",
+    "idAsesorado": "A01234599",
+    "hora": 18,
+    "dia": 16,
+    "mes": 6,
+    "anio": 2022
+}
+*/
+// http://20.225.209.57:3030/notificacion/cancelarAsesoria
+app.post('/notificacion/cancelarAsesoria/', db.cancelarAsesoria)
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)

@@ -82,8 +82,31 @@ const aceptarAsesoria = (request, response) => {
     
 }
 
+const cancelarAsesoria = (request, response) => {
+
+    const nombreUF = request.body.nombreUF
+    const idAsesorado = request.body.idAsesorado
+    const hora = request.body.hora
+    const dia = request.body.dia
+    const mes = request.body.mes
+    const anio = request.body.anio
+
+    const consulta = `CALL cancelarAsesoria($1, $2, $3, $4, $5, $6);`
+    const params = [nombreUF, idAsesorado, hora, dia, mes, anio]
+
+    pool.query(consulta, params, (error) => {
+        if(error) {
+            response.status(409).send('Ocurrió un error al cancelar la asesoría.')
+        } else {
+            response.status(200).send('Se canceló la asesoría correctamente')
+        }
+    })
+    
+}
+
 module.exports = {
     get_notificaciones_usuario,
     get_asesoresDisponibles,
-    aceptarAsesoria
+    aceptarAsesoria,
+    cancelarAsesoria
 }
