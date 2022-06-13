@@ -835,3 +835,13 @@ html {
 
 
 }
+
+
+
+@media screen and (max-width: 480px) { 
+
+    .btn-login-ingresar {
+        width: 20vw !important;
+    }
+
+}
