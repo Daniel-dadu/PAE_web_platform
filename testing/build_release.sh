@@ -1,16 +1,33 @@
 #!/usr/bin/env bash
 
-#Requiere de jq
+TEST=true
 
-#Instalar las depedencias para realizar las pruebas
-#npm install
+while getopts :f opt
+do
+    case "${opt}" in
+        :)
+            echo "Error: --${OPTARG} requiere un argumento."
+            exit 1
+            ;;
+        f) 
+            TEST=false
+            ;;
+    esac
+done
+
+#Requiere de jq
+apt install jq -y &> /dev/null
 
 start_release(){
+    #Si ya existe una release fallida la reutiliza para generar la nueva
     if [ -d "../release/fail_building" ]
     then
         mv ../release/fail_building ../release/building
     else
+        #Crea los directorios necesarios para generar la release
         mkdir -p ../release/building/pae
+        mkdir -p ../release/building/pae/api
+        mkdir -p ../release/building/pae/client
     fi
 }
 
@@ -30,7 +47,9 @@ end_release(){
     TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
     
     cd ../release
+    #Nombra la version con el TIMESTAMP de finalizacion
     mv ./building ./$TIMESTAMP
+    #Elimina los modulos instalados del paquete
     find ./$TIMESTAMP -name node_modules -type d -prune -exec rm -rf {} \;
     
     tar -cJf ./$TIMESTAMP.tar.xz ./$TIMESTAMP
@@ -50,19 +69,26 @@ failTest_Message(){
 }
 
 client(){
+    #Va a al directorio del cliente
     cd ../frontend
     npm install
+    #Crea una version optimizada del cliente
     result=$(npm run build)
+    #Regresa al creador de version para continuar el proceso
     cd $WORKING_DIR
-    #if grep -q "Compiled with warnings" <<< $result;
-    if false
+    #Evalua si es necesario evaluar el estado de la release
+    if $TEST
     then
-        failTest_Message Client
-        fail_release
-    else
-        cp -r ../frontend/build ../release/building/pae/client/Client
-        echo "CLient agregado"
+        #Evalua si la compilacion del cliente no tuvo warnings
+        if grep -q "Compiled with warnings" <<< $result;
+        then
+            failTest_Message Client
+            fail_release
+        fi
     fi
+    #Agrega el cliete a la release
+    cp -r ../frontend/build ../release/building/pae/client/Client
+    echo "CLient agregado"
 }
 
 function check_in_ignore(){
@@ -95,25 +121,27 @@ microservices(){
     for SERVICE in ${MICROSERVICES[@]}; do
         local SERVICE_NAME=${SERVICE::-1}
 
-        if [ -f ./tests/$SERVICE_NAME.test.js ]
+        if $TEST
         then
-            json=$(jest tests/$SERVICE_NAME.test.js --json 2>&-)
-            result=$(jq '.testResults[0].status' <<< $json)
-    
-            #if [ $result = '"passed"' ]
-            if [ true ]
+            if [ -f ./tests/$SERVICE_NAME.test.js ]
             then
-                cp -r ../backend/microservices/$SERVICE ../release/building/pae/api/$SERVICE
-                echo "$SERVICE_NAME agregado"
+                json=$(jest tests/$SERVICE_NAME.test.js --json 2>&-)
+                result=$(jq '.testResults[0].status' <<< $json)
+
+                if [ $result != '"passed"' ]
+                then
+                    failTest_Message $SERVICE_NAME
+                    fail_release
+                fi
             else
+                echo "test ./tests/$SERVICE_NAME.test.js no encontrado"
                 failTest_Message $SERVICE_NAME
                 fail_release
             fi
-        else
-            echo "test ./tests/$SERVICE_NAME.test.js no encontrado"
-            failTest_Message $SERVICE_NAME
-            fail_release
         fi
+        #Agrega el microservicio a la release
+        cp -r ../backend/microservices/$SERVICE ../release/building/pae/api/$SERVICE
+        echo "$SERVICE_NAME agregado"
     done
 }
 
