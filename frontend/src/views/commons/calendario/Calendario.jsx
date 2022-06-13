@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Template, CambioMesPeriodo, ComponenteCalendario, PopUpInformacionAsesoria, dateFunctions } from '../../../routeIndex'
+import { Template, CambioMesPeriodo, ComponenteCalendario, PopUpInformacionAsesoria, dateFunctions, PopUpEncuesta } from '../../../routeIndex'
 // import asesoriaJSON from './PruebaCommonCalendario.json'
 import './CalendarioStyle.css'
 import  Modal from '../../../components/reusable/PopUpInformacionAsesoria/Modal';
@@ -234,6 +234,29 @@ function Calendario(){
     });
   }
 
+  // ========== PARA ENCUESTA =========== //
+  const [activoEncuesta, setActivoEncuesta] = useState(false)
+  const cerrarEncuesta = () => setActivoEncuesta(!activoEncuesta)
+  // ========== PARA ENCUESTA =========== //
+
+  const [idAsesoriaEncuesta, setIdAsesoriaEncuesta] = useState(0) 
+  useEffect(() => {
+    const config = {
+      method: 'get',
+      url: 'http://20.225.209.57:3096/encuesta/get_asesoria_encuesta',
+      headers: { }
+    };
+    
+    axios(config)
+    .then(function (response) {
+      setIdAsesoriaEncuesta(response.data.idAsesoria)
+      if(response.data) setActivoEncuesta(!activoEncuesta)
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }, [setIdAsesoriaEncuesta, setActivoEncuesta, activoEncuesta])
+
   return(
     <>
 
@@ -249,6 +272,15 @@ function Calendario(){
         <PopUpInformacionAsesoria  userTypePopUpAsesoria = {(localStorage.rolUsuario === "directivo") ? localStorage.rolUsuario : 'alumno'} infoAsesoria = {asesoriaJSON} estado={toggle} accionCancelar = {() => {cancelarAsesoria()}}/> 
       </Modal>
 
+      <Modal active = {activoEncuesta} toggle = {cerrarEncuesta}>
+        <PopUpEncuesta 
+          tipo={localStorage.rolUsuario === "asesorado" ? 1 : 2} 
+          rolUser={localStorage.rolUsuario}
+          idAsesoria={idAsesoriaEncuesta} 
+          activo={activoEncuesta} 
+          ocultarPopUp={cerrarEncuesta}
+        />
+      </Modal>
 
       <div className='calendarioStyle'> 
         <ComponenteCalendario

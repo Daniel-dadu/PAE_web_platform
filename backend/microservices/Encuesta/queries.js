@@ -212,9 +212,18 @@ const getEncuestasRespondidas = (request, response) => {
     })
 }
 
+const getAsesoriaEncuesta = (_request, response) => {
+    const consulta = `SELECT "idAsesoria" FROM "CalificacionEncuesta" WHERE "estado" = 'pendiente' LIMIT 1`
+    pool.query(consulta, (error, result) => {
+        if(error) response.status(400).send("Error: no se pudo obtener una asesoría")
+        else response.status(200).json(result.rows[0])
+    })
+}
+
 module.exports = {
     getEncuesta,
     setRespuestaEncuesta,
     getRespuestaEncuesta,
-    getEncuestasRespondidas
+    getEncuestasRespondidas,
+    getAsesoriaEncuesta
 }
