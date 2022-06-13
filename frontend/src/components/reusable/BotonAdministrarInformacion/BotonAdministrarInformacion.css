@@ -36,3 +36,14 @@
 .botonAdministrarTextoDefinicion {
     font-size: 27px;
 }
+
+@media screen and (max-width: 480px){ 
+  
+    .botonPruebaEren{
+
+        height: 200px;
+    
+    }
+  
+  
+    }

@@ -139,7 +139,6 @@ const Login = () => {
                     </form>
                     }
 
-        <a href="/registroAsesorDatos" style={{width:200, height:60, backgroundColor:'grey', color: 'white', borderRadius: '20px', margin: 'auto', display: 'block', cursor: 'pointer', fontSize: '1.5rem', marginTop: '1rem', textAlign: 'center', paddingTop: '1rem', position: 'absolute', bottom: 40 }}>Registro Asesor</a>
             </div>
 
         </section>

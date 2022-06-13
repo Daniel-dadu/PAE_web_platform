@@ -3,9 +3,10 @@
 }
 
 .btnAtras{
-    position: absolute;
+    /* position: absolute;
     left: 30px;
-    bottom: 30px;
+    bottom: 30px; */
+    padding-top: 1rem;
 }
 
 .btn_AdministrarUsuariosDirectivos{

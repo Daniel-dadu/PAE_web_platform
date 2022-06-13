@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 
 import noUserImg from '../../../assets/noUserImg.png'
 
+import "./registroAsesoradoResumen.css"
+
 let progressBar = {
     "currentStep": 2,
     "steps": [

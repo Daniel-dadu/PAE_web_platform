@@ -66,3 +66,52 @@
     font-size: 1rem;
     font-style: italic;
 }
+
+@media screen and (max-width: 480px){ 
+
+    .campo_RegistroAsesoradoDatos{
+        margin-top: 0rem;
+        font-size: 20px;
+    }
+
+    .tarjeta_maestra{
+        margin-top: -35px;
+    }
+
+    .advertencia_asterisco {
+        font-size: 15px;
+    }
+
+    .contenedro_deInputsAsesoradoRegistro_credenciales{
+        margin-top: 1rem;
+        padding-top: 10px;
+        background-color: rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        width: 100%;
+    }
+
+    .texto_contenedor_deInputsAsesoradoRegistro{
+        font-size: 15px;
+    }
+
+    .container_ctp input{
+
+        width: 100% !important;
+        
+    }
+
+    .contenedro_deInputsAsesoradoRegistro{
+        width: 100%;
+    }
+
+    .react-datalist-input__container.undefined{
+        width: 250px !important;
+    }
+
+    .contenedro_deInputsAsesoradoRegistro .arrow_down {
+        right: 2%;
+        top: 15%;
+
+    }
+
+}

@@ -54,7 +54,8 @@ function AdministrarPerfil() {
                 </div>
             }
 
-            <div className = {rol === 'asesor' ? 'btnAtrasAsesorPosition' : 'btnAtras'}>
+            {/* <div className = {rol === 'asesor' ? 'btnAtrasAsesorPosition' : 'btnAtras'}> */}
+            <div className = {'btnAtrasAsesorPosition ' + (rol !== 'asesor' && ' btnAtrasAsesoradoPosition')}>
                 <BotonSencillo
                     onClick = {() => navigate(rol === 'asesor' ? "/administrarAsesores" : rol === 'asesorado' ? "/administrarAsesorados" : "/administrarDirectivos")}
                     backgroundColor = 'turquesa'

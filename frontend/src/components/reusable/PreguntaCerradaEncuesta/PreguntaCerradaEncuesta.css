@@ -25,4 +25,47 @@
     font-size: 20px;
     border-radius: 9px;
     border: 1px solid #fff;
+
 }
+  
+.contenedorPreguntaCerradaEncuesta input:checked {
+    background-color: #1624DA;
+  }
+
+.textoPreguntaCerradaInterno{
+    position: "relative";
+    left: "-24px";
+    top: "-22px";
+    font-size: "20px";
+}
+
+
+  @media screen and (max-width: 480px){ 
+  
+
+    
+    .textoPreguntaCerradaEncuesta{
+        font-size: 15px;
+        color: #717171;
+    }
+    
+      .contenedorPreguntaCerradaEncuesta input {
+    
+        border: 1px solid #fff;
+        width: 28px;
+        height: 50px;
+        
+    }
+
+    .contenedorPreguntaCerradaEncuesta label {
+        display: inline-block;
+        margin-right: -1px;
+        line-height: 10px;
+    }
+
+    #numeroPreguntaCerradaEncuesta{left: -18px !important;}
+
+    #numeroDiezPreguntaCerradaEncuesta{left: -21px !important;}
+
+
+    }
