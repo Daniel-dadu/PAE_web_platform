@@ -141,7 +141,8 @@ const get_informacionAsesoria = (request, response) => {
                     result['usuario'] = currentValue['usuario'],
                     result['lugar'] =  currentValue['lugar'],
                     result['uF'] = currentValue['uf'],
-                    result['duda'] = currentValue['duda']
+                    result['duda'] = currentValue['duda'],
+                    result['status'] = currentValue['status']
 
                     if(result['images'] != undefined){
                         result['images'].push(currentValue[key])

@@ -30,7 +30,8 @@ function Calendario(){
       "anio": 0,
       "usuario": "",
       "duda": "",
-      "images": []
+      "images": [],
+      "status": ""
     }
   );
 
@@ -113,7 +114,8 @@ function Calendario(){
           "anio": 0,
           "usuario": "",
           "duda": "",
-          "images": []
+          "images": [],
+          "status": ""
         }
       );
     }
@@ -179,7 +181,7 @@ function Calendario(){
       </div>
 
       <Modal active={active} toggle={toggle}>
-        <PopUpInformacionAsesoria  userTypePopUpAsesoria = {(localStorage.rolUsuario === "directivo") ? localStorage.rolUsuario : 'alumno'} infoAsesoria = {asesoriaJSON} estado={toggle} /> 
+        <PopUpInformacionAsesoria  userTypePopUpAsesoria = {(localStorage.rolUsuario === "directivo") ? localStorage.rolUsuario : 'alumno'} infoAsesoria = {asesoriaJSON} estado={toggle}/> 
       </Modal>
 
 

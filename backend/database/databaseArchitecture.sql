@@ -599,7 +599,8 @@ RETURNS TABLE (
   lugar TEXT,
   uF VARCHAR(100),
   duda TEXT,
-  image TEXT
+  image TEXT,
+  status STATUSASESORIA
 )
 LANGUAGE plpgsql AS $func$
 
@@ -660,7 +661,8 @@ BEGIN
         "Asesoria"."lugar",
         "UnidadFormacion"."nombreUF",
         "Asesoria"."descripcionDuda",
-        "AsesoriaImagen"."imagen"
+        "AsesoriaImagen"."imagen",
+        "Asesoria"."status"
       FROM "Asesoria", "AsesoriaImagen", "HorarioDisponible", "Usuario", "UnidadFormacion"
       WHERE
         "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
@@ -714,7 +716,8 @@ BEGIN
         "Asesoria"."lugar",
         "UnidadFormacion"."nombreUF",
         "Asesoria"."descripcionDuda",
-        NULL AS image
+        NULL AS image,
+        "Asesoria"."status"
       FROM "Asesoria", "HorarioDisponible", "Usuario", "UnidadFormacion"
       WHERE
         "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
