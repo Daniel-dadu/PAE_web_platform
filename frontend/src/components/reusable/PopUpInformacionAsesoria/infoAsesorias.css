@@ -42,21 +42,20 @@
 
 .three{
 
-    /* border: 3px solid #001aff;*/
+    margin-top: 1rem;
     display: flex;
     gap: 10px;
-    flex-grow:2;
-    flex-direction: row;
-    justify-content: center;
-    overflow-y: hidden;
+    flex-grow: 2;
+    flex-direction: column;
+    overflow-y: scroll;
     overflow-x: hidden;
     align-items: center;
-    /* height: 50px; */
+    height: 50px;
 
 }
 
 .three .divImg{
-    height:10rem;
+    height: 10rem;
 }
 
 .four{
