@@ -7,7 +7,7 @@ import { ImagenAsesoria, dateFunctions } from '../../../routeIndex'
 
 
 
-export default function PopUpInformacionAsesoria({userTypePopUpAsesoria, infoAsesoria, estado}) {
+export default function PopUpInformacionAsesoria({userTypePopUpAsesoria, infoAsesoria, estado, accionCancelar}) {
 
  
 
@@ -67,7 +67,7 @@ export default function PopUpInformacionAsesoria({userTypePopUpAsesoria, infoAse
            
            {
              (infoAsesoria.status !== "cancelada")
-              ? <div className='fourBox'> <BotonSencillo  backgroundColor="rojo" size='reducido' children="Cancelar asesoría"></BotonSencillo> </div>
+              ? <div className='fourBox'> <BotonSencillo  backgroundColor="rojo" size='reducido' children="Cancelar asesoría" onClick={accionCancelar}></BotonSencillo> </div>
               : <p> </p>
            }
 
@@ -77,7 +77,7 @@ export default function PopUpInformacionAsesoria({userTypePopUpAsesoria, infoAse
 
            {
              (infoAsesoria.status !== "cancelada")
-              ? <div className='fourBox'> <BotonSencillo  backgroundColor="rojo" size='reducido' children="Cancelar asesoría"></BotonSencillo> </div>
+              ? <div className='fourBox'> <BotonSencillo  backgroundColor="rojo" size='reducido' children="Cancelar asesoría" onClick={accionCancelar}></BotonSencillo> </div>
               : <p> </p>
            }
 
