@@ -68,6 +68,8 @@ app.get('/encuesta/get_respuesta_encuesta/', db.getRespuestaEncuesta)
 
 app.get('/encuesta/get_encuestas_respondidas/', db.getEncuestasRespondidas)
 
+app.get('/encuesta/get_asesoria_encuesta', db.getAsesoriaEncuesta)
+
 // ========================= ENDPOINTS ========================= // 
 
 app.listen(port, () => {
