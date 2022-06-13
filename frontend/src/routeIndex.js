@@ -102,3 +102,5 @@ export {default as RegistroDirectivo } from './views/directivo/registroDirectivo
 
 export {default as RecuperarPassword } from './views/LandingPage/recuperarPassword/RecuperarPassword.jsx'
 export {default as ReestrablecerPassword } from './views/LandingPage/reestrablecerPassword/ReestrablecerPassword.jsx'
+
+export {default as AdministrarPeriodo } from './views/directivo/administrarPeriodo/AdministrarPeriodo.jsx'
