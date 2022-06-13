@@ -55,7 +55,7 @@ fi
 # --------------------------------------------
 
 IP=""
-PORTS=( 3093 3094 3031 80 3091 3095 3030 3092 3090 )
+PORTS=( 3093 3094 3031 80 0 3091 3095 3030 3092 3090 )
 
 # --------------------------------------------
 NUEVOS_PORTS=()
@@ -66,7 +66,7 @@ echo "Instalando APIs"
 mkdir -p /opt/pae/
 INDEX=0
 for API in ${APIS[@]}; do
-    if  [ $API != Client/ ]
+    if  [ $API != Client/ || $API != EncryptionFile/ ]
     then
         cd $API
         npm install &> /dev/null

@@ -67,7 +67,7 @@ client(){
 
 function check_in_ignore(){
     local RESULT="0"
-    local IGNOR_DIRS=("CLI/" "EncryptionFile/")
+    local IGNOR_DIRS=("CLI/" )
 
     for IGNOR_DIR in ${IGNOR_DIRS[@]}; do
         if  [ $1 = $IGNOR_DIR ]
