@@ -10,3 +10,21 @@
     color: var(--negro);
     box-shadow: 5px 5px 5px 4px rgba(0, 0, 0, 0.2);
 }
+
+@media screen and (max-width: 480px){
+
+    .btn_NotificacionIrAEnviar{
+        font-size: 12px;
+        width: 100%;
+    
+    }
+
+    .btn_NotificacionIrAEnviar .botonEnviarNotiHola .btn{
+        position: relative;
+         right: 10%;
+         width: 80%;
+         font-size: 15px;
+       
+    }
+
+}

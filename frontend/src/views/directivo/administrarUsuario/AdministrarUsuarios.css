@@ -41,3 +41,24 @@
 .botonAdministrarTextoDefinicion {
     font-size: 1.3rem;
 }
+
+
+@media screen and (max-width: 480px){ 
+  
+
+    .botonesSuperiores_administrarUsuarios{
+        width: 90%;
+        gap: 5px;
+        margin-bottom: 1rem;
+        position: relative;
+        left: -18%;
+    }
+    
+    .botonesInferiores_administrarUsuarios{
+        width: 90%;
+        gap: 5px;
+        position: relative;
+        left: -18%;
+    }
+  
+    }
