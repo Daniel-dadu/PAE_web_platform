@@ -5,9 +5,12 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { Template, ListaUsuarios, BotonSencillo, BotonConImagen } from '../../../routeIndex'
 
+import {CopyToClipboard} from 'react-copy-to-clipboard'
+
 import { FaCopy, FaUserPlus } from 'react-icons/fa'
 
 const AdministrarUsuariosDirectivos = ({userRol}) => { /* En caso de ser asesorados se espera un tipo de usuario "asesorados", para mostrar unicamente el titulo de asesorados, cualquier otra palabra mostrara el titulo asesor y el boton de link para asesores */
+
 
     let navigate = useNavigate()
 
@@ -30,6 +33,8 @@ const AdministrarUsuariosDirectivos = ({userRol}) => { /* En caso de ser asesora
         })
     }, [setDataUsuarios, userRol])
 
+    const [copied, setCopied] = useState(false);
+
     return(
         <Template view = "administrar">
 
@@ -41,13 +46,19 @@ const AdministrarUsuariosDirectivos = ({userRol}) => { /* En caso de ser asesora
                 <h1> Administrar asesores </h1>
 
                 <div className='botonCopiarLinkRegistro'>
+                <CopyToClipboard text="http://20.225.209.57:3014/registroAsesorDatos" onCopy={() => setCopied(true)}>
                     <BotonConImagen 
-                    onClick={() => alert('Genera el link')} 
+                    onClick={() => {navigator.clipboard.writeText('localhost')}} 
                     backgroundColor='grisClaro'
                     size="largo" 
                     Image={FaCopy} >
-                        <span className='textoDeBoton'>Generar Nuevo Link de Registro</span> 
+                        <span className='textoDeBoton'>
+                            {
+                                copied ? "Link copiado correctamente" : "Copiar Link de Registro de Asesores"
+                            }
+                        </span> 
                     </BotonConImagen>
+                </CopyToClipboard> 
                 </div>
 
             </div> 
