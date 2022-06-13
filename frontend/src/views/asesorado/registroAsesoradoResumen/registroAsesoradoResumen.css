@@ -2,10 +2,11 @@
 @media screen and (max-width: 480px){ 
 
 .contenedor-InfPerUsuario-izq{
-
-    position: relative;
-    bottom: 30%;
-    left: 30%;
+    bottom: 20%;
+    left: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -13,7 +14,7 @@
 
     position: relative;
     top: 15%;
-    right: 20%
+    right: 0;
 
 
 }

@@ -16,3 +16,29 @@
 
 }
 
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .btn_PerfilCommon{
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        justify-content: space-between;
+    
+    }
+
+        
+    .botonCerrarSesion{
+        padding-top: 0;
+        padding-right: 1%;
+    }
+
+    .btn_PerfilCommon .botonCerrarSesion .btn{
+        color: var(--negro);
+    }
+
+}
+

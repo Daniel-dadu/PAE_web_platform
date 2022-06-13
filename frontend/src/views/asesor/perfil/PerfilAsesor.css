@@ -6,3 +6,21 @@
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+
+/* responsive  */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .containerBtnCambioTipoUsuario{
+        padding-left: 25%;
+        margin-top: 100px;
+    }
+
+    .containerListaUFsAsesor{
+        margin-top: 60px;
+        margin-bottom: 50px;
+    }
+
+}
