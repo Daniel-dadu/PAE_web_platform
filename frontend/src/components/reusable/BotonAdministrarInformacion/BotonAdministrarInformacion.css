@@ -6,8 +6,8 @@
     border: 2px solid black;
 
     width: 50%;
-    min-width: 50%;
     height: 250px;
+    overflow: hidden;
 
     display: flex;
     gap: 10px;
@@ -43,17 +43,18 @@
   
     .botonPruebaEren{
 
-        height: 120px;
+        height: 130px;
+        min-width: 50%;
     
     }
 
     .botonAdministrarImagen {
-        width: 25%;
+        width: 30%;
         height: 10%;}
 
-        .botonAdministrarTextoDefinicion {
-            font-size: 15px !important;
-        }
+    .botonAdministrarTextoDefinicion {
+        font-size: 15px !important;
+    }
   
   
     }
