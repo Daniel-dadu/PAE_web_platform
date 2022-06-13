@@ -1471,6 +1471,78 @@ BEGIN
 END
 $$;
 
+-- Envío de notificaciones
+CREATE OR REPLACE PROCEDURE enviarNotificaciones(
+  destinatario TEXT,
+  asunto VARCHAR(200),
+  mensaje TEXT
+)
+LANGUAGE plpgsql AS
+$$
+
+DECLARE
+  idnuevanotificacion INTEGER;
+  
+BEGIN
+
+-- Creación de la notificación
+  INSERT INTO "Notificacion" 
+    ("idNotificacion", "origen", "titulo", "fechaHora", "descripcion")
+  VALUES
+    (DEFAULT, 'PAE', asunto, NOW()::TIMESTAMP, mensaje)
+  RETURNING "idNotificacion" INTO idnuevanotificacion;
+
+  IF destinatario = 'TODOS' THEN
+
+    -- Relación de la notificación con todos los asesorados
+    INSERT INTO "NotificacionUsuario" 
+      ("idNotificacion", "idUsuario")
+    SELECT notificacion.idnuevanotificacion, asesorados."idUsuario"
+    FROM 
+      (SELECT idnuevanotificacion) notificacion, 
+      (SELECT "idUsuario" FROM "Usuario" WHERE "rol" = 'asesorado') asesorados;
+  
+    -- Relación de la notificación con todos los asesores
+    INSERT INTO "NotificacionUsuario" 
+      ("idNotificacion", "idUsuario")
+    SELECT notificacion.idnuevanotificacion, asesores."idUsuario"
+    FROM 
+      (SELECT idnuevanotificacion) notificacion, 
+      (SELECT "idUsuario" FROM "Usuario" WHERE "rol" = 'asesor') asesores;
+  
+    -- Relación de la notificación con todos los directivos
+    INSERT INTO "NotificacionUsuario" 
+      ("idNotificacion", "idUsuario")
+    SELECT notificacion.idnuevanotificacion, directivos."idUsuario"
+    FROM 
+      (SELECT idnuevanotificacion) notificacion, 
+      (SELECT "idUsuario" FROM "Usuario" WHERE "rol" = 'directivo') directivos;
+
+  ELSEIF destinatario = 'ESTUDIANTES' THEN
+
+    -- Relación de la notificación con todos los asesorados
+    INSERT INTO "NotificacionUsuario" 
+      ("idNotificacion", "idUsuario")
+    SELECT notificacion.idnuevanotificacion, asesorados."idUsuario"
+    FROM 
+      (SELECT idnuevanotificacion) notificacion, 
+      (SELECT "idUsuario" FROM "Usuario" WHERE "rol" = 'asesorado') asesorados;
+
+  ELSE
+
+    -- Relación de la notificación con todos los asesores
+    INSERT INTO "NotificacionUsuario" 
+      ("idNotificacion", "idUsuario")
+    SELECT notificacion.idnuevanotificacion, asesores."idUsuario"
+    FROM 
+      (SELECT idnuevanotificacion) notificacion, 
+      (SELECT "idUsuario" FROM "Usuario" WHERE "rol" = 'asesor') asesores;
+
+  END IF;
+  
+END
+$$;
+
 ------------ VIEWS -----------------
 
 -- Para consultar los usuarios sin mostrar su texto largo de fotoPerfil 
