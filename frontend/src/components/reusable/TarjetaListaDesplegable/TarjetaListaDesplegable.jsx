@@ -44,6 +44,8 @@ const TarjetaListaDesplegable = (
         accion,
         imagenUsuario,
         getUFSelected,
+        idEncuestado,
+        idAsesoria,
         getAsesorSelected
     }) => {
 
@@ -147,7 +149,7 @@ const TarjetaListaDesplegable = (
                     ):
                     tipo === 3?
                     (
-                        <table className={`tabla-tipo-3 ${ BackgroundColor3 }`} onClick={ accion } > 
+                        <table className={`tabla-tipo-3 ${ BackgroundColor3 }`} onClick={ idAsesoria ? () => accion(idAsesoria, idEncuestado) : accion } > 
 
                             <tbody>
                                 <tr className='fila-general-TarjetaListaDesplegable'>

@@ -13,7 +13,6 @@ function ctrl_c() {
 
 function check_in_ignore(){
     local RESULT="0"
-    local IGNOR_DIRS=("CLI/" "EncryptionFile/" "API-Gateway/" "Client/")
 
     for IGNOR_DIR in ${IGNOR_DIRS[@]}; do
         if  [ $1 = $IGNOR_DIR ]
@@ -80,8 +79,11 @@ function main(){
 
     cd $WORKING_DIR
 
-    search_services
-    
+    if [ $SEARCH = true ]
+    then 
+        search_services
+    fi
+
     if [ $INSTALL_DEPS = true ]
         then
             install_all
@@ -97,36 +99,55 @@ function main(){
 }
 
 function help(){
-    echo "--i for install dependecies"
     echo "--D PATH for change working directory"
+    echo "--e SERVICE_NAME for exclude service from services search"
     echo "--h for help"
+    echo "--i for install dependecies"
+    echo "--s SERVICE_NAME for work with just service selected, disable services search"
+    echo '--S "SERVICE_NAME_1 SERVICE_NAME_2 ..." for work with just services selected, disable services search'
     echo "--v for print Node output"
 }
 
 WORKING_DIR=$PWD
+IGNOR_DIRS=("CLI/" "EncryptionFile/" "API-Gateway/" "Client/")
 MICROSERVICES=()
 MICROSERVICES_PIDS=()
 
 #Conditionals
 INSTALL_DEPS=false
+SEARCH=true
 VERBOSE=false
 
-while getopts :ihvD: opt
+while getopts :D:e:his:S:v opt
 do
     case "${opt}" in
-        i) 
-            INSTALL_DEPS=true
-            ;;
-        D) 
-            WORKING_DIR=${OPTARG}
-            ;;
         :)
             echo "Error: --${OPTARG} requires an argument."
             exit 1
             ;;
+        D) 
+            WORKING_DIR=${OPTARG}
+            ;;
+        e) 
+            IGNOR_DIRS+=(${OPTARG}/)
+            ;;
         h)
             help
             exit 0
+            ;;
+        i) 
+            INSTALL_DEPS=true
+            ;;
+        s)
+            SEARCH=false
+            MICROSERVICES+=(${OPTARG}/)
+            ;;
+        S)
+            SEARCH=false
+            for SERVICE in ${OPTARG}
+            do
+                MICROSERVICES+=(${SERVICE}/)
+            done
             ;;
         v)
             VERBOSE=true

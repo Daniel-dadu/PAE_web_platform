@@ -27,3 +27,35 @@
     margin-right: auto;
     margin-top: 40px;
 }
+
+@media screen and (max-width: 480px){ 
+
+.tarjeta_maestra h1{
+    font-size: 20px;
+}
+
+.contenedor-InfPerUsuario-asesor{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+.texto-encabezado-ludfa{
+    font-size: 20px;
+}
+
+.containerListaUFResumen{
+    height: 50%;
+    width: 100%;
+
+}
+
+.containerCalendarioDisponibilidadResumen .calendarioDisponibilidad{
+    margin-left: -30%;
+
+}
+    
+    }

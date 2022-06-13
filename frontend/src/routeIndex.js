@@ -45,6 +45,7 @@ export {default as AgendarAsesoriaResumen } from './views/asesorado/AgendarAseso
 export {default as CambioMesPeriodo } from './components/reusable/CambioMesPeriodo/CambioMesPeriodo.jsx'
 
 export {default as PopUpInformacionAsesoria } from './components/reusable/PopUpInformacionAsesoria/PopUpInformacionAsesoria.jsx'
+export {default as Modal } from './components/reusable/PopUpInformacionAsesoria/Modal.js'
 
 export {default as TarjetaInformacion } from './components/reusable/TarjetaInformacion/TarjetaInformacion.jsx'
 
@@ -96,3 +97,10 @@ export {default as AsesoriasExistentesDiaDirectivos } from './views/directivo/as
 export { default as CampoTextoMenuDesplegable } from './components/reusable/CampoTextoMenuDesplegable/CampoTextoMenuDesplegable.jsx'
 export {default as RegistroAsesorUF } from './views/asesor/registroAsesorUF/RegistroAsesorUF.jsx'
 export {default as PupUpSolicitudAsesoria } from './components/reusable/PopUpSolicitudAsesoria/PopUpSolicitudAsesoria.jsx'
+
+export {default as RegistroDirectivo } from './views/directivo/registroDirectivo/RegistroDirectivo.jsx'
+
+export {default as RecuperarPassword } from './views/LandingPage/recuperarPassword/RecuperarPassword.jsx'
+export {default as ReestrablecerPassword } from './views/LandingPage/reestrablecerPassword/ReestrablecerPassword.jsx'
+
+export {default as AdministrarPeriodo } from './views/directivo/administrarPeriodo/AdministrarPeriodo.jsx'

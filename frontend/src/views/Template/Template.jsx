@@ -21,6 +21,7 @@ Ejemplo de uso:
 function Template({ view, children }) {
   return (
     <div className="container_templatee">
+        
         <BarraLateral viewProp={view} />
         <TarjetaMaestra>
             {children}

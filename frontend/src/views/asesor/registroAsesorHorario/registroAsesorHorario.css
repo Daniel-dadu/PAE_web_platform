@@ -18,3 +18,26 @@
     width: 80%;
     margin: 1rem auto;
 }
+
+
+
+
+
+@media screen and (max-width: 480px){ 
+
+    .contenedor-cambio-periodo{
+        position: relative;
+        margin-bottom: 20% ;
+        left: 110%;
+    }
+
+    .contenedor-calendarioDisponibilidad {
+        width: 100%;
+        padding: auto;
+        margin: auto;
+    }
+
+
+ 
+
+}

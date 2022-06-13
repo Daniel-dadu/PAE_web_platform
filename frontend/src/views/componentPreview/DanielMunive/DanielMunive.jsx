@@ -1,6 +1,5 @@
 import React from 'react'
 
- import { AdministrarUsuarios } from '../../../routeIndex'
  
 
 function DanielMunive() {
@@ -17,7 +16,6 @@ function DanielMunive() {
         }}
       >
 
-        <AdministrarUsuarios></AdministrarUsuarios>
 
 
     </div>
