@@ -1,4 +1,4 @@
-import React from 'react' // Agregar uso de {useState}
+import React, {useState} from 'react' // Agregar uso de {useState}
 import '../../../index.css'
 import './CampoTextoMenuDesplegable.css'
 import { ListaDesplegable } from '../../../routeIndex'
@@ -27,35 +27,43 @@ var gruposJSON = {
 }
 
 const CampoTextoMenuDesplegable = ({
-    usuariosJSON // JSON con el nombre y matrícula de cada usuario del sistema
+    getGroup // JSON con el nombre y matrícula de cada usuario del sistema
 }) => {
     
-    // const [currentSelection, setCurrentSelection] = useState('Todos');
+    const [currentSelection, setCurrentSelection] = useState('TODOS');
     
     // DANO debe agregar el evento onClick en cada tarjeta, para después
     // pasar por parámetro el setter del useState: onClick = {() => {setCurrentSelection('hola')}}
     // para que se seleccione un grupo o usuario específico
 
+    const onSelectGrupo = grupo => {
+        getGroup(grupo);
+        setCurrentSelection(grupo);
+        
+    }
+
     return(
         <>
         <div className = 'containerCampoTextoMenuDesplegable'>
             <div className = 'containerSeleccionMenuDesplegable'>
-                <button> Todos </button>
+                <button> {currentSelection} </button>
             </div>
             <div className = 'containerListaMenuDesplegable-1'>
                 <ListaDesplegable
                     fecha = 'Grupos'
                     tipo = {2}
                     arrContenido = {gruposJSON.grupos}
+                    isSend = {1}
+                    getGrupoSelected = {onSelectGrupo}
                 />
             </div>
-            <div className = 'containerListaMenuDesplegable-2'>
+            {/* <div className = 'containerListaMenuDesplegable-2'>
                 <ListaDesplegable
                     fecha = 'Usuarios'
                     tipo = {2}
-                    arrContenido = {usuariosJSON['usuarios']}
+                    arrContenido = {getGroup['usuarios']}
                 />
-            </div>
+            </div> */}
         </div>
         </>
     );

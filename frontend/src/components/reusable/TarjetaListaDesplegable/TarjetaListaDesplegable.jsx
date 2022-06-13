@@ -46,7 +46,8 @@ const TarjetaListaDesplegable = (
         getUFSelected,
         idEncuestado,
         idAsesoria,
-        getAsesorSelected
+        getAsesorSelected,
+        getGrupoSelected
     }) => {
 
     /* 
@@ -102,6 +103,11 @@ const TarjetaListaDesplegable = (
         getAsesorSelected(matricula);
     }
 
+    const selectGrupo = (grupo) => {
+        handleActivo();
+        getGrupoSelected(grupo);
+    }
+
     const selectUF = () => {
         handleActivo()
         getUFSelected({claveUF, nombreUF})
@@ -114,7 +120,7 @@ const TarjetaListaDesplegable = (
   return (
 
     <>
-        <div className={ `contenedor-TarjetaListaDesplegable tipo${ tipo }` } > 
+        <div className={ `contenedor-TarjetaListaDesplegable tipo${ (tipo === 7) ? 3 : tipo }` } > 
             {
                 //dependiedo del tipo de tarjeta, se renderiza el HTMl correspondiente
                 tipo === 1 ?
@@ -207,7 +213,23 @@ const TarjetaListaDesplegable = (
                                 </table>
                                 ):
                                 (
-                                    <h1>Hola</h1>
+                                    tipo === 7?
+                                    (
+                                        <table className={`tabla-tipo-3 ${ BackgroundColor3 }`} onClick={ () => {selectGrupo(contenido.toUpperCase())} } > 
+                
+                                            <tbody>
+                                                <tr className='fila-general-TarjetaListaDesplegable'>
+                                                    <td className='hora-asesoria-tipo-3' > { horaAsesoria } </td>
+                                                    <td className='contenido-tipo-3' > { contenido.toUpperCase() } </td>
+                                                    <td className='claveUF-tipo-3' > {claveUF} </td>
+                                                </tr>
+                                            </tbody>
+                
+                                        </table>
+                                    ):
+                                    (
+                                        <h1>Hola</h1>
+                                    )
                                 )
                             )
                         )
