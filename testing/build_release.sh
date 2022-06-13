@@ -22,7 +22,7 @@ fail_release(){
 add_installer(){
     if [ -d "../installer" ]
     then
-        cp -r ../installer ../release/building
+        cp -a ../installer/. ../release/building/
     fi
 }
 
@@ -60,7 +60,7 @@ client(){
         failTest_Message Client
         fail_release
     else
-        cp -r ../frontend/build ../release/building/pae/Client
+        cp -r ../frontend/build ../release/building/pae/client/Client
         echo "CLient agregado"
     fi
 }
@@ -103,7 +103,7 @@ microservices(){
             #if [ $result = '"passed"' ]
             if [ true ]
             then
-                cp -r ../backend/microservices/$SERVICE ../release/building/pae/$SERVICE
+                cp -r ../backend/microservices/$SERVICE ../release/building/pae/api/$SERVICE
                 echo "$SERVICE_NAME agregado"
             else
                 failTest_Message $SERVICE_NAME
