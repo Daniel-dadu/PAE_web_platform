@@ -133,20 +133,21 @@ function AsesoriasExistentesDiaDirectivos(){
     
             var config = {
                 method: 'get',
-                url: `http://20.225.209.57:3031/calendario/get_allAsesorias/?mes=${mes}&anio=${anio}`,
+                url: `http://20.225.209.57:3031/calendario/get_asesoriasIndividuales/?dia=${dia}&mes=${mes}&anio=${anio}`,
                 headers: {}
             };
             
             axios(config)
             .then(function (response) {
                 // console.log(JSON.stringify(response.data));
-                // setCalendarioJSON(response.data);
+                setAsesoriasIndividuales(response.data);
                 // console.log(JSON.stringify(response.data))
-                setActive(!active)
             })
             .catch(function (error) {
                 console.log(error);
             });
+
+            setActive(!active)
     
         })
         .catch(error => {

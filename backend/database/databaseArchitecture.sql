@@ -572,12 +572,11 @@ BEGIN
       EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") AS hora
     FROM "Asesoria", "HorarioDisponible", "Usuario"
     WHERE "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
-    AND (
-      "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
-      "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
-    )
+    AND "Asesoria"."idAsesor" = "Usuario"."idUsuario"
     AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mes
-    AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anio;
+    AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anio
+    AND "Asesoria"."status" != 'reservada'
+    AND "Asesoria"."idAsesor" != 'A00000000';
 
 END;
 $func$;
