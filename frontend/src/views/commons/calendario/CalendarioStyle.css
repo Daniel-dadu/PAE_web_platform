@@ -27,3 +27,20 @@
     bottom: 55%;
     width: fit-content;
 }
+
+
+@media screen and (max-width: 480px){ 
+
+    .mesAno_style {
+        position: relative;
+        left: 10%;
+        bottom:-50%;
+ 
+    }
+
+    .calendarioStyle .calendario {
+        margin-top: 40%;
+    
+    }
+    
+    }
