@@ -10,7 +10,7 @@
 .numeroDia{
     position: absolute;
     font-size: 25px;
-    z-index: 100;
+    z-index: 50;
 }
 
 .btnDirectivo{
