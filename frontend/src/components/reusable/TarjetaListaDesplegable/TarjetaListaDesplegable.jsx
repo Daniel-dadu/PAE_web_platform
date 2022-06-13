@@ -152,7 +152,7 @@ const TarjetaListaDesplegable = (
                             <tbody>
                                 <tr className='fila-general-TarjetaListaDesplegable'>
                                     <td className='hora-asesoria-tipo-3' > { horaAsesoria } </td>
-                                    <td className='contenido-tipo-3' > { contenido } </td>
+                                    <td className='contenido-tipo-3' > { contenido.toUpperCase() } </td>
                                     <td className='claveUF-tipo-3' > {claveUF} </td>
                                 </tr>
                             </tbody>

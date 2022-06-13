@@ -1,3 +1,4 @@
+/* eslint no-eval: 0 */
 import React, { useState } from 'react'
 import { TarjetaListaDesplegable } from '../../../routeIndex';
 
@@ -168,9 +169,9 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected,
                                         tipo={ 3 } 
                                         claveUF={ cita.claveUF } 
                                         colorTipo3={ cita.colorTipo3 } 
-                                        horaAsesoria={ cita.horaAsesoria } 
+                                        horaAsesoria={ cita.horaAsesoria + ":00 hrs."}
                                         contenido={ cita.contenido }
-                                        accion={ ()=>{ window.alert("Abrir PopUpInformacionAsesoria") } }
+                                        accion={ eval(cita.openPanel) }
                                         key={index}
                                     />
                                 ))

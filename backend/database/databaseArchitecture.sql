@@ -777,6 +777,41 @@ BEGIN
 END;
 $func$;
 
+-- Obtención de las asesorías de un usuario a partir de su ID, dia, mes y año
+CREATE OR REPLACE FUNCTION get_asesoriasAsesorDia(
+  dia INTEGER,
+  mes INTEGER,
+  anio INTEGER
+)
+RETURNS TABLE (
+  nombreAsesor TEXT,
+  matricula VARCHAR(10),
+  claveUF VARCHAR(50),
+  horaAsesoria DOUBLE PRECISION,
+  contenido STATUSASESORIA
+)
+LANGUAGE plpgsql AS $func$
+
+BEGIN
+
+  RETURN QUERY
+    SELECT
+      CONCAT("Usuario"."nombreUsuario", ' ', "Usuario"."apellidoPaterno", ' ', "Usuario"."apellidoMaterno") AS nombreAsesor,
+      "Asesoria"."idAsesor" AS matricula,
+      "Asesoria"."idUF" AS claveUF,
+      EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") AS horaAsesoria,
+      "Asesoria"."status" AS contenido
+    FROM "Asesoria", "HorarioDisponible", "Usuario"
+    WHERE "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+    AND "Asesoria"."idAsesor" = "Usuario"."idUsuario"
+    AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = dia
+    AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mes
+    AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anio
+    AND "Asesoria"."idAsesor" != 'A00000000';
+
+END;
+$func$;
+
 ------------ PROCEDURES ---------------
 
 -- Procedimiento para hacer el registro de un asesorado

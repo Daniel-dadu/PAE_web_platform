@@ -116,8 +116,8 @@ function Calendario(){
           informacionAsesoria["mes"] = response.data.mes;
           informacionAsesoria["anio"] = response.data.anio;
 
-          console.log(JSON.stringify(informacionAsesoria))
-
+          // console.log(JSON.stringify(informacionAsesoria))
+          
       })
       .catch(function (error) {
           console.log(error);
