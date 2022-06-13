@@ -656,6 +656,21 @@ BEGIN
             AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
             AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
             AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC
+            AND "Asesoria"."idAsesoria" = (
+              SELECT "Asesoria"."idAsesoria"
+                FROM "Asesoria", "HorarioDisponible", "Usuario", "UnidadFormacion"
+                WHERE "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+                AND (
+                  "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+                  "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+                )
+                AND "Asesoria"."idUF" = "UnidadFormacion"."idUF"
+                AND "Usuario"."idUsuario" = idUsuario
+                AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = horaC
+                AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
+                AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
+                AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC
+            )
         ) AS usuario,
         "Asesoria"."lugar",
         "UnidadFormacion"."nombreUF",
@@ -711,6 +726,21 @@ BEGIN
             AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
             AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
             AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC
+            AND "Asesoria"."idAsesoria" = (
+              SELECT "Asesoria"."idAsesoria"
+                FROM "Asesoria", "HorarioDisponible", "Usuario", "UnidadFormacion"
+                WHERE "Asesoria"."idHorarioDisponible" = "HorarioDisponible"."idHorarioDisponible"
+                AND (
+                  "Asesoria"."idAsesor" = "Usuario"."idUsuario" OR
+                  "Asesoria"."idAsesorado" = "Usuario"."idUsuario"
+                )
+                AND "Asesoria"."idUF" = "UnidadFormacion"."idUF"
+                AND "Usuario"."idUsuario" = idUsuario
+                AND EXTRACT(HOUR FROM "HorarioDisponible"."fechaHora") = horaC
+                AND EXTRACT(DAY FROM "HorarioDisponible"."fechaHora") = diaC
+                AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mesC
+                AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anioC
+            )
         ) AS usuario,
         "Asesoria"."lugar",
         "UnidadFormacion"."nombreUF",
