@@ -1009,6 +1009,7 @@ DECLARE
   nombreasesorado VARCHAR(100);
   idnuevanotificacion INTEGER;
   idnotificacionsolicitud INTEGER;
+  idAsesor VARCHAR(10);
 
 BEGIN
 
@@ -1025,6 +1026,12 @@ BEGIN
     AND EXTRACT(MONTH FROM "HorarioDisponible"."fechaHora") = mes
     AND EXTRACT(YEAR FROM "HorarioDisponible"."fechaHora") = anio
   INTO idAsesoriaC;
+
+  -- Obtención del ID del asesor
+  SELECT "idAsesor"
+  FROM "Asesoria"
+  WHERE "idAsesoria" = idAsesoriaC
+  INTO idAsesor;
   
   -- Actualización del status de la asesoría
   UPDATE "Asesoria" 
@@ -1080,6 +1087,12 @@ BEGIN
     ("idNotificacion", "idUsuario")
   VALUES
     (idnuevanotificacion, idAsesorado);
+
+  -- Relación de la notificación con el asesor
+  INSERT INTO "NotificacionUsuario" 
+    ("idNotificacion", "idUsuario")
+  VALUES
+    (idnuevanotificacion, idAsesor);
 
   -- Relación de la notificación con todos los directivos
   INSERT INTO "NotificacionUsuario" 

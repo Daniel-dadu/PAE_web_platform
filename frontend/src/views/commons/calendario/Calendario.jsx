@@ -110,7 +110,7 @@ function Calendario(){
           setAsesoriaJSON(response.data);
 
           informacionAsesoria["nombreUF"] = response.data.uF;
-          informacionAsesoria["idAsesorado"] = (localStorage.rolUsuario === 'asesor') ? response.data.usuario : localStorage.usuario;
+          informacionAsesoria["idAsesorado"] = (localStorage.rolUsuario === 'asesor') ? response.data.usuario.substring(response.data.usuario.length-9, response.data.usuario.length) : localStorage.usuario;
           informacionAsesoria["hora"] = response.data.hora;
           informacionAsesoria["dia"] = response.data.dia;
           informacionAsesoria["mes"] = response.data.mes;
