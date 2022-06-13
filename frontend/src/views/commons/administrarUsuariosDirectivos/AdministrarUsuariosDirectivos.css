@@ -45,3 +45,25 @@
     padding: 1rem;
     border-radius: 1rem;
 }
+
+/* responsive  */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .btn_AdministrarUsuariosDirectivos{
+        display: flex;
+        position: relative;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    
+    }
+
+    .divListaUsuarios {
+        height: 65vh;
+        width: 100%;
+        margin: auto;
+    }
+    
+
+}

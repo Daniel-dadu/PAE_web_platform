@@ -439,4 +439,62 @@
     align-items: center;
 }
 
+
+/* estilos para el tipo de tarjeta 3 */
+
+.tipo3 {
+    width: 99%;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+
+.tipo3 .tabla-tipo-3 .fila-general-TarjetaListaDesplegable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0px 5px 0px 5px;
+}
+
+.tipo3 .tabla-tipo-3 .hora-asesoria-tipo-3 {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: .8rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.tipo3 .tabla-tipo-3 .contenido-tipo-3 {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: .8rem;
+    font-weight: bold;
+    color: #000;
+}
+
+
+.tipo3 .tabla-tipo-3 .claveUF-tipo-3 {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: .8rem;
+    font-weight: bold;
+    color: #000;
+
+}
+
 }

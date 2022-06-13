@@ -190,3 +190,41 @@
 .negro_tipo_3 {
     background: #323232;
 }
+
+
+/* responsive  */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    
+.contenedor-listaDesplegable-2 {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contenedor-listaDesplegable-2 .show{
+    /* height: auto; */
+    height: 300px;
+    opacity: 1;
+    width: 95%;
+}
+
+
+.container-listaDesplegable-2 {
+    width: 100%;
+    max-width: calc(100% - 10px);
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+}

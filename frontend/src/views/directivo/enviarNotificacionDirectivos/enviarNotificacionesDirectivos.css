@@ -99,3 +99,46 @@
     align-items: center;
     padding: 10px;
 }
+
+
+/* responsive  */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .contenedor-contenido-enviarNotificacionDirectivos .contenedor-mensaje-enviarNotificacionesDir{
+        width: 100%;
+        height: auto;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 25px;
+    }
+    
+    
+#mensaje_envNotificaciones {
+    padding: 10px;
+    font-size: 1.2rem;
+    margin: 0;
+    border: none;
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    resize: none;
+    border-radius: 6px;
+    width: 100%;
+    height: 200px;
+}
+
+.contenedor-botones-enviarNotificacionDirectivos {
+    width: 100%;
+    /* height: 150px; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    margin-top: 120px;
+}
+
+
+
+
+}

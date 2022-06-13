@@ -31,3 +31,44 @@
     height: 70%;
     overflow-y: scroll;
 }
+
+/* responsive  */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .containerBarraBusqueda{
+        width: fit-content;
+        margin-left: 33px;
+        color: #ADADAD;
+        background: #E6E6E6;
+        border-radius: 6px;
+        margin-bottom: 30px;
+    }
+    
+    .containerBarraBusqueda input{
+        width: 90%;
+        height: 40px;
+        padding: 5px;
+        font-family: 'Dosis', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #000000;
+        background: #E6E6E6;
+        border-radius: 6px;
+    }
+    
+    .containerBarraBusqueda .icono{
+        color: #ADADAD;
+    }
+    
+    .containerListaDesplegableAsesorias {
+        margin-bottom: 1rem;
+    }
+    
+    .users_encuestas_container {
+        height: 70%;
+        overflow-y: scroll;
+    }
+
+}
