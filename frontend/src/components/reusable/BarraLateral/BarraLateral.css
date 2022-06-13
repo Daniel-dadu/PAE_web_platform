@@ -111,6 +111,10 @@
     margin: 0.5rem;
 }
 
+.footer-container-general-responsive {
+    display: none;
+}
+
 /* responsive  */
 
 /* Extra small devices (phones, 600px and down) */
