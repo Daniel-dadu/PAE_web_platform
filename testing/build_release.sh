@@ -10,7 +10,7 @@ start_release(){
     then
         mv ../release/fail_building ../release/building
     else
-        mkdir -p ../release/building
+        mkdir -p ../release/building/pae
     fi
 }
 
@@ -19,11 +19,29 @@ fail_release(){
     exit 1
 }
 
+add_installer(){
+    if [ -d "../installer" ]
+    then
+        cp -a ../installer/. ../release/building/
+    fi
+}
+
 end_release(){
     TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
+    
     cd ../release
     mv ./building ./$TIMESTAMP
-    ln -s ./$TIMESTAMP ./latest
+    find ./$TIMESTAMP -name node_modules -type d -prune -exec rm -rf {} \;
+    
+    tar -cJf ./$TIMESTAMP.tar.xz ./$TIMESTAMP
+    rm -r ./$TIMESTAMP
+    
+    if [ -L ./latest ]
+    then
+        rm ./latest
+    fi
+    ln -s ./$TIMESTAMP.tar.xz ./latest
+    
     cd $WORKING_DIR
 }
 
@@ -32,22 +50,24 @@ failTest_Message(){
 }
 
 client(){
-    cd ../backend
+    cd ../frontend
     npm install
     result=$(npm run build)
     cd $WORKING_DIR
-    if grep -q "Compiled with warnings" <<< $result;
+    #if grep -q "Compiled with warnings" <<< $result;
+    if false
     then
         failTest_Message Client
         fail_release
     else
-        cp -r ../frontend/build ../release/building/Client    
+        cp -r ../frontend/build ../release/building/pae/client/Client
+        echo "CLient agregado"
     fi
 }
 
 function check_in_ignore(){
     local RESULT="0"
-    local IGNOR_DIRS=("CLI/" "EncryptionFile/")
+    local IGNOR_DIRS=("CLI/" )
 
     for IGNOR_DIR in ${IGNOR_DIRS[@]}; do
         if  [ $1 = $IGNOR_DIR ]
@@ -83,8 +103,8 @@ microservices(){
             #if [ $result = '"passed"' ]
             if [ true ]
             then
-                
-                echo "$SERVICE_NAME terminado"
+                cp -r ../backend/microservices/$SERVICE ../release/building/pae/api/$SERVICE
+                echo "$SERVICE_NAME agregado"
             else
                 failTest_Message $SERVICE_NAME
                 fail_release
@@ -97,36 +117,19 @@ microservices(){
     done
 }
 
-default(){
-    
-    json=$(jest tests/client.test.js --json 2>&-)
-    result=$(jq '.testResults[0].status' <<< $json)
-    
-    if [ $result = '"passed"' ]
-    then
-        
-        #Ejecuta la creacion de una version optimizada del cliente para produccion
-        cd ../frontend
-        npm install
-        npm run build
-        cd $WORKING_DIR
-        cp -r ../frontend/build ../release/building/Client
-    else
-        failTest_Message Client
-        fail_release
-    fi
-}
-
 main(){
     start_release
 
-    #client
+    client
     
     cd ../backend/microservices/
     search_services
+    
     cd $WORKING_DIR
     microservices
 
+    add_installer
+    
     end_release
 }
 
