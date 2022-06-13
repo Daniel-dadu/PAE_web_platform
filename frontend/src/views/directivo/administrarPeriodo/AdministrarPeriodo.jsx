@@ -86,9 +86,6 @@ function AdministrarPeriodo() {
                 inicio: new Date(anio, dateFunctions.monthsEnNumero[Mes3_1], Dia3_1),
                 fin: new Date(anio, dateFunctions.monthsEnNumero[Mes3_2], Dia3_2, 23, 59, 59)
             }
-            console.log(periodo1)
-            console.log(periodo2)
-            console.log(periodo3)
 
             const config = {
                 method: 'post',
@@ -146,8 +143,6 @@ function AdministrarPeriodo() {
                     <CampoSeleccionarEnListaDesplegable size="large" options={diasMes} parentCallback={handleDia1_2} defaultValue={''}/>
                     <p>Mes del último día</p>
                     <CampoSeleccionarEnListaDesplegable size="large" options={meses} parentCallback={handleMes1_2} defaultValue={''}/>
-                    {/* <p>Dia: {Dia1_2} </p>
-                    <p>Mes: {Mes1_2} </p> */}
 
                 </div>
 
@@ -163,8 +158,6 @@ function AdministrarPeriodo() {
                     <CampoSeleccionarEnListaDesplegable size="large" options={diasMes} parentCallback={handleDia2_1} defaultValue={''}/>
                     <p>Mes del primer día</p>
                     <CampoSeleccionarEnListaDesplegable size="large" options={meses} parentCallback={handleMes2_1} defaultValue={''}/>
-                    {/* <p>Dia: {Dia2_1} </p>
-                    <p>Mes: {Mes2_1} </p> */}
 
                     <br />
 
@@ -172,8 +165,6 @@ function AdministrarPeriodo() {
                     <CampoSeleccionarEnListaDesplegable size="large" options={diasMes} parentCallback={handleDia2_2} defaultValue={''}/>
                     <p>Mes del último día</p>
                     <CampoSeleccionarEnListaDesplegable size="large" options={meses} parentCallback={handleMes2_2} defaultValue={''}/>
-                    {/* <p>Dia: {Dia2_2} </p>
-                    <p>Mes: {Mes2_2} </p> */}
                 
                 </div>
 
@@ -189,8 +180,6 @@ function AdministrarPeriodo() {
                     <CampoSeleccionarEnListaDesplegable size="large" options={diasMes} parentCallback={handleDia3_1} defaultValue={''}/>
                     <p>Mes del primer día</p>
                     <CampoSeleccionarEnListaDesplegable size="large" options={meses} parentCallback={handleMes3_1} defaultValue={''}/>
-                    {/* <p>Dia: {Dia3_1} </p>
-                    <p>Mes: {Mes3_1} </p> */}
 
                     <br />
 
@@ -198,14 +187,13 @@ function AdministrarPeriodo() {
                     <CampoSeleccionarEnListaDesplegable size="large" options={diasMes} parentCallback={handleDia3_2} defaultValue={''}/>
                     <p>Mes del último día</p>
                     <CampoSeleccionarEnListaDesplegable size="large" options={meses} parentCallback={handleMes3_2} defaultValue={''}/>
-                    {/* <p>Dia: {Dia3_2} </p>
-                    <p>Mes: {Mes3_2} </p> */}
 
                 </div>
 
             </div>
 
-            <div style={{width: 'fit-content', margin: 'auto'}}>
+            <div style={{width: 'fit-content', margin: 'auto', display: 'flex', gap: '1rem'}}>
+                <BotonSencillo onClick={() => navigate('/administrar')} backgroundColor='rojo' size='reducido' children='Cancelar'/>
                 <BotonSencillo onClick={submitPeriodos} backgroundColor='verde' size='reducido' children='Establecer fechas'/>
             </div>
 
