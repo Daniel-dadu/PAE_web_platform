@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { ListaDesplegable, BotonSencillo } from '../../../routeIndex';
 import { ImCross } from "react-icons/im";
 import './popUpSolicitudAsesoria.css';
@@ -81,6 +81,8 @@ const PopUpSolicitudAsesoria = ({ data = info, activo, accion, accionCancelar, a
         matriculaAsesor = matricula;
     }
 
+    const [lugarAsesoria, setLugarAsesoria] = useState('');
+
   return (
         <>
             <div className={ `contenedor-general-PuSolicitudAsesoria${activo?"":" show"}` }>
@@ -146,7 +148,7 @@ const PopUpSolicitudAsesoria = ({ data = info, activo, accion, accionCancelar, a
                         </div>
                         <div className='contenedor-lugarAsesoria'>
                             <b id='letras-negras-column'>Lugar de asesoria:</b>
-                            <input type="text" name="lugar_asesoria" id="lugar_asesoria" />
+                            <input type="text" name="lugar_asesoria" id="lugar_asesoria" onChange = {t => setLugarAsesoria(t.target.value)} />
                         </div>
                         <div className='contenedor-asesores'>
                             
@@ -156,7 +158,7 @@ const PopUpSolicitudAsesoria = ({ data = info, activo, accion, accionCancelar, a
                     </div>
                     <div className='footer-PuSolicitudAsesoria'>
                             <BotonSencillo  backgroundColor="rojo" size="reducido" children="cancelar asesoria" onClick={ accionCancelar }/>
-                            <BotonSencillo  backgroundColor="verde" size="reducido" children="confirmar asesoria" onClick= {() => accionConfirmar(matriculaAsesor)}/>
+                            <BotonSencillo  backgroundColor="verde" size="reducido" children="confirmar asesoria" onClick= {() => accionConfirmar(matriculaAsesor, lugarAsesoria)}/>
 
                     </div>
                 </div>

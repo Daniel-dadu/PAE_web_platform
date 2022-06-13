@@ -15,7 +15,8 @@ var informacionAsesoria = {
     "hora": 0,
     "dia": 0,
     "mes": 0,
-    "anio": 0
+    "anio": 0,
+    "lugar": ''
 }
 
 const PanelNotificaciones = () => { /* En caso de ser directivo se espera un tipo de usuario "directivo", para mostrar el boton de enviar notificacion, cualquier otra palabra para el panel de notificaciones de asesor y asesorado */
@@ -130,7 +131,8 @@ const PanelNotificaciones = () => { /* En caso de ser directivo se espera un tip
                 "hora": 0,
                 "dia": 0,
                 "mes": 0,
-                "anio": 0
+                "anio": 0,
+                "lugar": ''
             }
 
             // console.log(JSON.stringify(informacionAsesoria))
@@ -177,9 +179,10 @@ const PanelNotificaciones = () => { /* En caso de ser directivo se espera un tip
 
     }, [setNotificacionesJSON])
 
-    const aceptarAsesoria = (idAsesor) => {
+    const aceptarAsesoria = (idAsesor, lugarAsesoria) => {
 
         informacionAsesoria["idAsesor"] = idAsesor;
+        informacionAsesoria["lugar"] = lugarAsesoria;
         console.log(JSON.stringify(informacionAsesoria))
 
         const config = {
@@ -195,7 +198,8 @@ const PanelNotificaciones = () => { /* En caso de ser directivo se espera un tip
                 "hora": informacionAsesoria["hora"],
                 "dia": informacionAsesoria["dia"],
                 "mes": informacionAsesoria["mes"],
-                "anio": informacionAsesoria["anio"]
+                "anio": informacionAsesoria["anio"],
+                "lugar": informacionAsesoria["lugar"]
             })
         }
         
@@ -224,7 +228,8 @@ const PanelNotificaciones = () => { /* En caso de ser directivo se espera un tip
                     "hora": 0,
                     "dia": 0,
                     "mes": 0,
-                    "anio": 0
+                    "anio": 0,
+                    "lugar": ''
                 }
 
                 // console.log(JSON.stringify(informacionAsesoria))

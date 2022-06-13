@@ -814,7 +814,8 @@ CREATE OR REPLACE PROCEDURE aceptarAsesoria(
   hora INTEGER,
   dia INTEGER,
   mes INTEGER,
-  anio INTEGER
+  anio INTEGER,
+  lugarAsesoria TEXT
 )
 LANGUAGE plpgsql AS
 $$
@@ -881,10 +882,15 @@ BEGIN
   AND EXTRACT(HOUR FROM "fechaHora") = hora
   AND "status" = 'bloqueada'
   INTO idhorariodisponible;
-  
+
   -- Actualización del status de la asesoría
   UPDATE "Asesoria" 
   SET "status" = 'confirmada' 
+  WHERE "idAsesoria" = idAsesoriaC;
+
+  -- Actualización del lugar de la asesoría
+  UPDATE "Asesoria" 
+  SET "lugar" = lugarAsesoria
   WHERE "idAsesoria" = idAsesoriaC;
 
   -- Actualización del status del horario disponible del asesor

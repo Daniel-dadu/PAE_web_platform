@@ -67,9 +67,10 @@ const aceptarAsesoria = (request, response) => {
     const dia = request.body.dia
     const mes = request.body.mes
     const anio = request.body.anio
+    const lugar = request.body.lugar
 
-    const consulta = `CALL aceptarAsesoria($1, $2, $3, $4, $5, $6, $7);`
-    const params = [idAsesor, nombreUF, idAsesorado, hora, dia, mes, anio]
+    const consulta = `CALL aceptarAsesoria($1, $2, $3, $4, $5, $6, $7, $8);`
+    const params = [idAsesor, nombreUF, idAsesorado, hora, dia, mes, anio, lugar]
 
     pool.query(consulta, params, (error) => {
         if(error) {
