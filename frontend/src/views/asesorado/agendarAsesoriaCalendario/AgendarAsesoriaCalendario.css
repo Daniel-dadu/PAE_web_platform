@@ -23,3 +23,21 @@
     display: flex;
 }
 
+@media screen and (max-width: 480px){ 
+
+
+    .titles_calendarioMini_container {
+        display: relative;
+        height: 12%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .calendarioMini_container{
+        margin-top: 20.5px;
+        display: absolute;
+      
+     }
+    
+    }
