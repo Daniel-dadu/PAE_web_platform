@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { Template, BotonSencillo, CampoTextoMenuDesplegable } from '../../../routeIndex';
 import './enviarNotificacionesDirectivos.css'
 
+import axios from 'axios';
+
 const EnviarNotificacionDirectivos = () => {
   
     let navigate = useNavigate();
@@ -13,7 +15,31 @@ const EnviarNotificacionDirectivos = () => {
 
     const onSelectGroup = (grupo) => {
       setCurrentSelection(grupo)
-      // console.log(grupo)
+      
+    }
+    const enviarNoti = () => {
+
+      var config = {
+        method: 'post',
+        url: 'http://20.225.209.57:3030/notificacion/enviarNotificacion_directivos',
+        headers: { 
+            'Content-Type': 'application/json'
+        },
+        data: JSON.stringify({
+            "destinatario": currentSelection,
+            "asunto": asunto,
+            "mensaje": mensaje
+        })
+      };
+      
+      axios(config)
+      .then(function (response) {
+        alert(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+
     }
 
     return (
@@ -41,7 +67,7 @@ const EnviarNotificacionDirectivos = () => {
 
                 <div className='contenedor-botones-enviarNotificacionDirectivos'>
                     <BotonSencillo backgroundColor="gris" size="normal" children="Cancelar" onClick={() => routeChange("./notificaciones")}/>
-                    <BotonSencillo backgroundColor="turquesa" size="normal" children="Enviar" onClick={"Enviar"} />
+                    <BotonSencillo backgroundColor="turquesa" size="normal" children="Enviar" onClick={enviarNoti} />
 
                 </div>
             </Template>

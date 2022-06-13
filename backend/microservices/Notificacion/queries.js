@@ -104,9 +104,24 @@ const cancelarAsesoria = (request, response) => {
     
 }
 
+const enviarNotificacionDirectivos = (request, response) => {
+    const destinatario = request.body.destinatario
+    const asunto = request.body.asunto
+    const mensaje = request.body.mensaje
+
+    pool.query(`CALL enviarNotificaciones($1,$2,$3)`, [destinatario, asunto, mensaje], (error) => {
+        if(error) {
+            response.status(409).send('Ocurrió un error al enviar la notificación.')
+        } else {
+            response.status(200).send('Se envió la notificacion correctamente')
+        }
+    })
+}
+
 module.exports = {
     get_notificaciones_usuario,
     get_asesoresDisponibles,
     aceptarAsesoria,
-    cancelarAsesoria
+    cancelarAsesoria,
+    enviarNotificacionDirectivos
 }

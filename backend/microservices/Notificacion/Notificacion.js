@@ -2,7 +2,6 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const port = 3030
-
 const db = require('./queries')
 
 // Documentación sobre el uso de CORS: https://expressjs.com/en/resources/middleware/cors.html
@@ -74,6 +73,9 @@ app.post('/notificacion/aceptarAsesoria/', db.aceptarAsesoria)
 */
 // http://20.225.209.57:3030/notificacion/cancelarAsesoria
 app.post('/notificacion/cancelarAsesoria/', db.cancelarAsesoria)
+
+
+app.post('/notificacion/enviarNotificacion_directivos', db.enviarNotificacionDirectivos)
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
