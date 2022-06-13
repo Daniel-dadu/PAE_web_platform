@@ -2,12 +2,17 @@
     display: flex;
 }
 
+
 /*  responsive */
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .container_templatee {
         flex-direction: column-reverse;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
     }
 }
 

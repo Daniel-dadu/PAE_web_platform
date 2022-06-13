@@ -1,30 +1,30 @@
 import React from 'react';
-import { Template, ListaDesplegable } from '../../../routeIndex';
+import { Template } from '../../../routeIndex';
 import './danielFlores.css';
 
 
-const listaAsesores = [
-  {
-      "matricula":"A01734184",
-      "nombre":"Daniel Flores"
-  },
-  {
-      "matricula":"A01734184",
-      "nombre":"Daniel Flores"
-  },
-  {
-      "matricula":"A01734184",
-      "nombre":"Daniel Flores"
-  },
-  {
-      "matricula":"A01734184",
-      "nombre":"Daniel Flores"
-  },
-  {
-      "matricula":"A01734184",
-      "nombre":"Daniel Flores"
-  }
-];
+// const listaAsesores = [
+//   {
+//       "matricula":"A01734184",
+//       "nombre":"Daniel Flores"
+//   },
+//   {
+//       "matricula":"A01734184",
+//       "nombre":"Daniel Flores"
+//   },
+//   {
+//       "matricula":"A01734184",
+//       "nombre":"Daniel Flores"
+//   },
+//   {
+//       "matricula":"A01734184",
+//       "nombre":"Daniel Flores"
+//   },
+//   {
+//       "matricula":"A01734184",
+//       "nombre":"Daniel Flores"
+//   }
+// ];
 
 
 const DanielFlores = () => {
