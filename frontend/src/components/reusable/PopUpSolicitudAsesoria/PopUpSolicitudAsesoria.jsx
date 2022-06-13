@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { ListaDesplegable, BotonSencillo } from '../../../routeIndex';
 import { ImCross } from "react-icons/im";
 import './popUpSolicitudAsesoria.css';
 
+var matriculaAsesor;
 
 const info = {
     fecha:{
@@ -43,7 +44,7 @@ const info = {
 }
 
 
-const PopUpSolicitudAsesoria = ({ data = info, activo, accion }) => {
+const PopUpSolicitudAsesoria = ({ data = info, activo, accion, accionCancelar, accionConfirmar }) => {
 
     /*
         DOCUMENTCION DEL COMPONENTE
@@ -75,6 +76,12 @@ const PopUpSolicitudAsesoria = ({ data = info, activo, accion }) => {
                 <PupUpSolicitudAsesoria  data={objeto_info} activo={active} accion={ handleActive } />
                     
     */
+
+    const onSelectAsesor = matricula => {
+        matriculaAsesor = matricula;
+    }
+
+    const [lugarAsesoria, setLugarAsesoria] = useState('');
 
   return (
         <>
@@ -119,9 +126,21 @@ const PopUpSolicitudAsesoria = ({ data = info, activo, accion }) => {
                         <div className='contenendor-imagenes'>
                             <b>Imagenes adjuntadas</b>
                             <div className='galeria-imagenes'>
-                                <img src={ data.imagenes.img1 } alt="img1" id="img-mostrada" />
-                                <img src={ data.imagenes.img2 } alt="img1" id="img-mostrada" />
-                                <img src={ data.imagenes.img3 } alt="img1" id="img-mostrada" />
+                                {
+                                    (data.imagenes['img1'] !== null)
+                                        ? <img src={ data.imagenes.img1 } alt="img1" id="img-mostrada" />
+                                        : <> <br/><br/><br/><br/><br/> <p>No se adjuntaron imágenes</p> </>
+                                }
+                                {
+                                    (data.imagenes['img2'] !== undefined)
+                                        ? <img src={ data.imagenes.img2 } alt="img2" id="img-mostrada" />
+                                        : <p></p>
+                                }
+                                {
+                                    (data.imagenes['img3'] !== undefined)
+                                        ? <img src={ data.imagenes.img3 } alt="img3" id="img-mostrada" />
+                                        : <p></p>
+                                }
                             </div>
                         </div>
                         <div className='separador-contenido-popUp'>
@@ -129,17 +148,17 @@ const PopUpSolicitudAsesoria = ({ data = info, activo, accion }) => {
                         </div>
                         <div className='contenedor-lugarAsesoria'>
                             <b id='letras-negras-column'>Lugar de asesoria:</b>
-                            <input type="text" name="lugar_asesoria" id="lugar_asesoria" />
+                            <input type="text" name="lugar_asesoria" id="lugar_asesoria" onChange = {t => setLugarAsesoria(t.target.value)} />
                         </div>
                         <div className='contenedor-asesores'>
                             
-                            <ListaDesplegable tipo={ 3 } arrContenido={ data.asesores } />  
+                            <ListaDesplegable tipo={ 3 } arrContenido={ data.asesores } getAsesorSelected={ onSelectAsesor } />  
 
                         </div>
                     </div>
                     <div className='footer-PuSolicitudAsesoria'>
-                            <BotonSencillo  backgroundColor="rojo" size="reducido" children="cancelar asesoria" onClick={ accion }/>
-                            <BotonSencillo  backgroundColor="verde" size="reducido" children="confirmar asesoria" onClick={ accion }/>
+                            <BotonSencillo  backgroundColor="rojo" size="reducido" children="cancelar asesoria" onClick={ accionCancelar }/>
+                            <BotonSencillo  backgroundColor="verde" size="reducido" children="confirmar asesoria" onClick= {() => accionConfirmar(matriculaAsesor, lugarAsesoria)}/>
 
                     </div>
                 </div>

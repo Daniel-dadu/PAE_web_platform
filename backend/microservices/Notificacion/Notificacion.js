@@ -40,6 +40,40 @@ app.use(
 // http://20.225.209.57:3030/notificacion/get_notificaciones/?idUsuario=A01657967
 app.get('/notificacion/get_notificaciones/', db.get_notificaciones_usuario)
 
+// OBTENER LOS ASESORES DISPONIBLES
+// Ejemplo de consulta GET:
+// http://20.225.209.57:3030/notificacion/get_asesoresDisponibles/?hora=17&dia=13&mes=6&anio=2022&nombreUF=Fotografía%20publicitaria%20y%20comercial
+app.get('/notificacion/get_asesoresDisponibles/', db.get_asesoresDisponibles)
+
+// Aceptar una asesoría recibiendo lo siguiente:
+/****** Ejemplo del JSON body: ******
+{
+    "idAsesor": "A99999902",
+    "nombreUF": "Desarrollo de software",
+    "idAsesorado": "A01234599",
+    "hora": 18,
+    "dia": 16,
+    "mes": 6,
+    "anio": 2022,
+    "lugar": "Algún lugar del mundo"
+}
+*/
+// http://20.225.209.57:3030/notificacion/aceptarAsesoria
+app.post('/notificacion/aceptarAsesoria/', db.aceptarAsesoria)
+
+// Cancelar una asesoría recibiendo lo siguiente:
+/****** Ejemplo del JSON body: ******
+{
+    "nombreUF": "Desarrollo de software",
+    "idAsesorado": "A01234599",
+    "hora": 18,
+    "dia": 16,
+    "mes": 6,
+    "anio": 2022
+}
+*/
+// http://20.225.209.57:3030/notificacion/cancelarAsesoria
+app.post('/notificacion/cancelarAsesoria/', db.cancelarAsesoria)
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)

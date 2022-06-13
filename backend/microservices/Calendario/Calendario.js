@@ -50,6 +50,11 @@ app.get('/calendario/get_allAsesorias/', db.get_allAsesorias)
 // http://20.225.209.57:3031/calendario/get_informacionAsesoria/?idUsuario=A94949494&hora=10&dia=1&mes=6&anio=2022
 app.get('/calendario/get_informacionAsesoria/', db.get_informacionAsesoria)
 
+// OBTENER LAS ASESORÍAS DE UN ASESOR POR DÍA
+// Ejemplo de consulta GET:
+// http://20.225.209.57:3031/calendario/get_asesoriasIndividuales/?dia=25&mes=2&anio=2022
+app.get('/calendario/get_asesoriasIndividuales/', db.get_asesoriasIndividuales)
+
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
 })
