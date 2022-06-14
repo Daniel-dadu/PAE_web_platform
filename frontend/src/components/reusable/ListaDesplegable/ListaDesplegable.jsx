@@ -170,7 +170,7 @@ const ListaDesplegable = ( { tipo, semestre, fecha, arrContenido, getUFSelected,
                             {
                                 arrContenido.map((cita, index) => (
                                     <TarjetaListaDesplegable 
-                                        tipo={ 7 } 
+                                        tipo={ (isSend) ? 7 : 3 } 
                                         claveUF={ cita.claveUF } 
                                         colorTipo3={ cita.colorTipo3 } 
                                         horaAsesoria={ (isSend) ? cita.horaAsesoria : cita.horaAsesoria + ":00 hrs."}
