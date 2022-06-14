@@ -11,8 +11,13 @@
 #   puerto de las apis
 
 MODO=false
+WORKING_DIR=$PWD
+#Almacena la configuracion actual de las apis
+CONFIG_FILE=$PWD/config.txt
+#Almacena la configuracion deseada de las apis
+NEW_CONFIG_FILE=$PWD/new_config.txt
 
-while getopts :mg opt
+while getopts :mgc opt
 do
     case "${opt}" in
         :)
@@ -25,6 +30,9 @@ do
         g) 
             MODO=dialog
             ;;
+        c) 
+            MODO=config
+            ;;
     esac
 done
 
@@ -33,10 +41,15 @@ then
     echo "No se escogio un modo de funcionamiento"
     echo "-m para ejecutarlo de forma manual"
     echo "-g para ejecutarlo con ventanas en la terminal"
+    echo "-c para ejecutarlo con la configuracion en config.txt y new_config.txt"
     exit 1
 fi
 # --------------------------------------------
-echo "Instalando depedencias"
+if [ $MODO = manual ] || [ $MODO = config ]
+then
+    echo "Instalando depedencias"
+fi
+
 INSTALL_DEB=$(apt install npm -y 2> /dev/null)
 if [ $? != 0 ]
 then
@@ -54,46 +67,147 @@ fi
 npm install pm2 -g &> /dev/null
 # --------------------------------------------
 
-IP="10.50.84.114"
-PORTS=( 3093 3094 3031 80 0 3091 3095 3030 3092 3090 )
+#Almacena la configuracion de los puertos presentes en las ip
+cd ./pae/api
+APIS=($(ls -d */))
+> $CONFIG_FILE
+
+if [ $MODO = manual ] || [ $MODO = config ]
+then
+    echo "Obteniendo la configuracion de los puertos de las apis"
+fi
+
+for API in ${APIS[@]}; do
+    if  [ $API != EncryptionFile/ ]
+    then
+        cd $API
+        #cambiar los puertos
+        grep -m 1 -F port ${API::-1}.js | gawk -v name=${API::-1} '{print name " " $4}' >> $CONFIG_FILE
+        cd ../
+    fi
+done
+
+if [ $MODO = config ] && [ ! -f $NEW_CONFIG_FILE ]
+then
+    echo "No se encontro $CONFIG_FILE"
+    exit 1
+fi
+
+cd $WORKING_DIR
+# --------------------------------------------
+
+#Configurar apis
+cd ./pae/api
+
+if [ $MODO = manual ] || [ $MODO = config ]
+then
+    echo "Configurando los puertos de las apis"
+fi
+
+for API in ${APIS[@]}; do
+    if  [ $API != EncryptionFile/ ]
+    then
+        cd $API
+        #optiene la configuracion de los puertos
+        CONFIG_PORT=$(gawk -v name=${API::-1} '$0~name{print $2}' $CONFIG_FILE)
+        
+        #asignar nuevo puerto
+        CONFIG_NEW_PORT=""
+
+        case $MODO in
+            manual|dialog)
+                CONFIG_NEW_PORT=$CONFIG_PORT
+                while true; do
+                    read -p "Desea cambiar el puerto de ${API::-1}($CONFIG_PORT) (Si/No): " CHANGE
+                    case $CHANGE in
+                        [Ss]* )
+                            while true; do
+                                read -p "Ingrese un puerto para ${API::-1}: " CONFIG_NEW_PORT
+                                if ! [[ $CONFIG_NEW_PORT =~ ^[0-9]+$ ]]
+                                    then
+                                    echo "Ingrese un puerto conformado unicamente por digitos"
+                                else
+                                    break
+                                fi
+                            done
+                            break
+                            ;;
+                        [Nn]* )
+                            break
+                            ;;
+                        * ) echo "Ingrese si o no"
+                            ;;
+                    esac
+                done
+                ;;
+            config)
+                CONFIG_NEW_PORT=$(gawk -v name=${API::-1} '$0~name{print $2}' $NEW_CONFIG_FILE)
+                if ! [[ $CONFIG_NEW_PORT =~ ^[0-9]+$ ]]
+                    then
+                    echo "Puerto de ${API::-1} en la configurarion de entrada no esta conformado unicamente por digitos"
+                    exit 1
+                fi
+                ;;
+        esac
+
+        #Actualiza la api
+        sed -i "s/$CONFIG_PORT/$CONFIG_NEW_PORT/g" "${API::-1}.js"
+        #Actualiza la configuracion
+        sed -i "s/${API::-1} $CONFIG_PORT/${API::-1} $CONFIG_NEW_PORT/g" "$CONFIG_FILE"
+        
+        cd ../
+    fi
+done
 
 # --------------------------------------------
-NUEVOS_PORTS=()
 
-cd ./pae
-APIS=($(ls -d */))
-echo "Instalando APIs"
+#Instalar apis
+if [ $MODO = manual ] || [ $MODO = config ]
+then
+    echo "Instalando las apis"
+fi
+
 mkdir -p /opt/pae/
-INDEX=0
+rm -r /opt/pae/*
 for API in ${APIS[@]}; do
     if  [ $API != Client/ ]
     then
         cd $API
         npm install &> /dev/null
-        #cambiar los puertos
-        # sed -i -- "s/${PORTS[INDEX]}/${NUEVOS_PORTS[INDEX]}/g" ${API::-1}.js
-        #cambiar dominio
-        sed -i -- "s/20.225.209.57/$IP/g" ${API::-1}.js
         cd ../
-        #mover las apis de lugar
-        mv $API /opt/pae/$API
-        #iniciar demonio
-        pm2 start /opt/pae/$API/${API::-1}.js
+
+        #copiar las apis al directorio destino
+        cp -r $API /opt/pae/$API
     fi
-    INDEX=$((INDEX+1))
 done
-pm2 startup
+
+#copia el administrador de las apis al directorio destino
+cd $WORKING_DIR
+cp -r CLI.sh /opt/pae/CLI.sh
+cp pae.service /etc/systemd/system
+systemctl daemon-reload
+systemctl restart pae.service
 # --------------------------------------------
 
-echo "Instalando sitio web"
-cd Client
-#cambiar puertos
-# sed -i -- "s/${PORTS[3]}/${NUEVOS_PORTS[3]}/g" pae-site
+#Instalar el cliente
+cd pae/client
 #cambiar dominio
-sed -i -- "s/20.225.209.57/$IP/g" *
+#sed -i -- "s/20.225.209.57/$IP/g" *
+
+#copia el cliente en el directorio destino
 mkdir -p /var/pae/client
-cp -r ./pae/Client /var/pae/client
-cp ./pae-site /etc/nginx/sites-available/pae
+cp -r Client /var/pae/client
+cp $WORKING_DIR/pae-site /etc/nginx/sites-available/pae
+if [ -f /etc/nginx/sites-enabled/default ]
+then
+    rm /etc/nginx/sites-enabled/default
+    rm /etc/nginx/sites-available/default
+fi
+if [ -L /etc/nginx/sites-enabled/pae ]
+then
+    rm /etc/nginx/sites-enabled/pae
+fi
 ln -s /etc/nginx/sites-available/pae /etc/nginx/sites-enabled/pae
+systemctl restart nginx
 cd ../
 # --------------------------------------------

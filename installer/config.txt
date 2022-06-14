@@ -1,0 +1,9 @@
+Administracion 3001
+Asesoria 3002
+Calendario 3003
+Encuesta 3004
+General 3005
+Login 3006
+Notificacion 3007
+Perfil 3008
+Registro 3009
