@@ -65,6 +65,25 @@ then
 fi
 
 npm install pm2 -g &> /dev/null
+
+while true; do
+    read -p "Desea instalar la base de datos (Si/No): " INSTALL_DB
+    case $INSTALL_DB in
+        [Ss]* )
+            sudo -i -u postgres
+
+            psql -c "CREATE ROLE pae3 WITH LOGIN PASSWORD 'devsoft_db_manager';"
+            psql -c "ALTER ROLE pae3 CREATEDB;"
+            psql -c "CREATE DATABASE pae_db3 OWNER pae3;"
+            break
+            ;;
+        [Nn]* )
+            break
+            ;;
+        * ) echo "Ingrese si o no"
+            ;;
+    esac
+done
 # --------------------------------------------
 
 #Almacena la configuracion de los puertos presentes en las ip
@@ -191,8 +210,11 @@ systemctl restart pae.service
 
 #Instalar el cliente
 cd pae/client
+cd Client/
 #cambiar dominio
-#sed -i -- "s/20.225.209.57/$IP/g" *
+read -p "Indique la IP o dominio deseado: " IP_DOMAIN
+find . -type f -exec sed -i -- "s/[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}/$IP_DOMAIN/g" {} +
+cd ../
 
 #copia el cliente en el directorio destino
 mkdir -p /var/pae/client
