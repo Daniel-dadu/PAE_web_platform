@@ -1,0 +1,8 @@
+[Unit]
+Description=PAE - Devsoft service
+
+[Service]
+ExecStart=/opt/pae/CLI.sh -D /opt/pae
+
+[Install]
+WantedBy=multi-user.target
