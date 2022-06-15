@@ -2318,12 +2318,14 @@ ALTER TABLE ONLY public."Profesor" ALTER COLUMN "idProfesor" SET DEFAULT nextval
 --
 
 INSERT INTO public."Acceso" ("idUsuario", password, salt) VALUES ('L00000001', 'e491ff9f556e10eff26bef77c627cc5783dfcee8e23ab6fd04da5124f73246a579d152e5bf3048db5da923f3942915ceb34af9ec5c740ec2a198ac121481a665', 'eaf1961e64647e5b');
+INSERT INTO public."Acceso" ("idUsuario", password, salt) VALUES ('A00000000', '5c8f26561d998ea232ff8514bf90d37b09360deda79a091b1876b3526011226a8f3953564fdf14f92e9f2daf0f45d64982dbb555f18e582e4b584f2ee927a635', '0e6969b8083e7a3f');
 
 
 --
 -- Data for Name: Asesor; Type: TABLE DATA; Schema: public; Owner: pae
 --
 
+INSERT INTO public."Asesor" ("idUsuario", semestre, "cantidadCambioHorario") VALUES ('A00000000', 1, 0);
 
 
 --
@@ -2435,7 +2437,7 @@ INSERT INTO public."Encuesta" ("idEncuesta", titulo, descripcion, rol) VALUES (2
 -- Data for Name: EstudianteCarrera; Type: TABLE DATA; Schema: public; Owner: pae
 --
 
-
+INSERT INTO public."EstudianteCarrera" ("idCarrera", "idUsuario") VALUES ('ITC', 'A00000000');
 
 --
 -- Data for Name: HorarioDisponible; Type: TABLE DATA; Schema: public; Owner: pae
@@ -5572,6 +5574,7 @@ INSERT INTO public."UnidadFormacionCarrera" ("idUF", "idCarrera") VALUES ('OP300
 --
 
 INSERT INTO public."Usuario" ("idUsuario", rol, "nombreUsuario", "apellidoPaterno", "fotoPerfil", "ultimaConexion", "statusAcceso", telefono, "apellidoMaterno") VALUES ('L00000001', 'directivo', 'Super Usuario', 'Pae', NULL, '2022-06-15 22:14:59.877839', 'activo', '', '');
+INSERT INTO public."Usuario" ("idUsuario", rol, "nombreUsuario", "apellidoPaterno", "fotoPerfil", "ultimaConexion", "statusAcceso", telefono, "apellidoMaterno") VALUES ('A00000000', 'asesor', 'Asesor', 'Sin Confirmar', NULL, '2022-06-15 22:14:59.877839', 'activo', '', '');
 
 
 --
@@ -5984,22 +5987,6 @@ ALTER TABLE ONLY public."UnidadFormacionCarrera"
 
 ALTER TABLE ONLY public."UnidadFormacionCarrera"
     ADD CONSTRAINT "UnidadFormacionCarrera_idUF_fkey" FOREIGN KEY ("idUF") REFERENCES public."UnidadFormacion"("idUF") ON DELETE CASCADE;
-
-
--- INSERTANDO EL ASESOR POR DEFECTO
-
-CALL public.registro_datosperfil_asesor(
-  'A00000000',  '5c8f26561d998ea232ff8514bf90d37b09360deda79a091b1876b3526011226a8f3953564fdf14f92e9f2daf0f45d64982dbb555f18e582e4b584f2ee927a635', 
-  '0e6969b8083e7a3f', 
-  'Asesor', 
-  'Sin confirmar', 
-  null, 
-  null,
-  null,
-  'ITC',
-  '', 
-  1
-);
 
 --
 -- PostgreSQL database dump complete
