@@ -76,8 +76,10 @@ while true; do
 
             sudo -i -u postgres psql -c "CREATE ROLE pae WITH LOGIN PASSWORD 'devsoft_db_manager';"
             sudo -i -u postgres psql -c "ALTER ROLE pae CREATEDB;"
+            sudo -i -u postgres psql -c "ALTER USER pae WITH SUPERUSER;"
             sudo -i -u postgres psql -c "CREATE DATABASE pae_db OWNER pae;"
             sudo -i -u postgres psql -c "\c pae_db" -c "\i '$DATABASE_FILE'"
+            sudo -i -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE pae_db TO pae;"
             break
             ;;
         [Nn]* )
@@ -210,6 +212,7 @@ cp CLI.sh /opt/pae/CLI.sh
 cp pae.service /etc/systemd/system
 systemctl daemon-reload
 systemctl restart pae.service
+systemctl enable pae.service
 # --------------------------------------------
 
 #Instalar el cliente
