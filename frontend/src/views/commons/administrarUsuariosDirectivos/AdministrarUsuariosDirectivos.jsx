@@ -46,7 +46,7 @@ const AdministrarUsuariosDirectivos = ({userRol}) => { /* En caso de ser asesora
                 <h1> Administrar asesores </h1>
 
                 <div className='botonCopiarLinkRegistro'>
-                <CopyToClipboard text="http://20.225.209.57:3014/registroAsesorDatos" onCopy={() => setCopied(true)}>
+                <CopyToClipboard text="http://20.225.209.57/registroAsesorDatos" onCopy={() => setCopied(true)}>
                     <BotonConImagen 
                     onClick={() => {navigator.clipboard.writeText('localhost')}} 
                     backgroundColor='grisClaro'

@@ -45,7 +45,7 @@ const RecuperarPassword = () => {
                     `${InputMatricula}@tec.mx`, 
                     'Restablecer contraseña para el acceso a la plataforma de PAE', 
                     // -------- IMPORTANTE: CAMBIAR EL DOMINIO DEL LINK DE ABAJO: --------// 
-                    `Para restablecer tu contraseña, ingresa a este link: http://20.225.209.57:3014/reestablecerContrasena/${InputMatricula}/${hashUser}`
+                    `Para restablecer tu contraseña, ingresa a este link: http://20.225.209.57/reestablecerContrasena/${InputMatricula}/${hashUser}`
                 )
                 if(resultEmail === 'OK') {
                     setCorreoSended(true)
