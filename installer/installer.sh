@@ -72,10 +72,10 @@ while true; do
     read -p "Desea instalar la base de datos (Si/No): " INSTALL_DB
     case $INSTALL_DB in
         [Ss]* )
-            sudo -i -u postgres
+            sudo -i -u postgres \
 
-            psql -c "CREATE ROLE pae3 WITH LOGIN PASSWORD 'devsoft_db_manager';"
-            psql -c "ALTER ROLE pae3 CREATEDB;"
+            psql -c "CREATE ROLE pae3 WITH LOGIN PASSWORD 'devsoft_db_manager';" \
+            psql -c "ALTER ROLE pae3 CREATEDB;" \
             psql -c "CREATE DATABASE pae_db3 OWNER pae3;"
             break
             ;;
