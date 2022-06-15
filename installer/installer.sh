@@ -192,7 +192,6 @@ then
 fi
 
 mkdir -p /opt/pae/
-rm -r /opt/pae/*
 for API in ${APIS[@]}; do
     if  [ $API != Client/ ]
     then
@@ -207,7 +206,7 @@ done
 
 #copia el administrador de las apis al directorio destino
 cd $WORKING_DIR
-cp -r CLI.sh /opt/pae/CLI.sh
+cp CLI.sh /opt/pae/CLI.sh
 cp pae.service /etc/systemd/system
 systemctl daemon-reload
 systemctl restart pae.service
@@ -233,7 +232,7 @@ done
 cd ../
 #copia el cliente en el directorio destino
 mkdir -p /var/pae/client
-cp -r client /var/pae/client
+cp -r client/* /var/pae/client
 cp $WORKING_DIR/pae-site /etc/nginx/sites-available/pae
 if [ -f /etc/nginx/sites-enabled/default ]
 then

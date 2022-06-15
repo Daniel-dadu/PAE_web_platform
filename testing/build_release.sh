@@ -27,7 +27,6 @@ start_release(){
         #Crea los directorios necesarios para generar la release
         mkdir -p ../release/building/pae
         mkdir -p ../release/building/pae/api
-        mkdir -p ../release/building/pae/client
     fi
 }
 
@@ -87,7 +86,7 @@ client(){
         fi
     fi
     #Agrega el cliete a la release
-    cp -r ../frontend/build ../release/building/pae/client/
+    cp -r ../frontend/build/ ../release/building/pae/client/
     echo "CLient agregado"
 }
 

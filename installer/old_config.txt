@@ -1,9 +1,0 @@
-Administracion 3093
-Asesoria 3094
-Calendario 3031
-Encuesta 3096
-General 3091
-Login 3095
-Notificacion 3030
-Perfil 3092
-Registro 3090
