@@ -87,7 +87,7 @@ client(){
         fi
     fi
     #Agrega el cliete a la release
-    cp -r ../frontend/ ../release/building/pae/client/Client
+    cp -r ../frontend/build ../release/building/pae/client/
     echo "CLient agregado"
 }
 

@@ -214,7 +214,7 @@ systemctl restart pae.service
 # --------------------------------------------
 
 #Instalar el cliente
-cd pae/client/Client/
+cd pae/client/
 #cambiar dominio
 read -p "Indique la IP o dominio deseado: " IP_DOMAIN
 find . -type f -exec sed -i -- "s/[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}/$IP_DOMAIN/g" {} +
@@ -231,10 +231,9 @@ for API in ${APIS[@]}; do
 done
 
 cd ../
-
 #copia el cliente en el directorio destino
 mkdir -p /var/pae/client
-cp -r Client /var/pae/client
+cp -r client /var/pae/client
 cp $WORKING_DIR/pae-site /etc/nginx/sites-available/pae
 if [ -f /etc/nginx/sites-enabled/default ]
 then
