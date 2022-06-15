@@ -18,6 +18,7 @@ CONFIG_FILE=$PWD/config.txt
 NEW_CONFIG_FILE=$PWD/new_config.txt
 #Almacena la configuracion anterior de las apis
 OLD_CONFIG_FILE=$PWD/old_config.txt
+DATABASE_FILE=$PWD/databaseArchitecture.sql
 
 while getopts :mgc opt
 do
@@ -72,11 +73,11 @@ while true; do
     read -p "Desea instalar la base de datos (Si/No): " INSTALL_DB
     case $INSTALL_DB in
         [Ss]* )
-            sudo -i -u postgres \
 
-            psql -c "CREATE ROLE pae3 WITH LOGIN PASSWORD 'devsoft_db_manager';" \
-            psql -c "ALTER ROLE pae3 CREATEDB;" \
-            psql -c "CREATE DATABASE pae_db3 OWNER pae3;"
+            sudo -i -u postgres psql -c "CREATE ROLE pae WITH LOGIN PASSWORD 'devsoft_db_manager';"
+            sudo -i -u postgres psql -c "ALTER ROLE pae CREATEDB;"
+            sudo -i -u postgres psql -c "CREATE DATABASE pae_db OWNER pae;"
+            sudo -i -u postgres psql -c "\c pae_db" -c "\i '$DATABASE_FILE'"
             break
             ;;
         [Nn]* )
