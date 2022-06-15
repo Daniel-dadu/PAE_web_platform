@@ -2465,12 +2465,9 @@ INSERT INTO public."Encuesta" ("idEncuesta", titulo, descripcion, rol) VALUES (2
 -- Data for Name: Periodo; Type: TABLE DATA; Schema: public; Owner: pae
 --
 
-INSERT INTO public."Periodo" ("idPeriodo", numero, "fechaInicial", "fechaFinal", status) VALUES (1, 1, '2022-02-14 00:00:00', '2022-03-18 23:59:59', 'pasado');
-INSERT INTO public."Periodo" ("idPeriodo", numero, "fechaInicial", "fechaFinal", status) VALUES (2, 2, '2022-03-28 00:00:00', '2022-05-07 23:59:59', 'pasado');
-INSERT INTO public."Periodo" ("idPeriodo", numero, "fechaInicial", "fechaFinal", status) VALUES (3, 3, '2022-05-16 00:00:00', '2022-06-17 23:59:59', 'pasado');
-INSERT INTO public."Periodo" ("idPeriodo", numero, "fechaInicial", "fechaFinal", status) VALUES (7, 1, '2022-01-01 06:00:00', '2022-02-03 05:59:59', 'actual');
-INSERT INTO public."Periodo" ("idPeriodo", numero, "fechaInicial", "fechaFinal", status) VALUES (8, 2, '2022-03-03 06:00:00', '2022-04-04 04:59:59', 'actual');
-INSERT INTO public."Periodo" ("idPeriodo", numero, "fechaInicial", "fechaFinal", status) VALUES (9, 3, '2022-05-04 05:00:00', '2022-06-13 04:59:59', 'actual');
+INSERT INTO public."Periodo" ("idPeriodo", numero, "fechaInicial", "fechaFinal", status) VALUES (1, 1, '2022-02-14 00:00:00', '2022-03-18 23:59:59', 'actual');
+INSERT INTO public."Periodo" ("idPeriodo", numero, "fechaInicial", "fechaFinal", status) VALUES (2, 2, '2022-03-28 00:00:00', '2022-05-07 23:59:59', 'actual');
+INSERT INTO public."Periodo" ("idPeriodo", numero, "fechaInicial", "fechaFinal", status) VALUES (3, 3, '2022-05-23 00:00:00', '2022-06-24 23:59:59', 'actual');
 
 
 --
