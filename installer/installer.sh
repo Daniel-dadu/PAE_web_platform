@@ -16,6 +16,8 @@ WORKING_DIR=$PWD
 CONFIG_FILE=$PWD/config.txt
 #Almacena la configuracion deseada de las apis
 NEW_CONFIG_FILE=$PWD/new_config.txt
+#Almacena la configuracion anterior de las apis
+OLD_CONFIG_FILE=$PWD/old_config.txt
 
 while getopts :mgc opt
 do
@@ -86,7 +88,7 @@ while true; do
 done
 # --------------------------------------------
 
-#Almacena la configuracion de los puertos presentes en las ip
+#Almacena la configuracion de los puertos presentes
 cd ./pae/api
 APIS=($(ls -d */))
 > $CONFIG_FILE
@@ -111,6 +113,8 @@ then
     echo "No se encontro $CONFIG_FILE"
     exit 1
 fi
+
+cp $CONFIG_FILE $OLD_CONFIG_FILE
 
 cd $WORKING_DIR
 # --------------------------------------------
@@ -209,11 +213,22 @@ systemctl restart pae.service
 # --------------------------------------------
 
 #Instalar el cliente
-cd pae/client
-cd Client/
+cd pae/client/Client/
 #cambiar dominio
 read -p "Indique la IP o dominio deseado: " IP_DOMAIN
 find . -type f -exec sed -i -- "s/[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}/$IP_DOMAIN/g" {} +
+
+for API in ${APIS[@]}; do
+    if  [ $API != EncryptionFile/ ]
+    then
+        #optiene la configuracion de los puertos
+        CONFIG_PORT=$(gawk -v name=${API::-1} '$0~name{print $2}' $CONFIG_FILE)
+        CONFIG_OLD_PORT=$(gawk -v name=${API::-1} '$0~name{print $2}' $OLD_CONFIG_FILE)
+        echo "Asignar $CONFIG_PORT al $CONFIG_OLD_PORT"
+        find . -type f -exec sed -i -- "s/:$CONFIG_OLD_PORT/:$CONFIG_PORT/g" {} +
+    fi
+done
+
 cd ../
 
 #copia el cliente en el directorio destino
