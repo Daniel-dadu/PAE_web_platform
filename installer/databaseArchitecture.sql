@@ -5986,6 +5986,21 @@ ALTER TABLE ONLY public."UnidadFormacionCarrera"
     ADD CONSTRAINT "UnidadFormacionCarrera_idUF_fkey" FOREIGN KEY ("idUF") REFERENCES public."UnidadFormacion"("idUF") ON DELETE CASCADE;
 
 
+-- INSERTANDO EL ASESOR POR DEFECTO
+
+CALL registro_datosperfil_asesor(
+  'A00000000',  '5c8f26561d998ea232ff8514bf90d37b09360deda79a091b1876b3526011226a8f3953564fdf14f92e9f2daf0f45d64982dbb555f18e582e4b584f2ee927a635', 
+  '0e6969b8083e7a3f', 
+  'Asesor', 
+  'Sin confirmar', 
+  null, 
+  null,
+  null,
+  'ITC',
+  '', 
+  1
+);
+
 --
 -- PostgreSQL database dump complete
 --
