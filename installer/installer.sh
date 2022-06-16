@@ -44,7 +44,7 @@ then
     echo "No se escogio un modo de funcionamiento"
     echo "-m para ejecutarlo de forma manual"
     echo "-g para ejecutarlo con ventanas en la terminal"
-    echo "-c para ejecutarlo con la configuracion en config.txt y new_config.txt"
+    echo "-c para ejecutarlo con la configuracion en new_config.txt"
     exit 1
 fi
 # --------------------------------------------
