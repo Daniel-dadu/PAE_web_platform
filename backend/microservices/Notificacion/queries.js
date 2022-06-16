@@ -34,6 +34,7 @@ const get_notificaciones_usuario = (request, response) => {
                 notificacion['leyenda'] = new Date(notificacion['leyenda'])
 
                 return notificacion
+                
             }
                 )
             });
