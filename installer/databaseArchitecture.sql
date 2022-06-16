@@ -1277,6 +1277,7 @@ END;
 $$;
 
 
+
 ALTER FUNCTION public.get_notificaciones_usuario(idusuario character varying) OWNER TO pae;
 
 --
