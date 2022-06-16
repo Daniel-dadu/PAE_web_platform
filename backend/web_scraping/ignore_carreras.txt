@@ -1,6 +1,0 @@
-SLD
-LBC
-LNB
-LPS
-MC
-MO

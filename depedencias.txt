@@ -1,9 +1,0 @@
-nodejs
-    jest 
-
-jq
-
-python3
-    pip:
-        selenium
-        beautifulsoup4
