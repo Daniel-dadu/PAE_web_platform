@@ -13,7 +13,7 @@ Esta sección est,a enfocada en desglosar la estructura del proyecto y la funci�
 - [frontend](#frontend)
 - [installer](#installer)
 - [release](#release)
-- [release](#release)
+- [testing](#testing)
 
 ### backend
 > Contiene toda la lógica del negocio, y no se espera que el usuario normal al que va orientado el proyecto pueda acceder a él.
