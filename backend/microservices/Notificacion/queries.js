@@ -25,7 +25,18 @@ const get_notificaciones_usuario = (request, response) => {
         if(error) {
             console.log(error)
         } else {
-            response.status(200).json({'notificaciones': result.rows})
+            // result.rows.map(notificacion => {
+            //     notificacion['leyenda'] = new Date(notificacion['leyenda']);
+            // })
+
+            response.status(200).json({'notificaciones': result.rows.map(notificacion => {
+
+                notificacion['leyenda'] = new Date(notificacion['leyenda'])
+
+                return notificacion
+            }
+                )
+            });
             // console.log(result.rows)
         }
     })
